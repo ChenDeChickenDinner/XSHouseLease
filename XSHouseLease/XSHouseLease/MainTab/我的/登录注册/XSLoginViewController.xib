@@ -36,6 +36,16 @@
                         <action selector="dismissViewController:" destination="-1" eventType="touchUpInside" id="cxn-cO-VqS"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgt-Bz-cH9">
+                    <rect key="frame" x="10" y="20" width="46" height="46"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="9E2-Kv-Clj"/>
+                        <constraint firstAttribute="width" constant="46" id="VT1-oF-aCw"/>
+                    </constraints>
+                    <connections>
+                        <action selector="dismissViewController:" destination="-1" eventType="touchUpInside" id="HI8-cQ-ohF"/>
+                    </connections>
+                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66Z-Hj-dE1">
                     <rect key="frame" x="22" y="115" width="41" height="24"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -293,6 +303,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="kQg-gG-rQY" firstAttribute="top" secondItem="Gmf-uX-Ac1" secondAttribute="bottom" id="0hC-Hf-RtF"/>
+                <constraint firstItem="bgt-Bz-cH9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="6fl-6O-OZO"/>
                 <constraint firstItem="Gmf-uX-Ac1" firstAttribute="top" secondItem="Xac-K2-gE4" secondAttribute="bottom" id="AFX-FT-O8r"/>
                 <constraint firstItem="7ku-Sr-JEi" firstAttribute="leading" secondItem="kQg-gG-rQY" secondAttribute="leading" id="F7U-Cx-5E3"/>
                 <constraint firstItem="Xac-K2-gE4" firstAttribute="leading" secondItem="66Z-Hj-dE1" secondAttribute="leading" id="G5w-X0-8HU"/>
@@ -306,6 +317,7 @@
                 <constraint firstItem="Xac-K2-gE4" firstAttribute="top" secondItem="66Z-Hj-dE1" secondAttribute="bottom" constant="26" id="O49-YZ-Psg"/>
                 <constraint firstItem="Gmf-uX-Ac1" firstAttribute="width" secondItem="Xac-K2-gE4" secondAttribute="width" id="SZT-tt-bIH"/>
                 <constraint firstItem="kQg-gG-rQY" firstAttribute="leading" secondItem="Xac-K2-gE4" secondAttribute="leading" id="W92-SX-fmK"/>
+                <constraint firstItem="bgt-Bz-cH9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="mny-yL-7mD"/>
                 <constraint firstItem="Gmf-uX-Ac1" firstAttribute="leading" secondItem="Xac-K2-gE4" secondAttribute="leading" id="pHq-uU-pJe"/>
                 <constraint firstItem="kQg-gG-rQY" firstAttribute="top" secondItem="Xac-K2-gE4" secondAttribute="bottom" priority="800" id="qQY-gC-lQJ"/>
                 <constraint firstItem="66Z-Hj-dE1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="22" id="teR-UB-g97"/>

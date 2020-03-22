@@ -32,6 +32,11 @@
     [self refreshUIData];
     
 }
+- (IBAction)jumpToSomePlace:(UIButton *)sender {
+    NSLog(@"tag = %ld -------",sender.tag);
+}
+
+
 - (void)refreshUIData{
     self.phoneLable.text = [XSUserServer sharedInstance].userModel.phone;
 }

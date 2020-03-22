@@ -15,7 +15,6 @@
 		6C6BC15C241FA75400B62001 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BC15B241FA75400B62001 /* main.m */; };
 		6C6BC164241FA84200B62001 /* XSTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BC163241FA84100B62001 /* XSTabBarViewController.m */; };
 		6C6BC168241FA98500B62001 /* XSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BC167241FA98500B62001 /* XSBaseViewController.m */; };
-		6C6BC16B241FA9AC00B62001 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BC16A241FA9AC00B62001 /* HomePageViewController.m */; };
 		6C6BC16E241FA9D800B62001 /* FindHouseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BC16D241FA9D800B62001 /* FindHouseViewController.m */; };
 		6C6BC174241FA9F400B62001 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BC173241FA9F400B62001 /* MessageViewController.m */; };
 		6C6BC177241FAA8800B62001 /* XSBaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BC176241FAA8800B62001 /* XSBaseNavViewController.m */; };
@@ -48,6 +47,8 @@
 		6CED867624274CB30059CDC5 /* XSLogInVcModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CED867524274CB30059CDC5 /* XSLogInVcModel.m */; };
 		6CED867924274CE60059CDC5 /* XSUserLogInModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CED867824274CE60059CDC5 /* XSUserLogInModel.m */; };
 		6CED867D242756950059CDC5 /* XSUserServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CED867C242756950059CDC5 /* XSUserServer.m */; };
+		6CED86812427AF100059CDC5 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CED867F2427AF100059CDC5 /* HomePageViewController.m */; };
+		6CED86822427AF100059CDC5 /* HomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CED86802427AF100059CDC5 /* HomePageViewController.xib */; };
 		9AC3A3F8DF5C36DD201ED436 /* libPods-XSHouseLease.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2818EC9B5CB7624F84048215 /* libPods-XSHouseLease.a */; };
 /* End PBXBuildFile section */
 
@@ -69,8 +70,6 @@
 		6C6BC163241FA84100B62001 /* XSTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSTabBarViewController.m; sourceTree = "<group>"; };
 		6C6BC166241FA98500B62001 /* XSBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSBaseViewController.h; sourceTree = "<group>"; };
 		6C6BC167241FA98500B62001 /* XSBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSBaseViewController.m; sourceTree = "<group>"; };
-		6C6BC169241FA9AC00B62001 /* HomePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
-		6C6BC16A241FA9AC00B62001 /* HomePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
 		6C6BC16C241FA9D800B62001 /* FindHouseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FindHouseViewController.h; sourceTree = "<group>"; };
 		6C6BC16D241FA9D800B62001 /* FindHouseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FindHouseViewController.m; sourceTree = "<group>"; };
 		6C6BC172241FA9F400B62001 /* MessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
@@ -133,6 +132,9 @@
 		6CED867824274CE60059CDC5 /* XSUserLogInModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSUserLogInModel.m; sourceTree = "<group>"; };
 		6CED867B242756950059CDC5 /* XSUserServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSUserServer.h; sourceTree = "<group>"; };
 		6CED867C242756950059CDC5 /* XSUserServer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSUserServer.m; sourceTree = "<group>"; };
+		6CED867E2427AF100059CDC5 /* HomePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HomePageViewController.h; path = ../../../../../../Documents/HomePageViewController.h; sourceTree = "<group>"; };
+		6CED867F2427AF100059CDC5 /* HomePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HomePageViewController.m; path = ../../../../../../Documents/HomePageViewController.m; sourceTree = "<group>"; };
+		6CED86802427AF100059CDC5 /* HomePageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomePageViewController.xib; path = ../../../../../../Documents/HomePageViewController.xib; sourceTree = "<group>"; };
 		854FDABF6045260FA4A570E3 /* Pods-XSHouseLease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XSHouseLease.release.xcconfig"; path = "Target Support Files/Pods-XSHouseLease/Pods-XSHouseLease.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -404,8 +406,9 @@
 		6CDCE3E7242740AB0049AE63 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
-				6C6BC169241FA9AC00B62001 /* HomePageViewController.h */,
-				6C6BC16A241FA9AC00B62001 /* HomePageViewController.m */,
+				6CED867E2427AF100059CDC5 /* HomePageViewController.h */,
+				6CED867F2427AF100059CDC5 /* HomePageViewController.m */,
+				6CED86802427AF100059CDC5 /* HomePageViewController.xib */,
 			);
 			path = "首页";
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C6BC159241FA75400B62001 /* LaunchScreen.storyboard in Resources */,
+				6CED86822427AF100059CDC5 /* HomePageViewController.xib in Resources */,
 				6C7DFE7324265077003E86D7 /* Main.storyboard in Resources */,
 				6C6BC184241FBBAC00B62001 /* MyInfoViewController.xib in Resources */,
 				6C6BC17F241FBB6700B62001 /* XSLoginViewController.xib in Resources */,
@@ -609,12 +613,12 @@
 				6C6BC174241FA9F400B62001 /* MessageViewController.m in Sources */,
 				6C7DFE7424265077003E86D7 /* ViewController.m in Sources */,
 				6CDCE3CB2426F76F0049AE63 /* NSDate+Category.m in Sources */,
-				6C6BC16B241FA9AC00B62001 /* HomePageViewController.m in Sources */,
 				6C6BC168241FA98500B62001 /* XSBaseViewController.m in Sources */,
 				6CED867324274AA80059CDC5 /* XSUserModel.m in Sources */,
 				6C6BC183241FBBAC00B62001 /* MyInfoViewController.m in Sources */,
 				6CDCE3A52426ED9B0049AE63 /* XSOperationParam.m in Sources */,
 				6CEC5FB22424DC3900DC619E /* XSURL.m in Sources */,
+				6CED86812427AF100059CDC5 /* HomePageViewController.m in Sources */,
 				6C6BC14E241FA75300B62001 /* SceneDelegate.m in Sources */,
 				6CDCE3A92426F5D50049AE63 /* XSUserInfoInterface.m in Sources */,
 			);
