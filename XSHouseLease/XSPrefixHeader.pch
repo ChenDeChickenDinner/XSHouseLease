@@ -1,0 +1,55 @@
+//
+//  XSPrefixHeader.pch
+//  XSHouseLease
+//
+//  Created by heartbeats on 2020/3/16.
+//  Copyright © 2020 fang. All rights reserved.
+//
+
+#ifndef XSPrefixHeader_pch
+#define XSPrefixHeader_pch
+#import "MJExtension.h"
+#import "MJRefresh.h"
+
+#import "HBCategory.h"
+
+#import "MBProgressHUD.h"
+#import "YBModelFile.h"
+#import "XSBaseObject.h"
+#import "XSUserServer.h"
+#import "NSData+Base64.h"
+#import "NSString+Base64.h"
+
+#define XSColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define XSColorAlpha(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]
+
+#define WEAK_SELF __weak typeof(self)weakSelf = self
+#define STRONG_SELF __strong typeof(weakSelf)self = weakSelf
+
+
+
+
+
+
+
+
+
+
+
+
+#undef    AS_SINGLETON
+#define AS_SINGLETON( __class ) \
++ (__class *)sharedInstance;
+
+#undef    DEF_SINGLETON
+#define DEF_SINGLETON( __class ) \
++ (__class *)sharedInstance \
+{ \
+static dispatch_once_t once; \
+static __class * __singleton__; \
+dispatch_once(&once, ^{ __singleton__ = [[__class alloc] init]; } ); \
+return __singleton__; \
+}
+
+
+#endif /* XSPrefixHeader_pch */

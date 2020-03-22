@@ -1,0 +1,11 @@
+{
+  "authCode": "string",
+  "clientBrand": "string",
+  "clientModel": "string",
+  "clientType": 0,
+  "clientVersion": "string",
+  "osInfo": "string",
+  "phone": "string",
+  "pictureCode": "string"
+}
+
