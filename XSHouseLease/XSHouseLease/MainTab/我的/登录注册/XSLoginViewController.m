@@ -214,6 +214,7 @@ typedef void (^sendMessageSuccessful)(BOOL successful);
 }
 
 - (IBAction)dismissViewController:(UIButton *)sender {
+    
     [self dismissViewControllerAnimated:YES completion:^{
         
     }];

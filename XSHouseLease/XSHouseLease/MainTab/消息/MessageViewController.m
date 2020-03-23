@@ -40,7 +40,7 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:@"xsjson" ofType:@"json"];
       // 将文件数据化
       NSData *data = [[NSData alloc] initWithContentsOfFile:path];
-      [YBModelFile createFileWithName:@"XSUserLogInModel" data:data];
+      [YBModelFile createFileWithName:@"XSHouseEnum" data:data];
     
 }
 @end

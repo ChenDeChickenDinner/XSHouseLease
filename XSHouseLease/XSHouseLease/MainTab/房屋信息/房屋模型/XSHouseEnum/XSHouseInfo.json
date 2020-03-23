@@ -1,0 +1,29 @@
+
+[
+    {
+    "title":"梯户比例",
+    "celHeight":53,
+    "cellClass":"XSHouseSubTextFieldTableViewCell",
+    "arrayValue": [
+                    {
+                        "name":"梯户比例",
+                        "key":"key1",
+                        "moreSelect":false,
+                        "sequence":0,
+                        "keyInputType":0,
+                        "values":[
+                                    {
+                                    "value":1,
+                                    "name":"三",
+                                    "frontDescribe":"一梯",
+                                    "hindDescribe":"户",
+                                    "placeholder":"请输入",
+                                    "isSelect":false,
+                                    "sendType":0
+                                   }
+                               ]
+                    }
+                  ]
+
+    }
+]
