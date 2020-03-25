@@ -10,6 +10,7 @@
 
 #import "AFNetworking.h"
 #import "XSUserInfoInterface.h"
+#import "XShouseSubNetworkInterface.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -17,8 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface XSBaseViewController : UIViewController
 @property (nonatomic, strong) AFHTTPSessionManager *operationManager;
 @property (nonatomic,strong) XSUserInfoInterface *userInfoInterface;
+@property (nonatomic,strong) XShouseSubNetworkInterface *subInfoInterface;
 
 - (void)refreshUIData;
+- (void)alertWithMessage:(NSString *)str;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -19,10 +19,22 @@
     }
     return _userInfoInterface;
 }
+- (XShouseSubNetworkInterface *)subInfoInterface{
+    if (_subInfoInterface == nil) {
+        _subInfoInterface = [XShouseSubNetworkInterface interfaceWithOperationManager:self.operationManager];
+    }
+    return _subInfoInterface;
+}
 - (AFHTTPSessionManager *)operationManager{
     if (_operationManager == nil) {
         _operationManager = [AFHTTPSessionManager manager];
 //        _operationManager.operationQueue.maxConcurrentOperationCount = 3;
+        NSString *token  = [XSUserServer sharedInstance].userModel.token;
+        if (token) {
+            [_operationManager.requestSerializer setValue:token forHTTPHeaderField:@"Authentication"];
+        }
+
+
         _operationManager.requestSerializer = [AFJSONRequestSerializer serializer];
         _operationManager.requestSerializer.stringEncoding = NSUTF8StringEncoding;
         _operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
@@ -50,5 +62,14 @@
 }
 - (void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)alertWithMessage:(NSString *)str{
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:str preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction * act =[UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        }];
+        [alert addAction:act];
+        
+        [self presentViewController:alert animated:YES completion:nil];
 }
 @end

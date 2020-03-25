@@ -11,7 +11,6 @@
 #import "XSLogInVcModel.h"
 #import "XSUserLogInModel.h"
 
-#import <SDWebImage.h>
 #define MessageWaitTime 60
 
 
@@ -228,14 +227,7 @@ typedef void (^sendMessageSuccessful)(BOOL successful);
 //    sender.state = sender.selected?UIControlStateSelected:UIControlStateNormal;
 }
 
-- (void)alertWithMessage:(NSString *)str{
-    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:str preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction * act =[UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        }];
-        [alert addAction:act];
-        
-        [self presentViewController:alert animated:YES completion:nil];
-}
+
 
 - (void)updateMidLabel {
     _midCount += 1;

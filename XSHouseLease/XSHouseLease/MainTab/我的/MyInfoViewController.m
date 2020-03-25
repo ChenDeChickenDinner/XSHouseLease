@@ -21,10 +21,7 @@
     self.title = @"我的";
     [self observeNotification:NotificationLoginStatusChangedLogin];
     [self observeNotification:NotificationLoginStatusChangedLogout];
-    
-    
-    
-    
+
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];

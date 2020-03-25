@@ -28,19 +28,33 @@
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
-        [YBMFConfig shareConfig].framework = YBMFFrameworkMJ;
-        [YBMFConfig shareConfig].needCoding = NO;
-        [YBMFConfig shareConfig].needCopying = NO;
-        [YBMFConfig shareConfig].fileHHandler.ybmf_skipLine = YES;
-        [YBMFConfig shareConfig].fileMHandler.ybmf_skipLine = YES;
-        [YBMFConfig shareConfig].fileSuffix = @"";
-//        [YBMFConfig shareConfig].ignoreType = YBMFIgnoreTypeAllDigital | YBMFIgnoreTypeMutable;
-        [YBMFConfig shareConfig].baseClass = [XSBaseObject class];
-//        [YBMFConfig shareConfig].filePartitionMode = YBMFFilePartitionModeTogether;
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"xsjson" ofType:@"json"];
-      // 将文件数据化
-      NSData *data = [[NSData alloc] initWithContentsOfFile:path];
-      [YBModelFile createFileWithName:@"XSHouseEnum" data:data];
+//        [YBMFConfig shareConfig].framework = YBMFFrameworkMJ;
+//        [YBMFConfig shareConfig].needCoding = NO;
+//        [YBMFConfig shareConfig].needCopying = NO;
+//        [YBMFConfig shareConfig].fileHHandler.ybmf_skipLine = YES;
+//        [YBMFConfig shareConfig].fileMHandler.ybmf_skipLine = YES;
+//        [YBMFConfig shareConfig].fileSuffix = @"";
+////        [YBMFConfig shareConfig].ignoreType = YBMFIgnoreTypeAllDigital | YBMFIgnoreTypeMutable;
+//        [YBMFConfig shareConfig].baseClass = [XSBaseObject class];
+////        [YBMFConfig shareConfig].filePartitionMode = YBMFFilePartitionModeTogether;
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"xsjson" ofType:@"json"];
+//      // 将文件数据化
+//      NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+//      [YBModelFile createFileWithName:@"XSHouseEnum" data:data];
+    
+//    self.labelSelectedMedia.text = NSLocalizedStringFromTable(@"Choose a media", @"UzysAssetsPickerController", nil);
+
+
+//      UzysAssetsPickerController *picker = [[UzysAssetsPickerController alloc] init];
+//       picker.delegate = self;
+//     picker.maximumNumberOfSelectionVideo = 0;
+//     picker.maximumNumberOfSelectionMedia = 0;
+//     picker.maximumNumberOfSelectionPhoto = 3;
+//    
+//       picker.modalPresentationStyle = UIModalPresentationFullScreen;
+//       [self presentViewController:picker animated:YES completion:^{
+//
+//       }];
     
 }
 @end
