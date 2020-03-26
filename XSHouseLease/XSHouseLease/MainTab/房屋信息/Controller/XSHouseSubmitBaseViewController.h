@@ -32,6 +32,7 @@ typedef NS_ENUM(NSInteger,XSHouseSubmitStepsType) {
 
 
 - (void)loadRentEnums;
+- (void)uploadImage:(UIImage *)image callback:(HBCompletionBlock)callback;
 @end
 
 NS_ASSUME_NONNULL_END

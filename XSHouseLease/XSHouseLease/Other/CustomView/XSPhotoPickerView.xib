@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="XSPhotoPickerView">
+            <rect key="frame" x="0.0" y="0.0" width="328" height="216"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1lF-fF-vZX" userLabel="title">
+                    <rect key="frame" x="15" y="0.0" width="298" height="45"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="房源图片上传" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkv-EV-hZU">
+                            <rect key="frame" x="0.0" y="24" width="74" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="yZg-RP-AL5"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" red="0.5725490196078431" green="0.5725490196078431" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="（最多上传5张照片）" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xqb-0Z-hED">
+                            <rect key="frame" x="74" y="24" width="108.5" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="vAM-lv-fbD"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <color key="textColor" red="0.90980392156862744" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="3zj-6b-IH7"/>
+                        <constraint firstItem="tkv-EV-hZU" firstAttribute="leading" secondItem="1lF-fF-vZX" secondAttribute="leading" id="eXg-Fa-ClT"/>
+                        <constraint firstItem="Xqb-0Z-hED" firstAttribute="leading" secondItem="tkv-EV-hZU" secondAttribute="trailing" id="lkX-ho-yPh"/>
+                        <constraint firstAttribute="bottom" secondItem="tkv-EV-hZU" secondAttribute="bottom" id="qTz-4e-VqB"/>
+                        <constraint firstAttribute="bottom" secondItem="Xqb-0Z-hED" secondAttribute="bottom" id="u4t-J9-Gh7"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RXP-fl-jyG" userLabel="container">
+                    <rect key="frame" x="15" y="45" width="298" height="171"/>
+                    <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="171" id="brB-MO-2dJ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="RXP-fl-jyG" firstAttribute="top" secondItem="1lF-fF-vZX" secondAttribute="bottom" id="1SQ-UY-2co"/>
+                <constraint firstItem="1lF-fF-vZX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="9io-lE-RRE"/>
+                <constraint firstItem="1lF-fF-vZX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Aps-IY-vf9"/>
+                <constraint firstAttribute="trailing" secondItem="1lF-fF-vZX" secondAttribute="trailing" constant="15" id="Jce-mm-uam"/>
+                <constraint firstItem="RXP-fl-jyG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="fl8-lz-7R7"/>
+                <constraint firstAttribute="trailing" secondItem="RXP-fl-jyG" secondAttribute="trailing" constant="15" id="hEr-fS-fxo"/>
+                <constraint firstAttribute="bottom" secondItem="RXP-fl-jyG" secondAttribute="bottom" id="pGC-Rt-6qk"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="containerView" destination="RXP-fl-jyG" id="gFI-Mq-YhA"/>
+            </connections>
+            <point key="canvasLocation" x="59.420289855072468" y="127.90178571428571"/>
+        </view>
+    </objects>
+</document>

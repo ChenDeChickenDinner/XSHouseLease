@@ -13,18 +13,61 @@
 #import "XSHouseSubCollectionviewACell.h"
 #import "XSHouseSubTextFieldTableViewCell.h"
 #import "XSHouseSubListChooseTableViewCell.h"
+#import "XSPhotoPickerView.h"
 
 @interface XSHouseSubmitFirstViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
 
 @property (weak, nonatomic) IBOutlet XSRoundedBtn1View *nextBtn;
 
+@property (strong, nonatomic)  XSPhotoPickerView *pickerView;
+
 @end
 
 @implementation XSHouseSubmitFirstViewController
+//- (XSPhotoPickerView *)pickerView{
+//    if (_pickerView == nil) {
+//        _pickerView = [XSPhotoPickerView  photoPickerViewWithFrame:CGRectMake(0, 0, self.myTableView.width, 250)];
+//    }
+//    return _pickerView;
+//}
+//- (XSPhotoPickerView *)pickerView{
+//    if (_pickerView == nil) {
+//        _pickerView = [[XSPhotoPickerView alloc]initWithFrame:CGRectMake(0, 0, self.myTableView.width, 280)];
+//        _pickerView.changeCompleteBlock = ^(NSArray<HXPhotoModel *> *allList, NSArray<HXPhotoModel *> *photos, NSArray<HXPhotoModel *> *videos, BOOL isOriginal) {
+//            [allList hx_requestImageWithOriginal:isOriginal completion:^(NSArray<UIImage *> * _Nullable imageArray, NSArray<HXPhotoModel *> * _Nullable errorArray) {
+//
+//                      NSSLog(@"\nimage: %@\nerror: %@",imageArray,errorArray);
+//                  }];
+//        };
+//    }
+//    return _pickerView;
+//}
 
+- (void)pickerViewInit{
+    WEAK_SELF;
+    XSPhotoPickerView *pickerView = [[XSPhotoPickerView alloc]initWithFrame:CGRectMake(0, 0, self.myTableView.width, 280)];
+     pickerView.changeCompleteBlock = ^(NSArray<HXPhotoModel *> *allList, NSArray<HXPhotoModel *> *photos, NSArray<HXPhotoModel *> *videos, BOOL isOriginal) {
+         STRONG_SELF;
+           [allList hx_requestImageWithOriginal:isOriginal completion:^(NSArray<UIImage *> * _Nullable imageArray, NSArray<HXPhotoModel *> * _Nullable errorArray) {
+               
+               [self uploadImage:imageArray.firstObject callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+                   if (error == nil) {
+                       if (responseModel.code.integerValue == SuccessCode) {
+                           [self alertWithMessage:responseModel.message];
+                       }
+                   }else{
+                       [self alertWithMessage:error.domain];
+                   }
+               }];
+                     NSSLog(@"\nimage: %@\nerror: %@",imageArray,errorArray);
+                 }];
+       };
+    self.pickerView = pickerView;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     self.myTableView.delegate = self;
     self.myTableView.dataSource = self;
     self.myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -42,17 +85,22 @@
 //          [self.array addObjectsFromArray:self.secondArray];
           [self loadRentEnums];
           [self.nextBtn setTitle:@"下一步" forState:UIControlStateNormal];
-          
+
       }else if (self.submitStepsType == XSHouseSubmitStepsType_Third){
+          [self pickerViewInit];
+          self.myTableView.tableHeaderView = self.pickerView;
           [self.array addObjectsFromArray:self.thirdArray];
           [self.nextBtn setTitle:@"完成" forState:UIControlStateNormal];
       }
+    
     
     [self refreshUIData];
 }
 - (void)refreshUIData{
     [self.myTableView reloadData];
 }
+
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.array.count;
 }
@@ -114,7 +162,6 @@
         [MBProgressHUD  hideHUDForView:self.view animated:YES];
         if (error == nil) {
            [self alertWithMessage:responseModel.message];
-
         }else{
            [self alertWithMessage:error.domain];
         }

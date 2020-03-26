@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6C27A9422420FF1300BD634B /* XSRoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C27A9412420FF1300BD634B /* XSRoundedView.m */; };
+		6C3BEA9E242C3519001393EF /* UIView+HBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEA9C242C3519001393EF /* UIView+HBExtension.m */; };
+		6C3BEAA1242C4A66001393EF /* XSPhotoPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEA9F242C4A66001393EF /* XSPhotoPickerView.m */; };
+		6C3BEAA3242C4A9C001393EF /* XSPhotoPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEAA2242C4A9C001393EF /* XSPhotoPickerView.xib */; };
 		6C6BC14B241FA75300B62001 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BC14A241FA75300B62001 /* AppDelegate.m */; };
 		6C6BC14E241FA75300B62001 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BC14D241FA75300B62001 /* SceneDelegate.m */; };
 		6C6BC156241FA75400B62001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C6BC155241FA75400B62001 /* Assets.xcassets */; };
@@ -82,6 +85,11 @@
 		66F014AFFCE6A143AA113285 /* Pods-XSHouseLease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XSHouseLease.debug.xcconfig"; path = "Target Support Files/Pods-XSHouseLease/Pods-XSHouseLease.debug.xcconfig"; sourceTree = "<group>"; };
 		6C27A9402420FF1300BD634B /* XSRoundedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSRoundedView.h; sourceTree = "<group>"; };
 		6C27A9412420FF1300BD634B /* XSRoundedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSRoundedView.m; sourceTree = "<group>"; };
+		6C3BEA9C242C3519001393EF /* UIView+HBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HBExtension.m"; sourceTree = "<group>"; };
+		6C3BEA9D242C3519001393EF /* UIView+HBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HBExtension.h"; sourceTree = "<group>"; };
+		6C3BEA9F242C4A66001393EF /* XSPhotoPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSPhotoPickerView.m; sourceTree = "<group>"; };
+		6C3BEAA0242C4A66001393EF /* XSPhotoPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSPhotoPickerView.h; sourceTree = "<group>"; };
+		6C3BEAA2242C4A9C001393EF /* XSPhotoPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSPhotoPickerView.xib; sourceTree = "<group>"; };
 		6C6BC146241FA75300B62001 /* 房鼎汇.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "房鼎汇.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C6BC149241FA75300B62001 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6C6BC14A241FA75300B62001 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -225,6 +233,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		6C3BEA9B242C350E001393EF /* NSView */ = {
+			isa = PBXGroup;
+			children = (
+				6C3BEA9D242C3519001393EF /* UIView+HBExtension.h */,
+				6C3BEA9C242C3519001393EF /* UIView+HBExtension.m */,
+			);
+			path = NSView;
+			sourceTree = "<group>";
+		};
 		6C6BC13D241FA75300B62001 = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +369,7 @@
 		6CDCE3AA2426F76F0049AE63 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				6C3BEA9B242C350E001393EF /* NSView */,
 				6CDCE3CC2426F7DE0049AE63 /* NSObject */,
 				6CDCE3AB2426F76F0049AE63 /* NSDictionary */,
 				6CDCE3AE2426F76F0049AE63 /* NSMutableDictionary */,
@@ -460,6 +478,9 @@
 		6CDCE3E5242740630049AE63 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				6C3BEAA0242C4A66001393EF /* XSPhotoPickerView.h */,
+				6C3BEA9F242C4A66001393EF /* XSPhotoPickerView.m */,
+				6C3BEAA2242C4A9C001393EF /* XSPhotoPickerView.xib */,
 				6C27A9402420FF1300BD634B /* XSRoundedView.h */,
 				6C27A9412420FF1300BD634B /* XSRoundedView.m */,
 			);
@@ -683,6 +704,7 @@
 				6CED86932428B06A0059CDC5 /* XSHouseSubmitFirstViewController.xib in Resources */,
 				6CDCE3DE24273CB10049AE63 /* xsjson.json in Resources */,
 				6CED86AB2428DCC00059CDC5 /* XSHouseSubCollectionviewACell.xib in Resources */,
+				6C3BEAA3242C4A9C001393EF /* XSPhotoPickerView.xib in Resources */,
 				6CED86C32429DAC80059CDC5 /* XSHouseInfoFirst.json in Resources */,
 				6C6BC156241FA75400B62001 /* Assets.xcassets in Resources */,
 				6CED869E2428C76C0059CDC5 /* XSHouseSubListChooseTableViewCell.xib in Resources */,
@@ -755,6 +777,7 @@
 				6CEE8197242B7D8C001109E1 /* XSHouseFixedData.m in Sources */,
 				6CDCE3C62426F76F0049AE63 /* NSArray+Category.m in Sources */,
 				6CED86A52428C9190059CDC5 /* XSHouseSubTextFieldTableViewCell.m in Sources */,
+				6C3BEAA1242C4A66001393EF /* XSPhotoPickerView.m in Sources */,
 				6C6BC164241FA84200B62001 /* XSTabBarViewController.m in Sources */,
 				6C6BC14B241FA75300B62001 /* AppDelegate.m in Sources */,
 				6CDCE3C82426F76F0049AE63 /* NSMutableArray+safe.m in Sources */,
@@ -772,6 +795,7 @@
 				6CED867624274CB30059CDC5 /* XSLogInVcModel.m in Sources */,
 				6CED86AF2428DDF20059CDC5 /* XSHouseSubTextViewCell.m in Sources */,
 				6CED868824286D070059CDC5 /* XSHouseInfoModel.m in Sources */,
+				6C3BEA9E242C3519001393EF /* UIView+HBExtension.m in Sources */,
 				6C27A9422420FF1300BD634B /* XSRoundedView.m in Sources */,
 				6CDCE3A22426E6850049AE63 /* XSNetworkInterface.m in Sources */,
 				6CDCE3D92426F7DE0049AE63 /* NSObject+HBNotification.m in Sources */,

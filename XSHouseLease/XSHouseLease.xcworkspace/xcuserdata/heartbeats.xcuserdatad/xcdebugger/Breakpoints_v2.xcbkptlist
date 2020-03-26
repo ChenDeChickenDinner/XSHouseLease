@@ -3,22 +3,4 @@
    uuid = "D9E066BE-8E8A-40CF-AD5E-FDB2F85BE567"
    type = "0"
    version = "2.0">
-   <Breakpoints>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7F3C8908-D604-4F79-AB58-913D7E54960C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "XSHouseLease/MainTab/&#x6211;&#x7684;/&#x767b;&#x5f55;&#x6ce8;&#x518c;/XSLoginViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
-            landmarkName = "-loginSuccess:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-   </Breakpoints>
 </Bucket>

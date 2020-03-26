@@ -65,7 +65,9 @@
         }
     }];
 }
-
+- (void)uploadImage:(UIImage *)image callback:(HBCompletionBlock)callback{
+    [self.subInfoInterface uploadImage:image callback:callback];
+}
 -(void)city_tree{
     
     WEAK_SELF;

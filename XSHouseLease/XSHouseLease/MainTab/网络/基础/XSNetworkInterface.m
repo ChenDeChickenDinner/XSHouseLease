@@ -49,7 +49,10 @@
 
         if (callback) callback(nil,error);
     }];
+    
+    
  
+    
 }
 
 - (void)GET:(NSString *)URLString param:(NSDictionary *)aParam progress:(HBRequestProgress)downloadProgress callback:(HBCompletionBlock)callback {
