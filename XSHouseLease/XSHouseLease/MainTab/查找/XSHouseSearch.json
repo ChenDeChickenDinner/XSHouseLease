@@ -1,0 +1,50 @@
+[
+   {
+     "name": "二手房",
+     "key": "rentWay",
+     "value": 1,
+     "iconName": "ershouHouse"
+   },
+   {
+     "name": "新房",
+     "key": "rentWay",
+     "value": 2,
+     "iconName": "newHouse"
+   },
+   {
+     "name": "租房",
+     "key": "rentTimeType",
+     "value": 1,
+     "iconName": "rentHouse"
+   },
+   {
+     "name": "地图找房",
+     "key": "featurePoints",
+     "value": 1,
+     "iconName": "maphouse"
+   },
+   {
+     "name": "新上房源",
+     "key": "featurePoints",
+     "value": 8,
+     "iconName": "newAddHouse"
+   },
+   {
+     "name": "必看好房",
+     "key": "featurePoints",
+     "value": 2,
+     "iconName": "mustLookhouse"
+   },
+   {
+     "name": "地铁周边",
+     "key": "featurePoints",
+     "value": 5,
+     "iconName": "subwayHouse"
+   },
+   {
+     "name": "房贷计算器",
+     "key": "featurePoints",
+     "value": 3,
+     "iconName": "jisuanqi"
+   }
+ ]

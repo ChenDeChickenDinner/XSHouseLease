@@ -7,9 +7,12 @@
 //
 
 #import "HomePageViewController.h"
+#import "XSLocationSearchview.h"
 #import "XSHouseSubmitFirstViewController.h"
 
 @interface HomePageViewController ()<UINavigationControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIView *titleView;
+@property (weak, nonatomic) XSLocationSearchview *searchView;
 
 @end
 
@@ -18,6 +21,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.delegate = self;
+    
+    XSLocationSearchview *searchView = [XSLocationSearchview locationSearchview];
+    [self.titleView addSubview:searchView];
+    self.searchView = searchView;
+    
+}
+- (void)viewWillLayoutSubviews{
+    [super viewWillLayoutSubviews];
+    self.searchView.frame = self.titleView.bounds;
 }
 - (IBAction)jumpClick:(UIButton *)sender {
     XSHouseSubmitFirstViewController *vc = [[XSHouseSubmitFirstViewController alloc]init];

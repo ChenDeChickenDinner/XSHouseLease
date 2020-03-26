@@ -7,6 +7,7 @@
 //
 
 #import "XSBaseObject.h"
+#import "XSHouseEnum.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 城市数据
 @property (strong, nonatomic) NSMutableArray<BRProvinceModel *> *cityArray;
+
+@property (strong, nonatomic) NSMutableArray<XSHouseModuleModel *> *renthouseConditionArray;
 
 // 租房提交信息
 @property (strong, nonatomic) NSMutableDictionary *subRentParameterDict;

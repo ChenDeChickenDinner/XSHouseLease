@@ -26,6 +26,7 @@
 
     [self city_tree];
     
+    
 }
 - (void)keyValueUpdateBlackWithArray:(NSArray<XSHouseInfoCellModel *> *)array{
     for (XSHouseInfoCellModel *cellModel in array) {
@@ -81,6 +82,9 @@
         [XSHouseFixedData sharedInstance].cityArray = modelArray;
     }];
 }
+
+
+
 - (NSMutableArray *)getDataWithJsonName:(NSString *)name{
     NSError *error;
     NSString *path = [[NSBundle mainBundle]pathForResource:name ofType:@"json"];

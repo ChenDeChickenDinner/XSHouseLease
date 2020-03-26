@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface XSLocationSearchview : UIView
-
++ (instancetype)locationSearchview;
 @end
 
 NS_ASSUME_NONNULL_END

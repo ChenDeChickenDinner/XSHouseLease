@@ -21,5 +21,5 @@ pod 'AESCrypt','~> 0.0.1'
 pod 'BRPickerView'
 pod 'HXPhotoPicker'
 
-
+pod 'SDWebImage'
 end

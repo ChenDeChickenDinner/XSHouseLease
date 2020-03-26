@@ -7,26 +7,43 @@
 //
 
 #import "XSHouseModuleViewController.h"
+#import "XSCollectionView.h"
 
 @interface XSHouseModuleViewController ()
+@property (nonatomic,strong)XSRegionSearchView *searcView;
+@property (weak, nonatomic) XSCollectionView *collectionView;
 
 @end
 
 @implementation XSHouseModuleViewController
-
+- (XSRegionSearchView *)searcView{
+    if (_searcView == nil) {
+        _searcView = [[XSRegionSearchView alloc]init];
+        _searcView.frame = CGRectMake(0, 0, SCREEN_SIZE.width - 110, 40);
+    }
+    return _searcView;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
+    self.navigationItem.titleView = self.searcView;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"message"] style:UIBarButtonItemStyleDone target:self action:@selector(callMessage)];
+    
+     XSCollectionView *collectionView = [[XSCollectionView alloc]init];
+      collectionView.array = [XSHouseFixedData sharedInstance].renthouseConditionArray;
+      [self.view addSubview:collectionView];
+      self.collectionView = collectionView;
+    
+
 }
 
-/*
-#pragma mark - Navigation
+- (void)viewWillLayoutSubviews{
+    [super viewWillLayoutSubviews];
+    self.collectionView.frame = CGRectMake(0, 0, self.view.width, 210);
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
-*/
+- (void)callMessage{
+    
+}
 
 @end

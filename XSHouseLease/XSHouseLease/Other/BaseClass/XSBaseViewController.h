@@ -11,6 +11,7 @@
 #import "AFNetworking.h"
 #import "XSUserInfoInterface.h"
 #import "XShouseSubNetworkInterface.h"
+#import "XSRegionSearchView.h"
 
 
 NS_ASSUME_NONNULL_BEGIN

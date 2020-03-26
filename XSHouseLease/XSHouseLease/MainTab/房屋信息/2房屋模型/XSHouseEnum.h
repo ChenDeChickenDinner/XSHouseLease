@@ -50,6 +50,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @end
+@class XSHouseModuleModel;
+typedef void (^clickBlack)(XSHouseModuleModel *model);
 
+// 组成导航搜索
+@interface XSHouseModuleModel : XSBaseObject
+@property (nonatomic, copy) NSString *key;
+@property (nonatomic, strong) NSNumber *value;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *icon;
+@property (nonatomic, copy) NSString *iconName;
+
+@property (nonatomic, copy) clickBlack clickBlack;
+
+@end
 
 NS_ASSUME_NONNULL_END

@@ -16,7 +16,12 @@ DEF_SINGLETON(XSHouseFixedData)
     }
     return _subRentParameterDict;
 }
-
+- (NSMutableArray<XSHouseModuleModel *> *)renthouseConditionArray{
+    if (_renthouseConditionArray == nil) {
+        _renthouseConditionArray = [NSMutableArray array];
+    }
+    return _renthouseConditionArray;
+}
 - (void)LocationParameterUpdateWithProvince:(BRProvinceModel *)province city:(BRCityModel *)city area:(BRAreaModel *)area{
     
    NSNumber *provinceValue = [NSNumber numberWithInteger:province.code.integerValue];

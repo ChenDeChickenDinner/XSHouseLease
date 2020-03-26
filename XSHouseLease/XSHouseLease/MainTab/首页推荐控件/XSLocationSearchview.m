@@ -11,7 +11,8 @@
 @implementation XSLocationSearchview
 
 + (instancetype)locationSearchview{
-    locationSearchview *view = 
+    XSLocationSearchview *view  = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil].lastObject;
+    return view;
 }
 
 @end

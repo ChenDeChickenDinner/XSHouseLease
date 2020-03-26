@@ -21,8 +21,12 @@
     [self GET:url param:dict progress:nil callback:callback];
 
 }
+- (void)renthouseConditionWithCallback:(HBCompletionBlock)callback{
+    NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
+    NSString *url = [NSString stringWithFormat:@"%@/renthouse/condition",XSBaseUrl];
+    [self GET:url param:dict progress:nil callback:callback];
 
-
+}
 - (void)renthouseSaveWithDict:(NSDictionary *)dict callback:(HBCompletionBlock)callback{
     NSString *url = [NSString stringWithFormat:@"%@/renthouse/save2",XSBaseUrl];
     [self POST:url param:dict progress:nil callback:callback];

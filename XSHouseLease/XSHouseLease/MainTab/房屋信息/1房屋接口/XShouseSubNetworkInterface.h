@@ -16,7 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)getRentEnumsWithCallback:(HBCompletionBlock)callback;
 - (void)city_treeWithCallback:(HBCompletionBlock)callback;
 - (void)renthouseSaveWithDict:(NSDictionary *)dict callback:(HBCompletionBlock)callback;
-
+//租房导航
+- (void)renthouseConditionWithCallback:(HBCompletionBlock)callback;
 - (void)uploadImage:(UIImage *)image callback:(HBCompletionBlock)callback;
 @end
 
