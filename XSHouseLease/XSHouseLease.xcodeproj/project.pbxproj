@@ -11,6 +11,37 @@
 		6C3BEA9E242C3519001393EF /* UIView+HBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEA9C242C3519001393EF /* UIView+HBExtension.m */; };
 		6C3BEAA1242C4A66001393EF /* XSPhotoPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEA9F242C4A66001393EF /* XSPhotoPickerView.m */; };
 		6C3BEAA3242C4A9C001393EF /* XSPhotoPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEAA2242C4A9C001393EF /* XSPhotoPickerView.xib */; };
+		6C3BEAB3242C7C3A001393EF /* XSLocationSearchview.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEAB2242C7C3A001393EF /* XSLocationSearchview.m */; };
+		6C3BEAB7242C7C9B001393EF /* XSLocationSearchview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEAB6242C7C9B001393EF /* XSLocationSearchview.xib */; };
+		6C3BEB18242C868F001393EF /* HomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEB15242C868F001393EF /* HomePageViewController.xib */; };
+		6C3BEB19242C868F001393EF /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB17242C868F001393EF /* HomePageViewController.m */; };
+		6C3BEB4E242C8697001393EF /* XShouseSubNetworkInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB1C242C8697001393EF /* XShouseSubNetworkInterface.m */; };
+		6C3BEB4F242C8697001393EF /* XSHouseSubmitFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB22242C8697001393EF /* XSHouseSubmitFirstViewController.m */; };
+		6C3BEB50242C8697001393EF /* XSHouseSubmitFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEB23242C8697001393EF /* XSHouseSubmitFirstViewController.xib */; };
+		6C3BEB51242C8697001393EF /* XSHouseSubSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEB24242C8697001393EF /* XSHouseSubSuccessViewController.xib */; };
+		6C3BEB52242C8697001393EF /* XSHouseSubSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB25242C8697001393EF /* XSHouseSubSuccessViewController.m */; };
+		6C3BEB53242C8697001393EF /* XSHouseSubmitBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB27242C8697001393EF /* XSHouseSubmitBaseViewController.m */; };
+		6C3BEB54242C8697001393EF /* XSHouseSubCollectionviewBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB29242C8697001393EF /* XSHouseSubCollectionviewBCell.m */; };
+		6C3BEB55242C8697001393EF /* XSHouseSubCollectionviewBCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEB2A242C8697001393EF /* XSHouseSubCollectionviewBCell.xib */; };
+		6C3BEB56242C8697001393EF /* XSHouseSubListChooseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEB2B242C8697001393EF /* XSHouseSubListChooseTableViewCell.xib */; };
+		6C3BEB58242C8697001393EF /* XSHouseSubTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB2F242C8697001393EF /* XSHouseSubTextViewCell.m */; };
+		6C3BEB59242C8697001393EF /* XSHouseSubCollectionviewACell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB30242C8697001393EF /* XSHouseSubCollectionviewACell.m */; };
+		6C3BEB5A242C8697001393EF /* XSHouseSubCollectionviewACell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEB31242C8697001393EF /* XSHouseSubCollectionviewACell.xib */; };
+		6C3BEB5B242C8697001393EF /* XSHouseSubTextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEB32242C8697001393EF /* XSHouseSubTextViewCell.xib */; };
+		6C3BEB5C242C8697001393EF /* XSHouseSubTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB33242C8697001393EF /* XSHouseSubTableViewCell.m */; };
+		6C3BEB5D242C8697001393EF /* XSBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB35242C8697001393EF /* XSBaseTableViewCell.m */; };
+		6C3BEB5E242C8697001393EF /* XSHouseSubListChooseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB38242C8697001393EF /* XSHouseSubListChooseTableViewCell.m */; };
+		6C3BEB5F242C8697001393EF /* XSHouseSubTextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEB39242C8697001393EF /* XSHouseSubTextFieldTableViewCell.xib */; };
+		6C3BEB60242C8697001393EF /* XSHouseSubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEB3C242C8697001393EF /* XSHouseSubTableViewCell.xib */; };
+		6C3BEB61242C8697001393EF /* XSHouseSubTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB3D242C8697001393EF /* XSHouseSubTextFieldTableViewCell.m */; };
+		6C3BEB62242C8697001393EF /* XSHouseInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB41242C8697001393EF /* XSHouseInfoModel.m */; };
+		6C3BEB63242C8697001393EF /* XSHouseInfoThird.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEB45242C8697001393EF /* XSHouseInfoThird.json */; };
+		6C3BEB64242C8697001393EF /* XSHouseInfoFirst.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEB46242C8697001393EF /* XSHouseInfoFirst.json */; };
+		6C3BEB65242C8697001393EF /* XSHouseEnum.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB47242C8697001393EF /* XSHouseEnum.m */; };
+		6C3BEB66242C8697001393EF /* XSHouseFixedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB48242C8697001393EF /* XSHouseFixedData.m */; };
+		6C3BEB67242C8697001393EF /* XSHouseInfoSecond.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEB49242C8697001393EF /* XSHouseInfoSecond.json */; };
+		6C3BEB68242C8697001393EF /* XSHouseModuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB4C242C8697001393EF /* XSHouseModuleViewController.m */; };
+		6C3BEB69242C8697001393EF /* XSHouseModuleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEB4D242C8697001393EF /* XSHouseModuleViewController.xib */; };
 		6C6BC14B241FA75300B62001 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BC14A241FA75300B62001 /* AppDelegate.m */; };
 		6C6BC14E241FA75300B62001 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BC14D241FA75300B62001 /* SceneDelegate.m */; };
 		6C6BC156241FA75400B62001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C6BC155241FA75400B62001 /* Assets.xcassets */; };
@@ -50,32 +81,7 @@
 		6CED867624274CB30059CDC5 /* XSLogInVcModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CED867524274CB30059CDC5 /* XSLogInVcModel.m */; };
 		6CED867924274CE60059CDC5 /* XSUserLogInModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CED867824274CE60059CDC5 /* XSUserLogInModel.m */; };
 		6CED867D242756950059CDC5 /* XSUserServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CED867C242756950059CDC5 /* XSUserServer.m */; };
-		6CED86812427AF100059CDC5 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CED867F2427AF100059CDC5 /* HomePageViewController.m */; };
-		6CED86822427AF100059CDC5 /* HomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CED86802427AF100059CDC5 /* HomePageViewController.xib */; };
-		6CED868824286D070059CDC5 /* XSHouseInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CED868724286D070059CDC5 /* XSHouseInfoModel.m */; };
-		6CED868C242896D60059CDC5 /* XSHouseEnum.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CED868B242896D50059CDC5 /* XSHouseEnum.m */; };
-		6CED86922428B06A0059CDC5 /* XSHouseSubmitFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CED86902428B06A0059CDC5 /* XSHouseSubmitFirstViewController.m */; };
-		6CED86932428B06A0059CDC5 /* XSHouseSubmitFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CED86912428B06A0059CDC5 /* XSHouseSubmitFirstViewController.xib */; };
-		6CED86962428B1670059CDC5 /* XSHouseSubmitBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CED86952428B1670059CDC5 /* XSHouseSubmitBaseViewController.m */; };
-		6CED86992428BFB80059CDC5 /* XSHouseSubTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CED86982428BFB80059CDC5 /* XSHouseSubTableViewCell.m */; };
-		6CED869D2428C76C0059CDC5 /* XSHouseSubListChooseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CED869B2428C76C0059CDC5 /* XSHouseSubListChooseTableViewCell.m */; };
-		6CED869E2428C76C0059CDC5 /* XSHouseSubListChooseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CED869C2428C76C0059CDC5 /* XSHouseSubListChooseTableViewCell.xib */; };
-		6CED86A52428C9190059CDC5 /* XSHouseSubTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CED86A32428C9190059CDC5 /* XSHouseSubTextFieldTableViewCell.m */; };
-		6CED86A62428C9190059CDC5 /* XSHouseSubTextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CED86A42428C9190059CDC5 /* XSHouseSubTextFieldTableViewCell.xib */; };
-		6CED86AA2428DCC00059CDC5 /* XSHouseSubCollectionviewACell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CED86A82428DCC00059CDC5 /* XSHouseSubCollectionviewACell.m */; };
-		6CED86AB2428DCC00059CDC5 /* XSHouseSubCollectionviewACell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CED86A92428DCC00059CDC5 /* XSHouseSubCollectionviewACell.xib */; };
-		6CED86AF2428DDF20059CDC5 /* XSHouseSubTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CED86AD2428DDF20059CDC5 /* XSHouseSubTextViewCell.m */; };
-		6CED86B02428DDF20059CDC5 /* XSHouseSubTextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CED86AE2428DDF20059CDC5 /* XSHouseSubTextViewCell.xib */; };
-		6CED86B42428E9670059CDC5 /* XSHouseSubCollectionviewBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CED86B22428E9670059CDC5 /* XSHouseSubCollectionviewBCell.m */; };
-		6CED86B52428E9670059CDC5 /* XSHouseSubCollectionviewBCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CED86B32428E9670059CDC5 /* XSHouseSubCollectionviewBCell.xib */; };
-		6CED86B72428FB930059CDC5 /* XSHouseSubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CED86B62428FB930059CDC5 /* XSHouseSubTableViewCell.xib */; };
-		6CED86BA2429A3BF0059CDC5 /* XSBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CED86B92429A3BF0059CDC5 /* XSBaseTableViewCell.m */; };
 		6CED86BD2429A3D80059CDC5 /* XSBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CED86BC2429A3D80059CDC5 /* XSBaseCollectionViewCell.m */; };
-		6CED86C12429DAC80059CDC5 /* XSHouseInfoThird.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CED86BE2429DAC70059CDC5 /* XSHouseInfoThird.json */; };
-		6CED86C22429DAC80059CDC5 /* XSHouseInfoSecond.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CED86BF2429DAC80059CDC5 /* XSHouseInfoSecond.json */; };
-		6CED86C32429DAC80059CDC5 /* XSHouseInfoFirst.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CED86C02429DAC80059CDC5 /* XSHouseInfoFirst.json */; };
-		6CED86C72429E5560059CDC5 /* XShouseSubNetworkInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CED86C62429E5560059CDC5 /* XShouseSubNetworkInterface.m */; };
-		6CEE8197242B7D8C001109E1 /* XSHouseFixedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CEE8196242B7D8C001109E1 /* XSHouseFixedData.m */; };
 		6CEE819A242B8B56001109E1 /* PrintBeautifulLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CEE8198242B8B56001109E1 /* PrintBeautifulLog.m */; };
 		9AC3A3F8DF5C36DD201ED436 /* libPods-XSHouseLease.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2818EC9B5CB7624F84048215 /* libPods-XSHouseLease.a */; };
 /* End PBXBuildFile section */
@@ -90,6 +96,55 @@
 		6C3BEA9F242C4A66001393EF /* XSPhotoPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSPhotoPickerView.m; sourceTree = "<group>"; };
 		6C3BEAA0242C4A66001393EF /* XSPhotoPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSPhotoPickerView.h; sourceTree = "<group>"; };
 		6C3BEAA2242C4A9C001393EF /* XSPhotoPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSPhotoPickerView.xib; sourceTree = "<group>"; };
+		6C3BEAB1242C7C3A001393EF /* XSLocationSearchview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSLocationSearchview.h; sourceTree = "<group>"; };
+		6C3BEAB2242C7C3A001393EF /* XSLocationSearchview.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSLocationSearchview.m; sourceTree = "<group>"; };
+		6C3BEAB6242C7C9B001393EF /* XSLocationSearchview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSLocationSearchview.xib; sourceTree = "<group>"; };
+		6C3BEB15242C868F001393EF /* HomePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageViewController.xib; sourceTree = "<group>"; };
+		6C3BEB16242C868F001393EF /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
+		6C3BEB17242C868F001393EF /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
+		6C3BEB1C242C8697001393EF /* XShouseSubNetworkInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XShouseSubNetworkInterface.m; sourceTree = "<group>"; };
+		6C3BEB1D242C8697001393EF /* XShouseSubNetworkInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XShouseSubNetworkInterface.h; sourceTree = "<group>"; };
+		6C3BEB20242C8697001393EF /* XSHouseSubSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubSuccessViewController.h; sourceTree = "<group>"; };
+		6C3BEB21242C8697001393EF /* XSHouseSubmitBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubmitBaseViewController.h; sourceTree = "<group>"; };
+		6C3BEB22242C8697001393EF /* XSHouseSubmitFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubmitFirstViewController.m; sourceTree = "<group>"; };
+		6C3BEB23242C8697001393EF /* XSHouseSubmitFirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubmitFirstViewController.xib; sourceTree = "<group>"; };
+		6C3BEB24242C8697001393EF /* XSHouseSubSuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubSuccessViewController.xib; sourceTree = "<group>"; };
+		6C3BEB25242C8697001393EF /* XSHouseSubSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubSuccessViewController.m; sourceTree = "<group>"; };
+		6C3BEB26242C8697001393EF /* XSHouseSubmitFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubmitFirstViewController.h; sourceTree = "<group>"; };
+		6C3BEB27242C8697001393EF /* XSHouseSubmitBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubmitBaseViewController.m; sourceTree = "<group>"; };
+		6C3BEB29242C8697001393EF /* XSHouseSubCollectionviewBCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubCollectionviewBCell.m; sourceTree = "<group>"; };
+		6C3BEB2A242C8697001393EF /* XSHouseSubCollectionviewBCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubCollectionviewBCell.xib; sourceTree = "<group>"; };
+		6C3BEB2B242C8697001393EF /* XSHouseSubListChooseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubListChooseTableViewCell.xib; sourceTree = "<group>"; };
+		6C3BEB2C242C8697001393EF /* XSBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBaseTableViewCell.h; sourceTree = "<group>"; };
+		6C3BEB2E242C8697001393EF /* XSHouseSubListChooseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubListChooseTableViewCell.h; sourceTree = "<group>"; };
+		6C3BEB2F242C8697001393EF /* XSHouseSubTextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubTextViewCell.m; sourceTree = "<group>"; };
+		6C3BEB30242C8697001393EF /* XSHouseSubCollectionviewACell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubCollectionviewACell.m; sourceTree = "<group>"; };
+		6C3BEB31242C8697001393EF /* XSHouseSubCollectionviewACell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubCollectionviewACell.xib; sourceTree = "<group>"; };
+		6C3BEB32242C8697001393EF /* XSHouseSubTextViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubTextViewCell.xib; sourceTree = "<group>"; };
+		6C3BEB33242C8697001393EF /* XSHouseSubTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubTableViewCell.m; sourceTree = "<group>"; };
+		6C3BEB34242C8697001393EF /* XSHouseSubTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubTextFieldTableViewCell.h; sourceTree = "<group>"; };
+		6C3BEB35242C8697001393EF /* XSBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBaseTableViewCell.m; sourceTree = "<group>"; };
+		6C3BEB37242C8697001393EF /* XSHouseSubCollectionviewBCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubCollectionviewBCell.h; sourceTree = "<group>"; };
+		6C3BEB38242C8697001393EF /* XSHouseSubListChooseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubListChooseTableViewCell.m; sourceTree = "<group>"; };
+		6C3BEB39242C8697001393EF /* XSHouseSubTextFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubTextFieldTableViewCell.xib; sourceTree = "<group>"; };
+		6C3BEB3A242C8697001393EF /* XSHouseSubCollectionviewACell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubCollectionviewACell.h; sourceTree = "<group>"; };
+		6C3BEB3B242C8697001393EF /* XSHouseSubTextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubTextViewCell.h; sourceTree = "<group>"; };
+		6C3BEB3C242C8697001393EF /* XSHouseSubTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubTableViewCell.xib; sourceTree = "<group>"; };
+		6C3BEB3D242C8697001393EF /* XSHouseSubTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubTextFieldTableViewCell.m; sourceTree = "<group>"; };
+		6C3BEB3E242C8697001393EF /* XSHouseSubTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubTableViewCell.h; sourceTree = "<group>"; };
+		6C3BEB40242C8697001393EF /* XSHouseSubAllMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubAllMode.h; sourceTree = "<group>"; };
+		6C3BEB41242C8697001393EF /* XSHouseInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseInfoModel.m; sourceTree = "<group>"; };
+		6C3BEB42242C8697001393EF /* XSHouseEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseEnum.h; sourceTree = "<group>"; };
+		6C3BEB43242C8697001393EF /* XSHouseFixedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseFixedData.h; sourceTree = "<group>"; };
+		6C3BEB44242C8697001393EF /* XSHouseInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseInfoModel.h; sourceTree = "<group>"; };
+		6C3BEB45242C8697001393EF /* XSHouseInfoThird.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseInfoThird.json; sourceTree = "<group>"; };
+		6C3BEB46242C8697001393EF /* XSHouseInfoFirst.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseInfoFirst.json; sourceTree = "<group>"; };
+		6C3BEB47242C8697001393EF /* XSHouseEnum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseEnum.m; sourceTree = "<group>"; };
+		6C3BEB48242C8697001393EF /* XSHouseFixedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseFixedData.m; sourceTree = "<group>"; };
+		6C3BEB49242C8697001393EF /* XSHouseInfoSecond.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseInfoSecond.json; sourceTree = "<group>"; };
+		6C3BEB4B242C8697001393EF /* XSHouseModuleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseModuleViewController.h; sourceTree = "<group>"; };
+		6C3BEB4C242C8697001393EF /* XSHouseModuleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseModuleViewController.m; sourceTree = "<group>"; };
+		6C3BEB4D242C8697001393EF /* XSHouseModuleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseModuleViewController.xib; sourceTree = "<group>"; };
 		6C6BC146241FA75300B62001 /* 房鼎汇.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "房鼎汇.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C6BC149241FA75300B62001 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6C6BC14A241FA75300B62001 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -165,48 +220,8 @@
 		6CED867824274CE60059CDC5 /* XSUserLogInModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSUserLogInModel.m; sourceTree = "<group>"; };
 		6CED867B242756950059CDC5 /* XSUserServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSUserServer.h; sourceTree = "<group>"; };
 		6CED867C242756950059CDC5 /* XSUserServer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSUserServer.m; sourceTree = "<group>"; };
-		6CED867E2427AF100059CDC5 /* HomePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HomePageViewController.h; path = ../../../../../../Documents/HomePageViewController.h; sourceTree = "<group>"; };
-		6CED867F2427AF100059CDC5 /* HomePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HomePageViewController.m; path = ../../../../../../Documents/HomePageViewController.m; sourceTree = "<group>"; };
-		6CED86802427AF100059CDC5 /* HomePageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomePageViewController.xib; path = ../../../../../../Documents/HomePageViewController.xib; sourceTree = "<group>"; };
-		6CED868624286D070059CDC5 /* XSHouseInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = XSHouseInfoModel.h; path = ../../../../../../../Documents/XSHouseInfoModel.h; sourceTree = "<group>"; };
-		6CED868724286D070059CDC5 /* XSHouseInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = XSHouseInfoModel.m; path = ../../../../../../../Documents/XSHouseInfoModel.m; sourceTree = "<group>"; };
-		6CED868A242896D50059CDC5 /* XSHouseEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseEnum.h; sourceTree = "<group>"; };
-		6CED868B242896D50059CDC5 /* XSHouseEnum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseEnum.m; sourceTree = "<group>"; };
-		6CED868F2428B06A0059CDC5 /* XSHouseSubmitFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSHouseSubmitFirstViewController.h; sourceTree = "<group>"; };
-		6CED86902428B06A0059CDC5 /* XSHouseSubmitFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubmitFirstViewController.m; sourceTree = "<group>"; };
-		6CED86912428B06A0059CDC5 /* XSHouseSubmitFirstViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSHouseSubmitFirstViewController.xib; sourceTree = "<group>"; };
-		6CED86942428B1660059CDC5 /* XSHouseSubmitBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSHouseSubmitBaseViewController.h; sourceTree = "<group>"; };
-		6CED86952428B1670059CDC5 /* XSHouseSubmitBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubmitBaseViewController.m; sourceTree = "<group>"; };
-		6CED86972428BFB80059CDC5 /* XSHouseSubTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = XSHouseSubTableViewCell.h; path = ../../../../../../../Documents/XSHouseSubTableViewCell.h; sourceTree = "<group>"; };
-		6CED86982428BFB80059CDC5 /* XSHouseSubTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = XSHouseSubTableViewCell.m; path = ../../../../../../../Documents/XSHouseSubTableViewCell.m; sourceTree = "<group>"; };
-		6CED869A2428C76C0059CDC5 /* XSHouseSubListChooseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = XSHouseSubListChooseTableViewCell.h; path = ../../../../../../../Documents/XSHouseSubListChooseTableViewCell.h; sourceTree = "<group>"; };
-		6CED869B2428C76C0059CDC5 /* XSHouseSubListChooseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = XSHouseSubListChooseTableViewCell.m; path = ../../../../../../../Documents/XSHouseSubListChooseTableViewCell.m; sourceTree = "<group>"; };
-		6CED869C2428C76C0059CDC5 /* XSHouseSubListChooseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = XSHouseSubListChooseTableViewCell.xib; path = ../../../../../../../Documents/XSHouseSubListChooseTableViewCell.xib; sourceTree = "<group>"; };
-		6CED86A22428C9190059CDC5 /* XSHouseSubTextFieldTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = XSHouseSubTextFieldTableViewCell.h; path = ../../../../../../../Documents/XSHouseSubTextFieldTableViewCell.h; sourceTree = "<group>"; };
-		6CED86A32428C9190059CDC5 /* XSHouseSubTextFieldTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = XSHouseSubTextFieldTableViewCell.m; path = ../../../../../../../Documents/XSHouseSubTextFieldTableViewCell.m; sourceTree = "<group>"; };
-		6CED86A42428C9190059CDC5 /* XSHouseSubTextFieldTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = XSHouseSubTextFieldTableViewCell.xib; path = ../../../../../../../Documents/XSHouseSubTextFieldTableViewCell.xib; sourceTree = "<group>"; };
-		6CED86A72428DCC00059CDC5 /* XSHouseSubCollectionviewACell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSHouseSubCollectionviewACell.h; sourceTree = "<group>"; };
-		6CED86A82428DCC00059CDC5 /* XSHouseSubCollectionviewACell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubCollectionviewACell.m; sourceTree = "<group>"; };
-		6CED86A92428DCC00059CDC5 /* XSHouseSubCollectionviewACell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSHouseSubCollectionviewACell.xib; sourceTree = "<group>"; };
-		6CED86AC2428DDF20059CDC5 /* XSHouseSubTextViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = XSHouseSubTextViewCell.h; path = ../../../../../../../Documents/XSHouseSubTextViewCell.h; sourceTree = "<group>"; };
-		6CED86AD2428DDF20059CDC5 /* XSHouseSubTextViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = XSHouseSubTextViewCell.m; path = ../../../../../../../Documents/XSHouseSubTextViewCell.m; sourceTree = "<group>"; };
-		6CED86AE2428DDF20059CDC5 /* XSHouseSubTextViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = XSHouseSubTextViewCell.xib; path = ../../../../../../../Documents/XSHouseSubTextViewCell.xib; sourceTree = "<group>"; };
-		6CED86B12428E9670059CDC5 /* XSHouseSubCollectionviewBCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = XSHouseSubCollectionviewBCell.h; path = ../../../../../../../Documents/XSHouseSubCollectionviewBCell.h; sourceTree = "<group>"; };
-		6CED86B22428E9670059CDC5 /* XSHouseSubCollectionviewBCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = XSHouseSubCollectionviewBCell.m; path = ../../../../../../../Documents/XSHouseSubCollectionviewBCell.m; sourceTree = "<group>"; };
-		6CED86B32428E9670059CDC5 /* XSHouseSubCollectionviewBCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = XSHouseSubCollectionviewBCell.xib; path = ../../../../../../../Documents/XSHouseSubCollectionviewBCell.xib; sourceTree = "<group>"; };
-		6CED86B62428FB930059CDC5 /* XSHouseSubTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = XSHouseSubTableViewCell.xib; path = ../../../../../../../Documents/XSHouseSubTableViewCell.xib; sourceTree = "<group>"; };
-		6CED86B82429A3BF0059CDC5 /* XSBaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = XSBaseTableViewCell.h; path = ../../../../../../Documents/XSBaseTableViewCell.h; sourceTree = "<group>"; };
-		6CED86B92429A3BF0059CDC5 /* XSBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = XSBaseTableViewCell.m; path = ../../../../../../Documents/XSBaseTableViewCell.m; sourceTree = "<group>"; };
 		6CED86BB2429A3D80059CDC5 /* XSBaseCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSBaseCollectionViewCell.h; sourceTree = "<group>"; };
 		6CED86BC2429A3D80059CDC5 /* XSBaseCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSBaseCollectionViewCell.m; sourceTree = "<group>"; };
-		6CED86BE2429DAC70059CDC5 /* XSHouseInfoThird.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseInfoThird.json; sourceTree = "<group>"; };
-		6CED86BF2429DAC80059CDC5 /* XSHouseInfoSecond.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseInfoSecond.json; sourceTree = "<group>"; };
-		6CED86C02429DAC80059CDC5 /* XSHouseInfoFirst.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseInfoFirst.json; sourceTree = "<group>"; };
-		6CED86C52429E5560059CDC5 /* XShouseSubNetworkInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = XShouseSubNetworkInterface.h; path = ../../../../../../../Documents/XShouseSubNetworkInterface.h; sourceTree = "<group>"; };
-		6CED86C62429E5560059CDC5 /* XShouseSubNetworkInterface.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = XShouseSubNetworkInterface.m; path = ../../../../../../../Documents/XShouseSubNetworkInterface.m; sourceTree = "<group>"; };
-		6CED86C82429E6280059CDC5 /* XSHouseSubAllMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = XSHouseSubAllMode.h; path = ../../../../../../../Documents/XSHouseSubAllMode.h; sourceTree = "<group>"; };
-		6CEE8195242B7D8C001109E1 /* XSHouseFixedData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSHouseFixedData.h; sourceTree = "<group>"; };
-		6CEE8196242B7D8C001109E1 /* XSHouseFixedData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSHouseFixedData.m; sourceTree = "<group>"; };
 		6CEE8198242B8B56001109E1 /* PrintBeautifulLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrintBeautifulLog.m; sourceTree = "<group>"; };
 		6CEE8199242B8B56001109E1 /* PrintBeautifulLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrintBeautifulLog.h; sourceTree = "<group>"; };
 		854FDABF6045260FA4A570E3 /* Pods-XSHouseLease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XSHouseLease.release.xcconfig"; path = "Target Support Files/Pods-XSHouseLease/Pods-XSHouseLease.release.xcconfig"; sourceTree = "<group>"; };
@@ -240,6 +255,114 @@
 				6C3BEA9C242C3519001393EF /* UIView+HBExtension.m */,
 			);
 			path = NSView;
+			sourceTree = "<group>";
+		};
+		6C3BEAB0242C7AE7001393EF /* 首页推荐控件 */ = {
+			isa = PBXGroup;
+			children = (
+				6C3BEAB1242C7C3A001393EF /* XSLocationSearchview.h */,
+				6C3BEAB2242C7C3A001393EF /* XSLocationSearchview.m */,
+				6C3BEAB6242C7C9B001393EF /* XSLocationSearchview.xib */,
+			);
+			path = "首页推荐控件";
+			sourceTree = "<group>";
+		};
+		6C3BEB1A242C8697001393EF /* 房屋信息 */ = {
+			isa = PBXGroup;
+			children = (
+				6C3BEB1B242C8697001393EF /* 1房屋接口 */,
+				6C3BEB3F242C8697001393EF /* 2房屋模型 */,
+				6C3BEB1E242C8697001393EF /* 3房屋上传 */,
+				6C3BEB4A242C8697001393EF /* 4房屋模块 */,
+			);
+			path = "房屋信息";
+			sourceTree = "<group>";
+		};
+		6C3BEB1B242C8697001393EF /* 1房屋接口 */ = {
+			isa = PBXGroup;
+			children = (
+				6C3BEB1C242C8697001393EF /* XShouseSubNetworkInterface.m */,
+				6C3BEB1D242C8697001393EF /* XShouseSubNetworkInterface.h */,
+			);
+			path = "1房屋接口";
+			sourceTree = "<group>";
+		};
+		6C3BEB1E242C8697001393EF /* 3房屋上传 */ = {
+			isa = PBXGroup;
+			children = (
+				6C3BEB1F242C8697001393EF /* Controller */,
+				6C3BEB28242C8697001393EF /* TableViewCell */,
+			);
+			path = "3房屋上传";
+			sourceTree = "<group>";
+		};
+		6C3BEB1F242C8697001393EF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6C3BEB20242C8697001393EF /* XSHouseSubSuccessViewController.h */,
+				6C3BEB21242C8697001393EF /* XSHouseSubmitBaseViewController.h */,
+				6C3BEB22242C8697001393EF /* XSHouseSubmitFirstViewController.m */,
+				6C3BEB23242C8697001393EF /* XSHouseSubmitFirstViewController.xib */,
+				6C3BEB24242C8697001393EF /* XSHouseSubSuccessViewController.xib */,
+				6C3BEB25242C8697001393EF /* XSHouseSubSuccessViewController.m */,
+				6C3BEB26242C8697001393EF /* XSHouseSubmitFirstViewController.h */,
+				6C3BEB27242C8697001393EF /* XSHouseSubmitBaseViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6C3BEB28242C8697001393EF /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				6C3BEB2C242C8697001393EF /* XSBaseTableViewCell.h */,
+				6C3BEB35242C8697001393EF /* XSBaseTableViewCell.m */,
+				6C3BEB3A242C8697001393EF /* XSHouseSubCollectionviewACell.h */,
+				6C3BEB30242C8697001393EF /* XSHouseSubCollectionviewACell.m */,
+				6C3BEB31242C8697001393EF /* XSHouseSubCollectionviewACell.xib */,
+				6C3BEB37242C8697001393EF /* XSHouseSubCollectionviewBCell.h */,
+				6C3BEB29242C8697001393EF /* XSHouseSubCollectionviewBCell.m */,
+				6C3BEB2A242C8697001393EF /* XSHouseSubCollectionviewBCell.xib */,
+				6C3BEB2E242C8697001393EF /* XSHouseSubListChooseTableViewCell.h */,
+				6C3BEB38242C8697001393EF /* XSHouseSubListChooseTableViewCell.m */,
+				6C3BEB2B242C8697001393EF /* XSHouseSubListChooseTableViewCell.xib */,
+				6C3BEB3E242C8697001393EF /* XSHouseSubTableViewCell.h */,
+				6C3BEB33242C8697001393EF /* XSHouseSubTableViewCell.m */,
+				6C3BEB3C242C8697001393EF /* XSHouseSubTableViewCell.xib */,
+				6C3BEB34242C8697001393EF /* XSHouseSubTextFieldTableViewCell.h */,
+				6C3BEB3D242C8697001393EF /* XSHouseSubTextFieldTableViewCell.m */,
+				6C3BEB39242C8697001393EF /* XSHouseSubTextFieldTableViewCell.xib */,
+				6C3BEB3B242C8697001393EF /* XSHouseSubTextViewCell.h */,
+				6C3BEB2F242C8697001393EF /* XSHouseSubTextViewCell.m */,
+				6C3BEB32242C8697001393EF /* XSHouseSubTextViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		6C3BEB3F242C8697001393EF /* 2房屋模型 */ = {
+			isa = PBXGroup;
+			children = (
+				6C3BEB40242C8697001393EF /* XSHouseSubAllMode.h */,
+				6C3BEB41242C8697001393EF /* XSHouseInfoModel.m */,
+				6C3BEB42242C8697001393EF /* XSHouseEnum.h */,
+				6C3BEB43242C8697001393EF /* XSHouseFixedData.h */,
+				6C3BEB44242C8697001393EF /* XSHouseInfoModel.h */,
+				6C3BEB45242C8697001393EF /* XSHouseInfoThird.json */,
+				6C3BEB46242C8697001393EF /* XSHouseInfoFirst.json */,
+				6C3BEB47242C8697001393EF /* XSHouseEnum.m */,
+				6C3BEB48242C8697001393EF /* XSHouseFixedData.m */,
+				6C3BEB49242C8697001393EF /* XSHouseInfoSecond.json */,
+			);
+			path = "2房屋模型";
+			sourceTree = "<group>";
+		};
+		6C3BEB4A242C8697001393EF /* 4房屋模块 */ = {
+			isa = PBXGroup;
+			children = (
+				6C3BEB4B242C8697001393EF /* XSHouseModuleViewController.h */,
+				6C3BEB4C242C8697001393EF /* XSHouseModuleViewController.m */,
+				6C3BEB4D242C8697001393EF /* XSHouseModuleViewController.xib */,
+			);
+			path = "4房屋模块";
 			sourceTree = "<group>";
 		};
 		6C6BC13D241FA75300B62001 = {
@@ -280,8 +403,9 @@
 		6C6BC165241FA8F300B62001 /* MainTab */ = {
 			isa = PBXGroup;
 			children = (
+				6C3BEAB0242C7AE7001393EF /* 首页推荐控件 */,
 				6CEC5FAF2424DC1A00DC619E /* 网络 */,
-				6CED868324286C430059CDC5 /* 房屋信息 */,
+				6C3BEB1A242C8697001393EF /* 房屋信息 */,
 				6C6BC162241FA84100B62001 /* XSTabBarViewController.h */,
 				6C6BC163241FA84100B62001 /* XSTabBarViewController.m */,
 				6CDCE3E7242740AB0049AE63 /* 首页 */,
@@ -337,8 +461,6 @@
 				6C6BC176241FAA8800B62001 /* XSBaseNavViewController.m */,
 				6C6BC166241FA98500B62001 /* XSBaseViewController.h */,
 				6C6BC167241FA98500B62001 /* XSBaseViewController.m */,
-				6CED86B82429A3BF0059CDC5 /* XSBaseTableViewCell.h */,
-				6CED86B92429A3BF0059CDC5 /* XSBaseTableViewCell.m */,
 				6CED86BB2429A3D80059CDC5 /* XSBaseCollectionViewCell.h */,
 				6CED86BC2429A3D80059CDC5 /* XSBaseCollectionViewCell.m */,
 			);
@@ -500,9 +622,9 @@
 		6CDCE3E7242740AB0049AE63 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
-				6CED867E2427AF100059CDC5 /* HomePageViewController.h */,
-				6CED867F2427AF100059CDC5 /* HomePageViewController.m */,
-				6CED86802427AF100059CDC5 /* HomePageViewController.xib */,
+				6C3BEB16242C868F001393EF /* HomePageViewController.h */,
+				6C3BEB17242C868F001393EF /* HomePageViewController.m */,
+				6C3BEB15242C868F001393EF /* HomePageViewController.xib */,
 			);
 			path = "首页";
 			sourceTree = "<group>";
@@ -547,80 +669,6 @@
 				6CDCE3A12426E6850049AE63 /* XSNetworkInterface.m */,
 			);
 			path = "基础";
-			sourceTree = "<group>";
-		};
-		6CED868324286C430059CDC5 /* 房屋信息 */ = {
-			isa = PBXGroup;
-			children = (
-				6CED86C42429E5310059CDC5 /* 房屋信息请求 */,
-				6CED868524286CA50059CDC5 /* 房屋模型 */,
-				6CED8689242896D50059CDC5 /* Controller */,
-				6CED868424286C8A0059CDC5 /* TableViewCell */,
-			);
-			path = "房屋信息";
-			sourceTree = "<group>";
-		};
-		6CED868424286C8A0059CDC5 /* TableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				6CED86972428BFB80059CDC5 /* XSHouseSubTableViewCell.h */,
-				6CED86982428BFB80059CDC5 /* XSHouseSubTableViewCell.m */,
-				6CED86B62428FB930059CDC5 /* XSHouseSubTableViewCell.xib */,
-				6CED869A2428C76C0059CDC5 /* XSHouseSubListChooseTableViewCell.h */,
-				6CED869B2428C76C0059CDC5 /* XSHouseSubListChooseTableViewCell.m */,
-				6CED869C2428C76C0059CDC5 /* XSHouseSubListChooseTableViewCell.xib */,
-				6CED86A22428C9190059CDC5 /* XSHouseSubTextFieldTableViewCell.h */,
-				6CED86A32428C9190059CDC5 /* XSHouseSubTextFieldTableViewCell.m */,
-				6CED86A42428C9190059CDC5 /* XSHouseSubTextFieldTableViewCell.xib */,
-				6CED86A72428DCC00059CDC5 /* XSHouseSubCollectionviewACell.h */,
-				6CED86A82428DCC00059CDC5 /* XSHouseSubCollectionviewACell.m */,
-				6CED86A92428DCC00059CDC5 /* XSHouseSubCollectionviewACell.xib */,
-				6CED86B12428E9670059CDC5 /* XSHouseSubCollectionviewBCell.h */,
-				6CED86B22428E9670059CDC5 /* XSHouseSubCollectionviewBCell.m */,
-				6CED86B32428E9670059CDC5 /* XSHouseSubCollectionviewBCell.xib */,
-				6CED86AC2428DDF20059CDC5 /* XSHouseSubTextViewCell.h */,
-				6CED86AD2428DDF20059CDC5 /* XSHouseSubTextViewCell.m */,
-				6CED86AE2428DDF20059CDC5 /* XSHouseSubTextViewCell.xib */,
-			);
-			path = TableViewCell;
-			sourceTree = "<group>";
-		};
-		6CED868524286CA50059CDC5 /* 房屋模型 */ = {
-			isa = PBXGroup;
-			children = (
-				6CED86C02429DAC80059CDC5 /* XSHouseInfoFirst.json */,
-				6CED86BF2429DAC80059CDC5 /* XSHouseInfoSecond.json */,
-				6CED86BE2429DAC70059CDC5 /* XSHouseInfoThird.json */,
-				6CED86C82429E6280059CDC5 /* XSHouseSubAllMode.h */,
-				6CEE8195242B7D8C001109E1 /* XSHouseFixedData.h */,
-				6CEE8196242B7D8C001109E1 /* XSHouseFixedData.m */,
-				6CED868A242896D50059CDC5 /* XSHouseEnum.h */,
-				6CED868B242896D50059CDC5 /* XSHouseEnum.m */,
-				6CED868624286D070059CDC5 /* XSHouseInfoModel.h */,
-				6CED868724286D070059CDC5 /* XSHouseInfoModel.m */,
-			);
-			path = "房屋模型";
-			sourceTree = "<group>";
-		};
-		6CED8689242896D50059CDC5 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				6CED86942428B1660059CDC5 /* XSHouseSubmitBaseViewController.h */,
-				6CED86952428B1670059CDC5 /* XSHouseSubmitBaseViewController.m */,
-				6CED868F2428B06A0059CDC5 /* XSHouseSubmitFirstViewController.h */,
-				6CED86902428B06A0059CDC5 /* XSHouseSubmitFirstViewController.m */,
-				6CED86912428B06A0059CDC5 /* XSHouseSubmitFirstViewController.xib */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		6CED86C42429E5310059CDC5 /* 房屋信息请求 */ = {
-			isa = PBXGroup;
-			children = (
-				6CED86C52429E5560059CDC5 /* XShouseSubNetworkInterface.h */,
-				6CED86C62429E5560059CDC5 /* XShouseSubNetworkInterface.m */,
-			);
-			path = "房屋信息请求";
 			sourceTree = "<group>";
 		};
 		EF6076CEBC0671227C5E3C1D /* Frameworks */ = {
@@ -690,24 +738,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CED86C12429DAC80059CDC5 /* XSHouseInfoThird.json in Resources */,
+				6C3BEB55242C8697001393EF /* XSHouseSubCollectionviewBCell.xib in Resources */,
 				6C6BC159241FA75400B62001 /* LaunchScreen.storyboard in Resources */,
-				6CED86A62428C9190059CDC5 /* XSHouseSubTextFieldTableViewCell.xib in Resources */,
-				6CED86B52428E9670059CDC5 /* XSHouseSubCollectionviewBCell.xib in Resources */,
-				6CED86822427AF100059CDC5 /* HomePageViewController.xib in Resources */,
-				6CED86C22429DAC80059CDC5 /* XSHouseInfoSecond.json in Resources */,
+				6C3BEB56242C8697001393EF /* XSHouseSubListChooseTableViewCell.xib in Resources */,
+				6C3BEB51242C8697001393EF /* XSHouseSubSuccessViewController.xib in Resources */,
+				6C3BEAB7242C7C9B001393EF /* XSLocationSearchview.xib in Resources */,
 				6C7DFE7324265077003E86D7 /* Main.storyboard in Resources */,
-				6CED86B02428DDF20059CDC5 /* XSHouseSubTextViewCell.xib in Resources */,
+				6C3BEB50242C8697001393EF /* XSHouseSubmitFirstViewController.xib in Resources */,
+				6C3BEB5A242C8697001393EF /* XSHouseSubCollectionviewACell.xib in Resources */,
+				6C3BEB69242C8697001393EF /* XSHouseModuleViewController.xib in Resources */,
 				6C6BC184241FBBAC00B62001 /* MyInfoViewController.xib in Resources */,
+				6C3BEB67242C8697001393EF /* XSHouseInfoSecond.json in Resources */,
+				6C3BEB63242C8697001393EF /* XSHouseInfoThird.json in Resources */,
 				6C6BC17F241FBB6700B62001 /* XSLoginViewController.xib in Resources */,
-				6CED86B72428FB930059CDC5 /* XSHouseSubTableViewCell.xib in Resources */,
-				6CED86932428B06A0059CDC5 /* XSHouseSubmitFirstViewController.xib in Resources */,
+				6C3BEB5F242C8697001393EF /* XSHouseSubTextFieldTableViewCell.xib in Resources */,
 				6CDCE3DE24273CB10049AE63 /* xsjson.json in Resources */,
-				6CED86AB2428DCC00059CDC5 /* XSHouseSubCollectionviewACell.xib in Resources */,
 				6C3BEAA3242C4A9C001393EF /* XSPhotoPickerView.xib in Resources */,
-				6CED86C32429DAC80059CDC5 /* XSHouseInfoFirst.json in Resources */,
+				6C3BEB64242C8697001393EF /* XSHouseInfoFirst.json in Resources */,
+				6C3BEB5B242C8697001393EF /* XSHouseSubTextViewCell.xib in Resources */,
+				6C3BEB60242C8697001393EF /* XSHouseSubTableViewCell.xib in Resources */,
+				6C3BEB18242C868F001393EF /* HomePageViewController.xib in Resources */,
 				6C6BC156241FA75400B62001 /* Assets.xcassets in Resources */,
-				6CED869E2428C76C0059CDC5 /* XSHouseSubListChooseTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -770,57 +821,60 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CDCE3D82426F7DE0049AE63 /* NSObject+swizzle.m in Sources */,
+				6C3BEB4F242C8697001393EF /* XSHouseSubmitFirstViewController.m in Sources */,
 				6CED867D242756950059CDC5 /* XSUserServer.m in Sources */,
 				6CDCE3DA2426F7DE0049AE63 /* NSObject+PerformBlock.m in Sources */,
 				6C6BC16E241FA9D800B62001 /* FindHouseViewController.m in Sources */,
 				6CDCE3C72426F76F0049AE63 /* NSArray+safe.m in Sources */,
-				6CEE8197242B7D8C001109E1 /* XSHouseFixedData.m in Sources */,
 				6CDCE3C62426F76F0049AE63 /* NSArray+Category.m in Sources */,
-				6CED86A52428C9190059CDC5 /* XSHouseSubTextFieldTableViewCell.m in Sources */,
+				6C3BEB52242C8697001393EF /* XSHouseSubSuccessViewController.m in Sources */,
 				6C3BEAA1242C4A66001393EF /* XSPhotoPickerView.m in Sources */,
 				6C6BC164241FA84200B62001 /* XSTabBarViewController.m in Sources */,
+				6C3BEB59242C8697001393EF /* XSHouseSubCollectionviewACell.m in Sources */,
 				6C6BC14B241FA75300B62001 /* AppDelegate.m in Sources */,
 				6CDCE3C82426F76F0049AE63 /* NSMutableArray+safe.m in Sources */,
 				6CDCE3E424273FCD0049AE63 /* XSBaseObject.m in Sources */,
 				6CDCE3C92426F76F0049AE63 /* NSNumber+safe.m in Sources */,
-				6CED86AA2428DCC00059CDC5 /* XSHouseSubCollectionviewACell.m in Sources */,
 				6CDCE3D72426F7DE0049AE63 /* NSObject+safe.m in Sources */,
+				6C3BEB5D242C8697001393EF /* XSBaseTableViewCell.m in Sources */,
 				6CED867924274CE60059CDC5 /* XSUserLogInModel.m in Sources */,
-				6CED86922428B06A0059CDC5 /* XSHouseSubmitFirstViewController.m in Sources */,
 				6C6BC17E241FBB6700B62001 /* XSLoginViewController.m in Sources */,
 				6CEE819A242B8B56001109E1 /* PrintBeautifulLog.m in Sources */,
-				6CED86BA2429A3BF0059CDC5 /* XSBaseTableViewCell.m in Sources */,
+				6C3BEB58242C8697001393EF /* XSHouseSubTextViewCell.m in Sources */,
+				6C3BEB65242C8697001393EF /* XSHouseEnum.m in Sources */,
 				6CDCE3CA2426F76F0049AE63 /* NSMutableString+safe.m in Sources */,
 				6CDCE3C52426F76F0049AE63 /* NSMutableDictionary+safe.m in Sources */,
 				6CED867624274CB30059CDC5 /* XSLogInVcModel.m in Sources */,
-				6CED86AF2428DDF20059CDC5 /* XSHouseSubTextViewCell.m in Sources */,
-				6CED868824286D070059CDC5 /* XSHouseInfoModel.m in Sources */,
 				6C3BEA9E242C3519001393EF /* UIView+HBExtension.m in Sources */,
+				6C3BEB61242C8697001393EF /* XSHouseSubTextFieldTableViewCell.m in Sources */,
+				6C3BEB68242C8697001393EF /* XSHouseModuleViewController.m in Sources */,
 				6C27A9422420FF1300BD634B /* XSRoundedView.m in Sources */,
+				6C3BEB53242C8697001393EF /* XSHouseSubmitBaseViewController.m in Sources */,
 				6CDCE3A22426E6850049AE63 /* XSNetworkInterface.m in Sources */,
 				6CDCE3D92426F7DE0049AE63 /* NSObject+HBNotification.m in Sources */,
+				6C3BEB5E242C8697001393EF /* XSHouseSubListChooseTableViewCell.m in Sources */,
 				6CDCE3DB2426F7DE0049AE63 /* NSObject+category.m in Sources */,
-				6CED86C72429E5560059CDC5 /* XShouseSubNetworkInterface.m in Sources */,
 				6C6BC177241FAA8800B62001 /* XSBaseNavViewController.m in Sources */,
-				6CED86992428BFB80059CDC5 /* XSHouseSubTableViewCell.m in Sources */,
-				6CED86B42428E9670059CDC5 /* XSHouseSubCollectionviewBCell.m in Sources */,
+				6C3BEB54242C8697001393EF /* XSHouseSubCollectionviewBCell.m in Sources */,
 				6CED86BD2429A3D80059CDC5 /* XSBaseCollectionViewCell.m in Sources */,
 				6CDCE3C42426F76F0049AE63 /* NSDictionary+safe.m in Sources */,
+				6C3BEB66242C8697001393EF /* XSHouseFixedData.m in Sources */,
+				6C3BEB62242C8697001393EF /* XSHouseInfoModel.m in Sources */,
 				6C6BC15C241FA75400B62001 /* main.m in Sources */,
 				6C6BC174241FA9F400B62001 /* MessageViewController.m in Sources */,
 				6C7DFE7424265077003E86D7 /* ViewController.m in Sources */,
 				6CDCE3CB2426F76F0049AE63 /* NSDate+Category.m in Sources */,
 				6C6BC168241FA98500B62001 /* XSBaseViewController.m in Sources */,
-				6CED86962428B1670059CDC5 /* XSHouseSubmitBaseViewController.m in Sources */,
+				6C3BEB19242C868F001393EF /* HomePageViewController.m in Sources */,
 				6CED867324274AA80059CDC5 /* XSUserModel.m in Sources */,
 				6C6BC183241FBBAC00B62001 /* MyInfoViewController.m in Sources */,
+				6C3BEB4E242C8697001393EF /* XShouseSubNetworkInterface.m in Sources */,
 				6CDCE3A52426ED9B0049AE63 /* XSOperationParam.m in Sources */,
-				6CED868C242896D60059CDC5 /* XSHouseEnum.m in Sources */,
 				6CEC5FB22424DC3900DC619E /* XSURL.m in Sources */,
-				6CED86812427AF100059CDC5 /* HomePageViewController.m in Sources */,
+				6C3BEAB3242C7C3A001393EF /* XSLocationSearchview.m in Sources */,
 				6C6BC14E241FA75300B62001 /* SceneDelegate.m in Sources */,
-				6CED869D2428C76C0059CDC5 /* XSHouseSubListChooseTableViewCell.m in Sources */,
 				6CDCE3A92426F5D50049AE63 /* XSUserInfoInterface.m in Sources */,
+				6C3BEB5C242C8697001393EF /* XSHouseSubTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

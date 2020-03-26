@@ -14,6 +14,7 @@
 #import "XSHouseSubTextFieldTableViewCell.h"
 #import "XSHouseSubListChooseTableViewCell.h"
 #import "XSPhotoPickerView.h"
+#import "XSHouseSubSuccessViewController.h"
 
 @interface XSHouseSubmitFirstViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
@@ -148,7 +149,13 @@
             next.submitStepsType = XSHouseSubmitStepsType_Third;
             [self.navigationController pushViewController:next animated:YES];
         }else if (self.submitStepsType == XSHouseSubmitStepsType_Third){
-            [self submitRenthouseSave];
+//            [self submitRenthouseSave];
+            
+            XSHouseSubSuccessViewController *success = [[XSHouseSubSuccessViewController alloc]init];
+                             success.modalPresentationStyle = UIModalPresentationFullScreen;
+                             [self presentViewController:success animated:YES completion:^{
+                              
+                             }];
         }
 }
 
@@ -161,7 +168,15 @@
         STRONG_SELF;
         [MBProgressHUD  hideHUDForView:self.view animated:YES];
         if (error == nil) {
-           [self alertWithMessage:responseModel.message];
+            if (responseModel.code.integerValue == SuccessCode) {
+                   XSHouseSubSuccessViewController *success = [[XSHouseSubSuccessViewController alloc]init];
+                    success.modalPresentationStyle = UIModalPresentationFullScreen;
+                    [self presentViewController:success animated:YES completion:^{
+                     
+                    }];
+            }else{
+                [self alertWithMessage:responseModel.message];
+            }
         }else{
            [self alertWithMessage:error.domain];
         }
