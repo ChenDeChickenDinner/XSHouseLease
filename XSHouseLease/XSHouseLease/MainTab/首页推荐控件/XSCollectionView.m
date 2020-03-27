@@ -44,7 +44,7 @@ static NSString *XSItemCollectionViewCellStr = @"XSItemCollectionViewCellStr";
 }
 - (void)layoutSubviews{
     [super layoutSubviews];
-    self.collectionView.frame = self.bounds;
+    self.collectionView.frame = CGRectMake(0, 0, self.width, self.height - 20);
     [self.collectionView reloadData];
 }
 //+ (CGFloat)collectionViewheightWithLayout:(UICollectionViewFlowLayout *)layout{

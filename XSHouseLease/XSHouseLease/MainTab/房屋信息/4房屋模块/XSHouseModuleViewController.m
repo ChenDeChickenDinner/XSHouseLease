@@ -11,35 +11,42 @@
 
 @interface XSHouseModuleViewController ()
 @property (nonatomic,strong)XSRegionSearchView *searcView;
-@property (weak, nonatomic) XSCollectionView *collectionView;
+@property (strong, nonatomic) XSCollectionView *collectionView;
+@property (strong, nonatomic) UIView *lineView;
 
 @end
 
 @implementation XSHouseModuleViewController
-- (XSRegionSearchView *)searcView{
-    if (_searcView == nil) {
-        _searcView = [[XSRegionSearchView alloc]init];
-        _searcView.frame = CGRectMake(0, 0, SCREEN_SIZE.width - 110, 40);
-    }
-    return _searcView;
-}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.navigationItem.titleView = self.searcView;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"message"] style:UIBarButtonItemStyleDone target:self action:@selector(callMessage)];
     
-     XSCollectionView *collectionView = [[XSCollectionView alloc]init];
-      collectionView.array = [XSHouseFixedData sharedInstance].renthouseConditionArray;
-      [self.view addSubview:collectionView];
-      self.collectionView = collectionView;
+    XSRegionSearchView *searcView = [[XSRegionSearchView alloc]init];
+    self.searcView = searcView;
+
     
+    XSCollectionView *collectionView = [[XSCollectionView alloc]init];
+    collectionView.array = [XSHouseFixedData sharedInstance].renthouseConditionArray;
+    self.collectionView = collectionView;
+
+    
+    UIView *lineView = [[UIView alloc]init];
+    lineView.backgroundColor = XSColor(246, 243, 245);
+    self.lineView = lineView;
+    
+    self.navigationItem.titleView = searcView;
+    [self.view addSubview:collectionView];
+    [self.view addSubview:lineView];
 
 }
 
 - (void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
-    self.collectionView.frame = CGRectMake(0, 0, self.view.width, 210);
+    self.searcView.frame = CGRectMake(0, 0, SCREEN_SIZE.width - 110, 40);
+    self.collectionView.frame = CGRectMake(0, 0, self.view.width, 230);
+    self.lineView.frame = CGRectMake(0, CGRectGetMaxY(self.collectionView.frame), self.view.width, 20);
 
 }
 - (void)callMessage{

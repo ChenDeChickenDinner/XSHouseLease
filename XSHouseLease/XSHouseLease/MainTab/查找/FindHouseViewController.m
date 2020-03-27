@@ -46,7 +46,7 @@
 - (void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
     self.searchView.frame = CGRectMake(0, 0, self.view.width, 220);
-    self.collectionView.frame = CGRectMake(0, 220, self.view.width, 210);
+    self.collectionView.frame = CGRectMake(0, 220, self.view.width, 230);
 
 }
 - (void)viewWillAppear:(BOOL)animated{

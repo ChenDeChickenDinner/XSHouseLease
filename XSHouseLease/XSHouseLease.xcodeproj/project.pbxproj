@@ -47,6 +47,8 @@
 		6C3BEB73242C98A1001393EF /* XSHouseSearch.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEB72242C98A1001393EF /* XSHouseSearch.json */; };
 		6C3BEB76242CA4DC001393EF /* XSRegionSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB75242CA4DC001393EF /* XSRegionSearchView.m */; };
 		6C3BEB78242CA4EE001393EF /* XSRegionSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEB77242CA4EE001393EF /* XSRegionSearchView.xib */; };
+		6C3BEB7B242CC902001393EF /* XSSearchConditionalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB7A242CC902001393EF /* XSSearchConditionalView.m */; };
+		6C3BEB7E242CC9B0001393EF /* XSConditionalCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB7D242CC9B0001393EF /* XSConditionalCollectionViewCell.m */; };
 		6C6BC14B241FA75300B62001 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BC14A241FA75300B62001 /* AppDelegate.m */; };
 		6C6BC14E241FA75300B62001 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BC14D241FA75300B62001 /* SceneDelegate.m */; };
 		6C6BC156241FA75400B62001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C6BC155241FA75400B62001 /* Assets.xcassets */; };
@@ -158,6 +160,10 @@
 		6C3BEB74242CA4DC001393EF /* XSRegionSearchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSRegionSearchView.h; sourceTree = "<group>"; };
 		6C3BEB75242CA4DC001393EF /* XSRegionSearchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSRegionSearchView.m; sourceTree = "<group>"; };
 		6C3BEB77242CA4EE001393EF /* XSRegionSearchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSRegionSearchView.xib; sourceTree = "<group>"; };
+		6C3BEB79242CC902001393EF /* XSSearchConditionalView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSSearchConditionalView.h; sourceTree = "<group>"; };
+		6C3BEB7A242CC902001393EF /* XSSearchConditionalView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSSearchConditionalView.m; sourceTree = "<group>"; };
+		6C3BEB7C242CC9B0001393EF /* XSConditionalCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSConditionalCollectionViewCell.h; sourceTree = "<group>"; };
+		6C3BEB7D242CC9B0001393EF /* XSConditionalCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSConditionalCollectionViewCell.m; sourceTree = "<group>"; };
 		6C6BC146241FA75300B62001 /* 房鼎汇.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "房鼎汇.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C6BC149241FA75300B62001 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6C6BC14A241FA75300B62001 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -273,6 +279,8 @@
 		6C3BEAB0242C7AE7001393EF /* 首页推荐控件 */ = {
 			isa = PBXGroup;
 			children = (
+				6C3BEB79242CC902001393EF /* XSSearchConditionalView.h */,
+				6C3BEB7A242CC902001393EF /* XSSearchConditionalView.m */,
 				6C3BEB74242CA4DC001393EF /* XSRegionSearchView.h */,
 				6C3BEB75242CA4DC001393EF /* XSRegionSearchView.m */,
 				6C3BEB77242CA4EE001393EF /* XSRegionSearchView.xib */,
@@ -284,6 +292,8 @@
 				6C3BEB6D242C9215001393EF /* XSItemCollectionViewCell.h */,
 				6C3BEB6E242C9215001393EF /* XSItemCollectionViewCell.m */,
 				6C3BEB6F242C9215001393EF /* XSItemCollectionViewCell.xib */,
+				6C3BEB7C242CC9B0001393EF /* XSConditionalCollectionViewCell.h */,
+				6C3BEB7D242CC9B0001393EF /* XSConditionalCollectionViewCell.m */,
 			);
 			path = "首页推荐控件";
 			sourceTree = "<group>";
@@ -857,6 +867,7 @@
 				6C6BC14B241FA75300B62001 /* AppDelegate.m in Sources */,
 				6CDCE3C82426F76F0049AE63 /* NSMutableArray+safe.m in Sources */,
 				6CDCE3E424273FCD0049AE63 /* XSBaseObject.m in Sources */,
+				6C3BEB7E242CC9B0001393EF /* XSConditionalCollectionViewCell.m in Sources */,
 				6CDCE3C92426F76F0049AE63 /* NSNumber+safe.m in Sources */,
 				6CDCE3D72426F7DE0049AE63 /* NSObject+safe.m in Sources */,
 				6C3BEB5D242C8697001393EF /* XSBaseTableViewCell.m in Sources */,
@@ -894,6 +905,7 @@
 				6CED867324274AA80059CDC5 /* XSUserModel.m in Sources */,
 				6C3BEB6C242C8D92001393EF /* XSCollectionView.m in Sources */,
 				6C6BC183241FBBAC00B62001 /* MyInfoViewController.m in Sources */,
+				6C3BEB7B242CC902001393EF /* XSSearchConditionalView.m in Sources */,
 				6C3BEB4E242C8697001393EF /* XShouseSubNetworkInterface.m in Sources */,
 				6CDCE3A52426ED9B0049AE63 /* XSOperationParam.m in Sources */,
 				6CEC5FB22424DC3900DC619E /* XSURL.m in Sources */,
