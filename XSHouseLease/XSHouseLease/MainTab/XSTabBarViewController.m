@@ -8,12 +8,12 @@
 
 #import "XSTabBarViewController.h"
 
-#import "XSBaseNavViewController.h"
 #import "HomePageViewController.h"
 #import "FindHouseViewController.h"
 #import "MyInfoViewController.h"
 #import "MessageViewController.h"
 #import "XSBaseObject.h"
+#import "XSNavViewController.h"
 
 @interface XSTabBarViewController ()
 
@@ -43,7 +43,7 @@
 - (void)addChildVc:(UIViewController *)childVc title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage
 {
     
-    XSBaseNavViewController *nav = [[XSBaseNavViewController alloc] initWithRootViewController:childVc];
+    XSNavViewController *nav = [[XSNavViewController alloc] initWithRootViewController:childVc];
     nav.tabBarItem.title = title;
 //    [nav.tabBarItem setImage:[UIImage imageNamed:image]];
 //    [nav.tabBarItem setSelectedImage:[UIImage imageNamed:selectedImage]];
