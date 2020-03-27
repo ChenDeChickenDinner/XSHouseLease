@@ -192,6 +192,7 @@
                             <constraint firstAttribute="bottom" secondItem="4Tn-A2-ZgP" secondAttribute="bottom" id="YnG-2N-lGV"/>
                             <constraint firstItem="4Tn-A2-ZgP" firstAttribute="top" secondItem="AfF-TA-yDc" secondAttribute="top" id="dHa-HF-gOm"/>
                             <constraint firstItem="2VE-hs-6Y0" firstAttribute="leading" secondItem="AfF-TA-yDc" secondAttribute="leading" id="o6y-t7-gWq"/>
+                            <constraint firstAttribute="height" constant="120" id="ox7-2c-UlH"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -199,7 +200,6 @@
                     <constraint firstAttribute="trailing" secondItem="AfF-TA-yDc" secondAttribute="trailing" constant="15" id="5w4-Se-fzh"/>
                     <constraint firstItem="AfF-TA-yDc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="c7V-bG-fXT"/>
                     <constraint firstItem="AfF-TA-yDc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="pvs-Xo-YPI"/>
-                    <constraint firstAttribute="bottom" secondItem="AfF-TA-yDc" secondAttribute="bottom" constant="20" id="sqw-vN-wGL"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
