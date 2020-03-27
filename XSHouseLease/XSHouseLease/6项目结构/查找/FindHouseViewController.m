@@ -31,8 +31,11 @@
         WEAK_SELF;
         model.clickBlack = ^(XSHouseModuleModel * _Nonnull model) {
             STRONG_SELF;
-            XSHouseModuleViewController *vc = [[XSHouseModuleViewController alloc]init];
-            [self.navigationController pushViewController:vc animated:YES];
+            if ([model.name isEqualToString:@"租房"]) {
+                XSHouseModuleViewController *vc = [[XSHouseModuleViewController alloc]init];
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+    
         };
     }
     self.collectionView.array = array;

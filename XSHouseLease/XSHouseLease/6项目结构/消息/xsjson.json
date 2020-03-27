@@ -1,1 +1,30 @@
-
+{
+     "id": 7,
+     "customerId": 2,
+     "cityId": 1,
+     "status": 6,
+     "statusName": "发布",
+     "dealStatus": 0,
+     "dealStatusName": "未租",
+     "estate": "风景优美",
+     "floor": 1,
+     "totalFloor": 7,
+     "rentPrice": 588,
+     "firstImg": "http://120.27.95.26/2/083cb848-4d9d-46a7-ac9e-2502fdb580b5.jpg",
+     "orientation": 2,
+     "orientationName": "朝南",
+     "title": "这是标题",
+     "formTypeRoom": 2,
+     "formTypeOffice": 1,
+     "formType": "2室1厅",
+     "longitude": 115.27,
+     "latitude": 35.84,
+     "area": 500,
+     "featurePoints": [
+       "新上房源",
+       "拎包入住"
+     ],
+     "updateDate": "2020-03-27 13:42:19.0",
+     "distance": 0,
+     "watchNum": 0
+   }

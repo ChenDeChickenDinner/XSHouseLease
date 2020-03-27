@@ -29,6 +29,8 @@
     return cell;
 }
 
-
+- (void)updateWithModel:(XSBHouseInfoModel *)model{
+    self.model = model;
+}
 
 @end

@@ -16,6 +16,7 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
+        
         self.delegate = self;
         self.dataSource = self;
         self.rowHeight = UITableViewAutomaticDimension;
@@ -30,7 +31,7 @@
     }
     return self;
 }
-- (NSMutableArray *)array{
+- (NSArray *)array{
     if (_array == nil) {
         _array = [NSMutableArray array];
     }
@@ -49,7 +50,7 @@
     if (!cell) {
          cell = [[NSBundle mainBundle] loadNibNamed:model.cellClass owner:self options:nil].lastObject;
     }
-    cell.model = model;
+    [cell updateWithModel:model];
     return cell;
 }
 

@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface XSHouseInfoTableView : UITableView
-@property(nonatomic,strong) NSMutableArray *array;
+@property(nonatomic,strong) NSArray *array;
 
 @end
 

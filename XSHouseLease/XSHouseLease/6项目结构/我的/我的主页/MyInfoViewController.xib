@@ -369,7 +369,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2x-VB-lbl" userLabel="我的发布">
                                     <rect key="frame" x="15" y="273" width="345" height="108"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我关注的" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wt4-yi-xlk">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我发布的" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wt4-yi-xlk">
                                             <rect key="frame" x="0.0" y="7" width="65.5" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="sqS-LN-VaW"/>
@@ -599,7 +599,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MWK-AF-FND" userLabel="其他服务">
                                     <rect key="frame" x="15" y="381" width="345" height="108"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我关注的" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sax-bp-5Or">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="其他服务" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sax-bp-5Or">
                                             <rect key="frame" x="0.0" y="7" width="65.5" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="EdY-dB-QdD"/>
@@ -825,7 +825,7 @@
         <image name="myNewHouse" width="30" height="30"/>
         <image name="myRentHouse" width="30" height="30"/>
         <image name="opinion" width="29" height="26.5"/>
-        <image name="rentHouse" width="30" height="30"/>
+        <image name="rentHouse" width="93.5" height="93.5"/>
         <image name="sellHouse" width="34" height="34"/>
         <image name="service" width="30.5" height="30.5"/>
         <image name="userIcon" width="70" height="70"/>

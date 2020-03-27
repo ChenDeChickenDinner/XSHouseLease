@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)XSBHouseInfoModel *model;
 
 + (instancetype)cellWithtableView:(UITableView *)tableView;
+
+- (void)updateWithModel:(XSBHouseInfoModel *)model;
 @end
 
 NS_ASSUME_NONNULL_END

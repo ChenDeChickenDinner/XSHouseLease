@@ -29,10 +29,7 @@
     if (_operationManager == nil) {
         _operationManager = [AFHTTPSessionManager manager];
 //        _operationManager.operationQueue.maxConcurrentOperationCount = 3;
-        NSString *token  = [XSUserServer sharedInstance].userModel.token;
-        if (token) {
-            [_operationManager.requestSerializer setValue:token forHTTPHeaderField:@"Authentication"];
-        }
+  
 
 
         _operationManager.requestSerializer.stringEncoding = NSUTF8StringEncoding;
@@ -48,6 +45,10 @@
         [_operationManager.requestSerializer setValue:@"application/json;charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
         
     }
+    NSString *token  = [XSUserServer sharedInstance].userModel.token;
+      if (token) {
+          [_operationManager.requestSerializer setValue:token forHTTPHeaderField:@"Authentication"];
+      }
     return _operationManager;
 }
 - (void)viewDidLoad {

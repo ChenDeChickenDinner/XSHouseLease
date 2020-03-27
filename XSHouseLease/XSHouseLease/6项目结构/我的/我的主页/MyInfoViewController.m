@@ -8,6 +8,8 @@
 
 #import "MyInfoViewController.h"
 #import "XSLoginViewController.h"
+#import "XSMyPublishHosueController.h"
+#import "XSHouseModuleViewController.h"
 
 @interface MyInfoViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *phoneLable;
@@ -31,6 +33,29 @@
 }
 - (IBAction)jumpToSomePlace:(UIButton *)sender {
     NSLog(@"tag = %ld -------",sender.tag);
+    if (sender.tag == 1) {
+        
+    }else if (sender.tag == 2){
+        
+    }else if (sender.tag == 3){
+       XSMyPublishHosueController *vc = [[XSMyPublishHosueController alloc]init];
+        vc.source = XSBHouseInfoSource_MyWatch;
+        [self.navigationController pushViewController:vc animated:YES];
+
+    }else if (sender.tag == 4){
+        
+    }else if (sender.tag == 5){
+       XSMyPublishHosueController *vc = [[XSMyPublishHosueController alloc]init];
+        vc.source = XSBHouseInfoSource_MyPublish;
+        [self.navigationController pushViewController:vc animated:YES];
+
+    }else if (sender.tag == 6){
+        
+    }else if (sender.tag == 7){
+        
+    }else if (sender.tag == 8){
+        
+    }
 }
 
 
@@ -45,22 +70,13 @@
 
 - (IBAction)userInfoClick:(id)sender {
     
-        XSLoginViewController *login = [[XSLoginViewController alloc]init];
-    login.modalPresentationStyle = UIModalPresentationFullScreen;
-       [self presentViewController:login animated:YES completion:^{
-           
-       }];
+    XSLoginViewController *login = [[XSLoginViewController alloc]init];
+   login.modalPresentationStyle = UIModalPresentationFullScreen;
+   [self presentViewController:login animated:YES completion:^{
+       
+   }];
 }
 
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
