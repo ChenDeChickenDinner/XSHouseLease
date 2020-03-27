@@ -22,5 +22,5 @@ pod 'BRPickerView'
 pod 'HXPhotoPicker'
 pod 'SDCycleScrollView'
 pod 'SDWebImage'
-pod 'YYKit'
+#pod 'YYKit'
 end

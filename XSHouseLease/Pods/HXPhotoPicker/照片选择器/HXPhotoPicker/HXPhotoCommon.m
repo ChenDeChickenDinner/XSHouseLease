@@ -13,14 +13,13 @@ static dispatch_once_t once;
 static dispatch_once_t once1;
 static id instance;
 
-@interface HXPhotoCommon ()<NSURLConnectionDataDelegate, PHPhotoLibraryChangeObserver>
+@interface HXPhotoCommon ()<NSURLConnectionDataDelegate>
 #if HasAFNetworking
 @property (strong, nonatomic) AFURLSessionManager *sessionManager;
 #endif
 @property (strong, nonatomic) NSURLConnection *urlFileLengthConnection;
 @property (copy, nonatomic) HXPhotoCommonGetUrlFileLengthSuccess fileLengthSuccessBlock;
 @property (copy, nonatomic) HXPhotoCommonGetUrlFileLengthFailure fileLengthFailureBlock;
-@property (assign, nonatomic) BOOL hasAuthorization;
 @end
 
 @implementation HXPhotoCommon
@@ -54,45 +53,8 @@ static id instance;
         if (imageData) {
             self.cameraImage = [NSKeyedUnarchiver unarchiveObjectWithData:imageData];
         }
-
-        if ([PHPhotoLibrary authorizationStatus] == PHAuthorizationStatusAuthorized) {
-            [[PHPhotoLibrary sharedPhotoLibrary] registerChangeObserver:self];
-        }else {
-            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestAuthorizationCompletion) name:@"HXPhotoRequestAuthorizationCompletion" object:nil];
-        }
     }
     return self;
-}
-- (void)requestAuthorizationCompletion {
-    if (!self.hasAuthorization && [PHPhotoLibrary authorizationStatus] == PHAuthorizationStatusAuthorized) {
-        self.hasAuthorization = YES;
-        [[PHPhotoLibrary sharedPhotoLibrary] registerChangeObserver:self];
-    }
-}
-
-#pragma mark - < PHPhotoLibraryChangeObserver >
-- (void)photoLibraryDidChange:(PHChange *)changeInstance {
-    PHFetchResultChangeDetails *collectionChanges = [changeInstance changeDetailsForFetchResult:self.cameraRollAlbumModel.result];
-    if (collectionChanges) {
-        if ([collectionChanges hasIncrementalChanges]) {
-            PHFetchResult *result = collectionChanges.fetchResultAfterChanges;
-            self.cameraRollAlbumModel.result = result;
-            self.cameraRollAlbumModel.count = result.count;
-            if (collectionChanges.insertedObjects.count > 0) {
-                // 添加照片了
-            }
-            if (collectionChanges.removedObjects.count > 0) {
-                // 删除照片了
-                
-            }
-            if (collectionChanges.changedObjects.count > 0) {
-                // 改变照片了
-            }
-            if ([collectionChanges hasMoves]) {
-                // 移动照片了
-            }
-        }
-    }
 }
 - (NSBundle *)languageBundle {
     if (!_languageBundle) {
@@ -256,9 +218,6 @@ static id instance;
 }
 - (void)dealloc {
 //    NSSLog(@"dealloc");
-    
-    [[PHPhotoLibrary sharedPhotoLibrary] unregisterChangeObserver:self];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"HXPhotoRequestAuthorizationCompletion" object:nil];
 #if HasAFNetworking
     [[AFNetworkReachabilityManager sharedManager] stopMonitoring];
 #endif
