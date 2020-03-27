@@ -9,6 +9,7 @@
 #import "XSRegionSearchView.h"
 
 @interface XSRegionSearchView ()<UITextFieldDelegate>
+@property (nonatomic,strong) UIView *bkView;
 @property (nonatomic,strong) UIButton *searchBtn;
 @property (nonatomic,strong) UITextField *searchTextField;
 
@@ -23,6 +24,16 @@
 
 - (void)awakeFromNib{
     [super awakeFromNib];
+    
+    self.layer.shadowColor = [UIColor hb_colorWithHexString:@"#929292" alpha:1].CGColor;
+     self.layer.shadowOffset = CGSizeMake(0, 0);
+     self.layer.shadowOpacity = 0.8;
+     self.layer.shadowRadius = 9.0;
+     self.layer.cornerRadius = 9.0;
+    
+    
+    
+    
     self.layer.cornerRadius = 8;
     self.layer.borderWidth = 0.5;
     self.layer.masksToBounds = YES;
@@ -41,6 +52,21 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
+        self.layer.shadowColor = [UIColor hb_colorWithHexString:@"#929292" alpha:1].CGColor;
+         self.layer.shadowOffset = CGSizeMake(0, 0);
+         self.layer.shadowOpacity = 0.8;
+         self.layer.shadowRadius = 9.0;
+         self.layer.cornerRadius = 9.0;
+        
+        
+        UIView *bkView = [[UIView alloc]initWithFrame:CGRectZero];
+        bkView.layer.cornerRadius = 8;
+//        bkView.layer.borderWidth = 0.5;
+        bkView.layer.masksToBounds = YES;
+//        bkView.layer.borderColor = [UIColor hb_colorWithHexString:@"#929292" alpha:1].CGColor;
+
+        self.bkView = bkView;
+        
         UIButton *searchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [searchBtn setBackgroundImage:[UIImage imageNamed:@"search"] forState:UIControlStateNormal];
         self.searchBtn = searchBtn;
@@ -51,8 +77,11 @@
         textField.textColor = [UIColor hb_colorWithHexString:@"#171717" alpha:1];
         textField.delegate = self;
         self.searchTextField = textField;
-        [self addSubview:searchBtn];
-        [self addSubview:textField];
+        
+        [self addSubview:bkView];
+
+        [bkView addSubview:searchBtn];
+        [bkView addSubview:textField];
 
     }
     return self;
@@ -60,7 +89,7 @@
 - (void)layoutSubviews{
     [super layoutSubviews];
     
-    
+    self.bkView.frame = self.bounds;
     self.searchBtn.frame = CGRectMake(11, (self.height - 17)/2, 17, 17);
     self.searchTextField.frame = CGRectMake(CGRectGetMaxX(self.searchBtn.frame) + 10, 0, self.width - self.searchBtn.width - 10, 40);
 

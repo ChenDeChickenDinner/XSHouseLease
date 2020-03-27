@@ -53,7 +53,8 @@
     if (model.iconName) {
         self.myImageView.image = [UIImage imageNamed:model.iconName];
     }else{
-        self.myImageView.yy_imageURL = [NSURL URLWithString:model.icon];
+        [self.myImageView sd_setImageWithURL:[NSURL URLWithString:model.icon]];
+//        self.myImageView.yy_imageURL = [NSURL URLWithString:model.icon];
 //        [self.myImageView setYy_highlightedImageURL:[NSURL URLWithString:model.icon]];
     }
     self.titleLable.text = model.name;

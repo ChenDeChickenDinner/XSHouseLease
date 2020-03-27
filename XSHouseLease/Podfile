@@ -20,6 +20,7 @@ pod 'YBModelFile', :configurations => ['Debug']
 pod 'AESCrypt','~> 0.0.1'
 pod 'BRPickerView'
 pod 'HXPhotoPicker'
-
+pod 'SDCycleScrollView'
 pod 'SDWebImage'
+pod 'YYKit'
 end
