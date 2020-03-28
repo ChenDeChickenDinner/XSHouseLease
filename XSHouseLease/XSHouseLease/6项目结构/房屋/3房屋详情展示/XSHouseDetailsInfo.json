@@ -19,9 +19,6 @@
     },
     {
         "cellClass": "XSHouseRecommendedCell",
-    },
-    {
-        "cellClass": "XSHouseCallMessageCell",
-    },
+    }
 
 ]
