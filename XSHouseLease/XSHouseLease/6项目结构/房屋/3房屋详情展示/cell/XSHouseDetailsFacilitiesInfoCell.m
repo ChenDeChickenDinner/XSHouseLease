@@ -13,6 +13,8 @@
 @property (strong, nonatomic) XSHouseDetailsFacilitiesModel  *model;
 @property (weak, nonatomic)  UIImageView *image;
 @property (weak, nonatomic)  UILabel *contentLable;
+@property (weak, nonatomic)  UIView *bkView;
+
 @end
 
 @implementation XSFacilitiesCollectionCell
@@ -20,11 +22,20 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     
     if (self = [super initWithFrame:frame]) {
+        
+        UIView *bkView = [[UIView alloc]init];
+        bkView.layer.masksToBounds = YES;
+        bkView.layer.cornerRadius = 25;
+
+        bkView.backgroundColor = [UIColor hb_colorWithHexString:@"#FF7A7A" alpha:1];
+        [self.contentView addSubview:bkView];
+        self.bkView = bkView;
+
         //添加自己需要个子视图控件
         self.contentView.backgroundColor = [UIColor clearColor];
 
         UIImageView *image = [[UIImageView alloc] init];
-         [self.contentView addSubview:image];
+         [self.bkView addSubview:image];
          self.image = image;
 
         UILabel *contentLable = [[UILabel alloc] init];
@@ -40,11 +51,13 @@
 }
 - (void)layoutSubviews{
     [super layoutSubviews];
-    self.image.frame = CGRectMake(0, 0, self.width, self.height -17);
-    self.contentLable.frame = CGRectMake(45, self.height -17, self.width, 17);
+    self.bkView.frame = CGRectMake(0, 0, self.width, 50);;
+    self.image.frame = self.bkView.bounds;
+    self.contentLable.frame = CGRectMake(0, 50, self.width, self.height -50);
 }
 - (void)setModel:(XSHouseDetailsFacilitiesModel *)model{
     _model = model;
+    self.bkView.backgroundColor = [UIColor hb_colorWithHexString:model.status?@"#FF7A7A":@"#FFCCCC" alpha:1];
     [self.image  sd_setImageWithURL:[NSURL URLWithString:model.icon]];
     self.contentLable.text = model.name;
 }
@@ -85,8 +98,17 @@ static NSString *XSHouseDetailsFacilitiesInfoCellStr = @"XSHouseDetailsFacilitie
     self.model = model;
     if ([model isKindOfClass:[XSHouseDetailsInfoCellModel class]]) {
           XSHouseDetailsInfoCellModel *cellModel = (XSHouseDetailsInfoCellModel *)model;
-          XSHouseRentInfoModel *dataModel = cellModel.dataModel;
-         self.array = [NSMutableArray arrayWithArray:dataModel.facilities];
+        XSHouseRentInfoModel *dataModel = cellModel.dataModel;
+        
+        NSMutableArray *allArray  =  [[XSBusinessInfoSever sharedInstance].facilitiesInfoArray mutableCopy];
+        for (XSHouseDetailsFacilitiesModel *showModel in allArray) {
+            for (XSHouseDetailsFacilitiesModel *model in dataModel.facilities) {
+                if ([model.ID isEqualToNumber:showModel.ID]) {
+                    showModel.status = model.status;
+                }
+            }
+        }
+         self.array = allArray;
         [self.collectionView reloadData];
       }
 }
@@ -120,11 +142,11 @@ static NSString *XSHouseDetailsFacilitiesInfoCellStr = @"XSHouseDetailsFacilitie
     if (!_layout) {
         _layout =  [[UICollectionViewFlowLayout alloc]init];
         //设置cell的尺寸(宽度和高度)
-        _layout.itemSize = CGSizeMake((KScreenWidth - 30)/6, 45);
+        _layout.itemSize = CGSizeMake(50, 85);
         //设置竖直滚动放向(默认是竖直方向)
 //        _layout.scrollDirection = UICollectionViewScrollDirectionVertical;
         //设置cell与cell之间的列距
-        _layout.minimumInteritemSpacing = 0;
+        _layout.minimumInteritemSpacing = 25 ;
         //设置cell与cell之间的行距
         _layout.minimumLineSpacing = 0;
     }

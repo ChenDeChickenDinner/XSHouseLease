@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface XSHouseSubTableViewCell : UITableViewCell
 
 @property(nonatomic,strong) XSHouseInfoCellModel *dataModel;
+@property (nonatomic,strong) XSHouseInfoCellModel *keyValueModel;
 
 + (instancetype)cellWithtableView:(UITableView *)tableView;
 - (void)refreshData;

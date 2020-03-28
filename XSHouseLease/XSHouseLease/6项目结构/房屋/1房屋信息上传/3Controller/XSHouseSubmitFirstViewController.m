@@ -26,24 +26,6 @@
 @end
 
 @implementation XSHouseSubmitFirstViewController
-//- (XSPhotoPickerView *)pickerView{
-//    if (_pickerView == nil) {
-//        _pickerView = [XSPhotoPickerView  photoPickerViewWithFrame:CGRectMake(0, 0, self.myTableView.width, 250)];
-//    }
-//    return _pickerView;
-//}
-//- (XSPhotoPickerView *)pickerView{
-//    if (_pickerView == nil) {
-//        _pickerView = [[XSPhotoPickerView alloc]initWithFrame:CGRectMake(0, 0, self.myTableView.width, 280)];
-//        _pickerView.changeCompleteBlock = ^(NSArray<HXPhotoModel *> *allList, NSArray<HXPhotoModel *> *photos, NSArray<HXPhotoModel *> *videos, BOOL isOriginal) {
-//            [allList hx_requestImageWithOriginal:isOriginal completion:^(NSArray<UIImage *> * _Nullable imageArray, NSArray<HXPhotoModel *> * _Nullable errorArray) {
-//
-//                      NSSLog(@"\nimage: %@\nerror: %@",imageArray,errorArray);
-//                  }];
-//        };
-//    }
-//    return _pickerView;
-//}
 
 - (void)pickerViewInit{
     WEAK_SELF;
@@ -152,10 +134,10 @@
 //            [self submitRenthouseSave];
             
             XSHouseSubSuccessViewController *success = [[XSHouseSubSuccessViewController alloc]init];
-                             success.modalPresentationStyle = UIModalPresentationFullScreen;
-                             [self presentViewController:success animated:YES completion:^{
-                              
-                             }];
+            success.modalPresentationStyle = UIModalPresentationFullScreen;
+            [self presentViewController:success animated:YES completion:^{
+
+            }];
         }
 }
 

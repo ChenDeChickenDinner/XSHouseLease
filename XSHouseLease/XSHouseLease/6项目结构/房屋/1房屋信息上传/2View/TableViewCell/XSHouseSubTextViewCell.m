@@ -33,10 +33,18 @@
      valueData.valueStr = textView.text.length > 0?textView.text:nil;
 }
 - (void)refreshData{
-    self.title.text = self.dataModel.title;
-    XSKeyValueModel *model = [self.dataModel.arrayValue safeObjectAtIndex:0];
-     XSValue *valueData = model.values.firstObject;
-     self.textView.text = valueData.valueStr;
+    if ([self.dataModel isKindOfClass:[XSKeyValue class]]) {
+        XSKeyValue *keyValueModel = (XSKeyValue *)self.dataModel;
+           self.title.text = keyValueModel.key;
+            self.textView.text = keyValueModel.value;
+    }else{
+         self.title.text = self.dataModel.title;
+        XSKeyValueModel *model = [self.dataModel.arrayValue safeObjectAtIndex:0];
+         XSValue *valueData = model.values.firstObject;
+         self.textView.text = valueData.valueStr;
+    }
+
+
 }
 
 @end

@@ -48,6 +48,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 //城市
 @property (nonatomic, strong) NSNumber *cityId;
+@property (nonatomic, copy) NSString *city;
+// 区
+@property (nonatomic, copy) NSString *region;
+// 镇
+@property (nonatomic, copy) NSString *town;
+
+
 //面积
 @property (nonatomic, strong) NSNumber *area;
 //小区名字

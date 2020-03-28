@@ -83,13 +83,13 @@
 
 
 //向我推荐的租房
-- (void)watchlikeRenthousListWithPer_page:(NSInteger)per_page page_index:(NSInteger)page_index  callback:(HBCompletionBlock)callback{
-    NSString *customer_id = [XSUserServer sharedInstance].userModel.ID.stringValue;
+- (void)watchlikeRenthousListWithhouse_id:(NSNumber *)house_id per_page:(NSInteger)per_page page_index:(NSInteger)page_index  callback:(HBCompletionBlock)callback{
+//    NSString *customer_id = [XSUserServer sharedInstance].userModel.ID.stringValue;
 
     NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
 //    [dict safeSetObject:@"1" forKey:@"cityId"];
 
-    NSString *url = [NSString stringWithFormat:@"%@/renthouse/watchlike/page/%@?per_page=%ld&page_index=%ld",XSBaseUrl,customer_id,per_page,page_index];
+    NSString *url = [NSString stringWithFormat:@"%@/renthouse/watchlike/page/%@?per_page=%ld&page_index=%ld",XSBaseUrl,house_id,per_page,page_index];
     [self GET:url param:dict progress:nil callback:callback];
 }
 

@@ -1,21 +1,89 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="XSHouseRecommendedCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="294" id="KGk-i7-Jjw" customClass="XSHouseRecommendedCell">
+            <rect key="frame" x="0.0" y="0.0" width="408" height="294"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="408" height="294"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pr6-dw-HbJ">
+                        <rect key="frame" x="0.0" y="0.0" width="408" height="294"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9LY-nc-O55">
+                                <rect key="frame" x="15" y="0.0" width="378" height="35"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="猜你喜欢" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcU-48-nYb">
+                                        <rect key="frame" x="0.0" y="15.5" width="65.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="dcU-48-nYb" firstAttribute="leading" secondItem="9LY-nc-O55" secondAttribute="leading" id="Lhb-wP-YEr"/>
+                                    <constraint firstAttribute="bottom" secondItem="dcU-48-nYb" secondAttribute="bottom" id="OJb-XT-tqc"/>
+                                    <constraint firstAttribute="height" constant="35" id="pFA-cJ-nyI"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m0o-NB-H3A">
+                                <rect key="frame" x="15" y="55" width="378" height="156"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="156" id="ct0-Wr-Ef4"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9d-BA-ODo" customClass="XSRoundedBtn1View">
+                                <rect key="frame" x="15" y="235" width="378" height="38"/>
+                                <color key="backgroundColor" red="0.97647058823529409" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="Eaa-mB-nsY"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="更多推荐房源">
+                                    <color key="titleColor" red="0.90980392160000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="G9d-BA-ODo" firstAttribute="top" secondItem="m0o-NB-H3A" secondAttribute="bottom" constant="24" id="Gdd-mj-Mig"/>
+                            <constraint firstItem="m0o-NB-H3A" firstAttribute="top" secondItem="9LY-nc-O55" secondAttribute="bottom" constant="20" id="J3P-Us-IA3"/>
+                            <constraint firstItem="m0o-NB-H3A" firstAttribute="leading" secondItem="9LY-nc-O55" secondAttribute="leading" id="JAd-uU-GA3"/>
+                            <constraint firstItem="G9d-BA-ODo" firstAttribute="leading" secondItem="m0o-NB-H3A" secondAttribute="leading" id="O0n-OV-1zX"/>
+                            <constraint firstAttribute="trailing" secondItem="9LY-nc-O55" secondAttribute="trailing" constant="15" id="OEQ-rR-m6f"/>
+                            <constraint firstAttribute="bottom" secondItem="G9d-BA-ODo" secondAttribute="bottom" constant="21" id="ZSi-z4-8Yw"/>
+                            <constraint firstItem="9LY-nc-O55" firstAttribute="leading" secondItem="Pr6-dw-HbJ" secondAttribute="leading" constant="15" id="mVL-lh-5Ld"/>
+                            <constraint firstItem="m0o-NB-H3A" firstAttribute="trailing" secondItem="9LY-nc-O55" secondAttribute="trailing" id="p1Y-A7-hQU"/>
+                            <constraint firstItem="G9d-BA-ODo" firstAttribute="trailing" secondItem="m0o-NB-H3A" secondAttribute="trailing" id="qkT-qh-4vV"/>
+                            <constraint firstItem="9LY-nc-O55" firstAttribute="top" secondItem="Pr6-dw-HbJ" secondAttribute="top" id="upN-H3-nU6"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Pr6-dw-HbJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="HeL-rs-Ijw"/>
+                    <constraint firstAttribute="trailing" secondItem="Pr6-dw-HbJ" secondAttribute="trailing" id="KZE-96-nVC"/>
+                    <constraint firstItem="Pr6-dw-HbJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Xo4-Cf-e6Q"/>
+                    <constraint firstAttribute="bottom" secondItem="Pr6-dw-HbJ" secondAttribute="bottom" id="ix2-Rn-XU8"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="bkView" destination="m0o-NB-H3A" id="Vi8-tu-fZz"/>
+                <outlet property="listHeight" destination="ct0-Wr-Ef4" id="fRh-A1-zx7"/>
+            </connections>
+            <point key="canvasLocation" x="195.6521739130435" y="129.24107142857142"/>
         </tableViewCell>
     </objects>
 </document>

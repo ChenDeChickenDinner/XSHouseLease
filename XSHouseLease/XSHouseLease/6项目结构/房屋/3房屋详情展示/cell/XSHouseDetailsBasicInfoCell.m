@@ -65,13 +65,22 @@
          NSString *stra = [dataModel.featurePoints safeObjectAtIndex:0];;
          NSString *strb = [dataModel.featurePoints safeObjectAtIndex:1];;
          NSString *strc = [dataModel.featurePoints safeObjectAtIndex:2];;
-
-        self.featurePointsLablea.text = stra;
-        self.featurePointsLableb.text = strb;
-        self.featurePointsLablec.text = strc;
-       self.featurePointsLableaW.constant = stra.length > 0?[self.featurePointsLablea mj_textWidth] + 5:0;
-       self.featurePointsLablebW.constant = strb.length > 0?[self.featurePointsLableb mj_textWidth] + 5:0;
-       self.featurePointsLablecW.constant = strc.length > 0?[self.featurePointsLablec mj_textWidth] + 5:0;
+            if ([stra isKindOfClass:[NSString class]]) {
+            self.featurePointsLablea.text = [NSString stringWithFormat:@"%@",stra];
+              self.featurePointsLableb.text = [NSString stringWithFormat:@"%@",strb];;
+              self.featurePointsLablec.text = [NSString stringWithFormat:@"%@",strc];;
+             self.featurePointsLableaW.constant = stra.length > 0?[self.featurePointsLablea mj_textWidth] + 5:0;
+             self.featurePointsLablebW.constant = strb.length > 0?[self.featurePointsLableb mj_textWidth] + 5:0;
+             self.featurePointsLablecW.constant = strc.length > 0?[self.featurePointsLablec mj_textWidth] + 5:0;
+            }else{
+                self.featurePointsLablea.text = nil;
+                    self.featurePointsLableb.text = nil;
+                    self.featurePointsLablec.text = nil;;
+                   self.featurePointsLableaW.constant = [self.featurePointsLablea mj_textWidth];
+                   self.featurePointsLablebW.constant = [self.featurePointsLableb mj_textWidth];
+                   self.featurePointsLablecW.constant = [self.featurePointsLablec mj_textWidth];
+            }
+  
         
     }
  

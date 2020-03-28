@@ -7,11 +7,16 @@
 //
 
 #import "XSHouseDetailsAddressInfoCell.h"
+@interface XSHouseDetailsAddressInfoCell()
+@property (weak, nonatomic) IBOutlet UILabel *locationLable;
+
+@end
 
 @implementation XSHouseDetailsAddressInfoCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.locationLable.text = nil;
 }
 
 - (void)updateWithModel:(XSBHouseInfoModel *)model{
@@ -19,7 +24,7 @@
     if ([model isKindOfClass:[XSHouseDetailsInfoCellModel class]]) {
           XSHouseDetailsInfoCellModel *cellModel = (XSHouseDetailsInfoCellModel *)model;
           XSHouseRentInfoModel *dataModel = cellModel.dataModel;
-          
+        self.locationLable.text = [NSString stringWithFormat:@"%@/%@",dataModel.region,dataModel.town];
       }
 }
 

@@ -38,14 +38,17 @@
     
     XSHouseInfoTableView *tableView = [[XSHouseInfoTableView alloc]init];
     WEAK_SELF;
-    tableView.mj_header  = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        STRONG_SELF;
-        [self loadMyPublishHosue];
-    }];
-    tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-             STRONG_SELF;
-        [self loadMyPublishHosue];
-     }];
+    if (self.source != XSBHouseInfoSource_MyPush) {
+        tableView.mj_header  = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            STRONG_SELF;
+            [self loadData];
+        }];
+        tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+                 STRONG_SELF;
+            [self loadData];
+         }];
+    }
+
     tableView.mj_header.automaticallyChangeAlpha = YES;
     tableView.mj_footer.automaticallyChangeAlpha = YES;
     [self.view addSubview:tableView];
@@ -55,14 +58,14 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self loadMyPublishHosue];
+    [self loadData];
 }
 - (void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
     self.tableView.frame = self.view.bounds;
 
 }
-- (void)loadMyPublishHosue{
+- (void)loadData{
     WEAK_SELF;
     [self.searchDict safeSetObject:@"1" forKey:@"cityId"];
 
@@ -82,9 +85,10 @@
               [self dataProcessingWithResponseModel:responseModel error:error];
         }];
     }else if (self.source == XSBHouseInfoSource_MyPush){
-        [self.subInfoInterface watchlikeRenthousListWithPer_page:10 page_index:0 callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+        
+        [self.subInfoInterface watchlikeRenthousListWithhouse_id:self.house_id per_page:10 page_index:0 callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
             STRONG_SELF;
-              [self dataProcessingWithResponseModel:responseModel error:error];
+            [self dataProcessingWithResponseModel:responseModel error:error];
         }];
     }
 

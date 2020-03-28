@@ -110,4 +110,12 @@ typedef void (^valueUpdate)(void);
 @end
 
 
+
+@interface XSKeyValue : XSHouseInfoCellModel
+@property(nonatomic,copy) NSString *key;
+@property(nonatomic,copy) NSString *value;
+
+@end
+
+
 NS_ASSUME_NONNULL_END

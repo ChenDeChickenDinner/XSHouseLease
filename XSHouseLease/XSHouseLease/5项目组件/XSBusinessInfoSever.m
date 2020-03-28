@@ -21,5 +21,14 @@ DEF_SINGLETON(XSBusinessInfoSever)
     }
     return _businessInfoArray;
 }
-
+- (NSMutableArray<XSHouseDetailsFacilitiesModel *> *)facilitiesInfoArray{
+    if (_facilitiesInfoArray == nil) {
+        _facilitiesInfoArray = [NSMutableArray array];
+        NSError *error;
+        NSString *path = [[NSBundle mainBundle]pathForResource:@"XSFacilitiesInfoJson" ofType:@"json"];
+        NSArray *dataArray = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableLeaves error:&error];
+        _facilitiesInfoArray = [XSHouseDetailsFacilitiesModel mj_objectArrayWithKeyValuesArray:dataArray];
+    }
+    return _facilitiesInfoArray;
+}
 @end

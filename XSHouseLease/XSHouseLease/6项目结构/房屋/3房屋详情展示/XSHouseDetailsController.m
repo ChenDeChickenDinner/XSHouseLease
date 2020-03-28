@@ -10,11 +10,19 @@
 #import "XSHouseRentInfoModel.h"
 #import "XSHouseDetailsInfoCellModel.h"
 #import "XSHouseInfoCell.h"
+#import "XSHouseCellPhone.h"
 
 @interface XSHouseDetailsController ()<UITableViewDelegate,UITableViewDataSource>
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(nonatomic,strong) NSMutableArray *array;
-@property(nonatomic,strong) UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *houseUserInfoView;
+@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UIImageView *image;
+@property (weak, nonatomic) IBOutlet UIButton *cellPhone;
+@property (weak, nonatomic) IBOutlet UIButton *callIm;
+
+@property (strong, nonatomic)  XSHouseCallPhone *callView;
 
 @end
 
@@ -31,9 +39,6 @@
     
     self.title = @"房屋详情";
 
-    UITableView *tableView = [[UITableView alloc]init];
-    self.tableView = tableView;
-    [self.view addSubview:tableView];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
@@ -51,14 +56,13 @@
         [self gethouseDetails];
     }];
     
-
+    self.houseUserInfoView.hidden = YES;
+    
     [self gethouseDetails];
    
 }
 - (void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
-    
-    self.tableView.frame = self.view.bounds;
 }
 - (void)gethouseDetails{
     WEAK_SELF;
@@ -70,10 +74,17 @@
                 XSHouseRentInfoModel *model = [XSHouseRentInfoModel mj_objectWithKeyValues:responseModel.data];
                 NSLog(@"房屋详情 = %@",[model mj_keyValues]);
                 [self assemblyCellDataArrayWithData:model];
+                [self houseUserInfoViewWithData:model];
             }
         }
         
     }];
+}
+- (void)houseUserInfoViewWithData:(XSHouseRentInfoModel *)dataModel{
+    XSHouseCallPhone *callView = [XSHouseCallPhone callPhoneViewWithFrame:CGRectZero house_id:dataModel.house_id];
+    self.callView = callView;
+    [self.callView upDataWithDataModel:dataModel];
+    self.tableView.tableHeaderView = callView;
 }
 // 组装数据
 -(void)assemblyCellDataArrayWithData:(XSHouseRentInfoModel *)dataModel{
