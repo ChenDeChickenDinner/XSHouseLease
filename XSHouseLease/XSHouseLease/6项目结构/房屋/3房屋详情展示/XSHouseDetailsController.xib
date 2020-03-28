@@ -12,7 +12,7 @@
             <connections>
                 <outlet property="callIm" destination="ZpU-Ve-aCu" id="Ln8-BO-pel"/>
                 <outlet property="cellPhone" destination="hY1-27-gvx" id="lHD-bY-bce"/>
-                <outlet property="houseUserInfoView" destination="0U7-oI-qjU" id="SUO-aU-zJt"/>
+                <outlet property="houseUserInfoView" destination="0U7-oI-qjU" id="Wga-Xc-HN3"/>
                 <outlet property="image" destination="0Sm-mK-R9n" id="IzX-dH-1pf"/>
                 <outlet property="name" destination="Jlu-m7-DAt" id="We9-Jm-HhS"/>
                 <outlet property="tableView" destination="wCi-iM-NMF" id="Tfh-PL-Duu"/>

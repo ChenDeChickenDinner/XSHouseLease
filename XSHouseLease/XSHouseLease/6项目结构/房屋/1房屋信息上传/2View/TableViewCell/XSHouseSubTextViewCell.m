@@ -37,11 +37,14 @@
         XSKeyValue *keyValueModel = (XSKeyValue *)self.dataModel;
            self.title.text = keyValueModel.key;
             self.textView.text = keyValueModel.value;
+          self.userInteractionEnabled = NO;
     }else{
          self.title.text = self.dataModel.title;
         XSKeyValueModel *model = [self.dataModel.arrayValue safeObjectAtIndex:0];
          XSValue *valueData = model.values.firstObject;
          self.textView.text = valueData.valueStr;
+        self.userInteractionEnabled = YES;
+
     }
 
 

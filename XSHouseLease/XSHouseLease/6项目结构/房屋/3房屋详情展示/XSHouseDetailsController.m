@@ -10,7 +10,7 @@
 #import "XSHouseRentInfoModel.h"
 #import "XSHouseDetailsInfoCellModel.h"
 #import "XSHouseInfoCell.h"
-#import "XSHouseCellPhone.h"
+#import "XSHouseCallPhone.h"
 
 @interface XSHouseDetailsController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -63,6 +63,8 @@
 }
 - (void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
+//    self.callView.frame = CGRectMake(0, 200, 200, 75);
+    
 }
 - (void)gethouseDetails{
     WEAK_SELF;
@@ -81,11 +83,23 @@
     }];
 }
 - (void)houseUserInfoViewWithData:(XSHouseRentInfoModel *)dataModel{
-    XSHouseCallPhone *callView = [XSHouseCallPhone callPhoneViewWithFrame:CGRectZero house_id:dataModel.house_id];
-    self.callView = callView;
-    [self.callView upDataWithDataModel:dataModel];
-    self.tableView.tableHeaderView = callView;
+    
+    NSNumber *userId =  [XSUserServer sharedInstance].userModel.ID;
+      if ([dataModel.house_id isEqualToNumber:userId]) {
+          [self.houseUserInfoView removeFromSuperview];
+      }
+      self.houseUserInfoView.hidden = NO;
+      [self.image sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"userIcon"]];
+      self.name.text = dataModel.callName;
+    
+//    CGRect rect = CGRectMake(0, 200, 200, 75);
+//    XSHouseCallPhone *callView = [XSHouseCallPhone callPhoneViewWithFrame:rect house_id:dataModel.house_id];
+//    self.callView = callView;
+//    [self.view addSubview:callView];
+//    [self.view bringSubviewToFront:callView];
+//    [self.callView upDataWithDataModel:dataModel];
 }
+
 // 组装数据
 -(void)assemblyCellDataArrayWithData:(XSHouseRentInfoModel *)dataModel{
     [self.array removeAllObjects];

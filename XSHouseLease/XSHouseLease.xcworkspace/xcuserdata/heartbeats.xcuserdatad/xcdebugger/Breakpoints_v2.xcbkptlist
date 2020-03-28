@@ -18,22 +18,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4547DFDE-6FBE-4807-AEBD-C1BF8D35F7F6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "XSHouseLease/6&#x9879;&#x76ee;&#x7ed3;&#x6784;/&#x623f;&#x5c4b;/3&#x623f;&#x5c4b;&#x8be6;&#x60c5;&#x5c55;&#x793a;/cell/XSHouseDetailsFacilitiesInfoCell.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "-setModel:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "81B1023B-80A9-4996-AD14-891B6E3D589F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"

@@ -6,7 +6,7 @@
 //  Copyright © 2020 fang. All rights reserved.
 //
 
-#import "XSHouseCellPhone.h"
+#import "XSHouseCallPhone.h"
 
 @interface XSHouseCallPhone ()
 @property (weak, nonatomic) IBOutlet UIView *houseUserInfoView;
@@ -35,7 +35,7 @@
     return view;
 }
 - (void)upDataWithDataModel:(XSHouseRentInfoModel *)dataModel{
-    self.model = dataModel;
+      self.model = dataModel;
       [self.image sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"userIcon"]];
       self.name.text = dataModel.callName;
 }
