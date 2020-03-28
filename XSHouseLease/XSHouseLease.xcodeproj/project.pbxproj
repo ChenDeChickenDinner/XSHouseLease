@@ -337,29 +337,36 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		6C2286A7242ED4A1001D5F58 /* 详情 */ = {
+		6C06ED63242EDA5300FD8B18 /* 房屋数据模型 */ = {
 			isa = PBXGroup;
 			children = (
-				6C22869F242E8719001D5F58 /* XSHouseDetailsController.h */,
-				6C2286A0242E8719001D5F58 /* XSHouseDetailsController.m */,
-				6C2286A1242E8719001D5F58 /* XSHouseDetailsController.xib */,
-				6C2286D7242ED788001D5F58 /* XSHouseDetailsInfoCellModel.h */,
-				6C2286D8242ED788001D5F58 /* XSHouseDetailsInfoCellModel.m */,
-				6C2286A9242ED4D0001D5F58 /* cell */,
+				555A6782242DE1B7003847A0 /* XSBHouseInfoModel.h */,
+				555A6783242DE1B7003847A0 /* XSBHouseInfoModel.m */,
+				6CF0E777242E4820000A9815 /* XSHouseRentInfoModel.h */,
+				6CF0E776242E481F000A9815 /* XSHouseRentInfoModel.m */,
 			);
-			path = "详情";
+			path = "房屋数据模型";
 			sourceTree = "<group>";
 		};
-		6C2286A8242ED4AA001D5F58 /* 列表 */ = {
+		6C06ED64242EDA7100FD8B18 /* 房屋基础组件 */ = {
 			isa = PBXGroup;
 			children = (
-				555A6785242DF069003847A0 /* XSHouseRentInfoCell.h */,
-				555A6786242DF069003847A0 /* XSHouseRentInfoCell.m */,
-				555A6787242DF069003847A0 /* XSHouseRentInfoCell.xib */,
-				6CF0E77B242E5E57000A9815 /* XSMyPublishHosueController.h */,
-				6CF0E77C242E5E57000A9815 /* XSMyPublishHosueController.m */,
+				555A677F242DE192003847A0 /* XSHouseInfoCell.h */,
+				555A6780242DE192003847A0 /* XSHouseInfoCell.m */,
+				555A677C242DE121003847A0 /* XSHouseInfoTableView.h */,
+				555A677D242DE121003847A0 /* XSHouseInfoTableView.m */,
 			);
-			path = "列表";
+			path = "房屋基础组件";
+			sourceTree = "<group>";
+		};
+		6C06ED65242EDB1E00FD8B18 /* 模块主页 */ = {
+			isa = PBXGroup;
+			children = (
+				6C3BEB4B242C8697001393EF /* XSHouseModuleViewController.h */,
+				6C3BEB4C242C8697001393EF /* XSHouseModuleViewController.m */,
+				6C3BEB99242E3731001393EF /* XSHouseModuleViewController.xib */,
+			);
+			path = "模块主页";
 			sourceTree = "<group>";
 		};
 		6C2286A9242ED4D0001D5F58 /* cell */ = {
@@ -423,65 +430,26 @@
 		6C3BEB83242E3672001393EF /* 3房屋详情展示 */ = {
 			isa = PBXGroup;
 			children = (
-				6C3BEB85242E3672001393EF /* 1Model */,
-				6C3BEB84242E3672001393EF /* 2View */,
-				6C3BEB86242E3672001393EF /* 3Controller */,
+				6C2286D7242ED788001D5F58 /* XSHouseDetailsInfoCellModel.h */,
+				6C2286D8242ED788001D5F58 /* XSHouseDetailsInfoCellModel.m */,
+				6C22869F242E8719001D5F58 /* XSHouseDetailsController.h */,
+				6C2286A0242E8719001D5F58 /* XSHouseDetailsController.m */,
+				6C2286A1242E8719001D5F58 /* XSHouseDetailsController.xib */,
+				6C2286A9242ED4D0001D5F58 /* cell */,
 			);
 			path = "3房屋详情展示";
-			sourceTree = "<group>";
-		};
-		6C3BEB84242E3672001393EF /* 2View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = 2View;
-			sourceTree = "<group>";
-		};
-		6C3BEB85242E3672001393EF /* 1Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = 1Model;
-			sourceTree = "<group>";
-		};
-		6C3BEB86242E3672001393EF /* 3Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = 3Controller;
 			sourceTree = "<group>";
 		};
 		6C3BEB87242E3672001393EF /* 2房屋信息列表 */ = {
 			isa = PBXGroup;
 			children = (
-				6C3BEBF5242E3DD9001393EF /* 房屋信息模型 */,
-				6C3BEB98242E36DD001393EF /* 模块主页 */,
-				6C3BEB89242E3672001393EF /* 1Model */,
-				6C3BEB88242E3672001393EF /* 2View */,
-				6C3BEB8A242E3672001393EF /* 3Controller */,
+				555A6785242DF069003847A0 /* XSHouseRentInfoCell.h */,
+				555A6786242DF069003847A0 /* XSHouseRentInfoCell.m */,
+				555A6787242DF069003847A0 /* XSHouseRentInfoCell.xib */,
+				6CF0E77B242E5E57000A9815 /* XSMyPublishHosueController.h */,
+				6CF0E77C242E5E57000A9815 /* XSMyPublishHosueController.m */,
 			);
 			path = "2房屋信息列表";
-			sourceTree = "<group>";
-		};
-		6C3BEB88242E3672001393EF /* 2View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = 2View;
-			sourceTree = "<group>";
-		};
-		6C3BEB89242E3672001393EF /* 1Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = 1Model;
-			sourceTree = "<group>";
-		};
-		6C3BEB8A242E3672001393EF /* 3Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = 3Controller;
 			sourceTree = "<group>";
 		};
 		6C3BEB8B242E3672001393EF /* 1房屋信息上传 */ = {
@@ -543,18 +511,6 @@
 			path = "0房屋信息接口";
 			sourceTree = "<group>";
 		};
-		6C3BEB98242E36DD001393EF /* 模块主页 */ = {
-			isa = PBXGroup;
-			children = (
-				6C2286A8242ED4AA001D5F58 /* 列表 */,
-				6C2286A7242ED4A1001D5F58 /* 详情 */,
-				6C3BEB4B242C8697001393EF /* XSHouseModuleViewController.h */,
-				6C3BEB4C242C8697001393EF /* XSHouseModuleViewController.m */,
-				6C3BEB99242E3731001393EF /* XSHouseModuleViewController.xib */,
-			);
-			path = "模块主页";
-			sourceTree = "<group>";
-		};
 		6C3BEB9B242E3767001393EF /* 用户信息接口 */ = {
 			isa = PBXGroup;
 			children = (
@@ -594,12 +550,6 @@
 		6C3BEB9E242E388C001393EF /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				555A677F242DE192003847A0 /* XSHouseInfoCell.h */,
-				555A6780242DE192003847A0 /* XSHouseInfoCell.m */,
-				555A6782242DE1B7003847A0 /* XSBHouseInfoModel.h */,
-				555A6783242DE1B7003847A0 /* XSBHouseInfoModel.m */,
-				555A677C242DE121003847A0 /* XSHouseInfoTableView.h */,
-				555A677D242DE121003847A0 /* XSHouseInfoTableView.m */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -803,7 +753,10 @@
 		6C3BEBF1242E3C89001393EF /* 房屋 */ = {
 			isa = PBXGroup;
 			children = (
+				6C06ED63242EDA5300FD8B18 /* 房屋数据模型 */,
+				6C06ED64242EDA7100FD8B18 /* 房屋基础组件 */,
 				6C3BEB8F242E3672001393EF /* 0房屋信息接口 */,
+				6C06ED65242EDB1E00FD8B18 /* 模块主页 */,
 				6C3BEB8B242E3672001393EF /* 1房屋信息上传 */,
 				6C3BEB87242E3672001393EF /* 2房屋信息列表 */,
 				6C3BEB83242E3672001393EF /* 3房屋详情展示 */,
@@ -844,15 +797,6 @@
 				6C6BC182241FBBAC00B62001 /* MyInfoViewController.xib */,
 			);
 			path = "我的主页";
-			sourceTree = "<group>";
-		};
-		6C3BEBF5242E3DD9001393EF /* 房屋信息模型 */ = {
-			isa = PBXGroup;
-			children = (
-				6CF0E777242E4820000A9815 /* XSHouseRentInfoModel.h */,
-				6CF0E776242E481F000A9815 /* XSHouseRentInfoModel.m */,
-			);
-			path = "房屋信息模型";
 			sourceTree = "<group>";
 		};
 		6C6BC13D241FA75300B62001 = {
