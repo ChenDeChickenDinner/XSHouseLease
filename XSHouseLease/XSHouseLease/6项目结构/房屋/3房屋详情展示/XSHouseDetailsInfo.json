@@ -1,0 +1,27 @@
+[
+    {
+        "cellClass": "XSHouseDetailsImagesCell",
+    },
+    {
+        "cellClass": "XSHouseDetailsBasicInfoCell",
+    },
+    {
+        "cellClass": "XSHouseDetailsBusinessInfoCell",
+    },
+    {
+        "cellClass": "XSHouseDetailsAddressInfoCell",
+    },
+    {
+        "cellClass": "XSHouseDetailsFacilitiesInfoCell",
+    },
+    {
+        "cellClass": "XSHouseDetailsIntroduceInfoCell",
+    },
+    {
+        "cellClass": "XSHouseRecommendedCell",
+    },
+    {
+        "cellClass": "XSHouseCallMessageCell",
+    },
+
+]

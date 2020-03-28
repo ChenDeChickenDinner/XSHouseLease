@@ -44,6 +44,17 @@
 }
 @end
 
+
+@implementation XSBorderLable
+- (void)awakeFromNib{
+    [super awakeFromNib];
+    self.layer.cornerRadius = 3;
+//    self.layer.borderWidth = 0.5;
+    self.layer.masksToBounds = YES;
+//    self.layer.borderColor = XSColor(232, 43, 43).CGColor;
+}
+@end
+
 @implementation XSRoundedBtnView
 
 
@@ -74,3 +85,5 @@
     return 20.0;
 }
 @end
+
+

@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XSHouseInfoCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface XSHouseCallMessageCell : UITableViewCell
+@interface XSHouseCallMessageCell : XSHouseInfoCell
 
 @end
 

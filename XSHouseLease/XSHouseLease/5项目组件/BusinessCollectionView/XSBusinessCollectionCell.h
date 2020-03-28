@@ -1,5 +1,5 @@
 //
-//  XSHouseDetailsBasicInfoCell.h
+//  XSBusinessCollectionCell.h
 //  XSHouseLease
 //
 //  Created by heartbeats on 2020/3/28.
@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "XSHouseInfoCell.h"
+#import "XSBusinessInfoModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface XSHouseDetailsBasicInfoCell : XSHouseInfoCell
+@interface XSBusinessCollectionCell : UICollectionViewCell
+@property (strong, nonatomic) XSBusinessInfoModel  *model;
 
 @end
 

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "XSBHouseInfoModel.h"
+#import "XSHouseRentInfoModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 //
 @property (nonatomic, copy) NSString *name;
 //是否有
-@property (nonatomic, strong) NSNumber *status;
+@property (nonatomic, assign) BOOL status;
 //
 @property (nonatomic, copy) NSString *createDate;
 
@@ -47,7 +48,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 //城市
 @property (nonatomic, strong) NSNumber *cityId;
-//区域
+//面积
 @property (nonatomic, strong) NSNumber *area;
 //小区名字
 @property (nonatomic, copy) NSString *estate;
@@ -89,7 +90,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 //楼层
 @property (nonatomic, strong) NSNumber *floor;
-// 总楼层
+//总楼层
 @property (nonatomic, strong) NSNumber *totalFloor;
 
 
@@ -116,10 +117,11 @@ NS_ASSUME_NONNULL_BEGIN
 // 名字0未出租1是已出租
 @property (nonatomic, copy) NSString *dealStatusName;
 
+
 //租期类型
-@property (nonatomic, copy) NSString *rentTimeTypeName;
-//租期类型年租
 @property (nonatomic, strong) NSNumber *rentTimeType;
+//租期类型年租
+@property (nonatomic, copy) NSString *rentTimeTypeName;
 
 //装修类型
 @property (nonatomic, strong) NSNumber *finish;

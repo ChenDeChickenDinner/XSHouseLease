@@ -25,5 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface XSBorderView : UIView
 
 @end
+@interface XSBorderLable : UILabel
 
+@end
 NS_ASSUME_NONNULL_END

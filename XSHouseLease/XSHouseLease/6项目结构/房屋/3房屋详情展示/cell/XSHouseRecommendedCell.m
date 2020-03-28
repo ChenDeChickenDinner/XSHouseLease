@@ -12,13 +12,15 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)updateWithModel:(XSBHouseInfoModel *)model{
+    self.model = model;
+    if ([model isKindOfClass:[XSHouseDetailsInfoCellModel class]]) {
+          XSHouseDetailsInfoCellModel *cellModel = (XSHouseDetailsInfoCellModel *)model;
+          XSHouseRentInfoModel *dataModel = cellModel.dataModel;
+          
+      }
 }
 
 @end

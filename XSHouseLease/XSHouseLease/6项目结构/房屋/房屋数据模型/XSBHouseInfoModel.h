@@ -39,8 +39,8 @@ typedef void(^HouseInfoClickBlack)(XSBHouseInfoModel *model,XShouseOperation ope
 @property(nonatomic,copy) HouseInfoClickBlack clickBlack;
 @property(nonatomic,assign) XSBHouseInfoSource source;
 @property(nonatomic,assign) XSBHouseType houseType;
-
 @property(nonatomic,copy) NSString *cellClass;
+//@property(nonatomic,assign) CGFloat cellHeight;
 
 @end
 
