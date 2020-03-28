@@ -36,6 +36,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 //向我推荐的租房
 - (void)watchlikeRenthousListWithPer_page:(NSInteger)per_page page_index:(NSInteger)page_index  callback:(HBCompletionBlock)callback;
+
+// 租房详情
+- (void)renthouseDetailsWithHouse_id:(NSString *)house_id callback:(HBCompletionBlock)callback;
 @end
 
 NS_ASSUME_NONNULL_END

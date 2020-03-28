@@ -21,4 +21,12 @@ DEF_SINGLETON(XSUserServer)
     _userModel = userModel;
     NSLog(@"userModel = %@",[userModel mj_keyValues]);
 }
+- (BRProvinceModel *)cityModel{
+    if (_cityModel == nil) {
+        _cityModel = [[BRProvinceModel alloc]init];
+        _cityModel.code = @"1";
+        _cityModel.name = @"上海";
+    }
+    return _cityModel;
+}
 @end

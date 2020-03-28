@@ -36,9 +36,33 @@
     self.searchView.frame = self.titleView.bounds;
 }
 - (IBAction)jumpClick:(UIButton *)sender {
-    XSHouseSubmitFirstViewController *vc = [[XSHouseSubmitFirstViewController alloc]init];
-    
-    [self.navigationController pushViewController:vc animated:YES];
+    switch (sender.tag) {
+        case 1:
+        {
+         
+        }
+        break;
+        case 2:
+        {
+             
+         }
+        break;
+        case 3:
+        {
+         
+        }
+        break;
+        case 4:
+        {
+            XSHouseSubmitFirstViewController *vc = [[XSHouseSubmitFirstViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        break;
+            
+        default:
+            break;
+    }
+
 }
 
 // 将要显示控制器

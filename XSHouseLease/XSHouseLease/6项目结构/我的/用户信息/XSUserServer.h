@@ -8,6 +8,7 @@
 
 #import "XSBaseObject.h"
 #import "XSUserModel.h"
+#import "BRAddressModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 UIKIT_EXTERN NSString *const HBNotificationLoginStatusChangedLoginFailed;
@@ -21,6 +22,9 @@ UIKIT_EXTERN NSString *const NotificationLoginStatusChangedLogout;
 + (XSUserServer *)sharedInstance;
 /** 用户模型 */
 @property (nonatomic ,strong) XSUserModel *userModel;
+
+@property (nonatomic ,strong) BRProvinceModel *cityModel;
+
 
 /** 是否登录 */
 @property (nonatomic ,assign) BOOL isLogin;

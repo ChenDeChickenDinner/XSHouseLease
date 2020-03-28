@@ -10,6 +10,7 @@
 #import "XSCollectionView.h"
 #import "XSHouseInfoTableView.h"
 #import "XSHouseRentInfoModel.h"
+#import "XSMyPublishHosueController.h"
 
 @interface XSHouseModuleViewController ()
 @property (nonatomic,strong)XSRegionSearchView *searcView;
@@ -49,12 +50,46 @@
     [self.view addSubview:tableView];
 
     
-    
+    // 1.根据当前城市推荐
     [self searchRentHouse];
+    // 2.获取t配置的搜索key
+    [self renthouseConditionWithCallback];
+
 }
-- (void)searchRentHouse{
+
+-(void)renthouseConditionWithCallback{
+    
     WEAK_SELF;
-    [self.subInfoInterface searchRenthousListWithKeyVales:nil per_page:10 page_index:0 callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+    [self.subInfoInterface renthouseConditionWithCallback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+        STRONG_SELF;
+        if (error == nil && responseModel.code.integerValue == SuccessCode) {
+            NSMutableArray *modelArray = [XSHouseModuleModel mj_objectArrayWithKeyValuesArray:responseModel.data];
+            for (XSHouseModuleModel *model in modelArray) {
+                model.clickBlack = ^(XSHouseModuleModel * _Nonnull model) {
+                    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+                    [dict safeSetObject:[XSUserServer sharedInstance].cityModel.code forKey:@"cityId"];
+                    [dict safeSetObject:model.value forKey:model.key];
+                    XSMyPublishHosueController *vc = [[XSMyPublishHosueController alloc]init];
+                    vc.title = model.name;
+                    vc.source = XSBHouseInfoSource_Search;
+                    vc.houseType = XSBHouseType_Rent;
+                    vc.searchDict = dict;
+                    [self.navigationController pushViewController:vc animated:YES];
+                };
+            }
+             self.collectionView.array = modelArray;
+        }
+//        [XSHouseFixedData sharedInstance].renthouseConditionArray = modelArray;
+    }];
+}
+
+
+- (void)searchRentHouse{
+    
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict safeSetObject:[XSUserServer sharedInstance].cityModel.code forKey:@"cityId"];
+    WEAK_SELF;
+    [self.subInfoInterface searchRenthousListWithKeyVales:dict per_page:10 page_index:0 callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
         STRONG_SELF;
         if (error == nil) {
             if (responseModel.code.intValue == SuccessCode) {

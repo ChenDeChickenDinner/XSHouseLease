@@ -93,6 +93,15 @@
     [self GET:url param:dict progress:nil callback:callback];
 }
 
+    
+- (void)renthouseDetailsWithHouse_id:(NSString *)house_id callback:(HBCompletionBlock)callback{
+    NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
+    NSString *url = [NSString stringWithFormat:@"%@/renthouse/details",XSBaseUrl];
+    if (house_id) {
+        url = [url stringByAppendingFormat:@"/%@",house_id];
+    }
+    [self GET:url param:dict progress:nil callback:callback];
 
+}
 
 @end

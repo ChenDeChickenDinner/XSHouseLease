@@ -31,7 +31,7 @@
       NSString *path = [[NSBundle mainBundle] pathForResource:@"xsjson" ofType:@"json"];
       // 将文件数据化
       NSData *data = [[NSData alloc] initWithContentsOfFile:path];
-      [YBModelFile createFileWithName:@"XSHouseRentInfo" data:data];
+      [YBModelFile createFileWithName:@"XSHouseDetails" data:data];
 }
 @end
 

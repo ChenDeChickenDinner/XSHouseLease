@@ -43,7 +43,6 @@
     [self.view addSubview:searchView];
     self.searchView = searchView;
     
-    [self renthouseConditionWithCallback];
 
 }
 - (void)viewWillLayoutSubviews{
@@ -63,13 +62,6 @@
     [self.navigationController setNavigationBarHidden:isShowHomePage animated:YES];
 }
 
--(void)renthouseConditionWithCallback{
-    
-    [self.subInfoInterface renthouseConditionWithCallback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
-        NSMutableArray *modelArray = [XSHouseModuleModel mj_objectArrayWithKeyValuesArray:responseModel.data];
-        [XSHouseFixedData sharedInstance].renthouseConditionArray = modelArray;
-    }];
-}
 
 
 - (NSMutableArray *)getDataWithJsonName:(NSString *)name{

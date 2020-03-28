@@ -9,18 +9,25 @@
 #import "XSMyPublishHosueController.h"
 #import "XSHouseInfoTableView.h"
 #import "XSHouseRentInfoModel.h"
+#import "XSHouseDetailsController.h"
+
 @interface XSMyPublishHosueController ()
 @property (nonatomic,strong) XSHouseInfoTableView *tableView;
 
 @end
 
 @implementation XSMyPublishHosueController
-
+- (NSMutableDictionary *)searchDict{
+    if (!_searchDict) {
+        _searchDict = [NSMutableDictionary dictionary];
+    }
+    return _searchDict;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
         if (self.source == XSBHouseInfoSource_Search) {
-            self.title = @"租房搜索";
+            if (!self.title)self.title = @"租房搜索";
        }else if (self.source == XSBHouseInfoSource_MyPublish){
            self.title = @"我发布的租房";
        }else if (self.source == XSBHouseInfoSource_MyWatch){
@@ -57,11 +64,10 @@
 }
 - (void)loadMyPublishHosue{
     WEAK_SELF;
-    NSMutableDictionary *search = [NSMutableDictionary dictionary];
-    [search safeSetObject:@"1" forKey:@"cityId"];
+    [self.searchDict safeSetObject:@"1" forKey:@"cityId"];
 
     if (self.source == XSBHouseInfoSource_Search) {
-        [self.subInfoInterface searchRenthousListWithKeyVales:search per_page:10 page_index:0 callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+        [self.subInfoInterface searchRenthousListWithKeyVales:self.searchDict per_page:10 page_index:0 callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
             STRONG_SELF;
               [self dataProcessingWithResponseModel:responseModel error:error];
         }];
@@ -71,7 +77,7 @@
             [self dataProcessingWithResponseModel:responseModel error:error];
         }];
     }else if (self.source == XSBHouseInfoSource_MyWatch){
-        [self.subInfoInterface watchRenthousListWithKeyVales:search per_page:10 page_index:0 callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+        [self.subInfoInterface watchRenthousListWithKeyVales:self.searchDict per_page:10 page_index:0 callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
             STRONG_SELF;
               [self dataProcessingWithResponseModel:responseModel error:error];
         }];
@@ -102,13 +108,18 @@
         }
 }
 - (void)houseInfoClickSettingWithModelArray:(NSArray *)array{
+    WEAK_SELF;
     for (XSHouseRentInfoModel *model in array) {
         model.source = self.source;
         model.houseType = self.houseType;
         model.clickBlack = ^(XSBHouseInfoModel * _Nonnull model, XShouseOperation operation) {
+            STRONG_SELF;
             if ([model isKindOfClass:[XSHouseRentInfoModel class]]) {
                 XSHouseRentInfoModel *newModel = (XSHouseRentInfoModel *)model;
                 NSLog(@"house_id = %@",newModel.house_id);
+                XSHouseDetailsController *vc = [[XSHouseDetailsController alloc]init];
+                vc.houseid = newModel.house_id.stringValue;
+                [self.navigationController pushViewController:vc animated:YES];
             }
         };
     }

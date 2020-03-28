@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign) XSBHouseInfoSource source;
 @property(nonatomic,assign) XSBHouseType houseType;
 
-@property(nonatomic,strong)
+@property(nonatomic,strong) NSMutableDictionary *searchDict;
 
 @end
 
