@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rEM-IU-Yw8" userLabel="容器">
-                                <rect key="frame" x="52.5" y="0.0" width="252.5" height="44"/>
+                                <rect key="frame" x="52" y="0.0" width="253" height="44"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DFP-ox-2Vy">
                                         <rect key="frame" x="0.0" y="0.0" width="126.5" height="44"/>
@@ -36,7 +36,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Bu-wd-aya">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Bu-wd-aya">
                                                 <rect key="frame" x="43" y="5" width="40.5" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="B9X-d6-Dzu"/>
@@ -69,7 +69,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="plU-6X-oMs">
-                                        <rect key="frame" x="126.5" y="0.0" width="126" height="44"/>
+                                        <rect key="frame" x="126.5" y="0.0" width="126.5" height="44"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWe-cu-fCI">
                                                 <rect key="frame" x="0.0" y="11.5" width="38" height="21"/>
@@ -81,8 +81,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EOK-s8-Ev4">
-                                                <rect key="frame" x="43" y="5" width="40" height="34"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EOK-s8-Ev4">
+                                                <rect key="frame" x="43" y="5" width="40.5" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="AEd-7j-hWt"/>
                                                 </constraints>
@@ -90,7 +90,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lh5-ju-Vjx">
-                                                <rect key="frame" x="88" y="11.5" width="38" height="21"/>
+                                                <rect key="frame" x="88.5" y="11.5" width="38" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="7ke-Yq-CO6"/>
                                                     <constraint firstAttribute="width" constant="38" id="soc-pC-6Xg"/>
@@ -127,7 +127,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkI-HN-36k">
-                                <rect key="frame" x="15" y="11.5" width="37.5" height="21"/>
+                                <rect key="frame" x="15" y="11.5" width="37" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="eZ0-B8-xlK"/>
                                 </constraints>

@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface XSHouseInfoTableView : UITableView
 @property(nonatomic,strong) NSArray *array;
-
+@property(nonatomic,assign) BOOL heardSearchView;
 @end
 
 NS_ASSUME_NONNULL_END

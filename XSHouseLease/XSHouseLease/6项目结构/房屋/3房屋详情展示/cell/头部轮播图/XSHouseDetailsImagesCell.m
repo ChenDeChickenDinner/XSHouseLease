@@ -59,6 +59,8 @@
     if ([model isKindOfClass:[XSHouseDetailsInfoCellModel class]]) {
         XSHouseDetailsInfoCellModel *newModel = (XSHouseDetailsInfoCellModel *)model;
         NSArray *urlarray = @[@"http:\/\/120.27.95.26\/system\/hire-house\/air.png",@"http:\/\/120.27.95.26\/system\/hire-house\/air.png",@"http:\/\/120.27.95.26\/system\/hire-house\/air.png"];
+        
+        
 //        self.cycleScrollView.imageURLStringsGroup = newModel.dataModel.contentImg;
         self.cycleScrollView.imageURLStringsGroup = urlarray;
 

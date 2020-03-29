@@ -11,42 +11,63 @@
 #import "XSHouseInfoTableView.h"
 #import "XSHouseRentInfoModel.h"
 #import "XSMyPublishHosueController.h"
+#import "XSHouseDetailsController.h"
+
 
 @interface XSHouseModuleViewController ()
 @property (nonatomic,strong)XSRegionSearchView *searcView;
 @property (strong, nonatomic) XSCollectionView *collectionView;
 @property (strong, nonatomic) UIView *lineView;
 @property (nonatomic,strong) XSHouseInfoTableView *tableView;
-
 @end
 
 @implementation XSHouseModuleViewController
-
+- (void)viewWillLayoutSubviews{
+    [super viewWillLayoutSubviews];
+    self.searcView.frame = CGRectMake(0, 0, SCREEN_SIZE.width - 110, 35);
+//    self.collectionView.frame = CGRectMake(0, 0, self.view.width, 230);
+//    self.lineView.frame = CGRectMake(0, CGRectGetMaxY(self.collectionView.frame), self.view.width, 65);
+    self.tableView.frame = CGRectMake(0, CGRectGetMaxY(self.lineView.frame), self.view.width, self.view.height- CGRectGetMaxY(self.lineView.frame));
+//    self.searchConditionalview.frame = CGRectMake(0, 25, self.view.width, 40);
+ 
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"message"] style:UIBarButtonItemStyleDone target:self action:@selector(callMessage)];
     
     XSRegionSearchView *searcView = [[XSRegionSearchView alloc]init];
+    searcView.searchBlack = ^(NSString *searhKey) {
+        
+    };
     self.searcView = searcView;
 
     
     XSCollectionView *collectionView = [[XSCollectionView alloc]init];
+    collectionView.frame = CGRectMake(0, 0, 0, 230);
     collectionView.array = [XSHouseFixedData sharedInstance].renthouseConditionArray;
     self.collectionView = collectionView;
 
     
     UIView *lineView = [[UIView alloc]init];
     lineView.backgroundColor = XSColor(246, 243, 245);
+    
+//    XSSearchConditionalView *searchConditionalview = [self addSearchConditionalView];
+//    self.searchConditionalview = searchConditionalview;
+//    [lineView addSubview:searchConditionalview];
+//
     self.lineView = lineView;
     
-    XSHouseInfoTableView *tableView = [[XSHouseInfoTableView alloc]init];
+    XSHouseInfoTableView *tableView = [[XSHouseInfoTableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+    tableView.tableHeaderView = collectionView;
+    tableView.heardSearchView = YES;
     self.tableView = tableView;
 
     
     self.navigationItem.titleView = searcView;
-    [self.view addSubview:collectionView];
-    [self.view addSubview:lineView];
+//    [self.view addSubview:collectionView];
+//    [self.view addSubview:lineView];
     [self.view addSubview:tableView];
 
     
@@ -110,23 +131,19 @@
             if ([model isKindOfClass:[XSHouseRentInfoModel class]]) {
                 XSHouseRentInfoModel *newModel = (XSHouseRentInfoModel *)model;
                 NSLog(@"house_id = %@",newModel.house_id);
-                
+                XSHouseDetailsController *vc = [[XSHouseDetailsController alloc]init];
+                 vc.houseid = newModel.house_id.stringValue;
+                 [self.navigationController pushViewController:vc animated:YES];
             }
         };
 
     }
 }
-- (void)viewWillLayoutSubviews{
-    [super viewWillLayoutSubviews];
-    self.searcView.frame = CGRectMake(0, 0, SCREEN_SIZE.width - 110, 40);
-    self.collectionView.frame = CGRectMake(0, 0, self.view.width, 230);
-    self.lineView.frame = CGRectMake(0, CGRectGetMaxY(self.collectionView.frame), self.view.width, 20);
-    self.tableView.frame = CGRectMake(0, CGRectGetMaxY(self.lineView.frame), self.view.width, self.view.height- CGRectGetMaxY(self.lineView.frame));
 
-
-}
 - (void)callMessage{
     
 }
 
 @end
+
+

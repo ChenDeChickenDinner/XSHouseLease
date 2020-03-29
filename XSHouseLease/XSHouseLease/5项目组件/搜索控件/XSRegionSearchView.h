@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface XSRegionSearchView : UIView
 +(instancetype)searchView;
+@property(nonatomic,copy) searchBlack searchBlack;
+
 @end
 
 NS_ASSUME_NONNULL_END

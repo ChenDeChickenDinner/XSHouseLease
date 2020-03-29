@@ -22,37 +22,13 @@
     
 }
 
-- (void)awakeFromNib{
-    [super awakeFromNib];
-    
-    self.layer.shadowColor = [UIColor hb_colorWithHexString:@"#929292" alpha:1].CGColor;
-     self.layer.shadowOffset = CGSizeMake(0, 0);
-     self.layer.shadowOpacity = 0.8;
-     self.layer.shadowRadius = 9.0;
-     self.layer.cornerRadius = 9.0;
-    
-    
-    
-    
-    self.layer.cornerRadius = 8;
-    self.layer.borderWidth = 0.5;
-    self.layer.masksToBounds = YES;
-    self.layer.borderColor = [UIColor hb_colorWithHexString:@"#929292" alpha:1].CGColor;
-    
-//    self.layer.shadowOpacity = 1;// 阴影透明度
-//
-//    self.layer.shadowColor = [UIColor hb_colorWithHexString:@"#929292" alpha:1].CGColor;// 阴影的颜色
-//
-//    self.layer.shadowRadius = 3;// 阴影扩散的范围控制
-//
-//    self.layer.shadowOffset  = CGSizeMake(1, 1);// 阴影的范围
 
-}
 
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-        self.layer.shadowColor = [UIColor hb_colorWithHexString:@"#929292" alpha:1].CGColor;
+        self.backgroundColor = [UIColor clearColor];
+         self.layer.shadowColor = [UIColor hb_colorWithHexString:@"#929292" alpha:1].CGColor;
          self.layer.shadowOffset = CGSizeMake(0, 0);
          self.layer.shadowOpacity = 0.8;
          self.layer.shadowRadius = 9.0;
@@ -60,10 +36,11 @@
         
         
         UIView *bkView = [[UIView alloc]initWithFrame:CGRectZero];
+        bkView.backgroundColor = [UIColor whiteColor];
         bkView.layer.cornerRadius = 8;
 //        bkView.layer.borderWidth = 0.5;
         bkView.layer.masksToBounds = YES;
-//        bkView.layer.borderColor = [UIColor hb_colorWithHexString:@"#929292" alpha:1].CGColor;
+        bkView.layer.borderColor = [UIColor hb_colorWithHexString:@"#929292" alpha:1].CGColor;
 
         self.bkView = bkView;
         
@@ -91,11 +68,16 @@
     
     self.bkView.frame = self.bounds;
     self.searchBtn.frame = CGRectMake(11, (self.height - 17)/2, 17, 17);
-    self.searchTextField.frame = CGRectMake(CGRectGetMaxX(self.searchBtn.frame) + 10, 0, self.width - self.searchBtn.width - 10, 40);
+    self.searchTextField.frame = CGRectMake(CGRectGetMaxX(self.searchBtn.frame) + 10, 0, self.width - self.searchBtn.width - 10, self.height);
 
 }
 - (void)textFieldDidEndEditing:(UITextField *)textField{
-    
+    if (textField.text.length > 0) {
+        if (self.searchBlack) {
+             self.searchBlack(textField.text);
+         }
+    }
+ 
 }
 
 @end

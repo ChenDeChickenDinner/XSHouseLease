@@ -113,62 +113,6 @@
 
      },
     {
-     "title":"称呼",
-     "sequence":2,
-     "celHeight":53,
-     "cellClass":"XSHouseSubTextFieldTableViewCell",
-     "arrayValue": [
-                     {
-                         "name":"称呼",
-                         "key":"callName",
-                         "moreSelect":false,
-                         "sequence":2,
-                         "keyInputType":0,
-                         "keyTextInputType":0,
-                         "values":[
-                                     {
-                                     "placeholder":"如何称呼您",
-                                     "frontDescribe":null,
-                                     "value":null,
-                                     "valueStr":null,
-                                     "hindDescribe":null,
-                                     "isSelect":false,
-                                     "sendType":1
-                                    }
-                                ]
-                     }
-                   ]
-
-     },
-    {
-     "title":"联系方式",
-     "sequence":2,
-     "celHeight":53,
-     "cellClass":"XSHouseSubTextFieldTableViewCell",
-     "arrayValue": [
-                     {
-                         "name":"联系方式",
-                         "key":"callPhone",
-                         "moreSelect":false,
-                         "sequence":2,
-                         "keyInputType":0,
-                         "keyTextInputType":2,
-                         "values":[
-                                     {
-                                     "placeholder":"您的电话",
-                                     "frontDescribe":null,
-                                     "value":null,
-                                     "valueStr":null,
-                                     "hindDescribe":null,
-                                     "isSelect":false,
-                                     "sendType":1
-                                    }
-                                ]
-                     }
-                   ]
-
-     },
-    {
     "title":"出租方式",
     "sequence":1,
     "celHeight":53,
@@ -205,30 +149,59 @@
 
     },
     {
-    "title":"梯户比例",
-    "sequence":1,
-    "celHeight":53,
-    "cellClass":"XSHouseSubTextFieldTableViewCell",
-    "arrayValue": [
-                    {
-                        "name":"梯户比例",
-                        "key":null,
-                        "moreSelect":false,
-                        "sequence":0,
-                        "keyInputType":0,
-                        "values":[
-                                    {
-                                    "placeholder":"请输入",
-                                    "frontDescribe":"一梯",
-                                    "value":1,
-                                    "valueStr":"三",
-                                    "hindDescribe":"户",
-                                    "isSelect":false,
-                                    "sendType":1
-                                   }
-                               ]
-                    }
-                  ]
+      "title":"称呼",
+      "sequence":2,
+      "celHeight":53,
+      "cellClass":"XSHouseSubTextFieldTableViewCell",
+      "arrayValue": [
+                      {
+                          "name":"称呼",
+                          "key":"callName",
+                          "moreSelect":false,
+                          "sequence":2,
+                          "keyInputType":0,
+                          "keyTextInputType":0,
+                          "values":[
+                                      {
+                                      "placeholder":"如何称呼您",
+                                      "frontDescribe":null,
+                                      "value":null,
+                                      "valueStr":null,
+                                      "hindDescribe":null,
+                                      "isSelect":false,
+                                      "sendType":1
+                                     }
+                                 ]
+                      }
+                    ]
 
-    }
+      },
+     {
+      "title":"联系方式",
+      "sequence":2,
+      "celHeight":53,
+      "cellClass":"XSHouseSubTextFieldTableViewCell",
+      "arrayValue": [
+                      {
+                          "name":"联系方式",
+                          "key":"callPhone",
+                          "moreSelect":false,
+                          "sequence":2,
+                          "keyInputType":0,
+                          "keyTextInputType":2,
+                          "values":[
+                                      {
+                                      "placeholder":"您的电话",
+                                      "frontDescribe":null,
+                                      "value":null,
+                                      "valueStr":null,
+                                      "hindDescribe":null,
+                                      "isSelect":false,
+                                      "sendType":1
+                                     }
+                                 ]
+                      }
+                    ]
+
+      },
 ]

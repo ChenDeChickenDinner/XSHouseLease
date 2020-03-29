@@ -7,9 +7,38 @@
 //
 
 #import "XSHouseFixedData.h"
+@implementation XSHousePicture
++ (NSDictionary *)mj_replacedKeyFromPropertyName{
+    return @{@"ID":@"id"};
+}
+@end
+@implementation XSHousehots
++ (NSDictionary *)mj_replacedKeyFromPropertyName{
+    return @{@"ID":@"id"};
+}
+@end
+
+
 
 @implementation XSHouseFixedData
+
 DEF_SINGLETON(XSHouseFixedData)
+
+- (void)setBunnerArray:(NSMutableArray<XSHousePicture *> *)bunnerArray{
+    _bunnerArray = bunnerArray;
+    [_bunnerUrlArray removeAllObjects];
+    for (XSHousePicture * pic in bunnerArray) {
+        [_bunnerUrlArray addObject:pic.imgUrl.copy];
+    }
+  
+}
+- (NSMutableArray<NSString *> *)bunnerUrlArray{
+    if (_bunnerUrlArray == nil) {
+        _bunnerUrlArray = [NSMutableArray array];
+    }
+    return _bunnerUrlArray;
+}
+
 - (NSMutableDictionary *)subRentParameterDict{
     if (!_subRentParameterDict) {
         _subRentParameterDict = [NSMutableDictionary dictionary];

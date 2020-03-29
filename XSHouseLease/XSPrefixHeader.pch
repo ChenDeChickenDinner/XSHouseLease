@@ -39,6 +39,7 @@
 
 
 
+typedef void(^searchBlack)(NSString *searhKey);
 
 
 //获取屏幕宽高

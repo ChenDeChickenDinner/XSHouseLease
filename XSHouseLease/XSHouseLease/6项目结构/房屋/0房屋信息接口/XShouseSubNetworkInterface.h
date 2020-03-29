@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 // 城市信息-市区镇
 - (void)city_treeWithCallback:(HBCompletionBlock)callback;
 
+- (void)bunnerListWithCallback:(HBCompletionBlock)callbac;
 // 上传房屋-入参信息相关枚举
 - (void)getRentEnumsWithCallback:(HBCompletionBlock)callback;
 
@@ -39,6 +40,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 租房详情
 - (void)renthouseDetailsWithHouse_id:(NSString *)house_id callback:(HBCompletionBlock)callback;
+
+//热搜
+- (void)hotsSearchWithCallback:(HBCompletionBlock)callback;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -11,6 +11,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface XSLocationSearchview : UIView
+
+
+@property(nonatomic,copy) searchBlack searchBlack;
+@property (nonatomic, strong) NSArray *imagePathsGroup;
+@property (strong, nonatomic) NSMutableArray<XSHousehots *> *hotsSearchArray;
 + (instancetype)locationSearchview;
 @end
 

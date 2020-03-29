@@ -7,21 +7,49 @@
 //
 
 #import "XSHouseInfoTableView.h"
+@interface XSSearchConditionalView : UIView
+
+@end
+
+@implementation XSSearchConditionalView
+
+
+
+@end
+
+@interface XSClickBtn : UIButton
+
+@end
+
+@implementation XSClickBtn
+
+- (void)layoutSubviews{
+    [super layoutSubviews];
+ 
+}
+- (void)awakeFromNib{
+    [super awakeFromNib];
+ [self setTitleEdgeInsets:UIEdgeInsetsMake(0, -self.imageView.size.width, 0,self.imageView.size.width)];
+
+ [self setImageEdgeInsets:UIEdgeInsetsMake(0,self.titleLabel.bounds.size.width, 0, -(self.titleLabel.bounds.size.width + 5))];
+}
+@end
 
 @interface XSHouseInfoTableView ()<UITableViewDelegate,UITableViewDataSource>
+@property (nonatomic,strong) XSSearchConditionalView *searchConditionalview;
+
 @end
 
 
 @implementation XSHouseInfoTableView
-- (instancetype)initWithFrame:(CGRect)frame{
-    self = [super initWithFrame:frame];
+ - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style{
+    self = [super initWithFrame:frame style:style];
     if (self) {
-        
+        self.backgroundColor = [UIColor whiteColor];
         self.delegate = self;
         self.dataSource = self;
         self.rowHeight = UITableViewAutomaticDimension;
         self.estimatedRowHeight = 100;
-        self.backgroundColor = XSColor(246, 246, 246);
         self.estimatedSectionHeaderHeight = 0;
         self.estimatedSectionFooterHeight = 0;
         self.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
@@ -31,6 +59,7 @@
     }
     return self;
 }
+
 - (NSArray *)array{
     if (_array == nil) {
         _array = [NSMutableArray array];
@@ -40,9 +69,22 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.array.count;
 }
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if (self.heardSearchView) {
+      return 65;
+    }else{
+      return 0;
+    }
+}
 
-
-
+-(UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    if (self.heardSearchView) {
+        XSSearchConditionalView *view  = [[NSBundle mainBundle] loadNibNamed:@"XSSearchConditionalView" owner:self options:nil].lastObject;
+        return view;
+    }else{
+        return nil;
+    }
+}
 - (UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     XSBHouseInfoModel *model = [self.array safeObjectAtIndex:indexPath.row];
     

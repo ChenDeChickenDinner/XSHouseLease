@@ -22,7 +22,7 @@
         self.myImageView = imageView;
 
         
-        
+        self.backgroundColor = [UIColor clearColor];
         self.contentView.backgroundColor = [UIColor clearColor];
         UILabel *label = [[UILabel alloc] init];
         label.backgroundColor = [UIColor clearColor];

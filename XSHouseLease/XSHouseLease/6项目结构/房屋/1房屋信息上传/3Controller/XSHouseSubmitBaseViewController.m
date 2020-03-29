@@ -24,7 +24,6 @@
     self.secondArray = [self getDataWithJsonName:@"XSHouseInfoSecond"];
     self.thirdArray = [self getDataWithJsonName:@"XSHouseInfoThird"];
 
-    [self city_tree];
     
     
 }
@@ -69,19 +68,7 @@
 - (void)uploadImage:(UIImage *)image callback:(HBCompletionBlock)callback{
     [self.subInfoInterface uploadImage:image callback:callback];
 }
--(void)city_tree{
-    
-    WEAK_SELF;
-    [self.subInfoInterface city_treeWithCallback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
-        STRONG_SELF;
-//        [responseModel.data mj_JSONData];
-//        [YBModelFile createFileWithName:@"XSCity" data:[responseModel.data mj_JSONData]];
 
-        NSMutableArray *modelArray = [BRProvinceModel mj_objectArrayWithKeyValuesArray:responseModel.data];
-  
-        [XSHouseFixedData sharedInstance].cityArray = modelArray;
-    }];
-}
 
 
 

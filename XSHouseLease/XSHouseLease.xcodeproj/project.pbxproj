@@ -108,6 +108,7 @@
 		6C6BC184241FBBAC00B62001 /* MyInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C6BC182241FBBAC00B62001 /* MyInfoViewController.xib */; };
 		6C7DFE7324265077003E86D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C7DFE7024265076003E86D7 /* Main.storyboard */; };
 		6C7DFE7424265077003E86D7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7DFE7124265076003E86D7 /* ViewController.m */; };
+		6C9FF7A0243023810020509C /* XSSearchConditionalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FF79F243023810020509C /* XSSearchConditionalView.xib */; };
 		6CDCE3A22426E6850049AE63 /* XSNetworkInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDCE3A12426E6850049AE63 /* XSNetworkInterface.m */; };
 		6CDCE3A52426ED9B0049AE63 /* XSOperationParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDCE3A42426ED9B0049AE63 /* XSOperationParam.m */; };
 		6CDCE3A92426F5D50049AE63 /* XSUserInfoInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDCE3A82426F5D50049AE63 /* XSUserInfoInterface.m */; };
@@ -301,6 +302,7 @@
 		6C7DFE7024265076003E86D7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		6C7DFE7124265076003E86D7 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6C7DFE7224265077003E86D7 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6C9FF79F243023810020509C /* XSSearchConditionalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSSearchConditionalView.xib; sourceTree = "<group>"; };
 		6CDCE3A02426E6850049AE63 /* XSNetworkInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSNetworkInterface.h; sourceTree = "<group>"; };
 		6CDCE3A12426E6850049AE63 /* XSNetworkInterface.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSNetworkInterface.m; sourceTree = "<group>"; };
 		6CDCE3A32426ED9B0049AE63 /* XSOperationParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSOperationParam.h; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 				6C3BEB4B242C8697001393EF /* XSHouseModuleViewController.h */,
 				6C3BEB4C242C8697001393EF /* XSHouseModuleViewController.m */,
 				6C3BEB99242E3731001393EF /* XSHouseModuleViewController.xib */,
+				6C9FF79F243023810020509C /* XSSearchConditionalView.xib */,
 			);
 			path = "模块主页";
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 		6C3BEBA5242E3B5F001393EF /* 6项目结构 */ = {
 			isa = PBXGroup;
 			children = (
+				6C9FF79E24301AFB0020509C /* 固定接口模型 */,
 				6C3BEBF1242E3C89001393EF /* 房屋 */,
 				6CDCE3E7242740AB0049AE63 /* 首页 */,
 				6CDCE3E8242740B00049AE63 /* 查找 */,
@@ -848,6 +852,13 @@
 			path = "我的";
 			sourceTree = "<group>";
 		};
+		6C9FF79E24301AFB0020509C /* 固定接口模型 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "固定接口模型";
+			sourceTree = "<group>";
+		};
 		6CDCE3E6242740A20049AE63 /* 消息 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1092,6 +1103,7 @@
 				6C3BEB5F242C8697001393EF /* XSHouseSubTextFieldTableViewCell.xib in Resources */,
 				6C2286B8242ED5F4001D5F58 /* XSHouseDetailsBasicInfoCell.xib in Resources */,
 				6CE51BB5242F660A00023FFC /* XSHouseCallPhone.xib in Resources */,
+				6C9FF7A0243023810020509C /* XSSearchConditionalView.xib in Resources */,
 				6CDCE3DE24273CB10049AE63 /* xsjson.json in Resources */,
 				6C0DA7ED242F1C58000A59B6 /* XSFacilitiesInfoJson.json in Resources */,
 				6C0DA7D0242EDD8C000A59B6 /* XSHouseDetailsInfo.json in Resources */,

@@ -16,6 +16,7 @@ static NSString *XSItemCollectionViewCellStr = @"XSItemCollectionViewCellStr";
 @implementation XSCollectionView
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
+    self.backgroundColor = [UIColor clearColor];
     if (self) {
         [self addCollectionView];
     }
@@ -42,6 +43,7 @@ static NSString *XSItemCollectionViewCellStr = @"XSItemCollectionViewCellStr";
       [self addSubview:collectionView];
       self.collectionView = collectionView;
 }
+
 - (void)layoutSubviews{
     [super layoutSubviews];
     self.collectionView.frame = CGRectMake(0, 0, self.width, self.height - 20);

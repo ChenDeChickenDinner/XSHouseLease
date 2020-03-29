@@ -40,6 +40,9 @@
     }
     self.collectionView.array = array;
     XSLocationSearchview *searchView = [XSLocationSearchview locationSearchview];
+    searchView.searchBlack = ^(NSString * _Nonnull searhKey) {
+        NSLog(@"ss-%@",searhKey);
+    };
     [self.view addSubview:searchView];
     self.searchView = searchView;
     
