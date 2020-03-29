@@ -113,6 +113,7 @@
 		6C9FF7A5243035D40020509C /* XSHouseSubFootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FF7A4243035D40020509C /* XSHouseSubFootView.xib */; };
 		6C9FF7A7243074BD0020509C /* XSHouseSave.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FF7A6243074BD0020509C /* XSHouseSave.json */; };
 		6C9FF7AA243082590020509C /* XSHouseRentStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FF7A9243082590020509C /* XSHouseRentStatusView.m */; };
+		6C9FF7AC24309BFE0020509C /* fangdinghui.cer in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FF7AB24309BFE0020509C /* fangdinghui.cer */; };
 		6CDCE3A22426E6850049AE63 /* XSNetworkInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDCE3A12426E6850049AE63 /* XSNetworkInterface.m */; };
 		6CDCE3A52426ED9B0049AE63 /* XSOperationParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDCE3A42426ED9B0049AE63 /* XSOperationParam.m */; };
 		6CDCE3A92426F5D50049AE63 /* XSUserInfoInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDCE3A82426F5D50049AE63 /* XSUserInfoInterface.m */; };
@@ -313,6 +314,7 @@
 		6C9FF7A6243074BD0020509C /* XSHouseSave.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseSave.json; sourceTree = "<group>"; };
 		6C9FF7A8243082590020509C /* XSHouseRentStatusView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSHouseRentStatusView.h; sourceTree = "<group>"; };
 		6C9FF7A9243082590020509C /* XSHouseRentStatusView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSHouseRentStatusView.m; sourceTree = "<group>"; };
+		6C9FF7AB24309BFE0020509C /* fangdinghui.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = fangdinghui.cer; sourceTree = "<group>"; };
 		6CDCE3A02426E6850049AE63 /* XSNetworkInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSNetworkInterface.h; sourceTree = "<group>"; };
 		6CDCE3A12426E6850049AE63 /* XSNetworkInterface.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSNetworkInterface.m; sourceTree = "<group>"; };
 		6CDCE3A32426ED9B0049AE63 /* XSOperationParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSOperationParam.h; sourceTree = "<group>"; };
@@ -805,6 +807,7 @@
 		6C6BC13D241FA75300B62001 = {
 			isa = PBXGroup;
 			children = (
+				6C9FF7AB24309BFE0020509C /* fangdinghui.cer */,
 				6C6BC185241FD0FC00B62001 /* XSPrefixHeader.pch */,
 				6C6BC148241FA75300B62001 /* XSHouseLease */,
 				6C6BC147241FA75300B62001 /* Products */,
@@ -1117,6 +1120,7 @@
 				6C3BEB63242C8697001393EF /* XSHouseInfoThird.json in Resources */,
 				6C6BC17F241FBB6700B62001 /* XSLoginViewController.xib in Resources */,
 				6C3BEB9A242E3731001393EF /* XSHouseModuleViewController.xib in Resources */,
+				6C9FF7AC24309BFE0020509C /* fangdinghui.cer in Resources */,
 				6C2286CC242ED706001D5F58 /* XSHouseDetailsIntroduceInfoCell.xib in Resources */,
 				6C3BEB5F242C8697001393EF /* XSHouseSubTextFieldTableViewCell.xib in Resources */,
 				6C2286B8242ED5F4001D5F58 /* XSHouseDetailsBasicInfoCell.xib in Resources */,

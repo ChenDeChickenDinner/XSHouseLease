@@ -108,7 +108,7 @@
     }
 }
 
-#define btnWidth 60
+#define btnWidth 65
 #define btnJX 10
 
 - (void)addStatusSubView{
@@ -117,7 +117,8 @@
         XSHouseRentStatusModel *model = [self.modelArray safeObjectAtIndex:i];
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
         btn.tag = model.status.integerValue;
-        btn.backgroundColor = [UIColor redColor];
+        btn.backgroundColor = [UIColor whiteColor];
+        btn.titleLabel.font = [UIFont systemFontOfSize:13];
         [btn setTitle:model.title forState:UIControlStateNormal];
         btn.layer.masksToBounds = YES;
         btn.layer.cornerRadius = 5;

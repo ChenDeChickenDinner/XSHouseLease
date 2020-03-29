@@ -236,7 +236,7 @@
                 <outlet property="image" destination="Rhf-UP-vPP" id="A4T-Di-BPp"/>
                 <outlet property="infoLable" destination="okh-mo-aAq" id="TyF-4h-MlG"/>
                 <outlet property="rentPricelabe" destination="xNi-aI-fpf" id="b7g-q7-WNB"/>
-                <outlet property="statusEditView" destination="6Dx-VZ-Ymd" id="AK8-38-tcN"/>
+                <outlet property="statusEditView" destination="6Dx-VZ-Ymd" id="AVa-IH-0SI"/>
                 <outlet property="statusEditViewHeight" destination="Ecu-HI-oqh" id="rPo-tB-0Td"/>
                 <outlet property="titleLable" destination="uan-s3-2Ch" id="DIw-Qg-g3C"/>
                 <outlet property="watchNumBKView" destination="lfF-eW-gCZ" id="nNY-GS-KEn"/>

@@ -33,8 +33,8 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *statusEditViewHeight;
 @property (weak, nonatomic) IBOutlet UILabel *watchNumLable;
 
-@property (weak, nonatomic) IBOutlet UIView *statusEditView;
-@property (strong, nonatomic)  XSHouseRentStatusView *statusView ;
+@property (weak, nonatomic) IBOutlet XSHouseRentStatusView *statusEditView;
+//@property (strong, nonatomic)  XSHouseRentStatusView *statusView ;
 
 @end
 
@@ -70,17 +70,17 @@
     self.watchNumBKView.hidden = YES;
     
     XSHouseRentStatusView *statusView = [[XSHouseRentStatusView alloc]init];
-    statusView.clickEditStatus = ^(NSNumber * _Nonnull status) {
+    self.statusEditView.clickEditStatus = ^(NSNumber * _Nonnull status) {
         NSLog(@"1111111111111--------%@",status);
     };
-    self.statusView = statusView;
+//    self.statusView = statusView;
     [self.statusEditView addSubview:statusView];
     
 }
 - (void)layoutSubviews{
     [super layoutSubviews];
     
-    self.statusView.frame = self.statusEditView.bounds;
+//    self.statusView.frame = self.statusEditView.bounds;
 }
 - (void)updateWithModel:(XSBHouseInfoModel *)model{
     self.model = model;
@@ -127,7 +127,7 @@
             [self.statusEditView removeFromSuperview];
         }
         
-        self.statusView.status = newModel.status;
+        self.statusEditView.status = newModel.status;
     }
 }
 

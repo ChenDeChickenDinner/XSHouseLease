@@ -29,10 +29,10 @@
     FindHouseViewController *find =  [[FindHouseViewController alloc]init];
     MessageViewController *message =  [[MessageViewController alloc]init];
     MyInfoViewController *myinfo =  [[MyInfoViewController alloc]init];
-    [self addChildVc:HomePage title:@"首页" image:nil selectedImage:nil];
-    [self addChildVc:find title:@"查找" image:nil selectedImage:nil];
-    [self addChildVc:message title:@"消息" image:nil selectedImage:nil];
-    [self addChildVc:myinfo title:@"我的" image:nil selectedImage:nil];
+    [self addChildVc:HomePage title:@"首页" image:@"pageN" selectedImage:@"pageS"];
+    [self addChildVc:find title:@"查找" image:@"findN" selectedImage:@"findS"];
+    [self addChildVc:message title:@"消息" image:@"messageN" selectedImage:@"messageS"];
+    [self addChildVc:myinfo title:@"我的" image:@"myN" selectedImage:@"myS"];
 
 }
 - (void)YBMFConfig{
@@ -42,12 +42,13 @@
 }
 - (void)addChildVc:(UIViewController *)childVc title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage
 {
-    
+  
     XSNavViewController *nav = [[XSNavViewController alloc] initWithRootViewController:childVc];
     nav.tabBarItem.title = title;
-//    [nav.tabBarItem setImage:[UIImage imageNamed:image]];
-//    [nav.tabBarItem setSelectedImage:[UIImage imageNamed:selectedImage]];
+    [nav.tabBarItem setImage:[UIImage imageNamed:image]];
+    [nav.tabBarItem setSelectedImage:[[UIImage imageNamed:selectedImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [nav.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor redColor] forKey:NSForegroundColorAttributeName] forState:UIControlStateSelected];
     [self addChildViewController:nav];
-    
+
 }
 @end
