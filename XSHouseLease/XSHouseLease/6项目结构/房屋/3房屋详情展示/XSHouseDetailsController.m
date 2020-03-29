@@ -24,6 +24,8 @@
 
 @property (strong, nonatomic)  XSHouseCallPhone *callView;
 
+
+@property (strong, nonatomic)  XSHouseRentInfoModel *infoModel;
 @end
 
 @implementation XSHouseDetailsController
@@ -38,7 +40,7 @@
     [super viewDidLoad];
     
     self.title = @"房屋详情";
-
+//self.navigationItem.ba
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
@@ -60,12 +62,32 @@
     
     [self gethouseDetails];
    
+    
+    
+    self.callIm.layer.masksToBounds = YES;
+    self.callIm.layer.cornerRadius = 5;
+    self.cellPhone.layer.masksToBounds = YES;
+    self.cellPhone.layer.cornerRadius = 5;
+    
+    self.cellPhone.layer.borderWidth = 1;
+    self.cellPhone.layer.borderColor = [UIColor hb_colorWithHexString:@"#E82B2B" alpha:1].CGColor;
 }
 - (void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
 //    self.callView.frame = CGRectMake(0, 200, 200, 75);
     
 }
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+//    [self.navigationController setNavigationBarHidden:YES animated:YES];
+
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+//    [self.navigationController setNavigationBarHidden:NO animated:YES];
+
+}
+
 - (void)gethouseDetails{
     WEAK_SELF;
     [self.subInfoInterface renthouseDetailsWithHouse_id:self.houseid callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
@@ -74,6 +96,7 @@
         if (error == nil) {
             if (responseModel.code.integerValue == SuccessCode) {
                 XSHouseRentInfoModel *model = [XSHouseRentInfoModel mj_objectWithKeyValues:responseModel.data];
+                self.infoModel = model;
                 NSLog(@"房屋详情 = %@",[model mj_keyValues]);
                 [self assemblyCellDataArrayWithData:model];
                 [self houseUserInfoViewWithData:model];
@@ -137,6 +160,12 @@
     XSHouseDetailsInfoCellModel *model = [self.array safeObjectAtIndex:indexPath.row];
     if (model.clickBlack) {
         model.clickBlack(model, XShouseOperation_click);
+    }
+}
+- (IBAction)callPhone:(id)sender {
+    NSString *telString = [NSString stringWithFormat:@"telprompt://%@",self.infoModel.callPhone];
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:telString]]) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:telString] options:@{} completionHandler:nil];
     }
 }
 @end

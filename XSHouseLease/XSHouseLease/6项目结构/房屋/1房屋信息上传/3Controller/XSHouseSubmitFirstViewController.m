@@ -15,6 +15,7 @@
 #import "XSHouseSubListChooseTableViewCell.h"
 #import "XSPhotoPickerView.h"
 #import "XSHouseSubSuccessViewController.h"
+#import "XSHouseSubFootView.h"
 
 @interface XSHouseSubmitFirstViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
@@ -34,15 +35,15 @@
          STRONG_SELF;
            [allList hx_requestImageWithOriginal:isOriginal completion:^(NSArray<UIImage *> * _Nullable imageArray, NSArray<HXPhotoModel *> * _Nullable errorArray) {
                
-               [self uploadImage:imageArray.firstObject callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
-                   if (error == nil) {
-                       if (responseModel.code.integerValue == SuccessCode) {
-                           [self alertWithMessage:responseModel.message];
-                       }
-                   }else{
-                       [self alertWithMessage:error.domain];
-                   }
-               }];
+//               [self uploadImage:imageArray.firstObject callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+//                   if (error == nil) {
+//                       if (responseModel.code.integerValue == SuccessCode) {
+//                           [self alertWithMessage:responseModel.message];
+//                       }
+//                   }else{
+//                       [self alertWithMessage:error.domain];
+//                   }
+//               }];
                      NSSLog(@"\nimage: %@\nerror: %@",imageArray,errorArray);
                  }];
        };
@@ -62,6 +63,12 @@
     }
         
      if (self.submitStepsType == XSHouseSubmitStepsType_First) {
+         
+         XSHouseSubFootView *tableFooterView = [XSHouseSubFootView houseSubFootView];
+         
+         
+          tableFooterView.frame = CGRectMake(0, 0, self.myTableView.width, 160);
+          self.myTableView.tableFooterView = tableFooterView;
           [self.array addObjectsFromArray:self.firstArray];
          [self.nextBtn setTitle:@"下一步" forState:UIControlStateNormal];
       }else if (self.submitStepsType == XSHouseSubmitStepsType_Second){
@@ -131,13 +138,7 @@
             next.submitStepsType = XSHouseSubmitStepsType_Third;
             [self.navigationController pushViewController:next animated:YES];
         }else if (self.submitStepsType == XSHouseSubmitStepsType_Third){
-//            [self submitRenthouseSave];
-            
-            XSHouseSubSuccessViewController *success = [[XSHouseSubSuccessViewController alloc]init];
-            success.modalPresentationStyle = UIModalPresentationFullScreen;
-            [self presentViewController:success animated:YES completion:^{
-
-            }];
+            [self submitRenthouseSave];
         }
 }
 
@@ -145,7 +146,7 @@
 - (void)submitRenthouseSave{
     WEAK_SELF;
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    NSDictionary *dict= [XSHouseFixedData sharedInstance].subRentParameterDict;
+    NSMutableDictionary *dict= [XSHouseFixedData sharedInstance].subRentParameterDict;
     [self.subInfoInterface renthouseSaveWithDict:dict callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
         STRONG_SELF;
         [MBProgressHUD  hideHUDForView:self.view animated:YES];

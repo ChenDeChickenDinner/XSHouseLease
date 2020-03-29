@@ -62,9 +62,9 @@
         
          self.rarealabe.text = [NSString stringWithFormat:@"%@㎡",dataModel.area];
          
-         NSString *stra = [dataModel.featurePoints safeObjectAtIndex:0];;
-         NSString *strb = [dataModel.featurePoints safeObjectAtIndex:1];;
-         NSString *strc = [dataModel.featurePoints safeObjectAtIndex:2];;
+         NSString *stra = [dataModel.featurePointNames safeObjectAtIndex:0];;
+         NSString *strb = [dataModel.featurePointNames safeObjectAtIndex:1];;
+         NSString *strc = [dataModel.featurePointNames safeObjectAtIndex:2];;
             if ([stra isKindOfClass:[NSString class]]) {
             self.featurePointsLablea.text = [NSString stringWithFormat:@"%@",stra];
               self.featurePointsLableb.text = [NSString stringWithFormat:@"%@",strb];;

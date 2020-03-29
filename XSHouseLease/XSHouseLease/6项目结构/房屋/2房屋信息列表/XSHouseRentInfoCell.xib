@@ -195,24 +195,11 @@
                             <constraint firstAttribute="height" constant="88" id="ox7-2c-UlH"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Dx-VZ-Ymd" userLabel="操作">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Dx-VZ-Ymd" userLabel="操作" customClass="XSHouseRentStatusView">
                         <rect key="frame" x="15" y="121" width="361" height="23"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvF-UV-4JY">
-                                <rect key="frame" x="301" y="0.0" width="60" height="23"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="kUH-I3-7tL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" title="暂停出售"/>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="xvF-UV-4JY" firstAttribute="top" secondItem="6Dx-VZ-Ymd" secondAttribute="top" id="DbD-yK-xf2"/>
                             <constraint firstAttribute="height" constant="23" id="Ecu-HI-oqh"/>
-                            <constraint firstAttribute="trailing" secondItem="xvF-UV-4JY" secondAttribute="trailing" id="OgD-ry-qvE"/>
-                            <constraint firstAttribute="bottom" secondItem="xvF-UV-4JY" secondAttribute="bottom" id="yRd-d0-ig5"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4iw-Oc-StN">

@@ -136,9 +136,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *finishName;
 
 //特色
-@property (nonatomic, copy) NSArray<NSString *> *featurePoints;
+@property (nonatomic, copy) NSArray<NSString *> *featurePointNames;
+//@property (nonatomic, copy) NSArray<NSNumber *> *featurePoints;
+
+
 //配套设施
-@property (nonatomic, copy) NSArray<XSHouseDetailsFacilitiesModel *> *facilities;
+//@property (nonatomic, copy) NSArray<XSHouseDetailsFacilitiesModel *> *facilities;
+@property (nonatomic, copy) NSArray<NSNumber *> *facilities;
+
 
 //这是卖点
 @property (nonatomic, copy) NSString *modelIntroduced;
@@ -148,9 +153,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *estateIntroduced;
 
 
-//发布状态
+///1待审核 能编辑
+//2审核失败 能编辑
+//3已取消 能编辑 可重新发布1
+//4下架 能编辑
+//5暂停 能编辑 可发布6
+//6发布 不能编辑  可取消3 可暂停5
 @property (nonatomic, strong) NSNumber *status;
-//1待审核2审核失败3已取消4下架5暂停6发布
 @property (nonatomic, copy) NSString *statusName;
 
 //关注人数

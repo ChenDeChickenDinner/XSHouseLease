@@ -199,13 +199,11 @@ typedef void (^sendMessageSuccessful)(BOOL successful);
 }
 - (void)loginSuccess:(XSNetworkResponse *)responseModel{
 //    XSUserServer
-    XSUserModel *model =  [XSUserModel mj_objectWithKeyValues:responseModel.data];
-
+    [[NSUserDefaults standardUserDefaults] setObject:responseModel.data forKey:@"userInfo"];
+    NSDictionary *userInfo = [[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
+    XSUserModel *model =  [XSUserModel mj_objectWithKeyValues:userInfo];
     [XSUserServer sharedInstance].userModel = model;
-    [XSUserServer sharedInstance].isLogin = YES;
 
-    [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStatusChangedLogin object:nil];
-    NSLog(@"NotificationLoginStatusChangedLogin");
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)loginFailure{

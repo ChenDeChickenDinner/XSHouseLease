@@ -20,6 +20,16 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hcc-f8-VfP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkI-HN-36k">
+                                <rect key="frame" x="15" y="11.5" width="37" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="Wx1-9m-f7N"/>
+                                    <constraint firstAttribute="height" constant="21" id="eZ0-B8-xlK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rEM-IU-Yw8" userLabel="容器">
                                 <rect key="frame" x="52" y="0.0" width="253" height="44"/>
                                 <subviews>
@@ -122,19 +132,10 @@
                                     <constraint firstAttribute="bottom" secondItem="plU-6X-oMs" secondAttribute="bottom" id="Z5A-51-0PV"/>
                                     <constraint firstItem="DFP-ox-2Vy" firstAttribute="top" secondItem="rEM-IU-Yw8" secondAttribute="top" id="aiE-QV-pTZ"/>
                                     <constraint firstAttribute="trailing" secondItem="plU-6X-oMs" secondAttribute="trailing" id="ocB-3v-WjO"/>
+                                    <constraint firstItem="plU-6X-oMs" firstAttribute="top" secondItem="rEM-IU-Yw8" secondAttribute="top" id="qSs-ZI-YUu"/>
                                     <constraint firstItem="plU-6X-oMs" firstAttribute="width" secondItem="DFP-ox-2Vy" secondAttribute="width" id="qVl-a6-zoj"/>
-                                    <constraint firstItem="plU-6X-oMs" firstAttribute="top" secondItem="rEM-IU-Yw8" secondAttribute="top" id="xqD-U2-4ro"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkI-HN-36k">
-                                <rect key="frame" x="15" y="11.5" width="37" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="eZ0-B8-xlK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LQD-CP-9rw">
                                 <rect key="frame" x="0.0" y="43.5" width="320" height="0.5"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -177,6 +178,7 @@
                 <outlet property="textFieldFirst" destination="EOK-s8-Ev4" id="fhx-2d-vOF"/>
                 <outlet property="textFieldSceend" destination="2Bu-wd-aya" id="DYU-uv-TfC"/>
                 <outlet property="title" destination="tkI-HN-36k" id="dxC-kC-qaN"/>
+                <outlet property="titlew" destination="Wx1-9m-f7N" id="RYb-Kk-w8e"/>
                 <outlet property="valueViewSceend" destination="DFP-ox-2Vy" id="Aac-25-0II"/>
             </connections>
             <point key="canvasLocation" x="56.521739130434788" y="99.776785714285708"/>

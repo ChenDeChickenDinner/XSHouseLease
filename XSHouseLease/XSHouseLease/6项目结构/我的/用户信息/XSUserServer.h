@@ -20,6 +20,8 @@ UIKIT_EXTERN NSString *const NotificationLoginStatusChangedLogout;
 
 //AS_SINGLETON(XSUserServer)
 + (XSUserServer *)sharedInstance;
+
++ (void)automaticLogin;
 /** 用户模型 */
 @property (nonatomic ,strong) XSUserModel *userModel;
 

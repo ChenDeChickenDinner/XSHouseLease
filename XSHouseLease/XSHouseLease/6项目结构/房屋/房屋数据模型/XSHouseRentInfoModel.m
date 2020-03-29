@@ -19,7 +19,7 @@
     typeof(self) one = [[[self class] allocWithZone:zone] init];
     one.dealStatus = self.dealStatus;
       one.orientationName = self.orientationName;
-      one.featurePoints = self.featurePoints;
+//      one.featurePointNames = self.featurePointNames;
       one.estateIntroduced = self.estateIntroduced;
       one.waterElectricity = self.waterElectricity;
       one.callPhone = self.callPhone;
@@ -68,9 +68,9 @@
     return @{@"house_id":@"id"};
 }
 
-+ (NSDictionary *)mj_objectClassInArray{
-    return @{@"facilities" : @"XSHouseDetailsFacilitiesModel"};//前边，是属性数组的名字，后边就是类名
-}
+//+ (NSDictionary *)mj_objectClassInArray{
+//    return @{@"featurePointNames" : @""};//前边，是属性数组的名字，后边就是类名
+//}
 - (NSArray *)getAllProperties{
     u_int count;
     objc_property_t *properties  =class_copyPropertyList([self class], &count);

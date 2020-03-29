@@ -102,11 +102,17 @@ static NSString *XSHouseDetailsFacilitiesInfoCellStr = @"XSHouseDetailsFacilitie
         
         NSMutableArray *allArray  =  [[XSBusinessInfoSever sharedInstance].facilitiesInfoArray mutableCopy];
         for (XSHouseDetailsFacilitiesModel *showModel in allArray) {
-            for (XSHouseDetailsFacilitiesModel *model in dataModel.facilities) {
-                if ([model.ID isEqualToNumber:showModel.ID]) {
-                    showModel.status = model.status;
-                }
-            }
+//            for (XSHouseDetailsFacilitiesModel *model in dataModel.facilities) {
+//                if ([model.ID isEqualToNumber:showModel.ID]) {
+//                    showModel.status = model.status;
+//                }
+//            }
+            
+            for (NSNumber *model in dataModel.facilities) {
+                     if ([model isEqualToNumber:showModel.ID]) {
+                         showModel.status = YES;
+                     }
+                 }
         }
          self.array = allArray;
         [self.collectionView reloadData];

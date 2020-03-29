@@ -86,7 +86,7 @@ static const CGFloat kPhotoViewMargin = 10.0;
     photoView.collectionView.contentInset = UIEdgeInsetsMake(0, kPhotoViewMargin, 0, kPhotoViewMargin);
     photoView.delegate = self; //
     photoView.outerCamera = YES; // 是否把相机功能放在外面 默认NO
-    
+    photoView.editEnabled = NO;
     photoView.lineCount = 3; // 每行个数 默认 3 cell的宽高取决于 每行个数 与 HXPhotoView 的宽度 和 item间距
     photoView.spacing = kPhotoViewMargin; // 每个item间距 默认 3
     photoView.showAddCell = YES; // 是否显示添加的cell 默认 YES

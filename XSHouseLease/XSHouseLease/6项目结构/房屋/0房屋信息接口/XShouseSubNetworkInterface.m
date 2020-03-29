@@ -45,9 +45,21 @@ NSString *url = [NSString stringWithFormat:@"%@/estate/hots",XSBaseUrl];
 
 }
 // 租房上传提交
-- (void)renthouseSaveWithDict:(NSDictionary *)dict callback:(HBCompletionBlock)callback{
+- (void)renthouseSaveWithDict:(NSMutableDictionary *)dict callback:(HBCompletionBlock)callback{
+    NSNumber *customer_id = [XSUserServer sharedInstance].userModel.ID;
+    [dict safeSetObject:customer_id forKey:@"customerId"];
+
+    NSError *error;
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"XSHouseSave" ofType:@"json"];
+    NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableLeaves error:&error];
+    
+
+
+    NSLog(@"jsonDict",jsonDict);
     NSString *url = [NSString stringWithFormat:@"%@/renthouse/save2",XSBaseUrl];
+//    [self POST:url param:jsonDict progress:nil callback:callback];
     [self POST:url param:dict progress:nil callback:callback];
+
 }
 
 // 上传图片
@@ -113,6 +125,44 @@ NSString *url = [NSString stringWithFormat:@"%@/estate/hots",XSBaseUrl];
     if (house_id) {
         url = [url stringByAppendingFormat:@"/%@",house_id];
     }
+    [self GET:url param:dict progress:nil callback:callback];
+
+}
+// 更变房子状态
+- (void)editHouseStatusWithHouse_id:(NSString *)house_id houseType:(XSBHouseType)houseType status:(XSBHouseSubStatus)status  callback:(HBCompletionBlock)callback{
+    
+    NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
+    NSNumber *customer_id = [XSUserServer sharedInstance].userModel.ID;
+    NSString *url = [NSString stringWithFormat:@"%@/renthouse/details",XSBaseUrl];
+//
+//    if (customer_id) {
+//        url = [url stringByAppendingFormat:@"/%@",customer_id];
+//    }
+    if (house_id) {
+        url = [url stringByAppendingFormat:@"/%@",house_id];
+    }
+    [dict safeSetObject:[NSString stringWithFormat:@"%ld",(long)houseType] forKey:@"type"];
+    [dict safeSetObject:[NSString stringWithFormat:@"%ld",(long)status] forKey:@"status"];
+
+    [self GET:url param:dict progress:nil callback:callback];
+
+}
+// 关注取消关注房子
+- (void)rentWatchHouseWithHouse_id:(NSString *)house_id houseType:(XSBHouseType)houseType watch:(BOOL)watch callback:(HBCompletionBlock)callback{
+    
+    NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
+    NSNumber *customer_id = [XSUserServer sharedInstance].userModel.ID;
+    NSString *url = [NSString stringWithFormat:@"%@/renthouse/details",XSBaseUrl];
+
+    if (customer_id) {
+        url = [url stringByAppendingFormat:@"/%@",customer_id];
+    }
+    if (house_id) {
+        url = [url stringByAppendingFormat:@"/%@",house_id];
+    }
+    [dict safeSetObject:[NSString stringWithFormat:@"%ld",(long)houseType] forKey:@"type"];
+    [dict safeSetObject:[NSNumber numberWithBool:watch] forKey:@"watch"];
+
     [self GET:url param:dict progress:nil callback:callback];
 
 }

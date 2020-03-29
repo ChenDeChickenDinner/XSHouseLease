@@ -18,9 +18,23 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rAJ-9d-Bqk">
                         <rect key="frame" x="0.0" y="0.0" width="388" height="220"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0AL-Nm-KX3">
+                                <rect key="frame" x="323" y="193" width="50" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="F8e-PI-3qZ"/>
+                                    <constraint firstAttribute="width" constant="50" id="x4A-Yt-w5K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="0AL-Nm-KX3" secondAttribute="bottom" constant="10" id="RUK-zN-hJw"/>
                             <constraint firstAttribute="height" constant="220" id="Z9A-hi-Lnx"/>
+                            <constraint firstAttribute="trailing" secondItem="0AL-Nm-KX3" secondAttribute="trailing" constant="15" id="ljs-Jm-PJa"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -33,6 +47,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="bkView" destination="rAJ-9d-Bqk" id="EYf-J6-HQa"/>
+                <outlet property="tipLabel" destination="0AL-Nm-KX3" id="eON-MZ-IGD"/>
             </connections>
             <point key="canvasLocation" x="128" y="163"/>
         </tableViewCell>

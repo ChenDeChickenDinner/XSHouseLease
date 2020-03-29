@@ -138,7 +138,14 @@
     cellModel.sequence = model.type;
     cellModel.arrayValue = [NSMutableArray arrayWithObject:valueModel];
     cellModel.cellClass = NSStringFromClass([XSHouseSubCollectionviewBCell class]);
-    cellModel.cellHeight = [NSNumber numberWithInt:120];
+    if (model.enumRes.count > 4) {
+        cellModel.cellHeight = [NSNumber numberWithInt:120];
+
+    }else{
+        cellModel.cellHeight = [NSNumber numberWithInt:80];
+
+    }
+
     return cellModel;
 }
 + (NSDictionary *)mj_objectClassInArray{

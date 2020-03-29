@@ -16,10 +16,26 @@ NSString *const NotificationLoginStatusChangedLogout = @"NotificationLoginStatus
 
 @implementation XSUserServer
 DEF_SINGLETON(XSUserServer)
-
++ (void)automaticLogin{
+     NSDictionary *userInfo = [[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
+     XSUserModel *model =  [XSUserModel mj_objectWithKeyValues:userInfo];
+    if (model.token) {
+        [XSUserServer sharedInstance].userModel = model;
+    }
+}
 - (void)setUserModel:(XSUserModel *)userModel{
     _userModel = userModel;
+    if (_userModel.token) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStatusChangedLogin object:nil];
+    }
+
     NSLog(@"userModel = %@",[userModel mj_keyValues]);
+}
+- (BOOL)isLogin{
+    if (_userModel.token) {
+        return YES;
+    }
+    return NO;
 }
 - (BRProvinceModel *)cityModel{
     if (_cityModel == nil) {

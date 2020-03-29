@@ -11,6 +11,7 @@
 
 @interface XSHouseSubTextFieldTableViewCell ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *title;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titlew;
 
 @property (weak, nonatomic) IBOutlet UITextField *textFieldFirst;
 @property (weak, nonatomic) IBOutlet UILabel *frontDescribeLableFirst;
@@ -64,7 +65,7 @@
 }
 - (void)refreshData{
     self.title.text = self.dataModel.title;
-
+    self.titlew.constant = [self.title mj_textWidth] +5;
     if (self.dataModel.arrayValue.count == 1) {
         XSKeyValueModel *model = [self.dataModel.arrayValue safeObjectAtIndex:0];
         XSValue *valueData = model.values.firstObject;
@@ -76,6 +77,7 @@
         self.hindDescribeWidthFirst.constant = [self.hindDescribeLablethFirst mj_textWidth] + lableWidth;
 
         self.valueViewSceend.hidden =YES;
+//        [self.valueViewSceend removeFromSuperview];
     }else{
         for (int i = 0; i <self.dataModel.arrayValue.count ; i++) {
             XSKeyValueModel *model = [self.dataModel.arrayValue safeObjectAtIndex:i];

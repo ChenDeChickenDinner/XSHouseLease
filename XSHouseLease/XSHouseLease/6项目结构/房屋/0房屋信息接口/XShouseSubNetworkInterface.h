@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)getRentEnumsWithCallback:(HBCompletionBlock)callback;
 
 // 租房上传提交
-- (void)renthouseSaveWithDict:(NSDictionary *)dict callback:(HBCompletionBlock)callback;
+- (void)renthouseSaveWithDict:(NSMutableDictionary *)dict callback:(HBCompletionBlock)callback;
 
 //租房搜索条件-key
 - (void)renthouseConditionWithCallback:(HBCompletionBlock)callback;
@@ -43,6 +43,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 //热搜
 - (void)hotsSearchWithCallback:(HBCompletionBlock)callback;
+
+// 更变房子状态
+- (void)editHouseStatusWithHouse_id:(NSString *)house_id houseType:(XSBHouseType)houseType status:(XSBHouseSubStatus)status  callback:(HBCompletionBlock)callback;
+
+// 关注取消关注房子
+- (void)rentWatchHouseWithHouse_id:(NSString *)house_id houseType:(XSBHouseType)houseType watch:(BOOL)watch callback:(HBCompletionBlock)callback;
 @end
 
 NS_ASSUME_NONNULL_END

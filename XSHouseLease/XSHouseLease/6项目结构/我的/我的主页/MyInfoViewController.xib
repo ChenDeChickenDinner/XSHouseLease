@@ -828,7 +828,7 @@
         <image name="rentHouse" width="93.5" height="93.5"/>
         <image name="sellHouse" width="34" height="34"/>
         <image name="service" width="30.5" height="30.5"/>
-        <image name="userIcon" width="70" height="70"/>
+        <image name="userIcon" width="64.5" height="64.5"/>
         <image name="vipColor" width="354" height="81.5"/>
         <image name="vipicon" width="62" height="62"/>
     </resources>

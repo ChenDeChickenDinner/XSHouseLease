@@ -7,6 +7,7 @@
 //
 
 #import "XSBaseNavViewController.h"
+#import "XSHouseDetailsController.h"
 
 @interface XSBaseNavViewController ()
 
@@ -17,8 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    self.navigationBar.translucent = NO;
-   self.navigationBar.barTintColor = [UIColor whiteColor];
+//   self.navigationBar.barTintColor = [UIColor whiteColor];
 //    [self.navigationBar setBackgroundImage:[UIImage yy_imageWithColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
+    
+
 }
 
 

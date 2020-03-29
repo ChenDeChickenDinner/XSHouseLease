@@ -27,6 +27,10 @@
     // Initialization code
     self.textView.delegate = self;
 }
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView{
+    textView.text = nil;
+    return YES;
+}
 - (void)textViewDidEndEditing:(UITextView *)textView{
     XSKeyValueModel *model = [self.dataModel.arrayValue safeObjectAtIndex:0];
      XSValue *valueData = model.values.firstObject;
@@ -38,11 +42,16 @@
            self.title.text = keyValueModel.key;
             self.textView.text = keyValueModel.value;
           self.userInteractionEnabled = NO;
+        self.textView.textColor = [UIColor hb_colorWithHexString:@"#4A4A4A" alpha:1];
     }else{
          self.title.text = self.dataModel.title;
         XSKeyValueModel *model = [self.dataModel.arrayValue safeObjectAtIndex:0];
          XSValue *valueData = model.values.firstObject;
-         self.textView.text = valueData.valueStr;
+        self.textView.text = valueData.valueStr?valueData.valueStr:valueData.placeholder;
+        
+//        self.textView.textColor = [UIColor hb_colorWithHexString:valueData.valueStr?@"#4A4A4A":@"#E76D66" alpha:1];
+        self.textView.textColor = [UIColor hb_colorWithHexString:@"#4A4A4A" alpha:1];
+
         self.userInteractionEnabled = YES;
 
     }

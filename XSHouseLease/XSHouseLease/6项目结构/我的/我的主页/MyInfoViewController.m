@@ -60,7 +60,12 @@
 
 
 - (void)refreshUIData{
-    self.phoneLable.text = [XSUserServer sharedInstance].userModel.phone;
+    
+    if ([XSUserServer sharedInstance].isLogin) {
+        self.phoneLable.text = [XSUserServer sharedInstance].userModel.phone;
+    }else{
+        self.phoneLable.text = @"请登录";
+    }
 }
 - (void)handleNotification:(NSNotification *)notification {
     if ([notification.name isEqualToString:NotificationLoginStatusChangedLogin] || [notification.name isEqualToString:NotificationLoginStatusChangedLogout]) {
@@ -69,12 +74,11 @@
 }
 
 - (IBAction)userInfoClick:(id)sender {
-    
-    XSLoginViewController *login = [[XSLoginViewController alloc]init];
-   login.modalPresentationStyle = UIModalPresentationFullScreen;
-   [self presentViewController:login animated:YES completion:^{
-       
-   }];
+      XSLoginViewController *login = [[XSLoginViewController alloc]init];
+       login.modalPresentationStyle = UIModalPresentationFullScreen;
+       [self presentViewController:login animated:YES completion:^{
+           
+       }];
 }
 
 
