@@ -23,4 +23,7 @@ pod 'HXPhotoPicker'
 pod 'SDCycleScrollView'
 pod 'SDWebImage'
 #pod 'YYKit'
+pod 'AMap2DMap' 
+pod 'AMapSearch'
+pod 'AMapLocation'
 end

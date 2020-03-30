@@ -10,7 +10,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^clickEditStatus)(NSNumber *status);
 
 @interface XSHouseRentStatusView : UIView
 @property (nonatomic, strong) NSNumber *status;

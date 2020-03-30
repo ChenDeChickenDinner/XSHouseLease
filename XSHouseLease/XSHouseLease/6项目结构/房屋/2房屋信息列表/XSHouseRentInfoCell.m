@@ -70,9 +70,16 @@
     self.watchNumBKView.hidden = YES;
     
     XSHouseRentStatusView *statusView = [[XSHouseRentStatusView alloc]init];
-    self.statusEditView.clickEditStatus = ^(NSNumber * _Nonnull status) {
+    
+    WEAK_SELF;
+    self.statusEditView.clickEditStatus = ^(NSNumber * _Nonnull status,NSNumber * _Nonnull houseID) {
+        STRONG_SELF;
         NSLog(@"1111111111111--------%@",status);
+        XSHouseRentInfoModel *newModel = (XSHouseRentInfoModel *)self.model;
+        newModel.clickEditStatu(status,newModel.house_id);
     };
+    
+    
 //    self.statusView = statusView;
     [self.statusEditView addSubview:statusView];
     

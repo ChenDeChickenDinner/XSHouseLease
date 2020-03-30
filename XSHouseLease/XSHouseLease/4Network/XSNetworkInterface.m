@@ -67,7 +67,30 @@
 
     }];
 }
+- (void)loadImageWithURL:(NSString *)URLString image:(UIImage *)image param:(NSDictionary *)aParam progress:(HBRequestProgress)downloadProgress callback:(HBCompletionBlock)callback {
+    NSLog(@"URLString = %@ ;aParam = %@",URLString,aParam);
+    [self.operationManger POST:URLString parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+//        NSData *imageData = UIImagePNGRepresentation(image);
+          NSString *path = [[NSBundle mainBundle]pathForResource:@"xaxaxax"ofType:@"png"];
+          NSURL *url=[NSURL  fileURLWithPath:path];
 
+
+//        [formData appendPartWithFileData:imageData name:@"file" fileName:@"text7.png" mimeType:@"image/png"];
+//        NSURL *url = [NSURL URLWithString:@"/Users/heartbeats/Desktop/Snip20200325_1.png"];
+        [formData appendPartWithFileURL:url  name:@"file" error:nil];
+    } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"success-%@",responseObject);
+        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+             XSNetworkResponse *response =  [XSNetworkResponse mj_objectWithKeyValues:responseObject];
+             if (callback) callback(response,nil);
+         }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error-%@",error);
+        if (callback) callback(nil,error);
+
+    }];
+    
+}
 @end
 
 /*ASCII字符集

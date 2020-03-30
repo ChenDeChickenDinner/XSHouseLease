@@ -113,8 +113,8 @@
 
 - (void)addStatusSubView{
     
-    for (int i =0; i < self.modelArray.count; i++) {
-        XSHouseRentStatusModel *model = [self.modelArray safeObjectAtIndex:i];
+    for (int i = 1 ;i <= self.modelArray.count; i++) {
+        XSHouseRentStatusModel *model = [self.modelArray safeObjectAtIndex:i-1];
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
         btn.tag = model.status.integerValue;
         btn.backgroundColor = [UIColor whiteColor];
@@ -122,15 +122,16 @@
         [btn setTitle:model.title forState:UIControlStateNormal];
         btn.layer.masksToBounds = YES;
         btn.layer.cornerRadius = 5;
+        btn.layer.borderWidth = 1;
         btn.layer.borderColor = model.titleColor.CGColor;
         [btn addTarget:self action:@selector(clickEditStatus:) forControlEvents:UIControlEventTouchUpInside];
-        btn.frame = CGRectMake(btnWidth * i + btnJX , 0, btnWidth, self.height);
+        btn.frame = CGRectMake(self.width - (btnWidth * i) - 15 , 0, btnWidth, self.height);
         [self addSubview:btn];
     }
 }
 - (void)clickEditStatus:(UIButton *)btn{
     if (self.clickEditStatus) {
-        self.clickEditStatus([NSNumber numberWithInteger:btn.tag]);
+        self.clickEditStatus([NSNumber numberWithInteger:btn.tag],nil);
     }
 }
 @end

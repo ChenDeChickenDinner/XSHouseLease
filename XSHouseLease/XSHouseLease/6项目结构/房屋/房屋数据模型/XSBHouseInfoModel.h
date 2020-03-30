@@ -24,9 +24,9 @@ typedef NS_ENUM(NSInteger,XSBHouseInfoSource) {
 
 };
 typedef NS_ENUM(NSInteger,XSBHouseType) {
-    XSBHouseType_New = 0, // 新房
-    XSBHouseType_old , // 二手房
-    XSBHouseType_Rent  // 出租
+    XSBHouseType_New = 2, // 新房
+    XSBHouseType_old = 1 , // 二手房
+    XSBHouseType_Rent = 3  // 出租
 };
 
 //1待审核2审核失败3取消发布4下架5暂停6发布(恢复上架)
@@ -57,6 +57,8 @@ typedef void(^HouseInfoClickBlack)(XSBHouseInfoModel *model,XShouseOperation ope
 @property(nonatomic,assign) XSBHouseType houseType;
 @property(nonatomic,copy) NSString *cellClass;
 //@property(nonatomic,assign) CGFloat cellHeight;
+
+@property (nonatomic,copy) clickEditStatus clickEditStatu;
 
 @end
 

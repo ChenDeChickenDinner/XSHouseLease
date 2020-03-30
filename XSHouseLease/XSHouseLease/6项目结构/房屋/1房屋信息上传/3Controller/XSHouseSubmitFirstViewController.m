@@ -16,6 +16,7 @@
 #import "XSPhotoPickerView.h"
 #import "XSHouseSubSuccessViewController.h"
 #import "XSHouseSubFootView.h"
+#import "AFNetworking.h"
 
 @interface XSHouseSubmitFirstViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
@@ -35,15 +36,17 @@
          STRONG_SELF;
            [allList hx_requestImageWithOriginal:isOriginal completion:^(NSArray<UIImage *> * _Nullable imageArray, NSArray<HXPhotoModel *> * _Nullable errorArray) {
                
-//               [self uploadImage:imageArray.firstObject callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
-//                   if (error == nil) {
-//                       if (responseModel.code.integerValue == SuccessCode) {
-//                           [self alertWithMessage:responseModel.message];
-//                       }
-//                   }else{
-//                       [self alertWithMessage:error.domain];
-//                   }
-//               }];
+               [self uploadImage:imageArray.firstObject callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+                   if (error == nil) {
+                       if (responseModel.code.integerValue == SuccessCode) {
+                           [self alertWithMessage:responseModel.message];
+                       }
+                   }else{
+                       [self alertWithMessage:error.domain];
+                   }
+               }];
+ 
+               
                      NSSLog(@"\nimage: %@\nerror: %@",imageArray,errorArray);
                  }];
        };

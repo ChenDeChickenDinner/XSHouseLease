@@ -18,8 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor redColor];
-
+    self.view.backgroundColor = [UIColor orangeColor];
+    self.title  =@"消息";
     
 
  
@@ -28,10 +28,17 @@
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
-      NSString *path = [[NSBundle mainBundle] pathForResource:@"xsjson" ofType:@"json"];
-      // 将文件数据化
-      NSData *data = [[NSData alloc] initWithContentsOfFile:path];
-      [YBModelFile createFileWithName:@"XSHouseDetails" data:data];
+    [self.subInfoInterface uploadImage:nil callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+        if (error == nil) {
+            [self alertWithMessage:@"XXXXX"];
+        }
+    }];
+
+    
+//      NSString *path = [[NSBundle mainBundle] pathForResource:@"xsjson" ofType:@"json"];
+//      // 将文件数据化
+//      NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+//      [YBModelFile createFileWithName:@"XSHouseDetails" data:data];
 }
 @end
 

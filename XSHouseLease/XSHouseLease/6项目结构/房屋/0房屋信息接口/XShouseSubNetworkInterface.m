@@ -61,15 +61,13 @@ NSString *url = [NSString stringWithFormat:@"%@/estate/hots",XSBaseUrl];
     [self POST:url param:dict progress:nil callback:callback];
 
 }
-
 // 上传图片
 - (void)uploadImage:(UIImage *)image callback:(HBCompletionBlock)callback{
     NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
-    [dict safeSetObject:image forKey:@"file"];
     [dict safeSetObject:[XSUserServer sharedInstance].userModel.ID forKey:@"customerId"];
-    NSString *url = [NSString stringWithFormat:@"%@/renthouse/save2",XSBaseUrl];
-    [self POST:url param:dict progress:nil callback:callback];
-    
+
+    NSString *url = [NSString stringWithFormat:@"%@/file/image",XSBaseUrl];
+    [self loadImageWithURL:url image:image param:dict progress:nil callback:callback];
 }
 
 
@@ -129,11 +127,11 @@ NSString *url = [NSString stringWithFormat:@"%@/estate/hots",XSBaseUrl];
 
 }
 // 更变房子状态
-- (void)editHouseStatusWithHouse_id:(NSString *)house_id houseType:(XSBHouseType)houseType status:(XSBHouseSubStatus)status  callback:(HBCompletionBlock)callback{
+- (void)editHouseStatusWithHouse_id:(NSNumber *)house_id houseType:(XSBHouseType)houseType status:(XSBHouseSubStatus)status  callback:(HBCompletionBlock)callback{
     
     NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
     NSNumber *customer_id = [XSUserServer sharedInstance].userModel.ID;
-    NSString *url = [NSString stringWithFormat:@"%@/renthouse/details",XSBaseUrl];
+    NSString *url = [NSString stringWithFormat:@"%@/house/status",XSBaseUrl];
 //
 //    if (customer_id) {
 //        url = [url stringByAppendingFormat:@"/%@",customer_id];
@@ -142,7 +140,8 @@ NSString *url = [NSString stringWithFormat:@"%@/estate/hots",XSBaseUrl];
         url = [url stringByAppendingFormat:@"/%@",house_id];
     }
     [dict safeSetObject:[NSString stringWithFormat:@"%ld",(long)houseType] forKey:@"type"];
-    [dict safeSetObject:[NSString stringWithFormat:@"%ld",(long)status] forKey:@"status"];
+//    [dict safeSetObject:[NSString stringWithFormat:@"%ld",(long)status] forKey:@"status"];
+    [dict safeSetObject:[NSString stringWithFormat:@"1"] forKey:@"status"];
 
     [self GET:url param:dict progress:nil callback:callback];
 
@@ -152,7 +151,7 @@ NSString *url = [NSString stringWithFormat:@"%@/estate/hots",XSBaseUrl];
     
     NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
     NSNumber *customer_id = [XSUserServer sharedInstance].userModel.ID;
-    NSString *url = [NSString stringWithFormat:@"%@/renthouse/details",XSBaseUrl];
+    NSString *url = [NSString stringWithFormat:@"%@/house/watch",XSBaseUrl];
 
     if (customer_id) {
         url = [url stringByAppendingFormat:@"/%@",customer_id];

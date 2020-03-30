@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
+typedef void(^clickEditStatus)(NSNumber *status,NSNumber *houseID);
 
 @interface XSBaseObject : NSObject
 

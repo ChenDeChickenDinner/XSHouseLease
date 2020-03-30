@@ -62,7 +62,7 @@
     
     [self gethouseDetails];
    
-    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"watch_Q"] style:UIBarButtonItemStyleDone target:self action:@selector(watch)];
     
     self.callIm.layer.masksToBounds = YES;
     self.callIm.layer.cornerRadius = 5;
@@ -103,6 +103,14 @@
             }
         }
         
+    }];
+}
+
+- (void)watch{
+    [self.subInfoInterface rentWatchHouseWithHouse_id:self.infoModel.house_id.stringValue houseType:XSBHouseType_Rent watch:YES callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+        if (error == nil && responseModel.code.intValue == SuccessCode) {
+            [self alertWithMessage:@"关注成功"];
+        }
     }];
 }
 - (void)houseUserInfoViewWithData:(XSHouseRentInfoModel *)dataModel{

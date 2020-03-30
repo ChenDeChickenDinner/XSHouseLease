@@ -10,7 +10,9 @@
 #import "AFNetworking.h"
 #import "XSOperationParam.h"
 
-#define XSBaseUrl @"http://120.27.95.26:1112/api/v1.0"
+#define XSBaseUrl @"https://test.fangdinghui.cn/api/v1.0"
+#define XSImgaeBaseUrl @"https://test.fangdinghui.cn:1112"
+
 #define SuccessCode 200
 NS_ASSUME_NONNULL_BEGIN
 
@@ -42,7 +44,7 @@ typedef BOOL (^ __nullable HBRepeatRequestBlock)(void);
 - (void)POST:(NSString *)URLString param:(NSDictionary *)aParam progress:(HBRequestProgress)downloadProgress callback:(HBCompletionBlock)callback;
 
 - (void)GET:(NSString *)URLString param:(NSDictionary *)aParam progress:(HBRequestProgress)downloadProgress callback:(HBCompletionBlock)callback;
-
+- (void)loadImageWithURL:(NSString *)URLString image:(UIImage *)image param:(NSDictionary *)aParam progress:(HBRequestProgress)downloadProgress callback:(HBCompletionBlock)callback;
 @end
 
 NS_ASSUME_NONNULL_END

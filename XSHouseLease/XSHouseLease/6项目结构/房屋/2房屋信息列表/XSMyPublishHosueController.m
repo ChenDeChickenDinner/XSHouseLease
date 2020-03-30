@@ -33,7 +33,7 @@
        }else if (self.source == XSBHouseInfoSource_MyWatch){
            self.title = @"我关注的租房";
        }else if (self.source == XSBHouseInfoSource_MyPush){
-           self.title = @"猜你你喜欢的租房";
+           self.title = @"更多推荐";
        }
     
     XSHouseInfoTableView *tableView = [[XSHouseInfoTableView alloc]init];
@@ -86,10 +86,14 @@
         }];
     }else if (self.source == XSBHouseInfoSource_MyPush){
         
-        [self.subInfoInterface watchlikeRenthousListWithhouse_id:self.house_id per_page:10 page_index:0 callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+        [self.subInfoInterface searchRenthousListWithKeyVales:self.searchDict per_page:10 page_index:0 callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
             STRONG_SELF;
-            [self dataProcessingWithResponseModel:responseModel error:error];
+              [self dataProcessingWithResponseModel:responseModel error:error];
         }];
+//        [self.subInfoInterface watchlikeRenthousListWithhouse_id:self.house_id per_page:10 page_index:0 callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+//            STRONG_SELF;
+//            [self dataProcessingWithResponseModel:responseModel error:error];
+//        }];
     }
 
 
@@ -117,6 +121,7 @@
         model.source = self.source;
         model.houseType = self.houseType;
         model.clickBlack = ^(XSBHouseInfoModel * _Nonnull model, XShouseOperation operation) {
+            
             STRONG_SELF;
             if ([model isKindOfClass:[XSHouseRentInfoModel class]]) {
                 XSHouseRentInfoModel *newModel = (XSHouseRentInfoModel *)model;
@@ -126,6 +131,18 @@
                 [self.navigationController pushViewController:vc animated:YES];
             }
         };
+        model.clickEditStatu = ^(NSNumber * _Nonnull status, NSNumber * _Nonnull houseID) {
+            STRONG_SELF;
+            [self editHouseStatusWith:status houseId:houseID];
+        };
     }
+}
+
+- (void)editHouseStatusWith:(NSNumber *)status houseId:(NSNumber *)houseId{
+    [self.subInfoInterface editHouseStatusWithHouse_id:houseId.stringValue houseType:XSBHouseType_Rent status:status.integerValue callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+        if (error == nil && responseModel.code.integerValue == SuccessCode ) {
+            [self alertWithMessage:@"操作成功"];
+        }
+    }];
 }
 @end

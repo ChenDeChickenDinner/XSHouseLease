@@ -38,8 +38,8 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m0o-NB-H3A">
-                                <rect key="frame" x="15" y="55" width="378" height="156"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="55" width="408" height="156"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="156" id="ct0-Wr-Ef4"/>
                                 </constraints>
@@ -54,19 +54,22 @@
                                 <state key="normal" title="更多推荐房源">
                                     <color key="titleColor" red="0.90980392160000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="more:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="vm4-tJ-tLO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="m0o-NB-H3A" firstAttribute="leading" secondItem="Pr6-dw-HbJ" secondAttribute="leading" id="3uS-YL-PWE"/>
+                            <constraint firstItem="G9d-BA-ODo" firstAttribute="leading" secondItem="9LY-nc-O55" secondAttribute="leading" id="427-WP-9PH"/>
                             <constraint firstItem="G9d-BA-ODo" firstAttribute="top" secondItem="m0o-NB-H3A" secondAttribute="bottom" constant="24" id="Gdd-mj-Mig"/>
                             <constraint firstItem="m0o-NB-H3A" firstAttribute="top" secondItem="9LY-nc-O55" secondAttribute="bottom" constant="20" id="J3P-Us-IA3"/>
-                            <constraint firstItem="m0o-NB-H3A" firstAttribute="leading" secondItem="9LY-nc-O55" secondAttribute="leading" id="JAd-uU-GA3"/>
-                            <constraint firstItem="G9d-BA-ODo" firstAttribute="leading" secondItem="m0o-NB-H3A" secondAttribute="leading" id="O0n-OV-1zX"/>
                             <constraint firstAttribute="trailing" secondItem="9LY-nc-O55" secondAttribute="trailing" constant="15" id="OEQ-rR-m6f"/>
+                            <constraint firstAttribute="trailing" secondItem="m0o-NB-H3A" secondAttribute="trailing" id="OOR-CE-Gh7"/>
                             <constraint firstAttribute="bottom" secondItem="G9d-BA-ODo" secondAttribute="bottom" constant="21" id="ZSi-z4-8Yw"/>
+                            <constraint firstItem="G9d-BA-ODo" firstAttribute="trailing" secondItem="9LY-nc-O55" secondAttribute="trailing" id="e5D-7w-BOA"/>
                             <constraint firstItem="9LY-nc-O55" firstAttribute="leading" secondItem="Pr6-dw-HbJ" secondAttribute="leading" constant="15" id="mVL-lh-5Ld"/>
-                            <constraint firstItem="m0o-NB-H3A" firstAttribute="trailing" secondItem="9LY-nc-O55" secondAttribute="trailing" id="p1Y-A7-hQU"/>
-                            <constraint firstItem="G9d-BA-ODo" firstAttribute="trailing" secondItem="m0o-NB-H3A" secondAttribute="trailing" id="qkT-qh-4vV"/>
                             <constraint firstItem="9LY-nc-O55" firstAttribute="top" secondItem="Pr6-dw-HbJ" secondAttribute="top" id="upN-H3-nU6"/>
                         </constraints>
                     </view>

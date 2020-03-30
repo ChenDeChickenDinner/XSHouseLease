@@ -5,7 +5,7 @@
     "status": false,
     "createDate": "2020-03-12 14:50:57.0",
     "updateDate": "2020-03-26 20:48:41.0",
-    "icon": "http://120.27.95.26/system/hire-house/bash.png"
+    "icon": "https://test.fangdinghui.cn:1112/system/hire-house/bash.png"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "status": false,
     "createDate": "2020-03-12 14:51:06.0",
     "updateDate": "2020-03-26 20:49:15.0",
-    "icon": "http://120.27.95.26/system/hire-house/air.png"
+    "icon": "https://test.fangdinghui.cn:1112/system/hire-house/air.png"
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "status": false,
     "createDate": "2020-03-12 14:51:14.0",
     "updateDate": "2020-03-26 20:49:25.0",
-    "icon": "http://120.27.95.26/system/hire-house/ robe.png"
+    "icon": "https://test.fangdinghui.cn:1112/system/hire-house/ robe.png"
   },
   {
     "id": 4,
@@ -29,7 +29,7 @@
     "status": false,
     "createDate": "2020-03-12 14:51:23.0",
     "updateDate": "2020-03-26 20:49:33.0",
-    "icon": "http://120.27.95.26/system/hire-house/computer.png"
+    "icon": "https://test.fangdinghui.cn:1112/system/hire-house/computer.png"
   },
   {
     "id": 5,
@@ -37,7 +37,7 @@
     "status": false,
     "createDate": "2020-03-12 14:51:33.0",
     "updateDate": "2020-03-26 20:49:44.0",
-    "icon": "http://120.27.95.26/system/hire-house/fridge.png"
+    "icon": "https://test.fangdinghui.cn:1112/system/hire-house/fridge.png"
   },
   {
     "id": 6,
@@ -45,7 +45,7 @@
     "status": false,
     "createDate": "2020-03-12 14:52:05.0",
     "updateDate": "2020-03-26 20:49:53.0",
-    "icon": "http://120.27.95.26/system/hire-house/hot_water.png"
+    "icon": "https://test.fangdinghui.cn:1112/system/hire-house/hot_water.png"
   },
   {
     "id": 7,
@@ -53,7 +53,7 @@
     "status": false,
     "createDate": "2020-03-12 14:52:18.0",
     "updateDate": "2020-03-26 20:50:03.0",
-    "icon": "http://120.27.95.26/system/hire-house/bed.png"
+    "icon": "https://test.fangdinghui.cn:1112/system/hire-house/bed.png"
   },
   {
     "id": 8,
@@ -61,7 +61,7 @@
     "status": false,
     "createDate": "2020-03-12 14:52:26.0",
     "updateDate": "2020-03-26 20:50:11.0",
-    "icon": "http://120.27.95.26/system/hire-house/heating.png"
+    "icon": "https://test.fangdinghui.cn:1112/system/hire-house/heating.png"
   },
   {
     "id": 9,
@@ -69,7 +69,7 @@
     "status": false,
     "createDate": "2020-03-12 14:52:34.0",
     "updateDate": "2020-03-26 20:50:18.0",
-    "icon": "http://120.27.95.26/system/hire-house/broadband.png"
+    "icon": "https://test.fangdinghui.cn:1112/system/hire-house/broadband.png"
   },
   {
     "id": 10,
@@ -77,6 +77,6 @@
     "status": false,
     "createDate": "2020-03-12 14:52:42.0",
     "updateDate": "2020-03-26 20:50:23.0",
-    "icon": "http://120.27.95.26/system/hire-house/gas.png"
+    "icon": "https://test.fangdinghui.cn:1112/system/hire-house/gas.png"
   }
 ]

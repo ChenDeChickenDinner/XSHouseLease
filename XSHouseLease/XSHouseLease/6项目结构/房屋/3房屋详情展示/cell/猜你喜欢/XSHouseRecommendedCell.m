@@ -53,5 +53,14 @@
         [self.listvc loadData];
       }
 }
+- (IBAction)more:(id)sender {
+    XSHouseDetailsInfoCellModel *cellModel = (XSHouseDetailsInfoCellModel *)self.model;
+     XSHouseRentInfoModel *dataModel = cellModel.dataModel;
+    
+    XSMyPublishHosueController *listvc = [[XSMyPublishHosueController alloc]init];
+    listvc.source = XSBHouseInfoSource_MyPush;
+    listvc.house_id = dataModel.house_id;
+    [[NSObject getTopViewController].navigationController pushViewController:listvc animated:YES];
+}
 
 @end

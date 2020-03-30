@@ -18,48 +18,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E2E6F7BC-D4EB-4140-9FF0-1AD0B1C36809"
+            uuid = "CDDB7765-CB02-430C-8478-8EB92F2EA2CC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "XSHouseLease/6&#x9879;&#x76ee;&#x7ed3;&#x6784;/&#x623f;&#x5c4b;/&#x623f;&#x5c4b;&#x6570;&#x636e;&#x6a21;&#x578b;/XSHouseRentStatusView.m"
+            filePath = "XSHouseLease/6&#x9879;&#x76ee;&#x7ed3;&#x6784;/&#x6211;&#x7684;/&#x767b;&#x5f55;/XSLoginViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "-setStatus:"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
+            landmarkName = "-loginSuccess:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6588C075-B1CB-443A-8549-9DC895F03D3C"
+            uuid = "2C1CD137-FDC6-4BF1-9730-BB6FD200D6E6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "XSHouseLease/1BaseClass/XSBaseViewController.m"
+            filePath = "Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "-customSecurityPolicy"
+            startingLineNumber = "711"
+            endingLineNumber = "711"
+            landmarkName = "-appendPartWithFileURL:name:fileName:mimeType:error:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "24D7DE3A-977B-4C26-9C06-FD1AD5873679"
+            uuid = "8B29F7DF-2996-49C9-A2CE-40F3281393AE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "XSHouseLease/1BaseClass/XSBaseViewController.m"
+            filePath = "Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "-operationManager"
+            startingLineNumber = "736"
+            endingLineNumber = "736"
+            landmarkName = "-appendPartWithFileURL:name:fileName:mimeType:error:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

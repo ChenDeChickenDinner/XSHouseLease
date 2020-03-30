@@ -17,6 +17,8 @@
     }
      self.window.rootViewController = [[XSTabBarViewController alloc]init];
      [self.window makeKeyAndVisible];
+    
+    [AMapServices sharedServices].apiKey = @"9130b0a7ff0c9fd01b8d91eca03acb36";
 }
 
 
