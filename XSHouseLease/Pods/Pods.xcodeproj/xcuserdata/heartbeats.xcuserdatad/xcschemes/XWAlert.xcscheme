@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0CD20638AD44FC5F6C280B58711D6837"
+               BlueprintIdentifier = "A6C99D3A46FA11931B141F129BEC7BDB"
                BuildableName = "libXWAlert.a"
                BlueprintName = "XWAlert"
                ReferencedContainer = "container:Pods.xcodeproj">
