@@ -7,6 +7,7 @@
 //
 
 #import "XSUserServer.h"
+#import "XSLoginViewController.h"
 
 NSString *const HBNotificationLoginStatusChangedLoginFailed = @"HBNotificationLoginStatusChangedLoginFailed";
 
@@ -45,5 +46,16 @@ DEF_SINGLETON(XSUserServer)
         _cityModel.name = @"上海";
     }
     return _cityModel;
+}
+
+- (void)axax{
+    if (![XSUserServer sharedInstance].isLogin) {
+         XSLoginViewController *login = [[XSLoginViewController alloc]init];
+         login.modalPresentationStyle = UIModalPresentationFullScreen;
+         [[NSObject getTopViewController] presentViewController:login animated:YES completion:^{
+             
+         }];
+       }
+  
 }
 @end

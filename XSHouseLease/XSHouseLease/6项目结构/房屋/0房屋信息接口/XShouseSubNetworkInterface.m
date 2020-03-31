@@ -53,13 +53,13 @@ NSString *url = [NSString stringWithFormat:@"%@/estate/hots",XSBaseUrl];
     NSError *error;
     NSString *path = [[NSBundle mainBundle]pathForResource:@"XSHouseSave" ofType:@"json"];
     NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableLeaves error:&error];
-    
 
 
-    NSLog(@"jsonDict %@",jsonDict);
+
+//    NSLog(@"jsonDict %@",jsonDict);
     NSString *url = [NSString stringWithFormat:@"%@/renthouse/save2",XSBaseUrl];
-//    [self POST:url param:jsonDict progress:nil callback:callback];
-    [self POST:url param:dict progress:nil callback:callback];
+    [self POST:url param:jsonDict progress:nil callback:callback];
+//    [self POST:url param:dict progress:nil callback:callback];
 
 }
 // 上传图片

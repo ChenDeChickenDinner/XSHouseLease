@@ -33,7 +33,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rEM-IU-Yw8" userLabel="容器">
                                 <rect key="frame" x="52" y="0.0" width="253" height="44"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DFP-ox-2Vy">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DFP-ox-2Vy" userLabel="1111">
                                         <rect key="frame" x="0.0" y="0.0" width="126.5" height="44"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aen-PN-S02">
@@ -71,6 +71,7 @@
                                             <constraint firstItem="aen-PN-S02" firstAttribute="leading" secondItem="DFP-ox-2Vy" secondAttribute="leading" id="9A5-Tf-Em0"/>
                                             <constraint firstItem="2Bu-wd-aya" firstAttribute="leading" secondItem="aen-PN-S02" secondAttribute="trailing" constant="5" id="Cdp-xm-huL"/>
                                             <constraint firstItem="ubZ-iu-JOH" firstAttribute="centerY" secondItem="DFP-ox-2Vy" secondAttribute="centerY" id="KlQ-kw-8v0"/>
+                                            <constraint firstAttribute="width" constant="126.5" id="Pgx-8C-lM5"/>
                                             <constraint firstItem="2Bu-wd-aya" firstAttribute="centerY" secondItem="DFP-ox-2Vy" secondAttribute="centerY" id="SUb-7R-gca"/>
                                             <constraint firstItem="ubZ-iu-JOH" firstAttribute="leading" secondItem="2Bu-wd-aya" secondAttribute="trailing" constant="5" id="Wl8-cB-jTg"/>
                                             <constraint firstAttribute="trailing" secondItem="2Bu-wd-aya" secondAttribute="trailing" priority="800" constant="15" id="hMb-Sy-lXg"/>
@@ -78,7 +79,7 @@
                                             <constraint firstItem="aen-PN-S02" firstAttribute="centerY" secondItem="DFP-ox-2Vy" secondAttribute="centerY" id="seF-kN-EnH"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="plU-6X-oMs">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="plU-6X-oMs" userLabel="2222">
                                         <rect key="frame" x="126.5" y="0.0" width="126.5" height="44"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWe-cu-fCI">
@@ -133,7 +134,6 @@
                                     <constraint firstItem="DFP-ox-2Vy" firstAttribute="top" secondItem="rEM-IU-Yw8" secondAttribute="top" id="aiE-QV-pTZ"/>
                                     <constraint firstAttribute="trailing" secondItem="plU-6X-oMs" secondAttribute="trailing" id="ocB-3v-WjO"/>
                                     <constraint firstItem="plU-6X-oMs" firstAttribute="top" secondItem="rEM-IU-Yw8" secondAttribute="top" id="qSs-ZI-YUu"/>
-                                    <constraint firstItem="plU-6X-oMs" firstAttribute="width" secondItem="DFP-ox-2Vy" secondAttribute="width" id="qVl-a6-zoj"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LQD-CP-9rw">
@@ -180,6 +180,7 @@
                 <outlet property="title" destination="tkI-HN-36k" id="dxC-kC-qaN"/>
                 <outlet property="titlew" destination="Wx1-9m-f7N" id="RYb-Kk-w8e"/>
                 <outlet property="valueViewSceend" destination="DFP-ox-2Vy" id="Aac-25-0II"/>
+                <outlet property="valueViewSceendWidth" destination="Pgx-8C-lM5" id="TFK-z2-BqK"/>
             </connections>
             <point key="canvasLocation" x="56.521739130434788" y="99.776785714285708"/>
         </tableViewCell>
