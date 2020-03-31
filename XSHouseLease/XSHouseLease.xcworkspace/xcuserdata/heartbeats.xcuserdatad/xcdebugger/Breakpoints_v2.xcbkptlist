@@ -34,15 +34,31 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2C1CD137-FDC6-4BF1-9730-BB6FD200D6E6"
+            uuid = "F2A7CD49-43EC-4AF4-855A-FAF050442212"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "711"
-            endingLineNumber = "711"
+            startingLineNumber = "785"
+            endingLineNumber = "785"
+            landmarkName = "-appendPartWithFileData:name:fileName:mimeType:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "69B3E03F-ADCD-4123-A8F1-1EDE0D613E7F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "734"
+            endingLineNumber = "734"
             landmarkName = "-appendPartWithFileURL:name:fileName:mimeType:error:"
             landmarkType = "7">
          </BreakpointContent>
@@ -50,15 +66,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8B29F7DF-2996-49C9-A2CE-40F3281393AE"
+            uuid = "206B7095-ED95-4783-9808-2286CC4156DF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "736"
-            endingLineNumber = "736"
+            startingLineNumber = "742"
+            endingLineNumber = "742"
             landmarkName = "-appendPartWithFileURL:name:fileName:mimeType:error:"
             landmarkType = "7">
          </BreakpointContent>

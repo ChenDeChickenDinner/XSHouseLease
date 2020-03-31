@@ -139,10 +139,22 @@
 }
 
 - (void)editHouseStatusWith:(NSNumber *)status houseId:(NSNumber *)houseId{
-    [self.subInfoInterface editHouseStatusWithHouse_id:houseId.stringValue houseType:XSBHouseType_Rent status:status.integerValue callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
-        if (error == nil && responseModel.code.integerValue == SuccessCode ) {
-            [self alertWithMessage:@"操作成功"];
-        }
-    }];
+    if (status.integerValue == XSBHouseSubStatus_edit) {
+        [ProgressHUD showSuccess:@"努力开发中"];
+    }else{
+        WEAK_SELF;
+        [self.subInfoInterface editHouseStatusWithHouse_id:houseId.stringValue houseType:XSBHouseType_Rent status:status.integerValue callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+            STRONG_SELF;
+             if (error == nil) {
+                 if (responseModel.code.integerValue == SuccessCode) {
+                     [self loadData];
+                     [ProgressHUD showSuccess:@"操作成功"];
+                 }else{
+                     [ProgressHUD showError:error.description];
+                 }
+             }
+         }];
+    }
+ 
 }
 @end

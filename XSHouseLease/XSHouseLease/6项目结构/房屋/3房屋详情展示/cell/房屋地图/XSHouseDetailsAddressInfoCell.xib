@@ -101,6 +101,7 @@
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
                 <outlet property="locationLable" destination="8QN-eH-YAO" id="6Bz-o8-1Ab"/>
+                <outlet property="mapBkView" destination="Trf-TK-VtE" id="GL2-U0-G7N"/>
             </connections>
             <point key="canvasLocation" x="181.15942028985509" y="145.64732142857142"/>
         </tableViewCell>

@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 songjian. All rights reserved.
 //
 
-#import "AnnotationViewController.h"
+#import "XSMapViewController.h"
 
 enum {
     AnnotationViewControllerAnnotationTypeRed = 0,
@@ -14,7 +14,7 @@ enum {
     AnnotationViewControllerAnnotationTypePurple
 };
 
-@interface AnnotationViewController ()<MAMapViewDelegate>
+@interface XSMapViewController ()<MAMapViewDelegate>
 
 @property (nonatomic, strong) MAMapView *mapView;
 @property (nonatomic, strong) NSMutableArray *annotations;
@@ -22,7 +22,7 @@ enum {
 
 @end
 
-@implementation AnnotationViewController
+@implementation XSMapViewController
 - (CLLocationCoordinate2D)location{
     if (_location.latitude) {
         return _location;
@@ -43,30 +43,46 @@ enum {
 - (void)viewDidLoad{
     [super viewDidLoad];
     
-
+    self.title = @"房源位置";
     
     self.mapView = [[MAMapView alloc] initWithFrame:self.view.bounds];
     self.mapView.showsCompass = NO;
+ 
+    self.mapView.showsScale = NO;
+
+    if (!self.move) {
+         self.mapView.scrollEnabled = NO;
+         self.mapView.zoomEnabled = NO;
+    }
+
+    
+    
+    self.mapView.logoCenter = CGPointMake(0, 0);
     self.mapView.showsUserLocation = YES;
     
-    self.mapView.zoomLevel = 14;
+    self.mapView.zoomLevel = 16.5;
     self.mapView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.mapView.delegate = self;
     [self.view addSubview:self.mapView];
     
-    UIView *zoomPannelView = [self makeZoomPannelView];
-     zoomPannelView.center = CGPointMake(self.view.bounds.size.width -  CGRectGetMidX(zoomPannelView.bounds) - 10,
-                                         self.view.bounds.size.height -  CGRectGetMidY(zoomPannelView.bounds) - 10);
-     
-     zoomPannelView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin;
-     [self.view addSubview:zoomPannelView];
-    
-    
-    self.gpsButton = [self makeGPSButtonView];
-     self.gpsButton.center = CGPointMake(CGRectGetMidX(self.gpsButton.bounds) + 10,
-                                         self.view.bounds.size.height -  CGRectGetMidY(self.gpsButton.bounds) - 20);
-     [self.view addSubview:self.gpsButton];
-     self.gpsButton.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin;
+   
+    if (self.move) {
+        UIView *zoomPannelView = [self makeZoomPannelView];
+        zoomPannelView.center = CGPointMake(self.view.bounds.size.width -  CGRectGetMidX(zoomPannelView.bounds) - 10,
+                                            self.view.bounds.size.height -  CGRectGetMidY(zoomPannelView.bounds) - 10);
+
+        zoomPannelView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin;
+        [self.view addSubview:zoomPannelView];
+
+
+        self.gpsButton = [self makeGPSButtonView];
+        self.gpsButton.center = CGPointMake(CGRectGetMidX(self.gpsButton.bounds) + 10,
+                                                self.view.bounds.size.height -  CGRectGetMidY(self.gpsButton.bounds) - 20);
+        
+        [self.view addSubview:self.gpsButton];
+        self.gpsButton.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin;
+
+    }
     
 }
 
@@ -130,7 +146,15 @@ enum {
 
 
 #pragma mark - Map Delegate
-
+- (void)mapView:(MAMapView *)mapView didSingleTappedAtCoordinate:(CLLocationCoordinate2D)coordinate{
+    NSLog(@"------M  A  P------------");
+    if (!self.move) {
+        XSMapViewController *vc=[[XSMapViewController alloc]init];
+        vc.location = self.location;
+        vc.move = YES;
+        [[NSObject getTopViewController].navigationController pushViewController:vc animated:YES];
+    }
+}
 /*!
  @brief 根据anntation生成对应的View
  @param mapView 地图View

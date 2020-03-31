@@ -43,9 +43,6 @@
         [_operationManager setSecurityPolicy:[self customSecurityPolicy]];
         _operationManager.requestSerializer.stringEncoding = NSUTF8StringEncoding;
         _operationManager.requestSerializer = [AFJSONRequestSerializer serializer];
-        
-//        _operationManager.requestSerializer = [AFHTTPRequestSerializer serializer];
-
         _operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
         _operationManager.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[@"application/json",
                                                                                   @"text/html",
@@ -54,18 +51,12 @@
                                                                                   @"text/javascript",
                                                                                   @"text/xml",
                                                                                   @"image/*"]];
-//        [_operationManager.requestSerializer setValue:@"application/json;charset=UTF-8;multipart/form-data" forHTTPHeaderField:@"Content-Type"];
-//        [_operationManager.requestSerializer setValue:@"application/x-www-form-urlencoded;charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
-//        [_operationManager.requestSerializer setValue:@"multipart/form-data" forHTTPHeaderField:@"Content-Type"];
-//        [_operationManager.requestSerializer setValue:@"*/*" forHTTPHeaderField:@"Accept"];
-//        [_operationManager.requestSerializer setValue:@"formData" forHTTPHeaderField:@"type"];
-
+        [_operationManager.requestSerializer setValue:@"application/json;charset=UTF-8;multipart/form-data" forHTTPHeaderField:@"Content-Type"];
+        [_operationManager.requestSerializer setValue:@"*/*" forHTTPHeaderField:@"Accept"];
 
     }
     NSString *token  = [XSUserServer sharedInstance].userModel.token;
       if (token) {
-          [_operationManager.requestSerializer setValue:@"vaVGuqovPXeWQkq86UdfsOosub5Ypw65qOpF2/RyAmJZMiTGTiJab7Z+xbnG3jQK" forHTTPHeaderField:@"token"];
-          
           [_operationManager.requestSerializer setValue:token forHTTPHeaderField:@"token"];
       }
     return _operationManager;
@@ -89,7 +80,10 @@
         UIAlertAction * act =[UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         }];
         [alert addAction:act];
-        
+
         [self presentViewController:alert animated:YES completion:nil];
+    
+//    [ProgressHUD showSuccess:@"努力开发中"];
+//    [ProgressHUD showSuccess:str];
 }
 @end

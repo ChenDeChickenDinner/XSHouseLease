@@ -12,6 +12,10 @@
 @end
 
 @implementation XSSearchConditionalView
+- (IBAction)click:(id)sender {
+//    [ProgressHUD showSuccess:@"努力开发中"];
+    [ProgressHUD showSuccess:@"努力开发中"];
+}
 
 
 

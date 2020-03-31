@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XSBaseObject.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface XSRegionSearchView : UIView
 +(instancetype)searchView;
+
 @property(nonatomic,copy) searchBlack searchBlack;
 
 @end

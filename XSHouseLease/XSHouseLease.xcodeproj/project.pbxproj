@@ -118,7 +118,7 @@
 		6C9FF7B12430AE220020509C /* XSHouseInfoThirdTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FF7AE2430AE220020509C /* XSHouseInfoThirdTest.json */; };
 		6C9FF7B22430AE220020509C /* XSHouseInfoFirstTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FF7AF2430AE220020509C /* XSHouseInfoFirstTest.json */; };
 		6C9FF7B42430F0700020509C /* xaxaxax.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FF7B32430F0700020509C /* xaxaxax.png */; };
-		6C9FF7B72431F5220020509C /* AnnotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FF7B62431F5220020509C /* AnnotationViewController.m */; };
+		6C9FF7BA243211630020509C /* XSMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FF7B9243211620020509C /* XSMapViewController.m */; };
 		6CDCE3A22426E6850049AE63 /* XSNetworkInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDCE3A12426E6850049AE63 /* XSNetworkInterface.m */; };
 		6CDCE3A52426ED9B0049AE63 /* XSOperationParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDCE3A42426ED9B0049AE63 /* XSOperationParam.m */; };
 		6CDCE3A92426F5D50049AE63 /* XSUserInfoInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDCE3A82426F5D50049AE63 /* XSUserInfoInterface.m */; };
@@ -324,8 +324,8 @@
 		6C9FF7AE2430AE220020509C /* XSHouseInfoThirdTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseInfoThirdTest.json; sourceTree = "<group>"; };
 		6C9FF7AF2430AE220020509C /* XSHouseInfoFirstTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseInfoFirstTest.json; sourceTree = "<group>"; };
 		6C9FF7B32430F0700020509C /* xaxaxax.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xaxaxax.png; sourceTree = "<group>"; };
-		6C9FF7B52431F5210020509C /* AnnotationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationViewController.h; sourceTree = "<group>"; };
-		6C9FF7B62431F5220020509C /* AnnotationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationViewController.m; sourceTree = "<group>"; };
+		6C9FF7B8243211620020509C /* XSMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMapViewController.h; sourceTree = "<group>"; };
+		6C9FF7B9243211620020509C /* XSMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSMapViewController.m; sourceTree = "<group>"; };
 		6CDCE3A02426E6850049AE63 /* XSNetworkInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSNetworkInterface.h; sourceTree = "<group>"; };
 		6CDCE3A12426E6850049AE63 /* XSNetworkInterface.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSNetworkInterface.m; sourceTree = "<group>"; };
 		6CDCE3A32426ED9B0049AE63 /* XSOperationParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSOperationParam.h; sourceTree = "<group>"; };
@@ -842,8 +842,8 @@
 		6C6BC148241FA75300B62001 /* XSHouseLease */ = {
 			isa = PBXGroup;
 			children = (
-				6C9FF7B52431F5210020509C /* AnnotationViewController.h */,
-				6C9FF7B62431F5220020509C /* AnnotationViewController.m */,
+				6C9FF7B8243211620020509C /* XSMapViewController.h */,
+				6C9FF7B9243211620020509C /* XSMapViewController.m */,
 				6C3BEBA9242E3B5F001393EF /* 1BaseClass */,
 				6C3BEBB3242E3B60001393EF /* 2Category */,
 				6C3BEBA6242E3B5F001393EF /* 3CustomView */,
@@ -1287,6 +1287,7 @@
 				6C3BEB66242C8697001393EF /* XSHouseFixedData.m in Sources */,
 				6C3BEB62242C8697001393EF /* XSHouseInfoModel.m in Sources */,
 				6C6BC15C241FA75400B62001 /* main.m in Sources */,
+				6C9FF7BA243211630020509C /* XSMapViewController.m in Sources */,
 				6C6BC174241FA9F400B62001 /* MessageViewController.m in Sources */,
 				6C3BEBE0242E3B60001393EF /* XSBaseCollectionViewCell.m in Sources */,
 				6C7DFE7424265077003E86D7 /* ViewController.m in Sources */,
@@ -1306,7 +1307,6 @@
 				6C6BC14E241FA75300B62001 /* SceneDelegate.m in Sources */,
 				6C2286D0242ED730001D5F58 /* XSHouseRecommendedCell.m in Sources */,
 				6CDCE3A92426F5D50049AE63 /* XSUserInfoInterface.m in Sources */,
-				6C9FF7B72431F5220020509C /* AnnotationViewController.m in Sources */,
 				6C3BEBDD242E3B60001393EF /* XSRoundedView.m in Sources */,
 				6C3BEB5C242C8697001393EF /* XSHouseSubTableViewCell.m in Sources */,
 				6C2286D9242ED788001D5F58 /* XSHouseDetailsInfoCellModel.m in Sources */,

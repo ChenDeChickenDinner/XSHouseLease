@@ -10,6 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 typedef void(^clickEditStatus)(NSNumber *status,NSNumber *houseID);
+typedef void(^searchBlack)(NSString *searhKey);
 
 @interface XSBaseObject : NSObject
 

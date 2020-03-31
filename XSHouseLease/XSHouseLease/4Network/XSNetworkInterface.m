@@ -69,15 +69,19 @@
 }
 - (void)loadImageWithURL:(NSString *)URLString image:(UIImage *)image param:(NSDictionary *)aParam progress:(HBRequestProgress)downloadProgress callback:(HBCompletionBlock)callback {
     NSLog(@"URLString = %@ ;aParam = %@",URLString,aParam);
-    [self.operationManger POST:URLString parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-//        NSData *imageData = UIImagePNGRepresentation(image);
-          NSString *path = [[NSBundle mainBundle]pathForResource:@"xaxaxax"ofType:@"png"];
-          NSURL *url=[NSURL  fileURLWithPath:path];
+    if (image == nil) {
+        return;
+    }
+    [self.operationManger POST:URLString parameters:aParam constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        NSData *imageData = UIImagePNGRepresentation(image);
+        NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+        formatter.dateFormat = @"yyyy-MM-dd-HH-mm-ss";
+        NSString *timestr = [formatter stringFromDate:[NSDate date]];
+        [formData appendPartWithFileData:imageData name:@"file" fileName:[NSString stringWithFormat:@"image_%@.png",timestr] mimeType:@"image/png"];
 
-
-//        [formData appendPartWithFileData:imageData name:@"file" fileName:@"text7.png" mimeType:@"image/png"];
-//        NSURL *url = [NSURL URLWithString:@"/Users/heartbeats/Desktop/Snip20200325_1.png"];
-        [formData appendPartWithFileURL:url  name:@"file" error:nil];
+//          NSString *path = [[NSBundle mainBundle]pathForResource:@"xaxaxax"ofType:@"png"];
+//          NSURL *url=[NSURL  fileURLWithPath:path];
+//           [formData appendPartWithFileURL:url  name:@"file" error:nil];
     } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"success-%@",responseObject);
         if ([responseObject isKindOfClass:[NSDictionary class]]) {

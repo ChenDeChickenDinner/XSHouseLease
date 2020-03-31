@@ -29,6 +29,9 @@
                             <state key="normal" title="区域" image="house_dowm">
                                 <color key="titleColor" red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                             </state>
+                            <connections>
+                                <action selector="click:" destination="iN0-l3-epB" eventType="touchUpInside" id="Vlr-Zo-c4J"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -47,6 +50,9 @@
                             <state key="normal" title="价格" image="house_dowm">
                                 <color key="titleColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                             </state>
+                            <connections>
+                                <action selector="click:" destination="iN0-l3-epB" eventType="touchUpInside" id="Lse-vr-Fip"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -66,6 +72,9 @@
                             <state key="normal" title="更多" image="house_dowm">
                                 <color key="titleColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                             </state>
+                            <connections>
+                                <action selector="click:" destination="iN0-l3-epB" eventType="touchUpInside" id="B4J-1x-hGf"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -85,6 +94,9 @@
                             <state key="normal" title="排序" image="house_dowm">
                                 <color key="titleColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                             </state>
+                            <connections>
+                                <action selector="click:" destination="iN0-l3-epB" eventType="touchUpInside" id="04R-xk-ZfQ"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

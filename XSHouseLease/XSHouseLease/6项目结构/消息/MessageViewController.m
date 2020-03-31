@@ -39,11 +39,11 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.mapView setCenterCoordinate:CLLocationCoordinate2DMake(39.992520, 116.336170) animated:YES];
 
-    [self.subInfoInterface uploadImage:nil callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
-        if (error == nil) {
-            [self alertWithMessage:@"XXXXX"];
-        }
-    }];
+//    [self.subInfoInterface uploadImage:nil callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+//        if (error == nil) {
+//            [self alertWithMessage:@"XXXXX"];
+//        }
+//    }];
 
     
 //      NSString *path = [[NSBundle mainBundle] pathForResource:@"xsjson" ofType:@"json"];

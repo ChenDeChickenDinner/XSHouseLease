@@ -6,9 +6,10 @@
 //  Copyright (c) 2013年 songjian. All rights reserved.
 //
 
+#import "XSBaseViewController.h"
 
-@interface AnnotationViewController : UIViewController
+@interface XSMapViewController : XSBaseViewController
 @property (nonatomic) CLLocationCoordinate2D  location;
 
-
+@property (nonatomic,assign) BOOL move;
 @end

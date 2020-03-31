@@ -61,7 +61,7 @@
     self.houseUserInfoView.hidden = YES;
     
     [self gethouseDetails];
-   
+
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"watch_Q"] style:UIBarButtonItemStyleDone target:self action:@selector(watch)];
     
     self.callIm.layer.masksToBounds = YES;
@@ -96,6 +96,10 @@
         if (error == nil) {
             if (responseModel.code.integerValue == SuccessCode) {
                 XSHouseRentInfoModel *model = [XSHouseRentInfoModel mj_objectWithKeyValues:responseModel.data];
+                
+                if (model.customerId.integerValue == [XSUserServer sharedInstance].userModel.ID.integerValue) {
+                    self.navigationItem.rightBarButtonItem = nil;
+                }
                 self.infoModel = model;
                 NSLog(@"房屋详情 = %@",[model mj_keyValues]);
                 [self assemblyCellDataArrayWithData:model];
@@ -175,5 +179,9 @@
     if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:telString]]) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:telString] options:@{} completionHandler:nil];
     }
+    
+}
+- (IBAction)callMassage:(id)sender {
+    [ProgressHUD showSuccess:@"努力开发中"];
 }
 @end
