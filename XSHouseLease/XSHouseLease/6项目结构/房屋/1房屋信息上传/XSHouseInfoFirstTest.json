@@ -101,11 +101,11 @@
                                      {
                                      "placeholder":"请输入期望租金",
                                      "frontDescribe":null,
-                                     "value":null,
+                                     "value":800,
                                      "valueStr":800,
                                      "hindDescribe":"元",
                                      "isSelect":false,
-                                     "sendType":1
+                                     "sendType":0
                                     }
                                 ]
                      }

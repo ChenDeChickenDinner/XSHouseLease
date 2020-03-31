@@ -19,7 +19,9 @@
     // Do any additional setup after loading the view from its nib.
 }
 - (IBAction)diss:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    
+//    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*

@@ -42,8 +42,6 @@
 //        _operationManager.operationQueue.maxConcurrentOperationCount = 3;
         [_operationManager setSecurityPolicy:[self customSecurityPolicy]];
         _operationManager.requestSerializer.stringEncoding = NSUTF8StringEncoding;
-        _operationManager.responseSerializer.stringEncoding = NSUTF8StringEncoding;
-
         _operationManager.requestSerializer = [AFJSONRequestSerializer serializer];
         _operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
         _operationManager.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[@"application/json",

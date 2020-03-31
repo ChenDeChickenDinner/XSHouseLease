@@ -20,13 +20,13 @@
     
 
     
-//    self.firstArray = [self getDataWithJsonName:@"XSHouseInfoFirst"];
-//    self.secondArray = [self getDataWithJsonName:@"XSHouseInfoSecond"];
-//    self.thirdArray = [self getDataWithJsonName:@"XSHouseInfoThird"];
+    self.firstArray = [self getDataWithJsonName:@"XSHouseInfoFirst"];
+    self.secondArray = [self getDataWithJsonName:@"XSHouseInfoSecond"];
+    self.thirdArray = [self getDataWithJsonName:@"XSHouseInfoThird"];
 
-    self.firstArray = [self getDataWithJsonName:@"XSHouseInfoFirstTest"];
-    self.secondArray = [self getDataWithJsonName:@"XSHouseInfoSecondTest"];
-    self.thirdArray = [self getDataWithJsonName:@"XSHouseInfoThirdTest"];
+//    self.firstArray = [self getDataWithJsonName:@"XSHouseInfoFirstTest"];
+//    self.secondArray = [self getDataWithJsonName:@"XSHouseInfoSecondTest"];
+//    self.thirdArray = [self getDataWithJsonName:@"XSHouseInfoThirdTest"];
     
 }
 - (void)keyValueUpdateBlackWithArray:(NSArray<XSHouseInfoCellModel *> *)array{

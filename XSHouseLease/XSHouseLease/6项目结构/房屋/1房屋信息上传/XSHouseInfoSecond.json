@@ -21,7 +21,7 @@
                                     "valueStr":null,
                                     "hindDescribe":"厅",
                                     "isSelect":false,
-                                    "sendType":1
+                                    "sendType":0
                                     }
                                  ]
                     },
@@ -40,7 +40,7 @@
                                          "valueStr":null,
                                          "hindDescribe":"室",
                                          "isSelect":false,
-                                         "sendType":1
+                                         "sendType":0
                                          }
                                        ]
                     }
@@ -68,7 +68,7 @@
                                      "valueStr":null,
                                      "hindDescribe":"平米",
                                      "isSelect":false,
-                                     "sendType":1
+                                     "sendType":0
                                     }
                                 ]
                      }
@@ -96,7 +96,7 @@
                                       "valueStr":null,
                                       "hindDescribe":null,
                                       "isSelect":false,
-                                      "sendType":1
+                                      "sendType":0
                                       }
                                    ]
                       },
@@ -115,11 +115,11 @@
                                            "valueStr":null,
                                            "hindDescribe":null,
                                            "isSelect":false,
-                                           "sendType":1
+                                           "sendType":0
                                            }
                                          ]
                       }
                     ]
 
-      },
+      }
 ]

@@ -17,11 +17,11 @@
                                     {
                                     "placeholder":"请输入",
                                     "frontDescribe":null,
-                                    "value":null,
+                                    "value":3,
                                     "valueStr":"3",
                                     "hindDescribe":"厅",
                                     "isSelect":false,
-                                    "sendType":1
+                                    "sendType":0
                                     }
                                  ]
                     },
@@ -36,11 +36,11 @@
                                          {
                                          "placeholder":"请输入",
                                          "frontDescribe":null,
-                                         "value":null,
+                                         "value":2,
                                          "valueStr":"2",
                                          "hindDescribe":"室",
                                          "isSelect":false,
-                                         "sendType":1
+                                         "sendType":0
                                          }
                                        ]
                     }
@@ -64,11 +64,11 @@
                                      {
                                      "placeholder":"请输入",
                                      "frontDescribe":null,
-                                     "value":null,
+                                     "value":113,
                                      "valueStr":"112",
                                      "hindDescribe":"平米",
                                      "isSelect":false,
-                                     "sendType":1
+                                     "sendType":0
                                     }
                                 ]
                      }
@@ -92,11 +92,11 @@
                                       {
                                       "placeholder":"请输入总楼层",
                                       "frontDescribe":null,
-                                      "value":null,
+                                      "value":22,
                                       "valueStr":"22",
                                       "hindDescribe":null,
                                       "isSelect":false,
-                                      "sendType":1
+                                      "sendType":0
                                       }
                                    ]
                       },
@@ -111,11 +111,11 @@
                                            {
                                            "placeholder":"请输入所在楼层",
                                            "frontDescribe":null,
-                                           "value":null,
+                                           "value":33,
                                            "valueStr":"8",
                                            "hindDescribe":null,
                                            "isSelect":false,
-                                           "sendType":1
+                                           "sendType":0
                                            }
                                          ]
                       }

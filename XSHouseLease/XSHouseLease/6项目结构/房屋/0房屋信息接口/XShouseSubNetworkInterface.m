@@ -26,7 +26,7 @@ NSString *url = [NSString stringWithFormat:@"%@/estate/hots",XSBaseUrl];
 // 上传房屋-入参信息相关枚举
 - (void)getRentEnumsWithCallback:(HBCompletionBlock)callback{
     NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
-    NSString *url = [NSString stringWithFormat:@"%@/enum/query/rentenums",XSBaseUrl];
+    NSString *url = [NSString stringWithFormat:@"%@/enum/rentenums",XSBaseUrl];
     [self GET:url param:dict progress:nil callback:callback];
 
 }
@@ -37,6 +37,7 @@ NSString *url = [NSString stringWithFormat:@"%@/estate/hots",XSBaseUrl];
     [self GET:url param:dict progress:nil callback:callback];
 
 }
+
 //租房搜索条件-key
 - (void)renthouseConditionWithCallback:(HBCompletionBlock)callback{
     NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];

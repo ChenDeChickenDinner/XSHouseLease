@@ -99,7 +99,7 @@
                       "keyTextInputType":0,
                       "values":[
                                   {
-                                  "placeholder":"请输入",
+                                  "placeholder":null,
                                   "frontDescribe":null,
                                   "value":null,
                                   "valueStr":null,
@@ -111,5 +111,5 @@
                   }
                 ]
 
-  },
+  }
 ]
