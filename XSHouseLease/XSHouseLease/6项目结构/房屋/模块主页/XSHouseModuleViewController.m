@@ -87,6 +87,7 @@
             NSMutableArray *modelArray = [XSHouseModuleModel mj_objectArrayWithKeyValuesArray:responseModel.data];
             for (XSHouseModuleModel *model in modelArray) {
                 model.clickBlack = ^(XSHouseModuleModel * _Nonnull model) {
+                    
                     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
                     [dict safeSetObject:[XSUserServer sharedInstance].cityModel.code forKey:@"cityId"];
                     [dict safeSetObject:model.value forKey:model.key];

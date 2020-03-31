@@ -30,6 +30,8 @@ UIKIT_EXTERN NSString *const NotificationLoginStatusChangedLogout;
 
 /** 是否登录 */
 @property (nonatomic ,assign) BOOL isLogin;
+
++ (void)needLoginSuccess:(logSuccess)successBlack cancel:(logCancel)cancelBlack;
 @end
 
 NS_ASSUME_NONNULL_END

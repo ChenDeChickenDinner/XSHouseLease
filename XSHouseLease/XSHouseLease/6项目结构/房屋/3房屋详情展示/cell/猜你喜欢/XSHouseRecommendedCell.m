@@ -29,15 +29,10 @@
     [super awakeFromNib];
     XSMyPublishHosueController *listvc = [[XSMyPublishHosueController alloc]init];
     listvc.source = XSBHouseInfoSource_MyPush;
+    listvc.alittle = YES;
     listvc.view.frame = self.bkView.bounds;
     self.listvc =listvc;
     [self.bkView addSubview:listvc.view];
-
-//    XSHouseInfoTableView *tableView = [[XSHouseInfoTableView alloc]init];
-//      tableView.mj_header.automaticallyChangeAlpha = YES;
-//      tableView.mj_footer.automaticallyChangeAlpha = YES;
-//      [self.bkView addSubview:tableView];
-//      self.tableView = tableView;
 
 }
 - (void)layoutSubviews{

@@ -45,33 +45,37 @@
 }
 - (IBAction)jumpClick:(UIButton *)sender {
    
-   
-    switch (sender.tag) {
-        case 1:
-        {
-         
-        }
-        break;
-        case 2:
-        {
-             
-         }
-        break;
-        case 3:
-        {
-         
-        }
-        break;
-        case 4:
-        {
-            XSHouseSubmitFirstViewController *vc = [[XSHouseSubmitFirstViewController alloc]init];
-            [self.navigationController pushViewController:vc animated:YES];
-        }
-        break;
+    [XSUserServer needLoginSuccess:^{
+       switch (sender.tag) {
+           case 1:
+           {
             
-        default:
-            break;
-    }
+           }
+           break;
+           case 2:
+           {
+                
+            }
+           break;
+           case 3:
+           {
+            
+           }
+           break;
+           case 4:
+           {
+               XSHouseSubmitFirstViewController *vc = [[XSHouseSubmitFirstViewController alloc]init];
+               [self.navigationController pushViewController:vc animated:YES];
+           }
+           break;
+               
+           default:
+               break;
+       }
+    } cancel:^{
+        
+    }];
+
 
 }
 

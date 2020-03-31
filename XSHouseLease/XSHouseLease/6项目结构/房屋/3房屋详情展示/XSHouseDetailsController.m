@@ -111,11 +111,22 @@
 }
 
 - (void)watch{
-    [self.subInfoInterface rentWatchHouseWithHouse_id:self.infoModel.house_id.stringValue houseType:XSBHouseType_Rent watch:YES callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
-        if (error == nil && responseModel.code.intValue == SuccessCode) {
-            [self alertWithMessage:@"关注成功"];
-        }
+    WEAK_SELF;
+    [XSUserServer needLoginSuccess:^{
+        STRONG_SELF;
+        [self.subInfoInterface rentWatchHouseWithHouse_id:self.infoModel.house_id.stringValue houseType:XSBHouseType_Rent watch:YES callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+            if (error == nil ) {
+                if (responseModel.code.intValue == SuccessCode) {
+                    [ProgressHUD showSuccess:@"关注成功"];
+                }else{
+                    [ProgressHUD showError:@"稍后再试"];
+                }
+            }
+        }];
+    } cancel:^{
+        
     }];
+
 }
 - (void)houseUserInfoViewWithData:(XSHouseRentInfoModel *)dataModel{
     

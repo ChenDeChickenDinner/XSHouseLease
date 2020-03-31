@@ -32,30 +32,40 @@
     
 }
 - (IBAction)jumpToSomePlace:(UIButton *)sender {
-    NSLog(@"tag = %ld -------",sender.tag);
-    if (sender.tag == 1) {
+    if (sender.tag == 6 || sender.tag == 7  || sender.tag == 8 ) {
         
-    }else if (sender.tag == 2){
-        
-    }else if (sender.tag == 3){
-       XSMyPublishHosueController *vc = [[XSMyPublishHosueController alloc]init];
-        vc.source = XSBHouseInfoSource_MyWatch;
-        [self.navigationController pushViewController:vc animated:YES];
+    }else{
+        [XSUserServer needLoginSuccess:^{
+            NSLog(@"tag = %ld -------",sender.tag);
+            if (sender.tag == 1) {
+                
+            }else if (sender.tag == 2){
+                
+            }else if (sender.tag == 3){
+               XSMyPublishHosueController *vc = [[XSMyPublishHosueController alloc]init];
+                vc.source = XSBHouseInfoSource_MyWatch;
+                [self.navigationController pushViewController:vc animated:YES];
 
-    }else if (sender.tag == 4){
-        
-    }else if (sender.tag == 5){
-       XSMyPublishHosueController *vc = [[XSMyPublishHosueController alloc]init];
-        vc.source = XSBHouseInfoSource_MyPublish;
-        [self.navigationController pushViewController:vc animated:YES];
+            }else if (sender.tag == 4){
+                
+            }else if (sender.tag == 5){
+               XSMyPublishHosueController *vc = [[XSMyPublishHosueController alloc]init];
+                vc.source = XSBHouseInfoSource_MyPublish;
+                [self.navigationController pushViewController:vc animated:YES];
 
-    }else if (sender.tag == 6){
-        
-    }else if (sender.tag == 7){
-        
-    }else if (sender.tag == 8){
-        
+            }else if (sender.tag == 6){
+                
+            }else if (sender.tag == 7){
+                
+            }else if (sender.tag == 8){
+                
+            }
+        } cancel:^{
+            
+        }];
+
     }
+
 }
 
 

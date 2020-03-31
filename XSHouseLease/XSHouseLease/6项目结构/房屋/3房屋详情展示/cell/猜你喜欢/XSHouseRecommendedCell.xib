@@ -10,18 +10,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="294" id="KGk-i7-Jjw" customClass="XSHouseRecommendedCell">
-            <rect key="frame" x="0.0" y="0.0" width="408" height="294"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="527" id="KGk-i7-Jjw" customClass="XSHouseRecommendedCell">
+            <rect key="frame" x="0.0" y="0.0" width="402" height="527"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="408" height="294"/>
+                <rect key="frame" x="0.0" y="0.0" width="402" height="527"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pr6-dw-HbJ">
-                        <rect key="frame" x="0.0" y="0.0" width="408" height="294"/>
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="527"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9LY-nc-O55">
-                                <rect key="frame" x="15" y="0.0" width="378" height="35"/>
+                                <rect key="frame" x="15" y="0.0" width="372" height="35"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="猜你喜欢" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcU-48-nYb">
                                         <rect key="frame" x="0.0" y="15.5" width="65.5" height="19.5"/>
@@ -38,14 +38,14 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m0o-NB-H3A">
-                                <rect key="frame" x="0.0" y="55" width="408" height="156"/>
+                                <rect key="frame" x="0.0" y="55" width="402" height="384"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="156" id="ct0-Wr-Ef4"/>
+                                    <constraint firstAttribute="height" constant="384" id="ct0-Wr-Ef4"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9d-BA-ODo" customClass="XSRoundedBtn1View">
-                                <rect key="frame" x="15" y="235" width="378" height="38"/>
+                                <rect key="frame" x="15" y="463" width="372" height="38"/>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="Eaa-mB-nsY"/>
@@ -67,7 +67,7 @@
                             <constraint firstItem="m0o-NB-H3A" firstAttribute="top" secondItem="9LY-nc-O55" secondAttribute="bottom" constant="20" id="J3P-Us-IA3"/>
                             <constraint firstAttribute="trailing" secondItem="9LY-nc-O55" secondAttribute="trailing" constant="15" id="OEQ-rR-m6f"/>
                             <constraint firstAttribute="trailing" secondItem="m0o-NB-H3A" secondAttribute="trailing" id="OOR-CE-Gh7"/>
-                            <constraint firstAttribute="bottom" secondItem="G9d-BA-ODo" secondAttribute="bottom" constant="21" id="ZSi-z4-8Yw"/>
+                            <constraint firstAttribute="bottom" secondItem="G9d-BA-ODo" secondAttribute="bottom" constant="26" id="cNd-6s-iUj"/>
                             <constraint firstItem="G9d-BA-ODo" firstAttribute="trailing" secondItem="9LY-nc-O55" secondAttribute="trailing" id="e5D-7w-BOA"/>
                             <constraint firstItem="9LY-nc-O55" firstAttribute="leading" secondItem="Pr6-dw-HbJ" secondAttribute="leading" constant="15" id="mVL-lh-5Ld"/>
                             <constraint firstItem="9LY-nc-O55" firstAttribute="top" secondItem="Pr6-dw-HbJ" secondAttribute="top" id="upN-H3-nU6"/>
@@ -86,7 +86,7 @@
                 <outlet property="bkView" destination="m0o-NB-H3A" id="Vi8-tu-fZz"/>
                 <outlet property="listHeight" destination="ct0-Wr-Ef4" id="fRh-A1-zx7"/>
             </connections>
-            <point key="canvasLocation" x="195.6521739130435" y="129.24107142857142"/>
+            <point key="canvasLocation" x="200.00000000000003" y="207.25446428571428"/>
         </tableViewCell>
     </objects>
 </document>

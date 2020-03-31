@@ -185,15 +185,12 @@ typedef void (^sendMessageSuccessful)(BOOL successful);
         STRONG_SELF;
         [MBProgressHUD  hideHUDForView:self.view animated:YES];
         if (error == nil) {
+            [ProgressHUD showSuccess:responseModel.message];
            if (responseModel.code.integerValue == SuccessCode) {
-//               [self alertWithMessage:responseModel.message];
-               // 登录成功
                [self loginSuccess:responseModel];
-           }else{
-               [self alertWithMessage:responseModel.message];
            }
         }else{
-           [self alertWithMessage:error.domain];
+            [ProgressHUD showError:error.description];
         }
     }];
 }
@@ -204,16 +201,21 @@ typedef void (^sendMessageSuccessful)(BOOL successful);
     XSUserModel *model =  [XSUserModel mj_objectWithKeyValues:userInfo];
     [XSUserServer sharedInstance].userModel = model;
 
-    [self dismissViewControllerAnimated:YES completion:nil];
+    WEAK_SELF;
+    [self dismissViewControllerAnimated:YES completion:^{
+        STRONG_SELF;
+           if(self.successBlack)self.successBlack();
+    }];
 }
 - (void)loginFailure{
     
 }
 
 - (IBAction)dismissViewController:(UIButton *)sender {
-    
+    WEAK_SELF;
     [self dismissViewControllerAnimated:YES completion:^{
-        
+        STRONG_SELF;
+        if(self.cancelBlack)self.cancelBlack();
     }];
 }
 

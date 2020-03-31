@@ -50,6 +50,9 @@ typedef void(^clickEditStatus)(NSNumber *status,NSNumber *houseID);
 typedef void(^searchBlack)(NSString *searhKey);
 typedef void(^valuechangeStatus)(NSString *key,XSBHouseKeyValueEditStatus editStatus);
 
+typedef void(^logSuccess)(void);
+typedef void(^logCancel)(void);
+
 @interface XSBaseObject : NSObject
 
 @end

@@ -25,7 +25,9 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    if (self.alittle) {
+        self.tableView.scrollEnabled = NO;
+    }
         if (self.source == XSBHouseInfoSource_Search) {
             if (!self.title)self.title = @"租房搜索";
        }else if (self.source == XSBHouseInfoSource_MyPublish){
@@ -105,10 +107,19 @@
           [self.tableView.mj_header endRefreshing];
            [self.tableView.mj_footer endRefreshing];
         if (error == nil) {
+            [self.tableView.array removeAllObjects];
             if (responseModel.code.intValue == SuccessCode) {
-                NSArray *array = [XSHouseRentInfoModel mj_objectArrayWithKeyValuesArray:responseModel.data];
+                NSMutableArray *array = [XSHouseRentInfoModel mj_objectArrayWithKeyValuesArray:responseModel.data];
                 [self houseInfoClickSettingWithModelArray:array];
-                self.tableView.array = array;
+               if (self.alittle) {
+                    for (int i = 0; i<= 2; i++) {
+                        [self.tableView.array  addObject:[array safeObjectAtIndex:i]];
+                    }
+              
+                }else{
+                    self.tableView.array = array;
+
+                }
                 [self.tableView reloadData];
             }
         }else{
@@ -128,7 +139,7 @@
                 NSLog(@"house_id = %@",newModel.house_id);
                 XSHouseDetailsController *vc = [[XSHouseDetailsController alloc]init];
                 vc.houseid = newModel.house_id.stringValue;
-                [self.navigationController pushViewController:vc animated:YES];
+                [[NSObject getTopViewController].navigationController pushViewController:vc animated:YES];
             }
         };
         model.clickEditStatu = ^(NSNumber * _Nonnull status, NSNumber * _Nonnull houseID) {

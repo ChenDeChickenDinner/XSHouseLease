@@ -48,14 +48,20 @@ DEF_SINGLETON(XSUserServer)
     return _cityModel;
 }
 
-- (void)axax{
++ (void)needLoginSuccess:(logSuccess)successBlack cancel:(logCancel)cancelBlack{
     if (![XSUserServer sharedInstance].isLogin) {
          XSLoginViewController *login = [[XSLoginViewController alloc]init];
+        login.successBlack = successBlack;
+        login.cancelBlack = cancelBlack;
          login.modalPresentationStyle = UIModalPresentationFullScreen;
          [[NSObject getTopViewController] presentViewController:login animated:YES completion:^{
              
          }];
-       }
+    }else{
+        if (successBlack) {
+            successBlack();
+        }
+    }
   
 }
 @end

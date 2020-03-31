@@ -29,7 +29,7 @@
     mapView.showsUserLocation = YES;
     [mapView metersPerPointForZoomLevel:10];
     mapView.userTrackingMode = MAUserTrackingModeFollow;
-     [self.view addSubview:mapView];
+//     [self.view addSubview:mapView];
     self.mapView = mapView ;
 }
 - (void)viewWillLayoutSubviews{
@@ -37,6 +37,8 @@
     self.mapView.frame = CGRectMake(0, 300, self.view.width, 300);
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    [ProgressHUD showSuccess:@"努力开发中"];
     [self.mapView setCenterCoordinate:CLLocationCoordinate2DMake(39.992520, 116.336170) animated:YES];
 
 //    [self.subInfoInterface uploadImage:nil callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {

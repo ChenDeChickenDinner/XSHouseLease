@@ -64,7 +64,7 @@
     return self;
 }
 
-- (NSArray *)array{
+- (NSMutableArray *)array{
     if (_array == nil) {
         _array = [NSMutableArray array];
     }

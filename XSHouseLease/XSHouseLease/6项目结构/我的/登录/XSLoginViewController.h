@@ -11,6 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface XSLoginViewController : XSBaseViewController
+@property(nonatomic,copy) logSuccess successBlack;
+@property(nonatomic,copy) logCancel cancelBlack;
 
 @end
 
