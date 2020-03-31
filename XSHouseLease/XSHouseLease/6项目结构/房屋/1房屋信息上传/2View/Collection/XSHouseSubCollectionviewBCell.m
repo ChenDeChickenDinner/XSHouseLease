@@ -88,7 +88,7 @@ static NSString *CollectionCellIdentifierB = @"CollectionCellIdentifierB";
     XSKeyValueModel *dataModel = [self.dataModel.arrayValue safeObjectAtIndex:indexPath.section];
     XSValue *valeModel = [dataModel.values safeObjectAtIndex:indexPath.row];
 
-    if (dataModel.moreSelect) {
+    if (dataModel.multiple) {
         valeModel.isSelect = !valeModel.isSelect;
     }else{
          for (XSValue *valeModel  in dataModel.values) {

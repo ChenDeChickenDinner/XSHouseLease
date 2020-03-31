@@ -42,6 +42,8 @@
 //        _operationManager.operationQueue.maxConcurrentOperationCount = 3;
         [_operationManager setSecurityPolicy:[self customSecurityPolicy]];
         _operationManager.requestSerializer.stringEncoding = NSUTF8StringEncoding;
+        _operationManager.responseSerializer.stringEncoding = NSUTF8StringEncoding;
+
         _operationManager.requestSerializer = [AFJSONRequestSerializer serializer];
         _operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
         _operationManager.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[@"application/json",
@@ -51,8 +53,9 @@
                                                                                   @"text/javascript",
                                                                                   @"text/xml",
                                                                                   @"image/*"]];
-        [_operationManager.requestSerializer setValue:@"application/json;charset=UTF-8;multipart/form-data" forHTTPHeaderField:@"Content-Type"];
-        [_operationManager.requestSerializer setValue:@"*/*" forHTTPHeaderField:@"Accept"];
+//        [_operationManager.requestSerializer setValue:@"application/json;charset=UTF-8;multipart/form-data" forHTTPHeaderField:@"Content-Type"];
+        [_operationManager.requestSerializer setValue:@"application/json;charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
+//        [_operationManager.requestSerializer setValue:@"*/*" forHTTPHeaderField:@"Accept"];
 
     }
     NSString *token  = [XSUserServer sharedInstance].userModel.token;
@@ -67,6 +70,7 @@
     
     
 }
+
 
 - (void)refreshUIData{
     

@@ -24,41 +24,112 @@
 @property (weak, nonatomic) IBOutlet XSRoundedBtn1View *nextBtn;
 
 @property (strong, nonatomic)  XSPhotoPickerView *pickerView;
+@property (strong, nonatomic)  NSMutableArray *imageUrlArray;
+@property (strong, nonatomic)  NSMutableArray *imageUrlServerArray;
 
 @end
 
 @implementation XSHouseSubmitFirstViewController
-
+- (NSMutableArray *)imageUrlArray{
+    if (!_imageUrlArray) {
+        _imageUrlArray = [NSMutableArray array];
+    }
+    return _imageUrlArray;
+}
+- (NSMutableArray *)imageUrlServerArray{
+    if (!_imageUrlServerArray) {
+        _imageUrlServerArray = [NSMutableArray array];
+    }
+    return _imageUrlServerArray;
+}
 - (void)pickerViewInit{
     WEAK_SELF;
     XSPhotoPickerView *pickerView = [[XSPhotoPickerView alloc]initWithFrame:CGRectMake(0, 0, self.myTableView.width, 280)];
      pickerView.changeCompleteBlock = ^(NSArray<HXPhotoModel *> *allList, NSArray<HXPhotoModel *> *photos, NSArray<HXPhotoModel *> *videos, BOOL isOriginal) {
          STRONG_SELF;
-           [allList hx_requestImageWithOriginal:isOriginal completion:^(NSArray<UIImage *> * _Nullable imageArray, NSArray<HXPhotoModel *> * _Nullable errorArray) {
-               
-               [self uploadImage:imageArray.firstObject callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
-                   if (error == nil) {
-                       if (responseModel.code.integerValue == SuccessCode) {
-                           [self alertWithMessage:responseModel.message];
-                       }
-                   }else{
-                       [self alertWithMessage:error.domain];
-                   }
-               }];
- 
-               
-                     NSSLog(@"\nimage: %@\nerror: %@",imageArray,errorArray);
-                 }];
+         [self.imageUrlArray removeAllObjects];
+         [self.imageUrlServerArray removeAllObjects];
+         [[XSHouseFixedData sharedInstance].subRentParameterDict safeSetObject:@"" forKey:@"firstImg"];
+         [[XSHouseFixedData sharedInstance].subRentParameterDict safeSetObject:@[] forKey:@"contentImg"];
+
+         for (HXPhotoModel *photoModel in photos) {
+             [photoModel requestImageURLStartRequestICloud:nil progressHandler:nil success:^(NSURL * _Nullable imageURL, HXPhotoModel * _Nullable model, NSDictionary * _Nullable info) {
+                 NSSLog(@"imageURL: %@\n",imageURL );
+                 [self.imageUrlArray addObject:imageURL];
+             } failed:^(NSDictionary * _Nullable info, HXPhotoModel * _Nullable model) {
+                 
+             }];
+         }
+
        };
     self.pickerView = pickerView;
 }
+- (void)keyValueChangeBlackSetting{
+    WEAK_SELF;
+    for (XSHouseInfoCellModel *cell in self.thirdArray) {
+        for (XSKeyValueModel *valueModel in cell.arrayValue) {
+            valueModel.valuechangeStatus = ^(NSString * _Nonnull key, XSBHouseKeyValueEditStatus editStatus) {
+                STRONG_SELF;
+                if ([key isEqualToString:@"title"] && editStatus == XSBHouseKeyValueEditBegin) {
+                    NSLog(@"--------%@-------,发生了%ld",key,(long)editStatus);
+                    [self loadAllImage];
+                    [self performSelector:@selector(loadAllImage) withObject:nil afterDelay:0.5];
+                }
+            };
+        }
+    }
+}
+- (void)AutomaticAssignment:(NSArray *)array{
+    for (XSHouseInfoCellModel *cell in array) {
+        for (XSKeyValueModel *valueModel in cell.arrayValue) {
+            for (XSValue *model in valueModel.values) {
+                model.value = model.value;
+                model.valueStr = model.valueStr;
+            }
+        }
+    }
+    NSLog(@"subRentParameterDict = %@",[XSHouseFixedData sharedInstance].subRentParameterDict);
+    
+}
+- (void)loadAllImage{
+    WEAK_SELF;
+    for (NSURL *url in self.imageUrlArray) {
+        NSLog(@"开始上传");
+        [self.subInfoInterface uploadImage:[UIImage imageNamed:@""] imageUrl:url callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+            STRONG_SELF;
+               if (error == nil && responseModel.code.integerValue == SuccessCode) {
+                   NSLog(@"上传成功");
+                   [self.imageUrlServerArray addObject:responseModel.data];
+                   [self saveImageUrl:responseModel.data];
+               }
+        }];
+    }
+
+}
+- (void)saveImageUrl:(NSString *)iamgeUrl{
+    NSMutableArray *newArray = [NSMutableArray array];
+    NSArray *oldArray = [[XSHouseFixedData sharedInstance].subRentParameterDict safeObjectForKey:@"contentImg"];
+    [newArray addObjectsFromArray:[oldArray copy]];
+    if (oldArray.count) {
+        for (NSString *url in oldArray) {
+            if (![iamgeUrl isEqualToString:url]) {
+                [newArray addObject:iamgeUrl];
+            }
+        }
+    }else{
+        [newArray addObject:iamgeUrl];
+    }
+
+    [[XSHouseFixedData sharedInstance].subRentParameterDict safeSetObject:newArray forKey:@"contentImg"];
+    [[XSHouseFixedData sharedInstance].subRentParameterDict safeSetObject:newArray.firstObject forKey:@"firstImg"];
+
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+ 
     self.myTableView.delegate = self;
     self.myTableView.dataSource = self;
     self.myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-//    self.myTableView.scrollEnabled = NO;
     if (self.submitType == XSHouseSubmitType_Rent) {
         self.title = @"我要出租";
     }else if (self.submitType == XSHouseSubmitType_Sell){
@@ -66,26 +137,29 @@
     }
         
      if (self.submitStepsType == XSHouseSubmitStepsType_First) {
-         
          XSHouseSubFootView *tableFooterView = [XSHouseSubFootView houseSubFootView];
-         
-         
           tableFooterView.frame = CGRectMake(0, 0, self.myTableView.width, 160);
           self.myTableView.tableFooterView = tableFooterView;
           [self.array addObjectsFromArray:self.firstArray];
          [self.nextBtn setTitle:@"下一步" forState:UIControlStateNormal];
+            [self AutomaticAssignment:self.firstArray];
       }else if (self.submitStepsType == XSHouseSubmitStepsType_Second){
-//          [self.array addObjectsFromArray:self.secondArray];
-          [self loadRentEnums];
+          [self.array addObjectsFromArray:self.secondArray];
           [self.nextBtn setTitle:@"下一步" forState:UIControlStateNormal];
+          [self AutomaticAssignment:self.secondArray];
+          [self loadRentEnumsCallback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+              
+          }];
 
       }else if (self.submitStepsType == XSHouseSubmitStepsType_Third){
           [self pickerViewInit];
           self.myTableView.tableHeaderView = self.pickerView;
           [self.array addObjectsFromArray:self.thirdArray];
           [self.nextBtn setTitle:@"完成" forState:UIControlStateNormal];
+          [self AutomaticAssignment:self.thirdArray];
+
       }
-    
+    [self keyValueChangeBlackSetting];
     
     [self refreshUIData];
 }
@@ -104,25 +178,20 @@
 }
 
 
-- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
     XSHouseInfoCellModel *dataModel = [self.array safeObjectAtIndex:indexPath.row];
     Class cls = NSClassFromString(dataModel.cellClass);
     XSHouseSubTableViewCell *cell = nil;
     if ([cls isSubclassOfClass:[XSHouseSubTextFieldTableViewCell class]]) {
         cell = [XSHouseSubTextFieldTableViewCell cellWithtableView:tableView];
-        
     }else if ([cls isSubclassOfClass:[XSHouseSubListChooseTableViewCell class]]){
         cell = [XSHouseSubListChooseTableViewCell cellWithtableView:tableView];
-        
     }else if ([cls isSubclassOfClass:[XSHouseSubCollectionviewACell class]]){
         cell = [XSHouseSubCollectionviewACell cellWithtableView:tableView];
-        
     }else if ([cls isSubclassOfClass:[XSHouseSubCollectionviewBCell class]]){
         cell = [XSHouseSubCollectionviewBCell cellWithtableView:tableView];
-        
     }else if ([cls isSubclassOfClass:[XSHouseSubTextViewCell class]]){
         cell = [XSHouseSubTextViewCell cellWithtableView:tableView];
-        
     }else{
         cell = [XSHouseSubTableViewCell cellWithtableView:tableView];
     }

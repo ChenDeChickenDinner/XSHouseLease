@@ -42,4 +42,9 @@
     NSString *url = [NSString stringWithFormat:@"%@/login",XSBaseUrl];
     [self POST:url param:dict progress:nil callback:callback];
 }
+- (void)uploadImageUrl:(NSString *)imageUrl callback:(HBCompletionBlock)callback{
+    NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
+    NSString *url = [NSString stringWithFormat:@"%@/login",XSBaseUrl];
+    [self POST:url param:dict progress:nil callback:callback];
+}
 @end

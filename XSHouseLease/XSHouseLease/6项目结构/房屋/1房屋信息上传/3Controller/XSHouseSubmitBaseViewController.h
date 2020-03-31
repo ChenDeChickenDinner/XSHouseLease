@@ -31,8 +31,7 @@ typedef NS_ENUM(NSInteger,XSHouseSubmitStepsType) {
 @property (strong, nonatomic) NSMutableArray<XSHouseInfoCellModel *> *array;
 
 
-- (void)loadRentEnums;
-- (void)uploadImage:(UIImage *)image callback:(HBCompletionBlock)callback;
+- (void)loadRentEnumsCallback:(HBCompletionBlock)callback;
 @end
 
 NS_ASSUME_NONNULL_END

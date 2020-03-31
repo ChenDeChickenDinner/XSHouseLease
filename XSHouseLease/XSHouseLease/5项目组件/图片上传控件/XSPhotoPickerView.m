@@ -29,24 +29,10 @@ static const CGFloat kPhotoViewMargin = 10.0;
     self = [super initWithFrame:frame];
     if (self) {
         [self addSubViews];
-//        self.backgroundColor = [UIColor blackColor];
     }
     return self;
 }
-//+ (instancetype)photoPickerViewWithFrame:(CGRect)frame{
-//   XSPhotoPickerView *pickerView = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil].lastObject;
-//    if (pickerView) {
-//        pickerView.frame = frame;
-//        [pickerView addSubViews];
-////        self.backgroundColor = [UIColor blackColor];
-//    }
-//    return pickerView;
-//}
-//- (void)layoutSubviews{
-//    [super layoutSubviews];
-//    self.scrollView.frame = self.containerView.bounds;
-//    self.photoView.frame = CGRectMake(0, kPhotoViewMargin, self.scrollView.width, 0);
-//}
+
 - (void)layoutSubviews{
     [super layoutSubviews];
     self.scrollView.frame = CGRectMake(0, 45, self.width, self.height - 45);
@@ -368,11 +354,13 @@ static const CGFloat kPhotoViewMargin = 10.0;
         _manager.configuration.photoStyle = HXPhotoStyleDefault; // 相册风格
         _manager.configuration.albumShowMode = HXPhotoAlbumShowModeDefault; // 相册风格
 
-        
+        _manager.configuration.editAssetSaveSystemAblum = YES; /// 编辑后的照片/视频是否添加到系统相册中
+        _manager.configuration.saveSystemAblum = YES; //拍摄的 照片/视频 是否保存到系统相册  默认NO
+        _manager.configuration.hideOriginalBtn = YES;
         _manager.configuration.maxNum = 5;
         _manager.configuration.photoMaxNum = 5;
         _manager.configuration.videoMaxNum = 0;
-        
+        _manager.configuration.clarityScale = 1.4;
         _manager.configuration.photoCanEdit = NO;///  照片是否可以编辑   default YES
         _manager.configuration.limitPhotoSize = 0; // 限制照片的大小 单位：b 字节 默认 0字节 不限制
         _manager.configuration.selectPhotoLimitSize = NO; // 选择视频时是否限制照片大小
@@ -383,9 +371,8 @@ static const CGFloat kPhotoViewMargin = 10.0;
         _manager.configuration.clarityScale = [UIScreen mainScreen].bounds.size.width;  //小图照片清晰度 越大越清晰、越消耗性能
 
         
-        _manager.configuration.themeColor = [UIColor whiteColor]; // 主题颜色  默认 tintColor
+        _manager.configuration.themeColor = [UIColor orangeColor]; // 主题颜色  默认 tintColor
         _manager.configuration.creationDateSort = YES;/// 照片列表是否按照片添加日期排序  默认YES
-        _manager.configuration.saveSystemAblum = NO; //拍摄的 照片/视频 是否保存到系统相册  默认NO
         _manager.configuration.selectTogether = NO;  // 图片和视频是否能够同时选择 默认 NO
         _manager.configuration.lookGifPhoto = NO;  //是否开启查看GIF图片功能 - 默认开启
        _manager.configuration.cameraCellShowPreview = YES;  //相机cell是否显示预览
@@ -396,14 +383,14 @@ static const CGFloat kPhotoViewMargin = 10.0;
         _manager.configuration.originalSelectedImageName = nil;  //原图按钮选中状态下的按钮图标名
 
 
-        _manager.configuration.navBarBackgroudColor = [UIColor colorWithRed:60.f / 255.f green:131.f / 255.f blue:238.f / 255.f alpha:1]; // 导航栏背景颜色
-        _manager.configuration.statusBarStyle = UIStatusBarStyleLightContent; // 状态栏样式 默认 UIStatusBarStyleDefault
-        _manager.configuration.navigationTitleColor = [UIColor whiteColor]; // 导航栏标题颜色
-        _manager.configuration.cellSelectedBgColor = [UIColor colorWithRed:60.f / 255.f green:131.f / 255.f blue:238.f / 255.f alpha:1];  // cell选中时的背景颜色
-        _manager.configuration.cellSelectedTitleColor = [UIColor whiteColor];  // cell选中时的文字颜色
-        _manager.configuration.selectedTitleColor = [UIColor colorWithRed:60.f / 255.f green:131.f / 255.f blue:238.f / 255.f alpha:1];  // 选中时数字的颜色
-        _manager.configuration.navBarTranslucent = NO;  //导航栏是否半透明，默认YES
-        _manager.configuration.bottomViewBgColor = [UIColor colorWithRed:60.f / 255.f green:131.f / 255.f blue:238.f / 255.f alpha:1]; // 底部视图的背景颜色
+//        _manager.configuration.navBarBackgroudColor = [UIColor colorWithRed:60.f / 255.f green:131.f / 255.f blue:238.f / 255.f alpha:1]; // 导航栏背景颜色
+//        _manager.configuration.statusBarStyle = UIStatusBarStyleLightContent; // 状态栏样式 默认 UIStatusBarStyleDefault
+//        _manager.configuration.navigationTitleColor = [UIColor whiteColor]; // 导航栏标题颜色
+//        _manager.configuration.cellSelectedBgColor = [UIColor colorWithRed:60.f / 255.f green:131.f / 255.f blue:238.f / 255.f alpha:1];  // cell选中时的背景颜色
+//        _manager.configuration.cellSelectedTitleColor = [UIColor whiteColor];  // cell选中时的文字颜色
+//        _manager.configuration.selectedTitleColor = [UIColor colorWithRed:60.f / 255.f green:131.f / 255.f blue:238.f / 255.f alpha:1];  // 选中时数字的颜色
+//        _manager.configuration.navBarTranslucent = NO;  //导航栏是否半透明，默认YES
+//        _manager.configuration.bottomViewBgColor = [UIColor colorWithRed:60.f / 255.f green:131.f / 255.f blue:238.f / 255.f alpha:1]; // 底部视图的背景颜色
         _manager.configuration.bottomViewTranslucent = NO; // 底部视图是否半透明效果 默认YES
 //        _manager.configuration.navBarBackgroundImage = [UIImage imageNamed:@"APPCityPlayer_bannerGame"];
         HXWeakSelf

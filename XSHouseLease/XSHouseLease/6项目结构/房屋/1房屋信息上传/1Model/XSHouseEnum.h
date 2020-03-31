@@ -31,6 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 //选项顺序位置
 @property (nonatomic, strong) NSNumber *type;
 
+@property (nonatomic, assign) BOOL multiple;
 
 //可选项选项
 @property (nonatomic, copy) NSArray<XSHouseEnumDataEnumRes *> *enumRes;

@@ -26,7 +26,7 @@ NSString *url = [NSString stringWithFormat:@"%@/estate/hots",XSBaseUrl];
 // 上传房屋-入参信息相关枚举
 - (void)getRentEnumsWithCallback:(HBCompletionBlock)callback{
     NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
-    NSString *url = [NSString stringWithFormat:@"%@/enum/rentenums",XSBaseUrl];
+    NSString *url = [NSString stringWithFormat:@"%@/enum/query/rentenums",XSBaseUrl];
     [self GET:url param:dict progress:nil callback:callback];
 
 }
@@ -55,19 +55,20 @@ NSString *url = [NSString stringWithFormat:@"%@/estate/hots",XSBaseUrl];
     
 
 
-    NSLog(@"jsonDict",jsonDict);
+    NSLog(@"jsonDict %@",jsonDict);
     NSString *url = [NSString stringWithFormat:@"%@/renthouse/save2",XSBaseUrl];
 //    [self POST:url param:jsonDict progress:nil callback:callback];
     [self POST:url param:dict progress:nil callback:callback];
 
 }
 // 上传图片
-- (void)uploadImage:(UIImage *)image callback:(HBCompletionBlock)callback{
+- (void)uploadImage:(UIImage *)image imageUrl:(NSURL *)imageUrl  callback:(HBCompletionBlock)callback{
     NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
     [dict safeSetObject:[XSUserServer sharedInstance].userModel.ID forKey:@"customerId"];
 
     NSString *url = [NSString stringWithFormat:@"%@/file/image",XSBaseUrl];
-    [self loadImageWithURL:url image:image param:dict progress:nil callback:callback];
+    
+    [self loadImageWithURL:url imageUrl:imageUrl param:dict progress:nil callback:callback];
 }
 
 

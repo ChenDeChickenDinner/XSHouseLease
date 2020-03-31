@@ -63,9 +63,12 @@ typedef void (^valueUpdate)(void);
 
 //字段values
 @property (nonatomic,strong) NSArray<XSValue *> *values;
+
 @property (nonatomic,copy) valueUpdate updateBlack;
+@property (nonatomic,copy) valuechangeStatus valuechangeStatus;
+
 //字段是否可以多选
-@property (nonatomic,assign) BOOL moreSelect;
+@property (nonatomic,assign) BOOL multiple;
 
 //字段展示的顺序位置
 @property (nonatomic, strong) NSNumber *sequence;

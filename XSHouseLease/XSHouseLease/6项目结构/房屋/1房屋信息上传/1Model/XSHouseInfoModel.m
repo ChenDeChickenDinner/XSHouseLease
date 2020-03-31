@@ -38,8 +38,10 @@
 }
 @end
 
-
+// 存数据
 @implementation XSKeyValueModel
+
+
 - (instancetype)init{
     self = [super init];
     if (self) {
@@ -57,22 +59,27 @@
                 }
             }else{
               // 多个 个
-                if (weakSelf.moreSelect) {
+                if (weakSelf.multiple) {
+                    NSMutableArray *valueArray = [NSMutableArray array];
+                    
                     NSString *valueStr = [[NSString alloc]init];
                     for (XSValue *value in weakSelf.values) {
                          if (value.isSelect) {
                             if (value.sendType == XSValueSendType_Int) {
-                                valueStr = [valueStr stringByAppendingFormat:@"%@,",value.value.stringValue];
+                                [valueArray addObject:value.value];
+                                valueStr = [valueStr stringByAppendingFormat:@"%@,",value.value];
                             }else{
                                valueStr = [valueStr stringByAppendingFormat:@"%@,",value.valueStr];
+                                [valueArray addObject:value.valueStr];
                             }
                          }
                     }
                     if (valueStr.length > 0) {
-                        [[XSHouseFixedData sharedInstance] subRentParameterDictUpdateWithKey:weakSelf.key value:valueStr];
                     }
+                    [[XSHouseFixedData sharedInstance] subRentParameterDictUpdateWithKey:weakSelf.key value:valueArray];
 
-               
+//                    [[XSHouseFixedData sharedInstance] subRentParameterDictUpdateWithKey:weakSelf.key value:valueStr];
+
               }else{
                  // 单选
                   for (XSValue *value in weakSelf.values) {
@@ -102,6 +109,9 @@
     _values = values;
 
 }
+//+ (NSDictionary *)mj_replacedKeyFromPropertyName{
+//    return @{@"moreSelect":@"multiple"};
+//}
 + (NSDictionary *)mj_objectClassInArray{
     return @{@"values" : @"XSValue"};//前边，是属性数组的名字，后边就是类名
 }
@@ -125,11 +135,13 @@
     valueModel.name = model.name;
     valueModel.key = model.key;
     valueModel.sequence = model.type;
-    if ([model.name isEqualToString:@"配套设施"]||[model.name isEqualToString:@"房源特色"]) {
-        valueModel.moreSelect = YES;
-    }else{
-        valueModel.moreSelect = NO;
-    }
+    valueModel.multiple = model.multiple;
+    
+//    if ([model.name isEqualToString:@"配套设施"]||[model.name isEqualToString:@"房源特色"]) {
+//        valueModel.moreSelect = YES;
+//    }else{
+//        valueModel.moreSelect = NO;
+//    }
     valueModel.keyInputType = XSValueInputType_collectionview;
     valueModel.values = arrayValue;
     

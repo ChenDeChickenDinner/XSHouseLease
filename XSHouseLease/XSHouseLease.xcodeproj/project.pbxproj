@@ -287,7 +287,7 @@
 		6C3BEBD9242E3B60001393EF /* NSMutableString+safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+safe.m"; sourceTree = "<group>"; };
 		6C3BEBDB242E3B60001393EF /* NSDate+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Category.m"; sourceTree = "<group>"; };
 		6C3BEBDC242E3B60001393EF /* NSDate+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Category.h"; sourceTree = "<group>"; };
-		6C6BC146241FA75300B62001 /* 房鼎汇.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "房鼎汇.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C6BC146241FA75300B62001 /* 5555.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 5555.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C6BC149241FA75300B62001 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6C6BC14A241FA75300B62001 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6C6BC14C241FA75300B62001 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
@@ -834,7 +834,7 @@
 		6C6BC147241FA75300B62001 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6C6BC146241FA75300B62001 /* 房鼎汇.app */,
+				6C6BC146241FA75300B62001 /* 5555.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1078,7 +1078,7 @@
 			);
 			name = XSHouseLease;
 			productName = XSHouseLease;
-			productReference = 6C6BC146241FA75300B62001 /* 房鼎汇.app */;
+			productReference = 6C6BC146241FA75300B62001 /* 5555.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1456,7 +1456,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = fangdinghui;
-				PRODUCT_NAME = "房鼎汇";
+				PRODUCT_NAME = 5555;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
@@ -1478,7 +1478,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = fangdinghui;
-				PRODUCT_NAME = "房鼎汇";
+				PRODUCT_NAME = 5555;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};

@@ -25,8 +25,10 @@ NS_ASSUME_NONNULL_BEGIN
 //租房搜索条件-key
 - (void)renthouseConditionWithCallback:(HBCompletionBlock)callback;
 
+
 // 上传图片
-- (void)uploadImage:(UIImage *)image callback:(HBCompletionBlock)callback;
+- (void)uploadImage:(UIImage *)image imageUrl:(NSURL *)imageUrl callback:(HBCompletionBlock)callback;
+
 // 搜索的租房信息-带搜索信息
 - (void)searchRenthousListWithKeyVales:(NSDictionary *)keyVales per_page:(NSInteger)per_page page_index:(NSInteger)page_index  callback:(HBCompletionBlock)callback;
 //我发布的租房

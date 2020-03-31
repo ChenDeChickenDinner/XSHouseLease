@@ -28,7 +28,14 @@
     self.textView.delegate = self;
 }
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView{
-    textView.text = nil;
+    XSKeyValueModel *model = [self.dataModel.arrayValue safeObjectAtIndex:0];
+     XSValue *valueData = model.values.firstObject;
+    if (valueData.value == nil) {
+        textView.text = nil;
+    }
+    if (model.valuechangeStatus) {
+        model.valuechangeStatus(model.key, XSBHouseKeyValueEditBegin);
+    }
     return YES;
 }
 - (void)textViewDidEndEditing:(UITextView *)textView{

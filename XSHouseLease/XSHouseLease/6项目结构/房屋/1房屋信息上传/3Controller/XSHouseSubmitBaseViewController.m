@@ -25,8 +25,8 @@
 //    self.thirdArray = [self getDataWithJsonName:@"XSHouseInfoThird"];
 
     self.firstArray = [self getDataWithJsonName:@"XSHouseInfoFirstTest"];
-      self.secondArray = [self getDataWithJsonName:@"XSHouseInfoSecondTest"];
-      self.thirdArray = [self getDataWithJsonName:@"XSHouseInfoThirdTest"];
+    self.secondArray = [self getDataWithJsonName:@"XSHouseInfoSecondTest"];
+    self.thirdArray = [self getDataWithJsonName:@"XSHouseInfoThirdTest"];
     
 }
 - (void)keyValueUpdateBlackWithArray:(NSArray<XSHouseInfoCellModel *> *)array{
@@ -38,13 +38,14 @@
         }
     }
 }
+
 - (NSMutableArray *)array{
     if (_array == nil) {
         _array = [NSMutableArray array];
     }
     return _array;
 }
-- (void)loadRentEnums{
+- (void)loadRentEnumsCallback:(HBCompletionBlock)callback{
     WEAK_SELF;
     [self.subInfoInterface getRentEnumsWithCallback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
         if (error == nil && responseModel.code.integerValue == SuccessCode) {
@@ -63,12 +64,12 @@
             [self.secondArray addObjectsFromArray:newArray];
             [self.array removeAllObjects];
             [self.array addObjectsFromArray:self.secondArray];
+            if (callback) {
+                callback(responseModel,error);
+            }
             [self refreshUIData];
         }
     }];
-}
-- (void)uploadImage:(UIImage *)image callback:(HBCompletionBlock)callback{
-    [self.subInfoInterface uploadImage:image callback:callback];
 }
 
 

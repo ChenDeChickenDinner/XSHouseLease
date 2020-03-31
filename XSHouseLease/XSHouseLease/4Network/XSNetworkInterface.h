@@ -44,7 +44,8 @@ typedef BOOL (^ __nullable HBRepeatRequestBlock)(void);
 - (void)POST:(NSString *)URLString param:(NSDictionary *)aParam progress:(HBRequestProgress)downloadProgress callback:(HBCompletionBlock)callback;
 
 - (void)GET:(NSString *)URLString param:(NSDictionary *)aParam progress:(HBRequestProgress)downloadProgress callback:(HBCompletionBlock)callback;
-- (void)loadImageWithURL:(NSString *)URLString image:(UIImage *)image param:(NSDictionary *)aParam progress:(HBRequestProgress)downloadProgress callback:(HBCompletionBlock)callback;
+
+- (void)loadImageWithURL:(NSString *)URLString imageUrl:(NSURL *)imageUrl param:(NSDictionary *)aParam progress:(HBRequestProgress)downloadProgress callback:(HBCompletionBlock)callback;
 @end
 
 NS_ASSUME_NONNULL_END
