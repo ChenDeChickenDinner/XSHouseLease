@@ -41,6 +41,8 @@ NS_ASSUME_NONNULL_BEGIN
 //
 @property (nonatomic, strong) NSNumber *house_id;
 
+@property (nonatomic, assign) BOOL watch;
+
 //属于哪个用户发布的
 @property (nonatomic, strong) NSNumber *customerId;
 @property (nonatomic, copy) NSString *callPhone;

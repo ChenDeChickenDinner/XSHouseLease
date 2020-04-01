@@ -68,18 +68,26 @@
          }
      }
      
-    BRProvinceModel * model1 = [[BRProvinceModel alloc]init];
-    model1.name = [dict objectForKey:@"city"];
-    model1.code = [dict objectForKey:@"cityId"];
+     if (self.submitStepsType == XSHouseSubmitStepsType_First) {
+         BRProvinceModel * model1 = [[BRProvinceModel alloc]init];
+         model1.name = [dict objectForKey:@"city"];
+         model1.code = [dict objectForKey:@"cityId"];
 
-    BRCityModel * model2 = [[BRCityModel alloc]init];
-    model2.name = [dict objectForKey:@"region"];
-    model2.code = [dict objectForKey:@"regionId"];
+         BRCityModel * model2 = [[BRCityModel alloc]init];
+         model2.name = [dict objectForKey:@"region"];
+         model2.code = [dict objectForKey:@"regionId"];
+          
+         BRAreaModel * model3 = [[BRAreaModel alloc]init];
+         model3.name = [dict objectForKey:@"town"];
+         model3.code = [dict objectForKey:@"townId"];
+          [[XSHouseFixedData sharedInstance].subRentParameterDict safeSetObject:[dict objectForKey:@"id"] forKey:@"id"];
+         [[XSHouseFixedData sharedInstance] LocationParameterUpdateWithProvince:model1 city:model2 area:model3];
+     }else if (self.submitStepsType == XSHouseSubmitStepsType_Third){
+         self.imageUrlServerArray = [dict objectForKey:@"contentImg"];
+
+     }
+
      
-    BRAreaModel * model3 = [[BRAreaModel alloc]init];
-    model3.name = [dict objectForKey:@"town"];
-    model3.code = [dict objectForKey:@"townId"];
-    [[XSHouseFixedData sharedInstance] LocationParameterUpdateWithProvince:model1 city:model2 area:model3];
      
  }
 - (void)loadRentEnumsCallback:(HBCompletionBlock)callback arrayBlack:(void (^)(NSArray *newArray))arrayBlack{
@@ -133,34 +141,34 @@
     return modelArray;
 }
 
-- (NSNumber *)fromTypeToString:(id)data{
-    
-    NSNumber *myNumber  = (NSNumber *)data;
-    
-    int minThreshold = [myNumber intValue];
-    
-    if ((int)minThreshold < 1 ){
-    return (NSNumber *)data;
-        NSLog(@"不是数字");
-    }else{
-     NSString *str = [NSString stringWithFormat:@"%@",data];
-//  对于各种数字类型的  处理
-        if (strcmp([myNumber objCType], @encode(BOOL)) == 0) { // 布尔值
-            return  [NSNumber numberWithBool:data];
-        }else if (strcmp([myNumber objCType], @encode(int)) == 0) { // int 类型
-        return  [NSNumber numberWithInt:(int)data];
-        }else if (strcmp([myNumber objCType], @encode(float)) == 0) { // float 类型
-        return [NSNumber numberWithFloat:str.floatValue];
-        }else if (strcmp([myNumber objCType], @encode(double)) == 0) { // double 类型
-        return [NSNumber numberWithDouble:str.doubleValue];
-        }else if (strcmp([myNumber objCType], @encode(long)) == 0) { // double 类型
-        return [NSNumber numberWithLong:(long)data];
-        }
-
-     }
-    return (NSNumber *)data;
-
-}
+//- (NSNumber *)fromTypeToString:(id)data{
+//
+//    NSNumber *myNumber  = (NSNumber *)data;
+//
+//    int minThreshold = [myNumber intValue];
+//
+//    if ((int)minThreshold < 1 ){
+//    return (NSNumber *)data;
+//        NSLog(@"不是数字");
+//    }else{
+//     NSString *str = [NSString stringWithFormat:@"%@",data];
+////  对于各种数字类型的  处理
+//        if (strcmp([myNumber objCType], @encode(BOOL)) == 0) { // 布尔值
+//            return  [NSNumber numberWithBool:data];
+//        }else if (strcmp([myNumber objCType], @encode(int)) == 0) { // int 类型
+//        return  [NSNumber numberWithInt:(int)data];
+//        }else if (strcmp([myNumber objCType], @encode(float)) == 0) { // float 类型
+//        return [NSNumber numberWithFloat:str.floatValue];
+//        }else if (strcmp([myNumber objCType], @encode(double)) == 0) { // double 类型
+//        return [NSNumber numberWithDouble:str.doubleValue];
+//        }else if (strcmp([myNumber objCType], @encode(long)) == 0) { // double 类型
+//        return [NSNumber numberWithLong:(long)data];
+//        }
+//
+//     }
+//    return (NSNumber *)data;
+//
+//}
 - (NSMutableArray *)imageUrlArray{
     if (!_imageUrlArray) {
         _imageUrlArray = [NSMutableArray array];

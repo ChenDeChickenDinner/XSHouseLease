@@ -59,8 +59,8 @@ NSString *url = [NSString stringWithFormat:@"%@/estate/hots",XSBaseUrl];
 
 //    NSLog(@"jsonDict %@",jsonDict);
     NSString *url = [NSString stringWithFormat:@"%@/renthouse/save2",XSBaseUrl];
-    [self POST:url param:jsonDict progress:nil callback:callback];
-//    [self POST:url param:dict progress:nil callback:callback];
+//    [self POST:url param:jsonDict progress:nil callback:callback];
+    [self POST:url param:dict progress:nil callback:callback];
 
 }
 // 上传图片

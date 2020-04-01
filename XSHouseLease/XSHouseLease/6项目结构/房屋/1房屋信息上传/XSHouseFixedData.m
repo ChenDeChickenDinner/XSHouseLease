@@ -66,10 +66,12 @@ DEF_SINGLETON(XSHouseFixedData)
     [self subRentParameterDictUpdateWithKey:@"town" value:area.name];
     [self subRentParameterDictUpdateWithKey:@"townId" value:areaValue];
 
+    
+
 }
 
 - (void)subRentParameterDictUpdateWithKey:(NSString *)key value:(id)value{
     [self.subRentParameterDict safeSetObject:value forKey:key];
-    NSLog(@"subRent = \n%@",self.subRentParameterDict);
+//    NSLog(@"subRent = \n%@",self.subRentParameterDict);
 }
 @end

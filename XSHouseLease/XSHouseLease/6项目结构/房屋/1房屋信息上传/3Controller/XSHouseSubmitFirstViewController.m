@@ -227,10 +227,11 @@
 
 
 - (void)submitRenthouseSave{
-    NSLog(@"subRentParameterDict = %@", [XSHouseFixedData sharedInstance].subRentParameterDict);
-    return;
+
     [[XSHouseFixedData sharedInstance].subRentParameterDict safeSetObject:[self.imageUrlServerArray mutableCopy] forKey:@"contentImg"];
     [[XSHouseFixedData sharedInstance].subRentParameterDict safeSetObject:[self.imageUrlServerArray.firstObject copy] forKey:@"firstImg"];
+    NSLog(@"subRentParameterDict = %@", [XSHouseFixedData sharedInstance].subRentParameterDict);
+//    return;
     WEAK_SELF;
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     NSMutableDictionary *dict= [XSHouseFixedData sharedInstance].subRentParameterDict;

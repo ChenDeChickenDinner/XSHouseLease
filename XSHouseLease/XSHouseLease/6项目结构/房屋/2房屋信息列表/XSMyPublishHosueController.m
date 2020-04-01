@@ -46,10 +46,10 @@
             STRONG_SELF;
             [self loadData];
         }];
-        tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-                 STRONG_SELF;
-            [self loadData];
-         }];
+//        tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+//                 STRONG_SELF;
+//            [self loadData];
+//         }];
     }
 
     tableView.mj_header.automaticallyChangeAlpha = YES;
