@@ -131,7 +131,7 @@
                                     "value":1,
                                     "valueStr":"整租",
                                     "hindDescribe":null,
-                                    "isSelect":true,
+                                    "isSelect":false,
                                     "sendType":0
                                    },
                                     {
