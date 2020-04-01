@@ -10,6 +10,7 @@
 #import "XSHouseInfoTableView.h"
 #import "XSHouseRentInfoModel.h"
 #import "XSHouseDetailsController.h"
+#import "XSHouseSubmitFirstViewController.h"
 
 @interface XSMyPublishHosueController ()
 @property (nonatomic,strong) XSHouseInfoTableView *tableView;
@@ -67,28 +68,29 @@
     self.tableView.frame = self.view.bounds;
 
 }
+#define number 30
 - (void)loadData{
     WEAK_SELF;
     [self.searchDict safeSetObject:@"1" forKey:@"cityId"];
 
     if (self.source == XSBHouseInfoSource_Search) {
-        [self.subInfoInterface searchRenthousListWithKeyVales:self.searchDict per_page:10 page_index:0 callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+        [self.subInfoInterface searchRenthousListWithKeyVales:self.searchDict per_page:number page_index:0 callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
             STRONG_SELF;
               [self dataProcessingWithResponseModel:responseModel error:error];
         }];
     }else if (self.source == XSBHouseInfoSource_MyPublish){
-        [self.subInfoInterface myPublishHosueWithPer_page:10 page_index:0 callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+        [self.subInfoInterface myPublishHosueWithPer_page:number page_index:0 callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
             STRONG_SELF;
             [self dataProcessingWithResponseModel:responseModel error:error];
         }];
     }else if (self.source == XSBHouseInfoSource_MyWatch){
-        [self.subInfoInterface watchRenthousListWithKeyVales:self.searchDict per_page:10 page_index:0 callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+        [self.subInfoInterface watchRenthousListWithKeyVales:self.searchDict per_page:number page_index:0 callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
             STRONG_SELF;
               [self dataProcessingWithResponseModel:responseModel error:error];
         }];
     }else if (self.source == XSBHouseInfoSource_MyPush){
         
-        [self.subInfoInterface searchRenthousListWithKeyVales:self.searchDict per_page:10 page_index:0 callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+        [self.subInfoInterface searchRenthousListWithKeyVales:self.searchDict per_page:number page_index:0 callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
             STRONG_SELF;
               [self dataProcessingWithResponseModel:responseModel error:error];
         }];
@@ -151,7 +153,8 @@
 
 - (void)editHouseStatusWith:(NSNumber *)status houseId:(NSNumber *)houseId{
     if (status.integerValue == XSBHouseSubStatus_edit) {
-        [ProgressHUD showSuccess:@"努力开发中"];
+//        [ProgressHUD showSuccess:@"努力开发中"];
+        [self gethouseDetailsWithhouseid:houseId];
     }else{
         WEAK_SELF;
         [self.subInfoInterface editHouseStatusWithHouse_id:houseId.stringValue houseType:XSBHouseType_Rent status:status.integerValue callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
@@ -167,5 +170,25 @@
          }];
     }
  
+}
+
+
+- (void)gethouseDetailsWithhouseid:(NSNumber *)houseid{
+    WEAK_SELF;
+    [ProgressHUD show];
+    [self.subInfoInterface renthouseDetailsWithHouse_id:houseid.stringValue callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+        STRONG_SELF;
+        [ProgressHUD dismiss];
+            if (error == nil) {
+            if (responseModel.code.integerValue == SuccessCode) {
+                XSHouseRentInfoModel *model = [XSHouseRentInfoModel mj_objectWithKeyValues:responseModel.data];
+//                NSLog(@"房屋详情 = %@",[model mj_keyValues]);
+                XSHouseSubmitFirstViewController *vc = [[XSHouseSubmitFirstViewController alloc]init];
+                vc.renhousetInfoModel = model;
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+        }
+        
+    }];
 }
 @end

@@ -62,7 +62,7 @@
                             </constraints>
                             <state key="normal" image="back_white"/>
                             <connections>
-                                <action selector="diss:" destination="-1" eventType="touchUpInside" id="XKc-o5-HSu"/>
+                                <action selector="back:" destination="-1" eventType="touchUpInside" id="Ne2-Yf-S8m"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发布成功" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPh-Rd-jGB">

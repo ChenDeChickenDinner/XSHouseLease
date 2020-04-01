@@ -48,10 +48,6 @@
      pickerView.changeCompleteBlock = ^(NSArray<HXPhotoModel *> *allList, NSArray<HXPhotoModel *> *photos, NSArray<HXPhotoModel *> *videos, BOOL isOriginal) {
          STRONG_SELF;
          [self.imageUrlArray removeAllObjects];
-         [self.imageUrlServerArray removeAllObjects];
-         [[XSHouseFixedData sharedInstance].subRentParameterDict safeSetObject:@"" forKey:@"firstImg"];
-         [[XSHouseFixedData sharedInstance].subRentParameterDict safeSetObject:@[] forKey:@"contentImg"];
-
          for (HXPhotoModel *photoModel in photos) {
              [photoModel requestImageURLStartRequestICloud:nil progressHandler:nil success:^(NSURL * _Nullable imageURL, HXPhotoModel * _Nullable model, NSDictionary * _Nullable info) {
                  NSSLog(@"imageURL: %@\n",imageURL );
@@ -64,21 +60,48 @@
        };
     self.pickerView = pickerView;
 }
-- (void)keyValueChangeBlackSetting{
-    WEAK_SELF;
-    for (XSHouseInfoCellModel *cell in self.thirdArray) {
-        for (XSKeyValueModel *valueModel in cell.arrayValue) {
-            valueModel.valuechangeStatus = ^(NSString * _Nonnull key, XSBHouseKeyValueEditStatus editStatus) {
-                STRONG_SELF;
-                if ([key isEqualToString:@"title"] && editStatus == XSBHouseKeyValueEditBegin) {
-                    NSLog(@"--------%@-------,发生了%ld",key,(long)editStatus);
-                    [self loadAllImage];
-                    [self performSelector:@selector(loadAllImage) withObject:nil afterDelay:0.5];
-                }
-            };
-        }
+
+- (void)loadAllImage{
+   
+    if ( [self.operationManager.tasks count] > 0) {
+        [self.operationManager.tasks makeObjectsPerformSelector:@selector(cancel)];
+        NSLog(@"-----------取消所以网络请求");
     }
+    NSLog(@"-----------清空存储在本地的服务器地址");
+    [self.imageUrlServerArray removeAllObjects];
+    WEAK_SELF;
+    for (NSURL *url in self.imageUrlArray) {
+        [NSThread sleepForTimeInterval:0.25];
+        NSLog(@"-----------开始上传");
+        [self.subInfoInterface uploadImage:[UIImage imageNamed:@""] imageUrl:url callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+            STRONG_SELF;
+               if (error == nil && responseModel.code.integerValue == SuccessCode) {
+                   NSLog(@"-----------上传成功");
+                   [self.imageUrlServerArray addObject:responseModel.data];
+                   NSLog(@"-----------当前数组：%@",self.imageUrlServerArray);
+
+//                   [self saveImageUrl:responseModel.data];
+               }
+        }];
+    }
+
 }
+- (void)saveImageUrl:(NSString *)iamgeUrl{
+//    NSMutableArray *newArray = [NSMutableArray array];
+//    NSArray *oldArray = [[XSHouseFixedData sharedInstance].subRentParameterDict safeObjectForKey:@"contentImg"];
+//    [newArray addObjectsFromArray:[oldArray copy]];
+//    if (oldArray.count) {
+//        for (NSString *url in oldArray) {
+//            if (![iamgeUrl isEqualToString:url]) {
+//                [newArray addObject:iamgeUrl];
+//            }
+//        }
+//    }else{
+//        [newArray addObject:iamgeUrl];
+//    }
+
+}
+
 - (void)AutomaticAssignment:(NSArray *)array{
     for (XSHouseInfoCellModel *cell in array) {
         for (XSKeyValueModel *valueModel in cell.arrayValue) {
@@ -88,45 +111,11 @@
             }
         }
     }
-    NSLog(@"subRentParameterDict = %@",[XSHouseFixedData sharedInstance].subRentParameterDict);
     
 }
-- (void)loadAllImage{
-    WEAK_SELF;
-    for (NSURL *url in self.imageUrlArray) {
-        NSLog(@"开始上传");
-        [self.subInfoInterface uploadImage:[UIImage imageNamed:@""] imageUrl:url callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
-            STRONG_SELF;
-               if (error == nil && responseModel.code.integerValue == SuccessCode) {
-                   NSLog(@"上传成功");
-                   [self.imageUrlServerArray addObject:responseModel.data];
-                   [self saveImageUrl:responseModel.data];
-               }
-        }];
-    }
 
-}
-- (void)saveImageUrl:(NSString *)iamgeUrl{
-    NSMutableArray *newArray = [NSMutableArray array];
-    NSArray *oldArray = [[XSHouseFixedData sharedInstance].subRentParameterDict safeObjectForKey:@"contentImg"];
-    [newArray addObjectsFromArray:[oldArray copy]];
-    if (oldArray.count) {
-        for (NSString *url in oldArray) {
-            if (![iamgeUrl isEqualToString:url]) {
-                [newArray addObject:iamgeUrl];
-            }
-        }
-    }else{
-        [newArray addObject:iamgeUrl];
-    }
-
-    [[XSHouseFixedData sharedInstance].subRentParameterDict safeSetObject:newArray forKey:@"contentImg"];
-    [[XSHouseFixedData sharedInstance].subRentParameterDict safeSetObject:newArray.firstObject forKey:@"firstImg"];
-
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
- 
     self.myTableView.delegate = self;
     self.myTableView.dataSource = self;
     self.myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -136,6 +125,8 @@
         self.title = @"免费发布房源";
     }
         
+ 
+    
      if (self.submitStepsType == XSHouseSubmitStepsType_First) {
          XSHouseSubFootView *tableFooterView = [XSHouseSubFootView houseSubFootView];
           tableFooterView.frame = CGRectMake(0, 0, self.myTableView.width, 160);
@@ -144,12 +135,21 @@
          [self.nextBtn setTitle:@"下一步" forState:UIControlStateNormal];
             [self AutomaticAssignment:self.firstArray];
       }else if (self.submitStepsType == XSHouseSubmitStepsType_Second){
+               [self loadRentEnumsCallback:nil arrayBlack:^(NSArray *newArray) {
+                    [self.array removeAllObjects];
+                    [self.secondArray addObjectsFromArray:newArray];
+                    [self.array addObjectsFromArray:self.secondArray];
+                      if (self.renhousetInfoModel) {
+                       NSDictionary *dict = [self.renhousetInfoModel mj_keyValues];
+                       [self keyValueUpdatekWitOldhDict:dict array:self.array];
+                   }
+                    [self refreshUIData];
+               }];
           [self.array addObjectsFromArray:self.secondArray];
+
           [self.nextBtn setTitle:@"下一步" forState:UIControlStateNormal];
           [self AutomaticAssignment:self.secondArray];
-          [self loadRentEnumsCallback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
-              
-          }];
+
 
       }else if (self.submitStepsType == XSHouseSubmitStepsType_Third){
           [self pickerViewInit];
@@ -159,9 +159,31 @@
           [self AutomaticAssignment:self.thirdArray];
 
       }
+    if (self.renhousetInfoModel) {
+     NSDictionary *dict = [self.renhousetInfoModel mj_keyValues];
+     [self keyValueUpdatekWitOldhDict:dict array:self.array];
+     [self refreshUIData];
+ }
     [self keyValueChangeBlackSetting];
     
     [self refreshUIData];
+}
+- (void)keyValueChangeBlackSetting{
+    WEAK_SELF;
+    for (XSHouseInfoCellModel *cell in self.thirdArray) {
+        for (XSKeyValueModel *valueModel in cell.arrayValue) {
+            valueModel.valuechangeStatus = ^(NSString * _Nonnull key, XSBHouseKeyValueEditStatus editStatus) {
+                STRONG_SELF;
+                if ([key isEqualToString:@"title"] && editStatus == XSBHouseKeyValueEditBegin) {
+                    NSLog(@"--------%@-------,发生了%ld",key,(long)editStatus);
+                       if (self.imageUrlArray.count > 0) {
+                        [self loadAllImage];
+                        NSLog(@"-----------开始上传图片");
+                    }
+                }
+            };
+        }
+    }
 }
 - (void)refreshUIData{
     [self.myTableView reloadData];
@@ -203,6 +225,7 @@
 
 - (IBAction)nextStepClick:(UIButton *)sender {
         XSHouseSubmitFirstViewController *next = [[XSHouseSubmitFirstViewController alloc]init];
+       next.renhousetInfoModel = self.renhousetInfoModel;
         if (self.submitStepsType == XSHouseSubmitStepsType_First) {
             next.submitStepsType = XSHouseSubmitStepsType_Second;
             [self.navigationController pushViewController:next animated:YES];
@@ -216,6 +239,9 @@
 
 
 - (void)submitRenthouseSave{
+    
+    [[XSHouseFixedData sharedInstance].subRentParameterDict safeSetObject:[self.imageUrlServerArray mutableCopy] forKey:@"contentImg"];
+    [[XSHouseFixedData sharedInstance].subRentParameterDict safeSetObject:[self.imageUrlServerArray.firstObject copy] forKey:@"firstImg"];
     WEAK_SELF;
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     NSMutableDictionary *dict= [XSHouseFixedData sharedInstance].subRentParameterDict;

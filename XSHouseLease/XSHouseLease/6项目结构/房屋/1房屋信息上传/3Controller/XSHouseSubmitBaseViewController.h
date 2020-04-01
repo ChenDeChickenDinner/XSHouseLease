@@ -30,8 +30,9 @@ typedef NS_ENUM(NSInteger,XSHouseSubmitStepsType) {
 @property (strong, nonatomic) NSMutableArray<XSHouseInfoCellModel *> *thirdArray;
 @property (strong, nonatomic) NSMutableArray<XSHouseInfoCellModel *> *array;
 
-
-- (void)loadRentEnumsCallback:(HBCompletionBlock)callback;
+@property (strong, nonatomic) XSHouseRentInfoModel *renhousetInfoModel;
+- (void)loadRentEnumsCallback:(HBCompletionBlock)callback arrayBlack:(void (^)(NSArray *newArray))arrayBlack;
+- (void)keyValueUpdatekWitOldhDict:(NSDictionary *)dict  array:(NSArray<XSHouseInfoCellModel *> *)array;
 @end
 
 NS_ASSUME_NONNULL_END

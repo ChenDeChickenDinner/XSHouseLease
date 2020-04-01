@@ -8,7 +8,7 @@
     "arrayValue": [
                     {
                         "name":"城市",
-                        "key":null,
+                        "key":"city",
                         "moreSelect":false,
                         "sequence":0,
                         "keyInputType":1,
@@ -18,7 +18,7 @@
                                     "placeholder":"请选择",
                                     "frontDescribe":null,
                                     "value":null,
-                                    "valueStr":"上海",
+                                    "valueStr":null,
                                     "hindDescribe":null,
                                     "isSelect":false,
                                     "sendType":1

@@ -26,7 +26,26 @@
         self.value.text = valueData.placeholder;
         self.value.textColor = [UIColor hb_colorWithHexString:@"#BFBFBF" alpha:1];
     }else{
-        self.value.text = valueData.valueStr;
+        if ([valueData.key isEqualToString:@"city"]) {
+            NSString *str = [NSString string];
+            NSString *city = [[XSHouseFixedData sharedInstance].subRentParameterDict objectForKey:@"city"];
+            NSString *region = [[XSHouseFixedData sharedInstance].subRentParameterDict objectForKey:@"region"];
+            NSString *town = [[XSHouseFixedData sharedInstance].subRentParameterDict objectForKey:@"town"];
+
+            if (city) {
+                str = [str stringByAppendingFormat:@"%@", city];
+            }
+            if (region) {
+                str = [str stringByAppendingFormat:@"%@", region];
+            }
+            if (town) {
+                str = [str stringByAppendingFormat:@"%@", town];
+            }
+            self.value.text = str;
+        }else{
+            self.value.text = valueData.valueStr;
+
+        }
         self.value.textColor = [UIColor hb_colorWithHexString:@"#444444" alpha:1];
 
     }

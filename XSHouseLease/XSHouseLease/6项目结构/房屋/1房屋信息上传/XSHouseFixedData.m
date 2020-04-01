@@ -57,13 +57,6 @@ DEF_SINGLETON(XSHouseFixedData)
    NSNumber *cityValue = [NSNumber numberWithInteger:city.code.integerValue];
    NSNumber *areaValue = [NSNumber numberWithInteger:area.code.integerValue];
 
-//   [self.subRentParameterDict safeSetObject:province.name forKey:@"city"];
-//   [self.subRentParameterDict safeSetObject:provinceValue forKey:@"cityId"];
-//   [self.subRentParameterDict safeSetObject:city.name forKey:@"region"];
-//   [self.subRentParameterDict safeSetObject:cityValue forKey:@"regionId"];
-//   [self.subRentParameterDict safeSetObject:area.name forKey:@"town"];
-//   [self.subRentParameterDict safeSetObject:areaValue forKey:@"townId"];
-    
     [self subRentParameterDictUpdateWithKey:@"city" value:province.name];
     [self subRentParameterDictUpdateWithKey:@"cityId" value:provinceValue];
     

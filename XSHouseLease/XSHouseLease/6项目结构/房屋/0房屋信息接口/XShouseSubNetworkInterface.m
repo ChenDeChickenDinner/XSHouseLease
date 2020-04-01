@@ -45,6 +45,7 @@ NSString *url = [NSString stringWithFormat:@"%@/estate/hots",XSBaseUrl];
     [self GET:url param:dict progress:nil callback:callback];
 
 }
+
 // 租房上传提交
 - (void)renthouseSaveWithDict:(NSMutableDictionary *)dict callback:(HBCompletionBlock)callback{
     NSNumber *customer_id = [XSUserServer sharedInstance].userModel.ID;

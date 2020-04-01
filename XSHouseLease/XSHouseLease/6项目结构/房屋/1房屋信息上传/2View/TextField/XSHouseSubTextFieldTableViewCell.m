@@ -96,7 +96,7 @@
         
         XSKeyValueModel *model = [self.dataModel.arrayValue safeObjectAtIndex:0];
         XSValue *valueData = model.values.firstObject;
-        self.textFieldFirst.text = valueData.valueStr;
+        self.textFieldFirst.text =valueData.sendType == XSValueSendType_Int?valueData.value.stringValue:valueData.valueStr;;
         self.textFieldFirst.placeholder = valueData.placeholder;
         self.frontDescribeLableFirst.text = valueData.frontDescribe;
         self.hindDescribeLablethFirst.text = valueData.hindDescribe;
@@ -114,14 +114,15 @@
             XSKeyValueModel *model = [self.dataModel.arrayValue safeObjectAtIndex:i];
             XSValue *valueData = model.values.firstObject;
             if (i == 0) {
-                self.textFieldFirst.text = valueData.valueStr;
+               
+                self.textFieldFirst.text =  valueData.sendType == XSValueSendType_Int?valueData.value.stringValue:valueData.valueStr;;
                 self.textFieldFirst.placeholder = valueData.placeholder;
                 self.frontDescribeLableFirst.text = valueData.frontDescribe;
                 self.hindDescribeLablethFirst.text = valueData.hindDescribe;
                 self.frontDescribeWidthFirst.constant = [self.frontDescribeLableFirst mj_textWidth] + lableWidth;
                 self.hindDescribeWidthFirst.constant = [self.hindDescribeLablethFirst mj_textWidth] + lableWidth;
             }else{
-                self.textFieldSceend.text = valueData.valueStr;
+                self.textFieldSceend.text = valueData.sendType == XSValueSendType_Int?valueData.value.stringValue:valueData.valueStr;;
                 self.textFieldSceend.placeholder = valueData.placeholder;
                 self.frontDescribeLableSceend.text = valueData.frontDescribe;
                 self.hindDescribeLablethSceend.text = valueData.hindDescribe;

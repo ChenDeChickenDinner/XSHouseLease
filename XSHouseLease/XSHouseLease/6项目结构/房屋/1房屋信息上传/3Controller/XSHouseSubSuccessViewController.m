@@ -23,6 +23,9 @@
         [[NSObject getTopViewController].navigationController popToRootViewControllerAnimated:YES];
     }];
 }
+- (IBAction)back:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 /*
 #pragma mark - Navigation

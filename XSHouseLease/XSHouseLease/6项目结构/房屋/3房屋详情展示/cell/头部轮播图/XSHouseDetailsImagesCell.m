@@ -73,8 +73,8 @@
     self.model = model;
     if ([model isKindOfClass:[XSHouseDetailsInfoCellModel class]]) {
         XSHouseDetailsInfoCellModel *newModel = (XSHouseDetailsInfoCellModel *)model;
-        NSArray *urlarray = @[@"http:\/\/120.27.95.26\/system\/hire-house\/air.png",@"http:\/\/120.27.95.26\/system\/hire-house\/air.png",@"http:\/\/120.27.95.26\/system\/hire-house\/air.png"];
-        
+//        NSArray *urlarray = @[@"https://test.fangdinghui.cn:1112/7/9c8a9162-95b9-4d19-a1c8-92eb081d686d.JPG",@"https://test.fangdinghui.cn:1112/7/9c8a9162-95b9-4d19-a1c8-92eb081d686d.JPG",@"https://test.fangdinghui.cn:1112/7/9c8a9162-95b9-4d19-a1c8-92eb081d686d.JPG"];
+//        
         
         self.cycleScrollView.imageURLStringsGroup = newModel.dataModel.contentImg;
 //        self.cycleScrollView.imageURLStringsGroup = urlarray;
