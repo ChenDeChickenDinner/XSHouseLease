@@ -33,6 +33,9 @@
 - (void)pickerViewInit{
     WEAK_SELF;
     XSPhotoPickerView *pickerView = [[XSPhotoPickerView alloc]initWithFrame:CGRectMake(0, 0, self.myTableView.width, 280)];
+    if (self.renhousetInfoModel) {
+        pickerView.imageUrlArray = [NSArray arrayWithArray:self.renhousetInfoModel.contentImg];
+    }
      pickerView.changeCompleteBlock = ^(NSArray<HXPhotoModel *> *allList, NSArray<HXPhotoModel *> *photos, NSArray<HXPhotoModel *> *videos, BOOL isOriginal) {
          STRONG_SELF;
          [self.imageUrlArray removeAllObjects];

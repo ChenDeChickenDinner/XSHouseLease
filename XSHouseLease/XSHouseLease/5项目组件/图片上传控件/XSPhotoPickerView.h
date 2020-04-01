@@ -10,6 +10,6 @@
 
 @interface XSPhotoPickerView : UIView
 + (instancetype)photoPickerViewWithFrame:(CGRect)frame;
-
+@property (strong, nonatomic) NSMutableArray<NSString *> *imageUrlArray;
 @property (copy, nonatomic) HXPhotoViewChangeCompleteBlock changeCompleteBlock;
 @end

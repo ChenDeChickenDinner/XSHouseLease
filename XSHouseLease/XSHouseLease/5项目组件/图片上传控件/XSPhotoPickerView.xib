@@ -51,6 +51,32 @@
                         <constraint firstAttribute="height" constant="171" id="brB-MO-2dJ"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MnI-Gf-qNA">
+                    <rect key="frame" x="15" y="0.0" width="298" height="216"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="yNI-0H-iAv">
+                            <rect key="frame" x="0.0" y="0.0" width="298" height="216"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Pnm-p5-GQo">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="H5t-zs-Cam"/>
+                                <outlet property="delegate" destination="-1" id="gtq-pn-uNS"/>
+                            </connections>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="yNI-0H-iAv" firstAttribute="leading" secondItem="MnI-Gf-qNA" secondAttribute="leading" id="KEk-ur-1C4"/>
+                        <constraint firstAttribute="bottom" secondItem="yNI-0H-iAv" secondAttribute="bottom" id="ZIY-Zs-Hqi"/>
+                        <constraint firstAttribute="trailing" secondItem="yNI-0H-iAv" secondAttribute="trailing" id="sEW-yF-oNv"/>
+                        <constraint firstItem="yNI-0H-iAv" firstAttribute="top" secondItem="MnI-Gf-qNA" secondAttribute="top" id="wPY-uJ-EeR"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
@@ -58,12 +84,18 @@
                 <constraint firstItem="1lF-fF-vZX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="9io-lE-RRE"/>
                 <constraint firstItem="1lF-fF-vZX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Aps-IY-vf9"/>
                 <constraint firstAttribute="trailing" secondItem="1lF-fF-vZX" secondAttribute="trailing" constant="15" id="Jce-mm-uam"/>
+                <constraint firstAttribute="trailing" secondItem="MnI-Gf-qNA" secondAttribute="trailing" constant="15" id="KtQ-GO-9dj"/>
+                <constraint firstItem="MnI-Gf-qNA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="bmE-Id-lsz"/>
+                <constraint firstAttribute="bottom" secondItem="MnI-Gf-qNA" secondAttribute="bottom" id="ddh-de-0ty"/>
                 <constraint firstItem="RXP-fl-jyG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="fl8-lz-7R7"/>
                 <constraint firstAttribute="trailing" secondItem="RXP-fl-jyG" secondAttribute="trailing" constant="15" id="hEr-fS-fxo"/>
+                <constraint firstItem="MnI-Gf-qNA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="mcf-vS-9Gp"/>
                 <constraint firstAttribute="bottom" secondItem="RXP-fl-jyG" secondAttribute="bottom" id="pGC-Rt-6qk"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="coBkView" destination="MnI-Gf-qNA" id="Vik-df-l8d"/>
+                <outlet property="conllecTionView" destination="yNI-0H-iAv" id="J9z-oc-Ebk"/>
                 <outlet property="containerView" destination="RXP-fl-jyG" id="gFI-Mq-YhA"/>
             </connections>
             <point key="canvasLocation" x="59.420289855072468" y="127.90178571428571"/>

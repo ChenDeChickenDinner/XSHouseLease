@@ -8,35 +8,85 @@
 
 #import "XSPhotoPickerView.h" 
 #import "HXPhotoPicker.h"
+static NSString *XSPhotoPickerViewSTR = @"XSPhotoPickerViewSTR";
 
 static const CGFloat kPhotoViewMargin = 10.0;
 
-@interface XSPhotoPickerView ()<HXPhotoViewDelegate,UIImagePickerControllerDelegate>
+@interface XSPhotoPickerView ()<HXPhotoViewDelegate,UIImagePickerControllerDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (strong, nonatomic) UIScrollView *scrollView;
 @property (strong, nonatomic) HXPhotoManager *manager;
 @property (weak, nonatomic)   HXPhotoView *photoView;
+@property (weak, nonatomic) IBOutlet UIView *coBkView;
 
+
+@property (strong, nonatomic)  UICollectionView *conllecTionView;
+@property (strong, nonatomic) UICollectionViewFlowLayout *layout;
 
 
 @property (assign, nonatomic) BOOL needDeleteItem;
+@property (weak, nonatomic)  UILabel *abel1;
+@property (weak, nonatomic)  UILabel *abel2;
 
 @end
 
 @implementation XSPhotoPickerView
 
+ 
+- (UICollectionViewFlowLayout *)layout{
+    if (!_layout) {
+        _layout =  [[UICollectionViewFlowLayout alloc]init];
+        //设置cell的尺寸(宽度和高度)
+        _layout.itemSize = CGSizeMake((KScreenWidth - 55)/3, 100);
+        //设置竖直滚动放向(默认是竖直方向)
+//        _layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+        //设置cell与cell之间的列距
+        _layout.minimumInteritemSpacing = 12;
+        //设置cell与cell之间的行距
+        _layout.minimumLineSpacing = 12;
+    }
+    return _layout;
+}
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
         [self addSubViews];
+  
     }
     return self;
 }
 
+// 返回cell个数
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.imageUrlArray.count;
+}
+// 返回cell内容
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+
+    NSString *url = [self.imageUrlArray safeObjectAtIndex:indexPath.row];
+    
+    // 创建cell (重用)
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:XSPhotoPickerViewSTR forIndexPath:indexPath];
+    UIImageView *image = [[UIImageView alloc]initWithFrame:cell.bounds];
+    [image sd_setImageWithURL:[NSURL URLWithString:url]];
+    [cell addSubview:image];
+
+    return cell;
+}
+
 - (void)layoutSubviews{
     [super layoutSubviews];
+    if (self.imageUrlArray.count) {
+        self.conllecTionView.hidden = NO;
+        self.photoView.hidden = YES;
+        
+    }else{
+        self.conllecTionView.hidden = YES;
+        self.photoView.hidden = NO;
+    }
     self.scrollView.frame = CGRectMake(0, 45, self.width, self.height - 45);
     self.photoView.frame = CGRectMake(0, kPhotoViewMargin, self.scrollView.width, 0);
+    self.conllecTionView.frame = CGRectMake(15, 45, self.width-30, self.height - 45);
 }
 - (void)addSubViews{
  
@@ -58,16 +108,18 @@ static const CGFloat kPhotoViewMargin = 10.0;
 
      label2.textColor = [UIColor hb_colorWithHexString:@"#E82B2B" alpha:1];;
      [self addSubview:label2];
-    
-    
+    self.abel1 =label;
+    self.abel2 =label2;
+
+ 
+
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectZero];
-//    scrollView.backgroundColor = [UIColor yellowColor];
     scrollView.alwaysBounceVertical = YES;
     [self addSubview:scrollView];
     self.scrollView = scrollView;
     
     HXPhotoView *photoView = [HXPhotoView photoManager:self.manager scrollDirection:UICollectionViewScrollDirectionVertical];
-//    photoView.backgroundColor = [UIColor orangeColor];
+    self.photoView = photoView;
     photoView.frame = CGRectMake(0, kPhotoViewMargin, self.scrollView.width, 0);
     photoView.collectionView.contentInset = UIEdgeInsetsMake(0, kPhotoViewMargin, 0, kPhotoViewMargin);
     photoView.delegate = self; //
@@ -89,12 +141,32 @@ static const CGFloat kPhotoViewMargin = 10.0;
     
     [photoView.collectionView reloadData];
     [scrollView addSubview:photoView];
-    self.photoView = photoView;
+    
+   UICollectionView *conllecTionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:self.layout];
+    conllecTionView.frame = CGRectMake(0, kPhotoViewMargin, self.scrollView.width, 0);
+
+    conllecTionView.backgroundColor = [UIColor whiteColor];
+   self.conllecTionView = conllecTionView;
+   self.conllecTionView.collectionViewLayout = self.layout;
+   self.conllecTionView.backgroundColor = [UIColor clearColor];
+   self.conllecTionView.delegate = self;
+   self.conllecTionView.dataSource = self;
+   self.conllecTionView.scrollsToTop = NO;
+   self.conllecTionView.scrollEnabled = NO;
+
+   self.conllecTionView.pagingEnabled = NO;
+   self.conllecTionView.showsHorizontalScrollIndicator = NO;
+   self.conllecTionView.bounces = NO;
+   [self.conllecTionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:XSPhotoPickerViewSTR];
+   [self addSubview:conllecTionView];
+    
+    [self.conllecTionView reloadData];
 }
 
 - (void)setChangeCompleteBlock:(HXPhotoViewChangeCompleteBlock)changeCompleteBlock{
     _changeCompleteBlock = changeCompleteBlock;
     self.photoView.changeCompleteBlock = changeCompleteBlock;
+    [self.conllecTionView reloadData];
 
 }
 
