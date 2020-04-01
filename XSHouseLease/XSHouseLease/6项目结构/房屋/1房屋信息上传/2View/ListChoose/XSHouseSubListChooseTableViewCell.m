@@ -65,7 +65,9 @@
         
         NSString *valueStr = [NSString stringWithFormat:@"%@%@%@", province.name, city.name, area.name];
         NSLog(@"选择的值：%@", valueStr);
-         self.value.text = valueStr;
+        self.value.text = valueStr;
+        self.value.textColor = [UIColor hb_colorWithHexString:@"#444444" alpha:1];
+
           XSKeyValueModel *model = [self.dataModel.arrayValue safeObjectAtIndex:0];
           XSValue *valueData = model.values.firstObject;
           valueData.valueStr = valueStr;

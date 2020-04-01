@@ -42,21 +42,21 @@
                    NSLog(@"key = %@,value = %@，valueClass= %@",oldValue.key,newValue,NSStringFromClass([newValue class]));
                  
                  if (oldValue.sendType == XSValueSendType_Int) {
-                    if ([newValue isKindOfClass:[NSArray class]]) {
-                           NSArray *newValueArray = (NSArray *)newValue;
-                           for (id newsubValue in newValueArray) {
-                               NSString *newsubValueStr = [NSString stringWithFormat:@"%@",newsubValue];
-                               if ([newsubValueStr isEqualToString:oldValue.value.stringValue]) {
-                                   oldValue.isSelect = YES;
+                        if ([newValue isKindOfClass:[NSArray class]]) {
+                               NSArray *newValueArray = (NSArray *)newValue;
+                               for (id newsubValue in newValueArray) {
+                                   NSString *newsubValueStr = [NSString stringWithFormat:@"%@",newsubValue];
+                                   if ([newsubValueStr isEqualToString:oldValue.value.stringValue]) {
+                                       oldValue.isSelect = YES;
+                                   }
                                }
-                           }
-                    }else{
-                        NSString *newValueStr = [NSString stringWithFormat:@"%@",newValue];
+                        }else{
+                            NSString *newValueStr = [NSString stringWithFormat:@"%@",newValue];
 
-                        if ([newValueStr isEqualToString:oldValue.value.stringValue]) {
-                           oldValue.isSelect = YES;
+                            if ([newValueStr isEqualToString:oldValue.value.stringValue]) {
+                               oldValue.isSelect = YES;
+                            }
                         }
-                    }
                      if (oldValue.value == nil) {
                          oldValue.value = newValue;
                      }

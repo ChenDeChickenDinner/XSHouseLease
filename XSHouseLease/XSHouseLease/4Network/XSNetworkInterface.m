@@ -71,7 +71,20 @@
     [self.operationManger POST:URLString parameters:aParam constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         
         NSData *data =  [NSData dataWithContentsOfURL:imageUrl];
-        [formData appendPartWithFileData:data name:@"file" fileName:@"123.png" mimeType:@"image/png"];
+        if (data == nil) {
+            data =  [NSData dataWithContentsOfFile:imageUrl.absoluteString];
+        }
+        if (data == nil) {
+            NSLog(@"error-");
+
+        }
+        NSString *mimeType = [self getMIMETypeWithCAPIAtFilePath:imageUrl.absoluteString];
+             NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+        formatter.dateFormat = @"yyyy-MM-dd-HH-mm-ss";
+        NSString *timestr = [formatter stringFromDate:[NSDate date]];
+        NSString *fileName = [NSString stringWithFormat:@"%@.%@",timestr,@"png"];
+        NSLog(@"fileName =%@,mimeType = %@",fileName,mimeType);
+        [formData appendPartWithFileData:data name:@"file" fileName:fileName mimeType:@"image/png"];
 //       [formData appendPartWithFileURL:imageUrl  name:@"file" error:nil];
         
     } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -89,6 +102,24 @@
     }];
     
 }
+
+
+ -(NSString *)getMIMETypeWithCAPIAtFilePath:(NSString *)path
+ {
+     if (![[[NSFileManager alloc] init] fileExistsAtPath:path]) {
+         return nil;
+     }
+
+     CFStringRef UTI = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, (__bridge CFStringRef)[path pathExtension], NULL);
+     CFStringRef MIMEType = UTTypeCopyPreferredTagWithClass (UTI, kUTTagClassMIMEType);
+     CFRelease(UTI);
+     if (!MIMEType) {
+         return @"application/octet-stream";
+     }
+     return (__bridge NSString *)(MIMEType)
+     ;
+ }
+ 
 - (void)loadImageWithURL:(NSString *)URLString image:(UIImage *)image param:(NSDictionary *)aParam progress:(HBRequestProgress)downloadProgress callback:(HBCompletionBlock)callback {
     NSLog(@"URLString = %@ ;aParam = %@",URLString,aParam);
  
