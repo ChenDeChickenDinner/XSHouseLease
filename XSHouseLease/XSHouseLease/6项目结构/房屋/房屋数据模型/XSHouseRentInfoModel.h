@@ -137,7 +137,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 //特色
 @property (nonatomic, copy) NSArray<NSString *> *featurePointNames;
-//@property (nonatomic, copy) NSArray<NSNumber *> *featurePoints;
+@property (nonatomic, copy) NSArray<NSNumber *> *featurePoints;
 
 
 //配套设施

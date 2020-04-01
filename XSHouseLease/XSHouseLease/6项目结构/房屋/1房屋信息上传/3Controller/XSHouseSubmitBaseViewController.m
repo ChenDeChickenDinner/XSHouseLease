@@ -38,41 +38,49 @@
          for (XSKeyValueModel *oldvalueModel in cellModel.arrayValue) {
              
              for (XSValue *oldValue in oldvalueModel.values) {
-                 id newvalue1 = [dict objectForKey:oldValue.key];
-                   NSLog(@"key = %@,value = %@，valueClass= %@",oldValue.key,newvalue1,NSStringFromClass([newvalue1 class]));
-                     if ([newvalue1 isKindOfClass:[NSArray class]]) {
-                            NSArray *newArray = (NSArray *)newvalue1;
-                            for (id newValue2 in newArray) {
-                                NSString *newValue2Str = [NSString stringWithFormat:@"%@",newValue2];
-                                
-                                if ([newValue2Str isEqualToString:oldValue.value.stringValue]) {
-                                    oldValue.isSelect = YES;
-                                }
-//                                else if (newValue2 == oldValue.value.integerValue ) {
-//                                   oldValue.isSelect = YES;
-//                                }else if (newValue2 == oldValue.value.longValue){
-//                                    oldValue.isSelect = YES;
-//                                }else if (newValue2 == oldValue.value.doubleValue){
-//                                    oldValue.isSelect = YES;
-//                                }
-                                 
-                         
-                            }
-                     }else{
-                            if (oldValue.sendType == XSValueSendType_Int) {
-                      
-                                oldValue.value = newvalue1;
-                            }else{
-                               oldValue.valueStr = newvalue1;
-                            }
-                     }
+                 id newValue = [dict objectForKey:oldValue.key];
+                   NSLog(@"key = %@,value = %@，valueClass= %@",oldValue.key,newValue,NSStringFromClass([newValue class]));
                  
+                 if (oldValue.sendType == XSValueSendType_Int) {
+                    if ([newValue isKindOfClass:[NSArray class]]) {
+                           NSArray *newValueArray = (NSArray *)newValue;
+                           for (id newsubValue in newValueArray) {
+                               NSString *newsubValueStr = [NSString stringWithFormat:@"%@",newsubValue];
+                               if ([newsubValueStr isEqualToString:oldValue.value.stringValue]) {
+                                   oldValue.isSelect = YES;
+                               }
+                           }
+                    }else{
+                        NSString *newValueStr = [NSString stringWithFormat:@"%@",newValue];
+
+                        if ([newValueStr isEqualToString:oldValue.value.stringValue]) {
+                           oldValue.isSelect = YES;
+                        }
+                    }
+                     if (oldValue.value == nil) {
+                         oldValue.value = newValue;
+                     }
+                 }else{
+                    oldValue.valueStr = newValue;
+                 }
              }
-   
-     
 
          }
      }
+     
+    BRProvinceModel * model1 = [[BRProvinceModel alloc]init];
+    model1.name = [dict objectForKey:@"city"];
+    model1.code = [dict objectForKey:@"cityId"];
+
+    BRCityModel * model2 = [[BRCityModel alloc]init];
+    model2.name = [dict objectForKey:@"region"];
+    model2.code = [dict objectForKey:@"regionId"];
+     
+    BRAreaModel * model3 = [[BRAreaModel alloc]init];
+    model3.name = [dict objectForKey:@"town"];
+    model3.code = [dict objectForKey:@"townId"];
+    [[XSHouseFixedData sharedInstance] LocationParameterUpdateWithProvince:model1 city:model2 area:model3];
+     
  }
 - (void)loadRentEnumsCallback:(HBCompletionBlock)callback arrayBlack:(void (^)(NSArray *newArray))arrayBlack{
  WEAK_SELF;
@@ -125,5 +133,45 @@
     return modelArray;
 }
 
+- (NSNumber *)fromTypeToString:(id)data{
+    
+    NSNumber *myNumber  = (NSNumber *)data;
+    
+    int minThreshold = [myNumber intValue];
+    
+    if ((int)minThreshold < 1 ){
+    return (NSNumber *)data;
+        NSLog(@"不是数字");
+    }else{
+     NSString *str = [NSString stringWithFormat:@"%@",data];
+//  对于各种数字类型的  处理
+        if (strcmp([myNumber objCType], @encode(BOOL)) == 0) { // 布尔值
+            return  [NSNumber numberWithBool:data];
+        }else if (strcmp([myNumber objCType], @encode(int)) == 0) { // int 类型
+        return  [NSNumber numberWithInt:(int)data];
+        }else if (strcmp([myNumber objCType], @encode(float)) == 0) { // float 类型
+        return [NSNumber numberWithFloat:str.floatValue];
+        }else if (strcmp([myNumber objCType], @encode(double)) == 0) { // double 类型
+        return [NSNumber numberWithDouble:str.doubleValue];
+        }else if (strcmp([myNumber objCType], @encode(long)) == 0) { // double 类型
+        return [NSNumber numberWithLong:(long)data];
+        }
+
+     }
+    return (NSNumber *)data;
+
+}
+- (NSMutableArray *)imageUrlArray{
+    if (!_imageUrlArray) {
+        _imageUrlArray = [NSMutableArray array];
+    }
+    return _imageUrlArray;
+}
+- (NSMutableArray *)imageUrlServerArray{
+    if (!_imageUrlServerArray) {
+        _imageUrlServerArray = [NSMutableArray array];
+    }
+    return _imageUrlServerArray;
+}
 
 @end

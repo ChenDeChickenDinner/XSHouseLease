@@ -24,24 +24,12 @@
 @property (weak, nonatomic) IBOutlet XSRoundedBtn1View *nextBtn;
 
 @property (strong, nonatomic)  XSPhotoPickerView *pickerView;
-@property (strong, nonatomic)  NSMutableArray *imageUrlArray;
-@property (strong, nonatomic)  NSMutableArray *imageUrlServerArray;
+
 
 @end
 
 @implementation XSHouseSubmitFirstViewController
-- (NSMutableArray *)imageUrlArray{
-    if (!_imageUrlArray) {
-        _imageUrlArray = [NSMutableArray array];
-    }
-    return _imageUrlArray;
-}
-- (NSMutableArray *)imageUrlServerArray{
-    if (!_imageUrlServerArray) {
-        _imageUrlServerArray = [NSMutableArray array];
-    }
-    return _imageUrlServerArray;
-}
+
 - (void)pickerViewInit{
     WEAK_SELF;
     XSPhotoPickerView *pickerView = [[XSPhotoPickerView alloc]initWithFrame:CGRectMake(0, 0, self.myTableView.width, 280)];
@@ -239,7 +227,8 @@
 
 
 - (void)submitRenthouseSave{
-    
+    NSLog(@"subRentParameterDict = %@", [XSHouseFixedData sharedInstance].subRentParameterDict);
+    return;
     [[XSHouseFixedData sharedInstance].subRentParameterDict safeSetObject:[self.imageUrlServerArray mutableCopy] forKey:@"contentImg"];
     [[XSHouseFixedData sharedInstance].subRentParameterDict safeSetObject:[self.imageUrlServerArray.firstObject copy] forKey:@"firstImg"];
     WEAK_SELF;
