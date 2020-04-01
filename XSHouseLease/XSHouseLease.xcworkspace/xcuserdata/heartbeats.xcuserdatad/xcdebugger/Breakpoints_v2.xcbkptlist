@@ -5,77 +5,18 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "85F6C0A2-0F1B-4E63-A09A-F77CD68BF084"
+            uuid = "EA0E109C-A22C-4CEC-9F98-06E2CD16EB2E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            scope = "1"
-            stopOnStyle = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5536ADEC-8BF0-4B58-86D8-0CDC79E8B9B1"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "XSHouseLease/6&#x9879;&#x76ee;&#x7ed3;&#x6784;/&#x623f;&#x5c4b;/1&#x623f;&#x5c4b;&#x4fe1;&#x606f;&#x4e0a;&#x4f20;/2View/TextField/XSHouseSubTextFieldTableViewCell.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "-refreshData"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6DEEBCD2-BD89-4D4A-8CE8-985EEF560EF8"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "XSHouseLease/6&#x9879;&#x76ee;&#x7ed3;&#x6784;/&#x623f;&#x5c4b;/1&#x623f;&#x5c4b;&#x4fe1;&#x606f;&#x4e0a;&#x4f20;/1Model/XSHouseInfoModel.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
-            landmarkName = "-setValue:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4D529DA0-961B-4A01-A72C-68C7B15511AE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "XSHouseLease/6&#x9879;&#x76ee;&#x7ed3;&#x6784;/&#x623f;&#x5c4b;/1&#x623f;&#x5c4b;&#x4fe1;&#x606f;&#x4e0a;&#x4f20;/2View/ListChoose/XSHouseSubListChooseTableViewCell.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "-listChoose:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1E83AB46-5C28-495C-A8C1-5761E1B1E35F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "XSHouseLease/6&#x9879;&#x76ee;&#x7ed3;&#x6784;/&#x623f;&#x5c4b;/1&#x623f;&#x5c4b;&#x4fe1;&#x606f;&#x4e0a;&#x4f20;/XSHouseFixedData.m"
+            filePath = "XSHouseLease/6&#x9879;&#x76ee;&#x7ed3;&#x6784;/&#x623f;&#x5c4b;/1&#x623f;&#x5c4b;&#x4fe1;&#x606f;&#x4e0a;&#x4f20;/3Controller/XSHouseSubmitFirstViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
             endingLineNumber = "67"
-            landmarkName = "-LocationParameterUpdateWithProvince:city:area:"
+            landmarkName = "-loadAllImage"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
