@@ -131,7 +131,7 @@
 - (void)houseUserInfoViewWithData:(XSHouseRentInfoModel *)dataModel{
     
     NSNumber *userId =  [XSUserServer sharedInstance].userModel.ID;
-      if ([dataModel.house_id isEqualToNumber:userId]) {
+      if (userId && [dataModel.house_id isEqualToNumber:userId]) {
           [self.houseUserInfoView removeFromSuperview];
       }
       self.houseUserInfoView.hidden = NO;

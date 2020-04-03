@@ -7,350 +7,358 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		555A677E242DE121003847A0 /* XSHouseInfoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 555A677D242DE121003847A0 /* XSHouseInfoTableView.m */; };
-		555A6781242DE192003847A0 /* XSHouseInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 555A6780242DE192003847A0 /* XSHouseInfoCell.m */; };
-		555A6784242DE1B7003847A0 /* XSBHouseInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 555A6783242DE1B7003847A0 /* XSBHouseInfoModel.m */; };
-		555A6788242DF069003847A0 /* XSHouseRentInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 555A6786242DF069003847A0 /* XSHouseRentInfoCell.m */; };
-		555A6789242DF069003847A0 /* XSHouseRentInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 555A6787242DF069003847A0 /* XSHouseRentInfoCell.xib */; };
-		555A678D242DF15C003847A0 /* XSHouseBunnerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 555A678C242DF15C003847A0 /* XSHouseBunnerModel.m */; };
-		6C0DA7D0242EDD8C000A59B6 /* XSHouseDetailsInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C0DA7CF242EDD8C000A59B6 /* XSHouseDetailsInfo.json */; };
-		6C0DA7D7242EF5C8000A59B6 /* XSBusinessCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C0DA7D6242EF5C8000A59B6 /* XSBusinessCollectionCell.m */; };
-		6C0DA7DA242EF5E7000A59B6 /* XSBusinessInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C0DA7D9242EF5E7000A59B6 /* XSBusinessInfoModel.m */; };
-		6C0DA7DC242EF94E000A59B6 /* XSHouseBusinessInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C0DA7DB242EF94D000A59B6 /* XSHouseBusinessInfo.json */; };
-		6C0DA7DF242EFF0C000A59B6 /* XSBusinessInfoSever.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C0DA7DE242EFF0C000A59B6 /* XSBusinessInfoSever.m */; };
-		6C0DA7ED242F1C58000A59B6 /* XSFacilitiesInfoJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C0DA7EC242F1C58000A59B6 /* XSFacilitiesInfoJson.json */; };
-		6C2286A2242E8719001D5F58 /* XSHouseDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2286A0242E8719001D5F58 /* XSHouseDetailsController.m */; };
-		6C2286A3242E8719001D5F58 /* XSHouseDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C2286A1242E8719001D5F58 /* XSHouseDetailsController.xib */; };
-		6C2286AD242ED570001D5F58 /* XSHouseDetailsImagesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2286AB242ED570001D5F58 /* XSHouseDetailsImagesCell.m */; };
-		6C2286AE242ED570001D5F58 /* XSHouseDetailsImagesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C2286AC242ED570001D5F58 /* XSHouseDetailsImagesCell.xib */; };
-		6C2286B7242ED5F4001D5F58 /* XSHouseDetailsBasicInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2286B5242ED5F4001D5F58 /* XSHouseDetailsBasicInfoCell.m */; };
-		6C2286B8242ED5F4001D5F58 /* XSHouseDetailsBasicInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C2286B6242ED5F4001D5F58 /* XSHouseDetailsBasicInfoCell.xib */; };
-		6C2286BC242ED621001D5F58 /* XSHouseDetailsBusinessInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2286BA242ED621001D5F58 /* XSHouseDetailsBusinessInfoCell.m */; };
-		6C2286BD242ED621001D5F58 /* XSHouseDetailsBusinessInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C2286BB242ED621001D5F58 /* XSHouseDetailsBusinessInfoCell.xib */; };
-		6C2286C1242ED66C001D5F58 /* XSHouseDetailsAddressInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2286BF242ED66C001D5F58 /* XSHouseDetailsAddressInfoCell.m */; };
-		6C2286C2242ED66C001D5F58 /* XSHouseDetailsAddressInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C2286C0242ED66C001D5F58 /* XSHouseDetailsAddressInfoCell.xib */; };
-		6C2286C6242ED6A7001D5F58 /* XSHouseDetailsFacilitiesInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2286C4242ED6A7001D5F58 /* XSHouseDetailsFacilitiesInfoCell.m */; };
-		6C2286C7242ED6A7001D5F58 /* XSHouseDetailsFacilitiesInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C2286C5242ED6A7001D5F58 /* XSHouseDetailsFacilitiesInfoCell.xib */; };
-		6C2286CB242ED706001D5F58 /* XSHouseDetailsIntroduceInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2286C9242ED706001D5F58 /* XSHouseDetailsIntroduceInfoCell.m */; };
-		6C2286CC242ED706001D5F58 /* XSHouseDetailsIntroduceInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C2286CA242ED706001D5F58 /* XSHouseDetailsIntroduceInfoCell.xib */; };
-		6C2286D0242ED730001D5F58 /* XSHouseRecommendedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2286CE242ED730001D5F58 /* XSHouseRecommendedCell.m */; };
-		6C2286D1242ED730001D5F58 /* XSHouseRecommendedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C2286CF242ED730001D5F58 /* XSHouseRecommendedCell.xib */; };
-		6C2286D9242ED788001D5F58 /* XSHouseDetailsInfoCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2286D8242ED788001D5F58 /* XSHouseDetailsInfoCellModel.m */; };
-		6C3BEAA1242C4A66001393EF /* XSPhotoPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEA9F242C4A66001393EF /* XSPhotoPickerView.m */; };
-		6C3BEAA3242C4A9C001393EF /* XSPhotoPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEAA2242C4A9C001393EF /* XSPhotoPickerView.xib */; };
-		6C3BEAB3242C7C3A001393EF /* XSLocationSearchview.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEAB2242C7C3A001393EF /* XSLocationSearchview.m */; };
-		6C3BEAB7242C7C9B001393EF /* XSLocationSearchview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEAB6242C7C9B001393EF /* XSLocationSearchview.xib */; };
-		6C3BEB4F242C8697001393EF /* XSHouseSubmitFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB22242C8697001393EF /* XSHouseSubmitFirstViewController.m */; };
-		6C3BEB50242C8697001393EF /* XSHouseSubmitFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEB23242C8697001393EF /* XSHouseSubmitFirstViewController.xib */; };
-		6C3BEB51242C8697001393EF /* XSHouseSubSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEB24242C8697001393EF /* XSHouseSubSuccessViewController.xib */; };
-		6C3BEB52242C8697001393EF /* XSHouseSubSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB25242C8697001393EF /* XSHouseSubSuccessViewController.m */; };
-		6C3BEB53242C8697001393EF /* XSHouseSubmitBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB27242C8697001393EF /* XSHouseSubmitBaseViewController.m */; };
-		6C3BEB54242C8697001393EF /* XSHouseSubCollectionviewBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB29242C8697001393EF /* XSHouseSubCollectionviewBCell.m */; };
-		6C3BEB55242C8697001393EF /* XSHouseSubCollectionviewBCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEB2A242C8697001393EF /* XSHouseSubCollectionviewBCell.xib */; };
-		6C3BEB56242C8697001393EF /* XSHouseSubListChooseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEB2B242C8697001393EF /* XSHouseSubListChooseTableViewCell.xib */; };
-		6C3BEB58242C8697001393EF /* XSHouseSubTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB2F242C8697001393EF /* XSHouseSubTextViewCell.m */; };
-		6C3BEB59242C8697001393EF /* XSHouseSubCollectionviewACell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB30242C8697001393EF /* XSHouseSubCollectionviewACell.m */; };
-		6C3BEB5A242C8697001393EF /* XSHouseSubCollectionviewACell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEB31242C8697001393EF /* XSHouseSubCollectionviewACell.xib */; };
-		6C3BEB5B242C8697001393EF /* XSHouseSubTextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEB32242C8697001393EF /* XSHouseSubTextViewCell.xib */; };
-		6C3BEB5C242C8697001393EF /* XSHouseSubTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB33242C8697001393EF /* XSHouseSubTableViewCell.m */; };
-		6C3BEB5D242C8697001393EF /* XSBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB35242C8697001393EF /* XSBaseTableViewCell.m */; };
-		6C3BEB5E242C8697001393EF /* XSHouseSubListChooseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB38242C8697001393EF /* XSHouseSubListChooseTableViewCell.m */; };
-		6C3BEB5F242C8697001393EF /* XSHouseSubTextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEB39242C8697001393EF /* XSHouseSubTextFieldTableViewCell.xib */; };
-		6C3BEB60242C8697001393EF /* XSHouseSubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEB3C242C8697001393EF /* XSHouseSubTableViewCell.xib */; };
-		6C3BEB61242C8697001393EF /* XSHouseSubTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB3D242C8697001393EF /* XSHouseSubTextFieldTableViewCell.m */; };
-		6C3BEB62242C8697001393EF /* XSHouseInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB41242C8697001393EF /* XSHouseInfoModel.m */; };
-		6C3BEB63242C8697001393EF /* XSHouseInfoThird.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEB45242C8697001393EF /* XSHouseInfoThird.json */; };
-		6C3BEB64242C8697001393EF /* XSHouseInfoFirst.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEB46242C8697001393EF /* XSHouseInfoFirst.json */; };
-		6C3BEB65242C8697001393EF /* XSHouseEnum.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB47242C8697001393EF /* XSHouseEnum.m */; };
-		6C3BEB66242C8697001393EF /* XSHouseFixedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB48242C8697001393EF /* XSHouseFixedData.m */; };
-		6C3BEB67242C8697001393EF /* XSHouseInfoSecond.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEB49242C8697001393EF /* XSHouseInfoSecond.json */; };
-		6C3BEB68242C8697001393EF /* XSHouseModuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB4C242C8697001393EF /* XSHouseModuleViewController.m */; };
-		6C3BEB6C242C8D92001393EF /* XSCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB6B242C8D92001393EF /* XSCollectionView.m */; };
-		6C3BEB70242C9215001393EF /* XSItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB6E242C9215001393EF /* XSItemCollectionViewCell.m */; };
-		6C3BEB73242C98A1001393EF /* XSHouseSearch.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEB72242C98A1001393EF /* XSHouseSearch.json */; };
-		6C3BEB76242CA4DC001393EF /* XSRegionSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB75242CA4DC001393EF /* XSRegionSearchView.m */; };
-		6C3BEB95242E3672001393EF /* XShouseSubNetworkInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB90242E3672001393EF /* XShouseSubNetworkInterface.m */; };
-		6C3BEB96242E3672001393EF /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEB93242E3672001393EF /* HomePageViewController.m */; };
-		6C3BEB97242E3672001393EF /* HomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEB94242E3672001393EF /* HomePageViewController.xib */; };
-		6C3BEB9A242E3731001393EF /* XSHouseModuleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3BEB99242E3731001393EF /* XSHouseModuleViewController.xib */; };
-		6C3BEBA3242E3995001393EF /* XSNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEBA2242E3995001393EF /* XSNavViewController.m */; };
-		6C3BEBDD242E3B60001393EF /* XSRoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEBA8242E3B5F001393EF /* XSRoundedView.m */; };
-		6C3BEBDE242E3B60001393EF /* XSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEBAA242E3B5F001393EF /* XSBaseViewController.m */; };
-		6C3BEBDF242E3B60001393EF /* XSBaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEBAB242E3B5F001393EF /* XSBaseNavViewController.m */; };
-		6C3BEBE0242E3B60001393EF /* XSBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEBAD242E3B5F001393EF /* XSBaseCollectionViewCell.m */; };
-		6C3BEBE1242E3B60001393EF /* XSBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEBB0242E3B5F001393EF /* XSBaseObject.m */; };
-		6C3BEBE2242E3B60001393EF /* NSDictionary+safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEBB6242E3B60001393EF /* NSDictionary+safe.m */; };
-		6C3BEBE3242E3B60001393EF /* UIView+HBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEBB9242E3B60001393EF /* UIView+HBExtension.m */; };
-		6C3BEBE4242E3B60001393EF /* NSMutableDictionary+safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEBBC242E3B60001393EF /* NSMutableDictionary+safe.m */; };
-		6C3BEBE5242E3B60001393EF /* PrintBeautifulLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEBBD242E3B60001393EF /* PrintBeautifulLog.m */; };
-		6C3BEBE6242E3B60001393EF /* NSArray+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEBC2242E3B60001393EF /* NSArray+Category.m */; };
-		6C3BEBE7242E3B60001393EF /* NSArray+safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEBC5242E3B60001393EF /* NSArray+safe.m */; };
-		6C3BEBE8242E3B60001393EF /* NSMutableArray+safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEBC7242E3B60001393EF /* NSMutableArray+safe.m */; };
-		6C3BEBE9242E3B60001393EF /* NSNumber+safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEBCB242E3B60001393EF /* NSNumber+safe.m */; };
-		6C3BEBEA242E3B60001393EF /* NSObject+safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEBCD242E3B60001393EF /* NSObject+safe.m */; };
-		6C3BEBEB242E3B60001393EF /* NSObject+swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEBCE242E3B60001393EF /* NSObject+swizzle.m */; };
-		6C3BEBEC242E3B60001393EF /* NSObject+HBNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEBD0242E3B60001393EF /* NSObject+HBNotification.m */; };
-		6C3BEBED242E3B60001393EF /* NSObject+PerformBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEBD1242E3B60001393EF /* NSObject+PerformBlock.m */; };
-		6C3BEBEE242E3B60001393EF /* NSObject+category.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEBD5242E3B60001393EF /* NSObject+category.m */; };
-		6C3BEBEF242E3B60001393EF /* NSMutableString+safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEBD9242E3B60001393EF /* NSMutableString+safe.m */; };
-		6C3BEBF0242E3B60001393EF /* NSDate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3BEBDB242E3B60001393EF /* NSDate+Category.m */; };
-		6C6BC14B241FA75300B62001 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BC14A241FA75300B62001 /* AppDelegate.m */; };
-		6C6BC14E241FA75300B62001 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BC14D241FA75300B62001 /* SceneDelegate.m */; };
-		6C6BC156241FA75400B62001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C6BC155241FA75400B62001 /* Assets.xcassets */; };
-		6C6BC159241FA75400B62001 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C6BC157241FA75400B62001 /* LaunchScreen.storyboard */; };
-		6C6BC15C241FA75400B62001 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BC15B241FA75400B62001 /* main.m */; };
-		6C6BC164241FA84200B62001 /* XSTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BC163241FA84100B62001 /* XSTabBarViewController.m */; };
-		6C6BC16E241FA9D800B62001 /* FindHouseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BC16D241FA9D800B62001 /* FindHouseViewController.m */; };
-		6C6BC174241FA9F400B62001 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BC173241FA9F400B62001 /* MessageViewController.m */; };
-		6C6BC17E241FBB6700B62001 /* XSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BC17C241FBB6700B62001 /* XSLoginViewController.m */; };
-		6C6BC17F241FBB6700B62001 /* XSLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C6BC17D241FBB6700B62001 /* XSLoginViewController.xib */; };
-		6C6BC183241FBBAC00B62001 /* MyInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BC181241FBBAC00B62001 /* MyInfoViewController.m */; };
-		6C6BC184241FBBAC00B62001 /* MyInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C6BC182241FBBAC00B62001 /* MyInfoViewController.xib */; };
-		6C7DFE7324265077003E86D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C7DFE7024265076003E86D7 /* Main.storyboard */; };
-		6C7DFE7424265077003E86D7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7DFE7124265076003E86D7 /* ViewController.m */; };
-		6C9FF7A0243023810020509C /* XSSearchConditionalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FF79F243023810020509C /* XSSearchConditionalView.xib */; };
-		6C9FF7A3243035C80020509C /* XSHouseSubFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FF7A2243035C70020509C /* XSHouseSubFootView.m */; };
-		6C9FF7A5243035D40020509C /* XSHouseSubFootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FF7A4243035D40020509C /* XSHouseSubFootView.xib */; };
-		6C9FF7A7243074BD0020509C /* XSHouseSave.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FF7A6243074BD0020509C /* XSHouseSave.json */; };
-		6C9FF7AA243082590020509C /* XSHouseRentStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FF7A9243082590020509C /* XSHouseRentStatusView.m */; };
+		55198B8024371816006A9D67 /* XSLocationSearchview.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198A8524371815006A9D67 /* XSLocationSearchview.m */; };
+		55198B8124371816006A9D67 /* XSRegionSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198A8624371815006A9D67 /* XSRegionSearchView.m */; };
+		55198B8224371816006A9D67 /* XSBusinessInfoSever.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198A8C24371815006A9D67 /* XSBusinessInfoSever.m */; };
+		55198B8324371816006A9D67 /* XSCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198A8E24371815006A9D67 /* XSCollectionView.m */; };
+		55198B8424371816006A9D67 /* XSBusinessCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198A8F24371815006A9D67 /* XSBusinessCollectionCell.m */; };
+		55198B8524371816006A9D67 /* XSItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198A9024371815006A9D67 /* XSItemCollectionViewCell.m */; };
+		55198B8624371816006A9D67 /* XSFacilitiesInfoJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 55198A9124371815006A9D67 /* XSFacilitiesInfoJson.json */; };
+		55198B8724371816006A9D67 /* XSHouseBusinessInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 55198A9224371815006A9D67 /* XSHouseBusinessInfo.json */; };
+		55198B8824371816006A9D67 /* XSRoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198A9424371815006A9D67 /* XSRoundedView.m */; };
+		55198B8924371816006A9D67 /* XSPhotoPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198A9524371815006A9D67 /* XSPhotoPickerView.m */; };
+		55198B8A24371816006A9D67 /* XSPhotoPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55198A9624371815006A9D67 /* XSPhotoPickerView.xib */; };
+		55198B8B24371816006A9D67 /* XSBusinessInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198A9724371815006A9D67 /* XSBusinessInfoModel.m */; };
+		55198B8C24371816006A9D67 /* XSMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198A9824371815006A9D67 /* XSMapViewController.m */; };
+		55198B8D24371816006A9D67 /* XSItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55198A9924371815006A9D67 /* XSItemCollectionViewCell.xib */; };
+		55198B8E24371816006A9D67 /* XSLocationSearchview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55198A9B24371815006A9D67 /* XSLocationSearchview.xib */; };
+		55198B8F24371816006A9D67 /* XSHouseBunnerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198A9C24371815006A9D67 /* XSHouseBunnerModel.m */; };
+		55198B9024371816006A9D67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55198A9D24371815006A9D67 /* Assets.xcassets */; };
+		55198B9124371816006A9D67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55198A9F24371815006A9D67 /* LaunchScreen.storyboard */; };
+		55198B9224371816006A9D67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55198AA124371815006A9D67 /* Main.storyboard */; };
+		55198B9324371816006A9D67 /* NSDictionary+safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198AA524371815006A9D67 /* NSDictionary+safe.m */; };
+		55198B9424371816006A9D67 /* UIView+HBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198AA824371815006A9D67 /* UIView+HBExtension.m */; };
+		55198B9524371816006A9D67 /* NSMutableDictionary+safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198AAC24371815006A9D67 /* NSMutableDictionary+safe.m */; };
+		55198B9624371816006A9D67 /* PrintBeautifulLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198AAD24371815006A9D67 /* PrintBeautifulLog.m */; };
+		55198B9724371816006A9D67 /* NSArray+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198AB024371815006A9D67 /* NSArray+Category.m */; };
+		55198B9824371816006A9D67 /* NSArray+safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198AB324371815006A9D67 /* NSArray+safe.m */; };
+		55198B9924371816006A9D67 /* NSMutableArray+safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198AB524371815006A9D67 /* NSMutableArray+safe.m */; };
+		55198B9A24371816006A9D67 /* NSNumber+safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198AB924371815006A9D67 /* NSNumber+safe.m */; };
+		55198B9B24371816006A9D67 /* NSObject+safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198ABB24371815006A9D67 /* NSObject+safe.m */; };
+		55198B9C24371816006A9D67 /* NSObject+swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198ABC24371815006A9D67 /* NSObject+swizzle.m */; };
+		55198B9D24371816006A9D67 /* NSObject+HBNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198ABE24371815006A9D67 /* NSObject+HBNotification.m */; };
+		55198B9E24371816006A9D67 /* NSObject+PerformBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198ABF24371815006A9D67 /* NSObject+PerformBlock.m */; };
+		55198B9F24371816006A9D67 /* NSObject+category.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198AC324371815006A9D67 /* NSObject+category.m */; };
+		55198BA024371816006A9D67 /* NSMutableString+safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198AC724371815006A9D67 /* NSMutableString+safe.m */; };
+		55198BA124371816006A9D67 /* NSDate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198AC924371815006A9D67 /* NSDate+Category.m */; };
+		55198BA224371816006A9D67 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198ADD24371815006A9D67 /* main.m */; };
+		55198BA324371816006A9D67 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198AE124371815006A9D67 /* ViewController.m */; };
+		55198BA424371816006A9D67 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198AE224371815006A9D67 /* SceneDelegate.m */; };
+		55198BA524371816006A9D67 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198AE424371815006A9D67 /* AppDelegate.m */; };
+		55198BA624371816006A9D67 /* XSTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198AE524371815006A9D67 /* XSTabBarViewController.m */; };
+		55198BA724371816006A9D67 /* XSNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198AE624371815006A9D67 /* XSNavViewController.m */; };
+		55198BA824371816006A9D67 /* XSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198AEA24371815006A9D67 /* XSBaseViewController.m */; };
+		55198BA924371816006A9D67 /* XSBaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198AEC24371815006A9D67 /* XSBaseNavViewController.m */; };
+		55198BAA24371816006A9D67 /* XSBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198AEE24371815006A9D67 /* XSBaseCollectionViewCell.m */; };
+		55198BAB24371816006A9D67 /* XSBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198AEF24371815006A9D67 /* XSBaseTableViewCell.m */; };
+		55198BAC24371816006A9D67 /* XSBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198AF224371815006A9D67 /* XSBaseObject.m */; };
+		55198BAD24371816006A9D67 /* XSNetworkInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198AF724371815006A9D67 /* XSNetworkInterface.m */; };
+		55198BAE24371816006A9D67 /* XSOperationParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198AF824371815006A9D67 /* XSOperationParam.m */; };
+		55198BAF24371816006A9D67 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 55198AF924371815006A9D67 /* Info.plist */; };
+		55198BB024371816006A9D67 /* MyInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55198AFD24371815006A9D67 /* MyInfoViewController.xib */; };
+		55198BB124371816006A9D67 /* XSLogInVcModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198AFE24371815006A9D67 /* XSLogInVcModel.m */; };
+		55198BB224371816006A9D67 /* XSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B0024371815006A9D67 /* XSLoginViewController.m */; };
+		55198BB324371816006A9D67 /* MyInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B0124371815006A9D67 /* MyInfoViewController.m */; };
+		55198BB424371816006A9D67 /* XSUserInfoInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B0324371815006A9D67 /* XSUserInfoInterface.m */; };
+		55198BB524371816006A9D67 /* XSUserLogInModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B0424371815006A9D67 /* XSUserLogInModel.m */; };
+		55198BB624371816006A9D67 /* XSUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B0524371815006A9D67 /* XSUserModel.m */; };
+		55198BB724371816006A9D67 /* XSLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55198B0724371815006A9D67 /* XSLoginViewController.xib */; };
+		55198BB824371816006A9D67 /* XSUserServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B0924371815006A9D67 /* XSUserServer.m */; };
+		55198BB924371816006A9D67 /* HomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55198B0D24371815006A9D67 /* HomePageViewController.xib */; };
+		55198BBA24371816006A9D67 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B0E24371815006A9D67 /* HomePageViewController.m */; };
+		55198BBB24371816006A9D67 /* XSHouseSearch.json in Resources */ = {isa = PBXBuildFile; fileRef = 55198B1224371815006A9D67 /* XSHouseSearch.json */; };
+		55198BBC24371816006A9D67 /* FindHouseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B1324371815006A9D67 /* FindHouseViewController.m */; };
+		55198BBD24371816006A9D67 /* XSHouseDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55198B1524371815006A9D67 /* XSHouseDetailsController.xib */; };
+		55198BBE24371816006A9D67 /* XSHouseDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B1624371815006A9D67 /* XSHouseDetailsController.m */; };
+		55198BBF24371816006A9D67 /* XSHouseSubCollectionviewBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B1824371815006A9D67 /* XSHouseSubCollectionviewBCell.m */; };
+		55198BC024371816006A9D67 /* XSHouseSubCollectionviewBCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55198B1924371815006A9D67 /* XSHouseSubCollectionviewBCell.xib */; };
+		55198BC124371816006A9D67 /* XSHouseSubListChooseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55198B1A24371815006A9D67 /* XSHouseSubListChooseTableViewCell.xib */; };
+		55198BC224371816006A9D67 /* XSHouseInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B1D24371815006A9D67 /* XSHouseInfoModel.m */; };
+		55198BC324371816006A9D67 /* XSHouseInfoFirstTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 55198B2024371815006A9D67 /* XSHouseInfoFirstTest.json */; };
+		55198BC424371816006A9D67 /* XSHouseSubmitFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B2124371815006A9D67 /* XSHouseSubmitFirstViewController.m */; };
+		55198BC524371816006A9D67 /* XSHouseSubTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B2324371815006A9D67 /* XSHouseSubTextViewCell.m */; };
+		55198BC624371816006A9D67 /* XSHouseSubCollectionviewACell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B2424371815006A9D67 /* XSHouseSubCollectionviewACell.m */; };
+		55198BC724371816006A9D67 /* XSHouseSubCollectionviewACell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55198B2524371815006A9D67 /* XSHouseSubCollectionviewACell.xib */; };
+		55198BC824371816006A9D67 /* XSHouseSubTextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55198B2724371815006A9D67 /* XSHouseSubTextViewCell.xib */; };
+		55198BC924371816006A9D67 /* XSHouseSubTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B2824371815006A9D67 /* XSHouseSubTableViewCell.m */; };
+		55198BCA24371816006A9D67 /* XSHouseInfoThirdTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 55198B2A24371815006A9D67 /* XSHouseInfoThirdTest.json */; };
+		55198BCB24371816006A9D67 /* XSHouseInfoSecondTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 55198B2C24371815006A9D67 /* XSHouseInfoSecondTest.json */; };
+		55198BCC24371816006A9D67 /* XSHouseSubmitFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55198B2D24371815006A9D67 /* XSHouseSubmitFirstViewController.xib */; };
+		55198BCD24371816006A9D67 /* XSHouseSubSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55198B2F24371815006A9D67 /* XSHouseSubSuccessViewController.xib */; };
+		55198BCE24371816006A9D67 /* XSHouseInfoThird.json in Resources */ = {isa = PBXBuildFile; fileRef = 55198B3024371815006A9D67 /* XSHouseInfoThird.json */; };
+		55198BCF24371816006A9D67 /* XSHouseSubSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B3124371815006A9D67 /* XSHouseSubSuccessViewController.m */; };
+		55198BD024371816006A9D67 /* XSHouseSubListChooseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B3324371815006A9D67 /* XSHouseSubListChooseTableViewCell.m */; };
+		55198BD124371816006A9D67 /* XSHouseInfoFirst.json in Resources */ = {isa = PBXBuildFile; fileRef = 55198B3424371815006A9D67 /* XSHouseInfoFirst.json */; };
+		55198BD224371816006A9D67 /* XSHouseSubTextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55198B3524371815006A9D67 /* XSHouseSubTextFieldTableViewCell.xib */; };
+		55198BD324371816006A9D67 /* XSHouseEnum.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B3724371816006A9D67 /* XSHouseEnum.m */; };
+		55198BD424371816006A9D67 /* XSHouseSubmitBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B3824371816006A9D67 /* XSHouseSubmitBaseViewController.m */; };
+		55198BD524371816006A9D67 /* XSHouseSubFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B3924371816006A9D67 /* XSHouseSubFootView.m */; };
+		55198BD624371816006A9D67 /* XSHouseSubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55198B3C24371816006A9D67 /* XSHouseSubTableViewCell.xib */; };
+		55198BD724371816006A9D67 /* XSHouseSubFootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55198B3D24371816006A9D67 /* XSHouseSubFootView.xib */; };
+		55198BD824371816006A9D67 /* XSHouseFixedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B3E24371816006A9D67 /* XSHouseFixedData.m */; };
+		55198BD924371816006A9D67 /* XSHouseSubTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B3F24371816006A9D67 /* XSHouseSubTextFieldTableViewCell.m */; };
+		55198BDA24371816006A9D67 /* XSHouseInfoSecond.json in Resources */ = {isa = PBXBuildFile; fileRef = 55198B4024371816006A9D67 /* XSHouseInfoSecond.json */; };
+		55198BDB24371816006A9D67 /* WechatIMG127.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 55198B4124371816006A9D67 /* WechatIMG127.jpeg */; };
+		55198BDC24371816006A9D67 /* XShouseSubNetworkInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B4324371816006A9D67 /* XShouseSubNetworkInterface.m */; };
+		55198BDD24371816006A9D67 /* XSHouseInfoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B4424371816006A9D67 /* XSHouseInfoTableView.m */; };
+		55198BDE24371816006A9D67 /* XSBHouseInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B4624371816006A9D67 /* XSBHouseInfoModel.m */; };
+		55198BDF24371816006A9D67 /* XSHouseDetailsInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 55198B4A24371816006A9D67 /* XSHouseDetailsInfo.json */; };
+		55198BE024371816006A9D67 /* XSHouseDetailsInfoCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B4C24371816006A9D67 /* XSHouseDetailsInfoCellModel.m */; };
+		55198BE124371816006A9D67 /* XSHouseDetailsImagesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55198B4E24371816006A9D67 /* XSHouseDetailsImagesCell.xib */; };
+		55198BE224371816006A9D67 /* XSHouseDetailsIntroduceInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55198B4F24371816006A9D67 /* XSHouseDetailsIntroduceInfoCell.xib */; };
+		55198BE324371816006A9D67 /* XSHouseDetailsAddressInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B5024371816006A9D67 /* XSHouseDetailsAddressInfoCell.m */; };
+		55198BE424371816006A9D67 /* XSHouseDetailsFacilitiesInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55198B5124371816006A9D67 /* XSHouseDetailsFacilitiesInfoCell.xib */; };
+		55198BE524371816006A9D67 /* XSHouseDetailsFacilitiesInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B5224371816006A9D67 /* XSHouseDetailsFacilitiesInfoCell.m */; };
+		55198BE624371816006A9D67 /* XSHouseDetailsIntroduceInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B5324371816006A9D67 /* XSHouseDetailsIntroduceInfoCell.m */; };
+		55198BE724371816006A9D67 /* XSHouseDetailsBasicInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B5424371816006A9D67 /* XSHouseDetailsBasicInfoCell.m */; };
+		55198BE824371816006A9D67 /* XSHouseDetailsBusinessInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55198B5524371816006A9D67 /* XSHouseDetailsBusinessInfoCell.xib */; };
+		55198BE924371816006A9D67 /* XSHouseDetailsAddressInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55198B5624371816006A9D67 /* XSHouseDetailsAddressInfoCell.xib */; };
+		55198BEA24371816006A9D67 /* XSHouseRecommendedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B5724371816006A9D67 /* XSHouseRecommendedCell.m */; };
+		55198BEB24371816006A9D67 /* XSHouseCallMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B5A24371816006A9D67 /* XSHouseCallMessageCell.m */; };
+		55198BEC24371816006A9D67 /* XSHouseDetailsImagesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B5B24371816006A9D67 /* XSHouseDetailsImagesCell.m */; };
+		55198BED24371816006A9D67 /* XSHouseCallMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55198B5C24371816006A9D67 /* XSHouseCallMessageCell.xib */; };
+		55198BEE24371816006A9D67 /* XSHouseIntroduceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55198B5D24371816006A9D67 /* XSHouseIntroduceController.xib */; };
+		55198BEF24371816006A9D67 /* XSHouseDetailsBasicInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55198B5E24371816006A9D67 /* XSHouseDetailsBasicInfoCell.xib */; };
+		55198BF024371816006A9D67 /* XSHouseRecommendedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55198B6024371816006A9D67 /* XSHouseRecommendedCell.xib */; };
+		55198BF124371816006A9D67 /* XSHouseIntroduceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B6624371816006A9D67 /* XSHouseIntroduceController.m */; };
+		55198BF224371816006A9D67 /* XSHouseDetailsBusinessInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B6724371816006A9D67 /* XSHouseDetailsBusinessInfoCell.m */; };
+		55198BF324371816006A9D67 /* XSHouseInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B6B24371816006A9D67 /* XSHouseInfoCell.m */; };
+		55198BF424371816006A9D67 /* XSHouseRentInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B6F24371816006A9D67 /* XSHouseRentInfoCell.m */; };
+		55198BF524371816006A9D67 /* XSHouseRentInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B7024371816006A9D67 /* XSHouseRentInfoModel.m */; };
+		55198BF624371816006A9D67 /* XSHouseRentStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B7224371816006A9D67 /* XSHouseRentStatusView.m */; };
+		55198BF724371816006A9D67 /* XSSearchConditionalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55198B7324371816006A9D67 /* XSSearchConditionalView.xib */; };
+		55198BF824371816006A9D67 /* XSHouseCallPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55198B7424371816006A9D67 /* XSHouseCallPhone.xib */; };
+		55198BF924371816006A9D67 /* XSHouseRentInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55198B7524371816006A9D67 /* XSHouseRentInfoCell.xib */; };
+		55198BFA24371816006A9D67 /* XSHouseModuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B7624371816006A9D67 /* XSHouseModuleViewController.m */; };
+		55198BFB24371816006A9D67 /* XSHouseCallPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B7724371816006A9D67 /* XSHouseCallPhone.m */; };
+		55198BFC24371816006A9D67 /* XSHouseModuleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55198B7824371816006A9D67 /* XSHouseModuleViewController.xib */; };
+		55198BFD24371816006A9D67 /* XSMyPublishHosueController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B7924371816006A9D67 /* XSMyPublishHosueController.m */; };
+		55198BFE24371816006A9D67 /* XSHouseSave.json in Resources */ = {isa = PBXBuildFile; fileRef = 55198B7B24371816006A9D67 /* XSHouseSave.json */; };
+		55198BFF24371816006A9D67 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198B7D24371816006A9D67 /* MessageViewController.m */; };
+		55198C0024371816006A9D67 /* xsjson.json in Resources */ = {isa = PBXBuildFile; fileRef = 55198B7F24371816006A9D67 /* xsjson.json */; };
 		6C9FF7AC24309BFE0020509C /* fangdinghui.cer in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FF7AB24309BFE0020509C /* fangdinghui.cer */; };
-		6C9FF7B02430AE220020509C /* XSHouseInfoSecondTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FF7AD2430AE220020509C /* XSHouseInfoSecondTest.json */; };
-		6C9FF7B12430AE220020509C /* XSHouseInfoThirdTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FF7AE2430AE220020509C /* XSHouseInfoThirdTest.json */; };
-		6C9FF7B22430AE220020509C /* XSHouseInfoFirstTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FF7AF2430AE220020509C /* XSHouseInfoFirstTest.json */; };
-		6C9FF7B42430F0700020509C /* xaxaxax.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FF7B32430F0700020509C /* xaxaxax.png */; };
-		6C9FF7BA243211630020509C /* XSMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FF7B9243211620020509C /* XSMapViewController.m */; };
-		6CDCE3A22426E6850049AE63 /* XSNetworkInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDCE3A12426E6850049AE63 /* XSNetworkInterface.m */; };
-		6CDCE3A52426ED9B0049AE63 /* XSOperationParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDCE3A42426ED9B0049AE63 /* XSOperationParam.m */; };
-		6CDCE3A92426F5D50049AE63 /* XSUserInfoInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDCE3A82426F5D50049AE63 /* XSUserInfoInterface.m */; };
-		6CDCE3DE24273CB10049AE63 /* xsjson.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CDCE3DD24273CB10049AE63 /* xsjson.json */; };
-		6CE51BAD242F58CC00023FFC /* XSHouseIntroduceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE51BAB242F58CC00023FFC /* XSHouseIntroduceController.m */; };
-		6CE51BAE242F58CC00023FFC /* XSHouseIntroduceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CE51BAC242F58CC00023FFC /* XSHouseIntroduceController.xib */; };
-		6CE51BB3242F65F200023FFC /* XSHouseCallPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE51BB2242F65F200023FFC /* XSHouseCallPhone.m */; };
-		6CE51BB5242F660A00023FFC /* XSHouseCallPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CE51BB4242F660A00023FFC /* XSHouseCallPhone.xib */; };
-		6CED867324274AA80059CDC5 /* XSUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CED867224274AA80059CDC5 /* XSUserModel.m */; };
-		6CED867624274CB30059CDC5 /* XSLogInVcModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CED867524274CB30059CDC5 /* XSLogInVcModel.m */; };
-		6CED867924274CE60059CDC5 /* XSUserLogInModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CED867824274CE60059CDC5 /* XSUserLogInModel.m */; };
-		6CED867D242756950059CDC5 /* XSUserServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CED867C242756950059CDC5 /* XSUserServer.m */; };
-		6CF0E778242E4820000A9815 /* XSHouseRentInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF0E776242E481F000A9815 /* XSHouseRentInfoModel.m */; };
-		6CF0E77D242E5E58000A9815 /* XSMyPublishHosueController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF0E77C242E5E57000A9815 /* XSMyPublishHosueController.m */; };
 		9AC3A3F8DF5C36DD201ED436 /* libPods-XSHouseLease.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2818EC9B5CB7624F84048215 /* libPods-XSHouseLease.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2818EC9B5CB7624F84048215 /* libPods-XSHouseLease.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XSHouseLease.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		555A677C242DE121003847A0 /* XSHouseInfoTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSHouseInfoTableView.h; sourceTree = "<group>"; };
-		555A677D242DE121003847A0 /* XSHouseInfoTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSHouseInfoTableView.m; sourceTree = "<group>"; };
-		555A677F242DE192003847A0 /* XSHouseInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSHouseInfoCell.h; sourceTree = "<group>"; };
-		555A6780242DE192003847A0 /* XSHouseInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSHouseInfoCell.m; sourceTree = "<group>"; };
-		555A6782242DE1B7003847A0 /* XSBHouseInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSBHouseInfoModel.h; sourceTree = "<group>"; };
-		555A6783242DE1B7003847A0 /* XSBHouseInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSBHouseInfoModel.m; sourceTree = "<group>"; };
-		555A6785242DF069003847A0 /* XSHouseRentInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSHouseRentInfoCell.h; sourceTree = "<group>"; };
-		555A6786242DF069003847A0 /* XSHouseRentInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSHouseRentInfoCell.m; sourceTree = "<group>"; };
-		555A6787242DF069003847A0 /* XSHouseRentInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSHouseRentInfoCell.xib; sourceTree = "<group>"; };
-		555A678B242DF15C003847A0 /* XSHouseBunnerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSHouseBunnerModel.h; sourceTree = "<group>"; };
-		555A678C242DF15C003847A0 /* XSHouseBunnerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSHouseBunnerModel.m; sourceTree = "<group>"; };
+		55198A8224371815006A9D67 /* XSItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSItemCollectionViewCell.h; sourceTree = "<group>"; };
+		55198A8324371815006A9D67 /* XSBusinessCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBusinessCollectionCell.h; sourceTree = "<group>"; };
+		55198A8424371815006A9D67 /* XSCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSCollectionView.h; sourceTree = "<group>"; };
+		55198A8524371815006A9D67 /* XSLocationSearchview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSLocationSearchview.m; sourceTree = "<group>"; };
+		55198A8624371815006A9D67 /* XSRegionSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSRegionSearchView.m; sourceTree = "<group>"; };
+		55198A8724371815006A9D67 /* XSMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMapViewController.h; sourceTree = "<group>"; };
+		55198A8824371815006A9D67 /* XSBusinessInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBusinessInfoModel.h; sourceTree = "<group>"; };
+		55198A8924371815006A9D67 /* XSPhotoPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSPhotoPickerView.h; sourceTree = "<group>"; };
+		55198A8A24371815006A9D67 /* XSRoundedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSRoundedView.h; sourceTree = "<group>"; };
+		55198A8B24371815006A9D67 /* XSHouseBunnerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseBunnerModel.h; sourceTree = "<group>"; };
+		55198A8C24371815006A9D67 /* XSBusinessInfoSever.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBusinessInfoSever.m; sourceTree = "<group>"; };
+		55198A8D24371815006A9D67 /* XSLocationSearchview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSLocationSearchview.h; sourceTree = "<group>"; };
+		55198A8E24371815006A9D67 /* XSCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSCollectionView.m; sourceTree = "<group>"; };
+		55198A8F24371815006A9D67 /* XSBusinessCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBusinessCollectionCell.m; sourceTree = "<group>"; };
+		55198A9024371815006A9D67 /* XSItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSItemCollectionViewCell.m; sourceTree = "<group>"; };
+		55198A9124371815006A9D67 /* XSFacilitiesInfoJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSFacilitiesInfoJson.json; sourceTree = "<group>"; };
+		55198A9224371815006A9D67 /* XSHouseBusinessInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseBusinessInfo.json; sourceTree = "<group>"; };
+		55198A9324371815006A9D67 /* XSRegionSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSRegionSearchView.h; sourceTree = "<group>"; };
+		55198A9424371815006A9D67 /* XSRoundedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSRoundedView.m; sourceTree = "<group>"; };
+		55198A9524371815006A9D67 /* XSPhotoPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSPhotoPickerView.m; sourceTree = "<group>"; };
+		55198A9624371815006A9D67 /* XSPhotoPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSPhotoPickerView.xib; sourceTree = "<group>"; };
+		55198A9724371815006A9D67 /* XSBusinessInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBusinessInfoModel.m; sourceTree = "<group>"; };
+		55198A9824371815006A9D67 /* XSMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSMapViewController.m; sourceTree = "<group>"; };
+		55198A9924371815006A9D67 /* XSItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		55198A9A24371815006A9D67 /* XSBusinessInfoSever.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBusinessInfoSever.h; sourceTree = "<group>"; };
+		55198A9B24371815006A9D67 /* XSLocationSearchview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSLocationSearchview.xib; sourceTree = "<group>"; };
+		55198A9C24371815006A9D67 /* XSHouseBunnerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseBunnerModel.m; sourceTree = "<group>"; };
+		55198A9D24371815006A9D67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		55198AA024371815006A9D67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		55198AA124371815006A9D67 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		55198AA424371815006A9D67 /* NSDictionary+safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+safe.h"; sourceTree = "<group>"; };
+		55198AA524371815006A9D67 /* NSDictionary+safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+safe.m"; sourceTree = "<group>"; };
+		55198AA724371815006A9D67 /* UIView+HBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HBExtension.h"; sourceTree = "<group>"; };
+		55198AA824371815006A9D67 /* UIView+HBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HBExtension.m"; sourceTree = "<group>"; };
+		55198AA924371815006A9D67 /* HBCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBCategory.h; sourceTree = "<group>"; };
+		55198AAB24371815006A9D67 /* PrintBeautifulLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrintBeautifulLog.h; sourceTree = "<group>"; };
+		55198AAC24371815006A9D67 /* NSMutableDictionary+safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+safe.m"; sourceTree = "<group>"; };
+		55198AAD24371815006A9D67 /* PrintBeautifulLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrintBeautifulLog.m; sourceTree = "<group>"; };
+		55198AAE24371815006A9D67 /* NSMutableDictionary+safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+safe.h"; sourceTree = "<group>"; };
+		55198AB024371815006A9D67 /* NSArray+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Category.m"; sourceTree = "<group>"; };
+		55198AB124371815006A9D67 /* NSArray+safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+safe.h"; sourceTree = "<group>"; };
+		55198AB224371815006A9D67 /* NSArray+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Category.h"; sourceTree = "<group>"; };
+		55198AB324371815006A9D67 /* NSArray+safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+safe.m"; sourceTree = "<group>"; };
+		55198AB524371815006A9D67 /* NSMutableArray+safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+safe.m"; sourceTree = "<group>"; };
+		55198AB624371815006A9D67 /* NSMutableArray+safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+safe.h"; sourceTree = "<group>"; };
+		55198AB824371815006A9D67 /* NSNumber+safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+safe.h"; sourceTree = "<group>"; };
+		55198AB924371815006A9D67 /* NSNumber+safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+safe.m"; sourceTree = "<group>"; };
+		55198ABB24371815006A9D67 /* NSObject+safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+safe.m"; sourceTree = "<group>"; };
+		55198ABC24371815006A9D67 /* NSObject+swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+swizzle.m"; sourceTree = "<group>"; };
+		55198ABD24371815006A9D67 /* NSObject+category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+category.h"; sourceTree = "<group>"; };
+		55198ABE24371815006A9D67 /* NSObject+HBNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HBNotification.m"; sourceTree = "<group>"; };
+		55198ABF24371815006A9D67 /* NSObject+PerformBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PerformBlock.m"; sourceTree = "<group>"; };
+		55198AC024371815006A9D67 /* NSObject+swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+swizzle.h"; sourceTree = "<group>"; };
+		55198AC124371815006A9D67 /* NSObject+safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+safe.h"; sourceTree = "<group>"; };
+		55198AC224371815006A9D67 /* NSObject+HBNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HBNotification.h"; sourceTree = "<group>"; };
+		55198AC324371815006A9D67 /* NSObject+category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+category.m"; sourceTree = "<group>"; };
+		55198AC424371815006A9D67 /* NSObject+PerformBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PerformBlock.h"; sourceTree = "<group>"; };
+		55198AC624371815006A9D67 /* NSMutableString+safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+safe.h"; sourceTree = "<group>"; };
+		55198AC724371815006A9D67 /* NSMutableString+safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+safe.m"; sourceTree = "<group>"; };
+		55198AC924371815006A9D67 /* NSDate+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Category.m"; sourceTree = "<group>"; };
+		55198ACA24371815006A9D67 /* NSDate+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Category.h"; sourceTree = "<group>"; };
+		55198ADD24371815006A9D67 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		55198ADF24371815006A9D67 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		55198AE024371815006A9D67 /* XSTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSTabBarViewController.h; sourceTree = "<group>"; };
+		55198AE124371815006A9D67 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		55198AE224371815006A9D67 /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		55198AE324371815006A9D67 /* XSNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSNavViewController.h; sourceTree = "<group>"; };
+		55198AE424371815006A9D67 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		55198AE524371815006A9D67 /* XSTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSTabBarViewController.m; sourceTree = "<group>"; };
+		55198AE624371815006A9D67 /* XSNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSNavViewController.m; sourceTree = "<group>"; };
+		55198AE724371815006A9D67 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		55198AE824371815006A9D67 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		55198AEA24371815006A9D67 /* XSBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBaseViewController.m; sourceTree = "<group>"; };
+		55198AEB24371815006A9D67 /* XSBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBaseTableViewCell.h; sourceTree = "<group>"; };
+		55198AEC24371815006A9D67 /* XSBaseNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBaseNavViewController.m; sourceTree = "<group>"; };
+		55198AED24371815006A9D67 /* XSBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBaseObject.h; sourceTree = "<group>"; };
+		55198AEE24371815006A9D67 /* XSBaseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBaseCollectionViewCell.m; sourceTree = "<group>"; };
+		55198AEF24371815006A9D67 /* XSBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBaseTableViewCell.m; sourceTree = "<group>"; };
+		55198AF024371815006A9D67 /* XSBaseNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBaseNavViewController.h; sourceTree = "<group>"; };
+		55198AF124371815006A9D67 /* XSBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBaseViewController.h; sourceTree = "<group>"; };
+		55198AF224371815006A9D67 /* XSBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBaseObject.m; sourceTree = "<group>"; };
+		55198AF324371815006A9D67 /* XSBaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBaseCollectionViewCell.h; sourceTree = "<group>"; };
+		55198AF524371815006A9D67 /* XSNetworkInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSNetworkInterface.h; sourceTree = "<group>"; };
+		55198AF624371815006A9D67 /* XSOperationParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSOperationParam.h; sourceTree = "<group>"; };
+		55198AF724371815006A9D67 /* XSNetworkInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSNetworkInterface.m; sourceTree = "<group>"; };
+		55198AF824371815006A9D67 /* XSOperationParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSOperationParam.m; sourceTree = "<group>"; };
+		55198AF924371815006A9D67 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55198AFC24371815006A9D67 /* XSUserLogInModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSUserLogInModel.h; sourceTree = "<group>"; };
+		55198AFD24371815006A9D67 /* MyInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyInfoViewController.xib; sourceTree = "<group>"; };
+		55198AFE24371815006A9D67 /* XSLogInVcModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSLogInVcModel.m; sourceTree = "<group>"; };
+		55198AFF24371815006A9D67 /* XSUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSUserModel.h; sourceTree = "<group>"; };
+		55198B0024371815006A9D67 /* XSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSLoginViewController.m; sourceTree = "<group>"; };
+		55198B0124371815006A9D67 /* MyInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfoViewController.m; sourceTree = "<group>"; };
+		55198B0224371815006A9D67 /* XSUserServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSUserServer.h; sourceTree = "<group>"; };
+		55198B0324371815006A9D67 /* XSUserInfoInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSUserInfoInterface.m; sourceTree = "<group>"; };
+		55198B0424371815006A9D67 /* XSUserLogInModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSUserLogInModel.m; sourceTree = "<group>"; };
+		55198B0524371815006A9D67 /* XSUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSUserModel.m; sourceTree = "<group>"; };
+		55198B0624371815006A9D67 /* XSLogInVcModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSLogInVcModel.h; sourceTree = "<group>"; };
+		55198B0724371815006A9D67 /* XSLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSLoginViewController.xib; sourceTree = "<group>"; };
+		55198B0824371815006A9D67 /* XSUserInfoInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSUserInfoInterface.h; sourceTree = "<group>"; };
+		55198B0924371815006A9D67 /* XSUserServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSUserServer.m; sourceTree = "<group>"; };
+		55198B0A24371815006A9D67 /* MyInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInfoViewController.h; sourceTree = "<group>"; };
+		55198B0B24371815006A9D67 /* XSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSLoginViewController.h; sourceTree = "<group>"; };
+		55198B0D24371815006A9D67 /* HomePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageViewController.xib; sourceTree = "<group>"; };
+		55198B0E24371815006A9D67 /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
+		55198B0F24371815006A9D67 /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
+		55198B1124371815006A9D67 /* FindHouseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindHouseViewController.h; sourceTree = "<group>"; };
+		55198B1224371815006A9D67 /* XSHouseSearch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseSearch.json; sourceTree = "<group>"; };
+		55198B1324371815006A9D67 /* FindHouseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindHouseViewController.m; sourceTree = "<group>"; };
+		55198B1524371815006A9D67 /* XSHouseDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseDetailsController.xib; sourceTree = "<group>"; };
+		55198B1624371815006A9D67 /* XSHouseDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseDetailsController.m; sourceTree = "<group>"; };
+		55198B1824371815006A9D67 /* XSHouseSubCollectionviewBCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubCollectionviewBCell.m; sourceTree = "<group>"; };
+		55198B1924371815006A9D67 /* XSHouseSubCollectionviewBCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubCollectionviewBCell.xib; sourceTree = "<group>"; };
+		55198B1A24371815006A9D67 /* XSHouseSubListChooseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubListChooseTableViewCell.xib; sourceTree = "<group>"; };
+		55198B1B24371815006A9D67 /* XSHouseSubSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubSuccessViewController.h; sourceTree = "<group>"; };
+		55198B1C24371815006A9D67 /* XSHouseSubAllMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubAllMode.h; sourceTree = "<group>"; };
+		55198B1D24371815006A9D67 /* XSHouseInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseInfoModel.m; sourceTree = "<group>"; };
+		55198B1E24371815006A9D67 /* XSHouseSubmitBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubmitBaseViewController.h; sourceTree = "<group>"; };
+		55198B1F24371815006A9D67 /* XSHouseEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseEnum.h; sourceTree = "<group>"; };
+		55198B2024371815006A9D67 /* XSHouseInfoFirstTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseInfoFirstTest.json; sourceTree = "<group>"; };
+		55198B2124371815006A9D67 /* XSHouseSubmitFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubmitFirstViewController.m; sourceTree = "<group>"; };
+		55198B2224371815006A9D67 /* XSHouseSubListChooseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubListChooseTableViewCell.h; sourceTree = "<group>"; };
+		55198B2324371815006A9D67 /* XSHouseSubTextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubTextViewCell.m; sourceTree = "<group>"; };
+		55198B2424371815006A9D67 /* XSHouseSubCollectionviewACell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubCollectionviewACell.m; sourceTree = "<group>"; };
+		55198B2524371815006A9D67 /* XSHouseSubCollectionviewACell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubCollectionviewACell.xib; sourceTree = "<group>"; };
+		55198B2624371815006A9D67 /* XSHouseSubFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubFootView.h; sourceTree = "<group>"; };
+		55198B2724371815006A9D67 /* XSHouseSubTextViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubTextViewCell.xib; sourceTree = "<group>"; };
+		55198B2824371815006A9D67 /* XSHouseSubTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubTableViewCell.m; sourceTree = "<group>"; };
+		55198B2924371815006A9D67 /* XSHouseSubTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubTextFieldTableViewCell.h; sourceTree = "<group>"; };
+		55198B2A24371815006A9D67 /* XSHouseInfoThirdTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseInfoThirdTest.json; sourceTree = "<group>"; };
+		55198B2B24371815006A9D67 /* XSHouseFixedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseFixedData.h; sourceTree = "<group>"; };
+		55198B2C24371815006A9D67 /* XSHouseInfoSecondTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseInfoSecondTest.json; sourceTree = "<group>"; };
+		55198B2D24371815006A9D67 /* XSHouseSubmitFirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubmitFirstViewController.xib; sourceTree = "<group>"; };
+		55198B2E24371815006A9D67 /* XSHouseInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseInfoModel.h; sourceTree = "<group>"; };
+		55198B2F24371815006A9D67 /* XSHouseSubSuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubSuccessViewController.xib; sourceTree = "<group>"; };
+		55198B3024371815006A9D67 /* XSHouseInfoThird.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseInfoThird.json; sourceTree = "<group>"; };
+		55198B3124371815006A9D67 /* XSHouseSubSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubSuccessViewController.m; sourceTree = "<group>"; };
+		55198B3224371815006A9D67 /* XSHouseSubCollectionviewBCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubCollectionviewBCell.h; sourceTree = "<group>"; };
+		55198B3324371815006A9D67 /* XSHouseSubListChooseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubListChooseTableViewCell.m; sourceTree = "<group>"; };
+		55198B3424371815006A9D67 /* XSHouseInfoFirst.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseInfoFirst.json; sourceTree = "<group>"; };
+		55198B3524371815006A9D67 /* XSHouseSubTextFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubTextFieldTableViewCell.xib; sourceTree = "<group>"; };
+		55198B3624371815006A9D67 /* XSHouseSubmitFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubmitFirstViewController.h; sourceTree = "<group>"; };
+		55198B3724371816006A9D67 /* XSHouseEnum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseEnum.m; sourceTree = "<group>"; };
+		55198B3824371816006A9D67 /* XSHouseSubmitBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubmitBaseViewController.m; sourceTree = "<group>"; };
+		55198B3924371816006A9D67 /* XSHouseSubFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubFootView.m; sourceTree = "<group>"; };
+		55198B3A24371816006A9D67 /* XSHouseSubCollectionviewACell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubCollectionviewACell.h; sourceTree = "<group>"; };
+		55198B3B24371816006A9D67 /* XSHouseSubTextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubTextViewCell.h; sourceTree = "<group>"; };
+		55198B3C24371816006A9D67 /* XSHouseSubTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubTableViewCell.xib; sourceTree = "<group>"; };
+		55198B3D24371816006A9D67 /* XSHouseSubFootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubFootView.xib; sourceTree = "<group>"; };
+		55198B3E24371816006A9D67 /* XSHouseFixedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseFixedData.m; sourceTree = "<group>"; };
+		55198B3F24371816006A9D67 /* XSHouseSubTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubTextFieldTableViewCell.m; sourceTree = "<group>"; };
+		55198B4024371816006A9D67 /* XSHouseInfoSecond.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseInfoSecond.json; sourceTree = "<group>"; };
+		55198B4124371816006A9D67 /* WechatIMG127.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG127.jpeg; sourceTree = "<group>"; };
+		55198B4224371816006A9D67 /* XSHouseSubTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubTableViewCell.h; sourceTree = "<group>"; };
+		55198B4324371816006A9D67 /* XShouseSubNetworkInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XShouseSubNetworkInterface.m; sourceTree = "<group>"; };
+		55198B4424371816006A9D67 /* XSHouseInfoTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseInfoTableView.m; sourceTree = "<group>"; };
+		55198B4524371816006A9D67 /* XSHouseInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseInfoCell.h; sourceTree = "<group>"; };
+		55198B4624371816006A9D67 /* XSBHouseInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBHouseInfoModel.m; sourceTree = "<group>"; };
+		55198B4724371816006A9D67 /* XSHouseRentInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseRentInfoCell.h; sourceTree = "<group>"; };
+		55198B4824371816006A9D67 /* XSHouseRentInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseRentInfoModel.h; sourceTree = "<group>"; };
+		55198B4924371816006A9D67 /* XSHouseModuleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseModuleViewController.h; sourceTree = "<group>"; };
+		55198B4A24371816006A9D67 /* XSHouseDetailsInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseDetailsInfo.json; sourceTree = "<group>"; };
+		55198B4B24371816006A9D67 /* XSHouseRentStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseRentStatusView.h; sourceTree = "<group>"; };
+		55198B4C24371816006A9D67 /* XSHouseDetailsInfoCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseDetailsInfoCellModel.m; sourceTree = "<group>"; };
+		55198B4E24371816006A9D67 /* XSHouseDetailsImagesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseDetailsImagesCell.xib; sourceTree = "<group>"; };
+		55198B4F24371816006A9D67 /* XSHouseDetailsIntroduceInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseDetailsIntroduceInfoCell.xib; sourceTree = "<group>"; };
+		55198B5024371816006A9D67 /* XSHouseDetailsAddressInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseDetailsAddressInfoCell.m; sourceTree = "<group>"; };
+		55198B5124371816006A9D67 /* XSHouseDetailsFacilitiesInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseDetailsFacilitiesInfoCell.xib; sourceTree = "<group>"; };
+		55198B5224371816006A9D67 /* XSHouseDetailsFacilitiesInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseDetailsFacilitiesInfoCell.m; sourceTree = "<group>"; };
+		55198B5324371816006A9D67 /* XSHouseDetailsIntroduceInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseDetailsIntroduceInfoCell.m; sourceTree = "<group>"; };
+		55198B5424371816006A9D67 /* XSHouseDetailsBasicInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseDetailsBasicInfoCell.m; sourceTree = "<group>"; };
+		55198B5524371816006A9D67 /* XSHouseDetailsBusinessInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseDetailsBusinessInfoCell.xib; sourceTree = "<group>"; };
+		55198B5624371816006A9D67 /* XSHouseDetailsAddressInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseDetailsAddressInfoCell.xib; sourceTree = "<group>"; };
+		55198B5724371816006A9D67 /* XSHouseRecommendedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseRecommendedCell.m; sourceTree = "<group>"; };
+		55198B5824371816006A9D67 /* XSHouseDetailsBusinessInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseDetailsBusinessInfoCell.h; sourceTree = "<group>"; };
+		55198B5924371816006A9D67 /* XSHouseIntroduceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseIntroduceController.h; sourceTree = "<group>"; };
+		55198B5A24371816006A9D67 /* XSHouseCallMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseCallMessageCell.m; sourceTree = "<group>"; };
+		55198B5B24371816006A9D67 /* XSHouseDetailsImagesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseDetailsImagesCell.m; sourceTree = "<group>"; };
+		55198B5C24371816006A9D67 /* XSHouseCallMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseCallMessageCell.xib; sourceTree = "<group>"; };
+		55198B5D24371816006A9D67 /* XSHouseIntroduceController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseIntroduceController.xib; sourceTree = "<group>"; };
+		55198B5E24371816006A9D67 /* XSHouseDetailsBasicInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseDetailsBasicInfoCell.xib; sourceTree = "<group>"; };
+		55198B5F24371816006A9D67 /* XSHouseDetailsFacilitiesInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseDetailsFacilitiesInfoCell.h; sourceTree = "<group>"; };
+		55198B6024371816006A9D67 /* XSHouseRecommendedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseRecommendedCell.xib; sourceTree = "<group>"; };
+		55198B6124371816006A9D67 /* XSHouseDetailsAddressInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseDetailsAddressInfoCell.h; sourceTree = "<group>"; };
+		55198B6224371816006A9D67 /* XSHouseRecommendedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseRecommendedCell.h; sourceTree = "<group>"; };
+		55198B6324371816006A9D67 /* XSHouseDetailsBasicInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseDetailsBasicInfoCell.h; sourceTree = "<group>"; };
+		55198B6424371816006A9D67 /* XSHouseDetailsIntroduceInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseDetailsIntroduceInfoCell.h; sourceTree = "<group>"; };
+		55198B6524371816006A9D67 /* XSHouseCallMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseCallMessageCell.h; sourceTree = "<group>"; };
+		55198B6624371816006A9D67 /* XSHouseIntroduceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseIntroduceController.m; sourceTree = "<group>"; };
+		55198B6724371816006A9D67 /* XSHouseDetailsBusinessInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseDetailsBusinessInfoCell.m; sourceTree = "<group>"; };
+		55198B6824371816006A9D67 /* XSHouseDetailsImagesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseDetailsImagesCell.h; sourceTree = "<group>"; };
+		55198B6924371816006A9D67 /* XSMyPublishHosueController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMyPublishHosueController.h; sourceTree = "<group>"; };
+		55198B6A24371816006A9D67 /* XSHouseCallPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseCallPhone.h; sourceTree = "<group>"; };
+		55198B6B24371816006A9D67 /* XSHouseInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseInfoCell.m; sourceTree = "<group>"; };
+		55198B6C24371816006A9D67 /* XSHouseInfoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseInfoTableView.h; sourceTree = "<group>"; };
+		55198B6D24371816006A9D67 /* XShouseSubNetworkInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XShouseSubNetworkInterface.h; sourceTree = "<group>"; };
+		55198B6E24371816006A9D67 /* XSHouseDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseDetailsController.h; sourceTree = "<group>"; };
+		55198B6F24371816006A9D67 /* XSHouseRentInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseRentInfoCell.m; sourceTree = "<group>"; };
+		55198B7024371816006A9D67 /* XSHouseRentInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseRentInfoModel.m; sourceTree = "<group>"; };
+		55198B7124371816006A9D67 /* XSBHouseInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBHouseInfoModel.h; sourceTree = "<group>"; };
+		55198B7224371816006A9D67 /* XSHouseRentStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseRentStatusView.m; sourceTree = "<group>"; };
+		55198B7324371816006A9D67 /* XSSearchConditionalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSSearchConditionalView.xib; sourceTree = "<group>"; };
+		55198B7424371816006A9D67 /* XSHouseCallPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseCallPhone.xib; sourceTree = "<group>"; };
+		55198B7524371816006A9D67 /* XSHouseRentInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseRentInfoCell.xib; sourceTree = "<group>"; };
+		55198B7624371816006A9D67 /* XSHouseModuleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseModuleViewController.m; sourceTree = "<group>"; };
+		55198B7724371816006A9D67 /* XSHouseCallPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseCallPhone.m; sourceTree = "<group>"; };
+		55198B7824371816006A9D67 /* XSHouseModuleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseModuleViewController.xib; sourceTree = "<group>"; };
+		55198B7924371816006A9D67 /* XSMyPublishHosueController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSMyPublishHosueController.m; sourceTree = "<group>"; };
+		55198B7A24371816006A9D67 /* XSHouseDetailsInfoCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseDetailsInfoCellModel.h; sourceTree = "<group>"; };
+		55198B7B24371816006A9D67 /* XSHouseSave.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseSave.json; sourceTree = "<group>"; };
+		55198B7D24371816006A9D67 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		55198B7E24371816006A9D67 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		55198B7F24371816006A9D67 /* xsjson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = xsjson.json; sourceTree = "<group>"; };
 		66F014AFFCE6A143AA113285 /* Pods-XSHouseLease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XSHouseLease.debug.xcconfig"; path = "Target Support Files/Pods-XSHouseLease/Pods-XSHouseLease.debug.xcconfig"; sourceTree = "<group>"; };
-		6C0DA7CF242EDD8C000A59B6 /* XSHouseDetailsInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseDetailsInfo.json; sourceTree = "<group>"; };
-		6C0DA7D5242EF5C8000A59B6 /* XSBusinessCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSBusinessCollectionCell.h; sourceTree = "<group>"; };
-		6C0DA7D6242EF5C8000A59B6 /* XSBusinessCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSBusinessCollectionCell.m; sourceTree = "<group>"; };
-		6C0DA7D8242EF5E7000A59B6 /* XSBusinessInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSBusinessInfoModel.h; sourceTree = "<group>"; };
-		6C0DA7D9242EF5E7000A59B6 /* XSBusinessInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSBusinessInfoModel.m; sourceTree = "<group>"; };
-		6C0DA7DB242EF94D000A59B6 /* XSHouseBusinessInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseBusinessInfo.json; sourceTree = "<group>"; };
-		6C0DA7DD242EFF0C000A59B6 /* XSBusinessInfoSever.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSBusinessInfoSever.h; sourceTree = "<group>"; };
-		6C0DA7DE242EFF0C000A59B6 /* XSBusinessInfoSever.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSBusinessInfoSever.m; sourceTree = "<group>"; };
-		6C0DA7EC242F1C58000A59B6 /* XSFacilitiesInfoJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSFacilitiesInfoJson.json; sourceTree = "<group>"; };
-		6C22869F242E8719001D5F58 /* XSHouseDetailsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSHouseDetailsController.h; sourceTree = "<group>"; };
-		6C2286A0242E8719001D5F58 /* XSHouseDetailsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSHouseDetailsController.m; sourceTree = "<group>"; };
-		6C2286A1242E8719001D5F58 /* XSHouseDetailsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSHouseDetailsController.xib; sourceTree = "<group>"; };
-		6C2286AA242ED570001D5F58 /* XSHouseDetailsImagesCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSHouseDetailsImagesCell.h; sourceTree = "<group>"; };
-		6C2286AB242ED570001D5F58 /* XSHouseDetailsImagesCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSHouseDetailsImagesCell.m; sourceTree = "<group>"; };
-		6C2286AC242ED570001D5F58 /* XSHouseDetailsImagesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSHouseDetailsImagesCell.xib; sourceTree = "<group>"; };
-		6C2286B4242ED5F4001D5F58 /* XSHouseDetailsBasicInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSHouseDetailsBasicInfoCell.h; sourceTree = "<group>"; };
-		6C2286B5242ED5F4001D5F58 /* XSHouseDetailsBasicInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSHouseDetailsBasicInfoCell.m; sourceTree = "<group>"; };
-		6C2286B6242ED5F4001D5F58 /* XSHouseDetailsBasicInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSHouseDetailsBasicInfoCell.xib; sourceTree = "<group>"; };
-		6C2286B9242ED621001D5F58 /* XSHouseDetailsBusinessInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSHouseDetailsBusinessInfoCell.h; sourceTree = "<group>"; };
-		6C2286BA242ED621001D5F58 /* XSHouseDetailsBusinessInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSHouseDetailsBusinessInfoCell.m; sourceTree = "<group>"; };
-		6C2286BB242ED621001D5F58 /* XSHouseDetailsBusinessInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSHouseDetailsBusinessInfoCell.xib; sourceTree = "<group>"; };
-		6C2286BE242ED66C001D5F58 /* XSHouseDetailsAddressInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSHouseDetailsAddressInfoCell.h; sourceTree = "<group>"; };
-		6C2286BF242ED66C001D5F58 /* XSHouseDetailsAddressInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSHouseDetailsAddressInfoCell.m; sourceTree = "<group>"; };
-		6C2286C0242ED66C001D5F58 /* XSHouseDetailsAddressInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSHouseDetailsAddressInfoCell.xib; sourceTree = "<group>"; };
-		6C2286C3242ED6A7001D5F58 /* XSHouseDetailsFacilitiesInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSHouseDetailsFacilitiesInfoCell.h; sourceTree = "<group>"; };
-		6C2286C4242ED6A7001D5F58 /* XSHouseDetailsFacilitiesInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSHouseDetailsFacilitiesInfoCell.m; sourceTree = "<group>"; };
-		6C2286C5242ED6A7001D5F58 /* XSHouseDetailsFacilitiesInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSHouseDetailsFacilitiesInfoCell.xib; sourceTree = "<group>"; };
-		6C2286C8242ED706001D5F58 /* XSHouseDetailsIntroduceInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSHouseDetailsIntroduceInfoCell.h; sourceTree = "<group>"; };
-		6C2286C9242ED706001D5F58 /* XSHouseDetailsIntroduceInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSHouseDetailsIntroduceInfoCell.m; sourceTree = "<group>"; };
-		6C2286CA242ED706001D5F58 /* XSHouseDetailsIntroduceInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSHouseDetailsIntroduceInfoCell.xib; sourceTree = "<group>"; };
-		6C2286CD242ED730001D5F58 /* XSHouseRecommendedCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSHouseRecommendedCell.h; sourceTree = "<group>"; };
-		6C2286CE242ED730001D5F58 /* XSHouseRecommendedCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSHouseRecommendedCell.m; sourceTree = "<group>"; };
-		6C2286CF242ED730001D5F58 /* XSHouseRecommendedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSHouseRecommendedCell.xib; sourceTree = "<group>"; };
-		6C2286D7242ED788001D5F58 /* XSHouseDetailsInfoCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSHouseDetailsInfoCellModel.h; sourceTree = "<group>"; };
-		6C2286D8242ED788001D5F58 /* XSHouseDetailsInfoCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSHouseDetailsInfoCellModel.m; sourceTree = "<group>"; };
-		6C3BEA9F242C4A66001393EF /* XSPhotoPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSPhotoPickerView.m; sourceTree = "<group>"; };
-		6C3BEAA0242C4A66001393EF /* XSPhotoPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSPhotoPickerView.h; sourceTree = "<group>"; };
-		6C3BEAA2242C4A9C001393EF /* XSPhotoPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSPhotoPickerView.xib; sourceTree = "<group>"; };
-		6C3BEAB1242C7C3A001393EF /* XSLocationSearchview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSLocationSearchview.h; sourceTree = "<group>"; };
-		6C3BEAB2242C7C3A001393EF /* XSLocationSearchview.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSLocationSearchview.m; sourceTree = "<group>"; };
-		6C3BEAB6242C7C9B001393EF /* XSLocationSearchview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSLocationSearchview.xib; sourceTree = "<group>"; };
-		6C3BEB20242C8697001393EF /* XSHouseSubSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubSuccessViewController.h; sourceTree = "<group>"; };
-		6C3BEB21242C8697001393EF /* XSHouseSubmitBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubmitBaseViewController.h; sourceTree = "<group>"; };
-		6C3BEB22242C8697001393EF /* XSHouseSubmitFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubmitFirstViewController.m; sourceTree = "<group>"; };
-		6C3BEB23242C8697001393EF /* XSHouseSubmitFirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubmitFirstViewController.xib; sourceTree = "<group>"; };
-		6C3BEB24242C8697001393EF /* XSHouseSubSuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubSuccessViewController.xib; sourceTree = "<group>"; };
-		6C3BEB25242C8697001393EF /* XSHouseSubSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubSuccessViewController.m; sourceTree = "<group>"; };
-		6C3BEB26242C8697001393EF /* XSHouseSubmitFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubmitFirstViewController.h; sourceTree = "<group>"; };
-		6C3BEB27242C8697001393EF /* XSHouseSubmitBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubmitBaseViewController.m; sourceTree = "<group>"; };
-		6C3BEB29242C8697001393EF /* XSHouseSubCollectionviewBCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubCollectionviewBCell.m; sourceTree = "<group>"; };
-		6C3BEB2A242C8697001393EF /* XSHouseSubCollectionviewBCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubCollectionviewBCell.xib; sourceTree = "<group>"; };
-		6C3BEB2B242C8697001393EF /* XSHouseSubListChooseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubListChooseTableViewCell.xib; sourceTree = "<group>"; };
-		6C3BEB2C242C8697001393EF /* XSBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBaseTableViewCell.h; sourceTree = "<group>"; };
-		6C3BEB2E242C8697001393EF /* XSHouseSubListChooseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubListChooseTableViewCell.h; sourceTree = "<group>"; };
-		6C3BEB2F242C8697001393EF /* XSHouseSubTextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubTextViewCell.m; sourceTree = "<group>"; };
-		6C3BEB30242C8697001393EF /* XSHouseSubCollectionviewACell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubCollectionviewACell.m; sourceTree = "<group>"; };
-		6C3BEB31242C8697001393EF /* XSHouseSubCollectionviewACell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubCollectionviewACell.xib; sourceTree = "<group>"; };
-		6C3BEB32242C8697001393EF /* XSHouseSubTextViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubTextViewCell.xib; sourceTree = "<group>"; };
-		6C3BEB33242C8697001393EF /* XSHouseSubTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubTableViewCell.m; sourceTree = "<group>"; };
-		6C3BEB34242C8697001393EF /* XSHouseSubTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubTextFieldTableViewCell.h; sourceTree = "<group>"; };
-		6C3BEB35242C8697001393EF /* XSBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBaseTableViewCell.m; sourceTree = "<group>"; };
-		6C3BEB37242C8697001393EF /* XSHouseSubCollectionviewBCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubCollectionviewBCell.h; sourceTree = "<group>"; };
-		6C3BEB38242C8697001393EF /* XSHouseSubListChooseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubListChooseTableViewCell.m; sourceTree = "<group>"; };
-		6C3BEB39242C8697001393EF /* XSHouseSubTextFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubTextFieldTableViewCell.xib; sourceTree = "<group>"; };
-		6C3BEB3A242C8697001393EF /* XSHouseSubCollectionviewACell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubCollectionviewACell.h; sourceTree = "<group>"; };
-		6C3BEB3B242C8697001393EF /* XSHouseSubTextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubTextViewCell.h; sourceTree = "<group>"; };
-		6C3BEB3C242C8697001393EF /* XSHouseSubTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubTableViewCell.xib; sourceTree = "<group>"; };
-		6C3BEB3D242C8697001393EF /* XSHouseSubTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubTextFieldTableViewCell.m; sourceTree = "<group>"; };
-		6C3BEB3E242C8697001393EF /* XSHouseSubTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubTableViewCell.h; sourceTree = "<group>"; };
-		6C3BEB40242C8697001393EF /* XSHouseSubAllMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubAllMode.h; sourceTree = "<group>"; };
-		6C3BEB41242C8697001393EF /* XSHouseInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseInfoModel.m; sourceTree = "<group>"; };
-		6C3BEB42242C8697001393EF /* XSHouseEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseEnum.h; sourceTree = "<group>"; };
-		6C3BEB43242C8697001393EF /* XSHouseFixedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseFixedData.h; sourceTree = "<group>"; };
-		6C3BEB44242C8697001393EF /* XSHouseInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseInfoModel.h; sourceTree = "<group>"; };
-		6C3BEB45242C8697001393EF /* XSHouseInfoThird.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseInfoThird.json; sourceTree = "<group>"; };
-		6C3BEB46242C8697001393EF /* XSHouseInfoFirst.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseInfoFirst.json; sourceTree = "<group>"; };
-		6C3BEB47242C8697001393EF /* XSHouseEnum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseEnum.m; sourceTree = "<group>"; };
-		6C3BEB48242C8697001393EF /* XSHouseFixedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseFixedData.m; sourceTree = "<group>"; };
-		6C3BEB49242C8697001393EF /* XSHouseInfoSecond.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseInfoSecond.json; sourceTree = "<group>"; };
-		6C3BEB4B242C8697001393EF /* XSHouseModuleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseModuleViewController.h; sourceTree = "<group>"; };
-		6C3BEB4C242C8697001393EF /* XSHouseModuleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseModuleViewController.m; sourceTree = "<group>"; };
-		6C3BEB6A242C8D92001393EF /* XSCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSCollectionView.h; sourceTree = "<group>"; };
-		6C3BEB6B242C8D92001393EF /* XSCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSCollectionView.m; sourceTree = "<group>"; };
-		6C3BEB6D242C9215001393EF /* XSItemCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSItemCollectionViewCell.h; sourceTree = "<group>"; };
-		6C3BEB6E242C9215001393EF /* XSItemCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSItemCollectionViewCell.m; sourceTree = "<group>"; };
-		6C3BEB72242C98A1001393EF /* XSHouseSearch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseSearch.json; sourceTree = "<group>"; };
-		6C3BEB74242CA4DC001393EF /* XSRegionSearchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSRegionSearchView.h; sourceTree = "<group>"; };
-		6C3BEB75242CA4DC001393EF /* XSRegionSearchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSRegionSearchView.m; sourceTree = "<group>"; };
-		6C3BEB90242E3672001393EF /* XShouseSubNetworkInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XShouseSubNetworkInterface.m; sourceTree = "<group>"; };
-		6C3BEB91242E3672001393EF /* XShouseSubNetworkInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XShouseSubNetworkInterface.h; sourceTree = "<group>"; };
-		6C3BEB92242E3672001393EF /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
-		6C3BEB93242E3672001393EF /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
-		6C3BEB94242E3672001393EF /* HomePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageViewController.xib; sourceTree = "<group>"; };
-		6C3BEB99242E3731001393EF /* XSHouseModuleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseModuleViewController.xib; sourceTree = "<group>"; };
-		6C3BEBA1242E3995001393EF /* XSNavViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSNavViewController.h; sourceTree = "<group>"; };
-		6C3BEBA2242E3995001393EF /* XSNavViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSNavViewController.m; sourceTree = "<group>"; };
-		6C3BEBA7242E3B5F001393EF /* XSRoundedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSRoundedView.h; sourceTree = "<group>"; };
-		6C3BEBA8242E3B5F001393EF /* XSRoundedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSRoundedView.m; sourceTree = "<group>"; };
-		6C3BEBAA242E3B5F001393EF /* XSBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBaseViewController.m; sourceTree = "<group>"; };
-		6C3BEBAB242E3B5F001393EF /* XSBaseNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBaseNavViewController.m; sourceTree = "<group>"; };
-		6C3BEBAC242E3B5F001393EF /* XSBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBaseObject.h; sourceTree = "<group>"; };
-		6C3BEBAD242E3B5F001393EF /* XSBaseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBaseCollectionViewCell.m; sourceTree = "<group>"; };
-		6C3BEBAE242E3B5F001393EF /* XSBaseNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBaseNavViewController.h; sourceTree = "<group>"; };
-		6C3BEBAF242E3B5F001393EF /* XSBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBaseViewController.h; sourceTree = "<group>"; };
-		6C3BEBB0242E3B5F001393EF /* XSBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBaseObject.m; sourceTree = "<group>"; };
-		6C3BEBB1242E3B5F001393EF /* XSBaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBaseCollectionViewCell.h; sourceTree = "<group>"; };
-		6C3BEBB5242E3B60001393EF /* NSDictionary+safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+safe.h"; sourceTree = "<group>"; };
-		6C3BEBB6242E3B60001393EF /* NSDictionary+safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+safe.m"; sourceTree = "<group>"; };
-		6C3BEBB8242E3B60001393EF /* UIView+HBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HBExtension.h"; sourceTree = "<group>"; };
-		6C3BEBB9242E3B60001393EF /* UIView+HBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HBExtension.m"; sourceTree = "<group>"; };
-		6C3BEBBB242E3B60001393EF /* PrintBeautifulLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrintBeautifulLog.h; sourceTree = "<group>"; };
-		6C3BEBBC242E3B60001393EF /* NSMutableDictionary+safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+safe.m"; sourceTree = "<group>"; };
-		6C3BEBBD242E3B60001393EF /* PrintBeautifulLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrintBeautifulLog.m; sourceTree = "<group>"; };
-		6C3BEBBE242E3B60001393EF /* NSMutableDictionary+safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+safe.h"; sourceTree = "<group>"; };
-		6C3BEBC0242E3B60001393EF /* HBCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBCategory.h; sourceTree = "<group>"; };
-		6C3BEBC2242E3B60001393EF /* NSArray+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Category.m"; sourceTree = "<group>"; };
-		6C3BEBC3242E3B60001393EF /* NSArray+safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+safe.h"; sourceTree = "<group>"; };
-		6C3BEBC4242E3B60001393EF /* NSArray+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Category.h"; sourceTree = "<group>"; };
-		6C3BEBC5242E3B60001393EF /* NSArray+safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+safe.m"; sourceTree = "<group>"; };
-		6C3BEBC7242E3B60001393EF /* NSMutableArray+safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+safe.m"; sourceTree = "<group>"; };
-		6C3BEBC8242E3B60001393EF /* NSMutableArray+safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+safe.h"; sourceTree = "<group>"; };
-		6C3BEBCA242E3B60001393EF /* NSNumber+safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+safe.h"; sourceTree = "<group>"; };
-		6C3BEBCB242E3B60001393EF /* NSNumber+safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+safe.m"; sourceTree = "<group>"; };
-		6C3BEBCD242E3B60001393EF /* NSObject+safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+safe.m"; sourceTree = "<group>"; };
-		6C3BEBCE242E3B60001393EF /* NSObject+swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+swizzle.m"; sourceTree = "<group>"; };
-		6C3BEBCF242E3B60001393EF /* NSObject+category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+category.h"; sourceTree = "<group>"; };
-		6C3BEBD0242E3B60001393EF /* NSObject+HBNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HBNotification.m"; sourceTree = "<group>"; };
-		6C3BEBD1242E3B60001393EF /* NSObject+PerformBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PerformBlock.m"; sourceTree = "<group>"; };
-		6C3BEBD2242E3B60001393EF /* NSObject+swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+swizzle.h"; sourceTree = "<group>"; };
-		6C3BEBD3242E3B60001393EF /* NSObject+safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+safe.h"; sourceTree = "<group>"; };
-		6C3BEBD4242E3B60001393EF /* NSObject+HBNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HBNotification.h"; sourceTree = "<group>"; };
-		6C3BEBD5242E3B60001393EF /* NSObject+category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+category.m"; sourceTree = "<group>"; };
-		6C3BEBD6242E3B60001393EF /* NSObject+PerformBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PerformBlock.h"; sourceTree = "<group>"; };
-		6C3BEBD8242E3B60001393EF /* NSMutableString+safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+safe.h"; sourceTree = "<group>"; };
-		6C3BEBD9242E3B60001393EF /* NSMutableString+safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+safe.m"; sourceTree = "<group>"; };
-		6C3BEBDB242E3B60001393EF /* NSDate+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Category.m"; sourceTree = "<group>"; };
-		6C3BEBDC242E3B60001393EF /* NSDate+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Category.h"; sourceTree = "<group>"; };
 		6C6BC146241FA75300B62001 /* 房鼎汇.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "房鼎汇.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C6BC149241FA75300B62001 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		6C6BC14A241FA75300B62001 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6C6BC14C241FA75300B62001 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		6C6BC14D241FA75300B62001 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		6C6BC155241FA75400B62001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6C6BC158241FA75400B62001 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		6C6BC15A241FA75400B62001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6C6BC15B241FA75400B62001 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6C6BC162241FA84100B62001 /* XSTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSTabBarViewController.h; sourceTree = "<group>"; };
-		6C6BC163241FA84100B62001 /* XSTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSTabBarViewController.m; sourceTree = "<group>"; };
-		6C6BC16C241FA9D800B62001 /* FindHouseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FindHouseViewController.h; sourceTree = "<group>"; };
-		6C6BC16D241FA9D800B62001 /* FindHouseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FindHouseViewController.m; sourceTree = "<group>"; };
-		6C6BC172241FA9F400B62001 /* MessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
-		6C6BC173241FA9F400B62001 /* MessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
-		6C6BC17B241FBB6700B62001 /* XSLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSLoginViewController.h; sourceTree = "<group>"; };
-		6C6BC17C241FBB6700B62001 /* XSLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSLoginViewController.m; sourceTree = "<group>"; };
-		6C6BC17D241FBB6700B62001 /* XSLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSLoginViewController.xib; sourceTree = "<group>"; };
-		6C6BC180241FBBAC00B62001 /* MyInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyInfoViewController.h; sourceTree = "<group>"; };
-		6C6BC181241FBBAC00B62001 /* MyInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyInfoViewController.m; sourceTree = "<group>"; };
-		6C6BC182241FBBAC00B62001 /* MyInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyInfoViewController.xib; sourceTree = "<group>"; };
 		6C6BC185241FD0FC00B62001 /* XSPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSPrefixHeader.pch; sourceTree = "<group>"; };
-		6C7DFE7024265076003E86D7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		6C7DFE7124265076003E86D7 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		6C7DFE7224265077003E86D7 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6C9FF79F243023810020509C /* XSSearchConditionalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSSearchConditionalView.xib; sourceTree = "<group>"; };
-		6C9FF7A1243035C70020509C /* XSHouseSubFootView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSHouseSubFootView.h; sourceTree = "<group>"; };
-		6C9FF7A2243035C70020509C /* XSHouseSubFootView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubFootView.m; sourceTree = "<group>"; };
-		6C9FF7A4243035D40020509C /* XSHouseSubFootView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSHouseSubFootView.xib; sourceTree = "<group>"; };
-		6C9FF7A6243074BD0020509C /* XSHouseSave.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseSave.json; sourceTree = "<group>"; };
-		6C9FF7A8243082590020509C /* XSHouseRentStatusView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSHouseRentStatusView.h; sourceTree = "<group>"; };
-		6C9FF7A9243082590020509C /* XSHouseRentStatusView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSHouseRentStatusView.m; sourceTree = "<group>"; };
 		6C9FF7AB24309BFE0020509C /* fangdinghui.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = fangdinghui.cer; sourceTree = "<group>"; };
-		6C9FF7AD2430AE220020509C /* XSHouseInfoSecondTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseInfoSecondTest.json; sourceTree = "<group>"; };
-		6C9FF7AE2430AE220020509C /* XSHouseInfoThirdTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseInfoThirdTest.json; sourceTree = "<group>"; };
-		6C9FF7AF2430AE220020509C /* XSHouseInfoFirstTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseInfoFirstTest.json; sourceTree = "<group>"; };
-		6C9FF7B32430F0700020509C /* xaxaxax.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xaxaxax.png; sourceTree = "<group>"; };
-		6C9FF7B8243211620020509C /* XSMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMapViewController.h; sourceTree = "<group>"; };
-		6C9FF7B9243211620020509C /* XSMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSMapViewController.m; sourceTree = "<group>"; };
-		6CDCE3A02426E6850049AE63 /* XSNetworkInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSNetworkInterface.h; sourceTree = "<group>"; };
-		6CDCE3A12426E6850049AE63 /* XSNetworkInterface.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSNetworkInterface.m; sourceTree = "<group>"; };
-		6CDCE3A32426ED9B0049AE63 /* XSOperationParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSOperationParam.h; sourceTree = "<group>"; };
-		6CDCE3A42426ED9B0049AE63 /* XSOperationParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSOperationParam.m; sourceTree = "<group>"; };
-		6CDCE3A72426F5D50049AE63 /* XSUserInfoInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSUserInfoInterface.h; sourceTree = "<group>"; };
-		6CDCE3A82426F5D50049AE63 /* XSUserInfoInterface.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSUserInfoInterface.m; sourceTree = "<group>"; };
-		6CDCE3DD24273CB10049AE63 /* xsjson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = xsjson.json; sourceTree = "<group>"; };
-		6CE51BAA242F58CC00023FFC /* XSHouseIntroduceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSHouseIntroduceController.h; sourceTree = "<group>"; };
-		6CE51BAB242F58CC00023FFC /* XSHouseIntroduceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSHouseIntroduceController.m; sourceTree = "<group>"; };
-		6CE51BAC242F58CC00023FFC /* XSHouseIntroduceController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSHouseIntroduceController.xib; sourceTree = "<group>"; };
-		6CE51BB1242F65F200023FFC /* XSHouseCallPhone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSHouseCallPhone.h; sourceTree = "<group>"; };
-		6CE51BB2242F65F200023FFC /* XSHouseCallPhone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSHouseCallPhone.m; sourceTree = "<group>"; };
-		6CE51BB4242F660A00023FFC /* XSHouseCallPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSHouseCallPhone.xib; sourceTree = "<group>"; };
-		6CED867124274AA80059CDC5 /* XSUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSUserModel.h; sourceTree = "<group>"; };
-		6CED867224274AA80059CDC5 /* XSUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSUserModel.m; sourceTree = "<group>"; };
-		6CED867424274CB30059CDC5 /* XSLogInVcModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSLogInVcModel.h; sourceTree = "<group>"; };
-		6CED867524274CB30059CDC5 /* XSLogInVcModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSLogInVcModel.m; sourceTree = "<group>"; };
-		6CED867724274CE60059CDC5 /* XSUserLogInModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSUserLogInModel.h; sourceTree = "<group>"; };
-		6CED867824274CE60059CDC5 /* XSUserLogInModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSUserLogInModel.m; sourceTree = "<group>"; };
-		6CED867B242756950059CDC5 /* XSUserServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSUserServer.h; sourceTree = "<group>"; };
-		6CED867C242756950059CDC5 /* XSUserServer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSUserServer.m; sourceTree = "<group>"; };
-		6CF0E776242E481F000A9815 /* XSHouseRentInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseRentInfoModel.m; sourceTree = "<group>"; };
-		6CF0E777242E4820000A9815 /* XSHouseRentInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseRentInfoModel.h; sourceTree = "<group>"; };
-		6CF0E77B242E5E57000A9815 /* XSMyPublishHosueController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSMyPublishHosueController.h; sourceTree = "<group>"; };
-		6CF0E77C242E5E57000A9815 /* XSMyPublishHosueController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSMyPublishHosueController.m; sourceTree = "<group>"; };
 		854FDABF6045260FA4A570E3 /* Pods-XSHouseLease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XSHouseLease.release.xcconfig"; path = "Target Support Files/Pods-XSHouseLease/Pods-XSHouseLease.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -375,456 +383,560 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		6C06ED63242EDA5300FD8B18 /* 房屋数据模型 */ = {
+		55198A8024371815006A9D67 /* XSHouseLease */ = {
 			isa = PBXGroup;
 			children = (
-				555A6782242DE1B7003847A0 /* XSBHouseInfoModel.h */,
-				555A6783242DE1B7003847A0 /* XSBHouseInfoModel.m */,
-				6CF0E777242E4820000A9815 /* XSHouseRentInfoModel.h */,
-				6CF0E776242E481F000A9815 /* XSHouseRentInfoModel.m */,
-				6C9FF7A8243082590020509C /* XSHouseRentStatusView.h */,
-				6C9FF7A9243082590020509C /* XSHouseRentStatusView.m */,
+				55198A9E24371815006A9D67 /* 0三方头文件 */,
+				55198AE924371815006A9D67 /* 1BaseClass */,
+				55198AA224371815006A9D67 /* 2Category */,
+				55198AF424371815006A9D67 /* 3网络基础 */,
+				55198AFA24371815006A9D67 /* 项目结构 */,
+				55198ACB24371815006A9D67 /* 项目结构2 */,
+				55198ADE24371815006A9D67 /* 项目框架 */,
+				55198A8124371815006A9D67 /* 项目组件 */,
+				55198A9D24371815006A9D67 /* Assets.xcassets */,
+				55198AF924371815006A9D67 /* Info.plist */,
+				55198A9F24371815006A9D67 /* LaunchScreen.storyboard */,
+				55198ADD24371815006A9D67 /* main.m */,
+				55198AA124371815006A9D67 /* Main.storyboard */,
 			);
-			path = "房屋数据模型";
+			path = XSHouseLease;
 			sourceTree = "<group>";
 		};
-		6C06ED64242EDA7100FD8B18 /* 房屋基础组件 */ = {
+		55198A8124371815006A9D67 /* 项目组件 */ = {
 			isa = PBXGroup;
 			children = (
-				555A677F242DE192003847A0 /* XSHouseInfoCell.h */,
-				555A6780242DE192003847A0 /* XSHouseInfoCell.m */,
-				555A677C242DE121003847A0 /* XSHouseInfoTableView.h */,
-				555A677D242DE121003847A0 /* XSHouseInfoTableView.m */,
+				55198A8324371815006A9D67 /* XSBusinessCollectionCell.h */,
+				55198A8F24371815006A9D67 /* XSBusinessCollectionCell.m */,
+				55198A8824371815006A9D67 /* XSBusinessInfoModel.h */,
+				55198A9724371815006A9D67 /* XSBusinessInfoModel.m */,
+				55198A9A24371815006A9D67 /* XSBusinessInfoSever.h */,
+				55198A8C24371815006A9D67 /* XSBusinessInfoSever.m */,
+				55198A8424371815006A9D67 /* XSCollectionView.h */,
+				55198A8E24371815006A9D67 /* XSCollectionView.m */,
+				55198A9124371815006A9D67 /* XSFacilitiesInfoJson.json */,
+				55198A8B24371815006A9D67 /* XSHouseBunnerModel.h */,
+				55198A9C24371815006A9D67 /* XSHouseBunnerModel.m */,
+				55198A9224371815006A9D67 /* XSHouseBusinessInfo.json */,
+				55198A8224371815006A9D67 /* XSItemCollectionViewCell.h */,
+				55198A9024371815006A9D67 /* XSItemCollectionViewCell.m */,
+				55198A9924371815006A9D67 /* XSItemCollectionViewCell.xib */,
+				55198A8D24371815006A9D67 /* XSLocationSearchview.h */,
+				55198A8524371815006A9D67 /* XSLocationSearchview.m */,
+				55198A9B24371815006A9D67 /* XSLocationSearchview.xib */,
+				55198A8724371815006A9D67 /* XSMapViewController.h */,
+				55198A9824371815006A9D67 /* XSMapViewController.m */,
+				55198A8924371815006A9D67 /* XSPhotoPickerView.h */,
+				55198A9524371815006A9D67 /* XSPhotoPickerView.m */,
+				55198A9624371815006A9D67 /* XSPhotoPickerView.xib */,
+				55198A9324371815006A9D67 /* XSRegionSearchView.h */,
+				55198A8624371815006A9D67 /* XSRegionSearchView.m */,
+				55198A8A24371815006A9D67 /* XSRoundedView.h */,
+				55198A9424371815006A9D67 /* XSRoundedView.m */,
 			);
-			path = "房屋基础组件";
+			path = "项目组件";
 			sourceTree = "<group>";
 		};
-		6C06ED65242EDB1E00FD8B18 /* 模块主页 */ = {
-			isa = PBXGroup;
-			children = (
-				6C3BEB4B242C8697001393EF /* XSHouseModuleViewController.h */,
-				6C3BEB4C242C8697001393EF /* XSHouseModuleViewController.m */,
-				6C3BEB99242E3731001393EF /* XSHouseModuleViewController.xib */,
-				6C9FF79F243023810020509C /* XSSearchConditionalView.xib */,
-			);
-			path = "模块主页";
-			sourceTree = "<group>";
-		};
-		6C2286A9242ED4D0001D5F58 /* cell */ = {
-			isa = PBXGroup;
-			children = (
-				6CE51BC0243003FA00023FFC /* 猜你喜欢 */,
-				6CE51BBF2430037800023FFC /* 房源介绍 */,
-				6CE51BBE2430036300023FFC /* 房屋物品信息 */,
-				6CE51BBD2430031D00023FFC /* 房屋地图 */,
-				6CE51BBC2430030C00023FFC /* 房屋配套信息 */,
-				6CE51BBB243002E700023FFC /* 房屋基本信息 */,
-				6CE51BBA243002D700023FFC /* 头部轮播图 */,
-			);
-			path = cell;
-			sourceTree = "<group>";
-		};
-		6C3BEB83242E3672001393EF /* 3房屋详情展示 */ = {
-			isa = PBXGroup;
-			children = (
-				6CE51BB1242F65F200023FFC /* XSHouseCallPhone.h */,
-				6CE51BB2242F65F200023FFC /* XSHouseCallPhone.m */,
-				6CE51BB4242F660A00023FFC /* XSHouseCallPhone.xib */,
-				6C0DA7CF242EDD8C000A59B6 /* XSHouseDetailsInfo.json */,
-				6C2286D7242ED788001D5F58 /* XSHouseDetailsInfoCellModel.h */,
-				6C2286D8242ED788001D5F58 /* XSHouseDetailsInfoCellModel.m */,
-				6C22869F242E8719001D5F58 /* XSHouseDetailsController.h */,
-				6C2286A0242E8719001D5F58 /* XSHouseDetailsController.m */,
-				6C2286A1242E8719001D5F58 /* XSHouseDetailsController.xib */,
-				6C2286A9242ED4D0001D5F58 /* cell */,
-			);
-			path = "3房屋详情展示";
-			sourceTree = "<group>";
-		};
-		6C3BEB87242E3672001393EF /* 2房屋信息列表 */ = {
-			isa = PBXGroup;
-			children = (
-				555A6785242DF069003847A0 /* XSHouseRentInfoCell.h */,
-				555A6786242DF069003847A0 /* XSHouseRentInfoCell.m */,
-				555A6787242DF069003847A0 /* XSHouseRentInfoCell.xib */,
-				6CF0E77B242E5E57000A9815 /* XSMyPublishHosueController.h */,
-				6CF0E77C242E5E57000A9815 /* XSMyPublishHosueController.m */,
-			);
-			path = "2房屋信息列表";
-			sourceTree = "<group>";
-		};
-		6C3BEB8B242E3672001393EF /* 1房屋信息上传 */ = {
-			isa = PBXGroup;
-			children = (
-				6C9FF7AF2430AE220020509C /* XSHouseInfoFirstTest.json */,
-				6C9FF7AD2430AE220020509C /* XSHouseInfoSecondTest.json */,
-				6C9FF7AE2430AE220020509C /* XSHouseInfoThirdTest.json */,
-				6C3BEB43242C8697001393EF /* XSHouseFixedData.h */,
-				6C3BEB48242C8697001393EF /* XSHouseFixedData.m */,
-				6C3BEB40242C8697001393EF /* XSHouseSubAllMode.h */,
-				6C3BEB46242C8697001393EF /* XSHouseInfoFirst.json */,
-				6C3BEB49242C8697001393EF /* XSHouseInfoSecond.json */,
-				6C3BEB45242C8697001393EF /* XSHouseInfoThird.json */,
-				6C3BEB8D242E3672001393EF /* 1Model */,
-				6C3BEB8C242E3672001393EF /* 2View */,
-				6C3BEB8E242E3672001393EF /* 3Controller */,
-			);
-			path = "1房屋信息上传";
-			sourceTree = "<group>";
-		};
-		6C3BEB8C242E3672001393EF /* 2View */ = {
-			isa = PBXGroup;
-			children = (
-				6CE51BC12430042500023FFC /* BaseCell */,
-				6CE51BB62430003000023FFC /* TextField */,
-				6CE51BB72430004100023FFC /* ListChoose */,
-				6CE51BB82430004D00023FFC /* Collection */,
-				6CE51BB92430006600023FFC /* TextView */,
-				6C9FF7A1243035C70020509C /* XSHouseSubFootView.h */,
-				6C9FF7A2243035C70020509C /* XSHouseSubFootView.m */,
-				6C9FF7A4243035D40020509C /* XSHouseSubFootView.xib */,
-			);
-			path = 2View;
-			sourceTree = "<group>";
-		};
-		6C3BEB8D242E3672001393EF /* 1Model */ = {
-			isa = PBXGroup;
-			children = (
-				6C3BEB42242C8697001393EF /* XSHouseEnum.h */,
-				6C3BEB47242C8697001393EF /* XSHouseEnum.m */,
-				6C3BEB44242C8697001393EF /* XSHouseInfoModel.h */,
-				6C3BEB41242C8697001393EF /* XSHouseInfoModel.m */,
-			);
-			path = 1Model;
-			sourceTree = "<group>";
-		};
-		6C3BEB8E242E3672001393EF /* 3Controller */ = {
-			isa = PBXGroup;
-			children = (
-				6C3BEB21242C8697001393EF /* XSHouseSubmitBaseViewController.h */,
-				6C3BEB27242C8697001393EF /* XSHouseSubmitBaseViewController.m */,
-				6C3BEB26242C8697001393EF /* XSHouseSubmitFirstViewController.h */,
-				6C3BEB22242C8697001393EF /* XSHouseSubmitFirstViewController.m */,
-				6C3BEB23242C8697001393EF /* XSHouseSubmitFirstViewController.xib */,
-				6C3BEB20242C8697001393EF /* XSHouseSubSuccessViewController.h */,
-				6C3BEB25242C8697001393EF /* XSHouseSubSuccessViewController.m */,
-				6C3BEB24242C8697001393EF /* XSHouseSubSuccessViewController.xib */,
-			);
-			path = 3Controller;
-			sourceTree = "<group>";
-		};
-		6C3BEB8F242E3672001393EF /* 0房屋信息接口 */ = {
-			isa = PBXGroup;
-			children = (
-				6C9FF7A6243074BD0020509C /* XSHouseSave.json */,
-				6C3BEB91242E3672001393EF /* XShouseSubNetworkInterface.h */,
-				6C3BEB90242E3672001393EF /* XShouseSubNetworkInterface.m */,
-			);
-			path = "0房屋信息接口";
-			sourceTree = "<group>";
-		};
-		6C3BEB9B242E3767001393EF /* 用户信息接口 */ = {
-			isa = PBXGroup;
-			children = (
-				6CDCE3A72426F5D50049AE63 /* XSUserInfoInterface.h */,
-				6CDCE3A82426F5D50049AE63 /* XSUserInfoInterface.m */,
-			);
-			path = "用户信息接口";
-			sourceTree = "<group>";
-		};
-		6C3BEB9C242E383E001393EF /* 搜索控件 */ = {
-			isa = PBXGroup;
-			children = (
-				6C3BEAB1242C7C3A001393EF /* XSLocationSearchview.h */,
-				6C3BEAB2242C7C3A001393EF /* XSLocationSearchview.m */,
-				6C3BEAB6242C7C9B001393EF /* XSLocationSearchview.xib */,
-				6C3BEB74242CA4DC001393EF /* XSRegionSearchView.h */,
-				6C3BEB75242CA4DC001393EF /* XSRegionSearchView.m */,
-			);
-			path = "搜索控件";
-			sourceTree = "<group>";
-		};
-		6C3BEB9D242E3878001393EF /* CollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				6C3BEB6D242C9215001393EF /* XSItemCollectionViewCell.h */,
-				6C3BEB6E242C9215001393EF /* XSItemCollectionViewCell.m */,
-				6C3BEB6A242C8D92001393EF /* XSCollectionView.h */,
-				6C3BEB6B242C8D92001393EF /* XSCollectionView.m */,
-			);
-			path = CollectionView;
-			sourceTree = "<group>";
-		};
-		6C3BEB9E242E388C001393EF /* TableView */ = {
+		55198A9E24371815006A9D67 /* 0三方头文件 */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = TableView;
+			path = "0三方头文件";
 			sourceTree = "<group>";
 		};
-		6C3BEB9F242E38AA001393EF /* 轮播控件 */ = {
+		55198AA224371815006A9D67 /* 2Category */ = {
 			isa = PBXGroup;
 			children = (
-				555A678B242DF15C003847A0 /* XSHouseBunnerModel.h */,
-				555A678C242DF15C003847A0 /* XSHouseBunnerModel.m */,
-			);
-			path = "轮播控件";
-			sourceTree = "<group>";
-		};
-		6C3BEBA0242E3921001393EF /* 图片上传控件 */ = {
-			isa = PBXGroup;
-			children = (
-				6C3BEAA0242C4A66001393EF /* XSPhotoPickerView.h */,
-				6C3BEA9F242C4A66001393EF /* XSPhotoPickerView.m */,
-				6C3BEAA2242C4A9C001393EF /* XSPhotoPickerView.xib */,
-			);
-			path = "图片上传控件";
-			sourceTree = "<group>";
-		};
-		6C3BEBA4242E3B5F001393EF /* 5项目组件 */ = {
-			isa = PBXGroup;
-			children = (
-				6C0DA7DB242EF94D000A59B6 /* XSHouseBusinessInfo.json */,
-				6C0DA7EC242F1C58000A59B6 /* XSFacilitiesInfoJson.json */,
-				6C0DA7DD242EFF0C000A59B6 /* XSBusinessInfoSever.h */,
-				6C0DA7DE242EFF0C000A59B6 /* XSBusinessInfoSever.m */,
-				6C0DA7D8242EF5E7000A59B6 /* XSBusinessInfoModel.h */,
-				6C0DA7D9242EF5E7000A59B6 /* XSBusinessInfoModel.m */,
-				6C0DA7D5242EF5C8000A59B6 /* XSBusinessCollectionCell.h */,
-				6C0DA7D6242EF5C8000A59B6 /* XSBusinessCollectionCell.m */,
-				6C3BEBA0242E3921001393EF /* 图片上传控件 */,
-				6C3BEB9F242E38AA001393EF /* 轮播控件 */,
-				6C3BEB9E242E388C001393EF /* TableView */,
-				6C3BEB9D242E3878001393EF /* CollectionView */,
-				6C3BEB9C242E383E001393EF /* 搜索控件 */,
-			);
-			path = "5项目组件";
-			sourceTree = "<group>";
-		};
-		6C3BEBA5242E3B5F001393EF /* 6项目结构 */ = {
-			isa = PBXGroup;
-			children = (
-				6C9FF79E24301AFB0020509C /* 固定接口模型 */,
-				6C3BEBF1242E3C89001393EF /* 房屋 */,
-				6CDCE3E7242740AB0049AE63 /* 首页 */,
-				6CDCE3E8242740B00049AE63 /* 查找 */,
-				6CDCE3E6242740A20049AE63 /* 消息 */,
-				6C6BC179241FBB1700B62001 /* 我的 */,
-			);
-			path = "6项目结构";
-			sourceTree = "<group>";
-		};
-		6C3BEBA6242E3B5F001393EF /* 3CustomView */ = {
-			isa = PBXGroup;
-			children = (
-				6C3BEBA7242E3B5F001393EF /* XSRoundedView.h */,
-				6C3BEBA8242E3B5F001393EF /* XSRoundedView.m */,
-			);
-			path = 3CustomView;
-			sourceTree = "<group>";
-		};
-		6C3BEBA9242E3B5F001393EF /* 1BaseClass */ = {
-			isa = PBXGroup;
-			children = (
-				6C3BEBAC242E3B5F001393EF /* XSBaseObject.h */,
-				6C3BEBB0242E3B5F001393EF /* XSBaseObject.m */,
-				6C3BEBAF242E3B5F001393EF /* XSBaseViewController.h */,
-				6C3BEBAA242E3B5F001393EF /* XSBaseViewController.m */,
-				6C3BEBAE242E3B5F001393EF /* XSBaseNavViewController.h */,
-				6C3BEBAB242E3B5F001393EF /* XSBaseNavViewController.m */,
-				6C3BEB2C242C8697001393EF /* XSBaseTableViewCell.h */,
-				6C3BEB35242C8697001393EF /* XSBaseTableViewCell.m */,
-				6C3BEBB1242E3B5F001393EF /* XSBaseCollectionViewCell.h */,
-				6C3BEBAD242E3B5F001393EF /* XSBaseCollectionViewCell.m */,
-			);
-			path = 1BaseClass;
-			sourceTree = "<group>";
-		};
-		6C3BEBB2242E3B5F001393EF /* 4Network */ = {
-			isa = PBXGroup;
-			children = (
-				6CDCE3A32426ED9B0049AE63 /* XSOperationParam.h */,
-				6CDCE3A42426ED9B0049AE63 /* XSOperationParam.m */,
-				6CDCE3A02426E6850049AE63 /* XSNetworkInterface.h */,
-				6CDCE3A12426E6850049AE63 /* XSNetworkInterface.m */,
-			);
-			path = 4Network;
-			sourceTree = "<group>";
-		};
-		6C3BEBB3242E3B60001393EF /* 2Category */ = {
-			isa = PBXGroup;
-			children = (
-				6C3BEBB4242E3B60001393EF /* NSDictionary */,
-				6C3BEBB7242E3B60001393EF /* NSView */,
-				6C3BEBBA242E3B60001393EF /* NSMutableDictionary */,
-				6C3BEBBF242E3B60001393EF /* Headers */,
-				6C3BEBC1242E3B60001393EF /* NSArray */,
-				6C3BEBC6242E3B60001393EF /* NSMutableArray */,
-				6C3BEBC9242E3B60001393EF /* NSNumber */,
-				6C3BEBCC242E3B60001393EF /* NSObject */,
-				6C3BEBD7242E3B60001393EF /* NSMutableString */,
-				6C3BEBDA242E3B60001393EF /* NSDate */,
+				55198AA924371815006A9D67 /* HBCategory.h */,
+				55198AAF24371815006A9D67 /* NSArray */,
+				55198AC824371815006A9D67 /* NSDate */,
+				55198AA324371815006A9D67 /* NSDictionary */,
+				55198AB424371815006A9D67 /* NSMutableArray */,
+				55198AAA24371815006A9D67 /* NSMutableDictionary */,
+				55198AC524371815006A9D67 /* NSMutableString */,
+				55198AB724371815006A9D67 /* NSNumber */,
+				55198ABA24371815006A9D67 /* NSObject */,
+				55198AA624371815006A9D67 /* NSView */,
 			);
 			path = 2Category;
 			sourceTree = "<group>";
 		};
-		6C3BEBB4242E3B60001393EF /* NSDictionary */ = {
+		55198AA324371815006A9D67 /* NSDictionary */ = {
 			isa = PBXGroup;
 			children = (
-				6C3BEBB5242E3B60001393EF /* NSDictionary+safe.h */,
-				6C3BEBB6242E3B60001393EF /* NSDictionary+safe.m */,
+				55198AA424371815006A9D67 /* NSDictionary+safe.h */,
+				55198AA524371815006A9D67 /* NSDictionary+safe.m */,
 			);
 			path = NSDictionary;
 			sourceTree = "<group>";
 		};
-		6C3BEBB7242E3B60001393EF /* NSView */ = {
+		55198AA624371815006A9D67 /* NSView */ = {
 			isa = PBXGroup;
 			children = (
-				6C3BEBB8242E3B60001393EF /* UIView+HBExtension.h */,
-				6C3BEBB9242E3B60001393EF /* UIView+HBExtension.m */,
+				55198AA724371815006A9D67 /* UIView+HBExtension.h */,
+				55198AA824371815006A9D67 /* UIView+HBExtension.m */,
 			);
 			path = NSView;
 			sourceTree = "<group>";
 		};
-		6C3BEBBA242E3B60001393EF /* NSMutableDictionary */ = {
+		55198AAA24371815006A9D67 /* NSMutableDictionary */ = {
 			isa = PBXGroup;
 			children = (
-				6C3BEBBB242E3B60001393EF /* PrintBeautifulLog.h */,
-				6C3BEBBC242E3B60001393EF /* NSMutableDictionary+safe.m */,
-				6C3BEBBD242E3B60001393EF /* PrintBeautifulLog.m */,
-				6C3BEBBE242E3B60001393EF /* NSMutableDictionary+safe.h */,
+				55198AAB24371815006A9D67 /* PrintBeautifulLog.h */,
+				55198AAC24371815006A9D67 /* NSMutableDictionary+safe.m */,
+				55198AAD24371815006A9D67 /* PrintBeautifulLog.m */,
+				55198AAE24371815006A9D67 /* NSMutableDictionary+safe.h */,
 			);
 			path = NSMutableDictionary;
 			sourceTree = "<group>";
 		};
-		6C3BEBBF242E3B60001393EF /* Headers */ = {
+		55198AAF24371815006A9D67 /* NSArray */ = {
 			isa = PBXGroup;
 			children = (
-				6C3BEBC0242E3B60001393EF /* HBCategory.h */,
-			);
-			path = Headers;
-			sourceTree = "<group>";
-		};
-		6C3BEBC1242E3B60001393EF /* NSArray */ = {
-			isa = PBXGroup;
-			children = (
-				6C3BEBC2242E3B60001393EF /* NSArray+Category.m */,
-				6C3BEBC3242E3B60001393EF /* NSArray+safe.h */,
-				6C3BEBC4242E3B60001393EF /* NSArray+Category.h */,
-				6C3BEBC5242E3B60001393EF /* NSArray+safe.m */,
+				55198AB024371815006A9D67 /* NSArray+Category.m */,
+				55198AB124371815006A9D67 /* NSArray+safe.h */,
+				55198AB224371815006A9D67 /* NSArray+Category.h */,
+				55198AB324371815006A9D67 /* NSArray+safe.m */,
 			);
 			path = NSArray;
 			sourceTree = "<group>";
 		};
-		6C3BEBC6242E3B60001393EF /* NSMutableArray */ = {
+		55198AB424371815006A9D67 /* NSMutableArray */ = {
 			isa = PBXGroup;
 			children = (
-				6C3BEBC7242E3B60001393EF /* NSMutableArray+safe.m */,
-				6C3BEBC8242E3B60001393EF /* NSMutableArray+safe.h */,
+				55198AB524371815006A9D67 /* NSMutableArray+safe.m */,
+				55198AB624371815006A9D67 /* NSMutableArray+safe.h */,
 			);
 			path = NSMutableArray;
 			sourceTree = "<group>";
 		};
-		6C3BEBC9242E3B60001393EF /* NSNumber */ = {
+		55198AB724371815006A9D67 /* NSNumber */ = {
 			isa = PBXGroup;
 			children = (
-				6C3BEBCA242E3B60001393EF /* NSNumber+safe.h */,
-				6C3BEBCB242E3B60001393EF /* NSNumber+safe.m */,
+				55198AB824371815006A9D67 /* NSNumber+safe.h */,
+				55198AB924371815006A9D67 /* NSNumber+safe.m */,
 			);
 			path = NSNumber;
 			sourceTree = "<group>";
 		};
-		6C3BEBCC242E3B60001393EF /* NSObject */ = {
+		55198ABA24371815006A9D67 /* NSObject */ = {
 			isa = PBXGroup;
 			children = (
-				6C3BEBCD242E3B60001393EF /* NSObject+safe.m */,
-				6C3BEBCE242E3B60001393EF /* NSObject+swizzle.m */,
-				6C3BEBCF242E3B60001393EF /* NSObject+category.h */,
-				6C3BEBD0242E3B60001393EF /* NSObject+HBNotification.m */,
-				6C3BEBD1242E3B60001393EF /* NSObject+PerformBlock.m */,
-				6C3BEBD2242E3B60001393EF /* NSObject+swizzle.h */,
-				6C3BEBD3242E3B60001393EF /* NSObject+safe.h */,
-				6C3BEBD4242E3B60001393EF /* NSObject+HBNotification.h */,
-				6C3BEBD5242E3B60001393EF /* NSObject+category.m */,
-				6C3BEBD6242E3B60001393EF /* NSObject+PerformBlock.h */,
+				55198ABB24371815006A9D67 /* NSObject+safe.m */,
+				55198ABC24371815006A9D67 /* NSObject+swizzle.m */,
+				55198ABD24371815006A9D67 /* NSObject+category.h */,
+				55198ABE24371815006A9D67 /* NSObject+HBNotification.m */,
+				55198ABF24371815006A9D67 /* NSObject+PerformBlock.m */,
+				55198AC024371815006A9D67 /* NSObject+swizzle.h */,
+				55198AC124371815006A9D67 /* NSObject+safe.h */,
+				55198AC224371815006A9D67 /* NSObject+HBNotification.h */,
+				55198AC324371815006A9D67 /* NSObject+category.m */,
+				55198AC424371815006A9D67 /* NSObject+PerformBlock.h */,
 			);
 			path = NSObject;
 			sourceTree = "<group>";
 		};
-		6C3BEBD7242E3B60001393EF /* NSMutableString */ = {
+		55198AC524371815006A9D67 /* NSMutableString */ = {
 			isa = PBXGroup;
 			children = (
-				6C3BEBD8242E3B60001393EF /* NSMutableString+safe.h */,
-				6C3BEBD9242E3B60001393EF /* NSMutableString+safe.m */,
+				55198AC624371815006A9D67 /* NSMutableString+safe.h */,
+				55198AC724371815006A9D67 /* NSMutableString+safe.m */,
 			);
 			path = NSMutableString;
 			sourceTree = "<group>";
 		};
-		6C3BEBDA242E3B60001393EF /* NSDate */ = {
+		55198AC824371815006A9D67 /* NSDate */ = {
 			isa = PBXGroup;
 			children = (
-				6C3BEBDB242E3B60001393EF /* NSDate+Category.m */,
-				6C3BEBDC242E3B60001393EF /* NSDate+Category.h */,
+				55198AC924371815006A9D67 /* NSDate+Category.m */,
+				55198ACA24371815006A9D67 /* NSDate+Category.h */,
 			);
 			path = NSDate;
 			sourceTree = "<group>";
 		};
-		6C3BEBF1242E3C89001393EF /* 房屋 */ = {
+		55198ACB24371815006A9D67 /* 项目结构2 */ = {
 			isa = PBXGroup;
 			children = (
-				6C3BEB8F242E3672001393EF /* 0房屋信息接口 */,
-				6C06ED63242EDA5300FD8B18 /* 房屋数据模型 */,
-				6C06ED64242EDA7100FD8B18 /* 房屋基础组件 */,
-				6C06ED65242EDB1E00FD8B18 /* 模块主页 */,
-				6C3BEB8B242E3672001393EF /* 1房屋信息上传 */,
-				6C3BEB87242E3672001393EF /* 2房屋信息列表 */,
-				6C3BEB83242E3672001393EF /* 3房屋详情展示 */,
+				55198AD224371815006A9D67 /* 1头文件(模型，组件，网络) */,
+				55198ACC24371815006A9D67 /* 2枚举Block */,
+				55198ADA24371815006A9D67 /* 3数据模型 */,
+				55198AD624371815006A9D67 /* 4网络请求 */,
+				55198AD324371815006A9D67 /* 5公共组件 */,
+				55198AD524371815006A9D67 /* S1业务基类 */,
+				55198AD724371815006A9D67 /* S2业务组件 */,
+				55198ACD24371815006A9D67 /* S3业务模块 */,
+			);
+			path = "项目结构2";
+			sourceTree = "<group>";
+		};
+		55198ACC24371815006A9D67 /* 2枚举Block */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "2枚举Block";
+			sourceTree = "<group>";
+		};
+		55198ACD24371815006A9D67 /* S3业务模块 */ = {
+			isa = PBXGroup;
+			children = (
+				55198ACE24371815006A9D67 /* 我的 */,
+				55198ACF24371815006A9D67 /* 首页 */,
+				55198AD024371815006A9D67 /* 查找 */,
+				55198AD124371815006A9D67 /* 消息 */,
+			);
+			path = "S3业务模块";
+			sourceTree = "<group>";
+		};
+		55198ACE24371815006A9D67 /* 我的 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "我的";
+			sourceTree = "<group>";
+		};
+		55198ACF24371815006A9D67 /* 首页 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "首页";
+			sourceTree = "<group>";
+		};
+		55198AD024371815006A9D67 /* 查找 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "查找";
+			sourceTree = "<group>";
+		};
+		55198AD124371815006A9D67 /* 消息 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "消息";
+			sourceTree = "<group>";
+		};
+		55198AD224371815006A9D67 /* 1头文件(模型，组件，网络) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "1头文件(模型，组件，网络)";
+			sourceTree = "<group>";
+		};
+		55198AD324371815006A9D67 /* 5公共组件 */ = {
+			isa = PBXGroup;
+			children = (
+				55198AD424371815006A9D67 /* Model_View */,
+			);
+			path = "5公共组件";
+			sourceTree = "<group>";
+		};
+		55198AD424371815006A9D67 /* Model_View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model_View;
+			sourceTree = "<group>";
+		};
+		55198AD524371815006A9D67 /* S1业务基类 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "S1业务基类";
+			sourceTree = "<group>";
+		};
+		55198AD624371815006A9D67 /* 4网络请求 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "4网络请求";
+			sourceTree = "<group>";
+		};
+		55198AD724371815006A9D67 /* S2业务组件 */ = {
+			isa = PBXGroup;
+			children = (
+				55198AD824371815006A9D67 /* Model_Controller */,
+				55198AD924371815006A9D67 /* Model_View */,
+			);
+			path = "S2业务组件";
+			sourceTree = "<group>";
+		};
+		55198AD824371815006A9D67 /* Model_Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model_Controller;
+			sourceTree = "<group>";
+		};
+		55198AD924371815006A9D67 /* Model_View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model_View;
+			sourceTree = "<group>";
+		};
+		55198ADA24371815006A9D67 /* 3数据模型 */ = {
+			isa = PBXGroup;
+			children = (
+				55198ADB24371815006A9D67 /* 2Api_Interface(Module) */,
+				55198ADC24371815006A9D67 /* 1Public */,
+			);
+			path = "3数据模型";
+			sourceTree = "<group>";
+		};
+		55198ADB24371815006A9D67 /* 2Api_Interface(Module) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "2Api_Interface(Module)";
+			sourceTree = "<group>";
+		};
+		55198ADC24371815006A9D67 /* 1Public */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = 1Public;
+			sourceTree = "<group>";
+		};
+		55198ADE24371815006A9D67 /* 项目框架 */ = {
+			isa = PBXGroup;
+			children = (
+				55198ADF24371815006A9D67 /* AppDelegate.h */,
+				55198AE424371815006A9D67 /* AppDelegate.m */,
+				55198AE824371815006A9D67 /* SceneDelegate.h */,
+				55198AE224371815006A9D67 /* SceneDelegate.m */,
+				55198AE724371815006A9D67 /* ViewController.h */,
+				55198AE124371815006A9D67 /* ViewController.m */,
+				55198AE324371815006A9D67 /* XSNavViewController.h */,
+				55198AE624371815006A9D67 /* XSNavViewController.m */,
+				55198AE024371815006A9D67 /* XSTabBarViewController.h */,
+				55198AE524371815006A9D67 /* XSTabBarViewController.m */,
+			);
+			path = "项目框架";
+			sourceTree = "<group>";
+		};
+		55198AE924371815006A9D67 /* 1BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				55198AF324371815006A9D67 /* XSBaseCollectionViewCell.h */,
+				55198AEE24371815006A9D67 /* XSBaseCollectionViewCell.m */,
+				55198AF024371815006A9D67 /* XSBaseNavViewController.h */,
+				55198AEC24371815006A9D67 /* XSBaseNavViewController.m */,
+				55198AED24371815006A9D67 /* XSBaseObject.h */,
+				55198AF224371815006A9D67 /* XSBaseObject.m */,
+				55198AEB24371815006A9D67 /* XSBaseTableViewCell.h */,
+				55198AEF24371815006A9D67 /* XSBaseTableViewCell.m */,
+				55198AF124371815006A9D67 /* XSBaseViewController.h */,
+				55198AEA24371815006A9D67 /* XSBaseViewController.m */,
+			);
+			path = 1BaseClass;
+			sourceTree = "<group>";
+		};
+		55198AF424371815006A9D67 /* 3网络基础 */ = {
+			isa = PBXGroup;
+			children = (
+				55198AF624371815006A9D67 /* XSOperationParam.h */,
+				55198AF824371815006A9D67 /* XSOperationParam.m */,
+				55198AF524371815006A9D67 /* XSNetworkInterface.h */,
+				55198AF724371815006A9D67 /* XSNetworkInterface.m */,
+			);
+			path = "3网络基础";
+			sourceTree = "<group>";
+		};
+		55198AFA24371815006A9D67 /* 项目结构 */ = {
+			isa = PBXGroup;
+			children = (
+				55198AFB24371815006A9D67 /* 我的 */,
+				55198B0C24371815006A9D67 /* 首页 */,
+				55198B1024371815006A9D67 /* 查找 */,
+				55198B1424371815006A9D67 /* 房屋 */,
+				55198B7C24371816006A9D67 /* 消息 */,
+			);
+			path = "项目结构";
+			sourceTree = "<group>";
+		};
+		55198AFB24371815006A9D67 /* 我的 */ = {
+			isa = PBXGroup;
+			children = (
+				55198B0A24371815006A9D67 /* MyInfoViewController.h */,
+				55198B0124371815006A9D67 /* MyInfoViewController.m */,
+				55198AFD24371815006A9D67 /* MyInfoViewController.xib */,
+				55198B0624371815006A9D67 /* XSLogInVcModel.h */,
+				55198AFE24371815006A9D67 /* XSLogInVcModel.m */,
+				55198B0B24371815006A9D67 /* XSLoginViewController.h */,
+				55198B0024371815006A9D67 /* XSLoginViewController.m */,
+				55198B0724371815006A9D67 /* XSLoginViewController.xib */,
+				55198B0824371815006A9D67 /* XSUserInfoInterface.h */,
+				55198B0324371815006A9D67 /* XSUserInfoInterface.m */,
+				55198AFC24371815006A9D67 /* XSUserLogInModel.h */,
+				55198B0424371815006A9D67 /* XSUserLogInModel.m */,
+				55198AFF24371815006A9D67 /* XSUserModel.h */,
+				55198B0524371815006A9D67 /* XSUserModel.m */,
+				55198B0224371815006A9D67 /* XSUserServer.h */,
+				55198B0924371815006A9D67 /* XSUserServer.m */,
+			);
+			path = "我的";
+			sourceTree = "<group>";
+		};
+		55198B0C24371815006A9D67 /* 首页 */ = {
+			isa = PBXGroup;
+			children = (
+				55198B0D24371815006A9D67 /* HomePageViewController.xib */,
+				55198B0E24371815006A9D67 /* HomePageViewController.m */,
+				55198B0F24371815006A9D67 /* HomePageViewController.h */,
+			);
+			path = "首页";
+			sourceTree = "<group>";
+		};
+		55198B1024371815006A9D67 /* 查找 */ = {
+			isa = PBXGroup;
+			children = (
+				55198B1124371815006A9D67 /* FindHouseViewController.h */,
+				55198B1224371815006A9D67 /* XSHouseSearch.json */,
+				55198B1324371815006A9D67 /* FindHouseViewController.m */,
+			);
+			path = "查找";
+			sourceTree = "<group>";
+		};
+		55198B1424371815006A9D67 /* 房屋 */ = {
+			isa = PBXGroup;
+			children = (
+				55198B1724371815006A9D67 /* 1房屋信息上传 */,
+				55198B4D24371816006A9D67 /* 3房屋详情展示 */,
+				55198B7124371816006A9D67 /* XSBHouseInfoModel.h */,
+				55198B4624371816006A9D67 /* XSBHouseInfoModel.m */,
+				55198B6A24371816006A9D67 /* XSHouseCallPhone.h */,
+				55198B7724371816006A9D67 /* XSHouseCallPhone.m */,
+				55198B7424371816006A9D67 /* XSHouseCallPhone.xib */,
+				55198B6E24371816006A9D67 /* XSHouseDetailsController.h */,
+				55198B1624371815006A9D67 /* XSHouseDetailsController.m */,
+				55198B1524371815006A9D67 /* XSHouseDetailsController.xib */,
+				55198B4A24371816006A9D67 /* XSHouseDetailsInfo.json */,
+				55198B7A24371816006A9D67 /* XSHouseDetailsInfoCellModel.h */,
+				55198B4C24371816006A9D67 /* XSHouseDetailsInfoCellModel.m */,
+				55198B4524371816006A9D67 /* XSHouseInfoCell.h */,
+				55198B6B24371816006A9D67 /* XSHouseInfoCell.m */,
+				55198B6C24371816006A9D67 /* XSHouseInfoTableView.h */,
+				55198B4424371816006A9D67 /* XSHouseInfoTableView.m */,
+				55198B4924371816006A9D67 /* XSHouseModuleViewController.h */,
+				55198B7624371816006A9D67 /* XSHouseModuleViewController.m */,
+				55198B7824371816006A9D67 /* XSHouseModuleViewController.xib */,
+				55198B4724371816006A9D67 /* XSHouseRentInfoCell.h */,
+				55198B6F24371816006A9D67 /* XSHouseRentInfoCell.m */,
+				55198B7524371816006A9D67 /* XSHouseRentInfoCell.xib */,
+				55198B4824371816006A9D67 /* XSHouseRentInfoModel.h */,
+				55198B7024371816006A9D67 /* XSHouseRentInfoModel.m */,
+				55198B4B24371816006A9D67 /* XSHouseRentStatusView.h */,
+				55198B7224371816006A9D67 /* XSHouseRentStatusView.m */,
+				55198B7B24371816006A9D67 /* XSHouseSave.json */,
+				55198B6D24371816006A9D67 /* XShouseSubNetworkInterface.h */,
+				55198B4324371816006A9D67 /* XShouseSubNetworkInterface.m */,
+				55198B6924371816006A9D67 /* XSMyPublishHosueController.h */,
+				55198B7924371816006A9D67 /* XSMyPublishHosueController.m */,
+				55198B7324371816006A9D67 /* XSSearchConditionalView.xib */,
 			);
 			path = "房屋";
 			sourceTree = "<group>";
 		};
-		6C3BEBF2242E3CC3001393EF /* 登录 */ = {
+		55198B1724371815006A9D67 /* 1房屋信息上传 */ = {
 			isa = PBXGroup;
 			children = (
-				6CED867424274CB30059CDC5 /* XSLogInVcModel.h */,
-				6CED867524274CB30059CDC5 /* XSLogInVcModel.m */,
-				6CED867724274CE60059CDC5 /* XSUserLogInModel.h */,
-				6CED867824274CE60059CDC5 /* XSUserLogInModel.m */,
-				6C6BC17B241FBB6700B62001 /* XSLoginViewController.h */,
-				6C6BC17C241FBB6700B62001 /* XSLoginViewController.m */,
-				6C6BC17D241FBB6700B62001 /* XSLoginViewController.xib */,
+				55198B4124371816006A9D67 /* WechatIMG127.jpeg */,
+				55198B1F24371815006A9D67 /* XSHouseEnum.h */,
+				55198B3724371816006A9D67 /* XSHouseEnum.m */,
+				55198B2B24371815006A9D67 /* XSHouseFixedData.h */,
+				55198B3E24371816006A9D67 /* XSHouseFixedData.m */,
+				55198B3424371815006A9D67 /* XSHouseInfoFirst.json */,
+				55198B2024371815006A9D67 /* XSHouseInfoFirstTest.json */,
+				55198B2E24371815006A9D67 /* XSHouseInfoModel.h */,
+				55198B1D24371815006A9D67 /* XSHouseInfoModel.m */,
+				55198B4024371816006A9D67 /* XSHouseInfoSecond.json */,
+				55198B2C24371815006A9D67 /* XSHouseInfoSecondTest.json */,
+				55198B3024371815006A9D67 /* XSHouseInfoThird.json */,
+				55198B2A24371815006A9D67 /* XSHouseInfoThirdTest.json */,
+				55198B1C24371815006A9D67 /* XSHouseSubAllMode.h */,
+				55198B3A24371816006A9D67 /* XSHouseSubCollectionviewACell.h */,
+				55198B2424371815006A9D67 /* XSHouseSubCollectionviewACell.m */,
+				55198B2524371815006A9D67 /* XSHouseSubCollectionviewACell.xib */,
+				55198B3224371815006A9D67 /* XSHouseSubCollectionviewBCell.h */,
+				55198B1824371815006A9D67 /* XSHouseSubCollectionviewBCell.m */,
+				55198B1924371815006A9D67 /* XSHouseSubCollectionviewBCell.xib */,
+				55198B2624371815006A9D67 /* XSHouseSubFootView.h */,
+				55198B3924371816006A9D67 /* XSHouseSubFootView.m */,
+				55198B3D24371816006A9D67 /* XSHouseSubFootView.xib */,
+				55198B2224371815006A9D67 /* XSHouseSubListChooseTableViewCell.h */,
+				55198B3324371815006A9D67 /* XSHouseSubListChooseTableViewCell.m */,
+				55198B1A24371815006A9D67 /* XSHouseSubListChooseTableViewCell.xib */,
+				55198B1E24371815006A9D67 /* XSHouseSubmitBaseViewController.h */,
+				55198B3824371816006A9D67 /* XSHouseSubmitBaseViewController.m */,
+				55198B3624371815006A9D67 /* XSHouseSubmitFirstViewController.h */,
+				55198B2124371815006A9D67 /* XSHouseSubmitFirstViewController.m */,
+				55198B2D24371815006A9D67 /* XSHouseSubmitFirstViewController.xib */,
+				55198B1B24371815006A9D67 /* XSHouseSubSuccessViewController.h */,
+				55198B3124371815006A9D67 /* XSHouseSubSuccessViewController.m */,
+				55198B2F24371815006A9D67 /* XSHouseSubSuccessViewController.xib */,
+				55198B4224371816006A9D67 /* XSHouseSubTableViewCell.h */,
+				55198B2824371815006A9D67 /* XSHouseSubTableViewCell.m */,
+				55198B3C24371816006A9D67 /* XSHouseSubTableViewCell.xib */,
+				55198B2924371815006A9D67 /* XSHouseSubTextFieldTableViewCell.h */,
+				55198B3F24371816006A9D67 /* XSHouseSubTextFieldTableViewCell.m */,
+				55198B3524371815006A9D67 /* XSHouseSubTextFieldTableViewCell.xib */,
+				55198B3B24371816006A9D67 /* XSHouseSubTextViewCell.h */,
+				55198B2324371815006A9D67 /* XSHouseSubTextViewCell.m */,
+				55198B2724371815006A9D67 /* XSHouseSubTextViewCell.xib */,
 			);
-			path = "登录";
+			path = "1房屋信息上传";
 			sourceTree = "<group>";
 		};
-		6C3BEBF3242E3CF6001393EF /* 用户信息 */ = {
+		55198B4D24371816006A9D67 /* 3房屋详情展示 */ = {
 			isa = PBXGroup;
 			children = (
-				6CED867124274AA80059CDC5 /* XSUserModel.h */,
-				6CED867224274AA80059CDC5 /* XSUserModel.m */,
-				6CED867B242756950059CDC5 /* XSUserServer.h */,
-				6CED867C242756950059CDC5 /* XSUserServer.m */,
+				55198B6524371816006A9D67 /* XSHouseCallMessageCell.h */,
+				55198B5A24371816006A9D67 /* XSHouseCallMessageCell.m */,
+				55198B5C24371816006A9D67 /* XSHouseCallMessageCell.xib */,
+				55198B6124371816006A9D67 /* XSHouseDetailsAddressInfoCell.h */,
+				55198B5024371816006A9D67 /* XSHouseDetailsAddressInfoCell.m */,
+				55198B5624371816006A9D67 /* XSHouseDetailsAddressInfoCell.xib */,
+				55198B6324371816006A9D67 /* XSHouseDetailsBasicInfoCell.h */,
+				55198B5424371816006A9D67 /* XSHouseDetailsBasicInfoCell.m */,
+				55198B5E24371816006A9D67 /* XSHouseDetailsBasicInfoCell.xib */,
+				55198B5824371816006A9D67 /* XSHouseDetailsBusinessInfoCell.h */,
+				55198B6724371816006A9D67 /* XSHouseDetailsBusinessInfoCell.m */,
+				55198B5524371816006A9D67 /* XSHouseDetailsBusinessInfoCell.xib */,
+				55198B5F24371816006A9D67 /* XSHouseDetailsFacilitiesInfoCell.h */,
+				55198B5224371816006A9D67 /* XSHouseDetailsFacilitiesInfoCell.m */,
+				55198B5124371816006A9D67 /* XSHouseDetailsFacilitiesInfoCell.xib */,
+				55198B6824371816006A9D67 /* XSHouseDetailsImagesCell.h */,
+				55198B5B24371816006A9D67 /* XSHouseDetailsImagesCell.m */,
+				55198B4E24371816006A9D67 /* XSHouseDetailsImagesCell.xib */,
+				55198B6424371816006A9D67 /* XSHouseDetailsIntroduceInfoCell.h */,
+				55198B5324371816006A9D67 /* XSHouseDetailsIntroduceInfoCell.m */,
+				55198B4F24371816006A9D67 /* XSHouseDetailsIntroduceInfoCell.xib */,
+				55198B5924371816006A9D67 /* XSHouseIntroduceController.h */,
+				55198B6624371816006A9D67 /* XSHouseIntroduceController.m */,
+				55198B5D24371816006A9D67 /* XSHouseIntroduceController.xib */,
+				55198B6224371816006A9D67 /* XSHouseRecommendedCell.h */,
+				55198B5724371816006A9D67 /* XSHouseRecommendedCell.m */,
+				55198B6024371816006A9D67 /* XSHouseRecommendedCell.xib */,
 			);
-			path = "用户信息";
+			path = "3房屋详情展示";
 			sourceTree = "<group>";
 		};
-		6C3BEBF4242E3D37001393EF /* 我的主页 */ = {
+		55198B7C24371816006A9D67 /* 消息 */ = {
 			isa = PBXGroup;
 			children = (
-				6C6BC180241FBBAC00B62001 /* MyInfoViewController.h */,
-				6C6BC181241FBBAC00B62001 /* MyInfoViewController.m */,
-				6C6BC182241FBBAC00B62001 /* MyInfoViewController.xib */,
+				55198B7D24371816006A9D67 /* MessageViewController.m */,
+				55198B7E24371816006A9D67 /* MessageViewController.h */,
+				55198B7F24371816006A9D67 /* xsjson.json */,
 			);
-			path = "我的主页";
+			path = "消息";
 			sourceTree = "<group>";
 		};
 		6C6BC13D241FA75300B62001 = {
 			isa = PBXGroup;
 			children = (
 				6C9FF7AB24309BFE0020509C /* fangdinghui.cer */,
-				6C9FF7B32430F0700020509C /* xaxaxax.png */,
 				6C6BC185241FD0FC00B62001 /* XSPrefixHeader.pch */,
-				6C6BC148241FA75300B62001 /* XSHouseLease */,
+				55198A8024371815006A9D67 /* XSHouseLease */,
 				6C6BC147241FA75300B62001 /* Products */,
 				21B2C1A32C64168368BA6C4D /* Pods */,
 				EF6076CEBC0671227C5E3C1D /* Frameworks */,
@@ -837,218 +949,6 @@
 				6C6BC146241FA75300B62001 /* 房鼎汇.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		6C6BC148241FA75300B62001 /* XSHouseLease */ = {
-			isa = PBXGroup;
-			children = (
-				6C9FF7B8243211620020509C /* XSMapViewController.h */,
-				6C9FF7B9243211620020509C /* XSMapViewController.m */,
-				6C3BEBA9242E3B5F001393EF /* 1BaseClass */,
-				6C3BEBB3242E3B60001393EF /* 2Category */,
-				6C3BEBA6242E3B5F001393EF /* 3CustomView */,
-				6C3BEBB2242E3B5F001393EF /* 4Network */,
-				6C3BEBA4242E3B5F001393EF /* 5项目组件 */,
-				6C6BC165241FA8F300B62001 /* MainTab */,
-				6C3BEBA5242E3B5F001393EF /* 6项目结构 */,
-				6C6BC149241FA75300B62001 /* AppDelegate.h */,
-				6C6BC14A241FA75300B62001 /* AppDelegate.m */,
-				6C6BC14C241FA75300B62001 /* SceneDelegate.h */,
-				6C6BC14D241FA75300B62001 /* SceneDelegate.m */,
-				6C6BC15A241FA75400B62001 /* Info.plist */,
-				6C7DFE7024265076003E86D7 /* Main.storyboard */,
-				6C7DFE7224265077003E86D7 /* ViewController.h */,
-				6C7DFE7124265076003E86D7 /* ViewController.m */,
-				6C6BC157241FA75400B62001 /* LaunchScreen.storyboard */,
-				6C6BC15B241FA75400B62001 /* main.m */,
-				6C6BC155241FA75400B62001 /* Assets.xcassets */,
-			);
-			path = XSHouseLease;
-			sourceTree = "<group>";
-		};
-		6C6BC165241FA8F300B62001 /* MainTab */ = {
-			isa = PBXGroup;
-			children = (
-				6C3BEBA1242E3995001393EF /* XSNavViewController.h */,
-				6C3BEBA2242E3995001393EF /* XSNavViewController.m */,
-				6C6BC162241FA84100B62001 /* XSTabBarViewController.h */,
-				6C6BC163241FA84100B62001 /* XSTabBarViewController.m */,
-			);
-			path = MainTab;
-			sourceTree = "<group>";
-		};
-		6C6BC179241FBB1700B62001 /* 我的 */ = {
-			isa = PBXGroup;
-			children = (
-				6C3BEB9B242E3767001393EF /* 用户信息接口 */,
-				6C3BEBF2242E3CC3001393EF /* 登录 */,
-				6C3BEBF3242E3CF6001393EF /* 用户信息 */,
-				6C3BEBF4242E3D37001393EF /* 我的主页 */,
-			);
-			path = "我的";
-			sourceTree = "<group>";
-		};
-		6C9FF79E24301AFB0020509C /* 固定接口模型 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "固定接口模型";
-			sourceTree = "<group>";
-		};
-		6CDCE3E6242740A20049AE63 /* 消息 */ = {
-			isa = PBXGroup;
-			children = (
-				6CDCE3DD24273CB10049AE63 /* xsjson.json */,
-				6C6BC172241FA9F400B62001 /* MessageViewController.h */,
-				6C6BC173241FA9F400B62001 /* MessageViewController.m */,
-			);
-			path = "消息";
-			sourceTree = "<group>";
-		};
-		6CDCE3E7242740AB0049AE63 /* 首页 */ = {
-			isa = PBXGroup;
-			children = (
-				6C3BEB92242E3672001393EF /* HomePageViewController.h */,
-				6C3BEB93242E3672001393EF /* HomePageViewController.m */,
-				6C3BEB94242E3672001393EF /* HomePageViewController.xib */,
-			);
-			path = "首页";
-			sourceTree = "<group>";
-		};
-		6CDCE3E8242740B00049AE63 /* 查找 */ = {
-			isa = PBXGroup;
-			children = (
-				6C3BEB72242C98A1001393EF /* XSHouseSearch.json */,
-				6C6BC16C241FA9D800B62001 /* FindHouseViewController.h */,
-				6C6BC16D241FA9D800B62001 /* FindHouseViewController.m */,
-			);
-			path = "查找";
-			sourceTree = "<group>";
-		};
-		6CE51BB62430003000023FFC /* TextField */ = {
-			isa = PBXGroup;
-			children = (
-				6C3BEB34242C8697001393EF /* XSHouseSubTextFieldTableViewCell.h */,
-				6C3BEB3D242C8697001393EF /* XSHouseSubTextFieldTableViewCell.m */,
-				6C3BEB39242C8697001393EF /* XSHouseSubTextFieldTableViewCell.xib */,
-			);
-			path = TextField;
-			sourceTree = "<group>";
-		};
-		6CE51BB72430004100023FFC /* ListChoose */ = {
-			isa = PBXGroup;
-			children = (
-				6C3BEB2E242C8697001393EF /* XSHouseSubListChooseTableViewCell.h */,
-				6C3BEB38242C8697001393EF /* XSHouseSubListChooseTableViewCell.m */,
-				6C3BEB2B242C8697001393EF /* XSHouseSubListChooseTableViewCell.xib */,
-			);
-			path = ListChoose;
-			sourceTree = "<group>";
-		};
-		6CE51BB82430004D00023FFC /* Collection */ = {
-			isa = PBXGroup;
-			children = (
-				6C3BEB3A242C8697001393EF /* XSHouseSubCollectionviewACell.h */,
-				6C3BEB30242C8697001393EF /* XSHouseSubCollectionviewACell.m */,
-				6C3BEB31242C8697001393EF /* XSHouseSubCollectionviewACell.xib */,
-				6C3BEB37242C8697001393EF /* XSHouseSubCollectionviewBCell.h */,
-				6C3BEB29242C8697001393EF /* XSHouseSubCollectionviewBCell.m */,
-				6C3BEB2A242C8697001393EF /* XSHouseSubCollectionviewBCell.xib */,
-			);
-			path = Collection;
-			sourceTree = "<group>";
-		};
-		6CE51BB92430006600023FFC /* TextView */ = {
-			isa = PBXGroup;
-			children = (
-				6C3BEB3B242C8697001393EF /* XSHouseSubTextViewCell.h */,
-				6C3BEB2F242C8697001393EF /* XSHouseSubTextViewCell.m */,
-				6C3BEB32242C8697001393EF /* XSHouseSubTextViewCell.xib */,
-			);
-			path = TextView;
-			sourceTree = "<group>";
-		};
-		6CE51BBA243002D700023FFC /* 头部轮播图 */ = {
-			isa = PBXGroup;
-			children = (
-				6C2286AA242ED570001D5F58 /* XSHouseDetailsImagesCell.h */,
-				6C2286AB242ED570001D5F58 /* XSHouseDetailsImagesCell.m */,
-				6C2286AC242ED570001D5F58 /* XSHouseDetailsImagesCell.xib */,
-			);
-			path = "头部轮播图";
-			sourceTree = "<group>";
-		};
-		6CE51BBB243002E700023FFC /* 房屋基本信息 */ = {
-			isa = PBXGroup;
-			children = (
-				6C2286B4242ED5F4001D5F58 /* XSHouseDetailsBasicInfoCell.h */,
-				6C2286B5242ED5F4001D5F58 /* XSHouseDetailsBasicInfoCell.m */,
-				6C2286B6242ED5F4001D5F58 /* XSHouseDetailsBasicInfoCell.xib */,
-			);
-			path = "房屋基本信息";
-			sourceTree = "<group>";
-		};
-		6CE51BBC2430030C00023FFC /* 房屋配套信息 */ = {
-			isa = PBXGroup;
-			children = (
-				6C2286B9242ED621001D5F58 /* XSHouseDetailsBusinessInfoCell.h */,
-				6C2286BA242ED621001D5F58 /* XSHouseDetailsBusinessInfoCell.m */,
-				6C2286BB242ED621001D5F58 /* XSHouseDetailsBusinessInfoCell.xib */,
-			);
-			path = "房屋配套信息";
-			sourceTree = "<group>";
-		};
-		6CE51BBD2430031D00023FFC /* 房屋地图 */ = {
-			isa = PBXGroup;
-			children = (
-				6C2286BE242ED66C001D5F58 /* XSHouseDetailsAddressInfoCell.h */,
-				6C2286BF242ED66C001D5F58 /* XSHouseDetailsAddressInfoCell.m */,
-				6C2286C0242ED66C001D5F58 /* XSHouseDetailsAddressInfoCell.xib */,
-			);
-			path = "房屋地图";
-			sourceTree = "<group>";
-		};
-		6CE51BBE2430036300023FFC /* 房屋物品信息 */ = {
-			isa = PBXGroup;
-			children = (
-				6C2286C3242ED6A7001D5F58 /* XSHouseDetailsFacilitiesInfoCell.h */,
-				6C2286C4242ED6A7001D5F58 /* XSHouseDetailsFacilitiesInfoCell.m */,
-				6C2286C5242ED6A7001D5F58 /* XSHouseDetailsFacilitiesInfoCell.xib */,
-			);
-			path = "房屋物品信息";
-			sourceTree = "<group>";
-		};
-		6CE51BBF2430037800023FFC /* 房源介绍 */ = {
-			isa = PBXGroup;
-			children = (
-				6C2286C8242ED706001D5F58 /* XSHouseDetailsIntroduceInfoCell.h */,
-				6C2286C9242ED706001D5F58 /* XSHouseDetailsIntroduceInfoCell.m */,
-				6C2286CA242ED706001D5F58 /* XSHouseDetailsIntroduceInfoCell.xib */,
-				6CE51BAA242F58CC00023FFC /* XSHouseIntroduceController.h */,
-				6CE51BAB242F58CC00023FFC /* XSHouseIntroduceController.m */,
-				6CE51BAC242F58CC00023FFC /* XSHouseIntroduceController.xib */,
-			);
-			path = "房源介绍";
-			sourceTree = "<group>";
-		};
-		6CE51BC0243003FA00023FFC /* 猜你喜欢 */ = {
-			isa = PBXGroup;
-			children = (
-				6C2286CD242ED730001D5F58 /* XSHouseRecommendedCell.h */,
-				6C2286CE242ED730001D5F58 /* XSHouseRecommendedCell.m */,
-				6C2286CF242ED730001D5F58 /* XSHouseRecommendedCell.xib */,
-			);
-			path = "猜你喜欢";
-			sourceTree = "<group>";
-		};
-		6CE51BC12430042500023FFC /* BaseCell */ = {
-			isa = PBXGroup;
-			children = (
-				6C3BEB3E242C8697001393EF /* XSHouseSubTableViewCell.h */,
-				6C3BEB33242C8697001393EF /* XSHouseSubTableViewCell.m */,
-				6C3BEB3C242C8697001393EF /* XSHouseSubTableViewCell.xib */,
-			);
-			path = BaseCell;
 			sourceTree = "<group>";
 		};
 		EF6076CEBC0671227C5E3C1D /* Frameworks */ = {
@@ -1118,50 +1018,53 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C3BEB55242C8697001393EF /* XSHouseSubCollectionviewBCell.xib in Resources */,
-				6C2286C7242ED6A7001D5F58 /* XSHouseDetailsFacilitiesInfoCell.xib in Resources */,
-				6CE51BAE242F58CC00023FFC /* XSHouseIntroduceController.xib in Resources */,
-				6C9FF7A7243074BD0020509C /* XSHouseSave.json in Resources */,
-				6C6BC159241FA75400B62001 /* LaunchScreen.storyboard in Resources */,
-				6C3BEB56242C8697001393EF /* XSHouseSubListChooseTableViewCell.xib in Resources */,
-				6C3BEB51242C8697001393EF /* XSHouseSubSuccessViewController.xib in Resources */,
-				6C3BEAB7242C7C9B001393EF /* XSLocationSearchview.xib in Resources */,
-				6C9FF7B02430AE220020509C /* XSHouseInfoSecondTest.json in Resources */,
-				6C7DFE7324265077003E86D7 /* Main.storyboard in Resources */,
-				6C2286AE242ED570001D5F58 /* XSHouseDetailsImagesCell.xib in Resources */,
-				6C9FF7A5243035D40020509C /* XSHouseSubFootView.xib in Resources */,
-				6C3BEB50242C8697001393EF /* XSHouseSubmitFirstViewController.xib in Resources */,
-				6C2286A3242E8719001D5F58 /* XSHouseDetailsController.xib in Resources */,
-				6C3BEB5A242C8697001393EF /* XSHouseSubCollectionviewACell.xib in Resources */,
-				6C6BC184241FBBAC00B62001 /* MyInfoViewController.xib in Resources */,
-				6C3BEB67242C8697001393EF /* XSHouseInfoSecond.json in Resources */,
-				6C9FF7B42430F0700020509C /* xaxaxax.png in Resources */,
-				6C3BEB63242C8697001393EF /* XSHouseInfoThird.json in Resources */,
-				6C6BC17F241FBB6700B62001 /* XSLoginViewController.xib in Resources */,
-				6C3BEB9A242E3731001393EF /* XSHouseModuleViewController.xib in Resources */,
+				55198BE424371816006A9D67 /* XSHouseDetailsFacilitiesInfoCell.xib in Resources */,
+				55198BDF24371816006A9D67 /* XSHouseDetailsInfo.json in Resources */,
+				55198BCE24371816006A9D67 /* XSHouseInfoThird.json in Resources */,
+				55198BBD24371816006A9D67 /* XSHouseDetailsController.xib in Resources */,
+				55198BF924371816006A9D67 /* XSHouseRentInfoCell.xib in Resources */,
+				55198BB024371816006A9D67 /* MyInfoViewController.xib in Resources */,
+				55198BC324371816006A9D67 /* XSHouseInfoFirstTest.json in Resources */,
+				55198BB724371816006A9D67 /* XSLoginViewController.xib in Resources */,
+				55198BE224371816006A9D67 /* XSHouseDetailsIntroduceInfoCell.xib in Resources */,
+				55198BCC24371816006A9D67 /* XSHouseSubmitFirstViewController.xib in Resources */,
+				55198BCD24371816006A9D67 /* XSHouseSubSuccessViewController.xib in Resources */,
+				55198B8A24371816006A9D67 /* XSPhotoPickerView.xib in Resources */,
+				55198BC724371816006A9D67 /* XSHouseSubCollectionviewACell.xib in Resources */,
+				55198BDB24371816006A9D67 /* WechatIMG127.jpeg in Resources */,
+				55198B9124371816006A9D67 /* LaunchScreen.storyboard in Resources */,
+				55198B8D24371816006A9D67 /* XSItemCollectionViewCell.xib in Resources */,
 				6C9FF7AC24309BFE0020509C /* fangdinghui.cer in Resources */,
-				6C2286CC242ED706001D5F58 /* XSHouseDetailsIntroduceInfoCell.xib in Resources */,
-				6C3BEB5F242C8697001393EF /* XSHouseSubTextFieldTableViewCell.xib in Resources */,
-				6C2286B8242ED5F4001D5F58 /* XSHouseDetailsBasicInfoCell.xib in Resources */,
-				6CE51BB5242F660A00023FFC /* XSHouseCallPhone.xib in Resources */,
-				6C9FF7A0243023810020509C /* XSSearchConditionalView.xib in Resources */,
-				6CDCE3DE24273CB10049AE63 /* xsjson.json in Resources */,
-				6C0DA7ED242F1C58000A59B6 /* XSFacilitiesInfoJson.json in Resources */,
-				6C0DA7D0242EDD8C000A59B6 /* XSHouseDetailsInfo.json in Resources */,
-				6C3BEB97242E3672001393EF /* HomePageViewController.xib in Resources */,
-				6C3BEAA3242C4A9C001393EF /* XSPhotoPickerView.xib in Resources */,
-				6C9FF7B12430AE220020509C /* XSHouseInfoThirdTest.json in Resources */,
-				6C3BEB73242C98A1001393EF /* XSHouseSearch.json in Resources */,
-				6C3BEB64242C8697001393EF /* XSHouseInfoFirst.json in Resources */,
-				6C3BEB5B242C8697001393EF /* XSHouseSubTextViewCell.xib in Resources */,
-				6C2286BD242ED621001D5F58 /* XSHouseDetailsBusinessInfoCell.xib in Resources */,
-				6C9FF7B22430AE220020509C /* XSHouseInfoFirstTest.json in Resources */,
-				555A6789242DF069003847A0 /* XSHouseRentInfoCell.xib in Resources */,
-				6C0DA7DC242EF94E000A59B6 /* XSHouseBusinessInfo.json in Resources */,
-				6C3BEB60242C8697001393EF /* XSHouseSubTableViewCell.xib in Resources */,
-				6C2286D1242ED730001D5F58 /* XSHouseRecommendedCell.xib in Resources */,
-				6C6BC156241FA75400B62001 /* Assets.xcassets in Resources */,
-				6C2286C2242ED66C001D5F58 /* XSHouseDetailsAddressInfoCell.xib in Resources */,
+				55198BE824371816006A9D67 /* XSHouseDetailsBusinessInfoCell.xib in Resources */,
+				55198BED24371816006A9D67 /* XSHouseCallMessageCell.xib in Resources */,
+				55198BD624371816006A9D67 /* XSHouseSubTableViewCell.xib in Resources */,
+				55198BEF24371816006A9D67 /* XSHouseDetailsBasicInfoCell.xib in Resources */,
+				55198BE124371816006A9D67 /* XSHouseDetailsImagesCell.xib in Resources */,
+				55198B8724371816006A9D67 /* XSHouseBusinessInfo.json in Resources */,
+				55198BEE24371816006A9D67 /* XSHouseIntroduceController.xib in Resources */,
+				55198BF024371816006A9D67 /* XSHouseRecommendedCell.xib in Resources */,
+				55198BF824371816006A9D67 /* XSHouseCallPhone.xib in Resources */,
+				55198BCA24371816006A9D67 /* XSHouseInfoThirdTest.json in Resources */,
+				55198BB924371816006A9D67 /* HomePageViewController.xib in Resources */,
+				55198B9024371816006A9D67 /* Assets.xcassets in Resources */,
+				55198BD124371816006A9D67 /* XSHouseInfoFirst.json in Resources */,
+				55198BC824371816006A9D67 /* XSHouseSubTextViewCell.xib in Resources */,
+				55198BDA24371816006A9D67 /* XSHouseInfoSecond.json in Resources */,
+				55198BFE24371816006A9D67 /* XSHouseSave.json in Resources */,
+				55198BF724371816006A9D67 /* XSSearchConditionalView.xib in Resources */,
+				55198B9224371816006A9D67 /* Main.storyboard in Resources */,
+				55198BC124371816006A9D67 /* XSHouseSubListChooseTableViewCell.xib in Resources */,
+				55198B8E24371816006A9D67 /* XSLocationSearchview.xib in Resources */,
+				55198BD724371816006A9D67 /* XSHouseSubFootView.xib in Resources */,
+				55198BC024371816006A9D67 /* XSHouseSubCollectionviewBCell.xib in Resources */,
+				55198BBB24371816006A9D67 /* XSHouseSearch.json in Resources */,
+				55198BD224371816006A9D67 /* XSHouseSubTextFieldTableViewCell.xib in Resources */,
+				55198BAF24371816006A9D67 /* Info.plist in Resources */,
+				55198B8624371816006A9D67 /* XSFacilitiesInfoJson.json in Resources */,
+				55198C0024371816006A9D67 /* xsjson.json in Resources */,
+				55198BE924371816006A9D67 /* XSHouseDetailsAddressInfoCell.xib in Resources */,
+				55198BCB24371816006A9D67 /* XSHouseInfoSecondTest.json in Resources */,
+				55198BFC24371816006A9D67 /* XSHouseModuleViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1229,98 +1132,99 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C3BEB4F242C8697001393EF /* XSHouseSubmitFirstViewController.m in Sources */,
-				6C3BEBE7242E3B60001393EF /* NSArray+safe.m in Sources */,
-				6C3BEBEF242E3B60001393EF /* NSMutableString+safe.m in Sources */,
-				6CED867D242756950059CDC5 /* XSUserServer.m in Sources */,
-				555A6788242DF069003847A0 /* XSHouseRentInfoCell.m in Sources */,
-				6C2286A2242E8719001D5F58 /* XSHouseDetailsController.m in Sources */,
-				6C0DA7D7242EF5C8000A59B6 /* XSBusinessCollectionCell.m in Sources */,
-				6CE51BAD242F58CC00023FFC /* XSHouseIntroduceController.m in Sources */,
-				6C3BEBE2242E3B60001393EF /* NSDictionary+safe.m in Sources */,
-				6C0DA7DF242EFF0C000A59B6 /* XSBusinessInfoSever.m in Sources */,
-				6C6BC16E241FA9D800B62001 /* FindHouseViewController.m in Sources */,
-				6C9FF7A3243035C80020509C /* XSHouseSubFootView.m in Sources */,
-				6C2286AD242ED570001D5F58 /* XSHouseDetailsImagesCell.m in Sources */,
-				555A678D242DF15C003847A0 /* XSHouseBunnerModel.m in Sources */,
-				555A6784242DE1B7003847A0 /* XSBHouseInfoModel.m in Sources */,
-				6C3BEBEC242E3B60001393EF /* NSObject+HBNotification.m in Sources */,
-				6C3BEBEA242E3B60001393EF /* NSObject+safe.m in Sources */,
-				6C3BEB52242C8697001393EF /* XSHouseSubSuccessViewController.m in Sources */,
-				6C3BEAA1242C4A66001393EF /* XSPhotoPickerView.m in Sources */,
-				6C2286C6242ED6A7001D5F58 /* XSHouseDetailsFacilitiesInfoCell.m in Sources */,
-				6C3BEBDF242E3B60001393EF /* XSBaseNavViewController.m in Sources */,
-				6C6BC164241FA84200B62001 /* XSTabBarViewController.m in Sources */,
-				6C3BEB59242C8697001393EF /* XSHouseSubCollectionviewACell.m in Sources */,
-				6C6BC14B241FA75300B62001 /* AppDelegate.m in Sources */,
-				6CF0E77D242E5E58000A9815 /* XSMyPublishHosueController.m in Sources */,
-				6C3BEBE3242E3B60001393EF /* UIView+HBExtension.m in Sources */,
-				6C9FF7AA243082590020509C /* XSHouseRentStatusView.m in Sources */,
-				6C3BEBED242E3B60001393EF /* NSObject+PerformBlock.m in Sources */,
-				6C2286BC242ED621001D5F58 /* XSHouseDetailsBusinessInfoCell.m in Sources */,
-				6C3BEB5D242C8697001393EF /* XSBaseTableViewCell.m in Sources */,
-				6CED867924274CE60059CDC5 /* XSUserLogInModel.m in Sources */,
-				6C6BC17E241FBB6700B62001 /* XSLoginViewController.m in Sources */,
-				6C2286B7242ED5F4001D5F58 /* XSHouseDetailsBasicInfoCell.m in Sources */,
-				6C3BEB58242C8697001393EF /* XSHouseSubTextViewCell.m in Sources */,
-				6CF0E778242E4820000A9815 /* XSHouseRentInfoModel.m in Sources */,
-				6C3BEB76242CA4DC001393EF /* XSRegionSearchView.m in Sources */,
-				6C3BEB65242C8697001393EF /* XSHouseEnum.m in Sources */,
-				555A677E242DE121003847A0 /* XSHouseInfoTableView.m in Sources */,
-				6CED867624274CB30059CDC5 /* XSLogInVcModel.m in Sources */,
-				6C3BEBE5242E3B60001393EF /* PrintBeautifulLog.m in Sources */,
-				6C3BEB96242E3672001393EF /* HomePageViewController.m in Sources */,
-				6C2286CB242ED706001D5F58 /* XSHouseDetailsIntroduceInfoCell.m in Sources */,
-				6C3BEB61242C8697001393EF /* XSHouseSubTextFieldTableViewCell.m in Sources */,
-				6C3BEB68242C8697001393EF /* XSHouseModuleViewController.m in Sources */,
-				6C3BEBE9242E3B60001393EF /* NSNumber+safe.m in Sources */,
-				6C3BEB53242C8697001393EF /* XSHouseSubmitBaseViewController.m in Sources */,
-				6CDCE3A22426E6850049AE63 /* XSNetworkInterface.m in Sources */,
-				6C3BEBE6242E3B60001393EF /* NSArray+Category.m in Sources */,
-				6C3BEB5E242C8697001393EF /* XSHouseSubListChooseTableViewCell.m in Sources */,
-				6C3BEBE4242E3B60001393EF /* NSMutableDictionary+safe.m in Sources */,
-				555A6781242DE192003847A0 /* XSHouseInfoCell.m in Sources */,
-				6C3BEB70242C9215001393EF /* XSItemCollectionViewCell.m in Sources */,
-				6C3BEB95242E3672001393EF /* XShouseSubNetworkInterface.m in Sources */,
-				6C3BEB54242C8697001393EF /* XSHouseSubCollectionviewBCell.m in Sources */,
-				6CE51BB3242F65F200023FFC /* XSHouseCallPhone.m in Sources */,
-				6C3BEB66242C8697001393EF /* XSHouseFixedData.m in Sources */,
-				6C3BEB62242C8697001393EF /* XSHouseInfoModel.m in Sources */,
-				6C6BC15C241FA75400B62001 /* main.m in Sources */,
-				6C9FF7BA243211630020509C /* XSMapViewController.m in Sources */,
-				6C6BC174241FA9F400B62001 /* MessageViewController.m in Sources */,
-				6C3BEBE0242E3B60001393EF /* XSBaseCollectionViewCell.m in Sources */,
-				6C7DFE7424265077003E86D7 /* ViewController.m in Sources */,
-				6CED867324274AA80059CDC5 /* XSUserModel.m in Sources */,
-				6C3BEBEE242E3B60001393EF /* NSObject+category.m in Sources */,
-				6C3BEB6C242C8D92001393EF /* XSCollectionView.m in Sources */,
-				6C0DA7DA242EF5E7000A59B6 /* XSBusinessInfoModel.m in Sources */,
-				6C3BEBE8242E3B60001393EF /* NSMutableArray+safe.m in Sources */,
-				6C6BC183241FBBAC00B62001 /* MyInfoViewController.m in Sources */,
-				6C3BEBF0242E3B60001393EF /* NSDate+Category.m in Sources */,
-				6C3BEBEB242E3B60001393EF /* NSObject+swizzle.m in Sources */,
-				6C2286C1242ED66C001D5F58 /* XSHouseDetailsAddressInfoCell.m in Sources */,
-				6CDCE3A52426ED9B0049AE63 /* XSOperationParam.m in Sources */,
-				6C3BEAB3242C7C3A001393EF /* XSLocationSearchview.m in Sources */,
-				6C3BEBDE242E3B60001393EF /* XSBaseViewController.m in Sources */,
-				6C3BEBE1242E3B60001393EF /* XSBaseObject.m in Sources */,
-				6C6BC14E241FA75300B62001 /* SceneDelegate.m in Sources */,
-				6C2286D0242ED730001D5F58 /* XSHouseRecommendedCell.m in Sources */,
-				6CDCE3A92426F5D50049AE63 /* XSUserInfoInterface.m in Sources */,
-				6C3BEBDD242E3B60001393EF /* XSRoundedView.m in Sources */,
-				6C3BEB5C242C8697001393EF /* XSHouseSubTableViewCell.m in Sources */,
-				6C2286D9242ED788001D5F58 /* XSHouseDetailsInfoCellModel.m in Sources */,
-				6C3BEBA3242E3995001393EF /* XSNavViewController.m in Sources */,
+				55198B9424371816006A9D67 /* UIView+HBExtension.m in Sources */,
+				55198BB524371816006A9D67 /* XSUserLogInModel.m in Sources */,
+				55198B9824371816006A9D67 /* NSArray+safe.m in Sources */,
+				55198BF124371816006A9D67 /* XSHouseIntroduceController.m in Sources */,
+				55198BEA24371816006A9D67 /* XSHouseRecommendedCell.m in Sources */,
+				55198BE524371816006A9D67 /* XSHouseDetailsFacilitiesInfoCell.m in Sources */,
+				55198BC424371816006A9D67 /* XSHouseSubmitFirstViewController.m in Sources */,
+				55198B8424371816006A9D67 /* XSBusinessCollectionCell.m in Sources */,
+				55198BDE24371816006A9D67 /* XSBHouseInfoModel.m in Sources */,
+				55198BC624371816006A9D67 /* XSHouseSubCollectionviewACell.m in Sources */,
+				55198BF524371816006A9D67 /* XSHouseRentInfoModel.m in Sources */,
+				55198BB424371816006A9D67 /* XSUserInfoInterface.m in Sources */,
+				55198BCF24371816006A9D67 /* XSHouseSubSuccessViewController.m in Sources */,
+				55198BEB24371816006A9D67 /* XSHouseCallMessageCell.m in Sources */,
+				55198BD824371816006A9D67 /* XSHouseFixedData.m in Sources */,
+				55198BDC24371816006A9D67 /* XShouseSubNetworkInterface.m in Sources */,
+				55198B8024371816006A9D67 /* XSLocationSearchview.m in Sources */,
+				55198B9624371816006A9D67 /* PrintBeautifulLog.m in Sources */,
+				55198B8C24371816006A9D67 /* XSMapViewController.m in Sources */,
+				55198BBC24371816006A9D67 /* FindHouseViewController.m in Sources */,
+				55198B8224371816006A9D67 /* XSBusinessInfoSever.m in Sources */,
+				55198BEC24371816006A9D67 /* XSHouseDetailsImagesCell.m in Sources */,
+				55198B9724371816006A9D67 /* NSArray+Category.m in Sources */,
+				55198BA024371816006A9D67 /* NSMutableString+safe.m in Sources */,
+				55198BD424371816006A9D67 /* XSHouseSubmitBaseViewController.m in Sources */,
+				55198BB124371816006A9D67 /* XSLogInVcModel.m in Sources */,
+				55198B9D24371816006A9D67 /* NSObject+HBNotification.m in Sources */,
+				55198BF624371816006A9D67 /* XSHouseRentStatusView.m in Sources */,
+				55198BC224371816006A9D67 /* XSHouseInfoModel.m in Sources */,
+				55198BD024371816006A9D67 /* XSHouseSubListChooseTableViewCell.m in Sources */,
+				55198B9A24371816006A9D67 /* NSNumber+safe.m in Sources */,
+				55198BE724371816006A9D67 /* XSHouseDetailsBasicInfoCell.m in Sources */,
+				55198B8124371816006A9D67 /* XSRegionSearchView.m in Sources */,
+				55198BB624371816006A9D67 /* XSUserModel.m in Sources */,
+				55198BFF24371816006A9D67 /* MessageViewController.m in Sources */,
+				55198B9524371816006A9D67 /* NSMutableDictionary+safe.m in Sources */,
+				55198B8924371816006A9D67 /* XSPhotoPickerView.m in Sources */,
+				55198BA524371816006A9D67 /* AppDelegate.m in Sources */,
+				55198BA424371816006A9D67 /* SceneDelegate.m in Sources */,
+				55198BA924371816006A9D67 /* XSBaseNavViewController.m in Sources */,
+				55198BAC24371816006A9D67 /* XSBaseObject.m in Sources */,
+				55198BD324371816006A9D67 /* XSHouseEnum.m in Sources */,
+				55198BA324371816006A9D67 /* ViewController.m in Sources */,
+				55198B8F24371816006A9D67 /* XSHouseBunnerModel.m in Sources */,
+				55198BF424371816006A9D67 /* XSHouseRentInfoCell.m in Sources */,
+				55198BAA24371816006A9D67 /* XSBaseCollectionViewCell.m in Sources */,
+				55198B9324371816006A9D67 /* NSDictionary+safe.m in Sources */,
+				55198BA224371816006A9D67 /* main.m in Sources */,
+				55198BBF24371816006A9D67 /* XSHouseSubCollectionviewBCell.m in Sources */,
+				55198B9C24371816006A9D67 /* NSObject+swizzle.m in Sources */,
+				55198B8524371816006A9D67 /* XSItemCollectionViewCell.m in Sources */,
+				55198BA824371816006A9D67 /* XSBaseViewController.m in Sources */,
+				55198BFD24371816006A9D67 /* XSMyPublishHosueController.m in Sources */,
+				55198BA124371816006A9D67 /* NSDate+Category.m in Sources */,
+				55198BA624371816006A9D67 /* XSTabBarViewController.m in Sources */,
+				55198B9E24371816006A9D67 /* NSObject+PerformBlock.m in Sources */,
+				55198B8824371816006A9D67 /* XSRoundedView.m in Sources */,
+				55198BD924371816006A9D67 /* XSHouseSubTextFieldTableViewCell.m in Sources */,
+				55198B9B24371816006A9D67 /* NSObject+safe.m in Sources */,
+				55198BDD24371816006A9D67 /* XSHouseInfoTableView.m in Sources */,
+				55198BBA24371816006A9D67 /* HomePageViewController.m in Sources */,
+				55198BC524371816006A9D67 /* XSHouseSubTextViewCell.m in Sources */,
+				55198B8B24371816006A9D67 /* XSBusinessInfoModel.m in Sources */,
+				55198BE024371816006A9D67 /* XSHouseDetailsInfoCellModel.m in Sources */,
+				55198B9924371816006A9D67 /* NSMutableArray+safe.m in Sources */,
+				55198BB324371816006A9D67 /* MyInfoViewController.m in Sources */,
+				55198B8324371816006A9D67 /* XSCollectionView.m in Sources */,
+				55198BF224371816006A9D67 /* XSHouseDetailsBusinessInfoCell.m in Sources */,
+				55198BBE24371816006A9D67 /* XSHouseDetailsController.m in Sources */,
+				55198BD524371816006A9D67 /* XSHouseSubFootView.m in Sources */,
+				55198BAE24371816006A9D67 /* XSOperationParam.m in Sources */,
+				55198BB224371816006A9D67 /* XSLoginViewController.m in Sources */,
+				55198BF324371816006A9D67 /* XSHouseInfoCell.m in Sources */,
+				55198BAB24371816006A9D67 /* XSBaseTableViewCell.m in Sources */,
+				55198B9F24371816006A9D67 /* NSObject+category.m in Sources */,
+				55198BFB24371816006A9D67 /* XSHouseCallPhone.m in Sources */,
+				55198BA724371816006A9D67 /* XSNavViewController.m in Sources */,
+				55198BB824371816006A9D67 /* XSUserServer.m in Sources */,
+				55198BE324371816006A9D67 /* XSHouseDetailsAddressInfoCell.m in Sources */,
+				55198BFA24371816006A9D67 /* XSHouseModuleViewController.m in Sources */,
+				55198BAD24371816006A9D67 /* XSNetworkInterface.m in Sources */,
+				55198BE624371816006A9D67 /* XSHouseDetailsIntroduceInfoCell.m in Sources */,
+				55198BC924371816006A9D67 /* XSHouseSubTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6C6BC157241FA75400B62001 /* LaunchScreen.storyboard */ = {
+		55198A9F24371815006A9D67 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6C6BC158241FA75400B62001 /* Base */,
+				55198AA024371815006A9D67 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
