@@ -7,7 +7,6 @@
 //
 
 #import "XSBaseViewController.h"
-#import "XSHouseSubAllMode.h"
 #import "XShouseSubNetworkInterface.h"
 
 NS_ASSUME_NONNULL_BEGIN

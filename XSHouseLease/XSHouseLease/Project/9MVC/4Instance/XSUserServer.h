@@ -9,6 +9,7 @@
 #import "XSBaseObject.h"
 #import "XSUserModel.h"
 #import "BRAddressModel.h"
+#import "XSHouseBlock.h"
 
 NS_ASSUME_NONNULL_BEGIN
 UIKIT_EXTERN NSString *const HBNotificationLoginStatusChangedLoginFailed;

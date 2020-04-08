@@ -8,6 +8,7 @@
 
 #import "XSBaseObject.h"
 #import "XSHouseEnum.h"
+#import "XSHouseBlock.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -65,7 +66,8 @@ typedef void (^valueUpdate)(void);
 @property (nonatomic,strong) NSArray<XSValue *> *values;
 
 @property (nonatomic,copy) valueUpdate updateBlack;
-@property (nonatomic,copy) valuechangeStatus valuechangeStatus;
+
+@property (nonatomic,copy) XSValuechangeStatus valuechangeStatus;
 
 //字段是否可以多选
 @property (nonatomic,assign) BOOL multiple;
