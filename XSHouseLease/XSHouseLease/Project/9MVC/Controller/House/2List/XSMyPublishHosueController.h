@@ -7,7 +7,7 @@
 //
 
 #import "XSBaseViewController.h"
-#import "XSBHouseInfoModel.h"
+#import "XSHouseRentInfoModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

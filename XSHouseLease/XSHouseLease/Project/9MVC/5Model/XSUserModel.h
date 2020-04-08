@@ -6,13 +6,13 @@
 //  Copyright © 2020 indulgeIn. All rights reserved.
 //
 
-#import "XSBaseObject.h"
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 
 
-@interface XSUserModel : XSBaseObject
+@interface XSUserModel : NSObject
 
 
 //

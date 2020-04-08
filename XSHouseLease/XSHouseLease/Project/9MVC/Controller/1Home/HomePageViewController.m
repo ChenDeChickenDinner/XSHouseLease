@@ -87,37 +87,22 @@
 }
 
 -(void)city_tree{
-    
     WEAK_SELF;
-    [self.subInfoInterface city_treeWithCallback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
-//        STRONG_SELF;
-//        [responseModel.data mj_JSONData];
-//        [YBModelFile createFileWithName:@"XSCity" data:[responseModel.data mj_JSONData]];
 
-        NSMutableArray *modelArray = [BRProvinceModel mj_objectArrayWithKeyValuesArray:responseModel.data];
-  
-        [XSHouseFixedData sharedInstance].cityArray = modelArray;
+    [[XSPublicServer sharedInstance] cityTreeWithCallback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+        
     }];
-    
-    [self.subInfoInterface bunnerListWithCallback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
-        if (error==nil && responseModel.code.integerValue == SuccessCode) {
-            
-            
-            NSMutableArray *modelArray = [XSHousePicture mj_objectArrayWithKeyValuesArray:responseModel.data];
-            [XSHouseFixedData sharedInstance].bunnerArray = modelArray;
-            
-            self.searchView.imagePathsGroup = [XSHouseFixedData sharedInstance].bunnerUrlArray;
-        }
-    }];
-    
-    [self.subInfoInterface hotsSearchWithCallback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
-        if (error==nil && responseModel.code.integerValue == SuccessCode) {
-             
-             
-             NSMutableArray *modelArray = [XSHousehots mj_objectArrayWithKeyValuesArray:responseModel.data];
-             [XSHouseFixedData sharedInstance].hotsSearchArray = modelArray;
-             self.searchView.hotsSearchArray = [XSHouseFixedData sharedInstance].hotsSearchArray;
-         }
-    }];
+    [[XSPublicServer sharedInstance] bunnerListWithCallback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+        STRONG_SELF;
+          self.searchView.imagePathsGroup = [XSPublicServer sharedInstance].bunnerUrlArray;
+
+      }];
+    [[XSPublicServer sharedInstance] hotsSearchWithCallback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+        STRONG_SELF;
+
+          self.searchView.hotsSearchArray = [XSPublicServer sharedInstance].hotsSearchArray;
+
+      }];
+
 }
 @end

@@ -12,7 +12,7 @@
 #import "FindHouseViewController.h"
 #import "MyInfoViewController.h"
 #import "MessageViewController.h"
-#import "XSBaseObject.h"
+#import <Foundation/Foundation.h>
 #import "XSNavViewController.h"
 
 @interface XSTabBarViewController ()

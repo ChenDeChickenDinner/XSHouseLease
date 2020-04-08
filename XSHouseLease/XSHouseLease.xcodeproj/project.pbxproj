@@ -116,23 +116,19 @@
 		55BF0090243D6325007843C2 /* XSHouseIntroduceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF000B243D6324007843C2 /* XSHouseIntroduceController.m */; };
 		55BF0091243D6325007843C2 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF000D243D6324007843C2 /* MessageViewController.m */; };
 		55BF0092243D6325007843C2 /* XSBusinessInfoSever.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF001B243D6324007843C2 /* XSBusinessInfoSever.m */; };
-		55BF0093243D6325007843C2 /* XSHouseFixedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF001D243D6324007843C2 /* XSHouseFixedData.m */; };
 		55BF0094243D6325007843C2 /* XSUserServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF001E243D6324007843C2 /* XSUserServer.m */; };
-		55BF0095243D6325007843C2 /* XSHouseInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF0023243D6324007843C2 /* XSHouseInfoModel.m */; };
-		55BF0096243D6325007843C2 /* XSBHouseInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF0024243D6324007843C2 /* XSBHouseInfoModel.m */; };
 		55BF0097243D6325007843C2 /* XSLogInVcModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF0026243D6324007843C2 /* XSLogInVcModel.m */; };
 		55BF0098243D6325007843C2 /* XSHouseDetailsInfoCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF002B243D6324007843C2 /* XSHouseDetailsInfoCellModel.m */; };
 		55BF0099243D6325007843C2 /* XSUserLogInModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF002D243D6324007843C2 /* XSUserLogInModel.m */; };
 		55BF009A243D6325007843C2 /* XSUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF002E243D6324007843C2 /* XSUserModel.m */; };
 		55BF009B243D6325007843C2 /* XSHouseRentInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF002F243D6324007843C2 /* XSHouseRentInfoModel.m */; };
-		55BF009C243D6325007843C2 /* XSHouseEnum.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF0031243D6324007843C2 /* XSHouseEnum.m */; };
-		55BF009D243D6325007843C2 /* XSBusinessInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF0033243D6324007843C2 /* XSBusinessInfoModel.m */; };
 		55BF009E243D6325007843C2 /* XSHouseBunnerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF0035243D6324007843C2 /* XSHouseBunnerModel.m */; };
 		55BF009F243D6325007843C2 /* XSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF0037243D6324007843C2 /* XSBaseViewController.m */; };
 		55BF00A0243D6325007843C2 /* XSBaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF0039243D6324007843C2 /* XSBaseNavViewController.m */; };
 		55BF00A1243D6325007843C2 /* XSBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF003B243D6324007843C2 /* XSBaseCollectionViewCell.m */; };
 		55BF00A2243D6325007843C2 /* XSBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF003C243D6324007843C2 /* XSBaseTableViewCell.m */; };
-		55BF00A3243D6325007843C2 /* XSBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF003F243D6324007843C2 /* XSBaseObject.m */; };
+		55BF00B1243DB7AC007843C2 /* XSPublicServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF00B0243DB7AC007843C2 /* XSPublicServer.m */; };
+		55BF00B4243DC077007843C2 /* XSConfigServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF00B3243DC077007843C2 /* XSConfigServer.m */; };
 		6C9FF7AC24309BFE0020509C /* fangdinghui.cer in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FF7AB24309BFE0020509C /* fangdinghui.cer */; };
 		9AC3A3F8DF5C36DD201ED436 /* libPods-XSHouseLease.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2818EC9B5CB7624F84048215 /* libPods-XSHouseLease.a */; };
 /* End PBXBuildFile section */
@@ -205,42 +201,34 @@
 		55BF0012243D6324007843C2 /* XSHouseEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseEnum.h; sourceTree = "<group>"; };
 		55BF001A243D6324007843C2 /* XSUserServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSUserServer.h; sourceTree = "<group>"; };
 		55BF001B243D6324007843C2 /* XSBusinessInfoSever.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBusinessInfoSever.m; sourceTree = "<group>"; };
-		55BF001C243D6324007843C2 /* XSHouseFixedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseFixedData.h; sourceTree = "<group>"; };
-		55BF001D243D6324007843C2 /* XSHouseFixedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseFixedData.m; sourceTree = "<group>"; };
 		55BF001E243D6324007843C2 /* XSUserServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSUserServer.m; sourceTree = "<group>"; };
 		55BF001F243D6324007843C2 /* XSBusinessInfoSever.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBusinessInfoSever.h; sourceTree = "<group>"; };
 		55BF0021243D6324007843C2 /* XSUserLogInModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XSUserLogInModel.h; path = ../XSUserLogInModel.h; sourceTree = "<group>"; };
-		55BF0023243D6324007843C2 /* XSHouseInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseInfoModel.m; sourceTree = "<group>"; };
-		55BF0024243D6324007843C2 /* XSBHouseInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBHouseInfoModel.m; sourceTree = "<group>"; };
-		55BF0025243D6324007843C2 /* XSHouseEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseEnum.h; sourceTree = "<group>"; };
 		55BF0026243D6324007843C2 /* XSLogInVcModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XSLogInVcModel.m; path = ../../5Model/XSLogInVcModel.m; sourceTree = "<group>"; };
 		55BF0027243D6324007843C2 /* XSHouseRentInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseRentInfoModel.h; sourceTree = "<group>"; };
 		55BF0028243D6324007843C2 /* XSUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XSUserModel.h; path = ../XSUserModel.h; sourceTree = "<group>"; };
-		55BF0029243D6324007843C2 /* XSBusinessInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBusinessInfoModel.h; sourceTree = "<group>"; };
 		55BF002A243D6324007843C2 /* XSHouseBunnerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseBunnerModel.h; sourceTree = "<group>"; };
 		55BF002B243D6324007843C2 /* XSHouseDetailsInfoCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseDetailsInfoCellModel.m; sourceTree = "<group>"; };
-		55BF002C243D6324007843C2 /* XSHouseInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseInfoModel.h; sourceTree = "<group>"; };
 		55BF002D243D6324007843C2 /* XSUserLogInModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XSUserLogInModel.m; path = ../XSUserLogInModel.m; sourceTree = "<group>"; };
 		55BF002E243D6324007843C2 /* XSUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XSUserModel.m; path = ../XSUserModel.m; sourceTree = "<group>"; };
 		55BF002F243D6324007843C2 /* XSHouseRentInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseRentInfoModel.m; sourceTree = "<group>"; };
 		55BF0030243D6324007843C2 /* XSLogInVcModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XSLogInVcModel.h; path = ../../5Model/XSLogInVcModel.h; sourceTree = "<group>"; };
-		55BF0031243D6324007843C2 /* XSHouseEnum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseEnum.m; sourceTree = "<group>"; };
-		55BF0032243D6324007843C2 /* XSBHouseInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBHouseInfoModel.h; sourceTree = "<group>"; };
-		55BF0033243D6324007843C2 /* XSBusinessInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBusinessInfoModel.m; sourceTree = "<group>"; };
 		55BF0034243D6324007843C2 /* XSHouseDetailsInfoCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseDetailsInfoCellModel.h; sourceTree = "<group>"; };
 		55BF0035243D6324007843C2 /* XSHouseBunnerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseBunnerModel.m; sourceTree = "<group>"; };
 		55BF0037243D6324007843C2 /* XSBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBaseViewController.m; sourceTree = "<group>"; };
 		55BF0038243D6324007843C2 /* XSBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBaseTableViewCell.h; sourceTree = "<group>"; };
 		55BF0039243D6324007843C2 /* XSBaseNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBaseNavViewController.m; sourceTree = "<group>"; };
-		55BF003A243D6324007843C2 /* XSBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBaseObject.h; sourceTree = "<group>"; };
 		55BF003B243D6324007843C2 /* XSBaseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBaseCollectionViewCell.m; sourceTree = "<group>"; };
 		55BF003C243D6324007843C2 /* XSBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBaseTableViewCell.m; sourceTree = "<group>"; };
 		55BF003D243D6324007843C2 /* XSBaseNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBaseNavViewController.h; sourceTree = "<group>"; };
 		55BF003E243D6324007843C2 /* XSBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBaseViewController.h; sourceTree = "<group>"; };
-		55BF003F243D6324007843C2 /* XSBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBaseObject.m; sourceTree = "<group>"; };
 		55BF0040243D6324007843C2 /* XSBaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBaseCollectionViewCell.h; sourceTree = "<group>"; };
 		55BF00A4243D634D007843C2 /* XSConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSConst.h; sourceTree = "<group>"; };
 		55BF00A5243D635A007843C2 /* XSMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSMacro.h; sourceTree = "<group>"; };
+		55BF00AF243DB7AC007843C2 /* XSPublicServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSPublicServer.h; sourceTree = "<group>"; };
+		55BF00B0243DB7AC007843C2 /* XSPublicServer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSPublicServer.m; sourceTree = "<group>"; };
+		55BF00B2243DC077007843C2 /* XSConfigServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSConfigServer.h; sourceTree = "<group>"; };
+		55BF00B3243DC077007843C2 /* XSConfigServer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSConfigServer.m; sourceTree = "<group>"; };
 		55BFFF6F243D6324007843C2 /* XSHouseDetailsInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseDetailsInfo.json; sourceTree = "<group>"; };
 		55BFFF71243D6324007843C2 /* XSHouseSearch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseSearch.json; sourceTree = "<group>"; };
 		55BFFF73243D6324007843C2 /* XSHouseInfoFirstTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseInfoFirstTest.json; sourceTree = "<group>"; };
@@ -666,12 +654,14 @@
 		55BF0019243D6324007843C2 /* 4Instance */ = {
 			isa = PBXGroup;
 			children = (
-				55BF001F243D6324007843C2 /* XSBusinessInfoSever.h */,
-				55BF001B243D6324007843C2 /* XSBusinessInfoSever.m */,
-				55BF001C243D6324007843C2 /* XSHouseFixedData.h */,
-				55BF001D243D6324007843C2 /* XSHouseFixedData.m */,
 				55BF001A243D6324007843C2 /* XSUserServer.h */,
 				55BF001E243D6324007843C2 /* XSUserServer.m */,
+				55BF001F243D6324007843C2 /* XSBusinessInfoSever.h */,
+				55BF001B243D6324007843C2 /* XSBusinessInfoSever.m */,
+				55BF00AF243DB7AC007843C2 /* XSPublicServer.h */,
+				55BF00B0243DB7AC007843C2 /* XSPublicServer.m */,
+				55BF00B2243DC077007843C2 /* XSConfigServer.h */,
+				55BF00B3243DC077007843C2 /* XSConfigServer.m */,
 			);
 			path = 4Instance;
 			sourceTree = "<group>";
@@ -680,18 +670,6 @@
 			isa = PBXGroup;
 			children = (
 				55BF00A7243D65B9007843C2 /* login */,
-				55BF0032243D6324007843C2 /* XSBHouseInfoModel.h */,
-				55BF0024243D6324007843C2 /* XSBHouseInfoModel.m */,
-				55BF0029243D6324007843C2 /* XSBusinessInfoModel.h */,
-				55BF0033243D6324007843C2 /* XSBusinessInfoModel.m */,
-				55BF002A243D6324007843C2 /* XSHouseBunnerModel.h */,
-				55BF0035243D6324007843C2 /* XSHouseBunnerModel.m */,
-				55BF0034243D6324007843C2 /* XSHouseDetailsInfoCellModel.h */,
-				55BF002B243D6324007843C2 /* XSHouseDetailsInfoCellModel.m */,
-				55BF0025243D6324007843C2 /* XSHouseEnum.h */,
-				55BF0031243D6324007843C2 /* XSHouseEnum.m */,
-				55BF002C243D6324007843C2 /* XSHouseInfoModel.h */,
-				55BF0023243D6324007843C2 /* XSHouseInfoModel.m */,
 				55BF0027243D6324007843C2 /* XSHouseRentInfoModel.h */,
 				55BF002F243D6324007843C2 /* XSHouseRentInfoModel.m */,
 			);
@@ -701,8 +679,6 @@
 		55BF0036243D6324007843C2 /* 0BaseClass */ = {
 			isa = PBXGroup;
 			children = (
-				55BF003A243D6324007843C2 /* XSBaseObject.h */,
-				55BF003F243D6324007843C2 /* XSBaseObject.m */,
 				55BF0038243D6324007843C2 /* XSBaseTableViewCell.h */,
 				55BF003C243D6324007843C2 /* XSBaseTableViewCell.m */,
 				55BF0040243D6324007843C2 /* XSBaseCollectionViewCell.h */,
@@ -748,7 +724,6 @@
 				55BFFF6E243D6324007843C2 /* 2详情展示结构 */,
 				55BFFF7B243D6324007843C2 /* 3配套设施 */,
 				55BFFF70243D6324007843C2 /* 4租房导航条件 */,
-				55BFFF7D243D6324007843C2 /* XSHouseBusinessInfo.json */,
 			);
 			path = 3Config;
 			sourceTree = "<group>";
@@ -756,6 +731,7 @@
 		55BFFF6E243D6324007843C2 /* 2详情展示结构 */ = {
 			isa = PBXGroup;
 			children = (
+				55BFFF7D243D6324007843C2 /* XSHouseBusinessInfo.json */,
 				55BFFF6F243D6324007843C2 /* XSHouseDetailsInfo.json */,
 			);
 			path = "2详情展示结构";
@@ -803,10 +779,10 @@
 			isa = PBXGroup;
 			children = (
 				55BFFF7F243D6324007843C2 /* 1上传 */,
-				55BFFFA1243D6324007843C2 /* 房主 */,
-				55BFFFA5243D6324007843C2 /* other */,
 				55BFFFB8243D6324007843C2 /* 2列表 */,
 				55BFFFBC243D6324007843C2 /* 3详情展示 */,
+				55BFFFA1243D6324007843C2 /* 房主 */,
+				55BFFFA5243D6324007843C2 /* other */,
 			);
 			path = 6View;
 			sourceTree = "<group>";
@@ -814,18 +790,18 @@
 		55BFFF7F243D6324007843C2 /* 1上传 */ = {
 			isa = PBXGroup;
 			children = (
-				55BFFF80243D6324007843C2 /* textView */,
-				55BFFF84243D6324007843C2 /* collection */,
 				55BFFF8B243D6324007843C2 /* choose */,
-				55BFFF8F243D6324007843C2 /* XSHouseSubFootView.h */,
-				55BFFF90243D6324007843C2 /* XSHouseSubTableViewCell.m */,
-				55BFFF91243D6324007843C2 /* XSHouseSubCell.xib */,
-				55BFFF92243D6324007843C2 /* textFile */,
+				55BFFF84243D6324007843C2 /* collection */,
 				55BFFF96243D6324007843C2 /* imageUpdata */,
+				55BFFF92243D6324007843C2 /* textFile */,
+				55BFFF80243D6324007843C2 /* textView */,
+				55BFFF91243D6324007843C2 /* XSHouseSubCell.xib */,
+				55BFFF8F243D6324007843C2 /* XSHouseSubFootView.h */,
 				55BFFF9D243D6324007843C2 /* XSHouseSubFootView.m */,
-				55BFFF9E243D6324007843C2 /* XSHouseSubTableViewCell.xib */,
 				55BFFF9F243D6324007843C2 /* XSHouseSubFootView.xib */,
 				55BFFFA0243D6324007843C2 /* XSHouseSubTableViewCell.h */,
+				55BFFF90243D6324007843C2 /* XSHouseSubTableViewCell.m */,
+				55BFFF9E243D6324007843C2 /* XSHouseSubTableViewCell.xib */,
 			);
 			path = "1上传";
 			sourceTree = "<group>";
@@ -900,23 +876,23 @@
 			isa = PBXGroup;
 			children = (
 				55BFFFA6243D6324007843C2 /* XSBusinessCollectionCell.h */,
-				55BFFFA7243D6324007843C2 /* XSHouseInfoTableView.m */,
-				55BFFFA8243D6324007843C2 /* XSCollectionView.h */,
-				55BFFFA9243D6324007843C2 /* XSLocationSearchview.m */,
-				55BFFFAA243D6324007843C2 /* XSHouseInfoCell.h */,
-				55BFFFAB243D6324007843C2 /* XSRegionSearchView.m */,
-				55BFFFAC243D6324007843C2 /* XSHouseRentStatusView.h */,
-				55BFFFAD243D6324007843C2 /* XSRoundedView.h */,
-				55BFFFAE243D6324007843C2 /* XSHouseInfoCell.m */,
-				55BFFFAF243D6324007843C2 /* XSLocationSearchview.h */,
-				55BFFFB0243D6324007843C2 /* XSCollectionView.m */,
-				55BFFFB1243D6324007843C2 /* XSHouseInfoTableView.h */,
 				55BFFFB2243D6324007843C2 /* XSBusinessCollectionCell.m */,
-				55BFFFB3243D6324007843C2 /* XSRegionSearchView.h */,
-				55BFFFB4243D6324007843C2 /* XSRoundedView.m */,
+				55BFFFA8243D6324007843C2 /* XSCollectionView.h */,
+				55BFFFB0243D6324007843C2 /* XSCollectionView.m */,
+				55BFFFAA243D6324007843C2 /* XSHouseInfoCell.h */,
+				55BFFFAE243D6324007843C2 /* XSHouseInfoCell.m */,
+				55BFFFB1243D6324007843C2 /* XSHouseInfoTableView.h */,
+				55BFFFA7243D6324007843C2 /* XSHouseInfoTableView.m */,
+				55BFFFAC243D6324007843C2 /* XSHouseRentStatusView.h */,
 				55BFFFB5243D6324007843C2 /* XSHouseRentStatusView.m */,
-				55BFFFB6243D6324007843C2 /* XSSearchConditionalView.xib */,
+				55BFFFAF243D6324007843C2 /* XSLocationSearchview.h */,
+				55BFFFA9243D6324007843C2 /* XSLocationSearchview.m */,
 				55BFFFB7243D6324007843C2 /* XSLocationSearchview.xib */,
+				55BFFFB3243D6324007843C2 /* XSRegionSearchView.h */,
+				55BFFFAB243D6324007843C2 /* XSRegionSearchView.m */,
+				55BFFFAD243D6324007843C2 /* XSRoundedView.h */,
+				55BFFFB4243D6324007843C2 /* XSRoundedView.m */,
+				55BFFFB6243D6324007843C2 /* XSSearchConditionalView.xib */,
 			);
 			path = other;
 			sourceTree = "<group>";
@@ -934,13 +910,15 @@
 		55BFFFBC243D6324007843C2 /* 3详情展示 */ = {
 			isa = PBXGroup;
 			children = (
+				55BF0034243D6324007843C2 /* XSHouseDetailsInfoCellModel.h */,
+				55BF002B243D6324007843C2 /* XSHouseDetailsInfoCellModel.m */,
 				55BFFFBD243D6324007843C2 /* 0图片轮播 */,
-				55BFFFC1243D6324007843C2 /* 2其它信息 */,
 				55BFFFC5243D6324007843C2 /* 1房屋信息 */,
-				55BFFFC9243D6324007843C2 /* 4配套设施 */,
-				55BFFFCD243D6324007843C2 /* 更多推荐 */,
+				55BFFFC1243D6324007843C2 /* 2其它信息 */,
 				55BFFFD1243D6324007843C2 /* 3小地图 */,
+				55BFFFC9243D6324007843C2 /* 4配套设施 */,
 				55BFFFD5243D6324007843C2 /* 5房源介绍 */,
+				55BFFFCD243D6324007843C2 /* 更多推荐 */,
 			);
 			path = "3详情展示";
 			sourceTree = "<group>";
@@ -1030,6 +1008,8 @@
 		55BFFFDD243D6324007843C2 /* InterfaceModel */ = {
 			isa = PBXGroup;
 			children = (
+				55BF002A243D6324007843C2 /* XSHouseBunnerModel.h */,
+				55BF0035243D6324007843C2 /* XSHouseBunnerModel.m */,
 			);
 			path = InterfaceModel;
 			sourceTree = "<group>";
@@ -1109,11 +1089,11 @@
 		55BFFFF3243D6324007843C2 /* House */ = {
 			isa = PBXGroup;
 			children = (
-				55BFFFF4243D6324007843C2 /* 2List */,
-				55BFFFF7243D6324007843C2 /* Modeule */,
 				55BFFFFB243D6324007843C2 /* 1Submit */,
-				55BF0004243D6324007843C2 /* Search */,
+				55BFFFF4243D6324007843C2 /* 2List */,
 				55BF0005243D6324007843C2 /* 3Details */,
+				55BFFFF7243D6324007843C2 /* Modeule */,
+				55BF0004243D6324007843C2 /* Search */,
 			);
 			path = House;
 			sourceTree = "<group>";
@@ -1140,14 +1120,14 @@
 		55BFFFFB243D6324007843C2 /* 1Submit */ = {
 			isa = PBXGroup;
 			children = (
-				55BFFFFC243D6324007843C2 /* XSHouseSubSuccessViewController.h */,
 				55BFFFFD243D6324007843C2 /* XSHouseSubmitBaseViewController.h */,
+				55BF0003243D6324007843C2 /* XSHouseSubmitBaseViewController.m */,
+				55BF0002243D6324007843C2 /* XSHouseSubmitFirstViewController.h */,
 				55BFFFFE243D6324007843C2 /* XSHouseSubmitFirstViewController.m */,
 				55BFFFFF243D6324007843C2 /* XSHouseSubmitFirstViewController.xib */,
-				55BF0000243D6324007843C2 /* XSHouseSubSuccessViewController.xib */,
+				55BFFFFC243D6324007843C2 /* XSHouseSubSuccessViewController.h */,
 				55BF0001243D6324007843C2 /* XSHouseSubSuccessViewController.m */,
-				55BF0002243D6324007843C2 /* XSHouseSubmitFirstViewController.h */,
-				55BF0003243D6324007843C2 /* XSHouseSubmitBaseViewController.m */,
+				55BF0000243D6324007843C2 /* XSHouseSubSuccessViewController.xib */,
 			);
 			path = 1Submit;
 			sourceTree = "<group>";
@@ -1359,23 +1339,21 @@
 				55BF004E243D6325007843C2 /* XSHouseSubCollectionviewBCell.m in Sources */,
 				55BF0066243D6325007843C2 /* XSBusinessCollectionCell.m in Sources */,
 				55198EEB243C5248006A9D67 /* NSMutableDictionary+safe.m in Sources */,
-				55BF009C243D6325007843C2 /* XSHouseEnum.m in Sources */,
 				55BF00A0243D6325007843C2 /* XSBaseNavViewController.m in Sources */,
 				55BF0064243D6325007843C2 /* XSHouseInfoCell.m in Sources */,
 				55BF0088243D6325007843C2 /* XSHouseSubmitFirstViewController.m in Sources */,
 				55BF008B243D6325007843C2 /* XSHouseSubSuccessViewController.m in Sources */,
+				55BF00B4243DC077007843C2 /* XSConfigServer.m in Sources */,
 				55BF0068243D6325007843C2 /* XSHouseRentStatusView.m in Sources */,
 				55BF0071243D6325007843C2 /* XSHouseDetailsBasicInfoCell.m in Sources */,
 				55BF0082243D6325007843C2 /* XSMapViewController.m in Sources */,
 				55BF009A243D6325007843C2 /* XSUserModel.m in Sources */,
-				55BF0093243D6325007843C2 /* XSHouseFixedData.m in Sources */,
 				55BF009B243D6325007843C2 /* XSHouseRentInfoModel.m in Sources */,
 				55198EFF243C5248006A9D67 /* XSNavViewController.m in Sources */,
 				55BF007D243D6325007843C2 /* XSLoginViewController.m in Sources */,
 				55198EF3243C5248006A9D67 /* NSObject+HBNotification.m in Sources */,
 				55BF0070243D6325007843C2 /* XSHouseDetailsBusinessInfoCell.m in Sources */,
 				55198EFB243C5248006A9D67 /* ViewController.m in Sources */,
-				55BF0096243D6325007843C2 /* XSBHouseInfoModel.m in Sources */,
 				55BF008C243D6325007843C2 /* XSHouseSubmitBaseViewController.m in Sources */,
 				55BF0058243D6325007843C2 /* XSItemCollectionViewCell.m in Sources */,
 				55BF009E243D6325007843C2 /* XSHouseBunnerModel.m in Sources */,
@@ -1385,7 +1363,6 @@
 				55BF00A2243D6325007843C2 /* XSBaseTableViewCell.m in Sources */,
 				55BF0077243D6325007843C2 /* XSHouseDetailsAddressInfoCell.m in Sources */,
 				55BF00A1243D6325007843C2 /* XSBaseCollectionViewCell.m in Sources */,
-				55BF009D243D6325007843C2 /* XSBusinessInfoModel.m in Sources */,
 				55198EEE243C5248006A9D67 /* NSArray+safe.m in Sources */,
 				55BF0059243D6325007843C2 /* XSPhotoPickerView.m in Sources */,
 				55198EEF243C5248006A9D67 /* NSMutableArray+safe.m in Sources */,
@@ -1397,10 +1374,10 @@
 				55BF0086243D6325007843C2 /* XSHouseModuleViewController.m in Sources */,
 				55BF006B243D6325007843C2 /* XSHouseRentInfoCell.m in Sources */,
 				55BF0061243D6325007843C2 /* XSHouseInfoTableView.m in Sources */,
-				55BF00A3243D6325007843C2 /* XSBaseObject.m in Sources */,
 				55198D80243C4B2F006A9D67 /* main.m in Sources */,
 				55BF0084243D6325007843C2 /* HomePageViewController.m in Sources */,
 				55BF0090243D6325007843C2 /* XSHouseIntroduceController.m in Sources */,
+				55BF00B1243DB7AC007843C2 /* XSPublicServer.m in Sources */,
 				55BF0060243D6325007843C2 /* XSHouseCallPhone.m in Sources */,
 				55198EF4243C5248006A9D67 /* NSObject+PerformBlock.m in Sources */,
 				55BF004C243D6325007843C2 /* XSHouseSubTextViewCell.m in Sources */,
@@ -1428,7 +1405,6 @@
 				55198EEC243C5248006A9D67 /* PrintBeautifulLog.m in Sources */,
 				55198EF6243C5248006A9D67 /* NSMutableString+safe.m in Sources */,
 				55198EEA243C5248006A9D67 /* UIView+HBExtension.m in Sources */,
-				55BF0095243D6325007843C2 /* XSHouseInfoModel.m in Sources */,
 				55BF0092243D6325007843C2 /* XSBusinessInfoSever.m in Sources */,
 				55BF0050243D6325007843C2 /* XSHouseSubCollectionviewACell.m in Sources */,
 			);

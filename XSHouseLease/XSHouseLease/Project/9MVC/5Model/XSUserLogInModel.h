@@ -6,13 +6,13 @@
 //  Copyright © 2020 indulgeIn. All rights reserved.
 //
 
-#import "XSBaseObject.h"
+#import <Foundation/Foundation.h>
 #import "XSLogInVcModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 
-@interface XSUserLogInModel : XSBaseObject
+@interface XSUserLogInModel : NSObject
 //登录手机号
 @property (nonatomic, copy) NSString *phone;
 

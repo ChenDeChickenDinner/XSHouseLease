@@ -31,14 +31,14 @@
 }
 - (void)awakeFromNib{
     [super awakeFromNib];
-     self.hotsSearchArray = [XSHouseFixedData sharedInstance].hotsSearchArray;
+     self.hotsSearchArray = [XSPublicServer sharedInstance].hotsSearchArray;
 
     SDCycleScrollView *cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:self.bounds delegate:self placeholderImage: [UIImage imageNamed:@"homePageIcon"]];
      cycleScrollView.imageURLStringsGroup = nil;
      cycleScrollView.showPageControl = YES;
      cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
      cycleScrollView.pageControlStyle = SDCycleScrollViewPageContolStyleClassic;
-     cycleScrollView.imageURLStringsGroup = [XSHouseFixedData sharedInstance].bunnerUrlArray;
+     cycleScrollView.imageURLStringsGroup = [XSPublicServer sharedInstance].bunnerUrlArray;
     self.cycleScrollView = cycleScrollView;
     [self.bkView addSubview:cycleScrollView];
 
@@ -75,7 +75,7 @@
 - (void)layoutSubviews{
     [super layoutSubviews];
     self.cycleScrollView.frame = self.bkView.bounds;
-    self.cycleScrollView.imageURLStringsGroup = [XSHouseFixedData sharedInstance].bunnerUrlArray;
+    self.cycleScrollView.imageURLStringsGroup = [XSPublicServer sharedInstance].bunnerUrlArray;
     [self hotsSubViewFrame];
 }
 - (void)hotsSubViewFrame{
@@ -96,13 +96,13 @@
 
 - (IBAction)cityChoose:(id)sender {
     WEAK_SELF;
-    if ([XSHouseFixedData sharedInstance].cityArray.count == 0) {
+    if ([XSPublicServer sharedInstance].cityArray.count == 0) {
         return;
     }
     BRStringPickerView *stringPickerView = [[BRStringPickerView alloc]init];
     NSMutableArray *modelArr = [[NSMutableArray alloc]init];
     stringPickerView.pickerMode = BRStringPickerComponentSingle;
-    for (BRProvinceModel *dataModel in [XSHouseFixedData sharedInstance].cityArray) {
+    for (BRProvinceModel *dataModel in [XSPublicServer sharedInstance].cityArray) {
         BRResultModel *model = [[BRResultModel alloc]init];
         model.key = dataModel.code;
         model.value = dataModel.name;

@@ -95,10 +95,10 @@
  [self.subInfoInterface getRentEnumsWithCallback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
      if (error == nil && responseModel.code.integerValue == SuccessCode) {
          STRONG_SELF;
-        XSHouseEnum *enumData  =  [XSHouseEnum mj_objectWithKeyValues:responseModel];
+         NSArray *enumData  =  [XSHouseEnumData mj_objectArrayWithKeyValuesArray:responseModel.data];
          NSLog(@"enumData = %@", [enumData mj_keyValues]);
          NSMutableArray *array = [NSMutableArray array];
-         for (XSHouseEnumData *model in enumData.data) {
+         for (XSHouseEnumData *model in enumData) {
              XSHouseInfoCellModel *cellModel =  [[XSHouseInfoCellModel alloc]initwithEnumData:model];
              [array addObject:cellModel];
          }
@@ -141,34 +141,7 @@
     return modelArray;
 }
 
-//- (NSNumber *)fromTypeToString:(id)data{
-//
-//    NSNumber *myNumber  = (NSNumber *)data;
-//
-//    int minThreshold = [myNumber intValue];
-//
-//    if ((int)minThreshold < 1 ){
-//    return (NSNumber *)data;
-//        NSLog(@"不是数字");
-//    }else{
-//     NSString *str = [NSString stringWithFormat:@"%@",data];
-////  对于各种数字类型的  处理
-//        if (strcmp([myNumber objCType], @encode(BOOL)) == 0) { // 布尔值
-//            return  [NSNumber numberWithBool:data];
-//        }else if (strcmp([myNumber objCType], @encode(int)) == 0) { // int 类型
-//        return  [NSNumber numberWithInt:(int)data];
-//        }else if (strcmp([myNumber objCType], @encode(float)) == 0) { // float 类型
-//        return [NSNumber numberWithFloat:str.floatValue];
-//        }else if (strcmp([myNumber objCType], @encode(double)) == 0) { // double 类型
-//        return [NSNumber numberWithDouble:str.doubleValue];
-//        }else if (strcmp([myNumber objCType], @encode(long)) == 0) { // double 类型
-//        return [NSNumber numberWithLong:(long)data];
-//        }
-//
-//     }
-//    return (NSNumber *)data;
-//
-//}
+
 - (NSMutableArray *)imageUrlArray{
     if (!_imageUrlArray) {
         _imageUrlArray = [NSMutableArray array];

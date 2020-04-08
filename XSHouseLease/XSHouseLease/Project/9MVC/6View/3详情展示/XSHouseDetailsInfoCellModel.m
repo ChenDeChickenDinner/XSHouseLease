@@ -8,6 +8,3 @@
 
 #import "XSHouseDetailsInfoCellModel.h"
 
-@implementation XSHouseDetailsInfoCellModel
-
-@end

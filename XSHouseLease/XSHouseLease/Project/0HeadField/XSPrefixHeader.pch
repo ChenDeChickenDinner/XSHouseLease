@@ -15,13 +15,11 @@
 
 #import "MBProgressHUD.h"
 #import "YBModelFile.h"
-#import "XSBaseObject.h"
 #import "XSUserServer.h"
 #import "NSData+Base64.h"
 #import "NSString+Base64.h"
 #import "XSRoundedView.h"
 #import "BRPickerView.h"
-#import "XSHouseFixedData.h"
 #import "HXPhotoPicker.h"
 #import "UIView+HBExtension.h"
 
@@ -40,7 +38,9 @@
 
 #import "XSHouseBlock.h"
 
-#import "XSHouseInfoModel.h"
+#import "XSHouseRentInfoModel.h"
+#import "XSPublicServer.h"
+#import "XSConfigServer.h"
 
 #define XSColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 #define XSColorAlpha(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]

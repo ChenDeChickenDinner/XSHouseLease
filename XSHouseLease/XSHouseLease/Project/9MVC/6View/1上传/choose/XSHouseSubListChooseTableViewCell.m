@@ -57,7 +57,7 @@
     addressPickerView.pickerMode = BRAddressPickerModeArea;
     addressPickerView.title = @"请选择地区";
 //    addressPickerView.selectValues = @[@"浙江省", @"杭州市", @"西湖区"];
-    addressPickerView.dataSourceArr = [XSHouseFixedData sharedInstance].cityArray;
+    addressPickerView.dataSourceArr = [XSPublicServer sharedInstance].cityArray;
 //    addressPickerView.selectIndexs = @[@10, @0, @4];
     addressPickerView.isAutoSelect = YES;
     addressPickerView.resultBlock = ^(BRProvinceModel *province, BRCityModel *city, BRAreaModel *area) {

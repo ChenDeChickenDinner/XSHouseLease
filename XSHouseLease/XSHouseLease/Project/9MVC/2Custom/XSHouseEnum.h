@@ -53,4 +53,26 @@ typedef NS_ENUM(NSInteger,XSBHouseKeyValueEditStatus) {
     XSBHouseKeyValueEdit = 0, // 无状态
     XSBHouseKeyValueEditBegin , // 开始编辑
 };
+
+typedef NS_ENUM(NSInteger,XSValueInputType) {
+    XSValueInputType_textField = 0,
+    XSValueInputType_listSelect,
+    XSValueInputType_collectionview,
+    XSValueInputType_textView,
+
+};
+typedef NS_ENUM(NSInteger,XSValueTextInputType) {
+    XSValueTextInputType_Str = 0,
+    XSValueTextInputType_Number,
+    XSValueTextInputType_phone,
+
+};
+typedef NS_ENUM(NSInteger,XSValueSendType) {
+    XSValueSendType_Int = 0,
+    XSValueSendType_Str,
+};
+
+
+
+
 #endif /* XSHouseEnum_h */

@@ -39,7 +39,6 @@
 - (AFHTTPSessionManager *)operationManager{
     if (_operationManager == nil) {
         _operationManager = [[AFHTTPSessionManager alloc]initWithBaseURL:[NSURL URLWithString:@"https://test.fangdinghui.cn"]];
-//        _operationManager.operationQueue.maxConcurrentOperationCount = 3;
         [_operationManager setSecurityPolicy:[self customSecurityPolicy]];
         _operationManager.requestSerializer.stringEncoding = NSUTF8StringEncoding;
         _operationManager.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -51,9 +50,7 @@
                                                                                   @"text/javascript",
                                                                                   @"text/xml",
                                                                                   @"image/*"]];
-//        [_operationManager.requestSerializer setValue:@"application/json;charset=UTF-8;multipart/form-data" forHTTPHeaderField:@"Content-Type"];
         [_operationManager.requestSerializer setValue:@"application/json;charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
-//        [_operationManager.requestSerializer setValue:@"*/*" forHTTPHeaderField:@"Accept"];
 
     }
     NSString *token  = [XSUserServer sharedInstance].userModel.token;

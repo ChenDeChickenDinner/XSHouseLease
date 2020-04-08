@@ -8,27 +8,45 @@
 
 #import "XSBusinessInfoSever.h"
 
-@implementation XSBusinessInfoSever
-DEF_SINGLETON(XSBusinessInfoSever)
+@implementation XSHouseFixedData
 
-- (NSMutableArray<XSBusinessInfoJsonModel *> *)businessInfoArray{
-    if (_businessInfoArray == nil) {
-        _businessInfoArray = [NSMutableArray array];
-        NSError *error;
-        NSString *path = [[NSBundle mainBundle]pathForResource:@"XSHouseBusinessInfo" ofType:@"json"];
-        NSArray *dataArray = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableLeaves error:&error];
-        _businessInfoArray = [XSBusinessInfoJsonModel mj_objectArrayWithKeyValuesArray:dataArray];
+DEF_SINGLETON(XSHouseFixedData)
+
+
+
+- (NSMutableDictionary *)subRentParameterDict{
+    if (!_subRentParameterDict) {
+        _subRentParameterDict = [NSMutableDictionary dictionary];
     }
-    return _businessInfoArray;
+    return _subRentParameterDict;
 }
-- (NSMutableArray<XSHouseDetailsFacilitiesModel *> *)facilitiesInfoArray{
-    if (_facilitiesInfoArray == nil) {
-        _facilitiesInfoArray = [NSMutableArray array];
-        NSError *error;
-        NSString *path = [[NSBundle mainBundle]pathForResource:@"XSFacilitiesInfoJson" ofType:@"json"];
-        NSArray *dataArray = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableLeaves error:&error];
-        _facilitiesInfoArray = [XSHouseDetailsFacilitiesModel mj_objectArrayWithKeyValuesArray:dataArray];
+- (NSMutableArray<XSHouseModuleModel *> *)renthouseConditionArray{
+    if (_renthouseConditionArray == nil) {
+        _renthouseConditionArray = [NSMutableArray array];
     }
-    return _facilitiesInfoArray;
+    return _renthouseConditionArray;
+}
+- (void)LocationParameterUpdateWithProvince:(BRProvinceModel *)province city:(BRCityModel *)city area:(BRAreaModel *)area{
+    
+   NSNumber *provinceValue = [NSNumber numberWithInteger:province.code.integerValue];
+   NSNumber *cityValue = [NSNumber numberWithInteger:city.code.integerValue];
+   NSNumber *areaValue = [NSNumber numberWithInteger:area.code.integerValue];
+
+    [self subRentParameterDictUpdateWithKey:@"city" value:province.name];
+    [self subRentParameterDictUpdateWithKey:@"cityId" value:provinceValue];
+    
+    [self subRentParameterDictUpdateWithKey:@"region" value:city.name];
+    [self subRentParameterDictUpdateWithKey:@"regionId" value:cityValue];
+    
+    [self subRentParameterDictUpdateWithKey:@"town" value:area.name];
+    [self subRentParameterDictUpdateWithKey:@"townId" value:areaValue];
+
+    
+
+}
+
+- (void)subRentParameterDictUpdateWithKey:(NSString *)key value:(id)value{
+    [self.subRentParameterDict safeSetObject:value forKey:key];
+//    NSLog(@"subRent = \n%@",self.subRentParameterDict);
 }
 @end

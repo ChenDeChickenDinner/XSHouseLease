@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "XSBaseObject.h"
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

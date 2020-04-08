@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "XSHouseInfoModel.h"
+#import "XSHouseRentInfoModel.h"
 #import "XSBaseCollectionViewCell.h"
 
 NS_ASSUME_NONNULL_BEGIN

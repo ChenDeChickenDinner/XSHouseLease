@@ -7,102 +7,178 @@
 //
 
 #import "XSHouseRentInfoModel.h"
+#import "XSHouseSubCollectionviewBCell.h"
 
-@implementation XSHouseDetailsFacilitiesModel
-+ (NSDictionary *)mj_replacedKeyFromPropertyName{
-    return @{@"ID":@"id"};
+@implementation XSHouseEnumDataEnumRes
+
+@end
+
+
+@implementation XSHouseEnumData
+
++ (NSDictionary *)mj_objectClassInArray {
+    return @{@"enumRes":@"XSHouseEnumDataEnumRes"};
+}
+
+@end
+@implementation XSValue
+- (void)setValue:(NSNumber *)value{
+    _value = value;
+    [self infoLog];
+    if (self.updateBlack)self.updateBlack();
+}
+- (void)setValueStr:(NSString *)valueStr{
+    _valueStr = valueStr;
+    [self infoLog];
+    if (self.updateBlack)self.updateBlack();
+}
+- (void)setIsSelect:(BOOL)isSelect{
+    _isSelect = isSelect;
+    [self infoLog];
+    if (self.updateBlack)self.updateBlack();
+}
+
+- (void)infoLog{
+  NSLog(@"name = %@,key = %@,value = %@,valueStr = %@,sendStr = %@",self.keyStr,self.key,self.value,self.valueStr,self.sendType == XSValueSendType_Int?self.value:self.valueStr);
 }
 @end
 
-@implementation XSHouseRentInfoModel
-- (id)copyWithZone:(NSZone *)zone {
-    typeof(self) one = [[[self class] allocWithZone:zone] init];
-    one.dealStatus = self.dealStatus;
-      one.orientationName = self.orientationName;
-//      one.featurePointNames = self.featurePointNames;
-      one.estateIntroduced = self.estateIntroduced;
-      one.waterElectricity = self.waterElectricity;
-      one.callPhone = self.callPhone;
-      one.customerId = self.customerId;
-      one.rentTimeTypeName = self.rentTimeTypeName;
-      one.address = self.address;
-      one.contentImg = self.contentImg;
-      one.formTypeRoom = self.formTypeRoom;
-      one.orientation = self.orientation;
-      one.updateDate = self.updateDate;
-      one.seeHouseTypeName = self.seeHouseTypeName;
-      one.facilities = self.facilities;
-      one.area = self.area;
-      one.rentWayName = self.rentWayName;
-      one.transportation = self.transportation;
-      one.distance = self.distance;
-      one.inDay = self.inDay;
-      one.firstImg = self.firstImg;
-      one.rentTimeType = self.rentTimeType;
-      one.estate = self.estate;
-      one.longitude = self.longitude;
-      one.finishName = self.finishName;
-      one.formTypeOffice = self.formTypeOffice;
-      one.status = self.status;
-      one.modelIntroduced = self.modelIntroduced;
-      one.rentWay = self.rentWay;
-      one.inDayName = self.inDayName;
-      one.createDate = self.createDate;
-      one.totalFloor = self.totalFloor;
-      one.elevator = self.elevator;
-      one.seeHouseType = self.seeHouseType;
-      one.rentPrice = self.rentPrice;
-      one.statusName = self.statusName;
-      one.formType = self.formType;
-      one.floor = self.floor;
-      one.finish = self.finish;
-      one.callName = self.callName;
-      one.waterElectricityName = self.waterElectricityName;
-      one.title = self.title;
-      one.dealStatusName = self.dealStatusName;
-      one.latitude = self.latitude;
-    return one;
+
+@implementation XSKeyValueModel
+
+#pragma mark -当value更新的时候完成字典赋值
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        __weak typeof(self) weakSelf = self;
+        self.updateBlack = ^(){
+            
+            
+            if (weakSelf.values.count == 1) {
+              // 1 个
+                XSValue *value = weakSelf.values.firstObject;
+                if (value.sendType == XSValueSendType_Int) {
+                   [[XSHouseFixedData sharedInstance] subRentParameterDictUpdateWithKey:weakSelf.key value:value.value];
+                }else{
+                   [[XSHouseFixedData sharedInstance] subRentParameterDictUpdateWithKey:weakSelf.key value:value.valueStr];
+                }
+            }else{
+              // 多个 个
+                if (weakSelf.multiple) {
+                    NSMutableArray *valueArray = [NSMutableArray array];
+                    
+                    NSString *valueStr = [[NSString alloc]init];
+                    for (XSValue *value in weakSelf.values) {
+                         if (value.isSelect) {
+                            if (value.sendType == XSValueSendType_Int) {
+                                [valueArray addObject:value.value];
+                                valueStr = [valueStr stringByAppendingFormat:@"%@,",value.value];
+                            }else{
+                               valueStr = [valueStr stringByAppendingFormat:@"%@,",value.valueStr];
+                                [valueArray addObject:value.valueStr];
+                            }
+                         }
+                    }
+                    if (valueStr.length > 0) {
+                    }
+                    [[XSHouseFixedData sharedInstance] subRentParameterDictUpdateWithKey:weakSelf.key value:valueArray];
+
+//                    [[XSHouseFixedData sharedInstance] subRentParameterDictUpdateWithKey:weakSelf.key value:valueStr];
+
+              }else{
+                 // 单选
+                  for (XSValue *value in weakSelf.values) {
+                      if (value.isSelect) {
+                            if (value.sendType == XSValueSendType_Int) {
+                                [[XSHouseFixedData sharedInstance] subRentParameterDictUpdateWithKey:weakSelf.key value:value.value];
+                            }else{
+                                [[XSHouseFixedData sharedInstance] subRentParameterDictUpdateWithKey:weakSelf.key value:value.valueStr];
+                            }
+                      }
+                  }
+              }
+            }
+            
+         
+  
+        };
+    }
+    return self;
+}
+- (void)setValues:(NSArray<XSValue *> *)values{
+    for (XSValue *value in values) {
+        value.key = _key;
+        value.keyStr = _name;
+        value.updateBlack = _updateBlack;
+    }
+    _values = values;
 }
 
++ (NSDictionary *)mj_objectClassInArray{
+    return @{@"values" : @"XSValue"};
+}
+@end
+
+
+
+
+@implementation XSHouseInfoCellModel
++ (NSDictionary *)mj_objectClassInArray{
+    return @{@"arrayValue" : @"XSKeyValueModel"};
+}
+
+- (instancetype)initwithEnumData:(XSHouseEnumData *)model{
+    
+    // 1.value可选项数组
+    NSMutableArray *arrayValue = [NSMutableArray array];
+    for (XSHouseEnumDataEnumRes *enumres in model.enumRes) {
+        XSValue *value = [[XSValue alloc]init];
+        value.value = enumres.value;
+        value.valueStr = enumres.name;
+        value.sendType = XSValueSendType_Int;
+        [arrayValue addObject:value];
+    }
+    
+    // 一个keyValue 数据
+    XSKeyValueModel *valueModel = [[XSKeyValueModel alloc]init];
+    valueModel.name = model.name;
+    valueModel.key = model.key;
+    valueModel.sequence = model.type;
+    valueModel.multiple = model.multiple;
+    valueModel.keyInputType = XSValueInputType_collectionview;
+    valueModel.values = arrayValue;
+    
+    XSHouseInfoCellModel *cellModel = [[XSHouseInfoCellModel alloc]init];
+    cellModel.title = model.name;
+    cellModel.sequence = model.type;
+    cellModel.arrayValue = [NSMutableArray arrayWithObject:valueModel];
+    cellModel.cellClass = NSStringFromClass([XSHouseSubCollectionviewBCell class]);
+    if (model.enumRes.count > 4) {
+        cellModel.cellHeight = [NSNumber numberWithInt:120];
+    }else{
+        cellModel.cellHeight = [NSNumber numberWithInt:80];
+    }
+
+    return cellModel;
+}
+
+@end
+
+@implementation XSKeyValue
+@end
+
+
+
+
+
+@implementation XSBHouseInfoModel
+@end
+
+
+@implementation XSHouseRentInfoModel
 + (NSDictionary *)mj_replacedKeyFromPropertyName{
     return @{@"house_id":@"id"};
 }
-
-//+ (NSDictionary *)mj_objectClassInArray{
-//    return @{@"featurePointNames" : @""};//前边，是属性数组的名字，后边就是类名
-//}
-- (NSArray *)getAllProperties{
-    u_int count;
-    objc_property_t *properties  =class_copyPropertyList([self class], &count);
-    NSMutableArray *propertiesArray = [NSMutableArray arrayWithCapacity:count];
-    for (int i = 0; i<count; i++){
-        const char* propertyName =property_getName(properties[i]);
-        [propertiesArray addObject: [NSString stringWithUTF8String: propertyName]];
-    }
-    free(properties);
-    return propertiesArray;
-
-}
-
-
-
-//Model 到字典
-
-- (NSDictionary *)properties_aps{
-    NSMutableDictionary *props = [NSMutableDictionary dictionary];
-    unsigned int outCount, i;
-    objc_property_t *properties = class_copyPropertyList([self class], &outCount);
-    for (i = 0; i<outCount; i++){
-        objc_property_t property = properties[i];
-        const char* char_f =property_getName(property);
-        NSString *propertyName = [NSString stringWithUTF8String:char_f];
-        id propertyValue = [self valueForKey:(NSString *)propertyName];
-        if (propertyValue) [props setObject:propertyValue forKey:propertyName];
-    }
-    free(properties);
-    return props;
-}
-
 - (instancetype)init{
     self  =[super init];
     if (self) {
@@ -110,8 +186,14 @@
     }
     return self;
 }
+@end
 
+
+
+@implementation XSHouseDetailsInfoCellModel
 
 @end
+
+
 
 

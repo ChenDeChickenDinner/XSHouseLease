@@ -10,7 +10,6 @@
 #import "XShouseSubNetworkInterface.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
 typedef NS_ENUM(NSInteger,XSHouseSubmitType) {
     XSHouseSubmitType_Rent= 0,//出租
     XSHouseSubmitType_Sell,
@@ -21,9 +20,12 @@ typedef NS_ENUM(NSInteger,XSHouseSubmitStepsType) {
     XSHouseSubmitStepsType_Third,
 
 };
+
 @interface XSHouseSubmitBaseViewController : XSBaseViewController
+
 @property(nonatomic,assign) XSHouseSubmitType submitType;
 @property(nonatomic,assign) XSHouseSubmitStepsType submitStepsType;
+
 @property (strong, nonatomic) NSMutableArray<XSHouseInfoCellModel *> *firstArray;
 @property (strong, nonatomic) NSMutableArray<XSHouseInfoCellModel *> *secondArray;
 @property (strong, nonatomic) NSMutableArray<XSHouseInfoCellModel *> *thirdArray;
