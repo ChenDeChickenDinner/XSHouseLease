@@ -28,11 +28,8 @@
     };
     [self.titleView addSubview:searchView];
     self.searchView = searchView;
-//    XSUserModel *userModel = [[XSUserModel alloc]init];
-//    userModel.phone = @"15271323321";
-//    userModel.ID = [NSNumber numberWithInt:7];
-//    userModel.token = @"R90Gp4/kT2JQOnTzdc/ENU17U7HOI4fvS5XacHN6r9Jm/WVHYvKgeOO7EHxxT8my";
-//    [XSUserServer sharedInstance].userModel = userModel;
+
+    [XSHouseSubMitDynamicServer sharedInstance];
     
     [XSUserServer automaticLogin];
     

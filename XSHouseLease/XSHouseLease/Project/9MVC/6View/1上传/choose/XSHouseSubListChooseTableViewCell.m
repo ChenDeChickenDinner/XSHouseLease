@@ -28,19 +28,19 @@
     }else{
         if ([valueData.key isEqualToString:@"city"]) {
             NSString *str = [NSString string];
-            NSString *city = [[XSHouseSubMitServer sharedInstance].subRentParameterDict objectForKey:@"city"];
-            NSString *region = [[XSHouseSubMitServer sharedInstance].subRentParameterDict objectForKey:@"region"];
-            NSString *town = [[XSHouseSubMitServer sharedInstance].subRentParameterDict objectForKey:@"town"];
-
-            if (city) {
-                str = [str stringByAppendingFormat:@"%@", city];
-            }
-            if (region) {
-                str = [str stringByAppendingFormat:@"%@", region];
-            }
-            if (town) {
-                str = [str stringByAppendingFormat:@"%@", town];
-            }
+//            NSString *city = [[XSHouseSubMitServer sharedInstance].subRentParameterDict objectForKey:@"city"];
+//            NSString *region = [[XSHouseSubMitServer sharedInstance].subRentParameterDict objectForKey:@"region"];
+//            NSString *town = [[XSHouseSubMitServer sharedInstance].subRentParameterDict objectForKey:@"town"];
+//
+//            if (city) {
+//                str = [str stringByAppendingFormat:@"%@", city];
+//            }
+//            if (region) {
+//                str = [str stringByAppendingFormat:@"%@", region];
+//            }
+//            if (town) {
+//                str = [str stringByAppendingFormat:@"%@", town];
+//            }
             self.value.text = str;
         }else{
             self.value.text = valueData.valueStr;

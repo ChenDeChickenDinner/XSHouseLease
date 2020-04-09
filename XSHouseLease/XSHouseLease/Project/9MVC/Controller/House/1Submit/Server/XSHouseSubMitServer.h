@@ -19,7 +19,7 @@
 
 @interface XSHouseSubMitServer : XSBaseServer
 
-+ (XSHouseSubMitServer *)sharedInstance;
+@property(nonatomic,assign) XSHouseSubmitType submitType;
 
 @property (strong, nonatomic) NSMutableArray<XSHouseInfoCellModel *> *firstArray;
 @property (strong, nonatomic) NSMutableArray<XSHouseInfoCellModel *> *secondArray;

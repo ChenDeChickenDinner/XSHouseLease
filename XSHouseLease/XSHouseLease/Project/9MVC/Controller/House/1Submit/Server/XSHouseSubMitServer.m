@@ -42,7 +42,6 @@ DEF_SINGLETON(XSHouseSubMitDynamicServer)
 
 @end
 @implementation XSHouseSubMitServer
-DEF_SINGLETON(XSHouseSubMitServer)
 
 - (NSMutableArray *)imageUrlArray{
     if (!_imageUrlArray) {
@@ -71,14 +70,62 @@ DEF_SINGLETON(XSHouseSubMitServer)
 }
 - (NSMutableArray<XSHouseInfoCellModel *> *)firstArray{
     if (!_firstArray) {
-        _firstArray  = [XSHouseInfoCellModel mj_objectArrayWithKeyValuesArray:[self getDictWithJsonName:@"XSHouseInfoFirst"]];
-        _secondArray = [XSHouseInfoCellModel mj_objectArrayWithKeyValuesArray:[self getDictWithJsonName:@"XSHouseInfoSecond"]];
-        _thirdArray  = [XSHouseInfoCellModel mj_objectArrayWithKeyValuesArray:[self getDictWithJsonName:@"XSHouseInfoThird"]];
+        _firstArray  = [XSHouseInfoCellModel mj_objectArrayWithKeyValuesArray:[self getDictWithJsonName:@"XSRentHouseInfoFirst"]];
+        _secondArray = [XSHouseInfoCellModel mj_objectArrayWithKeyValuesArray:[self getDictWithJsonName:@"XSRentHouseInfoSecond"]];
+        _thirdArray  = [XSHouseInfoCellModel mj_objectArrayWithKeyValuesArray:[self getDictWithJsonName:@"XSRentHouseInfoThird"]];
         [_secondArray addObjectsFromArray:[XSHouseSubMitDynamicServer sharedInstance].secondDynamicArray];
+        
+        [self setUpdataBlacokWithArray:_firstArray];
+        [self setUpdataBlacokWithArray:_secondArray];
+        [self setUpdataBlacokWithArray:_secondArray];
+
     }
     return _firstArray;
 }
+- (void)setUpdataBlacokWithArray:(NSArray<XSHouseInfoCellModel *> *)array{
+    for (XSHouseInfoCellModel *cellModel in array) {
+        for (XSKeyValueModel *keyValue in cellModel.arrayValue) {
+            __weak typeof(keyValue) weakKeyValue = keyValue;
 
+            keyValue.updateBlack = ^{
+                
+                if (weakKeyValue.values.count == 1) {
+                  // 1 个
+                    XSValue *value = weakKeyValue.values.firstObject;
+                    [self.subRentParameterDict safeSetObject:value.sendType == XSValueSendType_Int?value.value:value.valueStr forKey:weakKeyValue.key];
+
+                }else{
+                  // 多个 个
+                    if (weakKeyValue.multiple) {
+                        NSMutableArray *valueArray = [NSMutableArray array];
+                        NSString *valueStr = [[NSString alloc]init];
+                        for (XSValue *value in weakKeyValue.values) {
+                             if (value.isSelect) {
+                                if (value.sendType == XSValueSendType_Int) {
+                                    [valueArray addObject:value.value];
+                                    valueStr = [valueStr stringByAppendingFormat:@"%@,",value.value];
+                                }else{
+                                   valueStr = [valueStr stringByAppendingFormat:@"%@,",value.valueStr];
+                                    [valueArray addObject:value.valueStr];
+                                }
+                             }
+                        }
+                        [self.subRentParameterDict safeSetObject:valueArray forKey:weakKeyValue.key];
+
+                  }else{
+                     // 单选
+                      for (XSValue *value in weakKeyValue.values) {
+                          if (value.isSelect) {
+                            [self.subRentParameterDict safeSetObject:value.sendType == XSValueSendType_Int?value.value:value.valueStr forKey:weakKeyValue.key];
+                          }
+                      }
+                  }
+                }
+
+            };
+        }
+    }
+}
 - (void)subRentParameterDictUpdateWithKey:(NSString *)key value:(id)value{
     [self.subRentParameterDict safeSetObject:value forKey:key];
 }

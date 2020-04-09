@@ -11,10 +11,7 @@
 
 
 
-typedef NS_ENUM(NSInteger,XSHouseSubmitType) {
-    XSHouseSubmitType_Rent= 0,//出租
-    XSHouseSubmitType_Sell,
-};
+
 typedef NS_ENUM(NSInteger,XSHouseSubmitStepsType) {
     XSHouseSubmitStepsType_First= 0,//第一步
     XSHouseSubmitStepsType_Second,
@@ -25,8 +22,10 @@ typedef NS_ENUM(NSInteger,XSHouseSubmitStepsType) {
 @interface XSHouseSubmitFirstViewController : XSBaseViewController
 
 @property(nonatomic,assign) XSHouseSubmitType submitType;
-@property(nonatomic,assign) XSHouseSubmitStepsType submitStepsType;
-@property (strong, nonatomic) NSMutableArray<XSHouseInfoCellModel *> *array;
+
+
+
+@property (strong, nonatomic) XSHouseSubMitServer *subMitServer;
 @end
 
 

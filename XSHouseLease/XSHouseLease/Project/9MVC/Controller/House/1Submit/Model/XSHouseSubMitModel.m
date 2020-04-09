@@ -38,54 +38,7 @@
 - (instancetype)init{
     self = [super init];
     if (self) {
-        __weak typeof(self) weakSelf = self;
-        self.updateBlack = ^(){
-            
-            
-            if (weakSelf.values.count == 1) {
-              // 1 个
-                XSValue *value = weakSelf.values.firstObject;
-                if (value.sendType == XSValueSendType_Int) {
-                   [[XSHouseSubMitServer sharedInstance] subRentParameterDictUpdateWithKey:weakSelf.key value:value.value];
-                }else{
-                   [[XSHouseSubMitServer sharedInstance] subRentParameterDictUpdateWithKey:weakSelf.key value:value.valueStr];
-                }
-            }else{
-              // 多个 个
-                if (weakSelf.multiple) {
-                    NSMutableArray *valueArray = [NSMutableArray array];
-                    
-                    NSString *valueStr = [[NSString alloc]init];
-                    for (XSValue *value in weakSelf.values) {
-                         if (value.isSelect) {
-                            if (value.sendType == XSValueSendType_Int) {
-                                [valueArray addObject:value.value];
-                                valueStr = [valueStr stringByAppendingFormat:@"%@,",value.value];
-                            }else{
-                               valueStr = [valueStr stringByAppendingFormat:@"%@,",value.valueStr];
-                                [valueArray addObject:value.valueStr];
-                            }
-                         }
-                    }
-                    [[XSHouseSubMitServer sharedInstance] subRentParameterDictUpdateWithKey:weakSelf.key value:valueArray];
-
-              }else{
-                 // 单选
-                  for (XSValue *value in weakSelf.values) {
-                      if (value.isSelect) {
-                            if (value.sendType == XSValueSendType_Int) {
-                                [[XSHouseSubMitServer sharedInstance] subRentParameterDictUpdateWithKey:weakSelf.key value:value.value];
-                            }else{
-                                [[XSHouseSubMitServer sharedInstance] subRentParameterDictUpdateWithKey:weakSelf.key value:value.valueStr];
-                            }
-                      }
-                  }
-              }
-            }
-            
-         
-  
-        };
+     
     }
     return self;
 }

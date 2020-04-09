@@ -1,0 +1,115 @@
+
+[
+  {
+   "title":"标题（30个字以内）",
+   "sequence":0,
+   "cellHeight":125,
+   "cellClass":"XSHouseSubTextViewCell",
+   "arrayValue": [
+                   {
+                       "name":"标题",
+                       "key":"title",
+                       "moreSelect":false,
+                       "sequence":0,
+                       "keyInputType":3,
+                       "keyTextInputType":0,
+                       "values":[
+                                   {
+                                   "placeholder":"取一个有吸引力的标题吧！\n例如：\n整租 印象生活广场 一室一厅 拎包入住 精装修",
+                                   "frontDescribe":null,
+                                   "value":null,
+                                   "valueStr":null,
+                                   "hindDescribe":null,
+                                   "isSelect":false,
+                                   "sendType":1
+                                  }
+                              ]
+                   }
+                 ]
+
+   },
+  {
+  "title":"核心卖点（100个字以内）",
+  "sequence":0,
+  "cellHeight":125,
+  "cellClass":"XSHouseSubTextViewCell",
+  "arrayValue": [
+                  {
+                      "name":"核心卖点",
+                      "key":"modelIntroduced",
+                      "moreSelect":false,
+                      "sequence":0,
+                      "keyInputType":3,
+                      "keyTextInputType":0,
+                      "values":[
+                                  {
+                                  "placeholder":null,
+                                  "frontDescribe":null,
+                                  "value":null,
+                                  "valueStr":null,
+                                  "hindDescribe":null,
+                                  "isSelect":false,
+                                  "sendType":1
+                                 }
+                             ]
+                  }
+                ]
+
+  },
+  {
+  "title":"交通出行（100个字以内）",
+  "sequence":0,
+  "cellHeight":125,
+  "cellClass":"XSHouseSubTextViewCell",
+  "arrayValue": [
+                  {
+                      "name":"交通出行",
+                      "key":"transportation",
+                      "moreSelect":false,
+                      "sequence":0,
+                      "keyInputType":3,
+                      "keyTextInputType":0,
+                      "values":[
+                                  {
+                                  "placeholder":null,
+                                  "frontDescribe":null,
+                                  "value":null,
+                                  "valueStr":null,
+                                  "hindDescribe":null,
+                                  "isSelect":false,
+                                  "sendType":1
+                                 }
+                             ]
+                  }
+                ]
+
+  },
+  {
+  "title":"小区介绍（100个字以内）",
+  "sequence":0,
+  "cellHeight":125,
+  "cellClass":"XSHouseSubTextViewCell",
+  "arrayValue": [
+                  {
+                      "name":"小区介绍",
+                      "key":"estateIntroduced",
+                      "moreSelect":false,
+                      "sequence":0,
+                      "keyInputType":3,
+                      "keyTextInputType":0,
+                      "values":[
+                                  {
+                                  "placeholder":null,
+                                  "frontDescribe":null,
+                                  "value":null,
+                                  "valueStr":null,
+                                  "hindDescribe":null,
+                                  "isSelect":false,
+                                  "sendType":1
+                                 }
+                             ]
+                  }
+                ]
+
+  }
+]

@@ -41,7 +41,10 @@ typedef NS_ENUM(NSInteger,XSBHouseSubStatus) {
     XSBHouseSubStatus_ZT = 5, //
     XSBHouseSubStatus_FB = 6 //
 };
-
+typedef NS_ENUM(NSInteger,XSHouseSubmitType) {
+    XSHouseSubmitType_Rent= 0,//出租
+    XSHouseSubmitType_Sell,
+};
 
 // 列表点击事件
 typedef NS_ENUM(NSInteger, XShouseOperation) {

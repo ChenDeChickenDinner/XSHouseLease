@@ -21,21 +21,28 @@
 @interface XSHouseSubmitFirstViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
 @property (weak, nonatomic) IBOutlet XSRoundedBtn1View *nextBtn;
-
+@property(nonatomic,assign) XSHouseSubmitStepsType submitStepsType;
+@property (strong, nonatomic) NSMutableArray<XSHouseInfoCellModel *> *array;
 @property (strong, nonatomic)  XSPhotoPickerView *pickerView;
 
 @end
 
 @implementation XSHouseSubmitFirstViewController
 
-
+- (XSHouseSubMitServer *)subMitServer{
+    if (!_subMitServer) {
+        _subMitServer = [[XSHouseSubMitServer alloc]init];
+        _subMitServer.submitType = self.submitType;
+    }
+    return _subMitServer;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.myTableView.delegate = self;
     self.myTableView.dataSource = self;
     self.myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.array = [NSMutableArray array];
-    [[XSHouseSubMitServer sharedInstance] resetData];
+//    [[XSHouseSubMitServer sharedInstance] resetData];
 
     if (self.submitType == XSHouseSubmitType_Rent) {
       self.title = @"我要出租";
@@ -47,14 +54,14 @@
         XSHouseSubFootView *tableFooterView = [XSHouseSubFootView houseSubFootView];
         tableFooterView.frame = CGRectMake(0, 0, self.myTableView.width, 160);
         self.myTableView.tableFooterView = tableFooterView;
-        [self.array addObjectsFromArray:[XSHouseSubMitServer sharedInstance].firstArray];
+        [self.array addObjectsFromArray:self.subMitServer.firstArray];
         [self.nextBtn setTitle:@"下一步" forState:UIControlStateNormal];
     }else if (self.submitStepsType == XSHouseSubmitStepsType_Second){
-        [self.array addObjectsFromArray:[XSHouseSubMitServer sharedInstance].secondArray];
+        [self.array addObjectsFromArray:self.subMitServer.secondArray];
         [self.nextBtn setTitle:@"下一步" forState:UIControlStateNormal];
     }else if (self.submitStepsType == XSHouseSubmitStepsType_Third){
         self.myTableView.tableHeaderView = self.pickerView;
-        [self.array addObjectsFromArray:[XSHouseSubMitServer sharedInstance].thirdArray];
+        [self.array addObjectsFromArray:self.subMitServer.thirdArray];
         [self.nextBtn setTitle:@"完成" forState:UIControlStateNormal];
     }
     
@@ -102,7 +109,7 @@
 
     WEAK_SELF;
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [self.subInfoInterface renthouseSaveWithDict:[XSHouseSubMitServer sharedInstance].subRentParameterDict callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+    [self.subInfoInterface renthouseSaveWithDict:self.subMitServer.subRentParameterDict callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
         STRONG_SELF;
         [MBProgressHUD  hideHUDForView:self.view animated:YES];
         if (error == nil) {
@@ -125,11 +132,11 @@
 
      pickerView.changeCompleteBlock = ^(NSArray<HXPhotoModel *> *allList, NSArray<HXPhotoModel *> *photos, NSArray<HXPhotoModel *> *videos, BOOL isOriginal) {
          STRONG_SELF;
-         [[XSHouseSubMitServer sharedInstance].imageUrlArray removeAllObjects];
+         [self.subMitServer.imageUrlArray removeAllObjects];
          for (HXPhotoModel *photoModel in photos) {
              [photoModel requestImageURLStartRequestICloud:nil progressHandler:nil success:^(NSURL * _Nullable imageURL, HXPhotoModel * _Nullable model, NSDictionary * _Nullable info) {
                  NSSLog(@"imageURL: %@\n",imageURL );
-                 [[XSHouseSubMitServer sharedInstance].imageUrlArray addObject:imageURL];
+                 [self.subMitServer.imageUrlArray addObject:imageURL];
              } failed:^(NSDictionary * _Nullable info, HXPhotoModel * _Nullable model) {
 
              }];
@@ -143,13 +150,13 @@
 
 - (void)keyValueChangeBlackSetting{
     WEAK_SELF;
-    for (XSHouseInfoCellModel *cell in [XSHouseSubMitServer sharedInstance].thirdArray) {
+    for (XSHouseInfoCellModel *cell in self.subMitServer.thirdArray) {
         for (XSKeyValueModel *valueModel in cell.arrayValue) {
             valueModel.valuechangeStatus = ^(NSString * _Nonnull key, XSBHouseKeyValueEditStatus editStatus) {
                 STRONG_SELF;
                 if ([key isEqualToString:@"title"] && editStatus == XSBHouseKeyValueEditBegin) {
                     NSLog(@"--------%@-------,发生了%ld",key,(long)editStatus);
-                       if ([XSHouseSubMitServer sharedInstance].imageUrlArray.count > 0) {
+                       if (self.subMitServer.imageUrlArray.count > 0) {
                         [self loadAllImage];
                         NSLog(@"-----------开始上传图片");
                     }
@@ -165,17 +172,17 @@
         NSLog(@"-----------取消所以网络请求");
     }
     NSLog(@"-----------清空存储在本地的服务器地址");
-    [[XSHouseSubMitServer sharedInstance].imageUrlServerArray removeAllObjects];
+    [self.subMitServer.imageUrlServerArray removeAllObjects];
     WEAK_SELF;
-    for (NSURL *url in [XSHouseSubMitServer sharedInstance].imageUrlArray) {
+    for (NSURL *url in self.subMitServer.imageUrlArray) {
         [NSThread sleepForTimeInterval:0.25];
         NSLog(@"-----------开始上传");
         [self.subInfoInterface uploadImage:[UIImage imageNamed:@""] imageUrl:url callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
             STRONG_SELF;
                if (error == nil && responseModel.code.integerValue == SuccessCode) {
                    NSLog(@"-----------上传成功");
-                   [[XSHouseSubMitServer sharedInstance].imageUrlServerArray addObject:responseModel.data];
-                   NSLog(@"-----------当前数组：%@",[XSHouseSubMitServer sharedInstance].imageUrlServerArray);
+                   [self.subMitServer.imageUrlServerArray addObject:responseModel.data];
+                   NSLog(@"-----------当前数组：%@",self.subMitServer.imageUrlServerArray);
 
                }
         }];
