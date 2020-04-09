@@ -100,7 +100,7 @@ static NSString *XSHouseDetailsFacilitiesInfoCellStr = @"XSHouseDetailsFacilitie
           XSHouseDetailsInfoCellModel *cellModel = (XSHouseDetailsInfoCellModel *)model;
         XSHouseRentInfoModel *dataModel = cellModel.dataModel;
         
-        NSMutableArray *allArray  =  [[XSHouseFixedData sharedInstance].facilitiesInfoArray mutableCopy];
+        NSMutableArray *allArray  =  [[XSConfigServer sharedInstance].facilitiesInfoArray mutableCopy];
         for (XSHouseDetailsFacilitiesModel *showModel in allArray) {
 //            for (XSHouseDetailsFacilitiesModel *model in dataModel.facilities) {
 //                if ([model.ID isEqualToNumber:showModel.ID]) {

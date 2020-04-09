@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "XSBaseServer.h"
 
 
 //位置
@@ -46,7 +47,7 @@
 
 
 
-@interface XSPublicServer : NSObject
+@interface XSPublicServer : XSBaseServer
 + (XSPublicServer *)sharedInstance;
 
 @property (strong, nonatomic) NSMutableArray<BRProvinceModel *> *cityArray;

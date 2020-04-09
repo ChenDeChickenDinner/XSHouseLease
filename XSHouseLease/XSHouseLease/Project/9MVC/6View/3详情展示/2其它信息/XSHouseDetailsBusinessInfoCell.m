@@ -49,7 +49,7 @@ static NSString *XSHouseDetailsBusinessInfoCellStr = @"XSHouseDetailsBusinessInf
         XSHouseRentInfoModel *dataModel = cellModel.dataModel;
         NSMutableDictionary *modeDict = [dataModel mj_keyValues];
         NSMutableArray *infoArray = [NSMutableArray array];
-        for (XSBusinessInfoJsonModel *infoJsonModel in [XSHouseFixedData sharedInstance].businessInfoArray) {
+        for (XSBusinessInfoJsonModel *infoJsonModel in [XSConfigServer sharedInstance].businessInfoArray) {
             XSBusinessInfoModel *infoModel = [[XSBusinessInfoModel alloc]init];
             infoModel.name = infoJsonModel.keyName ;
             infoModel.value = [NSString stringWithFormat:@"%@",[modeDict safeObjectForKey:infoJsonModel.key]];

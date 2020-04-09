@@ -46,7 +46,7 @@
     
     XSCollectionView *collectionView = [[XSCollectionView alloc]init];
     collectionView.frame = CGRectMake(0, 0, 0, 230);
-    collectionView.array = [XSHouseFixedData sharedInstance].renthouseConditionArray;
+    collectionView.array = [XSConfigServer sharedInstance].renthouseConditionArray;
     self.collectionView = collectionView;
 
     

@@ -7,10 +7,8 @@
 //
 
 #import "XSPublicServer.h"
-#import "XSBaseViewController.h"
 
 @interface XSPublicServer()
-@property (nonatomic,strong) XSBaseViewController *requestVc;
 
 
 
@@ -19,13 +17,6 @@
 
 @implementation XSPublicServer
 DEF_SINGLETON(XSPublicServer)
-
-- (XSBaseViewController *)requestVc{
-    if (!_requestVc) {
-        _requestVc = [[XSBaseViewController alloc]init];
-    }
-    return _requestVc;
-}
 
 
 - (void)setBunnerArray:(NSMutableArray<XSHousePicture *> *)bunnerArray{

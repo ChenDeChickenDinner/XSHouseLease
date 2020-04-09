@@ -1,0 +1,163 @@
+//
+//  XSHouseSubMitServer.m
+//  XSHouseLease
+//
+//  Created by xs on 2020/4/9.
+//  Copyright © 2020 fang. All rights reserved.
+//
+
+#import "XSHouseSubMitServer.h"
+
+
+@implementation XSHouseSubMitDynamicServer
+DEF_SINGLETON(XSHouseSubMitDynamicServer)
+
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        [self combinationDynamicSubmitData];
+    }
+    return self;
+}
+
+- (void)combinationDynamicSubmitData{
+    WEAK_SELF;
+    [self.requestVc.subInfoInterface getRentEnumsWithCallback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+        if (error == nil && responseModel.code.integerValue == SuccessCode) {
+            STRONG_SELF;
+            NSArray *enumData  =  [XSHouseEnumData mj_objectArrayWithKeyValuesArray:responseModel.data];
+            NSLog(@"sub动态 = %@", [enumData mj_keyValues]);
+            NSMutableArray *array = [NSMutableArray array];
+            for (XSHouseEnumData *model in enumData) {
+                XSHouseInfoCellModel *cellModel =  [model combinationToCellModel];
+                [array addObject:cellModel];
+            }
+             NSArray *newArray = [array sortedArrayUsingComparator:^NSComparisonResult(XSHouseInfoCellModel *obj1, XSHouseInfoCellModel *obj2) {
+                 return obj1.sequence.integerValue <  obj2.sequence.integerValue ?NSOrderedAscending:NSOrderedDescending;;
+            }];
+            self.secondDynamicArray = newArray;
+        }
+    }];
+}
+
+@end
+@implementation XSHouseSubMitServer
+DEF_SINGLETON(XSHouseSubMitServer)
+
+- (NSMutableArray *)imageUrlArray{
+    if (!_imageUrlArray) {
+        _imageUrlArray = [NSMutableArray array];
+    }
+    return _imageUrlArray;
+}
+- (NSMutableArray *)imageUrlServerArray{
+    if (!_imageUrlServerArray) {
+        _imageUrlServerArray = [NSMutableArray array];
+    }
+    return _imageUrlServerArray;
+}
+
+- (NSMutableDictionary *)subRentParameterDict{
+    if (!_subRentParameterDict) {
+        _subRentParameterDict = [NSMutableDictionary dictionary];
+    }
+    return _subRentParameterDict;
+}
+
+
+#pragma mark -初始化读取默认配置数据
+- (void)resetData{
+    self.firstArray = nil;
+}
+- (NSMutableArray<XSHouseInfoCellModel *> *)firstArray{
+    if (!_firstArray) {
+        _firstArray  = [XSHouseInfoCellModel mj_objectArrayWithKeyValuesArray:[self getDictWithJsonName:@"XSHouseInfoFirst"]];
+        _secondArray = [XSHouseInfoCellModel mj_objectArrayWithKeyValuesArray:[self getDictWithJsonName:@"XSHouseInfoSecond"]];
+        _thirdArray  = [XSHouseInfoCellModel mj_objectArrayWithKeyValuesArray:[self getDictWithJsonName:@"XSHouseInfoThird"]];
+        [_secondArray addObjectsFromArray:[XSHouseSubMitDynamicServer sharedInstance].secondDynamicArray];
+    }
+    return _firstArray;
+}
+
+- (void)subRentParameterDictUpdateWithKey:(NSString *)key value:(id)value{
+    [self.subRentParameterDict safeSetObject:value forKey:key];
+}
+
+#pragma mark - 再次编辑信息
+- (void)setRenhousetInfoModel:(XSHouseRentInfoModel *)renhousetInfoModel{
+    [self resetData];
+    if (renhousetInfoModel) {
+//        _renhousetInfoModel = renhousetInfoModel;
+        [self.subRentParameterDict safeSetObject:renhousetInfoModel.house_id forKey:@"id"];
+        [self.subRentParameterDict safeSetObject:renhousetInfoModel.city forKey:@"city"];
+        [self.subRentParameterDict safeSetObject:renhousetInfoModel.cityId forKey:@"cityId"];
+        [self.subRentParameterDict safeSetObject:renhousetInfoModel.region forKey:@"region"];
+    //    [self.subRentParameterDict safeSetObject:renhousetInfoModel.regionId forKey:@"regionId"];
+        [self.subRentParameterDict safeSetObject:renhousetInfoModel.town forKey:@"town"];
+    //    [self.subRentParameterDict safeSetObject:renhousetInfoModel.townId forKey:@"townId"];
+        
+        [self valueUpdatekWitOldhDict:[renhousetInfoModel mj_keyValues]];
+    }
+
+
+}
+- (void)valueUpdatekWitOldhDict:(NSDictionary *)dict{
+    [self valueUpdatekWitOldhDict:dict array:self.firstArray];
+    [self valueUpdatekWitOldhDict:dict array:self.secondArray];
+    [self valueUpdatekWitOldhDict:dict array:self.thirdArray];
+
+}
+
+
+- (void)valueUpdatekWitOldhDict:(NSDictionary *)dict array:(NSArray<XSHouseInfoCellModel *> *)array{
+    for (XSHouseInfoCellModel *cellModel in array) {
+        
+        for (XSKeyValueModel *oldvalueModel in cellModel.arrayValue) {
+            
+            for (XSValue *oldValue in oldvalueModel.values) {
+                id newValue = [dict objectForKey:oldValue.key];
+                  NSLog(@"key = %@,value = %@，valueClass= %@",oldValue.key,newValue,NSStringFromClass([newValue class]));
+                
+                if (oldValue.sendType == XSValueSendType_Int) {
+                       if ([newValue isKindOfClass:[NSArray class]]) {
+                              NSArray *newValueArray = (NSArray *)newValue;
+                              for (id newsubValue in newValueArray) {
+                                  NSString *newsubValueStr = [NSString stringWithFormat:@"%@",newsubValue];
+                                  if ([newsubValueStr isEqualToString:oldValue.value.stringValue]) {
+                                      oldValue.isSelect = YES;
+                                  }
+                              }
+                       }else{
+                           NSString *newValueStr = [NSString stringWithFormat:@"%@",newValue];
+
+                           if ([newValueStr isEqualToString:oldValue.value.stringValue]) {
+                              oldValue.isSelect = YES;
+                           }
+                       }
+                    if (oldValue.value == nil) {
+                        oldValue.value = newValue;
+                    }
+                }else{
+                   oldValue.valueStr = newValue;
+                }
+            }
+
+        }
+    }
+
+
+}
+
+
+- (void)automaticAssignment:(NSArray *)array{
+    for (XSHouseInfoCellModel *cell in array) {
+        for (XSKeyValueModel *valueModel in cell.arrayValue) {
+            for (XSValue *model in valueModel.values) {
+                model.value = model.value;
+                model.valueStr = model.valueStr;
+            }
+        }
+    }
+    
+}
+@end

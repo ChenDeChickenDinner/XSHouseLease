@@ -27,7 +27,6 @@
 #import "SDCycleScrollView.h"
 #import "XSHouseRentInfoModel.h"
 #import "XSHouseDetailsInfoCellModel.h"
-#import "XSBusinessInfoSever.h"
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import <MAMapKit/MAMapKit.h>
 #import "XSMapViewController.h"
@@ -41,6 +40,7 @@
 #import "XSHouseRentInfoModel.h"
 #import "XSPublicServer.h"
 #import "XSConfigServer.h"
+#import "XSHouseSubMitServer.h"
 
 #define XSColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 #define XSColorAlpha(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]

@@ -184,7 +184,7 @@
                 XSHouseRentInfoModel *model = [XSHouseRentInfoModel mj_objectWithKeyValues:responseModel.data];
 //                NSLog(@"房屋详情 = %@",[model mj_keyValues]);
                 XSHouseSubmitFirstViewController *vc = [[XSHouseSubmitFirstViewController alloc]init];
-                vc.renhousetInfoModel = model;
+                [XSHouseSubMitServer sharedInstance].renhousetInfoModel = model;
                 [self.navigationController pushViewController:vc animated:YES];
             }
         }

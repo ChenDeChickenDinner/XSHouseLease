@@ -32,7 +32,12 @@ DEF_SINGLETON(XSConfigServer)
     return _facilitiesInfoArray;
 }
 
-
+- (NSMutableArray<XSHouseModuleModel *> *)renthouseConditionArray{
+    if (_renthouseConditionArray == nil) {
+        _renthouseConditionArray = [NSMutableArray array];
+    }
+    return _renthouseConditionArray;
+}
 @end
 
 
@@ -52,3 +57,4 @@ DEF_SINGLETON(XSConfigServer)
 @implementation XSHouseModuleModel
 
 @end
+

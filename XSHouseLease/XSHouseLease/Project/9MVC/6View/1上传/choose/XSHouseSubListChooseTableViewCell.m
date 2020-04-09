@@ -28,9 +28,9 @@
     }else{
         if ([valueData.key isEqualToString:@"city"]) {
             NSString *str = [NSString string];
-            NSString *city = [[XSHouseFixedData sharedInstance].subRentParameterDict objectForKey:@"city"];
-            NSString *region = [[XSHouseFixedData sharedInstance].subRentParameterDict objectForKey:@"region"];
-            NSString *town = [[XSHouseFixedData sharedInstance].subRentParameterDict objectForKey:@"town"];
+            NSString *city = [[XSHouseSubMitServer sharedInstance].subRentParameterDict objectForKey:@"city"];
+            NSString *region = [[XSHouseSubMitServer sharedInstance].subRentParameterDict objectForKey:@"region"];
+            NSString *town = [[XSHouseSubMitServer sharedInstance].subRentParameterDict objectForKey:@"town"];
 
             if (city) {
                 str = [str stringByAppendingFormat:@"%@", city];
@@ -72,7 +72,7 @@
           XSValue *valueData = model.values.firstObject;
           valueData.valueStr = valueStr;
        
-        [[XSHouseFixedData sharedInstance] LocationParameterUpdateWithProvince:province city:city area:area];
+//        [[XSHouseSubMitServer sharedInstance] LocationParameterUpdateWithProvince:province city:city area:area];
 
     };
 
