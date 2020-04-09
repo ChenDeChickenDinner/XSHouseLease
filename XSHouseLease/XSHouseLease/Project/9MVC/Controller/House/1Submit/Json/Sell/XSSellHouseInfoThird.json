@@ -36,6 +36,34 @@
   "arrayValue": [
                   {
                       "name":"核心卖点",
+                      "key":"coreIntroduced",
+                      "moreSelect":false,
+                      "sequence":0,
+                      "keyInputType":3,
+                      "keyTextInputType":0,
+                      "values":[
+                                  {
+                                  "placeholder":null,
+                                  "frontDescribe":null,
+                                  "value":null,
+                                  "valueStr":null,
+                                  "hindDescribe":null,
+                                  "isSelect":false,
+                                  "sendType":1
+                                 }
+                             ]
+                  }
+                ]
+
+  },
+  {
+  "title":"户型介绍（100个字以内）",
+  "sequence":0,
+  "cellHeight":125,
+  "cellClass":"XSHouseSubTextViewCell",
+  "arrayValue": [
+                  {
+                      "name":"户型介绍",
                       "key":"modelIntroduced",
                       "moreSelect":false,
                       "sequence":0,

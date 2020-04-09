@@ -59,7 +59,7 @@
           XSHouseDetailsInfoCellModel *cellModel = (XSHouseDetailsInfoCellModel *)self.model;
           XSHouseRentInfoModel *dataModel = cellModel.dataModel;
           if (self.selbtn == self.btn1) {
-              self.textView.text = dataModel.modelIntroduced;
+              self.textView.text = dataModel.coreIntroduced;
               
           }else if (self.selbtn == self.btn2){
               self.textView.text = dataModel.estateIntroduced;
@@ -90,7 +90,7 @@
     
     XSKeyValue *model1 = [[XSKeyValue alloc]init];
     model1.key = @"核心卖点";
-    model1.value = dataModel.modelIntroduced;
+    model1.value = dataModel.coreIntroduced;
     model1.cellClass = @"XSHouseSubTextViewCell";
     model1.cellHeight = [NSNumber numberWithInt:90];
     XSKeyValue *model2 = [[XSKeyValue alloc]init];

@@ -93,7 +93,7 @@ typedef void (^XSHouseInfoClickBlack)(XSBHouseInfoModel *model,XShouseOperation 
 @property (nonatomic, copy) NSArray<NSString *> *featurePointNames;//特色
 @property (nonatomic, copy) NSArray<NSNumber *> *featurePoints;
 @property (nonatomic, copy) NSArray<NSNumber *> *facilities;//配套设施
-@property (nonatomic, copy) NSString *modelIntroduced;//这是卖点
+@property (nonatomic, copy) NSString *coreIntroduced;//这是卖点
 @property (nonatomic, copy) NSString *transportation;//这是交通出行
 @property (nonatomic, copy) NSString *estateIntroduced;//这是小区介绍
 @property (nonatomic, copy) NSString *statusName;

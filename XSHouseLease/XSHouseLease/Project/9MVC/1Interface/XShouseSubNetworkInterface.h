@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)bunnerListWithCallback:(HBCompletionBlock)callbac;
 // 上传房屋-入参信息相关枚举
 - (void)getRentEnumsWithCallback:(HBCompletionBlock)callback;
-
+- (void)getSellEnumsWithCallback:(HBCompletionBlock)callback;
 // 租房上传提交
 - (void)renthouseSaveWithDict:(NSMutableDictionary *)dict callback:(HBCompletionBlock)callback;
 

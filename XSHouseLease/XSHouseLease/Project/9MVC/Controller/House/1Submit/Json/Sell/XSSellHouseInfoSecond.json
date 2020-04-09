@@ -76,6 +76,62 @@
 
      },
     {
+     "title":"室内面积",
+     "sequence":2,
+     "celHeight":53,
+     "cellClass":"XSHouseSubTextFieldTableViewCell",
+     "arrayValue": [
+                     {
+                         "name":"室内面积",
+                         "key":"realityArea",
+                         "moreSelect":false,
+                         "sequence":2,
+                         "keyInputType":0,
+                         "keyTextInputType":0,
+                         "values":[
+                                     {
+                                     "placeholder":"请输入",
+                                     "frontDescribe":null,
+                                     "value":null,
+                                     "valueStr":null,
+                                     "hindDescribe":"平米",
+                                     "isSelect":false,
+                                     "sendType":0
+                                    }
+                                ]
+                     }
+                   ]
+
+     },
+    {
+     "title":"梯户比例",
+     "sequence":2,
+     "celHeight":53,
+     "cellClass":"XSHouseSubTextFieldTableViewCell",
+     "arrayValue": [
+                     {
+                         "name":"梯户比例",
+                         "key":"elevatorDoor",
+                         "moreSelect":false,
+                         "sequence":2,
+                         "keyInputType":0,
+                         "keyTextInputType":0,
+                         "values":[
+                                     {
+                                     "placeholder":"请输入",
+                                     "frontDescribe":"一梯",
+                                     "value":null,
+                                     "valueStr":null,
+                                     "hindDescribe":"户",
+                                     "isSelect":false,
+                                     "sendType":0
+                                    }
+                                ]
+                     }
+                   ]
+
+     },
+    {
       "title":"楼层",
       "sequence":1,
       "celHeight":53,
@@ -121,5 +177,33 @@
                       }
                     ]
 
-      }
+      },
+    {
+     "title":"年代",
+     "sequence":2,
+     "celHeight":53,
+     "cellClass":"XSHouseSubTextFieldTableViewCell",
+     "arrayValue": [
+                     {
+                         "name":"年代",
+                         "key":"createYears",
+                         "moreSelect":false,
+                         "sequence":2,
+                         "keyInputType":0,
+                         "keyTextInputType":0,
+                         "values":[
+                                     {
+                                     "placeholder":"请输入",
+                                     "frontDescribe":null,
+                                     "value":null,
+                                     "valueStr":null,
+                                     "hindDescribe":"年建成",
+                                     "isSelect":false,
+                                     "sendType":0
+                                    }
+                                ]
+                     }
+                   ]
+
+     },
 ]

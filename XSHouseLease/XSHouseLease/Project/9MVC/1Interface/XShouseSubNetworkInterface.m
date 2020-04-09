@@ -9,27 +9,7 @@
 #import "XShouseSubNetworkInterface.h"
 
 @implementation XShouseSubNetworkInterface
-//轮播图
-- (void)bunnerListWithCallback:(HBCompletionBlock)callback{
-NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
-NSString *url = [NSString stringWithFormat:@"%@/bunner/list",XSBaseUrl];
-[self GET:url param:dict progress:nil callback:callback];
-    
-}
-- (void)hotsSearchWithCallback:(HBCompletionBlock)callback{
-NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
-NSString *url = [NSString stringWithFormat:@"%@/estate/hots",XSBaseUrl];
-[self GET:url param:dict progress:nil callback:callback];
-    
-}
 
-// 上传房屋-入参信息相关枚举
-- (void)getRentEnumsWithCallback:(HBCompletionBlock)callback{
-    NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
-    NSString *url = [NSString stringWithFormat:@"%@/enum/rentenums",XSBaseUrl];
-    [self GET:url param:dict progress:nil callback:callback];
-
-}
 // 城市信息-市区镇
 - (void)city_treeWithCallback:(HBCompletionBlock)callback{
     NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
@@ -37,6 +17,42 @@ NSString *url = [NSString stringWithFormat:@"%@/estate/hots",XSBaseUrl];
     [self GET:url param:dict progress:nil callback:callback];
 
 }
+
+//轮播图
+- (void)bunnerListWithCallback:(HBCompletionBlock)callback{
+NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
+NSString *url = [NSString stringWithFormat:@"%@/bunner/list",XSBaseUrl];
+[self GET:url param:dict progress:nil callback:callback];
+    
+}
+// 热搜
+- (void)hotsSearchWithCallback:(HBCompletionBlock)callback{
+NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
+NSString *url = [NSString stringWithFormat:@"%@/estate/hots",XSBaseUrl];
+[self GET:url param:dict progress:nil callback:callback];
+    
+}
+
+
+
+
+// 租房上传-动态入参获取
+- (void)getRentEnumsWithCallback:(HBCompletionBlock)callback{
+    NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
+    NSString *url = [NSString stringWithFormat:@"%@/enum/rentenums",XSBaseUrl];
+    [self GET:url param:dict progress:nil callback:callback];
+
+}
+// 二手房上传-动态入参获取
+- (void)getSellEnumsWithCallback:(HBCompletionBlock)callback{
+    NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
+    NSString *url = [NSString stringWithFormat:@"%@/enum/save/secondenums",XSBaseUrl];
+    [self GET:url param:dict progress:nil callback:callback];
+}
+
+
+
+
 
 //租房搜索条件-key
 - (void)renthouseConditionWithCallback:(HBCompletionBlock)callback{

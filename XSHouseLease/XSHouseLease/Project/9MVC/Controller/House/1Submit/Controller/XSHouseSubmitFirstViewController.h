@@ -23,9 +23,9 @@ typedef NS_ENUM(NSInteger,XSHouseSubmitStepsType) {
 
 @property(nonatomic,assign) XSHouseSubmitType submitType;
 
-
-
 @property (strong, nonatomic) XSHouseSubMitServer *subMitServer;
+
+
 @end
 
 

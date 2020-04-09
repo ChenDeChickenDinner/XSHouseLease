@@ -13,7 +13,8 @@
 
 @interface XSHouseSubMitDynamicServer : XSBaseServer
 + (XSHouseSubMitDynamicServer *)sharedInstance;
-@property (strong, nonatomic) NSArray<XSHouseInfoCellModel *> *secondDynamicArray;
+@property (strong, nonatomic) NSArray<XSHouseInfoCellModel *> *rentSecondDynamicArray;
+@property (strong, nonatomic) NSArray<XSHouseInfoCellModel *> *sellSecondDynamicArray;
 
 @end
 

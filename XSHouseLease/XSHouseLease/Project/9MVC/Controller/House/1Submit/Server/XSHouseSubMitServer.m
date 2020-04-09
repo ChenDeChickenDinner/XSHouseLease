@@ -35,12 +35,32 @@ DEF_SINGLETON(XSHouseSubMitDynamicServer)
              NSArray *newArray = [array sortedArrayUsingComparator:^NSComparisonResult(XSHouseInfoCellModel *obj1, XSHouseInfoCellModel *obj2) {
                  return obj1.sequence.integerValue <  obj2.sequence.integerValue ?NSOrderedAscending:NSOrderedDescending;;
             }];
-            self.secondDynamicArray = newArray;
+            self.rentSecondDynamicArray = newArray;
         }
     }];
+    
+    [self.requestVc.subInfoInterface getSellEnumsWithCallback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+         if (error == nil && responseModel.code.integerValue == SuccessCode) {
+             STRONG_SELF;
+             NSArray *enumData  =  [XSHouseEnumData mj_objectArrayWithKeyValuesArray:responseModel.data];
+             NSLog(@"sub动态 = %@", [enumData mj_keyValues]);
+             NSMutableArray *array = [NSMutableArray array];
+             for (XSHouseEnumData *model in enumData) {
+                 XSHouseInfoCellModel *cellModel =  [model combinationToCellModel];
+                 [array addObject:cellModel];
+             }
+              NSArray *newArray = [array sortedArrayUsingComparator:^NSComparisonResult(XSHouseInfoCellModel *obj1, XSHouseInfoCellModel *obj2) {
+                  return obj1.sequence.integerValue <  obj2.sequence.integerValue ?NSOrderedAscending:NSOrderedDescending;;
+             }];
+             self.sellSecondDynamicArray = newArray;
+         }
+     }];
 }
 
 @end
+
+
+
 @implementation XSHouseSubMitServer
 
 - (NSMutableArray *)imageUrlArray{
@@ -70,10 +90,19 @@ DEF_SINGLETON(XSHouseSubMitDynamicServer)
 }
 - (NSMutableArray<XSHouseInfoCellModel *> *)firstArray{
     if (!_firstArray) {
-        _firstArray  = [XSHouseInfoCellModel mj_objectArrayWithKeyValuesArray:[self getDictWithJsonName:@"XSRentHouseInfoFirst"]];
-        _secondArray = [XSHouseInfoCellModel mj_objectArrayWithKeyValuesArray:[self getDictWithJsonName:@"XSRentHouseInfoSecond"]];
-        _thirdArray  = [XSHouseInfoCellModel mj_objectArrayWithKeyValuesArray:[self getDictWithJsonName:@"XSRentHouseInfoThird"]];
-        [_secondArray addObjectsFromArray:[XSHouseSubMitDynamicServer sharedInstance].secondDynamicArray];
+       
+        if (self.submitType == XSHouseSubmitType_Rent) {
+            _firstArray  = [XSHouseInfoCellModel mj_objectArrayWithKeyValuesArray:[self getDictWithJsonName:@"XSRentHouseInfoFirst"]];
+             _secondArray = [XSHouseInfoCellModel mj_objectArrayWithKeyValuesArray:[self getDictWithJsonName:@"XSRentHouseInfoSecond"]];
+             _thirdArray  = [XSHouseInfoCellModel mj_objectArrayWithKeyValuesArray:[self getDictWithJsonName:@"XSRentHouseInfoThird"]];
+             [_secondArray addObjectsFromArray:[XSHouseSubMitDynamicServer sharedInstance].rentSecondDynamicArray];
+        }else{
+            _firstArray  = [XSHouseInfoCellModel mj_objectArrayWithKeyValuesArray:[self getDictWithJsonName:@"XSSellHouseInfoFirst"]];
+             _secondArray = [XSHouseInfoCellModel mj_objectArrayWithKeyValuesArray:[self getDictWithJsonName:@"XSSellHouseInfoSecond"]];
+             _thirdArray  = [XSHouseInfoCellModel mj_objectArrayWithKeyValuesArray:[self getDictWithJsonName:@"XSSellHouseInfoThird"]];
+             [_secondArray addObjectsFromArray:[XSHouseSubMitDynamicServer sharedInstance].sellSecondDynamicArray];
+        }
+ 
         
         [self setUpdataBlacokWithArray:_firstArray];
         [self setUpdataBlacokWithArray:_secondArray];

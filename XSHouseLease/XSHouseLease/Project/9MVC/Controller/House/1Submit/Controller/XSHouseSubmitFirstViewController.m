@@ -21,21 +21,15 @@
 @interface XSHouseSubmitFirstViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
 @property (weak, nonatomic) IBOutlet XSRoundedBtn1View *nextBtn;
+@property (strong, nonatomic)  XSPhotoPickerView *pickerView;
 @property(nonatomic,assign) XSHouseSubmitStepsType submitStepsType;
 @property (strong, nonatomic) NSMutableArray<XSHouseInfoCellModel *> *array;
-@property (strong, nonatomic)  XSPhotoPickerView *pickerView;
 
 @end
 
 @implementation XSHouseSubmitFirstViewController
 
-- (XSHouseSubMitServer *)subMitServer{
-    if (!_subMitServer) {
-        _subMitServer = [[XSHouseSubMitServer alloc]init];
-        _subMitServer.submitType = self.submitType;
-    }
-    return _subMitServer;
-}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.myTableView.delegate = self;
@@ -51,6 +45,9 @@
     }
 
     if (self.submitStepsType == XSHouseSubmitStepsType_First) {
+        self.subMitServer = [[XSHouseSubMitServer alloc]init];
+        self.subMitServer.submitType = self.submitType;
+        
         XSHouseSubFootView *tableFooterView = [XSHouseSubFootView houseSubFootView];
         tableFooterView.frame = CGRectMake(0, 0, self.myTableView.width, 160);
         self.myTableView.tableFooterView = tableFooterView;
@@ -93,6 +90,7 @@
 
 - (IBAction)nextStepClick:(UIButton *)sender {
     XSHouseSubmitFirstViewController *next = [[XSHouseSubmitFirstViewController alloc]init];
+    next.subMitServer = self.subMitServer;
     if (self.submitStepsType == XSHouseSubmitStepsType_First) {
         next.submitStepsType = XSHouseSubmitStepsType_Second;
         [self.navigationController pushViewController:next animated:YES];
@@ -106,7 +104,8 @@
 
 
 - (void)submitRenthouseSave{
-
+    NSLog(@"------%@",self.subMitServer.subRentParameterDict);
+    return;
     WEAK_SELF;
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [self.subInfoInterface renthouseSaveWithDict:self.subMitServer.subRentParameterDict callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {

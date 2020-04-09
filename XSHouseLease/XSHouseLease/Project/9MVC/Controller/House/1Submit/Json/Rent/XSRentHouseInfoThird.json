@@ -36,7 +36,7 @@
   "arrayValue": [
                   {
                       "name":"核心卖点",
-                      "key":"modelIntroduced",
+                      "key":"coreIntroduced",
                       "moreSelect":false,
                       "sequence":0,
                       "keyInputType":3,
