@@ -8,7 +8,6 @@
 
 #import "XSHouseDetailsBusinessInfoCell.h"
 #import <objc/runtime.h>
-#import "XSBusinessCollectionCell.h"
 static NSString *XSHouseDetailsBusinessInfoCellStr = @"XSHouseDetailsBusinessInfoCellStr";
 
 @interface XSHouseDetailsBusinessInfoCell ()<UICollectionViewDelegate,UICollectionViewDataSource>
