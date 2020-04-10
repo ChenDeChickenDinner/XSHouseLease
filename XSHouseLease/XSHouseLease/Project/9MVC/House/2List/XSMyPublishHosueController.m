@@ -108,7 +108,19 @@
         }
     }
 }
-
+#pragma mark -房屋操作预埋Block
+- (void)houseInfoClickSettingWithModelArray:(NSArray *)array{
+    WEAK_SELF;
+    for (XSHouseInfoShowModel *model in array) {
+        model.source = self.source;
+        model.houseType = self.houseType;
+        model.clickEditStatu = ^(NSNumber * _Nonnull status, NSNumber * _Nonnull houseID) {
+            STRONG_SELF;
+            [self editHouseStatusWith:status houseId:houseID];
+        };
+    }
+}
+#pragma mark -UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.array.count;
 }
@@ -131,18 +143,7 @@
     
     
 }
-#pragma mark -房屋操作查看
-- (void)houseInfoClickSettingWithModelArray:(NSArray *)array{
-    WEAK_SELF;
-    for (XSHouseInfoShowModel *model in array) {
-        model.source = self.source;
-        model.houseType = self.houseType;
-        model.clickEditStatu = ^(NSNumber * _Nonnull status, NSNumber * _Nonnull houseID) {
-            STRONG_SELF;
-            [self editHouseStatusWith:status houseId:houseID];
-        };
-    }
-}
+
 #pragma mark -房屋重新编辑/状态更变
 - (void)editHouseStatusWith:(NSNumber *)status houseId:(NSNumber *)houseId{
     if (status.integerValue == XSBHouseSubStatus_edit) {

@@ -136,3 +136,50 @@
     self.contentLable.text = model.value;
 }
 @end
+
+
+@implementation XSFacilitiesCollectionCell
+
+- (instancetype)initWithFrame:(CGRect)frame{
+    
+    if (self = [super initWithFrame:frame]) {
+        
+        UIView *bkView = [[UIView alloc]init];
+        bkView.layer.masksToBounds = YES;
+        bkView.layer.cornerRadius = 25;
+
+        bkView.backgroundColor = [UIColor hb_colorWithHexString:@"#FF7A7A" alpha:1];
+        [self.contentView addSubview:bkView];
+        self.bkView = bkView;
+
+        //添加自己需要个子视图控件
+        self.contentView.backgroundColor = [UIColor clearColor];
+
+        UIImageView *image = [[UIImageView alloc] init];
+         [self.bkView addSubview:image];
+         self.image = image;
+
+        UILabel *contentLable = [[UILabel alloc] init];
+         contentLable.backgroundColor = [UIColor clearColor];
+         contentLable.font = [UIFont systemFontOfSize:12];
+         contentLable.textAlignment = NSTextAlignmentCenter;
+
+         contentLable.textColor = [UIColor hb_colorWithHexString:@"#BFBFBF" alpha:1];
+          [self.contentView addSubview:contentLable];
+          self.contentLable = contentLable;
+    }
+    return self;
+}
+- (void)layoutSubviews{
+    [super layoutSubviews];
+    self.bkView.frame = CGRectMake(0, 0, self.width, 50);;
+    self.image.frame = self.bkView.bounds;
+    self.contentLable.frame = CGRectMake(0, 50, self.width, self.height -50);
+}
+- (void)setModel:(XSHouseDetailsFacilitiesModel *)model{
+    _model = model;
+    self.bkView.backgroundColor = [UIColor hb_colorWithHexString:model.status?@"#FF7A7A":@"#FFCCCC" alpha:1];
+    [self.image  sd_setImageWithURL:[NSURL URLWithString:model.icon]];
+    self.contentLable.text = model.name;
+}
+@end

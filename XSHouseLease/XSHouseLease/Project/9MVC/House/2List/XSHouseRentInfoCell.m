@@ -8,8 +8,9 @@
 
 #import "XSHouseRentInfoCell.h"
 
-static NSString *XSHouseDetailsBusinessInfoCellStr = @"XSHouseDetailsBusinessInfoCellStr";
 
+
+#pragma mark -基础类
 @implementation XSHouseInfoCell
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -20,7 +21,7 @@ static NSString *XSHouseDetailsBusinessInfoCellStr = @"XSHouseDetailsBusinessInf
 }
 @end
 
-
+#pragma mark -租房列表
 @implementation XSHouseRentInfoCell
 
 - (void)awakeFromNib {
@@ -28,36 +29,22 @@ static NSString *XSHouseDetailsBusinessInfoCellStr = @"XSHouseDetailsBusinessInf
     
     self.dealStatusLable.layer.masksToBounds = YES;
     self.dealStatusLable.layer.cornerRadius = 2;
-
     self.titleLable.text = nil;
-    
     self.infoLable.text = nil;
-    
     self.featurePointsLablea.text = nil;
     self.featurePointsLableb.text = nil;
     self.featurePointsLablec.text = nil;
-//    self.featurePointsLablea.hidden = YES;
-//    self.featurePointsLableb.hidden = YES;
-//    self.featurePointsLablec.hidden = YES;
-
     self.featurePointsLableaW.constant = 0;
     self.featurePointsLablebW.constant = 0;
     self.featurePointsLablecW.constant = 0;
-    
-    
     self.dealStatusLable.text = nil;
     self.rentPricelabe.text = nil;
-
     self.watchNumLable.text = nil;
-    
     self.watchNumBKView.hidden = YES;
-    
     XSHouseRentStatusView *statusView = [[XSHouseRentStatusView alloc]init];
-    
     WEAK_SELF;
     self.statusEditView.clickEditStatus = ^(NSNumber * _Nonnull status,NSNumber * _Nonnull houseID) {
         STRONG_SELF;
-        NSLog(@"1111111111111--------%@",status);
         XSHouseInfoShowModel *newModel = (XSHouseInfoShowModel *)self.model;
         newModel.clickEditStatu(status,newModel.house_id);
     };
@@ -65,56 +52,49 @@ static NSString *XSHouseDetailsBusinessInfoCellStr = @"XSHouseDetailsBusinessInf
     [self.statusEditView addSubview:statusView];
     
 }
-- (void)layoutSubviews{
-    [super layoutSubviews];
-}
+
 - (void)updateWithModel:(XSHouseInfoShowModel *)model{
     self.model = model;
-            XSHouseInfoShowModel *newModel = (XSHouseInfoShowModel *)self.model;
-            self.titleLable.text = newModel.title;
-            [self.image sd_setImageWithURL:[NSURL URLWithString:newModel.firstImg]];
-            [self.image sd_setImageWithURL:[NSURL URLWithString:newModel.firstImg] placeholderImage:[UIImage imageNamed:@"houseDefImage"]];
-            NSString *area = [NSString stringWithFormat:@"%@ m2",newModel.area];
-            self.infoLable.text = [NSString stringWithFormat:@"%@/%@/%@",area,newModel.formType,newModel.orientationName];
-            
-            NSString *stra = [newModel.featurePointNames safeObjectAtIndex:0];;
-            NSString *strb = [newModel.featurePointNames safeObjectAtIndex:1];;
-            NSString *strc = [newModel.featurePointNames safeObjectAtIndex:2];;
+    XSHouseInfoShowModel *newModel = (XSHouseInfoShowModel *)self.model;
+    self.titleLable.text = newModel.title;
+    [self.image sd_setImageWithURL:[NSURL URLWithString:newModel.firstImg]];
+    [self.image sd_setImageWithURL:[NSURL URLWithString:newModel.firstImg] placeholderImage:[UIImage imageNamed:@"houseDefImage"]];
+    NSString *area = [NSString stringWithFormat:@"%@ m2",newModel.area];
+    self.infoLable.text = [NSString stringWithFormat:@"%@/%@/%@",area,newModel.formType,newModel.orientationName];
+    
+    NSString *stra = [newModel.featurePointNames safeObjectAtIndex:0];;
+    NSString *strb = [newModel.featurePointNames safeObjectAtIndex:1];;
+    NSString *strc = [newModel.featurePointNames safeObjectAtIndex:2];;
 
-            self.featurePointsLablea.text = stra;
-            self.featurePointsLableb.text = strb;
-            self.featurePointsLablec.text = strc;
-            self.featurePointsLableaW.constant = stra.length > 0?[self.featurePointsLablea mj_textWidth] + 5:0;
-            self.featurePointsLablebW.constant = strb.length > 0?[self.featurePointsLableb mj_textWidth] + 5:0;
-            self.featurePointsLablecW.constant = strc.length > 0?[self.featurePointsLablec mj_textWidth] + 5:0;
-     
-            self.rentPricelabe.text = [NSString stringWithFormat:@"%@元/每月",newModel.rentPrice];
+    self.featurePointsLablea.text = stra;
+    self.featurePointsLableb.text = strb;
+    self.featurePointsLablec.text = strc;
+    self.featurePointsLableaW.constant = stra.length > 0?[self.featurePointsLablea mj_textWidth] + 5:0;
+    self.featurePointsLablebW.constant = strb.length > 0?[self.featurePointsLableb mj_textWidth] + 5:0;
+    self.featurePointsLablecW.constant = strc.length > 0?[self.featurePointsLablec mj_textWidth] + 5:0;
 
-            self.watchNumLable.text = [NSString stringWithFormat:@"%@人已关注",newModel.watchNum];
-            self.watchNumBKView.hidden = newModel.watchNum.intValue > 0?NO:YES;
-            
-            if (newModel.source == XSBHouseInfoSource_MyPublish) {
-                self.statusEditViewHeight.constant = 23.0;
-                self.dealStatusLable.text = newModel.statusName;
-                self.dealStatusLable.textColor = [UIColor whiteColor];
-               
-                self.dealStatusLable.backgroundColor = [UIColor hb_colorWithHexString:XSHouseStatusTextColor(newModel.status, newModel.dealStatus, newModel.source) alpha:1];
-    //            self.dealStatusLable.backgroundColor = [UIColor hb_colorWithHexString:@"#E82B2B" alpha:1];
-            }else{
-               
-                
-              self.dealStatusLable.text = newModel.dealStatusName;
-              self.dealStatusLable.textColor = [UIColor whiteColor];
-                self.dealStatusLable.backgroundColor = [UIColor hb_colorWithHexString:XSHouseStatusTextColor(newModel.status, newModel.dealStatus, newModel.source) alpha:1];
-    //          self.dealStatusLable.backgroundColor = [UIColor hb_colorWithHexString:@"#E82B2B" alpha:1];
-                
-                
-                self.statusEditViewHeight.constant = 0;
-                [self.statusEditView removeFromSuperview];
-            }
-            
-            self.statusEditView.status = newModel.status;
+    self.rentPricelabe.text = [NSString stringWithFormat:@"%@元/每月",newModel.rentPrice];
+    self.watchNumLable.text = [NSString stringWithFormat:@"%@人已关注",newModel.watchNum];
+    self.watchNumBKView.hidden = newModel.watchNum.intValue > 0?NO:YES;
+    
+    if (newModel.source == XSBHouseInfoSource_MyPublish) {
+        self.statusEditViewHeight.constant = 23.0;
+        self.dealStatusLable.text = newModel.statusName;
+        self.dealStatusLable.textColor = [UIColor whiteColor];
+        self.dealStatusLable.backgroundColor = [UIColor hb_colorWithHexString:XSHouseStatusTextColor(newModel.status, newModel.dealStatus, newModel.source) alpha:1];
+    }else{
+       
+        self.dealStatusLable.text = newModel.dealStatusName;
+        self.dealStatusLable.textColor = [UIColor whiteColor];
+        self.dealStatusLable.backgroundColor = [UIColor hb_colorWithHexString:XSHouseStatusTextColor(newModel.status, newModel.dealStatus, newModel.source) alpha:1];
+        self.statusEditViewHeight.constant = 0;
+        [self.statusEditView removeFromSuperview];
+    }
+    
+    self.statusEditView.status = newModel.status;
 }
+
+
 NSString * XSHouseStatusTextColor(NSNumber *status, NSNumber *dealStatus, XSBHouseInfoSource source) {
     NSString *color = @"";
 
@@ -183,7 +163,7 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 @end
 
 
-
+#pragma mark -房屋图片
 @implementation XSHouseDetailsImagesCell
 
 - (void)awakeFromNib {
@@ -212,18 +192,13 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
      __weak typeof(SDCycleScrollView *) weakCycleScrollView = cycleScrollView;
     cycleScrollView.itemDidScrollOperationBlock = ^(NSInteger currentIndex) {
         STRONG_SELF;
-//        XSHouseInfoShowModel *newModel = (XSHouseInfoShowModel *)self.model;
-//        self.tipLabel.text = [NSString stringWithFormat:@"%ld/%ld",currentIndex,newModel.dataModel.contentImg.count];
         NSInteger Index =  currentIndex + 1;
         self.tipLabel.text = [NSString stringWithFormat:@"%ld/%ld",Index,weakCycleScrollView.imageURLStringsGroup.count];
-
     };
     
     self.cycleScrollView = cycleScrollView;
-    
-    [self.bkView addSubview:cycleScrollView];
     [self.bkView addSubview:lable];
-    
+    [self.bkView addSubview:cycleScrollView];
     [self.bkView bringSubviewToFront:self.tipLabel];
 
 }
@@ -244,61 +219,52 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 
 @end
 
-
+#pragma mark -基本信息
 @implementation XSHouseDetailsBasicInfoCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.titleLable.text = nil;
-    
     self.rentPricelabe.text = nil;
-
     self.formTypelabe.text = nil;
     self.rarealabe.text = nil;
-    
     self.featurePointsLablea.text = nil;
     self.featurePointsLableb.text = nil;
     self.featurePointsLablec.text = nil;
-
-
 
 }
 
 - (void)updateWithModel:(XSHouseInfoShowModel *)dataModel{
     self.model = dataModel;
-    
-   self.titleLable.text = [NSString stringWithFormat:@"%@ %@ %@",dataModel.rentWayName,dataModel.estate,dataModel.formType];
-    
-   self.rentPricelabe.text = [NSString stringWithFormat:@"%@元/每月",dataModel.rentPrice];
-
+    self.titleLable.text = [NSString stringWithFormat:@"%@ %@ %@",dataModel.rentWayName,dataModel.estate,dataModel.formType];
+    self.rentPricelabe.text = [NSString stringWithFormat:@"%@元/每月",dataModel.rentPrice];
     self.formTypelabe.text = dataModel.formType;
-   
     self.rarealabe.text = [NSString stringWithFormat:@"%@㎡",dataModel.area];
     
     NSString *stra = [dataModel.featurePointNames safeObjectAtIndex:0];;
     NSString *strb = [dataModel.featurePointNames safeObjectAtIndex:1];;
     NSString *strc = [dataModel.featurePointNames safeObjectAtIndex:2];;
-       if ([stra isKindOfClass:[NSString class]]) {
-       self.featurePointsLablea.text = [NSString stringWithFormat:@"%@",stra];
-         self.featurePointsLableb.text = [NSString stringWithFormat:@"%@",strb];;
-         self.featurePointsLablec.text = [NSString stringWithFormat:@"%@",strc];;
+    if ([stra isKindOfClass:[NSString class]]) {
+        self.featurePointsLablea.text = [NSString stringWithFormat:@"%@",stra];
+        self.featurePointsLableb.text = [NSString stringWithFormat:@"%@",strb];;
+        self.featurePointsLablec.text = [NSString stringWithFormat:@"%@",strc];;
         self.featurePointsLableaW.constant = stra.length > 0?[self.featurePointsLablea mj_textWidth] + 5:0;
         self.featurePointsLablebW.constant = strb.length > 0?[self.featurePointsLableb mj_textWidth] + 5:0;
         self.featurePointsLablecW.constant = strc.length > 0?[self.featurePointsLablec mj_textWidth] + 5:0;
-       }else{
-           self.featurePointsLablea.text = nil;
-               self.featurePointsLableb.text = nil;
-               self.featurePointsLablec.text = nil;;
-              self.featurePointsLableaW.constant = [self.featurePointsLablea mj_textWidth];
-              self.featurePointsLablebW.constant = [self.featurePointsLableb mj_textWidth];
-              self.featurePointsLablecW.constant = [self.featurePointsLablec mj_textWidth];
-       }
+    }else{
+        self.featurePointsLablea.text = nil;
+        self.featurePointsLableb.text = nil;
+        self.featurePointsLablec.text = nil;;
+        self.featurePointsLableaW.constant = [self.featurePointsLablea mj_textWidth];
+        self.featurePointsLablebW.constant = [self.featurePointsLableb mj_textWidth];
+        self.featurePointsLablecW.constant = [self.featurePointsLablec mj_textWidth];
+    }
 }
 
 
 @end
 
-
+#pragma mark -其它信息
 @implementation XSHouseDetailsBusinessInfoCell
 
 - (void)awakeFromNib{
@@ -316,65 +282,44 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
     
 }
 
-
-- (void)layoutSubviews{
-    [super layoutSubviews];
-//    self.collectionView.frame = self.bkView.bounds;
-}
 - (void)updateWithModel:(XSHouseInfoShowModel *)dataModel{
     self.model = dataModel;
     NSMutableDictionary *modeDict = [dataModel mj_keyValues];
-        NSMutableArray *infoArray = [NSMutableArray array];
-        for (XSBusinessInfoJsonModel *infoJsonModel in [XSConfigServer sharedInstance].businessInfoArray) {
-            XSBusinessInfoModel *infoModel = [[XSBusinessInfoModel alloc]init];
-            infoModel.name = infoJsonModel.keyName ;
-            infoModel.value = [NSString stringWithFormat:@"%@",[modeDict safeObjectForKey:infoJsonModel.key]];
-            [infoArray addObject:infoModel];
-        }
+    NSMutableArray *infoArray = [NSMutableArray array];
+    for (XSBusinessInfoJsonModel *infoJsonModel in [XSConfigServer sharedInstance].businessInfoArray) {
+        XSBusinessInfoModel *infoModel = [[XSBusinessInfoModel alloc]init];
+        infoModel.name = infoJsonModel.keyName ;
+        infoModel.value = [NSString stringWithFormat:@"%@",[modeDict safeObjectForKey:infoJsonModel.key]];
+        [infoArray addObject:infoModel];
+    }
         
-        self.array = infoArray;
+    self.array = infoArray;
     [self.collectionView reloadData];
 
 }
 
-
-// 返回cell个数
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.array.count;
 }
-// 返回cell内容
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-
     XSBusinessInfoModel *dataModel = [self.array safeObjectAtIndex:indexPath.row];
-    
-    // 创建cell (重用)
     XSBusinessCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:XSHouseDetailsBusinessInfoCellStr forIndexPath:indexPath];
     cell.model = dataModel;
     return cell;
 }
 
-
-// 选中某个cell
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
     XSBusinessInfoModel *dataModel = [self.array safeObjectAtIndex:indexPath.row];
     if (dataModel.clickBlack) {
         dataModel.clickBlack(dataModel);
     }
-
-    NSLog(@"选中cell: %ld", indexPath.row);
 }
 
 - (UICollectionViewFlowLayout *)layout{
     if (!_layout) {
         _layout =  [[UICollectionViewFlowLayout alloc]init];
-        //设置cell的尺寸(宽度和高度)
         _layout.itemSize = CGSizeMake((KScreenWidth - 30)/2, 19);
-        //设置竖直滚动放向(默认是竖直方向)
-//        _layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-        //设置cell与cell之间的列距
         _layout.minimumInteritemSpacing = 0;
-        //设置cell与cell之间的行距
         _layout.minimumLineSpacing = 8;
     }
     return _layout;
@@ -385,91 +330,7 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 
 
 
-@implementation XSHouseDetailsAddressInfoCell
-
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    self.locationLable.text = nil;
-    UIView *view = self.mapVc.view;
-    view.frame = self.mapBkView.bounds;
-    
-    [self.mapBkView addSubview:_mapVc.view];
-    
-}
-- (void)layoutSubviews{
-    [super layoutSubviews];
-    
-}
-- (XSMapViewController *)mapVc{
-    if (_mapVc == nil) {
-        _mapVc = [[XSMapViewController alloc]init];
-    }
-    return _mapVc;
-}
-- (void)updateWithModel:(XSHouseInfoShowModel *)model{
-    self.model = model;
-    self.locationLable.text = [NSString stringWithFormat:@"%@/%@",model.region,model.town];
-       self.mapVc.location = CLLocationCoordinate2DMake(model.latitude.floatValue, model.longitude.floatValue);
-}
-
-@end
-
-
-@implementation XSFacilitiesCollectionCell
-
-- (instancetype)initWithFrame:(CGRect)frame{
-    
-    if (self = [super initWithFrame:frame]) {
-        
-        UIView *bkView = [[UIView alloc]init];
-        bkView.layer.masksToBounds = YES;
-        bkView.layer.cornerRadius = 25;
-
-        bkView.backgroundColor = [UIColor hb_colorWithHexString:@"#FF7A7A" alpha:1];
-        [self.contentView addSubview:bkView];
-        self.bkView = bkView;
-
-        //添加自己需要个子视图控件
-        self.contentView.backgroundColor = [UIColor clearColor];
-
-        UIImageView *image = [[UIImageView alloc] init];
-         [self.bkView addSubview:image];
-         self.image = image;
-
-        UILabel *contentLable = [[UILabel alloc] init];
-         contentLable.backgroundColor = [UIColor clearColor];
-         contentLable.font = [UIFont systemFontOfSize:12];
-         contentLable.textAlignment = NSTextAlignmentCenter;
-
-         contentLable.textColor = [UIColor hb_colorWithHexString:@"#BFBFBF" alpha:1];
-          [self.contentView addSubview:contentLable];
-          self.contentLable = contentLable;
-    }
-    return self;
-}
-- (void)layoutSubviews{
-    [super layoutSubviews];
-    self.bkView.frame = CGRectMake(0, 0, self.width, 50);;
-    self.image.frame = self.bkView.bounds;
-    self.contentLable.frame = CGRectMake(0, 50, self.width, self.height -50);
-}
-- (void)setModel:(XSHouseDetailsFacilitiesModel *)model{
-    _model = model;
-    self.bkView.backgroundColor = [UIColor hb_colorWithHexString:model.status?@"#FF7A7A":@"#FFCCCC" alpha:1];
-    [self.image  sd_setImageWithURL:[NSURL URLWithString:model.icon]];
-    self.contentLable.text = model.name;
-}
-@end
-
-
-@interface XSHouseDetailsFacilitiesInfoCell ()<UICollectionViewDelegate,UICollectionViewDataSource>
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView ;
-@property (strong, nonatomic) NSMutableArray<XSHouseDetailsFacilitiesModel *> *array;
-@property (strong, nonatomic) UICollectionViewFlowLayout *layout;
-
-@end
-static NSString *XSHouseDetailsFacilitiesInfoCellStr = @"XSHouseDetailsFacilitiesInfoCellStr";
-
+#pragma mark -配套设施
 @implementation XSHouseDetailsFacilitiesInfoCell
 
 - (void)awakeFromNib{
@@ -486,11 +347,6 @@ static NSString *XSHouseDetailsFacilitiesInfoCellStr = @"XSHouseDetailsFacilitie
      [self.collectionView registerClass:[XSFacilitiesCollectionCell class] forCellWithReuseIdentifier:XSHouseDetailsFacilitiesInfoCellStr];
     
 }
-- (void)layoutSubviews{
-    [super layoutSubviews];
-}
-
-
 
 - (void)updateWithModel:(XSHouseInfoShowModel *)model{
     self.model = model;
@@ -507,41 +363,22 @@ static NSString *XSHouseDetailsFacilitiesInfoCellStr = @"XSHouseDetailsFacilitie
     [self.collectionView reloadData];
 }
 
-// 返回cell个数
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.array.count;
 }
-// 返回cell内容
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     XSHouseDetailsFacilitiesModel *dataModel = [self.array safeObjectAtIndex:indexPath.row];
-    
-    // 创建cell (重用)
     XSFacilitiesCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:XSHouseDetailsFacilitiesInfoCellStr forIndexPath:indexPath];
     cell.model = dataModel;
     return cell;
 }
 
-
-// 选中某个cell
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    XSHouseDetailsFacilitiesModel *dataModel = [self.array safeObjectAtIndex:indexPath.row];
-
-
-    NSLog(@"选中cell: %ld", indexPath.row);
-}
-
 - (UICollectionViewFlowLayout *)layout{
     if (!_layout) {
         _layout =  [[UICollectionViewFlowLayout alloc]init];
-        //设置cell的尺寸(宽度和高度)
         _layout.itemSize = CGSizeMake(50, 85);
-        //设置竖直滚动放向(默认是竖直方向)
-//        _layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-        //设置cell与cell之间的列距
         _layout.minimumInteritemSpacing = 25 ;
-        //设置cell与cell之间的行距
         _layout.minimumLineSpacing = 0;
     }
     return _layout;
@@ -549,6 +386,35 @@ static NSString *XSHouseDetailsFacilitiesInfoCellStr = @"XSHouseDetailsFacilitie
 
 @end
 
+
+#pragma mark -地图信息
+@implementation XSHouseDetailsAddressInfoCell
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    self.locationLable.text = nil;
+    UIView *view = self.mapVc.view;
+    view.frame = self.mapBkView.bounds;
+    [self.mapBkView addSubview:self.mapVc.view];
+    
+}
+
+- (XSMapViewController *)mapVc{
+    if (_mapVc == nil) {
+        _mapVc = [[XSMapViewController alloc]init];
+    }
+    return _mapVc;
+}
+- (void)updateWithModel:(XSHouseInfoShowModel *)model{
+    self.model = model;
+    self.locationLable.text = [NSString stringWithFormat:@"%@/%@",model.region,model.town];
+    self.mapVc.location = CLLocationCoordinate2DMake(model.latitude.floatValue, model.longitude.floatValue);
+}
+
+@end
+
+
+#pragma mark -房源介绍
 @implementation XSHouseDetailsIntroduceInfoCell
 
 - (void)awakeFromNib {
@@ -586,25 +452,18 @@ static NSString *XSHouseDetailsFacilitiesInfoCellStr = @"XSHouseDetailsFacilitie
 - (void)showText{
     if ([self.model isKindOfClass:[XSHouseInfoShowModel class]]) {
           XSHouseInfoShowModel *dataModel = (XSHouseInfoShowModel *)self.model;
-
           if (self.selbtn == self.btn1) {
               self.textView.text = dataModel.coreIntroduced;
-              
           }else if (self.selbtn == self.btn2){
               self.textView.text = dataModel.estateIntroduced;
-
           }else if (self.selbtn == self.btn3){
               self.textView.text = dataModel.transportation;
-
           }else{
               self.textView.text = nil;
-
           }
     }else{
         self.textView.text = nil;
-
     }
-    
 
 }
 - (void)lineFrame{
@@ -646,18 +505,13 @@ static NSString *XSHouseDetailsFacilitiesInfoCellStr = @"XSHouseDetailsFacilitie
 }
 - (void)updateWithModel:(XSHouseInfoShowModel *)model{
     self.model = model;
-//    if ([model isKindOfClass:[XSHouseInfoShowModel class]]) {
-//          XSHouseInfoShowModel *cellModel = (XSHouseInfoShowModel *)model;
-//          XSHouseInfoShowModel *dataModel = cellModel.dataModel;
-//
-//      }
     [self showText];
 }
 
 @end
 
 
-
+#pragma mark -更多推荐
 @implementation XSHouseRecommendedCell
 
 - (void)awakeFromNib {

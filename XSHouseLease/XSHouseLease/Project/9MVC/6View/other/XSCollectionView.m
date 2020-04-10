@@ -9,7 +9,6 @@
 #import "XSCollectionView.h"
 #import "XSHouseBasisView.h"
 
-static NSString *XSItemCollectionViewCellStr = @"XSItemCollectionViewCellStr";
 
 @interface XSCollectionView()<UICollectionViewDelegate,UICollectionViewDataSource>
 

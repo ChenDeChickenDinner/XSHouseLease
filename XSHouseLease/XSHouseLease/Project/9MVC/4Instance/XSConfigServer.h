@@ -36,6 +36,8 @@ typedef void (^clickBlack)(XSHouseModuleModel *model);
 @property (nonatomic, strong) NSNumber *keyType;
 @property (nonatomic, copy  ) NSString *keyName;
 @end
+
+
 @interface XSBusinessInfoModel : NSObject
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *value;

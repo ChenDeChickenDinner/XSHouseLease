@@ -20,8 +20,11 @@ typedef void (^XSHouseInfoClickBlack)(XSHouseInfoShowModel *model,XShouseOperati
 
 @property(nonatomic,assign) XSBHouseInfoSource source;
 @property(nonatomic,assign) XSBHouseType houseType;
-@property(nonatomic,copy  ) XSHouseInfoClickBlack clickBlack;
+// 状态更变
 @property(nonatomic,copy  ) clickEditStatus clickEditStatu;
+
+
+@property(nonatomic,copy  ) XSHouseInfoClickBlack clickBlack;
 @property(nonatomic,copy  ) NSString *cellClass;
 @property(nonatomic,copy  ) XSValuechangeStatus valuechangeStatus;
 
