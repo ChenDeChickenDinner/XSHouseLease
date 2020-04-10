@@ -6,7 +6,8 @@
 //  Copyright © 2020 fang. All rights reserved.
 //
 
-#import "XSHouseSubTextFieldTableViewCell.h"
+#import "XSHouseSubTableViewCell.h"
+
 #define lableWidth 2
 
 @interface XSHouseSubTextFieldTableViewCell ()<UITextFieldDelegate>

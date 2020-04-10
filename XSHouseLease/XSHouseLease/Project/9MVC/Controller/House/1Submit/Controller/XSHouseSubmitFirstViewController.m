@@ -8,11 +8,6 @@
 
 #import "XSHouseSubmitFirstViewController.h"
 #import "XSHouseSubTableViewCell.h"
-#import "XSHouseSubTextViewCell.h"
-#import "XSHouseSubCollectionviewBCell.h"
-#import "XSHouseSubCollectionviewACell.h"
-#import "XSHouseSubTextFieldTableViewCell.h"
-#import "XSHouseSubListChooseTableViewCell.h"
 #import "XSPhotoPickerView.h"
 #import "XSHouseSubSuccessViewController.h"
 #import "XSHouseSubFootView.h"

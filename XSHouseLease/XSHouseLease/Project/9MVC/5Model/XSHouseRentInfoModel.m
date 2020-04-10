@@ -7,7 +7,6 @@
 //
 
 #import "XSHouseRentInfoModel.h"
-#import "XSHouseSubCollectionviewBCell.h"
 
 
 

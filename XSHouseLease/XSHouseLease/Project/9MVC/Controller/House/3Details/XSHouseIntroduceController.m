@@ -8,11 +8,6 @@
 
 #import "XSHouseIntroduceController.h"
 #import "XSHouseSubTableViewCell.h"
-#import "XSHouseSubTextViewCell.h"
-#import "XSHouseSubCollectionviewBCell.h"
-#import "XSHouseSubCollectionviewACell.h"
-#import "XSHouseSubTextFieldTableViewCell.h"
-#import "XSHouseSubListChooseTableViewCell.h"
 #import "XSPhotoPickerView.h"
 #import "XSHouseSubSuccessViewController.h"
 @interface XSHouseIntroduceController ()<UITableViewDelegate,UITableViewDataSource>
@@ -46,26 +41,11 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     XSHouseInfoCellModel *dataModel = [self.array safeObjectAtIndex:indexPath.row];
-    Class cls = NSClassFromString(dataModel.cellClass);
-    XSHouseSubTableViewCell *cell = nil;
-    if ([cls isSubclassOfClass:[XSHouseSubTextFieldTableViewCell class]]) {
-        cell = [XSHouseSubTextFieldTableViewCell cellWithtableView:tableView];
-        
-    }else if ([cls isSubclassOfClass:[XSHouseSubListChooseTableViewCell class]]){
-        cell = [XSHouseSubListChooseTableViewCell cellWithtableView:tableView];
-        
-    }else if ([cls isSubclassOfClass:[XSHouseSubCollectionviewACell class]]){
-        cell = [XSHouseSubCollectionviewACell cellWithtableView:tableView];
-        
-    }else if ([cls isSubclassOfClass:[XSHouseSubCollectionviewBCell class]]){
-        cell = [XSHouseSubCollectionviewBCell cellWithtableView:tableView];
-        
-    }else if ([cls isSubclassOfClass:[XSHouseSubTextViewCell class]]){
-        cell = [XSHouseSubTextViewCell cellWithtableView:tableView];
-        
-    }else{
-        cell = [XSHouseSubTableViewCell cellWithtableView:tableView];
-    }
+    XSHouseSubTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:dataModel.cellClass];
+      if (!cell) {
+        cell = [[NSBundle mainBundle] loadNibNamed:dataModel.cellClass owner:self options:nil].lastObject;
+      }
+
     cell.dataModel =dataModel;
 //    cell.keyValueModel = dataModel;
     [cell refreshData];

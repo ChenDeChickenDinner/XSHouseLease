@@ -7,9 +7,7 @@
 //
 
 #import "XSHouseSubMitModel.h"
-
-
-#import "XSHouseSubCollectionviewBCell.h"
+#import "XSHouseSubTableViewCell.h"
 
 
 @implementation XSValue

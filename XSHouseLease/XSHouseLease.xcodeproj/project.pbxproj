@@ -40,30 +40,30 @@
 		55BAE67E243F0463001C7B22 /* XSRentHouseInfoSecond.json in Resources */ = {isa = PBXBuildFile; fileRef = 55BAE678243F0463001C7B22 /* XSRentHouseInfoSecond.json */; };
 		55BAE67F243F0463001C7B22 /* XSRentHouseInfoFirst.json in Resources */ = {isa = PBXBuildFile; fileRef = 55BAE679243F0463001C7B22 /* XSRentHouseInfoFirst.json */; };
 		55BAE680243F0463001C7B22 /* XSRentHouseInfoThird.json in Resources */ = {isa = PBXBuildFile; fileRef = 55BAE67A243F0463001C7B22 /* XSRentHouseInfoThird.json */; };
+		55BAE6A5243FFF7C001C7B22 /* XSHouseSubTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE683243FFF7C001C7B22 /* XSHouseSubTextViewCell.m */; };
+		55BAE6A6243FFF7C001C7B22 /* XSHouseSubTextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BAE684243FFF7C001C7B22 /* XSHouseSubTextViewCell.xib */; };
+		55BAE6A7243FFF7C001C7B22 /* XSHouseSubListChooseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BAE687243FFF7C001C7B22 /* XSHouseSubListChooseTableViewCell.xib */; };
+		55BAE6A8243FFF7C001C7B22 /* XSHouseSubListChooseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE689243FFF7C001C7B22 /* XSHouseSubListChooseTableViewCell.m */; };
+		55BAE6A9243FFF7C001C7B22 /* XSHouseSubCollectionviewBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE68B243FFF7C001C7B22 /* XSHouseSubCollectionviewBCell.m */; };
+		55BAE6AA243FFF7C001C7B22 /* XSHouseSubCollectionviewBCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BAE68C243FFF7C001C7B22 /* XSHouseSubCollectionviewBCell.xib */; };
+		55BAE6AB243FFF7C001C7B22 /* XSHouseSubCollectionviewACell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE68D243FFF7C001C7B22 /* XSHouseSubCollectionviewACell.m */; };
+		55BAE6AC243FFF7C001C7B22 /* XSHouseSubCollectionviewACell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BAE68E243FFF7C001C7B22 /* XSHouseSubCollectionviewACell.xib */; };
+		55BAE6AD243FFF7C001C7B22 /* XSHouseSubFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE693243FFF7C001C7B22 /* XSHouseSubFootView.m */; };
+		55BAE6AE243FFF7C001C7B22 /* XSHouseSubFootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BAE694243FFF7C001C7B22 /* XSHouseSubFootView.xib */; };
+		55BAE6AF243FFF7C001C7B22 /* XSHouseSubTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE695243FFF7C001C7B22 /* XSHouseSubTableViewCell.m */; };
+		55BAE6B1243FFF7C001C7B22 /* XSHouseSubTextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BAE699243FFF7C001C7B22 /* XSHouseSubTextFieldTableViewCell.xib */; };
+		55BAE6B2243FFF7C001C7B22 /* XSHouseSubTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE69A243FFF7C001C7B22 /* XSHouseSubTextFieldTableViewCell.m */; };
+		55BAE6B3243FFF7C001C7B22 /* XSItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE69E243FFF7C001C7B22 /* XSItemCollectionViewCell.m */; };
+		55BAE6B4243FFF7C001C7B22 /* XSPhotoPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE69F243FFF7C001C7B22 /* XSPhotoPickerView.m */; };
+		55BAE6B5243FFF7C001C7B22 /* XSPhotoPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BAE6A0243FFF7C001C7B22 /* XSPhotoPickerView.xib */; };
+		55BAE6B6243FFF7C001C7B22 /* XSItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BAE6A1243FFF7C001C7B22 /* XSItemCollectionViewCell.xib */; };
+		55BAE6B7243FFF7C001C7B22 /* XSHouseSubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BAE6A2243FFF7C001C7B22 /* XSHouseSubTableViewCell.xib */; };
+		55BAE6BA24400573001C7B22 /* XSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE6B924400573001C7B22 /* XSCollectionViewCell.m */; };
 		55BF0041243D6325007843C2 /* XSHouseDetailsInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 55BFFF6F243D6324007843C2 /* XSHouseDetailsInfo.json */; };
 		55BF0042243D6325007843C2 /* XSHouseSearch.json in Resources */ = {isa = PBXBuildFile; fileRef = 55BFFF71243D6324007843C2 /* XSHouseSearch.json */; };
 		55BF0048243D6325007843C2 /* XSHouseSave.json in Resources */ = {isa = PBXBuildFile; fileRef = 55BFFF79243D6324007843C2 /* XSHouseSave.json */; };
 		55BF004A243D6325007843C2 /* XSFacilitiesInfoJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 55BFFF7C243D6324007843C2 /* XSFacilitiesInfoJson.json */; };
 		55BF004B243D6325007843C2 /* XSHouseBusinessInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 55BFFF7D243D6324007843C2 /* XSHouseBusinessInfo.json */; };
-		55BF004C243D6325007843C2 /* XSHouseSubTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BFFF81243D6324007843C2 /* XSHouseSubTextViewCell.m */; };
-		55BF004D243D6325007843C2 /* XSHouseSubTextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BFFF82243D6324007843C2 /* XSHouseSubTextViewCell.xib */; };
-		55BF004E243D6325007843C2 /* XSHouseSubCollectionviewBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BFFF85243D6324007843C2 /* XSHouseSubCollectionviewBCell.m */; };
-		55BF004F243D6325007843C2 /* XSHouseSubCollectionviewBCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BFFF86243D6324007843C2 /* XSHouseSubCollectionviewBCell.xib */; };
-		55BF0050243D6325007843C2 /* XSHouseSubCollectionviewACell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BFFF87243D6324007843C2 /* XSHouseSubCollectionviewACell.m */; };
-		55BF0051243D6325007843C2 /* XSHouseSubCollectionviewACell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BFFF88243D6324007843C2 /* XSHouseSubCollectionviewACell.xib */; };
-		55BF0052243D6325007843C2 /* XSHouseSubListChooseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BFFF8C243D6324007843C2 /* XSHouseSubListChooseTableViewCell.xib */; };
-		55BF0053243D6325007843C2 /* XSHouseSubListChooseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BFFF8E243D6324007843C2 /* XSHouseSubListChooseTableViewCell.m */; };
-		55BF0054243D6325007843C2 /* XSHouseSubTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BFFF90243D6324007843C2 /* XSHouseSubTableViewCell.m */; };
-		55BF0055243D6325007843C2 /* XSHouseSubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BFFF91243D6324007843C2 /* XSHouseSubCell.xib */; };
-		55BF0056243D6325007843C2 /* XSHouseSubTextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BFFF94243D6324007843C2 /* XSHouseSubTextFieldTableViewCell.xib */; };
-		55BF0057243D6325007843C2 /* XSHouseSubTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BFFF95243D6324007843C2 /* XSHouseSubTextFieldTableViewCell.m */; };
-		55BF0058243D6325007843C2 /* XSItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BFFF99243D6324007843C2 /* XSItemCollectionViewCell.m */; };
-		55BF0059243D6325007843C2 /* XSPhotoPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BFFF9A243D6324007843C2 /* XSPhotoPickerView.m */; };
-		55BF005A243D6325007843C2 /* XSPhotoPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BFFF9B243D6324007843C2 /* XSPhotoPickerView.xib */; };
-		55BF005B243D6325007843C2 /* XSItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BFFF9C243D6324007843C2 /* XSItemCollectionViewCell.xib */; };
-		55BF005C243D6325007843C2 /* XSHouseSubFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BFFF9D243D6324007843C2 /* XSHouseSubFootView.m */; };
-		55BF005D243D6325007843C2 /* XSHouseSubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BFFF9E243D6324007843C2 /* XSHouseSubTableViewCell.xib */; };
-		55BF005E243D6325007843C2 /* XSHouseSubFootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BFFF9F243D6324007843C2 /* XSHouseSubFootView.xib */; };
 		55BF005F243D6325007843C2 /* XSHouseCallPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BFFFA3243D6324007843C2 /* XSHouseCallPhone.xib */; };
 		55BF0060243D6325007843C2 /* XSHouseCallPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BFFFA4243D6324007843C2 /* XSHouseCallPhone.m */; };
 		55BF0061243D6325007843C2 /* XSHouseInfoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BFFFA7243D6324007843C2 /* XSHouseInfoTableView.m */; };
@@ -116,7 +116,6 @@
 		55BF009E243D6325007843C2 /* XSHouseBunnerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF0035243D6324007843C2 /* XSHouseBunnerModel.m */; };
 		55BF009F243D6325007843C2 /* XSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF0037243D6324007843C2 /* XSBaseViewController.m */; };
 		55BF00A0243D6325007843C2 /* XSBaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF0039243D6324007843C2 /* XSBaseNavViewController.m */; };
-		55BF00A1243D6325007843C2 /* XSBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF003B243D6324007843C2 /* XSBaseCollectionViewCell.m */; };
 		55BF00A2243D6325007843C2 /* XSBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF003C243D6324007843C2 /* XSBaseTableViewCell.m */; };
 		55BF00B1243DB7AC007843C2 /* XSPublicServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF00B0243DB7AC007843C2 /* XSPublicServer.m */; };
 		55BF00B4243DC077007843C2 /* XSConfigServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF00B3243DC077007843C2 /* XSConfigServer.m */; };
@@ -192,6 +191,30 @@
 		55BAE678243F0463001C7B22 /* XSRentHouseInfoSecond.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSRentHouseInfoSecond.json; sourceTree = "<group>"; };
 		55BAE679243F0463001C7B22 /* XSRentHouseInfoFirst.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSRentHouseInfoFirst.json; sourceTree = "<group>"; };
 		55BAE67A243F0463001C7B22 /* XSRentHouseInfoThird.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSRentHouseInfoThird.json; sourceTree = "<group>"; };
+		55BAE683243FFF7C001C7B22 /* XSHouseSubTextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubTextViewCell.m; sourceTree = "<group>"; };
+		55BAE684243FFF7C001C7B22 /* XSHouseSubTextViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubTextViewCell.xib; sourceTree = "<group>"; };
+		55BAE687243FFF7C001C7B22 /* XSHouseSubListChooseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubListChooseTableViewCell.xib; sourceTree = "<group>"; };
+		55BAE689243FFF7C001C7B22 /* XSHouseSubListChooseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubListChooseTableViewCell.m; sourceTree = "<group>"; };
+		55BAE68B243FFF7C001C7B22 /* XSHouseSubCollectionviewBCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubCollectionviewBCell.m; sourceTree = "<group>"; };
+		55BAE68C243FFF7C001C7B22 /* XSHouseSubCollectionviewBCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubCollectionviewBCell.xib; sourceTree = "<group>"; };
+		55BAE68D243FFF7C001C7B22 /* XSHouseSubCollectionviewACell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubCollectionviewACell.m; sourceTree = "<group>"; };
+		55BAE68E243FFF7C001C7B22 /* XSHouseSubCollectionviewACell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubCollectionviewACell.xib; sourceTree = "<group>"; };
+		55BAE692243FFF7C001C7B22 /* XSHouseSubFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubFootView.h; sourceTree = "<group>"; };
+		55BAE693243FFF7C001C7B22 /* XSHouseSubFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubFootView.m; sourceTree = "<group>"; };
+		55BAE694243FFF7C001C7B22 /* XSHouseSubFootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubFootView.xib; sourceTree = "<group>"; };
+		55BAE695243FFF7C001C7B22 /* XSHouseSubTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubTableViewCell.m; sourceTree = "<group>"; };
+		55BAE699243FFF7C001C7B22 /* XSHouseSubTextFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubTextFieldTableViewCell.xib; sourceTree = "<group>"; };
+		55BAE69A243FFF7C001C7B22 /* XSHouseSubTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubTextFieldTableViewCell.m; sourceTree = "<group>"; };
+		55BAE69C243FFF7C001C7B22 /* XSItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSItemCollectionViewCell.h; sourceTree = "<group>"; };
+		55BAE69D243FFF7C001C7B22 /* XSPhotoPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSPhotoPickerView.h; sourceTree = "<group>"; };
+		55BAE69E243FFF7C001C7B22 /* XSItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSItemCollectionViewCell.m; sourceTree = "<group>"; };
+		55BAE69F243FFF7C001C7B22 /* XSPhotoPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSPhotoPickerView.m; sourceTree = "<group>"; };
+		55BAE6A0243FFF7C001C7B22 /* XSPhotoPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSPhotoPickerView.xib; sourceTree = "<group>"; };
+		55BAE6A1243FFF7C001C7B22 /* XSItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		55BAE6A2243FFF7C001C7B22 /* XSHouseSubTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubTableViewCell.xib; sourceTree = "<group>"; };
+		55BAE6A4243FFF7C001C7B22 /* XSHouseSubTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubTableViewCell.h; sourceTree = "<group>"; };
+		55BAE6B824400572001C7B22 /* XSCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSCollectionViewCell.h; sourceTree = "<group>"; };
+		55BAE6B924400573001C7B22 /* XSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSCollectionViewCell.m; sourceTree = "<group>"; };
 		55BF0006243D6324007843C2 /* XSHouseDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseDetailsController.xib; sourceTree = "<group>"; };
 		55BF0007243D6324007843C2 /* XSHouseDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseDetailsController.m; sourceTree = "<group>"; };
 		55BF0008243D6324007843C2 /* XSHouseIntroduceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseIntroduceController.h; sourceTree = "<group>"; };
@@ -213,11 +236,9 @@
 		55BF0037243D6324007843C2 /* XSBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBaseViewController.m; sourceTree = "<group>"; };
 		55BF0038243D6324007843C2 /* XSBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBaseTableViewCell.h; sourceTree = "<group>"; };
 		55BF0039243D6324007843C2 /* XSBaseNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBaseNavViewController.m; sourceTree = "<group>"; };
-		55BF003B243D6324007843C2 /* XSBaseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBaseCollectionViewCell.m; sourceTree = "<group>"; };
 		55BF003C243D6324007843C2 /* XSBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBaseTableViewCell.m; sourceTree = "<group>"; };
 		55BF003D243D6324007843C2 /* XSBaseNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBaseNavViewController.h; sourceTree = "<group>"; };
 		55BF003E243D6324007843C2 /* XSBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBaseViewController.h; sourceTree = "<group>"; };
-		55BF0040243D6324007843C2 /* XSBaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBaseCollectionViewCell.h; sourceTree = "<group>"; };
 		55BF00A4243D634D007843C2 /* XSConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSConst.h; sourceTree = "<group>"; };
 		55BF00A5243D635A007843C2 /* XSMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSMacro.h; sourceTree = "<group>"; };
 		55BF00AF243DB7AC007843C2 /* XSPublicServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSPublicServer.h; sourceTree = "<group>"; };
@@ -247,34 +268,6 @@
 		55BFFF79243D6324007843C2 /* XSHouseSave.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseSave.json; sourceTree = "<group>"; };
 		55BFFF7C243D6324007843C2 /* XSFacilitiesInfoJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSFacilitiesInfoJson.json; sourceTree = "<group>"; };
 		55BFFF7D243D6324007843C2 /* XSHouseBusinessInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSHouseBusinessInfo.json; sourceTree = "<group>"; };
-		55BFFF81243D6324007843C2 /* XSHouseSubTextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubTextViewCell.m; sourceTree = "<group>"; };
-		55BFFF82243D6324007843C2 /* XSHouseSubTextViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubTextViewCell.xib; sourceTree = "<group>"; };
-		55BFFF83243D6324007843C2 /* XSHouseSubTextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubTextViewCell.h; sourceTree = "<group>"; };
-		55BFFF85243D6324007843C2 /* XSHouseSubCollectionviewBCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubCollectionviewBCell.m; sourceTree = "<group>"; };
-		55BFFF86243D6324007843C2 /* XSHouseSubCollectionviewBCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubCollectionviewBCell.xib; sourceTree = "<group>"; };
-		55BFFF87243D6324007843C2 /* XSHouseSubCollectionviewACell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubCollectionviewACell.m; sourceTree = "<group>"; };
-		55BFFF88243D6324007843C2 /* XSHouseSubCollectionviewACell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubCollectionviewACell.xib; sourceTree = "<group>"; };
-		55BFFF89243D6324007843C2 /* XSHouseSubCollectionviewBCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubCollectionviewBCell.h; sourceTree = "<group>"; };
-		55BFFF8A243D6324007843C2 /* XSHouseSubCollectionviewACell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubCollectionviewACell.h; sourceTree = "<group>"; };
-		55BFFF8C243D6324007843C2 /* XSHouseSubListChooseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubListChooseTableViewCell.xib; sourceTree = "<group>"; };
-		55BFFF8D243D6324007843C2 /* XSHouseSubListChooseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubListChooseTableViewCell.h; sourceTree = "<group>"; };
-		55BFFF8E243D6324007843C2 /* XSHouseSubListChooseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubListChooseTableViewCell.m; sourceTree = "<group>"; };
-		55BFFF8F243D6324007843C2 /* XSHouseSubFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubFootView.h; sourceTree = "<group>"; };
-		55BFFF90243D6324007843C2 /* XSHouseSubTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubTableViewCell.m; sourceTree = "<group>"; };
-		55BFFF91243D6324007843C2 /* XSHouseSubCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubCell.xib; sourceTree = "<group>"; };
-		55BFFF93243D6324007843C2 /* XSHouseSubTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubTextFieldTableViewCell.h; sourceTree = "<group>"; };
-		55BFFF94243D6324007843C2 /* XSHouseSubTextFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubTextFieldTableViewCell.xib; sourceTree = "<group>"; };
-		55BFFF95243D6324007843C2 /* XSHouseSubTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubTextFieldTableViewCell.m; sourceTree = "<group>"; };
-		55BFFF97243D6324007843C2 /* XSItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSItemCollectionViewCell.h; sourceTree = "<group>"; };
-		55BFFF98243D6324007843C2 /* XSPhotoPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSPhotoPickerView.h; sourceTree = "<group>"; };
-		55BFFF99243D6324007843C2 /* XSItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSItemCollectionViewCell.m; sourceTree = "<group>"; };
-		55BFFF9A243D6324007843C2 /* XSPhotoPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSPhotoPickerView.m; sourceTree = "<group>"; };
-		55BFFF9B243D6324007843C2 /* XSPhotoPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSPhotoPickerView.xib; sourceTree = "<group>"; };
-		55BFFF9C243D6324007843C2 /* XSItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSItemCollectionViewCell.xib; sourceTree = "<group>"; };
-		55BFFF9D243D6324007843C2 /* XSHouseSubFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubFootView.m; sourceTree = "<group>"; };
-		55BFFF9E243D6324007843C2 /* XSHouseSubTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubTableViewCell.xib; sourceTree = "<group>"; };
-		55BFFF9F243D6324007843C2 /* XSHouseSubFootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubFootView.xib; sourceTree = "<group>"; };
-		55BFFFA0243D6324007843C2 /* XSHouseSubTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubTableViewCell.h; sourceTree = "<group>"; };
 		55BFFFA2243D6324007843C2 /* XSHouseCallPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseCallPhone.h; sourceTree = "<group>"; };
 		55BFFFA3243D6324007843C2 /* XSHouseCallPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseCallPhone.xib; sourceTree = "<group>"; };
 		55BFFFA4243D6324007843C2 /* XSHouseCallPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseCallPhone.m; sourceTree = "<group>"; };
@@ -643,6 +636,85 @@
 			path = Rent;
 			sourceTree = "<group>";
 		};
+		55BAE681243FFF7C001C7B22 /* 1上传 */ = {
+			isa = PBXGroup;
+			children = (
+				55BAE6A4243FFF7C001C7B22 /* XSHouseSubTableViewCell.h */,
+				55BAE695243FFF7C001C7B22 /* XSHouseSubTableViewCell.m */,
+				55BAE6A2243FFF7C001C7B22 /* XSHouseSubTableViewCell.xib */,
+				55BAE686243FFF7C001C7B22 /* Choose */,
+				55BAE697243FFF7C001C7B22 /* TextFile */,
+				55BAE682243FFF7C001C7B22 /* TextView */,
+				55BAE68A243FFF7C001C7B22 /* CollectionView */,
+				55BAE691243FFF7C001C7B22 /* footView */,
+				55BAE69B243FFF7C001C7B22 /* ImageUpdata */,
+			);
+			path = "1上传";
+			sourceTree = "<group>";
+		};
+		55BAE682243FFF7C001C7B22 /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				55BAE683243FFF7C001C7B22 /* XSHouseSubTextViewCell.m */,
+				55BAE684243FFF7C001C7B22 /* XSHouseSubTextViewCell.xib */,
+			);
+			path = TextView;
+			sourceTree = "<group>";
+		};
+		55BAE686243FFF7C001C7B22 /* Choose */ = {
+			isa = PBXGroup;
+			children = (
+				55BAE689243FFF7C001C7B22 /* XSHouseSubListChooseTableViewCell.m */,
+				55BAE687243FFF7C001C7B22 /* XSHouseSubListChooseTableViewCell.xib */,
+			);
+			path = Choose;
+			sourceTree = "<group>";
+		};
+		55BAE68A243FFF7C001C7B22 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				55BAE6B824400572001C7B22 /* XSCollectionViewCell.h */,
+				55BAE6B924400573001C7B22 /* XSCollectionViewCell.m */,
+				55BAE68D243FFF7C001C7B22 /* XSHouseSubCollectionviewACell.m */,
+				55BAE68E243FFF7C001C7B22 /* XSHouseSubCollectionviewACell.xib */,
+				55BAE68B243FFF7C001C7B22 /* XSHouseSubCollectionviewBCell.m */,
+				55BAE68C243FFF7C001C7B22 /* XSHouseSubCollectionviewBCell.xib */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		55BAE691243FFF7C001C7B22 /* footView */ = {
+			isa = PBXGroup;
+			children = (
+				55BAE692243FFF7C001C7B22 /* XSHouseSubFootView.h */,
+				55BAE693243FFF7C001C7B22 /* XSHouseSubFootView.m */,
+				55BAE694243FFF7C001C7B22 /* XSHouseSubFootView.xib */,
+			);
+			path = footView;
+			sourceTree = "<group>";
+		};
+		55BAE697243FFF7C001C7B22 /* TextFile */ = {
+			isa = PBXGroup;
+			children = (
+				55BAE69A243FFF7C001C7B22 /* XSHouseSubTextFieldTableViewCell.m */,
+				55BAE699243FFF7C001C7B22 /* XSHouseSubTextFieldTableViewCell.xib */,
+			);
+			path = TextFile;
+			sourceTree = "<group>";
+		};
+		55BAE69B243FFF7C001C7B22 /* ImageUpdata */ = {
+			isa = PBXGroup;
+			children = (
+				55BAE69C243FFF7C001C7B22 /* XSItemCollectionViewCell.h */,
+				55BAE69E243FFF7C001C7B22 /* XSItemCollectionViewCell.m */,
+				55BAE6A1243FFF7C001C7B22 /* XSItemCollectionViewCell.xib */,
+				55BAE69D243FFF7C001C7B22 /* XSPhotoPickerView.h */,
+				55BAE69F243FFF7C001C7B22 /* XSPhotoPickerView.m */,
+				55BAE6A0243FFF7C001C7B22 /* XSPhotoPickerView.xib */,
+			);
+			path = ImageUpdata;
+			sourceTree = "<group>";
+		};
 		55BF0004243D6324007843C2 /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -713,8 +785,6 @@
 			children = (
 				55BF0038243D6324007843C2 /* XSBaseTableViewCell.h */,
 				55BF003C243D6324007843C2 /* XSBaseTableViewCell.m */,
-				55BF0040243D6324007843C2 /* XSBaseCollectionViewCell.h */,
-				55BF003B243D6324007843C2 /* XSBaseCollectionViewCell.m */,
 				55BF003E243D6324007843C2 /* XSBaseViewController.h */,
 				55BF0037243D6324007843C2 /* XSBaseViewController.m */,
 				55BF003D243D6324007843C2 /* XSBaseNavViewController.h */,
@@ -840,88 +910,13 @@
 		55BFFF7E243D6324007843C2 /* 6View */ = {
 			isa = PBXGroup;
 			children = (
-				55BFFF7F243D6324007843C2 /* 1上传 */,
+				55BAE681243FFF7C001C7B22 /* 1上传 */,
 				55BFFFB8243D6324007843C2 /* 2列表 */,
 				55BFFFBC243D6324007843C2 /* 3详情展示 */,
 				55BFFFA1243D6324007843C2 /* 房主 */,
 				55BFFFA5243D6324007843C2 /* other */,
 			);
 			path = 6View;
-			sourceTree = "<group>";
-		};
-		55BFFF7F243D6324007843C2 /* 1上传 */ = {
-			isa = PBXGroup;
-			children = (
-				55BFFF8B243D6324007843C2 /* choose */,
-				55BFFF84243D6324007843C2 /* collection */,
-				55BFFF96243D6324007843C2 /* imageUpdata */,
-				55BFFF92243D6324007843C2 /* textFile */,
-				55BFFF80243D6324007843C2 /* textView */,
-				55BFFF91243D6324007843C2 /* XSHouseSubCell.xib */,
-				55BFFF8F243D6324007843C2 /* XSHouseSubFootView.h */,
-				55BFFF9D243D6324007843C2 /* XSHouseSubFootView.m */,
-				55BFFF9F243D6324007843C2 /* XSHouseSubFootView.xib */,
-				55BFFFA0243D6324007843C2 /* XSHouseSubTableViewCell.h */,
-				55BFFF90243D6324007843C2 /* XSHouseSubTableViewCell.m */,
-				55BFFF9E243D6324007843C2 /* XSHouseSubTableViewCell.xib */,
-			);
-			path = "1上传";
-			sourceTree = "<group>";
-		};
-		55BFFF80243D6324007843C2 /* textView */ = {
-			isa = PBXGroup;
-			children = (
-				55BFFF81243D6324007843C2 /* XSHouseSubTextViewCell.m */,
-				55BFFF82243D6324007843C2 /* XSHouseSubTextViewCell.xib */,
-				55BFFF83243D6324007843C2 /* XSHouseSubTextViewCell.h */,
-			);
-			path = textView;
-			sourceTree = "<group>";
-		};
-		55BFFF84243D6324007843C2 /* collection */ = {
-			isa = PBXGroup;
-			children = (
-				55BFFF85243D6324007843C2 /* XSHouseSubCollectionviewBCell.m */,
-				55BFFF86243D6324007843C2 /* XSHouseSubCollectionviewBCell.xib */,
-				55BFFF87243D6324007843C2 /* XSHouseSubCollectionviewACell.m */,
-				55BFFF88243D6324007843C2 /* XSHouseSubCollectionviewACell.xib */,
-				55BFFF89243D6324007843C2 /* XSHouseSubCollectionviewBCell.h */,
-				55BFFF8A243D6324007843C2 /* XSHouseSubCollectionviewACell.h */,
-			);
-			path = collection;
-			sourceTree = "<group>";
-		};
-		55BFFF8B243D6324007843C2 /* choose */ = {
-			isa = PBXGroup;
-			children = (
-				55BFFF8C243D6324007843C2 /* XSHouseSubListChooseTableViewCell.xib */,
-				55BFFF8D243D6324007843C2 /* XSHouseSubListChooseTableViewCell.h */,
-				55BFFF8E243D6324007843C2 /* XSHouseSubListChooseTableViewCell.m */,
-			);
-			path = choose;
-			sourceTree = "<group>";
-		};
-		55BFFF92243D6324007843C2 /* textFile */ = {
-			isa = PBXGroup;
-			children = (
-				55BFFF93243D6324007843C2 /* XSHouseSubTextFieldTableViewCell.h */,
-				55BFFF94243D6324007843C2 /* XSHouseSubTextFieldTableViewCell.xib */,
-				55BFFF95243D6324007843C2 /* XSHouseSubTextFieldTableViewCell.m */,
-			);
-			path = textFile;
-			sourceTree = "<group>";
-		};
-		55BFFF96243D6324007843C2 /* imageUpdata */ = {
-			isa = PBXGroup;
-			children = (
-				55BFFF97243D6324007843C2 /* XSItemCollectionViewCell.h */,
-				55BFFF99243D6324007843C2 /* XSItemCollectionViewCell.m */,
-				55BFFF9C243D6324007843C2 /* XSItemCollectionViewCell.xib */,
-				55BFFF98243D6324007843C2 /* XSPhotoPickerView.h */,
-				55BFFF9A243D6324007843C2 /* XSPhotoPickerView.m */,
-				55BFFF9B243D6324007843C2 /* XSPhotoPickerView.xib */,
-			);
-			path = imageUpdata;
 			sourceTree = "<group>";
 		};
 		55BFFFA1243D6324007843C2 /* 房主 */ = {
@@ -1267,45 +1262,44 @@
 				55198D03243C4B2E006A9D67 /* LaunchScreen.storyboard in Resources */,
 				55BF0048243D6325007843C2 /* XSHouseSave.json in Resources */,
 				55BF008D243D6325007843C2 /* XSHouseDetailsController.xib in Resources */,
-				55BF005D243D6325007843C2 /* XSHouseSubTableViewCell.xib in Resources */,
 				55BF006A243D6325007843C2 /* XSLocationSearchview.xib in Resources */,
 				55BAE67D243F0463001C7B22 /* XSSellHouseInfoThird.json in Resources */,
-				55BF005E243D6325007843C2 /* XSHouseSubFootView.xib in Resources */,
 				55BF0087243D6325007843C2 /* XSHouseModuleViewController.xib in Resources */,
-				55BF0055243D6325007843C2 /* XSHouseSubCell.xib in Resources */,
 				55198D81243C4B2F006A9D67 /* Info.plist in Resources */,
 				55BF007E243D6325007843C2 /* XSLoginViewController.xib in Resources */,
 				55BAE67B243F0463001C7B22 /* XSSellHouseInfoFirst.json in Resources */,
+				55BAE6B1243FFF7C001C7B22 /* XSHouseSubTextFieldTableViewCell.xib in Resources */,
+				55BAE6B7243FFF7C001C7B22 /* XSHouseSubTableViewCell.xib in Resources */,
+				55BAE6AE243FFF7C001C7B22 /* XSHouseSubFootView.xib in Resources */,
 				55BF0076243D6325007843C2 /* XSHouseRecommendedCell.xib in Resources */,
-				55BF005B243D6325007843C2 /* XSItemCollectionViewCell.xib in Resources */,
 				55BF006D243D6325007843C2 /* XSHouseDetailsImagesCell.xib in Resources */,
-				55BF0051243D6325007843C2 /* XSHouseSubCollectionviewACell.xib in Resources */,
 				55BF0083243D6325007843C2 /* HomePageViewController.xib in Resources */,
-				55BF004D243D6325007843C2 /* XSHouseSubTextViewCell.xib in Resources */,
 				55BAE67C243F0463001C7B22 /* XSSellHouseInfoSecond.json in Resources */,
 				55198D02243C4B2E006A9D67 /* Assets.xcassets in Resources */,
 				55BF0073243D6325007843C2 /* XSHouseDetailsFacilitiesInfoCell.xib in Resources */,
 				6C9FF7AC24309BFE0020509C /* fangdinghui.cer in Resources */,
+				55BAE6B6243FFF7C001C7B22 /* XSItemCollectionViewCell.xib in Resources */,
+				55BAE6B5243FFF7C001C7B22 /* XSPhotoPickerView.xib in Resources */,
 				55BF004B243D6325007843C2 /* XSHouseBusinessInfo.json in Resources */,
 				55BF007F243D6325007843C2 /* MyInfoViewController.xib in Resources */,
 				55BF0072243D6325007843C2 /* XSHouseDetailsBasicInfoCell.xib in Resources */,
-				55BF0056243D6325007843C2 /* XSHouseSubTextFieldTableViewCell.xib in Resources */,
 				55BF0069243D6325007843C2 /* XSSearchConditionalView.xib in Resources */,
 				55BF00DA243EBF76007843C2 /* XSHouseSubSuccessViewController.xib in Resources */,
 				55BAE680243F0463001C7B22 /* XSRentHouseInfoThird.json in Resources */,
+				55BAE6AA243FFF7C001C7B22 /* XSHouseSubCollectionviewBCell.xib in Resources */,
+				55BAE6A6243FFF7C001C7B22 /* XSHouseSubTextViewCell.xib in Resources */,
 				55BF004A243D6325007843C2 /* XSFacilitiesInfoJson.json in Resources */,
 				55BF00D9243EBF76007843C2 /* XSHouseSubmitFirstViewController.xib in Resources */,
 				55BF008F243D6325007843C2 /* XSHouseIntroduceController.xib in Resources */,
-				55BF004F243D6325007843C2 /* XSHouseSubCollectionviewBCell.xib in Resources */,
 				55BAE67E243F0463001C7B22 /* XSRentHouseInfoSecond.json in Resources */,
 				55BF0042243D6325007843C2 /* XSHouseSearch.json in Resources */,
-				55BF005A243D6325007843C2 /* XSPhotoPickerView.xib in Resources */,
 				55BAE67F243F0463001C7B22 /* XSRentHouseInfoFirst.json in Resources */,
 				55BF0041243D6325007843C2 /* XSHouseDetailsInfo.json in Resources */,
 				55BF005F243D6325007843C2 /* XSHouseCallPhone.xib in Resources */,
 				55BF006C243D6325007843C2 /* XSHouseRentInfoCell.xib in Resources */,
 				55198D04243C4B2E006A9D67 /* Main.storyboard in Resources */,
-				55BF0052243D6325007843C2 /* XSHouseSubListChooseTableViewCell.xib in Resources */,
+				55BAE6AC243FFF7C001C7B22 /* XSHouseSubCollectionviewACell.xib in Resources */,
+				55BAE6A7243FFF7C001C7B22 /* XSHouseSubListChooseTableViewCell.xib in Resources */,
 				55BF0078243D6325007843C2 /* XSHouseDetailsAddressInfoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1374,15 +1368,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55BF0053243D6325007843C2 /* XSHouseSubListChooseTableViewCell.m in Sources */,
-				55BF0057243D6325007843C2 /* XSHouseSubTextFieldTableViewCell.m in Sources */,
+				55BAE6BA24400573001C7B22 /* XSCollectionViewCell.m in Sources */,
 				55BF007C243D6325007843C2 /* XSUserInfoInterface.m in Sources */,
 				55BF00BC243EAF5A007843C2 /* XSLogInVcModel.m in Sources */,
 				55198EFD243C5248006A9D67 /* AppDelegate.m in Sources */,
 				55BF008E243D6325007843C2 /* XSHouseDetailsController.m in Sources */,
 				55198EF7243C5248006A9D67 /* NSDate+Category.m in Sources */,
 				55198EF5243C5248006A9D67 /* NSObject+category.m in Sources */,
-				55BF004E243D6325007843C2 /* XSHouseSubCollectionviewBCell.m in Sources */,
 				55BF0066243D6325007843C2 /* XSBusinessCollectionCell.m in Sources */,
 				55198EEB243C5248006A9D67 /* NSMutableDictionary+safe.m in Sources */,
 				55BF00A0243D6325007843C2 /* XSBaseNavViewController.m in Sources */,
@@ -1396,24 +1388,28 @@
 				55BF00BD243EAF5A007843C2 /* XSUserLogInModel.m in Sources */,
 				55BF00C4243EBB6F007843C2 /* XSBaseServer.m in Sources */,
 				55BF007D243D6325007843C2 /* XSLoginViewController.m in Sources */,
+				55BAE6AD243FFF7C001C7B22 /* XSHouseSubFootView.m in Sources */,
+				55BAE6B2243FFF7C001C7B22 /* XSHouseSubTextFieldTableViewCell.m in Sources */,
 				55198EF3243C5248006A9D67 /* NSObject+HBNotification.m in Sources */,
 				55BF0070243D6325007843C2 /* XSHouseDetailsBusinessInfoCell.m in Sources */,
 				55198EFB243C5248006A9D67 /* ViewController.m in Sources */,
-				55BF0058243D6325007843C2 /* XSItemCollectionViewCell.m in Sources */,
 				55BF009E243D6325007843C2 /* XSHouseBunnerModel.m in Sources */,
 				55BF0080243D6325007843C2 /* MyInfoViewController.m in Sources */,
+				55BAE6AB243FFF7C001C7B22 /* XSHouseSubCollectionviewACell.m in Sources */,
 				55BF0085243D6325007843C2 /* XSMyPublishHosueController.m in Sources */,
 				55BF00DB243EBF76007843C2 /* XSHouseSubSuccessViewController.m in Sources */,
 				55BF0063243D6325007843C2 /* XSRegionSearchView.m in Sources */,
 				55BF00A2243D6325007843C2 /* XSBaseTableViewCell.m in Sources */,
+				55BAE6B4243FFF7C001C7B22 /* XSPhotoPickerView.m in Sources */,
+				55BAE6A9243FFF7C001C7B22 /* XSHouseSubCollectionviewBCell.m in Sources */,
 				55BF0077243D6325007843C2 /* XSHouseDetailsAddressInfoCell.m in Sources */,
-				55BF00A1243D6325007843C2 /* XSBaseCollectionViewCell.m in Sources */,
 				55198EEE243C5248006A9D67 /* NSArray+safe.m in Sources */,
+				55BAE6B3243FFF7C001C7B22 /* XSItemCollectionViewCell.m in Sources */,
 				55BF00E2243EBFB5007843C2 /* XSHouseSubMitModel.m in Sources */,
-				55BF0059243D6325007843C2 /* XSPhotoPickerView.m in Sources */,
 				55BF00BE243EAF5A007843C2 /* XSUserModel.m in Sources */,
 				55198EEF243C5248006A9D67 /* NSMutableArray+safe.m in Sources */,
 				55BF0067243D6325007843C2 /* XSRoundedView.m in Sources */,
+				55BAE6A5243FFF7C001C7B22 /* XSHouseSubTextViewCell.m in Sources */,
 				55198EF0243C5248006A9D67 /* NSNumber+safe.m in Sources */,
 				55BF0081243D6325007843C2 /* FindHouseViewController.m in Sources */,
 				55BF006E243D6325007843C2 /* XSHouseDetailsImagesCell.m in Sources */,
@@ -1426,11 +1422,11 @@
 				55BF00B1243DB7AC007843C2 /* XSPublicServer.m in Sources */,
 				55BF0060243D6325007843C2 /* XSHouseCallPhone.m in Sources */,
 				55198EF4243C5248006A9D67 /* NSObject+PerformBlock.m in Sources */,
-				55BF004C243D6325007843C2 /* XSHouseSubTextViewCell.m in Sources */,
 				55198E8B243C5248006A9D67 /* XSOperationParam.m in Sources */,
 				55BF009F243D6325007843C2 /* XSBaseViewController.m in Sources */,
 				55BF007B243D6325007843C2 /* XShouseSubNetworkInterface.m in Sources */,
 				55BF007A243D6325007843C2 /* XSHouseDetailsIntroduceInfoCell.m in Sources */,
+				55BAE6AF243FFF7C001C7B22 /* XSHouseSubTableViewCell.m in Sources */,
 				55BF0098243D6325007843C2 /* XSHouseDetailsInfoCellModel.m in Sources */,
 				55BF0062243D6325007843C2 /* XSLocationSearchview.m in Sources */,
 				55198E8A243C5248006A9D67 /* XSNetworkInterface.m in Sources */,
@@ -1443,16 +1439,14 @@
 				55BF00D8243EBF76007843C2 /* XSHouseSubmitFirstViewController.m in Sources */,
 				55198EFE243C5248006A9D67 /* XSTabBarViewController.m in Sources */,
 				55BF0091243D6325007843C2 /* MessageViewController.m in Sources */,
-				55BF0054243D6325007843C2 /* XSHouseSubTableViewCell.m in Sources */,
 				55198EED243C5248006A9D67 /* NSArray+Category.m in Sources */,
 				55198EFC243C5248006A9D67 /* SceneDelegate.m in Sources */,
 				55BF0094243D6325007843C2 /* XSUserServer.m in Sources */,
 				55198EF1243C5248006A9D67 /* NSObject+safe.m in Sources */,
-				55BF005C243D6325007843C2 /* XSHouseSubFootView.m in Sources */,
 				55198EEC243C5248006A9D67 /* PrintBeautifulLog.m in Sources */,
 				55198EF6243C5248006A9D67 /* NSMutableString+safe.m in Sources */,
 				55198EEA243C5248006A9D67 /* UIView+HBExtension.m in Sources */,
-				55BF0050243D6325007843C2 /* XSHouseSubCollectionviewACell.m in Sources */,
+				55BAE6A8243FFF7C001C7B22 /* XSHouseSubListChooseTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

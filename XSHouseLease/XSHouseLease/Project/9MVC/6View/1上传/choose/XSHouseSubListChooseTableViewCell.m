@@ -6,7 +6,8 @@
 //  Copyright © 2020 fang. All rights reserved.
 //
 
-#import "XSHouseSubListChooseTableViewCell.h"
+#import "XSHouseSubTableViewCell.h"
+
 @interface XSHouseSubListChooseTableViewCell ()
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UILabel *value;
@@ -26,28 +27,8 @@
         self.value.text = valueData.placeholder;
         self.value.textColor = [UIColor hb_colorWithHexString:@"#BFBFBF" alpha:1];
     }else{
-        if ([valueData.key isEqualToString:@"city"]) {
-            NSString *str = [NSString string];
-//            NSString *city = [[XSHouseSubMitServer sharedInstance].subRentParameterDict objectForKey:@"city"];
-//            NSString *region = [[XSHouseSubMitServer sharedInstance].subRentParameterDict objectForKey:@"region"];
-//            NSString *town = [[XSHouseSubMitServer sharedInstance].subRentParameterDict objectForKey:@"town"];
-//
-//            if (city) {
-//                str = [str stringByAppendingFormat:@"%@", city];
-//            }
-//            if (region) {
-//                str = [str stringByAppendingFormat:@"%@", region];
-//            }
-//            if (town) {
-//                str = [str stringByAppendingFormat:@"%@", town];
-//            }
-            self.value.text = str;
-        }else{
-            self.value.text = valueData.valueStr;
-
-        }
+        self.value.text = valueData.valueStr;
         self.value.textColor = [UIColor hb_colorWithHexString:@"#444444" alpha:1];
-
     }
 
 }

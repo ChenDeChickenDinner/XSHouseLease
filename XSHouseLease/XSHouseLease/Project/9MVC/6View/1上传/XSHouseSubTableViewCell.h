@@ -8,23 +8,40 @@
 
 #import <UIKit/UIKit.h>
 #import "XSHouseRentInfoModel.h"
-#import "XSBaseCollectionViewCell.h"
 
-NS_ASSUME_NONNULL_BEGIN
 
-@interface XSHouseSubTableViewCell : UITableViewCell
-
-@property(nonatomic,strong) XSHouseInfoCellModel *dataModel;
-@property (nonatomic,strong) XSHouseInfoCellModel *keyValueModel;
-
-+ (instancetype)cellWithtableView:(UITableView *)tableView;
+@interface XSCollectionViewCell :  UICollectionViewCell
+@property(nonatomic,strong) XSValue *valueModel;
 - (void)refreshData;
 @end
 
-NS_ASSUME_NONNULL_END
+@interface XSHouseSubTableViewCell : UITableViewCell
+@property(nonatomic,strong) XSHouseInfoCellModel *dataModel;
+- (void)refreshData;
+@end
 
 
-@interface XSCollectionViewCell :  XSBaseCollectionViewCell
+@interface XSHouseSubListChooseTableViewCell : XSHouseSubTableViewCell
+
 
 @end
+
+@interface XSHouseSubTextFieldTableViewCell : XSHouseSubTableViewCell
+
+@end
+
+@interface XSHouseSubTextViewCell : XSHouseSubTableViewCell
+
+@end
+
+@interface XSHouseSubCollectionviewACell : XSHouseSubTableViewCell
+
+@end
+
+@interface XSHouseSubCollectionviewBCell : XSHouseSubTableViewCell
+
+@end
+
+
+
 

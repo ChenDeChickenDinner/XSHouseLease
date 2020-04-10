@@ -7,6 +7,7 @@
 //
 
 #import "XSHouseSubFootView.h"
+#import "XSHouseSubTableViewCell.h"
 
 @implementation XSHouseSubFootView
 
