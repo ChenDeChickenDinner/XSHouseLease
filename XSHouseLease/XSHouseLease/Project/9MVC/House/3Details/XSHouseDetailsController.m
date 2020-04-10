@@ -7,9 +7,8 @@
 //
 
 #import "XSHouseDetailsController.h"
-#import "XSHouseRentInfoModel.h"
-#import "XSHouseDetailsInfoCellModel.h"
-#import "XSHouseInfoCell.h"
+#import "XSHouseInfoShowModel.h"
+#import "XSHouseInfoShowModel.h"
 #import "XSHouseCallPhone.h"
 
 @interface XSHouseDetailsController ()<UITableViewDelegate,UITableViewDataSource>
@@ -25,7 +24,7 @@
 @property (strong, nonatomic)  XSHouseCallPhone *callView;
 
 
-@property (strong, nonatomic)  XSHouseRentInfoModel *infoModel;
+@property (strong, nonatomic)  XSHouseInfoShowModel *infoModel;
 @end
 
 @implementation XSHouseDetailsController
@@ -95,7 +94,7 @@
         [self.tableView.mj_header endRefreshing];
         if (error == nil) {
             if (responseModel.code.integerValue == SuccessCode) {
-                XSHouseRentInfoModel *model = [XSHouseRentInfoModel mj_objectWithKeyValues:responseModel.data];
+                XSHouseInfoShowModel *model = [XSHouseInfoShowModel mj_objectWithKeyValues:responseModel.data];
                 
                 if (model.customerId.integerValue == [XSUserServer sharedInstance].userModel.ID.integerValue) {
                     self.navigationItem.rightBarButtonItem = nil;
@@ -128,7 +127,7 @@
     }];
 
 }
-- (void)houseUserInfoViewWithData:(XSHouseRentInfoModel *)dataModel{
+- (void)houseUserInfoViewWithData:(XSHouseInfoShowModel *)dataModel{
     
     NSNumber *userId =  [XSUserServer sharedInstance].userModel.ID;
       if (userId && [dataModel.house_id isEqualToNumber:userId]) {
@@ -147,16 +146,13 @@
 }
 
 // 组装数据
--(void)assemblyCellDataArrayWithData:(XSHouseRentInfoModel *)dataModel{
+-(void)assemblyCellDataArrayWithData:(XSHouseInfoShowModel *)dataModel{
     [self.array removeAllObjects];
     
     NSError *error;
     NSString *path = [[NSBundle mainBundle]pathForResource:@"XSHouseDetailsInfo" ofType:@"json"];
     NSArray *dataArray = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableLeaves error:&error];
-    NSMutableArray *modelArray = [XSHouseDetailsInfoCellModel mj_objectArrayWithKeyValuesArray:dataArray];
-    for (XSHouseDetailsInfoCellModel *model in modelArray) {
-        model.dataModel = dataModel;
-    }
+    NSMutableArray *modelArray = [XSHouseInfoShowModel mj_objectArrayWithKeyValuesArray:dataArray];
     [self.array addObjectsFromArray:modelArray];
     
     [self.tableView reloadData];
@@ -169,7 +165,7 @@
 
 
 - (UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    XSHouseDetailsInfoCellModel *model = [self.array safeObjectAtIndex:indexPath.row];
+    XSHouseInfoShowModel *model = [self.array safeObjectAtIndex:indexPath.row];
     
     XSHouseInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:model.cellClass];
     if (!cell) {
@@ -180,7 +176,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    XSHouseDetailsInfoCellModel *model = [self.array safeObjectAtIndex:indexPath.row];
+    XSHouseInfoShowModel *model = [self.array safeObjectAtIndex:indexPath.row];
     if (model.clickBlack) {
         model.clickBlack(model, XShouseOperation_click);
     }

@@ -8,7 +8,7 @@
 
 #import "XSMyPublishHosueController.h"
 #import "XSHouseInfoTableView.h"
-#import "XSHouseRentInfoModel.h"
+#import "XSHouseInfoShowModel.h"
 #import "XSHouseDetailsController.h"
 #import "XSHouseSubmitFirstViewController.h"
 #define number 30
@@ -101,7 +101,7 @@
     if (error == nil) {
         [self.array removeAllObjects];
         if (responseModel.code.intValue == SuccessCode) {
-            NSMutableArray *array = [XSHouseRentInfoModel mj_objectArrayWithKeyValuesArray:responseModel.data];
+            NSMutableArray *array = [XSHouseInfoShowModel mj_objectArrayWithKeyValuesArray:responseModel.data];
             [self houseInfoClickSettingWithModelArray:array];
             [self.array addObjectsFromArray:array];
             [self.tableView reloadData];
@@ -114,7 +114,7 @@
 }
 
 - (UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    XSBHouseInfoModel *model = [self.array safeObjectAtIndex:indexPath.row];
+    XSHouseInfoShowModel *model = [self.array safeObjectAtIndex:indexPath.row];
     XSHouseInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:model.cellClass];
     if (!cell) {
          cell = [[NSBundle mainBundle] loadNibNamed:model.cellClass owner:self options:nil].lastObject;
@@ -124,26 +124,19 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    XSBHouseInfoModel *model = [self.array safeObjectAtIndex:indexPath.row];
-    if (model.clickBlack) {
-        model.clickBlack(model, XShouseOperation_click);
-    }
+        XSHouseInfoShowModel *model = [self.array safeObjectAtIndex:indexPath.row];
+        XSHouseDetailsController *vc = [[XSHouseDetailsController alloc]init];
+        vc.houseid = model.house_id.stringValue;
+        [[NSObject getTopViewController].navigationController pushViewController:vc animated:YES];
+    
+    
 }
 #pragma mark -房屋操作查看
 - (void)houseInfoClickSettingWithModelArray:(NSArray *)array{
     WEAK_SELF;
-    for (XSHouseRentInfoModel *model in array) {
+    for (XSHouseInfoShowModel *model in array) {
         model.source = self.source;
         model.houseType = self.houseType;
-        model.clickBlack = ^(XSBHouseInfoModel * _Nonnull model, XShouseOperation operation) {
-            
-            if ([model isKindOfClass:[XSHouseRentInfoModel class]]) {
-                XSHouseRentInfoModel *newModel = (XSHouseRentInfoModel *)model;
-                XSHouseDetailsController *vc = [[XSHouseDetailsController alloc]init];
-                vc.houseid = newModel.house_id.stringValue;
-                [[NSObject getTopViewController].navigationController pushViewController:vc animated:YES];
-            }
-        };
         model.clickEditStatu = ^(NSNumber * _Nonnull status, NSNumber * _Nonnull houseID) {
             STRONG_SELF;
             [self editHouseStatusWith:status houseId:houseID];
@@ -180,7 +173,7 @@
         [ProgressHUD dismiss];
             if (error == nil) {
             if (responseModel.code.integerValue == SuccessCode) {
-                XSHouseRentInfoModel *model = [XSHouseRentInfoModel mj_objectWithKeyValues:responseModel.data];
+                XSHouseInfoShowModel *model = [XSHouseInfoShowModel mj_objectWithKeyValues:responseModel.data];
                 XSHouseSubmitFirstViewController *vc = [[XSHouseSubmitFirstViewController alloc]init];
                 vc.subMitServer.renhousetInfoModel = model;
                 [self.navigationController pushViewController:vc animated:YES];

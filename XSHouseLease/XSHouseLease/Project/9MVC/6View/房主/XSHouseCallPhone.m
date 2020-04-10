@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UIButton *cellPhone;
 @property (weak, nonatomic) IBOutlet UIButton *callIm;
-@property(nonatomic,strong)XSBHouseInfoModel *model;
+@property(nonatomic,strong)XSHouseInfoShowModel *model;
 
 @end
 
@@ -34,7 +34,7 @@
     view.frame = frame;
     return view;
 }
-- (void)upDataWithDataModel:(XSHouseRentInfoModel *)dataModel{
+- (void)upDataWithDataModel:(XSHouseInfoShowModel *)dataModel{
       self.model = dataModel;
       [self.image sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"userIcon"]];
       self.name.text = dataModel.callName;

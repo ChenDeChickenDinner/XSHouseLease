@@ -9,7 +9,7 @@
 #import "XSHouseModuleViewController.h"
 #import "XSCollectionView.h"
 #import "XSHouseInfoTableView.h"
-#import "XSHouseRentInfoModel.h"
+#import "XSHouseInfoShowModel.h"
 #import "XSMyPublishHosueController.h"
 #import "XSHouseDetailsController.h"
 
@@ -114,7 +114,7 @@
         STRONG_SELF;
         if (error == nil) {
             if (responseModel.code.intValue == SuccessCode) {
-                NSArray *array = [XSHouseRentInfoModel mj_objectArrayWithKeyValuesArray:responseModel.data];
+                NSArray *array = [XSHouseInfoShowModel mj_objectArrayWithKeyValuesArray:responseModel.data];
                 [self houseInfoClickSettingWithModelArray:array];
 //                self.tableView.array = array;
                 [self.tableView reloadData];
@@ -125,16 +125,12 @@
     }];
 }
 - (void)houseInfoClickSettingWithModelArray:(NSArray *)array{
-    for (XSHouseRentInfoModel *model in array) {
+    for (XSHouseInfoShowModel *model in array) {
         model.source = XSBHouseInfoSource_Search;
-        model.clickBlack = ^(XSBHouseInfoModel * _Nonnull model, XShouseOperation operation) {
-            if ([model isKindOfClass:[XSHouseRentInfoModel class]]) {
-                XSHouseRentInfoModel *newModel = (XSHouseRentInfoModel *)model;
-                NSLog(@"house_id = %@",newModel.house_id);
+        model.clickBlack = ^(XSHouseInfoShowModel * _Nonnull model, XShouseOperation operation) {
                 XSHouseDetailsController *vc = [[XSHouseDetailsController alloc]init];
-                 vc.houseid = newModel.house_id.stringValue;
-                 [self.navigationController pushViewController:vc animated:YES];
-            }
+                vc.houseid = model.house_id.stringValue;
+                [self.navigationController pushViewController:vc animated:YES];
         };
 
     }

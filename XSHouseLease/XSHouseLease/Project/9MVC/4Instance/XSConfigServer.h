@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "XSHouseRentInfoModel.h"
+#import "XSHouseInfoShowModel.h"
 
 @class XSBHouseInfoModel;
 @class XSBusinessInfoModel;

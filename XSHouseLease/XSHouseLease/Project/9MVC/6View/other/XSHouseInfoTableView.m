@@ -90,7 +90,7 @@
     }
 }
 - (UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    XSBHouseInfoModel *model = [self.array safeObjectAtIndex:indexPath.row];
+    XSHouseInfoShowModel *model = [self.array safeObjectAtIndex:indexPath.row];
     
     XSHouseInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:model.cellClass];
     if (!cell) {
@@ -101,7 +101,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    XSBHouseInfoModel *model = [self.array safeObjectAtIndex:indexPath.row];
+    XSHouseInfoShowModel *model = [self.array safeObjectAtIndex:indexPath.row];
     if (model.clickBlack) {
         model.clickBlack(model, XShouseOperation_click);
     }

@@ -51,6 +51,7 @@
 		55BAE6FC24404423001C7B22 /* XSSellHouseInfoFirst.json in Resources */ = {isa = PBXBuildFile; fileRef = 55BAE6ED24404423001C7B22 /* XSSellHouseInfoFirst.json */; };
 		55BAE6FD24404423001C7B22 /* XSSellHouseInfoSecond.json in Resources */ = {isa = PBXBuildFile; fileRef = 55BAE6EE24404423001C7B22 /* XSSellHouseInfoSecond.json */; };
 		55BAE6FE24404423001C7B22 /* XSSellHouseInfoThird.json in Resources */ = {isa = PBXBuildFile; fileRef = 55BAE6EF24404423001C7B22 /* XSSellHouseInfoThird.json */; };
+		55BAE70124405644001C7B22 /* XSHouseInfoShowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE70024405644001C7B22 /* XSHouseInfoShowModel.m */; };
 		55BF0041243D6325007843C2 /* XSHouseDetailsInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 55BFFF6F243D6324007843C2 /* XSHouseDetailsInfo.json */; };
 		55BF0042243D6325007843C2 /* XSHouseSearch.json in Resources */ = {isa = PBXBuildFile; fileRef = 55BFFF71243D6324007843C2 /* XSHouseSearch.json */; };
 		55BF0048243D6325007843C2 /* XSHouseSave.json in Resources */ = {isa = PBXBuildFile; fileRef = 55BFFF79243D6324007843C2 /* XSHouseSave.json */; };
@@ -61,7 +62,6 @@
 		55BF0061243D6325007843C2 /* XSHouseInfoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BFFFA7243D6324007843C2 /* XSHouseInfoTableView.m */; };
 		55BF0062243D6325007843C2 /* XSLocationSearchview.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BFFFA9243D6324007843C2 /* XSLocationSearchview.m */; };
 		55BF0063243D6325007843C2 /* XSRegionSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BFFFAB243D6324007843C2 /* XSRegionSearchView.m */; };
-		55BF0064243D6325007843C2 /* XSHouseInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BFFFAE243D6324007843C2 /* XSHouseInfoCell.m */; };
 		55BF0065243D6325007843C2 /* XSCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BFFFB0243D6324007843C2 /* XSCollectionView.m */; };
 		55BF0067243D6325007843C2 /* XSRoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BFFFB4243D6324007843C2 /* XSRoundedView.m */; };
 		55BF0068243D6325007843C2 /* XSHouseRentStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BFFFB5243D6324007843C2 /* XSHouseRentStatusView.m */; };
@@ -102,8 +102,6 @@
 		55BF0090243D6325007843C2 /* XSHouseIntroduceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF000B243D6324007843C2 /* XSHouseIntroduceController.m */; };
 		55BF0091243D6325007843C2 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF000D243D6324007843C2 /* MessageViewController.m */; };
 		55BF0094243D6325007843C2 /* XSUserServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF001E243D6324007843C2 /* XSUserServer.m */; };
-		55BF0098243D6325007843C2 /* XSHouseDetailsInfoCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF002B243D6324007843C2 /* XSHouseDetailsInfoCellModel.m */; };
-		55BF009B243D6325007843C2 /* XSHouseRentInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF002F243D6324007843C2 /* XSHouseRentInfoModel.m */; };
 		55BF009E243D6325007843C2 /* XSHouseBunnerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF0035243D6324007843C2 /* XSHouseBunnerModel.m */; };
 		55BF009F243D6325007843C2 /* XSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF0037243D6324007843C2 /* XSBaseViewController.m */; };
 		55BF00A0243D6325007843C2 /* XSBaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BF0039243D6324007843C2 /* XSBaseNavViewController.m */; };
@@ -194,6 +192,8 @@
 		55BAE6F024404423001C7B22 /* XSHouseSubmitFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubmitFirstViewController.h; sourceTree = "<group>"; };
 		55BAE6F124404423001C7B22 /* XSHouseSubMitModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubMitModel.h; sourceTree = "<group>"; };
 		55BAE6F224404423001C7B22 /* XSHouseSubMitServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseSubMitServer.h; sourceTree = "<group>"; };
+		55BAE6FF24405643001C7B22 /* XSHouseInfoShowModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseInfoShowModel.h; sourceTree = "<group>"; };
+		55BAE70024405644001C7B22 /* XSHouseInfoShowModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseInfoShowModel.m; sourceTree = "<group>"; };
 		55BF0006243D6324007843C2 /* XSHouseDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseDetailsController.xib; sourceTree = "<group>"; };
 		55BF0007243D6324007843C2 /* XSHouseDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseDetailsController.m; sourceTree = "<group>"; };
 		55BF0008243D6324007843C2 /* XSHouseIntroduceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseIntroduceController.h; sourceTree = "<group>"; };
@@ -206,11 +206,7 @@
 		55BF0012243D6324007843C2 /* XSHouseEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseEnum.h; sourceTree = "<group>"; };
 		55BF001A243D6324007843C2 /* XSUserServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSUserServer.h; sourceTree = "<group>"; };
 		55BF001E243D6324007843C2 /* XSUserServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSUserServer.m; sourceTree = "<group>"; };
-		55BF0027243D6324007843C2 /* XSHouseRentInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseRentInfoModel.h; sourceTree = "<group>"; };
 		55BF002A243D6324007843C2 /* XSHouseBunnerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseBunnerModel.h; sourceTree = "<group>"; };
-		55BF002B243D6324007843C2 /* XSHouseDetailsInfoCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseDetailsInfoCellModel.m; sourceTree = "<group>"; };
-		55BF002F243D6324007843C2 /* XSHouseRentInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseRentInfoModel.m; sourceTree = "<group>"; };
-		55BF0034243D6324007843C2 /* XSHouseDetailsInfoCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseDetailsInfoCellModel.h; sourceTree = "<group>"; };
 		55BF0035243D6324007843C2 /* XSHouseBunnerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseBunnerModel.m; sourceTree = "<group>"; };
 		55BF0037243D6324007843C2 /* XSBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBaseViewController.m; sourceTree = "<group>"; };
 		55BF0038243D6324007843C2 /* XSBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBaseTableViewCell.h; sourceTree = "<group>"; };
@@ -243,11 +239,9 @@
 		55BFFFA7243D6324007843C2 /* XSHouseInfoTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseInfoTableView.m; sourceTree = "<group>"; };
 		55BFFFA8243D6324007843C2 /* XSCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSCollectionView.h; sourceTree = "<group>"; };
 		55BFFFA9243D6324007843C2 /* XSLocationSearchview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSLocationSearchview.m; sourceTree = "<group>"; };
-		55BFFFAA243D6324007843C2 /* XSHouseInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseInfoCell.h; sourceTree = "<group>"; };
 		55BFFFAB243D6324007843C2 /* XSRegionSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSRegionSearchView.m; sourceTree = "<group>"; };
 		55BFFFAC243D6324007843C2 /* XSHouseRentStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseRentStatusView.h; sourceTree = "<group>"; };
 		55BFFFAD243D6324007843C2 /* XSRoundedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSRoundedView.h; sourceTree = "<group>"; };
-		55BFFFAE243D6324007843C2 /* XSHouseInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseInfoCell.m; sourceTree = "<group>"; };
 		55BFFFAF243D6324007843C2 /* XSLocationSearchview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSLocationSearchview.h; sourceTree = "<group>"; };
 		55BFFFB0243D6324007843C2 /* XSCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSCollectionView.m; sourceTree = "<group>"; };
 		55BFFFB1243D6324007843C2 /* XSHouseInfoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseInfoTableView.h; sourceTree = "<group>"; };
@@ -774,8 +768,8 @@
 			isa = PBXGroup;
 			children = (
 				55BFFFA2243D6324007843C2 /* XSHouseCallPhone.h */,
-				55BFFFA3243D6324007843C2 /* XSHouseCallPhone.xib */,
 				55BFFFA4243D6324007843C2 /* XSHouseCallPhone.m */,
+				55BFFFA3243D6324007843C2 /* XSHouseCallPhone.xib */,
 			);
 			path = "房主";
 			sourceTree = "<group>";
@@ -807,9 +801,6 @@
 			children = (
 				55BFFFAC243D6324007843C2 /* XSHouseRentStatusView.h */,
 				55BFFFB5243D6324007843C2 /* XSHouseRentStatusView.m */,
-				55BFFFB9243D6324007843C2 /* XSHouseRentInfoCell.h */,
-				55BFFFBA243D6324007843C2 /* XSHouseRentInfoCell.m */,
-				55BFFFBB243D6324007843C2 /* XSHouseRentInfoCell.xib */,
 			);
 			path = "2列表";
 			sourceTree = "<group>";
@@ -817,10 +808,6 @@
 		55BFFFBC243D6324007843C2 /* 3详情展示 */ = {
 			isa = PBXGroup;
 			children = (
-				55BFFFAA243D6324007843C2 /* XSHouseInfoCell.h */,
-				55BFFFAE243D6324007843C2 /* XSHouseInfoCell.m */,
-				55BF0034243D6324007843C2 /* XSHouseDetailsInfoCellModel.h */,
-				55BF002B243D6324007843C2 /* XSHouseDetailsInfoCellModel.m */,
 				55BFFFBD243D6324007843C2 /* 0图片轮播 */,
 				55BFFFC5243D6324007843C2 /* 1房屋信息 */,
 				55BFFFC1243D6324007843C2 /* 2其它信息 */,
@@ -835,9 +822,9 @@
 		55BFFFBD243D6324007843C2 /* 0图片轮播 */ = {
 			isa = PBXGroup;
 			children = (
-				55BFFFBE243D6324007843C2 /* XSHouseDetailsImagesCell.xib */,
-				55BFFFBF243D6324007843C2 /* XSHouseDetailsImagesCell.m */,
 				55BFFFC0243D6324007843C2 /* XSHouseDetailsImagesCell.h */,
+				55BFFFBF243D6324007843C2 /* XSHouseDetailsImagesCell.m */,
+				55BFFFBE243D6324007843C2 /* XSHouseDetailsImagesCell.xib */,
 			);
 			path = "0图片轮播";
 			sourceTree = "<group>";
@@ -845,9 +832,9 @@
 		55BFFFC1243D6324007843C2 /* 2其它信息 */ = {
 			isa = PBXGroup;
 			children = (
-				55BFFFC2243D6324007843C2 /* XSHouseDetailsBusinessInfoCell.xib */,
 				55BFFFC3243D6324007843C2 /* XSHouseDetailsBusinessInfoCell.h */,
 				55BFFFC4243D6324007843C2 /* XSHouseDetailsBusinessInfoCell.m */,
+				55BFFFC2243D6324007843C2 /* XSHouseDetailsBusinessInfoCell.xib */,
 			);
 			path = "2其它信息";
 			sourceTree = "<group>";
@@ -855,9 +842,9 @@
 		55BFFFC5243D6324007843C2 /* 1房屋信息 */ = {
 			isa = PBXGroup;
 			children = (
+				55BFFFC8243D6324007843C2 /* XSHouseDetailsBasicInfoCell.h */,
 				55BFFFC6243D6324007843C2 /* XSHouseDetailsBasicInfoCell.m */,
 				55BFFFC7243D6324007843C2 /* XSHouseDetailsBasicInfoCell.xib */,
-				55BFFFC8243D6324007843C2 /* XSHouseDetailsBasicInfoCell.h */,
 			);
 			path = "1房屋信息";
 			sourceTree = "<group>";
@@ -865,9 +852,9 @@
 		55BFFFC9243D6324007843C2 /* 4配套设施 */ = {
 			isa = PBXGroup;
 			children = (
-				55BFFFCA243D6324007843C2 /* XSHouseDetailsFacilitiesInfoCell.xib */,
-				55BFFFCB243D6324007843C2 /* XSHouseDetailsFacilitiesInfoCell.m */,
 				55BFFFCC243D6324007843C2 /* XSHouseDetailsFacilitiesInfoCell.h */,
+				55BFFFCB243D6324007843C2 /* XSHouseDetailsFacilitiesInfoCell.m */,
+				55BFFFCA243D6324007843C2 /* XSHouseDetailsFacilitiesInfoCell.xib */,
 			);
 			path = "4配套设施";
 			sourceTree = "<group>";
@@ -875,9 +862,9 @@
 		55BFFFCD243D6324007843C2 /* 更多推荐 */ = {
 			isa = PBXGroup;
 			children = (
+				55BFFFD0243D6324007843C2 /* XSHouseRecommendedCell.h */,
 				55BFFFCE243D6324007843C2 /* XSHouseRecommendedCell.m */,
 				55BFFFCF243D6324007843C2 /* XSHouseRecommendedCell.xib */,
-				55BFFFD0243D6324007843C2 /* XSHouseRecommendedCell.h */,
 			);
 			path = "更多推荐";
 			sourceTree = "<group>";
@@ -885,9 +872,9 @@
 		55BFFFD1243D6324007843C2 /* 3小地图 */ = {
 			isa = PBXGroup;
 			children = (
+				55BFFFD4243D6324007843C2 /* XSHouseDetailsAddressInfoCell.h */,
 				55BFFFD2243D6324007843C2 /* XSHouseDetailsAddressInfoCell.m */,
 				55BFFFD3243D6324007843C2 /* XSHouseDetailsAddressInfoCell.xib */,
-				55BFFFD4243D6324007843C2 /* XSHouseDetailsAddressInfoCell.h */,
 			);
 			path = "3小地图";
 			sourceTree = "<group>";
@@ -895,9 +882,9 @@
 		55BFFFD5243D6324007843C2 /* 5房源介绍 */ = {
 			isa = PBXGroup;
 			children = (
-				55BFFFD6243D6324007843C2 /* XSHouseDetailsIntroduceInfoCell.xib */,
-				55BFFFD7243D6324007843C2 /* XSHouseDetailsIntroduceInfoCell.m */,
 				55BFFFD8243D6324007843C2 /* XSHouseDetailsIntroduceInfoCell.h */,
+				55BFFFD7243D6324007843C2 /* XSHouseDetailsIntroduceInfoCell.m */,
+				55BFFFD6243D6324007843C2 /* XSHouseDetailsIntroduceInfoCell.xib */,
 			);
 			path = "5房源介绍";
 			sourceTree = "<group>";
@@ -995,8 +982,6 @@
 		55BFFFF3243D6324007843C2 /* House */ = {
 			isa = PBXGroup;
 			children = (
-				55BF0027243D6324007843C2 /* XSHouseRentInfoModel.h */,
-				55BF002F243D6324007843C2 /* XSHouseRentInfoModel.m */,
 				55BAE6E124404423001C7B22 /* 1Submit */,
 				55BFFFF4243D6324007843C2 /* 2List */,
 				55BF0005243D6324007843C2 /* 3Details */,
@@ -1009,6 +994,11 @@
 		55BFFFF4243D6324007843C2 /* 2List */ = {
 			isa = PBXGroup;
 			children = (
+				55BAE6FF24405643001C7B22 /* XSHouseInfoShowModel.h */,
+				55BAE70024405644001C7B22 /* XSHouseInfoShowModel.m */,
+				55BFFFB9243D6324007843C2 /* XSHouseRentInfoCell.h */,
+				55BFFFBA243D6324007843C2 /* XSHouseRentInfoCell.m */,
+				55BFFFBB243D6324007843C2 /* XSHouseRentInfoCell.xib */,
 				55BFFFF5243D6324007843C2 /* XSMyPublishHosueController.h */,
 				55BFFFF6243D6324007843C2 /* XSMyPublishHosueController.m */,
 			);
@@ -1223,13 +1213,11 @@
 				55198EF5243C5248006A9D67 /* NSObject+category.m in Sources */,
 				55198EEB243C5248006A9D67 /* NSMutableDictionary+safe.m in Sources */,
 				55BF00A0243D6325007843C2 /* XSBaseNavViewController.m in Sources */,
-				55BF0064243D6325007843C2 /* XSHouseInfoCell.m in Sources */,
 				55BF00B4243DC077007843C2 /* XSConfigServer.m in Sources */,
 				55BF0068243D6325007843C2 /* XSHouseRentStatusView.m in Sources */,
 				55BF0071243D6325007843C2 /* XSHouseDetailsBasicInfoCell.m in Sources */,
 				55BAE6F524404423001C7B22 /* XSHouseSubMitServer.m in Sources */,
 				55BF0082243D6325007843C2 /* XSMapViewController.m in Sources */,
-				55BF009B243D6325007843C2 /* XSHouseRentInfoModel.m in Sources */,
 				55198EFF243C5248006A9D67 /* XSNavViewController.m in Sources */,
 				55BF00BD243EAF5A007843C2 /* XSUserLogInModel.m in Sources */,
 				55BF00C4243EBB6F007843C2 /* XSBaseServer.m in Sources */,
@@ -1265,11 +1253,11 @@
 				55BF009F243D6325007843C2 /* XSBaseViewController.m in Sources */,
 				55BF007B243D6325007843C2 /* XShouseSubNetworkInterface.m in Sources */,
 				55BF007A243D6325007843C2 /* XSHouseDetailsIntroduceInfoCell.m in Sources */,
-				55BF0098243D6325007843C2 /* XSHouseDetailsInfoCellModel.m in Sources */,
 				55BF0062243D6325007843C2 /* XSLocationSearchview.m in Sources */,
 				55198E8A243C5248006A9D67 /* XSNetworkInterface.m in Sources */,
 				55BF0065243D6325007843C2 /* XSCollectionView.m in Sources */,
 				55198EF2243C5248006A9D67 /* NSObject+swizzle.m in Sources */,
+				55BAE70124405644001C7B22 /* XSHouseInfoShowModel.m in Sources */,
 				55198EE9243C5248006A9D67 /* NSDictionary+safe.m in Sources */,
 				55BAE6F324404423001C7B22 /* XSHouseSubmitFirstViewController.m in Sources */,
 				55BAE6F424404423001C7B22 /* XSHouseSubMitModel.m in Sources */,

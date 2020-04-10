@@ -7,12 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "XSHouseInfoCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface XSHouseDetailsIntroduceInfoCell : XSHouseInfoCell
 
-@end
 
 NS_ASSUME_NONNULL_END

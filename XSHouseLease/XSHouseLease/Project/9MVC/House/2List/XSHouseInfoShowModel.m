@@ -1,24 +1,14 @@
 //
-//  XSHouseRentInfoModel.m
+//  XSHouseInfoShowModel.m
 //  房鼎汇
 //
 //  Created by indulgeIn on 2020/03/27.
 //  Copyright © 2020 indulgeIn. All rights reserved.
 //
 
-#import "XSHouseRentInfoModel.h"
+#import "XSHouseInfoShowModel.h"
 
-
-
-
-
-
-
-@implementation XSBHouseInfoModel
-@end
-
-
-@implementation XSHouseRentInfoModel
+@implementation XSHouseInfoShowModel
 + (NSDictionary *)mj_replacedKeyFromPropertyName{
     return @{@"house_id":@"id"};
 }
@@ -32,10 +22,6 @@
 @end
 
 
-
-@implementation XSHouseDetailsInfoCellModel
-
-@end
 
 
 

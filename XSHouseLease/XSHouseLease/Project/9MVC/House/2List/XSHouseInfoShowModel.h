@@ -1,5 +1,5 @@
 //
-//  XSHouseRentInfoModel.h
+//  XSHouseInfoShowModel.h
 //  房鼎汇
 //
 //  Created by indulgeIn on 2020/03/27.
@@ -10,25 +10,21 @@
 
 
 
-@class XSBHouseInfoModel;
-@class XSBusinessInfoModel;
-@class XSHouseModuleModel;
-@class XSHouseEnumData;
+@class XSHouseInfoShowModel;
 
 
-typedef void (^XSHouseInfoClickBlack)(XSBHouseInfoModel *model,XShouseOperation operation);
+typedef void (^XSHouseInfoClickBlack)(XSHouseInfoShowModel *model,XShouseOperation operation);
 
-@interface XSBHouseInfoModel : NSObject
+
+@interface XSHouseInfoShowModel : NSObject
+
 @property(nonatomic,assign) XSBHouseInfoSource source;
 @property(nonatomic,assign) XSBHouseType houseType;
 @property(nonatomic,copy  ) XSHouseInfoClickBlack clickBlack;
 @property(nonatomic,copy  ) clickEditStatus clickEditStatu;
 @property(nonatomic,copy  ) NSString *cellClass;
 @property(nonatomic,copy  ) XSValuechangeStatus valuechangeStatus;
-@end
 
-
-@interface XSHouseRentInfoModel : XSBHouseInfoModel
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, assign) BOOL watch;
 @property (nonatomic, strong) NSNumber *house_id;
@@ -85,9 +81,5 @@ typedef void (^XSHouseInfoClickBlack)(XSBHouseInfoModel *model,XShouseOperation 
 
 @end
 
-
-@interface XSHouseDetailsInfoCellModel : XSBHouseInfoModel
-@property(nonatomic,strong)XSHouseRentInfoModel *dataModel;
-@end
 
 

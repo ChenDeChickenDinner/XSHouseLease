@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XSHouseSubMitModel.h"
 
-NS_ASSUME_NONNULL_BEGIN
+
 
 
 @interface XSHouseIntroduceController : UIViewController
@@ -16,4 +17,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-NS_ASSUME_NONNULL_END
+

@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface XSHouseCallPhone : UIView
 + (instancetype)callPhoneViewWithFrame:(CGRect)frame house_id:(NSNumber *)house_id;
-- (void)upDataWithDataModel:(XSHouseRentInfoModel *)dataModel;
+- (void)upDataWithDataModel:(XSHouseInfoShowModel *)dataModel;
 @end
 
 NS_ASSUME_NONNULL_END

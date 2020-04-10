@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "XSHouseRentInfoModel.h"
+#import "XSHouseInfoShowModel.h"
 
 
 @interface XSHouseSubTableViewCell : UITableViewCell

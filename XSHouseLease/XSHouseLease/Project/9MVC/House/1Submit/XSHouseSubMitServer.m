@@ -160,7 +160,7 @@ DEF_SINGLETON(XSHouseSubMitDynamicServer)
 }
 
 #pragma mark - 再次编辑信息
-- (void)setRenhousetInfoModel:(XSHouseRentInfoModel *)renhousetInfoModel{
+- (void)setRenhousetInfoModel:(XSHouseInfoShowModel *)renhousetInfoModel{
     [self resetData];
     if (renhousetInfoModel) {
 //        _renhousetInfoModel = renhousetInfoModel;

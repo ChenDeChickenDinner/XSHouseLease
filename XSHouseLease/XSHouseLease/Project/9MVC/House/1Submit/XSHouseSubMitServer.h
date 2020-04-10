@@ -32,7 +32,7 @@
 
 - (void)resetData;
 - (void)subRentParameterDictUpdateWithKey:(NSString *)key value:(id)value;
-@property (strong, nonatomic) XSHouseRentInfoModel *renhousetInfoModel;
+@property (strong, nonatomic) XSHouseInfoShowModel *renhousetInfoModel;
 
 @end
 

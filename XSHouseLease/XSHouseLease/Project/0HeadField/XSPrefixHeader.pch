@@ -25,21 +25,20 @@
 
 #import "SDWebImage.h"
 #import "SDCycleScrollView.h"
-#import "XSHouseRentInfoModel.h"
-#import "XSHouseDetailsInfoCellModel.h"
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import <MAMapKit/MAMapKit.h>
 #import "XSMapViewController.h"
+#import "XSHouseRentInfoCell.h"
 
 #import "ProgressHUD.h"
+#import "XSHouseSubMitModel.h"
+#import "XSConfigServer.h"
 
 #import "XSHouseEnum.h"
 
 #import "XSHouseBlock.h"
 
-#import "XSHouseRentInfoModel.h"
 #import "XSPublicServer.h"
-#import "XSConfigServer.h"
 #import "XSHouseSubMitServer.h"
 #import "XSHouseBasisView.h"
 
