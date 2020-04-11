@@ -17,8 +17,7 @@
 #import "XSHouseIntroduceController.h"
 #import "XSMapViewController.h"
 #import "XSPublicServer.h"
-#import "XSConfigServer.h"
-#import "XSHouseBasisView.h"
+
 
 
 
@@ -26,6 +25,8 @@
 @interface XSHouseInfoCell : UITableViewCell
 @property(nonatomic,strong)XSHouseInfoShowModel *model;
 - (void)updateWithModel:(XSHouseInfoShowModel *)model;
++ (NSInteger)indexForClassName:(NSString *)className;
+
 @end
 
 #pragma mark -租房列表
@@ -58,7 +59,7 @@
 @property(nonatomic,strong) UILabel *lable;
 @end
 
-#pragma mark -基本信息
+#pragma mark -基本信息A
 @interface XSHouseDetailsBasicInfoCell : XSHouseInfoCell
 @property (weak, nonatomic) IBOutlet UILabel *titleLable;
 @property (weak, nonatomic) IBOutlet UILabel *featurePointsLablea;
@@ -71,21 +72,32 @@
 @property (weak, nonatomic) IBOutlet UILabel *formTypelabe;
 @property (weak, nonatomic) IBOutlet UILabel *rarealabe;
 @end
-#pragma mark -其它信息
+#pragma mark -其它信息B
+@interface XSHouseInfoBCollectionCell : UICollectionViewCell
+@property (strong, nonatomic) XSHouseInfoBModel  *model;
+@property (weak, nonatomic)  UILabel *titleLable;
+@property (weak, nonatomic)  UILabel *contentLable;
+@end
 @interface XSHouseDetailsBusinessInfoCell : XSHouseInfoCell<UICollectionViewDelegate,UICollectionViewDataSource>
+@property (strong, nonatomic) UIView *lineView;
 @property (weak, nonatomic) IBOutlet UIView *bkView;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView ;
-@property (strong, nonatomic) UIView *lineView;
-@property (strong, nonatomic) NSMutableArray<XSBusinessInfoModel *> *array;
+@property (strong, nonatomic) NSMutableArray<XSHouseInfoBModel *> *array;
 @property (strong, nonatomic) UICollectionViewFlowLayout *layout;
 @end
 
 
 #pragma mark -配套设施
+@interface XSFacilitiesCollectionCell : UICollectionViewCell
+@property (strong, nonatomic) XSHouseFacilitiesModel  *model;
+@property (weak, nonatomic)  UIImageView *image;
+@property (weak, nonatomic)  UILabel *contentLable;
+@property (weak, nonatomic)  UIView *bkView;
+@end
 @interface XSHouseDetailsFacilitiesInfoCell : XSHouseInfoCell<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView ;
 @property (strong, nonatomic) UICollectionViewFlowLayout *layout;
-@property (strong, nonatomic) NSMutableArray<XSHouseDetailsFacilitiesModel *> *array;
+@property (strong, nonatomic) NSMutableArray<XSHouseFacilitiesModel *> *array;
 @end
 
 #pragma mark -地图信息
@@ -115,4 +127,12 @@
 @property (strong, nonatomic)XSMyPublishHosueController *listvc;
 @end
 
+#pragma mark -房屋所有人信息
+@interface XSHouseMasterInfoCell : XSHouseInfoCell
+@property (weak, nonatomic) IBOutlet UIView *houseUserInfoView;
+@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UIImageView *image;
+@property (weak, nonatomic) IBOutlet UIButton *cellPhone;
+@property (weak, nonatomic) IBOutlet UIButton *callIm;
+@end
 

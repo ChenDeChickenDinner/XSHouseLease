@@ -6,7 +6,7 @@
 //  Copyright © 2020 fang. All rights reserved.
 //
 
-#import "XSHouseRentInfoCell.h"
+#import "XSHouseInfoShowCell.h"
 
 
 
@@ -19,7 +19,29 @@
 - (void)updateWithModel:(XSHouseInfoShowModel *)model{
     _model = model;
 }
++ (NSInteger)indexForClassName:(NSString *)className{
+    Class class = NSClassFromString(className);
+    if ([class isEqual:[XSHouseRentInfoCell class]]) {
+        return 0;
+    }else if ([class isEqual:[XSHouseDetailsImagesCell class]]){
+        return 1;
+    }else if ([class isEqual:[XSHouseDetailsBasicInfoCell class]]){
+        return 2;
+    }else if ([class isEqual:[XSHouseInfoBCollectionCell class]]){
+        return 3;
+    }else if ([class isEqual:[XSHouseDetailsAddressInfoCell class]]){
+        return 4;
+    }else if ([class isEqual:[XSFacilitiesCollectionCell class]]){
+        return 5;
+    }else if ([class isEqual:[XSHouseDetailsIntroduceInfoCell class]]){
+        return 6;
+    }else if ([class isEqual:[XSHouseRecommendedCell class]]){
+        return 7;
+    }
+    return 0;
+}
 @end
+
 
 #pragma mark -租房列表
 @implementation XSHouseRentInfoCell
@@ -278,7 +300,7 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
      self.collectionView.scrollEnabled = NO;
      self.collectionView.showsHorizontalScrollIndicator = NO;
      self.collectionView.bounces = NO;
-     [self.collectionView registerClass:[XSBusinessCollectionCell class] forCellWithReuseIdentifier:XSHouseDetailsBusinessInfoCellStr];
+     [self.collectionView registerClass:[XSHouseInfoBCollectionCell class] forCellWithReuseIdentifier:XSHouseDetailsBusinessInfoCellStr];
     
 }
 
@@ -286,9 +308,9 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
     self.model = dataModel;
     NSMutableDictionary *modeDict = [dataModel mj_keyValues];
     NSMutableArray *infoArray = [NSMutableArray array];
-    for (XSBusinessInfoJsonModel *infoJsonModel in [XSConfigServer sharedInstance].businessInfoArray) {
-        XSBusinessInfoModel *infoModel = [[XSBusinessInfoModel alloc]init];
-        infoModel.name = infoJsonModel.keyName ;
+    for (XSHouseInfoBModel *infoJsonModel in [XSPublicServer sharedInstance].rentHouseInfoBArray) {
+        XSHouseInfoBModel *infoModel = [[XSHouseInfoBModel alloc]init];
+        infoModel.keyName = infoJsonModel.keyName ;
         infoModel.value = [NSString stringWithFormat:@"%@",[modeDict safeObjectForKey:infoJsonModel.key]];
         [infoArray addObject:infoModel];
     }
@@ -302,17 +324,15 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
     return self.array.count;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    XSBusinessInfoModel *dataModel = [self.array safeObjectAtIndex:indexPath.row];
-    XSBusinessCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:XSHouseDetailsBusinessInfoCellStr forIndexPath:indexPath];
+    XSHouseInfoBModel *dataModel = [self.array safeObjectAtIndex:indexPath.row];
+    XSHouseInfoBCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:XSHouseDetailsBusinessInfoCellStr forIndexPath:indexPath];
     cell.model = dataModel;
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    XSBusinessInfoModel *dataModel = [self.array safeObjectAtIndex:indexPath.row];
-    if (dataModel.clickBlack) {
-        dataModel.clickBlack(dataModel);
-    }
+    XSHouseInfoBModel *dataModel = [self.array safeObjectAtIndex:indexPath.row];
+
 }
 
 - (UICollectionViewFlowLayout *)layout{
@@ -351,8 +371,8 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 - (void)updateWithModel:(XSHouseInfoShowModel *)model{
     self.model = model;
     
-    NSMutableArray *allArray  =  [[XSConfigServer sharedInstance].facilitiesInfoArray mutableCopy];
-    for (XSHouseDetailsFacilitiesModel *showModel in allArray) {
+    NSMutableArray *allArray  =  [[XSPublicServer sharedInstance].facilitiesArray mutableCopy];
+    for (XSHouseFacilitiesModel *showModel in allArray) {
         for (NSNumber *number in model.facilities) {
                  if ([number isEqualToNumber:showModel.ID]) {
                      showModel.status = YES;
@@ -368,7 +388,7 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    XSHouseDetailsFacilitiesModel *dataModel = [self.array safeObjectAtIndex:indexPath.row];
+    XSHouseFacilitiesModel *dataModel = [self.array safeObjectAtIndex:indexPath.row];
     XSFacilitiesCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:XSHouseDetailsFacilitiesInfoCellStr forIndexPath:indexPath];
     cell.model = dataModel;
     return cell;
@@ -473,33 +493,8 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 
 }
 - (IBAction)houseSource:(id)sender {
-    XSHouseInfoShowModel *dataModel = (XSHouseInfoShowModel *)self.model;
-    
-    XSKeyValue *model1 = [[XSKeyValue alloc]init];
-    model1.key = @"核心卖点";
-    model1.value = dataModel.coreIntroduced;
-    model1.cellClass = @"XSHouseSubTextViewCell";
-    model1.cellHeight = [NSNumber numberWithInt:90];
-    XSKeyValue *model2 = [[XSKeyValue alloc]init];
-    model2.key = @"交通出行";
-    model2.value = dataModel.transportation;
-    model2.cellClass = @"XSHouseSubTextViewCell";
-    model2.cellHeight = [NSNumber numberWithInt:90];
-    
-    XSKeyValue *model3 = [[XSKeyValue alloc]init];
-    model3.key = @"小区介绍";
-    model3.value = dataModel.estateIntroduced;
-    model3.cellClass = @"XSHouseSubTextViewCell";
-    model3.cellHeight = [NSNumber numberWithInt:90];
-
-    NSMutableArray *array = [NSMutableArray array];
-    [array addObject:model1];
-    [array addObject:model2];
-    [array addObject:model3];
-
     XSHouseIntroduceController *vc = [[XSHouseIntroduceController alloc]init];
-    vc.array = array;
-    
+    vc.dataModel = self.model;
     UIViewController *nav = [NSObject getTopViewController];
     [nav.navigationController pushViewController:vc animated:YES];
 }
@@ -518,7 +513,7 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
     [super awakeFromNib];
     XSMyPublishHosueController *listvc = [[XSMyPublishHosueController alloc]init];
     listvc.source = XSBHouseInfoSource_MyPush;
-    listvc.alittle = YES;
+//    listvc.alittle = YES;
     listvc.view.frame = self.bkView.bounds;
     self.listvc =listvc;
     [self.bkView addSubview:listvc.view];
@@ -542,3 +537,125 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 }
 
 @end
+
+@implementation XSHouseMasterInfoCell
+- (void)awakeFromNib{
+    [super awakeFromNib];
+    
+     self.callIm.layer.masksToBounds = YES;
+     self.callIm.layer.cornerRadius = 5;
+     self.cellPhone.layer.masksToBounds = YES;
+     self.cellPhone.layer.cornerRadius = 5;
+     
+     self.cellPhone.layer.borderWidth = 1;
+     self.cellPhone.layer.borderColor = [UIColor hb_colorWithHexString:@"#E82B2B" alpha:1].CGColor;
+}
+- (void)updateWithModel:(XSHouseInfoShowModel *)model{
+    self.model = model;
+    [self.image sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"userIcon"]];
+    self.name.text = model.callName;
+}
+- (IBAction)callPhone:(id)sender {
+    NSString *telString = [NSString stringWithFormat:@"telprompt://%@",self.model.callPhone];
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:telString]]) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:telString] options:@{} completionHandler:nil];
+    }
+    
+}
+- (IBAction)callMassage:(id)sender {
+    [ProgressHUD showSuccess:@"努力开发中"];
+}
+@end
+
+
+@implementation XSHouseInfoBCollectionCell
+- (instancetype)initWithFrame:(CGRect)frame{
+    
+    if (self = [super initWithFrame:frame]) {
+        //添加自己需要个子视图控件
+        self.contentView.backgroundColor = [UIColor clearColor];
+
+        UILabel *titleLable = [[UILabel alloc] init];
+        titleLable.backgroundColor = [UIColor clearColor];
+        titleLable.font = [UIFont systemFontOfSize:14];
+        titleLable.textAlignment = NSTextAlignmentLeft;
+
+        titleLable.textColor = [UIColor hb_colorWithHexString:@"#BFBFBF" alpha:1];
+         [self.contentView addSubview:titleLable];
+          self.titleLable = titleLable;
+        
+        UILabel *contentLable = [[UILabel alloc] init];
+         contentLable.backgroundColor = [UIColor clearColor];
+         contentLable.font = [UIFont systemFontOfSize:14];
+         contentLable.textAlignment = NSTextAlignmentLeft;
+
+         contentLable.textColor = [UIColor hb_colorWithHexString:@"#1A1A1A" alpha:1];
+          [self.contentView addSubview:contentLable];
+          self.contentLable = contentLable;
+    }
+    return self;
+}
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    self.backgroundColor = [UIColor orangeColor];
+    
+}
+- (void)layoutSubviews{
+    [super layoutSubviews];
+    self.titleLable.frame = CGRectMake(0, 0, 45, self.height);
+    self.contentLable.frame = CGRectMake(45, 0, self.width - 45, self.height);
+}
+- (void)setModel:(XSHouseInfoBModel *)model{
+    _model = model;
+    self.titleLable.text = model.keyName;
+    self.contentLable.text = model.value;
+}
+@end
+
+
+@implementation XSFacilitiesCollectionCell
+- (instancetype)initWithFrame:(CGRect)frame{
+    
+    if (self = [super initWithFrame:frame]) {
+        
+        UIView *bkView = [[UIView alloc]init];
+        bkView.layer.masksToBounds = YES;
+        bkView.layer.cornerRadius = 25;
+
+        bkView.backgroundColor = [UIColor hb_colorWithHexString:@"#FF7A7A" alpha:1];
+        [self.contentView addSubview:bkView];
+        self.bkView = bkView;
+
+        //添加自己需要个子视图控件
+        self.contentView.backgroundColor = [UIColor clearColor];
+
+        UIImageView *image = [[UIImageView alloc] init];
+         [self.bkView addSubview:image];
+         self.image = image;
+
+        UILabel *contentLable = [[UILabel alloc] init];
+         contentLable.backgroundColor = [UIColor clearColor];
+         contentLable.font = [UIFont systemFontOfSize:12];
+         contentLable.textAlignment = NSTextAlignmentCenter;
+
+         contentLable.textColor = [UIColor hb_colorWithHexString:@"#BFBFBF" alpha:1];
+          [self.contentView addSubview:contentLable];
+          self.contentLable = contentLable;
+    }
+    return self;
+}
+- (void)layoutSubviews{
+    [super layoutSubviews];
+    self.bkView.frame = CGRectMake(0, 0, self.width, 50);;
+    self.image.frame = self.bkView.bounds;
+    self.contentLable.frame = CGRectMake(0, 50, self.width, self.height -50);
+}
+- (void)setModel:(XSHouseFacilitiesModel *)model{
+    _model = model;
+    self.bkView.backgroundColor = [UIColor hb_colorWithHexString:model.status?@"#FF7A7A":@"#FFCCCC" alpha:1];
+    [self.image  sd_setImageWithURL:[NSURL URLWithString:model.icon]];
+    self.contentLable.text = model.name;
+}
+@end
+
+

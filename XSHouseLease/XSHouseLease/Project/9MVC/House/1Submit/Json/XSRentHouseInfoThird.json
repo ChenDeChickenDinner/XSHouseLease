@@ -3,7 +3,7 @@
     {
      "title":"图片上传",
      "sequence":2,
-     "cellHeight":260,
+     "cellHeight":300,
      "cellClass":"XSHouseSubPictureSubmitCell"
      },
   {

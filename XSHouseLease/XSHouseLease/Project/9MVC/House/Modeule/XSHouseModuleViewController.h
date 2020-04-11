@@ -8,10 +8,16 @@
 
 #import "XSBaseViewController.h"
 
-NS_ASSUME_NONNULL_BEGIN
+#pragma mark - 条件导航显示
+@interface XSItemCollectionViewCell : UICollectionViewCell
+@property (strong, nonatomic) XSHouseModuleModel  *model;
+@property (weak, nonatomic)  UIImageView *myImageView;
+@property (weak, nonatomic)  UILabel *titleLable;
+@end
+
 
 @interface XSHouseModuleViewController : XSBaseViewController
 
 @end
 
-NS_ASSUME_NONNULL_END
+

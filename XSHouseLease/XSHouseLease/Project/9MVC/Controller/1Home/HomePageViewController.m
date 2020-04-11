@@ -93,12 +93,18 @@
           self.searchView.imagePathsGroup = [XSPublicServer sharedInstance].bunnerUrlArray;
 
       }];
-    [[XSPublicServer sharedInstance] hotsSearchWithCallback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+     [[XSPublicServer sharedInstance] hotsSearchWithCallback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
         STRONG_SELF;
 
           self.searchView.hotsSearchArray = [XSPublicServer sharedInstance].hotsSearchArray;
 
       }];
 
+    [[XSPublicServer sharedInstance] enumFacilitiesWithCallback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+          
+      }];
+    [[XSPublicServer sharedInstance] renthouseConditionWithCallback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+          
+      }];
 }
 @end

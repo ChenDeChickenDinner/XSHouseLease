@@ -26,7 +26,27 @@
     [super viewDidLoad];
     self.title = @"房源详情";
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-
+//    XSKeyValue *model1 = [[XSKeyValue alloc]init];
+//    model1.key = @"核心卖点";
+//    model1.value = dataModel.coreIntroduced;
+//    model1.cellClass = @"XSHouseSubTextViewCell";
+//    model1.cellHeight = [NSNumber numberWithInt:90];
+//    XSKeyValue *model2 = [[XSKeyValue alloc]init];
+//    model2.key = @"交通出行";
+//    model2.value = dataModel.transportation;
+//    model2.cellClass = @"XSHouseSubTextViewCell";
+//    model2.cellHeight = [NSNumber numberWithInt:90];
+//    
+//    XSKeyValue *model3 = [[XSKeyValue alloc]init];
+//    model3.key = @"小区介绍";
+//    model3.value = dataModel.estateIntroduced;
+//    model3.cellClass = @"XSHouseSubTextViewCell";
+//    model3.cellHeight = [NSNumber numberWithInt:90];
+//
+//    NSMutableArray *array = [NSMutableArray array];
+//    [array addObject:model1];
+//    [array addObject:model2];
+//    [array addObject:model3];
     
 }
 
@@ -51,4 +71,6 @@
     [cell refreshData];
     return cell;
 }
+@end
+@implementation XSKeyValue
 @end

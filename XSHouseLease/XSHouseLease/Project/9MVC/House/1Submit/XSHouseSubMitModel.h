@@ -51,6 +51,7 @@ typedef void (^XSValueUpdate)(void);
 
 
 
+
 //接口拉取的
 @interface XSHouseEnumDataEnumRes : NSObject
 @property (nonatomic, strong) NSNumber *value;
@@ -66,11 +67,3 @@ typedef void (^XSValueUpdate)(void);
 - (XSHouseInfoCellModel *)combinationToCellModel;
 @end
 
-
-
-
-
-@interface XSKeyValue : XSHouseInfoCellModel
-@property(nonatomic,copy) NSString *key;
-@property(nonatomic,copy) NSString *value;
-@end

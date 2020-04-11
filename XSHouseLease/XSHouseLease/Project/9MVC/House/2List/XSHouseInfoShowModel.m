@@ -8,6 +8,7 @@
 
 #import "XSHouseInfoShowModel.h"
 
+
 @implementation XSHouseInfoShowModel
 + (NSDictionary *)mj_replacedKeyFromPropertyName{
     return @{@"house_id":@"id"};

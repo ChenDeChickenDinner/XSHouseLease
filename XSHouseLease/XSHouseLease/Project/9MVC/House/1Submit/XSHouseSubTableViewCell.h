@@ -9,20 +9,28 @@
 #import <UIKit/UIKit.h>
 #import "XSHouseInfoShowModel.h"
 
+#pragma mark - 枚举多选显示
+@interface XSCollectionViewCell :  UICollectionViewCell
+@property(nonatomic,strong) XSValue *valueModel;
+@property (weak, nonatomic)  UILabel *textlabel;
+- (void)refreshData;
+@end
 
+
+#pragma mark -
 @interface XSHouseSubTableViewCell : UITableViewCell
 @property(nonatomic,strong) XSHouseInfoCellModel *dataModel;
 - (void)refreshData;
 + (NSInteger)indexForClassName:(NSString *)className;
 @end
 
-
+#pragma mark -
 @interface XSHouseSubListChooseTableViewCell : XSHouseSubTableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UILabel *value;
 
 @end
-
+#pragma mark -
 @interface XSHouseSubTextFieldTableViewCell : XSHouseSubTableViewCell<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titlew;
@@ -39,30 +47,31 @@
 @property (weak, nonatomic) IBOutlet UILabel *hindDescribeLablethSceend;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *hindDescribeWidthSceend;
 @end
-
+#pragma mark -
 @interface XSHouseSubTextViewCell : XSHouseSubTableViewCell<UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UITextView *textView ;
 @end
-
+#pragma mark -
 @interface XSHouseSubCollectionviewACell : XSHouseSubTableViewCell<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView ;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *collectionViewWidth;
 @property (strong, nonatomic) UICollectionViewFlowLayout *layout;
 @end
-
+#pragma mark -
 @interface XSHouseSubCollectionviewBCell : XSHouseSubTableViewCell<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView ;
 @property (strong, nonatomic) UICollectionViewFlowLayout *layout;
 @end
-
+#pragma mark -
 @interface XSHouseSubPictureSubmitCell : XSHouseSubTableViewCell<HXPhotoViewDelegate,UIImagePickerControllerDelegate>
 @property (strong, nonatomic) HXPhotoManager *manager;
 @property (weak, nonatomic) IBOutlet HXPhotoView *photoView;
 
 @end
+#pragma mark -
 @interface XSHouseSubProcessViewCell : XSHouseSubTableViewCell
 
 @end

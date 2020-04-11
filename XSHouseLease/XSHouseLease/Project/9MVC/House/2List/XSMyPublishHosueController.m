@@ -129,8 +129,11 @@
     XSHouseInfoShowModel *model = [self.array safeObjectAtIndex:indexPath.row];
     XSHouseInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:model.cellClass];
     if (!cell) {
-         cell = [[NSBundle mainBundle] loadNibNamed:model.cellClass owner:self options:nil].lastObject;
+           NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"XSHouseInfoShowCell" owner:self options:nil];
+            cell = [array safeObjectAtIndex:[XSHouseInfoCell indexForClassName:model.cellClass]];
     }
+
+    
     [cell updateWithModel:model];
     return cell;
 }

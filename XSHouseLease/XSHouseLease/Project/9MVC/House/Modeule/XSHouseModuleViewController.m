@@ -46,7 +46,7 @@
     
     XSCollectionView *collectionView = [[XSCollectionView alloc]init];
     collectionView.frame = CGRectMake(0, 0, 0, 230);
-    collectionView.array = [XSConfigServer sharedInstance].renthouseConditionArray;
+    collectionView.array = [XSPublicServer sharedInstance].renthouseConditionArray;
     self.collectionView = collectionView;
 
     
@@ -72,37 +72,11 @@
     
     // 1.根据当前城市推荐
     [self searchRentHouse];
-    // 2.获取t配置的搜索key
-    [self renthouseConditionWithCallback];
+
 
 }
 
--(void)renthouseConditionWithCallback{
-    
-    WEAK_SELF;
-    [self.subInfoInterface renthouseConditionWithCallback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
-        STRONG_SELF;
-        if (error == nil && responseModel.code.integerValue == SuccessCode) {
-            NSMutableArray *modelArray = [XSHouseModuleModel mj_objectArrayWithKeyValuesArray:responseModel.data];
-            for (XSHouseModuleModel *model in modelArray) {
-                model.clickBlack = ^(XSHouseModuleModel * _Nonnull model) {
-                    
-                    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-                    [dict safeSetObject:[XSUserServer sharedInstance].cityModel.code forKey:@"cityId"];
-                    [dict safeSetObject:model.value forKey:model.key];
-                    XSMyPublishHosueController *vc = [[XSMyPublishHosueController alloc]init];
-                    vc.title = model.name;
-                    vc.source = XSBHouseInfoSource_Search;
-                    vc.houseType = XSBHouseType_Rent;
-                    vc.searchDict = dict;
-                    [self.navigationController pushViewController:vc animated:YES];
-                };
-            }
-             self.collectionView.array = modelArray;
-        }
-//        [XSHouseFixedData sharedInstance].renthouseConditionArray = modelArray;
-    }];
-}
+
 
 
 - (void)searchRentHouse{
@@ -143,3 +117,51 @@
 @end
 
 
+
+
+
+@implementation XSItemCollectionViewCell
+- (instancetype)initWithFrame:(CGRect)frame{
+    if (self = [super initWithFrame:frame]) {
+        //添加自己需要个子视图控件
+        
+        UIImageView *imageView = [[UIImageView alloc]init];
+        [self.contentView addSubview:imageView];
+        self.myImageView = imageView;
+
+        
+        self.backgroundColor = [UIColor clearColor];
+        self.contentView.backgroundColor = [UIColor clearColor];
+        UILabel *label = [[UILabel alloc] init];
+        label.backgroundColor = [UIColor clearColor];
+        label.font = [UIFont systemFontOfSize:14];
+        label.textAlignment = NSTextAlignmentCenter;
+//        label.layer.masksToBounds = YES;;
+//        label.layer.cornerRadius = 5;
+//        label.layer.borderWidth = 0.5;
+        label.textColor = [UIColor hb_colorWithHexString:@"#171717" alpha:1];
+         [self.contentView addSubview:label];
+         self.titleLable = label;
+    }
+    return self;
+}
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    self.backgroundColor = [UIColor orangeColor];
+    
+}
+- (void)layoutSubviews{
+    [super layoutSubviews];
+    self.myImageView.frame = CGRectMake(0, 0, self.width, self.height - 10);
+    self.titleLable.frame = CGRectMake(0, self.height - 18, self.width, 18);
+}
+- (void)setModel:(XSHouseModuleModel *)model{
+    _model = model;
+    if (model.iconName) {
+        self.myImageView.image = [UIImage imageNamed:model.iconName];
+    }else{
+        [self.myImageView sd_setImageWithURL:[NSURL URLWithString:model.icon]];
+    }
+    self.titleLable.text = model.name;
+}
+@end

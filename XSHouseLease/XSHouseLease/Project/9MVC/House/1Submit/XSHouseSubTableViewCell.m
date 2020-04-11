@@ -7,7 +7,6 @@
 //
 
 #import "XSHouseSubTableViewCell.h"
-#import "XSHouseBasisView.h"
 
 #define lableWidth 2
 static NSString *CollectionCellIdentifier = @"CollectionCellIdentifierA";
@@ -377,7 +376,7 @@ static NSString *CollectionCellIdentifierB = @"CollectionCellIdentifierB";
      self.photoView.outerCamera = YES; // 是否把相机功能放在外面 默认NO
      self.photoView.editEnabled = NO;
      self.photoView.lineCount = 3; // 每行个数 默认 3 cell的宽高取决于 每行个数 与 HXPhotoView 的宽度 和 item间距
-     self.photoView.spacing = 10; // 每个item间距 默认 3
+     self.photoView.spacing = 15; // 每个item间距 默认 3
      self.photoView.showAddCell = YES; // 是否显示添加的cell 默认 YES
      //    photoView.addImageName = nil; // 添加按钮的图片
      //    photoView.deleteImageName = nil; // 删除按钮图片
@@ -476,4 +475,39 @@ static NSString *CollectionCellIdentifierB = @"CollectionCellIdentifierB";
 #pragma mark -上传流程提示
 @implementation XSHouseSubProcessViewCell
 
+@end
+
+#pragma mark -选择Cell
+@implementation XSCollectionViewCell
+- (instancetype)initWithFrame:(CGRect)frame{
+    if (self = [super initWithFrame:frame]) {
+        //添加自己需要个子视图控件
+        self.contentView.backgroundColor = [UIColor clearColor];
+        UILabel *label = [[UILabel alloc] init];
+        label.backgroundColor = [UIColor clearColor];
+        label.font = [UIFont systemFontOfSize:13];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.layer.masksToBounds = YES;;
+        label.layer.cornerRadius = 5;
+        label.layer.borderWidth = 0.5;
+        [self.contentView addSubview:label];
+         self.textlabel = label;
+    }
+    return self;
+}
+- (void)layoutSubviews{
+    self.textlabel.frame = self.bounds;
+}
+- (void)refreshData{
+    self.textlabel.text = self.valueModel.valueStr;
+    if (self.valueModel.isSelect) {
+        self.textlabel.textColor = [UIColor hb_colorWithHexString:@"#FFFFFF" alpha:1];
+        self.textlabel.backgroundColor = [UIColor hb_colorWithHexString:@"#E82B2B" alpha:1];
+        self.textlabel.layer.borderColor = [UIColor hb_colorWithHexString:@"#E82B2B" alpha:1].CGColor;
+    }else{
+        self.textlabel.textColor = [UIColor hb_colorWithHexString:@"#444444" alpha:1];
+        self.textlabel.backgroundColor = [UIColor hb_colorWithHexString:@"#EFEFEF" alpha:1];
+        self.textlabel.layer.borderColor = [UIColor hb_colorWithHexString:@"#EFEFEF" alpha:1].CGColor;
+    }
+}
 @end

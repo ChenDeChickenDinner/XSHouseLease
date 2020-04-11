@@ -7,7 +7,6 @@
 //
 
 #import "XSCollectionView.h"
-#import "XSHouseBasisView.h"
 
 
 @interface XSCollectionView()<UICollectionViewDelegate,UICollectionViewDataSource>

@@ -19,9 +19,7 @@
 @end
 
 @interface XSHouseSubMitServer : XSBaseServer
-
 @property(nonatomic,assign) XSHouseSubmitType submitType;
-
 @property (strong, nonatomic) NSMutableArray<XSHouseInfoCellModel *> *firstArray;
 @property (strong, nonatomic) NSMutableArray<XSHouseInfoCellModel *> *secondArray;
 @property (strong, nonatomic) NSMutableArray<XSHouseInfoCellModel *> *thirdArray;
@@ -29,11 +27,9 @@
 @property (strong, nonatomic)  NSMutableArray *imageUrlServerArray;
 @property (strong, nonatomic) NSMutableDictionary *subRentParameterDict;
 
-
 - (void)resetData;
 - (void)subRentParameterDictUpdateWithKey:(NSString *)key value:(id)value;
 @property (strong, nonatomic) XSHouseInfoShowModel *renhousetInfoModel;
-
 @end
 
 

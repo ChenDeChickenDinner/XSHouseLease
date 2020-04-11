@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "XSBaseServer.h"
+@class XSHouseModuleModel;
+typedef void (^clickBlack)(XSHouseModuleModel *model);
 
 
-//位置
+#pragma mark - 位置
 @interface XSHouseLocationModel : NSObject
 @property (nonatomic,copy) NSString *city;
 @property (nonatomic,strong) NSNumber *cityId;
@@ -21,7 +23,7 @@
 + (instancetype)LocationModelWithProvince:(BRProvinceModel *)province city:(BRCityModel *)city area:(BRAreaModel *)area;
 @end
 
-// bunner
+#pragma mark - bunner
 @interface XSHousePicture : NSObject
 @property (strong, nonatomic) NSNumber *ID;
 @property (strong, nonatomic) NSNumber *status;
@@ -30,7 +32,7 @@
 @property (copy, nonatomic) NSString *createDate;
 @property (copy, nonatomic) NSString *updateDate;
 @end
-// 热搜
+#pragma mark - 热搜
 @interface XSHousehots : NSObject
 @property (strong, nonatomic) NSNumber *ID;
 @property (strong, nonatomic) NSNumber *cityId;
@@ -43,9 +45,32 @@
 @property (copy, nonatomic) NSString *address;
 @end
 
+#pragma mark - 房屋其它信息(详情)
+@interface XSHouseInfoBModel : NSObject
+@property (nonatomic, copy) NSString *key;
+@property (nonatomic, copy) NSString *keyName;
+@property (nonatomic, copy) NSString *value;
+@end
 
+#pragma mark - 配套
+@interface XSHouseFacilitiesModel : NSObject
+@property (nonatomic, strong) NSNumber *ID;
+@property (nonatomic, copy) NSString *icon;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, assign) BOOL status;
+@property (nonatomic, copy) NSString *createDate;
+@property (nonatomic, copy) NSString *updateDate;
+@end
 
-
+#pragma mark -  搜索
+@interface XSHouseModuleModel : NSObject
+@property (nonatomic, copy) NSString *key;
+@property (nonatomic, strong)NSNumber *value;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *icon;
+@property (nonatomic, copy) NSString *iconName;
+@property (nonatomic, copy) clickBlack clickBlack;
+@end
 
 @interface XSPublicServer : XSBaseServer
 + (XSPublicServer *)sharedInstance;
@@ -54,10 +79,15 @@
 @property (strong, nonatomic) NSMutableArray<XSHousehots *> *hotsSearchArray;
 @property (strong, nonatomic) NSMutableArray<XSHousePicture *> *bunnerArray;
 @property (strong, nonatomic) NSMutableArray<NSString *> *bunnerUrlArray;
+
+@property (strong, nonatomic) NSMutableArray<XSHouseFacilitiesModel *> *facilitiesArray;
+@property (strong, nonatomic) NSMutableArray<XSHouseModuleModel *> *renthouseConditionArray;
+@property (strong, nonatomic) NSMutableArray<XSHouseInfoBModel *> *rentHouseInfoBArray;
+
 - (void)cityTreeWithCallback:(HBCompletionBlock)callback;
 - (void)bunnerListWithCallback:(HBCompletionBlock)callback;
 - (void)hotsSearchWithCallback:(HBCompletionBlock)callback;
-
-
+- (void)enumFacilitiesWithCallback:(HBCompletionBlock)callback;
+- (void)renthouseConditionWithCallback:(HBCompletionBlock)callback;
 @end
 
