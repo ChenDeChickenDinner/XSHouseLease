@@ -66,9 +66,16 @@
 // 组装数据
 -(void)assemblyCellDataArrayWithData:(XSHouseInfoShowModel *)dataModel{
     self.dataModel = dataModel;
+    WEAK_SELF;
     self.dataModel.clickBlack = ^(XSHouseInfoModel *model, id data, XSBHouseKeyValueEditStatus editStatus) {
+        STRONG_SELF;
            if (editStatus == XSBHouseKeyValueInfoBMore) {
                NSLog(@"更多房源信息");
+           }else if (editStatus == XSBHouseKeyValueIntroduce){
+               XSHouseIntroduceController *vc = [[XSHouseIntroduceController alloc]init];
+               vc.dataModel = self.dataModel;
+               vc.houseType = self.houseType;
+               [self.navigationController pushViewController:vc animated:YES];
            }
     };
     [self.array removeAllObjects];

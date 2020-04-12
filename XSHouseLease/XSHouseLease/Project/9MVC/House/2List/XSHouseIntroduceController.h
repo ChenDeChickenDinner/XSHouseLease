@@ -19,6 +19,8 @@
 @interface XSHouseIntroduceController : UIViewController
 @property (strong, nonatomic) NSMutableArray<XSKeyValue *> *array;
 @property (strong, nonatomic) XSHouseInfoShowModel *dataModel;
+@property(nonatomic,assign) XSBHouseType houseType;
+
 @end
 
 

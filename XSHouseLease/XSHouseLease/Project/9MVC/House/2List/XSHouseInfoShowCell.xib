@@ -832,7 +832,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GG8-AV-85f">
-                                                <rect key="frame" x="83" y="0.0" width="60" height="22"/>
+                                                <rect key="frame" x="166" y="0.0" width="60" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="Whw-uO-8GQ"/>
                                                 </constraints>
@@ -846,7 +846,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JiD-q7-16X">
-                                                <rect key="frame" x="166" y="0.0" width="58" height="22"/>
+                                                <rect key="frame" x="249" y="0.0" width="58" height="22"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="交通出行">
@@ -856,18 +856,36 @@
                                                     <action selector="click:" destination="h83-3E-S81" eventType="touchUpInside" id="bPR-Kw-0Xf"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3k-4l-IFy">
+                                                <rect key="frame" x="83" y="0.0" width="60" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="4iO-ur-qOi"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="户型介绍">
+                                                    <color key="titleColor" red="0.1019607843" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="click:" destination="h83-3E-S81" eventType="touchUpInside" id="HSe-hj-THQ"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="JiD-q7-16X" secondAttribute="bottom" id="0iS-rf-lVI"/>
                                             <constraint firstItem="sQr-ri-gSW" firstAttribute="leading" secondItem="fR5-WT-pHW" secondAttribute="leading" id="BCz-p8-agQ"/>
                                             <constraint firstAttribute="bottom" secondItem="GG8-AV-85f" secondAttribute="bottom" id="E4b-aP-oOx"/>
-                                            <constraint firstItem="GG8-AV-85f" firstAttribute="leading" secondItem="sQr-ri-gSW" secondAttribute="trailing" constant="23" id="Imq-Iw-vlD"/>
+                                            <constraint firstItem="O3k-4l-IFy" firstAttribute="leading" secondItem="sQr-ri-gSW" secondAttribute="trailing" constant="23" id="EPS-yL-nLB"/>
+                                            <constraint firstItem="GG8-AV-85f" firstAttribute="leading" secondItem="sQr-ri-gSW" secondAttribute="trailing" priority="800" constant="23" id="Imq-Iw-vlD"/>
                                             <constraint firstItem="JiD-q7-16X" firstAttribute="leading" secondItem="GG8-AV-85f" secondAttribute="trailing" constant="23" id="MkE-xQ-Oh6"/>
                                             <constraint firstAttribute="bottom" secondItem="sQr-ri-gSW" secondAttribute="bottom" id="NuB-MA-YgG"/>
                                             <constraint firstAttribute="height" constant="22" id="SLJ-je-3Ml"/>
+                                            <constraint firstItem="O3k-4l-IFy" firstAttribute="bottom" secondItem="sQr-ri-gSW" secondAttribute="bottom" id="Slp-vQ-8eU"/>
                                             <constraint firstItem="GG8-AV-85f" firstAttribute="top" secondItem="fR5-WT-pHW" secondAttribute="top" id="T8h-UR-q2d"/>
                                             <constraint firstItem="sQr-ri-gSW" firstAttribute="top" secondItem="fR5-WT-pHW" secondAttribute="top" id="bat-RB-9XV"/>
+                                            <constraint firstItem="O3k-4l-IFy" firstAttribute="top" secondItem="sQr-ri-gSW" secondAttribute="top" id="eqt-Qd-hmj"/>
+                                            <constraint firstItem="GG8-AV-85f" firstAttribute="leading" secondItem="O3k-4l-IFy" secondAttribute="trailing" constant="23" id="fZR-Vo-w6i"/>
                                             <constraint firstItem="JiD-q7-16X" firstAttribute="top" secondItem="fR5-WT-pHW" secondAttribute="top" id="rUm-qa-yD7"/>
                                         </constraints>
                                     </view>
@@ -930,6 +948,7 @@
                 <outlet property="btn1" destination="sQr-ri-gSW" id="2EA-Mc-baK"/>
                 <outlet property="btn2" destination="GG8-AV-85f" id="zAy-x0-UrF"/>
                 <outlet property="btn3" destination="JiD-q7-16X" id="2ri-LZ-yCf"/>
+                <outlet property="btn4" destination="O3k-4l-IFy" id="gnI-c1-Ekg"/>
                 <outlet property="textView" destination="KGT-8J-2fi" id="3O0-KD-zZ3"/>
             </connections>
             <point key="canvasLocation" x="650" y="472"/>

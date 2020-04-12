@@ -62,6 +62,7 @@ typedef NS_ENUM(NSInteger,XSBHouseKeyValueEditStatus) {
     XSBHouseKeyValueImagesDoorSend , // 图片传送
     XSBHouseKeyValueEsSend , // 小区传送
     XSBHouseKeyValueInfoBMore , // 房源信息
+    XSBHouseKeyValueIntroduce , // 房源详情
 
 };
 

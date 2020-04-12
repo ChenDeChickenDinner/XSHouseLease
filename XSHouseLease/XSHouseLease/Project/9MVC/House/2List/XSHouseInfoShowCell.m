@@ -483,16 +483,27 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
     [self.btn2 setTitleColor:XSColor(232, 43, 43) forState:UIControlStateSelected];
     [self.btn3 setTitleColor:XSColor(26, 26, 26) forState:UIControlStateNormal];
     [self.btn3 setTitleColor:XSColor(232, 43, 43) forState:UIControlStateSelected];
+    [self.btn4 setTitleColor:XSColor(26, 26, 26) forState:UIControlStateNormal];
+    [self.btn4 setTitleColor:XSColor(232, 43, 43) forState:UIControlStateSelected];
 }
 - (void)layoutSubviews{
     [super layoutSubviews];
     [self lineFrame];
     [self showText];
 }
+- (void)updateWithModel:(XSHouseInfoShowModel *)model{
+    self.model = model;
+    if (model.houseType == XSBHouseType_Rent) {
+        [self.btn4 removeFromSuperview];
+    }
+    [self showText];
+}
+
 - (IBAction)click:(UIButton *)sender {
     self.btn1.selected = NO;
     self.btn2.selected = NO;
     self.btn3.selected = NO;
+    self.btn4.selected = NO;
     sender.selected = YES;
     self.selbtn = sender;
     [self lineFrame];
@@ -500,21 +511,23 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 
 }
 - (void)showText{
-    if ([self.model isKindOfClass:[XSHouseInfoShowModel class]]) {
-          XSHouseInfoShowModel *dataModel = (XSHouseInfoShowModel *)self.model;
-          if (self.selbtn == self.btn1) {
-              self.textView.text = dataModel.coreIntroduced;
-          }else if (self.selbtn == self.btn2){
-              self.textView.text = dataModel.estateIntroduced;
-          }else if (self.selbtn == self.btn3){
-              self.textView.text = dataModel.transportation;
-          }else{
-              self.textView.text = nil;
-          }
-    }else{
-        self.textView.text = nil;
-    }
-
+//    if ([self.model isKindOfClass:[XSHouseInfoShowModel class]]) {
+//          XSHouseInfoShowModel *dataModel = (XSHouseInfoShowModel *)self.model;
+//
+//    }else{
+//        self.textView.text = nil;
+//    }
+      if (self.selbtn == self.btn1) {
+           self.textView.text = self.model.coreIntroduced;
+       }else if (self.selbtn == self.btn2){
+           self.textView.text = self.model.estateIntroduced;
+       }else if (self.selbtn == self.btn3){
+           self.textView.text = self.model.transportation;
+       }else if (self.selbtn == self.btn4){
+           self.textView.text = self.model.modelIntroduced;
+       }else{
+           self.textView.text = nil;
+       }
 }
 - (void)lineFrame{
     [UIView animateWithDuration:0.2 animations:^{
@@ -523,14 +536,9 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 
 }
 - (IBAction)houseSource:(id)sender {
-    XSHouseIntroduceController *vc = [[XSHouseIntroduceController alloc]init];
-    vc.dataModel = self.model;
-    UIViewController *nav = [NSObject getTopViewController];
-    [nav.navigationController pushViewController:vc animated:YES];
-}
-- (void)updateWithModel:(XSHouseInfoShowModel *)model{
-    self.model = model;
-    [self showText];
+    if (self.model.clickBlack) {
+        self.model.clickBlack(self.model, nil, XSBHouseKeyValueIntroduce);
+    }
 }
 
 @end
