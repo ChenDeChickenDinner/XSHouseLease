@@ -14,6 +14,7 @@
 //展示渠道来源 搜索/发布/关注/推送/猜你喜欢
 @property(nonatomic,assign) XSBHouseInfoSource source;
 
+@property(nonatomic,assign) BOOL alittle;
 @property(nonatomic,strong) NSNumber *house_id;
 @property(nonatomic,strong) NSMutableDictionary *searchDict;
 - (void)loadData;

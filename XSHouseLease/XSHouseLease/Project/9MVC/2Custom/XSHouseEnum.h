@@ -18,10 +18,12 @@ typedef NS_ENUM(NSInteger,XSBHouseType) {
 
 // 租房列表类型
 typedef NS_ENUM(NSInteger,XSBHouseInfoSource) {
-    XSBHouseInfoSource_Search = 0, // 搜索
+    XSBHouseInfoSource_keyPush = 0, // 城市推荐
+    XSBHouseInfoSource_WatchPush, // 关注推荐
+    XSBHouseInfoSource_HouseIdPush, // 详情推荐
     XSBHouseInfoSource_MyPublish, // 发布
     XSBHouseInfoSource_MyWatch , // 关注
-    XSBHouseInfoSource_MyPush, // 推送，猜你喜欢
+
 };
 
 
@@ -55,6 +57,12 @@ typedef NS_ENUM(NSInteger, XShouseOperation) {
 typedef NS_ENUM(NSInteger,XSBHouseKeyValueEditStatus) {
     XSBHouseKeyValueEdit = 0, // 无状态
     XSBHouseKeyValueEditBegin , // 开始编辑
+    XSBHouseKeyValueImagesChange , // 图片重新选择
+    XSBHouseKeyValueImagesSend , // 图片传送
+    XSBHouseKeyValueImagesDoorSend , // 图片传送
+    XSBHouseKeyValueEsSend , // 小区传送
+    XSBHouseKeyValueInfoBMore , // 房源信息
+
 };
 
 typedef NS_ENUM(NSInteger,XSValueInputType) {

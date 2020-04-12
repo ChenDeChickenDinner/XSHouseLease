@@ -81,8 +81,12 @@ typedef void (^clickBlack)(XSHouseModuleModel *model);
 @property (strong, nonatomic) NSMutableArray<NSString *> *bunnerUrlArray;
 
 @property (strong, nonatomic) NSMutableArray<XSHouseFacilitiesModel *> *facilitiesArray;
-@property (strong, nonatomic) NSMutableArray<XSHouseModuleModel *> *renthouseConditionArray;
 @property (strong, nonatomic) NSMutableArray<XSHouseInfoBModel *> *rentHouseInfoBArray;
+@property (strong, nonatomic) NSMutableArray<XSHouseInfoBModel *> *secondHouseInfoBArray;
+
+@property (strong, nonatomic) NSMutableArray<XSHouseModuleModel *> *renthouseConditionArray;
+@property (strong, nonatomic) NSMutableArray<XSHouseModuleModel *> *newhouseConditionArray;
+@property (strong, nonatomic) NSMutableArray<XSHouseModuleModel *> *secondhouseConditionArray;
 
 - (void)cityTreeWithCallback:(HBCompletionBlock)callback;
 - (void)bunnerListWithCallback:(HBCompletionBlock)callback;

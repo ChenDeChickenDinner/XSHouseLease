@@ -33,7 +33,19 @@
             STRONG_SELF;
             if ([model.name isEqualToString:@"租房"]) {
                 XSHouseModuleViewController *vc = [[XSHouseModuleViewController alloc]init];
+                vc.houseType = XSBHouseType_Rent;
+                vc.source = XSBHouseInfoSource_keyPush;
                 [self.navigationController pushViewController:vc animated:YES];
+            }else if ([model.name isEqualToString:@"新房"]){
+                XSHouseModuleViewController *vc = [[XSHouseModuleViewController alloc]init];
+               vc.houseType = XSBHouseType_New;
+               vc.source = XSBHouseInfoSource_keyPush;
+               [self.navigationController pushViewController:vc animated:YES];
+            }else if ([model.name isEqualToString:@"二手房"]){
+                XSHouseModuleViewController *vc = [[XSHouseModuleViewController alloc]init];
+               vc.houseType = XSBHouseType_old;
+               vc.source = XSBHouseInfoSource_keyPush;
+               [self.navigationController pushViewController:vc animated:YES];
             }
     
         };

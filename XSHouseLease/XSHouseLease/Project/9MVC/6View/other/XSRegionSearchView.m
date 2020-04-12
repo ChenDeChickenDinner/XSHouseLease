@@ -49,7 +49,7 @@
         self.searchBtn = searchBtn;
         
         UITextField *textField =  [[UITextField alloc]init];
-        textField.placeholder = @"请输入小区或商圈名";
+        textField.placeholder = @"请输入小区";
         textField.font = [UIFont systemFontOfSize:15];
         textField.textColor = [UIColor hb_colorWithHexString:@"#171717" alpha:1];
         textField.delegate = self;

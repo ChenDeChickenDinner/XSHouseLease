@@ -37,22 +37,24 @@
     }else{
         [XSUserServer needLoginSuccess:^{
             NSLog(@"tag = %ld -------",sender.tag);
+            XSMyPublishHosueController *vc = [[XSMyPublishHosueController alloc]init];
+
             if (sender.tag == 1) {
-                
-            }else if (sender.tag == 2){
-                
-            }else if (sender.tag == 3){
-               XSMyPublishHosueController *vc = [[XSMyPublishHosueController alloc]init];
+                vc.houseType = XSBHouseType_old;
                 vc.source = XSBHouseInfoSource_MyWatch;
-                [self.navigationController pushViewController:vc animated:YES];
+            }else if (sender.tag == 2){
+                vc.houseType = XSBHouseType_New;
+                vc.source = XSBHouseInfoSource_MyWatch;
+            }else if (sender.tag == 3){
+                vc.houseType = XSBHouseType_Rent;
+                vc.source = XSBHouseInfoSource_MyWatch;
 
             }else if (sender.tag == 4){
-                
-            }else if (sender.tag == 5){
-               XSMyPublishHosueController *vc = [[XSMyPublishHosueController alloc]init];
+                vc.houseType = XSBHouseType_old;
                 vc.source = XSBHouseInfoSource_MyPublish;
-                [self.navigationController pushViewController:vc animated:YES];
-
+            }else if (sender.tag == 5){
+                vc.houseType = XSBHouseType_Rent;
+                vc.source = XSBHouseInfoSource_MyPublish;
             }else if (sender.tag == 6){
                 
             }else if (sender.tag == 7){
@@ -60,6 +62,8 @@
             }else if (sender.tag == 8){
                 
             }
+            [self.navigationController pushViewController:vc animated:YES];
+
         } cancel:^{
             
         }];

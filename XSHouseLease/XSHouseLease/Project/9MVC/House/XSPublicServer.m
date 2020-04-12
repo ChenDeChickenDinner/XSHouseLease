@@ -18,14 +18,61 @@
 @implementation XSPublicServer
 DEF_SINGLETON(XSPublicServer)
 
+- (NSMutableArray<XSHouseModuleModel *> *)newhouseConditionArray{
+    if (!_newhouseConditionArray) {
+        _newhouseConditionArray = [NSMutableArray array];
+        XSHouseModuleModel *ob1 = [[XSHouseModuleModel alloc]init];
+        ob1.key = @"";
+        ob1.value = [NSNumber numberWithInt:1];
+        ob1.name = @"全部楼盘";
+        ob1.iconName = @"newC1";
+
+        XSHouseModuleModel *ob2 = [[XSHouseModuleModel alloc]init];
+        ob2.key = @"";
+        ob2.value = [NSNumber numberWithInt:1];
+        ob2.name = @"在售楼盘";
+        ob2.iconName = @"newC2";
+        XSHouseModuleModel *ob3 = [[XSHouseModuleModel alloc]init];
+        ob3.key = @"";
+        ob3.value = [NSNumber numberWithInt:1];
+        ob3.name = @"最近开盘";
+        ob3.iconName = @"newC3";
+        XSHouseModuleModel *ob4 = [[XSHouseModuleModel alloc]init];
+        ob4.key = @"";
+        ob4.value = [NSNumber numberWithInt:1];
+        ob4.name = @"地铁沿线";
+        ob4.iconName = @"newC4";
+        [_newhouseConditionArray addObject:ob1];
+        [_newhouseConditionArray addObject:ob2];
+        [_newhouseConditionArray addObject:ob3];
+        [_newhouseConditionArray addObject:ob4];
+
+    }
+    return _newhouseConditionArray;
+}
+- (NSMutableArray<XSHouseModuleModel *> *)secondhouseConditionArray{
+    if (!_secondhouseConditionArray) {
+          _secondhouseConditionArray = [NSMutableArray array];
+      }
+      return _secondhouseConditionArray;
+}
 - (NSMutableArray<XSHouseInfoBModel *> *)rentHouseInfoBArray{
     if (!_rentHouseInfoBArray) {
         NSError *error;
-         NSString *path = [[NSBundle mainBundle]pathForResource:@"XSHouseInfoB" ofType:@"json"];
+         NSString *path = [[NSBundle mainBundle]pathForResource:@"XSRentHouseInfoB" ofType:@"json"];
         NSArray *dataArray = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableLeaves error:&error];
         _rentHouseInfoBArray =[XSHouseInfoBModel mj_objectArrayWithKeyValuesArray:dataArray];
     }
     return _rentHouseInfoBArray;
+}
+- (NSMutableArray<XSHouseInfoBModel *> *)secondHouseInfoBArray{
+    if (!_secondHouseInfoBArray) {
+        NSError *error;
+         NSString *path = [[NSBundle mainBundle]pathForResource:@"XSSecondHouseInfoB" ofType:@"json"];
+        NSArray *dataArray = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableLeaves error:&error];
+        _secondHouseInfoBArray =[XSHouseInfoBModel mj_objectArrayWithKeyValuesArray:dataArray];
+    }
+    return _secondHouseInfoBArray;
 }
 - (void)setBunnerArray:(NSMutableArray<XSHousePicture *> *)bunnerArray{
     _bunnerArray = bunnerArray;
@@ -96,18 +143,6 @@ DEF_SINGLETON(XSPublicServer)
     [self.requestVc.subInfoInterface renthouseConditionWithCallback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
         if (error == nil && responseModel.code.integerValue == SuccessCode) {
             NSMutableArray *modelArray = [XSHouseModuleModel mj_objectArrayWithKeyValuesArray:responseModel.data];
-//            for (XSHouseModuleModel *model in modelArray) {
-//                model.clickBlack = ^(XSHouseModuleModel * _Nonnull model) {
-//                    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-//                    [dict safeSetObject:[XSUserServer sharedInstance].cityModel.code forKey:@"cityId"];
-//                    [dict safeSetObject:model.value forKey:model.key];
-//                    XSMyPublishHosueController *vc = [[XSMyPublishHosueController alloc]init];
-//                    vc.title = model.name;
-//                    vc.source = XSBHouseInfoSource_Search;
-//                    vc.houseType = XSBHouseType_Rent;
-//                    vc.searchDict = dict;
-//                };
-//            }
             [XSPublicServer sharedInstance].renthouseConditionArray = modelArray;
         }
         if (callback)callback(responseModel,error);

@@ -8,7 +8,12 @@
 
 #import "XSBaseViewController.h"
 @interface XSHouseDetailsController : XSBaseViewController
-@property(nonatomic,copy) NSString *houseid;
+//展示类型租/新/二
+@property(nonatomic,assign) XSBHouseType houseType;
+//展示渠道来源 搜索/发布/关注/推送/猜你喜欢
+@property(nonatomic,assign) XSBHouseInfoSource source;
+@property(nonatomic,copy) NSNumber *houseid;
+
 @end
 
 

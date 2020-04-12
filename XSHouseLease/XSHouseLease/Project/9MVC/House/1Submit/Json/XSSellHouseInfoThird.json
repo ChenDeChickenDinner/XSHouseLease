@@ -6,6 +6,12 @@
      "cellHeight":260,
      "cellClass":"XSHouseSubPictureSubmitCell"
      },
+    {
+     "title":"户型图上传",
+     "sequence":2,
+     "cellHeight":180,
+     "cellClass":"XSHouseSubPictureSubmitCell"
+     },
   {
    "title":"标题（30个字以内）",
    "sequence":0,

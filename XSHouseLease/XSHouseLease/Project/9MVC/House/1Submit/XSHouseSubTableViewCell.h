@@ -67,8 +67,12 @@
 @end
 #pragma mark -
 @interface XSHouseSubPictureSubmitCell : XSHouseSubTableViewCell<HXPhotoViewDelegate,UIImagePickerControllerDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *title;
+@property (weak, nonatomic) IBOutlet UILabel *titleB;
+
 @property (strong, nonatomic) HXPhotoManager *manager;
-@property (weak, nonatomic) IBOutlet HXPhotoView *photoView;
+@property (weak, nonatomic) IBOutlet UIView *bkPhotoView;
+@property (strong, nonatomic) HXPhotoView *photoView;
 
 @end
 #pragma mark -

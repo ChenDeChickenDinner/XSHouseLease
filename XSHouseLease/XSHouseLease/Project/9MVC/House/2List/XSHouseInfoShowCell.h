@@ -41,6 +41,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *featurePointsLablebW;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *featurePointsLablecW;
 @property (weak, nonatomic) IBOutlet UILabel *rentPricelabe;
+@property (weak, nonatomic) IBOutlet UILabel *unitPriceLable;
 @property (weak, nonatomic) IBOutlet UILabel *dealStatusLable;
 @property (weak, nonatomic) IBOutlet UIView *watchNumBKView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *statusEditViewHeight;
@@ -63,12 +64,15 @@
 @interface XSHouseDetailsBasicInfoCell : XSHouseInfoCell
 @property (weak, nonatomic) IBOutlet UILabel *titleLable;
 @property (weak, nonatomic) IBOutlet UILabel *featurePointsLablea;
+
 @property (weak, nonatomic) IBOutlet UILabel *featurePointsLableb;
 @property (weak, nonatomic) IBOutlet UILabel *featurePointsLablec;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *featurePointsLableaW;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *featurePointsLablebW;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *featurePointsLablecW;
 @property (weak, nonatomic) IBOutlet UILabel *rentPricelabe;
+@property (weak, nonatomic) IBOutlet UILabel *rentPricelabeBow;
+
 @property (weak, nonatomic) IBOutlet UILabel *formTypelabe;
 @property (weak, nonatomic) IBOutlet UILabel *rarealabe;
 @end
@@ -82,7 +86,7 @@
 @property (strong, nonatomic) UIView *lineView;
 @property (weak, nonatomic) IBOutlet UIView *bkView;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView ;
-@property (strong, nonatomic) NSMutableArray<XSHouseInfoBModel *> *array;
+@property (strong, nonatomic) NSArray<XSHouseInfoBModel *> *array;
 @property (strong, nonatomic) UICollectionViewFlowLayout *layout;
 @end
 

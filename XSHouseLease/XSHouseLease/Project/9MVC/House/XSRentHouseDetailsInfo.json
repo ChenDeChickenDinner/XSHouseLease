@@ -1,0 +1,31 @@
+[
+    {
+        "cellClass":"XSHouseDetailsImagesCell",
+        "cellHeight":220
+    },
+    {
+        "cellClass":"XSHouseDetailsBasicInfoCell",
+        "cellHeight":115
+    },
+    {
+        "cellClass":"XSHouseDetailsBusinessInfoCell",
+        "cellHeight":104
+    },
+    {
+        "cellClass":"XSHouseDetailsAddressInfoCell",
+        "cellHeight":242
+    },
+    {
+        "cellClass":"XSHouseDetailsFacilitiesInfoCell",
+        "cellHeight":230
+    },
+    {
+        "cellClass":"XSHouseDetailsIntroduceInfoCell",
+        "cellHeight":107
+    },
+    {
+        "cellClass":"XSHouseRecommendedCell",
+        "cellHeight":527
+    }
+
+]

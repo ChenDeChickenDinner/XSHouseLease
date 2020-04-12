@@ -17,6 +17,9 @@
 @property (weak, nonatomic) IBOutlet XSRoundedBtn1View *nextBtn;
 @property(nonatomic,assign) XSHouseSubmitStepsType submitStepsType;
 @property (strong, nonatomic) NSMutableArray<XSHouseInfoCellModel *> *array;
+@property (assign, nonatomic) BOOL updataimage;
+@property (assign, nonatomic) BOOL updataDoorimage;
+
 @end
 
 @implementation XSHouseSubmitFirstViewController
@@ -29,15 +32,15 @@
     self.myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.array = [NSMutableArray array];
 
-    if (self.submitType == XSHouseSubmitType_Rent) {
+    if (self.houseType == XSBHouseType_Rent) {
       self.title = @"我要出租";
-    }else if (self.submitType == XSHouseSubmitType_Sell){
+    }else{
       self.title = @"免费发布房源";
     }
 
     if (self.submitStepsType == XSHouseSubmitStepsType_First) {
         self.subMitServer = [[XSHouseSubMitServer alloc]init];
-        self.subMitServer.submitType = self.submitType;
+        self.subMitServer.houseType = self.houseType;
 
         [self.array addObjectsFromArray:self.subMitServer.firstArray];
         [self.nextBtn setTitle:@"下一步" forState:UIControlStateNormal];
@@ -48,11 +51,93 @@
         [self.array addObjectsFromArray:self.subMitServer.thirdArray];
         [self.nextBtn setTitle:@"完成" forState:UIControlStateNormal];
     }
-    
+    [self cellOperationBlock];
     [self.myTableView reloadData];
 }
+- (void)cellOperationBlock{
+    for (XSHouseInfoCellModel *cellModel in self.array) {
+        cellModel.valuechangeStatus = ^(XSHouseInfoCellModel *model,id data,XSBHouseKeyValueEditStatus editStatus) {
+            if (editStatus == XSBHouseKeyValueImagesChange) {
+                if ([model.title isEqualToString:@"房源图片上传"]) {
+                    [self.subMitServer.imageUrlArray removeAllObjects];
+                    [self.subMitServer.imageUrlServerArray removeAllObjects];
+                    self.updataimage = NO;
+                }else{
+                    [self.subMitServer.imageDoorUrlArray removeAllObjects];
+                    [self.subMitServer.imageDoorUrlServerArray removeAllObjects];
+                    self.updataDoorimage = NO;
+                }
+               }else if (editStatus == XSBHouseKeyValueImagesSend){
+                NSURL *imageURL = (NSURL *)data;
+                [self.subMitServer.imageUrlArray addObject:imageURL];
+            }else if (editStatus == XSBHouseKeyValueImagesDoorSend){
+                NSURL *imageURL = (NSURL *)data;
+                [self.subMitServer.imageDoorUrlArray addObject:imageURL];
+            }else if (editStatus == XSBHouseKeyValueEsSend){
+                XSHouseEsModel *es = (XSHouseEsModel *)data;
+                [self.subMitServer subRentParameterDictUpdateWithKey:es.cityId.stringValue value:es.cityId];
+                [self.subMitServer subRentParameterDictUpdateWithKey:@"es" value:[es mj_keyValues]];
+            }
+            [self.myTableView reloadData];
 
+        };
+    }
+}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
 
+    if (self.subMitServer.imageUrlArray.count > 0 && self.subMitServer.imageUrlServerArray.count <= 0 &&self.updataimage == NO) {
+        NSLog(@"-----------loadAllImage1");
+        [self loadAllImage];
+    }
+    
+    if (self.subMitServer.imageDoorUrlArray.count > 0 && self.subMitServer.imageDoorUrlServerArray.count <= 0 &&self.updataDoorimage == NO) {
+          NSLog(@"-----------loadAllImage2");
+          [self loadAllImage2];
+      }
+}
+- (void)loadAllImage{
+    self.updataimage = YES;
+    [self.subMitServer.imageUrlServerArray removeAllObjects];
+    WEAK_SELF;
+    for (int i = 0; i<self.subMitServer.imageUrlArray.count; i++) {
+        NSURL *url = [self.subMitServer.imageUrlArray safeObjectAtIndex:i];
+        [NSThread sleepForTimeInterval:0.25];
+        [self.subInfoInterface uploadImage:[UIImage imageNamed:@""] imageUrl:url callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+            STRONG_SELF;
+               if (error == nil && responseModel.code.integerValue == SuccessCode) {
+                   [self.subMitServer.imageUrlServerArray addObject:responseModel.data];
+               }
+            if (i == self.subMitServer.imageUrlArray.count -1) {
+                self.updataimage = NO;
+                [self.subMitServer subRentParameterDictUpdateWithKey:@"contentImg" value:self.subMitServer.imageUrlServerArray];
+                [self.subMitServer subRentParameterDictUpdateWithKey:@"firstImg" value:self.subMitServer.imageUrlServerArray.firstObject];
+
+            }
+        }];
+    }
+
+}
+- (void)loadAllImage2{
+    self.updataDoorimage = YES;
+    [self.subMitServer.imageDoorUrlServerArray removeAllObjects];
+    WEAK_SELF;
+    for (int i = 0; i<self.subMitServer.imageDoorUrlArray.count; i++) {
+        NSURL *url = [self.subMitServer.imageDoorUrlArray safeObjectAtIndex:i];
+        [NSThread sleepForTimeInterval:0.25];
+        [self.subInfoInterface uploadImage:[UIImage imageNamed:@""] imageUrl:url callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+            STRONG_SELF;
+               if (error == nil && responseModel.code.integerValue == SuccessCode) {
+                   [self.subMitServer.imageDoorUrlServerArray addObject:responseModel.data];
+               }
+            if (i == self.subMitServer.imageDoorUrlArray.count -1) {
+                self.updataDoorimage = NO;
+                [self.subMitServer subRentParameterDictUpdateWithKey:@"modelImg" value:self.subMitServer.imageDoorUrlServerArray.firstObject];
+
+            }
+        }];
+    }
+
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.array.count;
 }
@@ -78,6 +163,7 @@
 - (IBAction)nextStepClick:(UIButton *)sender {
     XSHouseSubmitFirstViewController *next = [[XSHouseSubmitFirstViewController alloc]init];
     next.subMitServer = self.subMitServer;
+    next.houseType = self.houseType;
     if (self.submitStepsType == XSHouseSubmitStepsType_First) {
         next.submitStepsType = XSHouseSubmitStepsType_Second;
         [self.navigationController pushViewController:next animated:YES];
@@ -92,10 +178,10 @@
 
 - (void)submitRenthouseSave{
     NSLog(@"------%@",self.subMitServer.subRentParameterDict);
-    return;
+//    return;
     WEAK_SELF;
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [self.subInfoInterface renthouseSaveWithDict:self.subMitServer.subRentParameterDict callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+    [self.subInfoInterface renthouseSaveWithDict:self.subMitServer.subRentParameterDict houseType:self.houseType callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
         STRONG_SELF;
         [MBProgressHUD  hideHUDForView:self.view animated:YES];
         if (error == nil) {

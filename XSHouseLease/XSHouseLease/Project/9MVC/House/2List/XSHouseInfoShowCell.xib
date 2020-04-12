@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="170" id="KGk-i7-Jjw" customClass="XSHouseRentInfoCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="XSHouseRentInfoCell" rowHeight="170" id="KGk-i7-Jjw" customClass="XSHouseRentInfoCell">
             <rect key="frame" x="0.0" y="0.0" width="391" height="167"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -156,12 +156,21 @@
                                                 <color key="textColor" red="0.99607843137254903" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88367元/平" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsO-CE-Ovh">
+                                                <rect key="frame" x="90" y="0.0" width="66" height="19"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" red="0.57254901960000004" green="0.57254901960000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="xNi-aI-fpf" secondAttribute="bottom" id="2Ll-o6-P4l"/>
                                             <constraint firstItem="xNi-aI-fpf" firstAttribute="leading" secondItem="sys-AN-2cH" secondAttribute="leading" id="ImU-RQ-hn0"/>
                                             <constraint firstItem="xNi-aI-fpf" firstAttribute="top" secondItem="sys-AN-2cH" secondAttribute="top" id="KGt-s2-kUH"/>
+                                            <constraint firstItem="fsO-CE-Ovh" firstAttribute="bottom" secondItem="xNi-aI-fpf" secondAttribute="bottom" id="LeE-OT-eS0"/>
+                                            <constraint firstItem="fsO-CE-Ovh" firstAttribute="leading" secondItem="xNi-aI-fpf" secondAttribute="trailing" constant="9" id="biD-JM-rHO"/>
+                                            <constraint firstItem="fsO-CE-Ovh" firstAttribute="top" secondItem="xNi-aI-fpf" secondAttribute="top" id="f5x-j5-CGQ"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -239,12 +248,13 @@
                 <outlet property="statusEditView" destination="6Dx-VZ-Ymd" id="AVa-IH-0SI"/>
                 <outlet property="statusEditViewHeight" destination="Ecu-HI-oqh" id="rPo-tB-0Td"/>
                 <outlet property="titleLable" destination="uan-s3-2Ch" id="DIw-Qg-g3C"/>
+                <outlet property="unitPriceLable" destination="fsO-CE-Ovh" id="BYQ-S5-aoc"/>
                 <outlet property="watchNumBKView" destination="lfF-eW-gCZ" id="nNY-GS-KEn"/>
                 <outlet property="watchNumLable" destination="qmF-f5-LUO" id="g8z-uP-2Em"/>
             </connections>
-            <point key="canvasLocation" x="-5" y="-42"/>
+            <point key="canvasLocation" x="-91" y="-63"/>
         </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="176" id="eaV-tv-y1O" customClass="XSHouseDetailsImagesCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="XSHouseDetailsImagesCell" rowHeight="176" id="eaV-tv-y1O" customClass="XSHouseDetailsImagesCell">
             <rect key="frame" x="0.0" y="0.0" width="388" height="220"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eaV-tv-y1O" id="ZrS-wG-ms0">
@@ -286,7 +296,7 @@
             </connections>
             <point key="canvasLocation" x="-3" y="124"/>
         </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="119" id="7aw-rI-Elq" customClass="XSHouseDetailsBasicInfoCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="XSHouseDetailsBasicInfoCell" rowHeight="119" id="7aw-rI-Elq" customClass="XSHouseDetailsBasicInfoCell">
             <rect key="frame" x="0.0" y="0.0" width="325" height="115"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7aw-rI-Elq" id="teo-ef-t7B">
@@ -381,7 +391,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAd-o9-D6E" userLabel="1">
                                         <rect key="frame" x="0.0" y="0.0" width="98.5" height="42"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4500元/月" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emF-2a-Tlm">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4500元/月" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emF-2a-Tlm">
                                                 <rect key="frame" x="0.0" y="0.0" width="98.5" height="23"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="23" id="9L5-fD-awF"/>
@@ -390,7 +400,7 @@
                                                 <color key="textColor" red="0.90980392160000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="租金" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGn-26-wYV">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="租金" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGn-26-wYV">
                                                 <rect key="frame" x="0.0" y="23" width="98.5" height="19"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" red="0.74901960779999999" green="0.74901960779999999" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -559,11 +569,12 @@
                 <outlet property="formTypelabe" destination="V2Z-Bi-lb8" id="lTH-lk-dOg"/>
                 <outlet property="rarealabe" destination="M3u-UD-bfZ" id="OSN-sT-Wnj"/>
                 <outlet property="rentPricelabe" destination="emF-2a-Tlm" id="h7e-MN-H0m"/>
+                <outlet property="rentPricelabeBow" destination="cGn-26-wYV" id="TPl-xb-ZC5"/>
                 <outlet property="titleLable" destination="xls-lQ-QXB" id="hgh-bG-ae1"/>
             </connections>
             <point key="canvasLocation" x="-30" y="277"/>
         </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="104" id="m64-GX-iMf" customClass="XSHouseDetailsBusinessInfoCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="XSHouseDetailsBusinessInfoCell" rowHeight="104" id="m64-GX-iMf" customClass="XSHouseDetailsBusinessInfoCell">
             <rect key="frame" x="0.0" y="0.0" width="340" height="104"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="m64-GX-iMf" id="SCf-L4-XmK">
@@ -609,7 +620,7 @@
             </connections>
             <point key="canvasLocation" x="-29" y="382"/>
         </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="179" id="ZMH-4t-Tc2" customClass="XSHouseDetailsAddressInfoCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="XSHouseDetailsAddressInfoCell" rowHeight="179" id="ZMH-4t-Tc2" customClass="XSHouseDetailsAddressInfoCell">
             <rect key="frame" x="0.0" y="0.0" width="388" height="242"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZMH-4t-Tc2" id="xSR-YN-Uuu">
@@ -704,7 +715,7 @@
             </connections>
             <point key="canvasLocation" x="696" y="131"/>
         </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8sl-mS-eUh" customClass="XSHouseDetailsFacilitiesInfoCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="XSHouseDetailsFacilitiesInfoCell" id="8sl-mS-eUh" customClass="XSHouseDetailsFacilitiesInfoCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="230"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8sl-mS-eUh" id="osA-pb-E1X">
@@ -758,7 +769,7 @@
             </connections>
             <point key="canvasLocation" x="661" y="316"/>
         </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="107" id="h83-3E-S81" customClass="XSHouseDetailsIntroduceInfoCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="XSHouseDetailsIntroduceInfoCell" rowHeight="107" id="h83-3E-S81" customClass="XSHouseDetailsIntroduceInfoCell">
             <rect key="frame" x="0.0" y="0.0" width="367" height="107"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h83-3E-S81" id="zU2-mH-eHQ">
@@ -923,7 +934,7 @@
             </connections>
             <point key="canvasLocation" x="650" y="472"/>
         </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="527" id="TRT-mW-3lh" customClass="XSHouseRecommendedCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="XSHouseRecommendedCell" rowHeight="527" id="TRT-mW-3lh" customClass="XSHouseRecommendedCell">
             <rect key="frame" x="0.0" y="0.0" width="402" height="527"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TRT-mW-3lh" id="5AF-oc-oKp">
@@ -1001,7 +1012,7 @@
             </connections>
             <point key="canvasLocation" x="1470" y="300"/>
         </tableViewCell>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="d0B-qI-ktz" customClass="XSHouseMasterInfoCell">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="XSHouseMasterInfoCell" id="d0B-qI-ktz" customClass="XSHouseMasterInfoCell">
             <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d0B-qI-ktz" id="Jlh-Vq-s6z">

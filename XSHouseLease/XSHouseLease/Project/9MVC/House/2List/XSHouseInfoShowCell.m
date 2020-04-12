@@ -27,11 +27,11 @@
         return 1;
     }else if ([class isEqual:[XSHouseDetailsBasicInfoCell class]]){
         return 2;
-    }else if ([class isEqual:[XSHouseInfoBCollectionCell class]]){
+    }else if ([class isEqual:[XSHouseDetailsBusinessInfoCell class]]){
         return 3;
     }else if ([class isEqual:[XSHouseDetailsAddressInfoCell class]]){
         return 4;
-    }else if ([class isEqual:[XSFacilitiesCollectionCell class]]){
+    }else if ([class isEqual:[XSHouseDetailsFacilitiesInfoCell class]]){
         return 5;
     }else if ([class isEqual:[XSHouseDetailsIntroduceInfoCell class]]){
         return 6;
@@ -63,6 +63,7 @@
     self.rentPricelabe.text = nil;
     self.watchNumLable.text = nil;
     self.watchNumBKView.hidden = YES;
+    self.unitPriceLable.text = nil;
     XSHouseRentStatusView *statusView = [[XSHouseRentStatusView alloc]init];
     WEAK_SELF;
     self.statusEditView.clickEditStatus = ^(NSNumber * _Nonnull status,NSNumber * _Nonnull houseID) {
@@ -75,45 +76,71 @@
     
 }
 
-- (void)updateWithModel:(XSHouseInfoShowModel *)model{
-    self.model = model;
-    XSHouseInfoShowModel *newModel = (XSHouseInfoShowModel *)self.model;
-    self.titleLable.text = newModel.title;
-    [self.image sd_setImageWithURL:[NSURL URLWithString:newModel.firstImg]];
-    [self.image sd_setImageWithURL:[NSURL URLWithString:newModel.firstImg] placeholderImage:[UIImage imageNamed:@"houseDefImage"]];
-    NSString *area = [NSString stringWithFormat:@"%@ m2",newModel.area];
-    self.infoLable.text = [NSString stringWithFormat:@"%@/%@/%@",area,newModel.formType,newModel.orientationName];
+- (void)updateWithModel:(XSHouseInfoShowModel *)NewModel{
+    self.model = NewModel;
     
-    NSString *stra = [newModel.featurePointNames safeObjectAtIndex:0];;
-    NSString *strb = [newModel.featurePointNames safeObjectAtIndex:1];;
-    NSString *strc = [newModel.featurePointNames safeObjectAtIndex:2];;
+    // 1.图片
+    [self.image sd_setImageWithURL:[NSURL URLWithString:NewModel.firstImg]];
 
+    NSString *stra = [NewModel.featurePointNames safeObjectAtIndex:0];;
+    NSString *strb = [NewModel.featurePointNames safeObjectAtIndex:1];;
+    NSString *strc = [NewModel.featurePointNames safeObjectAtIndex:2];;
     self.featurePointsLablea.text = stra;
     self.featurePointsLableb.text = strb;
     self.featurePointsLablec.text = strc;
     self.featurePointsLableaW.constant = stra.length > 0?[self.featurePointsLablea mj_textWidth] + 5:0;
     self.featurePointsLablebW.constant = strb.length > 0?[self.featurePointsLableb mj_textWidth] + 5:0;
     self.featurePointsLablecW.constant = strc.length > 0?[self.featurePointsLablec mj_textWidth] + 5:0;
+    
+    if (NewModel.source == XSBHouseInfoSource_MyPublish) {
+         self.dealStatusLable.text = NewModel.statusName;
+         self.dealStatusLable.textColor = [UIColor whiteColor];
+         self.dealStatusLable.backgroundColor = [UIColor hb_colorWithHexString:XSHouseStatusTextColor(NewModel.status, NewModel.dealStatus, NewModel.source) alpha:1];
+     }else{
+         self.dealStatusLable.text = NewModel.dealStatusName;
+         self.dealStatusLable.textColor = [UIColor whiteColor];
+         self.dealStatusLable.backgroundColor = [UIColor hb_colorWithHexString:XSHouseStatusTextColor(NewModel.status, NewModel.dealStatus, NewModel.source) alpha:1];
+     }
+    
+    self.watchNumLable.text = [NSString stringWithFormat:@"%@人已关注",NewModel.watchNum];
+    self.watchNumBKView.hidden = NewModel.watchNum.intValue > 0?NO:YES;
 
-    self.rentPricelabe.text = [NSString stringWithFormat:@"%@元/每月",newModel.rentPrice];
-    self.watchNumLable.text = [NSString stringWithFormat:@"%@人已关注",newModel.watchNum];
-    self.watchNumBKView.hidden = newModel.watchNum.intValue > 0?NO:YES;
     
-    if (newModel.source == XSBHouseInfoSource_MyPublish) {
-        self.statusEditViewHeight.constant = 23.0;
-        self.dealStatusLable.text = newModel.statusName;
-        self.dealStatusLable.textColor = [UIColor whiteColor];
-        self.dealStatusLable.backgroundColor = [UIColor hb_colorWithHexString:XSHouseStatusTextColor(newModel.status, newModel.dealStatus, newModel.source) alpha:1];
+
+
+    if (NewModel.houseType == XSBHouseType_New) {
+        // 1.标题
+        self.titleLable.text = [NSString stringWithFormat:@"%@ (%@)",NewModel.title,NewModel.purposeName];
+        // 1.信息描述
+        self.infoLable.text = [NSString stringWithFormat:@"%@ %@/建面 %@-%@m2",NewModel.region,NewModel.town,NewModel.minArea,NewModel.maxArea];
+        // 1.价格描述
+        self.rentPricelabe.text = [NSString stringWithFormat:@"%@万/每套",NewModel.referTotalPrice];
+        self.unitPriceLable.text =  [NSString stringWithFormat:@"%@元/平",NewModel.referUnitPrice];
+    }else if (NewModel.houseType == XSBHouseType_old){
+        // 1.标题
+        self.titleLable.text =  [NSString stringWithFormat:@"%@",NewModel.title];;
+        // 1.信息描述
+        NSString *area = [NSString stringWithFormat:@"%@ m2",NewModel.area];
+        self.infoLable.text = [NSString stringWithFormat:@"%@/%@/x楼层 共%@层",area,NewModel.orientationName,NewModel.totalFloor];
+        // 1.价格描述
+        self.rentPricelabe.text = [NSString stringWithFormat:@"%@万",NewModel.totalPrice];
+        self.unitPriceLable.text =  [NSString stringWithFormat:@"%@元/平",NewModel.unitPrice];
     }else{
-       
-        self.dealStatusLable.text = newModel.dealStatusName;
-        self.dealStatusLable.textColor = [UIColor whiteColor];
-        self.dealStatusLable.backgroundColor = [UIColor hb_colorWithHexString:XSHouseStatusTextColor(newModel.status, newModel.dealStatus, newModel.source) alpha:1];
-        self.statusEditViewHeight.constant = 0;
-        [self.statusEditView removeFromSuperview];
+        // 1.标题
+        self.titleLable.text = [NSString stringWithFormat:@"%@",NewModel.title];;
+        // 1.信息描述
+        NSString *area = [NSString stringWithFormat:@"%@ m2",NewModel.area];
+        self.infoLable.text = [NSString stringWithFormat:@"%@/%@/%@",area,NewModel.formType,NewModel.orientationName];
+        // 1.价格描述
+        self.rentPricelabe.text = [NSString stringWithFormat:@"%@元/每月",NewModel.rentPrice];
+        self.unitPriceLable.text =  nil;
     }
+
+
     
-    self.statusEditView.status = newModel.status;
+ 
+    
+    self.statusEditView.status = NewModel.status;
 }
 
 
@@ -199,8 +226,8 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
     lable.textColor = [UIColor whiteColor];
     lable.layer.masksToBounds = YES;
     lable.layer.cornerRadius = 8;
-
     self.lable = lable;
+    
     self.tipLabel.layer.masksToBounds = YES;
     self.tipLabel.layer.cornerRadius = 8;
     self.tipLabel.text = nil;
@@ -221,7 +248,7 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
     self.cycleScrollView = cycleScrollView;
     [self.bkView addSubview:lable];
     [self.bkView addSubview:cycleScrollView];
-    [self.bkView bringSubviewToFront:self.tipLabel];
+    [self.bkView bringSubviewToFront:self.lable];
 
 }
 - (void)layoutSubviews{
@@ -259,9 +286,17 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 - (void)updateWithModel:(XSHouseInfoShowModel *)dataModel{
     self.model = dataModel;
     self.titleLable.text = [NSString stringWithFormat:@"%@ %@ %@",dataModel.rentWayName,dataModel.estate,dataModel.formType];
-    self.rentPricelabe.text = [NSString stringWithFormat:@"%@元/每月",dataModel.rentPrice];
+    if (dataModel.houseType == XSBHouseType_Rent) {
+        self.titleLable.text = dataModel.title;
+        self.rentPricelabeBow.text = @"租金";
+        self.rentPricelabe.text = [NSString stringWithFormat:@"%@元/每月",dataModel.rentPrice];
+    }else{
+        self.titleLable.text = dataModel.titleDetail;
+        self.rentPricelabeBow.text = @"售价";
+        self.rentPricelabe.text = [NSString stringWithFormat:@"%@万",dataModel.totalPrice];
+    }
     self.formTypelabe.text = dataModel.formType;
-    self.rarealabe.text = [NSString stringWithFormat:@"%@㎡",dataModel.area];
+      self.rarealabe.text = [NSString stringWithFormat:@"%@㎡",dataModel.area];
     
     NSString *stra = [dataModel.featurePointNames safeObjectAtIndex:0];;
     NSString *strb = [dataModel.featurePointNames safeObjectAtIndex:1];;
@@ -306,16 +341,7 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 
 - (void)updateWithModel:(XSHouseInfoShowModel *)dataModel{
     self.model = dataModel;
-    NSMutableDictionary *modeDict = [dataModel mj_keyValues];
-    NSMutableArray *infoArray = [NSMutableArray array];
-    for (XSHouseInfoBModel *infoJsonModel in [XSPublicServer sharedInstance].rentHouseInfoBArray) {
-        XSHouseInfoBModel *infoModel = [[XSHouseInfoBModel alloc]init];
-        infoModel.keyName = infoJsonModel.keyName ;
-        infoModel.value = [NSString stringWithFormat:@"%@",[modeDict safeObjectForKey:infoJsonModel.key]];
-        [infoArray addObject:infoModel];
-    }
-        
-    self.array = infoArray;
+    self.array = [dataModel houseInfoBArray];
     [self.collectionView reloadData];
 
 }
@@ -332,7 +358,11 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     XSHouseInfoBModel *dataModel = [self.array safeObjectAtIndex:indexPath.row];
-
+    if ([dataModel.key isEqualToString:@"other"]) {
+        if (self.model.clickBlack) {
+            self.model.clickBlack(self.model, nil, XSBHouseKeyValueInfoBMore);
+        }
+    }
 }
 
 - (UICollectionViewFlowLayout *)layout{
@@ -427,7 +457,7 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 }
 - (void)updateWithModel:(XSHouseInfoShowModel *)model{
     self.model = model;
-    self.locationLable.text = [NSString stringWithFormat:@"%@/%@",model.region,model.town];
+    self.locationLable.text = [NSString stringWithFormat:@"%@/%@",model.region,model.estate];
     self.mapVc.location = CLLocationCoordinate2DMake(model.latitude.floatValue, model.longitude.floatValue);
 }
 
@@ -512,10 +542,8 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 - (void)awakeFromNib {
     [super awakeFromNib];
     XSMyPublishHosueController *listvc = [[XSMyPublishHosueController alloc]init];
-    listvc.source = XSBHouseInfoSource_MyPush;
-//    listvc.alittle = YES;
     listvc.view.frame = self.bkView.bounds;
-    self.listvc =listvc;
+    self.listvc = listvc;
     [self.bkView addSubview:listvc.view];
 
 }
@@ -525,14 +553,17 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 }
 - (void)updateWithModel:(XSHouseInfoShowModel *)model{
     self.model = model;
+    self.listvc.alittle = YES;
+    self.listvc.houseType = model.houseType;
+    self.listvc.source = XSBHouseInfoSource_HouseIdPush;
     self.listvc.house_id = model.house_id;
     [self.listvc loadData];
 }
 - (IBAction)more:(id)sender {
-    XSHouseInfoShowModel *dataModel = (XSHouseInfoShowModel *)self.model;
     XSMyPublishHosueController *listvc = [[XSMyPublishHosueController alloc]init];
-    listvc.source = XSBHouseInfoSource_MyPush;
-    listvc.house_id = dataModel.house_id;
+    listvc.houseType = self.model.houseType;
+    listvc.source = XSBHouseInfoSource_HouseIdPush;
+    listvc.house_id = self.model.house_id;
     [[NSObject getTopViewController].navigationController pushViewController:listvc animated:YES];
 }
 
@@ -608,7 +639,8 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 - (void)setModel:(XSHouseInfoBModel *)model{
     _model = model;
     self.titleLable.text = model.keyName;
-    self.contentLable.text = model.value;
+    self.contentLable.text = model.value?model.value:nil;
+    
 }
 @end
 

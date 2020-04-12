@@ -4,20 +4,20 @@
         "keyName":"朝向："
     },
     {
-        "key":"inDayName",
-        "keyName":"入住："
-    },
-    {
-        "key":"rentTimeTypeName",
-        "keyName":"租期："
-    },
-    {
         "key":"floor",
         "keyName":"楼层："
     },
     {
+        "key":"inDayName",
+        "keyName":"入住："
+    },
+    {
         "key":"waterElectricityName",
         "keyName":"水电："
+    },
+    {
+        "key":"rentTimeTypeName",
+        "keyName":"租期："
     },
     {
         "key":"seeHouseTypeName",

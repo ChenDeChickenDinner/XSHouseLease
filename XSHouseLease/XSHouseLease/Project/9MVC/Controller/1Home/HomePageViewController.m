@@ -45,10 +45,16 @@
     [XSUserServer needLoginSuccess:^{
        switch (sender.tag) {
            case 0:
+           {
+               XSHouseSubmitFirstViewController *vc = [[XSHouseSubmitFirstViewController alloc]init];
+               vc.houseType = XSBHouseType_Rent;
+               [self.navigationController pushViewController:vc animated:YES];
+           }
+               break;
            case 1:
            {
                XSHouseSubmitFirstViewController *vc = [[XSHouseSubmitFirstViewController alloc]init];
-               vc.submitType = (XSHouseSubmitType)sender.tag;
+               vc.houseType = XSBHouseType_old;
                [self.navigationController pushViewController:vc animated:YES];
            }
            break;

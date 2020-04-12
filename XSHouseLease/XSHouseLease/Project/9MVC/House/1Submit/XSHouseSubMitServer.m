@@ -75,7 +75,18 @@ DEF_SINGLETON(XSHouseSubMitDynamicServer)
     }
     return _imageUrlServerArray;
 }
-
+- (NSMutableArray *)imageDoorUrlArray{
+    if (!_imageDoorUrlArray) {
+        _imageDoorUrlArray = [NSMutableArray array];
+    }
+    return _imageDoorUrlArray;
+}
+- (NSMutableArray *)imageDoorUrlServerArray{
+    if (!_imageDoorUrlServerArray) {
+        _imageDoorUrlServerArray = [NSMutableArray array];
+    }
+    return _imageDoorUrlServerArray;
+}
 - (NSMutableDictionary *)subRentParameterDict{
     if (!_subRentParameterDict) {
         _subRentParameterDict = [NSMutableDictionary dictionary];
@@ -91,22 +102,22 @@ DEF_SINGLETON(XSHouseSubMitDynamicServer)
 - (NSMutableArray<XSHouseInfoCellModel *> *)firstArray{
     if (!_firstArray) {
        
-        if (self.submitType == XSHouseSubmitType_Rent) {
+        if (self.houseType == XSBHouseType_Rent) {
             _firstArray  = [XSHouseInfoCellModel mj_objectArrayWithKeyValuesArray:[self getDictWithJsonName:@"XSRentHouseInfoFirst"]];
              _secondArray = [XSHouseInfoCellModel mj_objectArrayWithKeyValuesArray:[self getDictWithJsonName:@"XSRentHouseInfoSecond"]];
              _thirdArray  = [XSHouseInfoCellModel mj_objectArrayWithKeyValuesArray:[self getDictWithJsonName:@"XSRentHouseInfoThird"]];
-             [_secondArray addObjectsFromArray:[XSHouseSubMitDynamicServer sharedInstance].rentSecondDynamicArray];
+             [_secondArray addObjectsFromArray:[XSHouseSubMitDynamicServer sharedInstance].rentSecondDynamicArray.mutableCopy];
         }else{
             _firstArray  = [XSHouseInfoCellModel mj_objectArrayWithKeyValuesArray:[self getDictWithJsonName:@"XSSellHouseInfoFirst"]];
              _secondArray = [XSHouseInfoCellModel mj_objectArrayWithKeyValuesArray:[self getDictWithJsonName:@"XSSellHouseInfoSecond"]];
              _thirdArray  = [XSHouseInfoCellModel mj_objectArrayWithKeyValuesArray:[self getDictWithJsonName:@"XSSellHouseInfoThird"]];
-             [_secondArray addObjectsFromArray:[XSHouseSubMitDynamicServer sharedInstance].sellSecondDynamicArray];
+             [_secondArray addObjectsFromArray:[XSHouseSubMitDynamicServer sharedInstance].sellSecondDynamicArray.mutableCopy];
         }
  
         
         [self setUpdataBlacokWithArray:_firstArray];
         [self setUpdataBlacokWithArray:_secondArray];
-        [self setUpdataBlacokWithArray:_secondArray];
+        [self setUpdataBlacokWithArray:_thirdArray];
 
     }
     return _firstArray;
@@ -115,7 +126,6 @@ DEF_SINGLETON(XSHouseSubMitDynamicServer)
     for (XSHouseInfoCellModel *cellModel in array) {
         for (XSKeyValueModel *keyValue in cellModel.arrayValue) {
             __weak typeof(keyValue) weakKeyValue = keyValue;
-
             keyValue.updateBlack = ^{
                 
                 if (weakKeyValue.values.count == 1) {
@@ -150,8 +160,12 @@ DEF_SINGLETON(XSHouseSubMitDynamicServer)
                       }
                   }
                 }
-
+                NSLog(@"self.subRentParameterDict = %@",self.subRentParameterDict);
             };
+            
+            for (XSValue *value in keyValue.values) {
+                value.updateBlack = keyValue.updateBlack;
+            }
         }
     }
 }

@@ -48,37 +48,53 @@
 
 - (void)gethouseDetails{
     WEAK_SELF;
-    [self.subInfoInterface renthouseDetailsWithHouse_id:self.houseid callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error){
+    [self.subInfoInterface houseDetailsWithHouseType:self.houseType  house_id:self.houseid  callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
         STRONG_SELF;
-        [self.tableView.mj_header endRefreshing];
-        if (error == nil) {
-            if (responseModel.code.integerValue == SuccessCode) {
-                XSHouseInfoShowModel *model = [XSHouseInfoShowModel mj_objectWithKeyValues:responseModel.data];
-                NSLog(@"房屋详情 = %@",[model mj_keyValues]);
-                [self assemblyCellDataArrayWithData:model];
+            [self.tableView.mj_header endRefreshing];
+            if (error == nil) {
+                if (responseModel.code.integerValue == SuccessCode) {
+                    XSHouseInfoShowModel *model = [XSHouseInfoShowModel mj_objectWithKeyValues:responseModel.data];
+                    model.houseType = self.houseType;
+                    model.source = self.source;
+                    [self assemblyCellDataArrayWithData:model];
+                }
             }
-        }
-        
     }];
 }
-
 
 
 // 组装数据
 -(void)assemblyCellDataArrayWithData:(XSHouseInfoShowModel *)dataModel{
     self.dataModel = dataModel;
+    self.dataModel.clickBlack = ^(XSHouseInfoModel *model, id data, XSBHouseKeyValueEditStatus editStatus) {
+           if (editStatus == XSBHouseKeyValueInfoBMore) {
+               NSLog(@"更多房源信息");
+           }
+    };
     [self.array removeAllObjects];
     NSError *error;
-    NSString *path = [[NSBundle mainBundle]pathForResource:@"XSHouseDetailsInfo" ofType:@"json"];
+    NSString *file  = self.houseType==XSBHouseType_Rent?@"XSRentHouseDetailsInfo":@"XSSecondHouseDetailsInfo";
+    NSString *path = [[NSBundle mainBundle]pathForResource:file ofType:@"json"];
     NSArray *dataArray = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableLeaves error:&error];
     NSMutableArray *modelArray = [XSHouseInfoShowModel mj_objectArrayWithKeyValuesArray:dataArray];
+    
+//    for (XSHouseInfoShowModel *cellModel in modelArray) {
+//        cellModel.clickBlack = ^(XSHouseInfoModel *model, id data, XSBHouseKeyValueEditStatus editStatus) {
+//            if (editStatus == XSBHouseKeyValueInfoBMore) {
+//                NSLog(@"更多房源信息");
+//            }
+//        };
+//    }
     [self.array addObjectsFromArray:modelArray];
     [self.tableView reloadData];
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.array.count;
 }
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    XSHouseInfoCellModel *dataModel = [self.array safeObjectAtIndex:indexPath.row];
+    return dataModel.cellHeight?dataModel.cellHeight.floatValue:53.0;
+}
 - (UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     XSHouseInfoShowModel *model = [self.array safeObjectAtIndex:indexPath.row];
     
@@ -92,28 +108,26 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    XSHouseInfoShowModel *model = [self.array safeObjectAtIndex:indexPath.row];
-    if (model.clickBlack) {
-        model.clickBlack(model, XShouseOperation_click);
-    }
+//    XSHouseInfoShowModel *model = [self.array safeObjectAtIndex:indexPath.row];
+
 }
 
 - (void)watch{
     WEAK_SELF;
-//    [XSUserServer needLoginSuccess:^{
-//        STRONG_SELF;
-//        [self.subInfoInterface rentWatchHouseWithHouse_id:self.house_id houseType:XSBHouseType_Rent watch:YES callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
-//            if (error == nil ) {
-//                if (responseModel.code.intValue == SuccessCode) {
-//                    [ProgressHUD showSuccess:@"关注成功"];
-//                }else{
-//                    [ProgressHUD showError:@"稍后再试"];
-//                }
-//            }
-//        }];
-//    } cancel:^{
-//        
-//    }];
+    [XSUserServer needLoginSuccess:^{
+        STRONG_SELF;
+        [self.subInfoInterface rentWatchHouseWithHouse_id:self.houseid houseType:self.houseType watch:YES callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+            if (error == nil ) {
+                if (responseModel.code.intValue == SuccessCode) {
+                    [ProgressHUD showSuccess:@"关注成功"];
+                }else{
+                    [ProgressHUD showError:@"稍后再试"];
+                }
+            }
+        }];
+    } cancel:^{
+        
+    }];
 
 }
 @end

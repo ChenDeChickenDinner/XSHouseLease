@@ -38,8 +38,8 @@
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
-    [ProgressHUD showSuccess:@"努力开发中"];
-    [self.mapView setCenterCoordinate:CLLocationCoordinate2DMake(39.992520, 116.336170) animated:YES];
+//    [ProgressHUD showSuccess:@"努力开发中"];
+//    [self.mapView setCenterCoordinate:CLLocationCoordinate2DMake(39.992520, 116.336170) animated:YES];
 
 //    [self.subInfoInterface uploadImage:nil callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
 //        if (error == nil) {
@@ -48,10 +48,10 @@
 //    }];
 
     
-//      NSString *path = [[NSBundle mainBundle] pathForResource:@"xsjson" ofType:@"json"];
-//      // 将文件数据化
-//      NSData *data = [[NSData alloc] initWithContentsOfFile:path];
-//      [YBModelFile createFileWithName:@"XSHouseDetails" data:data];
+      NSString *path = [[NSBundle mainBundle] pathForResource:@"XSHouseInfo" ofType:@"json"];
+      // 将文件数据化
+      NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+      [YBModelFile createFileWithName:@"XSNewHouseInfo" data:data];
 }
 @end
 

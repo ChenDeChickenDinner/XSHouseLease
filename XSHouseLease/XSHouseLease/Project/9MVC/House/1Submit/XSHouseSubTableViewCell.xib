@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="qLB-9H-QHy" customClass="XSHouseSubTableViewCell">
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="XSHouseSubTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="XSHouseSubTableViewCell" id="qLB-9H-QHy" customClass="XSHouseSubTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qLB-9H-QHy" id="wiW-yk-Cjw">
@@ -21,7 +21,7 @@
             <viewLayoutGuide key="safeArea" id="9b5-j2-ppc"/>
             <point key="canvasLocation" x="-507" y="-192"/>
         </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Wsq-uH-nxi" customClass="XSHouseSubListChooseTableViewCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="XSHouseSubListChooseTableViewCell" id="Wsq-uH-nxi" customClass="XSHouseSubListChooseTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wsq-uH-nxi" id="RDo-dZ-R4A">
@@ -93,7 +93,7 @@
             </connections>
             <point key="canvasLocation" x="49" y="-192"/>
         </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gSi-cD-YXy" customClass="XSHouseSubTextFieldTableViewCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="XSHouseSubTextFieldTableViewCell" id="gSi-cD-YXy" customClass="XSHouseSubTextFieldTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gSi-cD-YXy" id="HgI-mG-Uys">
@@ -267,7 +267,7 @@
             </connections>
             <point key="canvasLocation" x="-494" y="-110"/>
         </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="169" id="En8-Xp-uOd" customClass="XSHouseSubTextViewCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="XSHouseSubTextViewCell" rowHeight="169" id="En8-Xp-uOd" customClass="XSHouseSubTextViewCell">
             <rect key="frame" x="0.0" y="0.0" width="341" height="169"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="En8-Xp-uOd" id="hxs-cr-nIx">
@@ -332,7 +332,7 @@
             </connections>
             <point key="canvasLocation" x="63" y="-69"/>
         </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2Me-jJ-KUC" customClass="XSHouseSubCollectionviewACell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="XSHouseSubCollectionviewACell" id="2Me-jJ-KUC" customClass="XSHouseSubCollectionviewACell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Me-jJ-KUC" id="wSs-ar-s7U">
@@ -389,7 +389,7 @@
             </connections>
             <point key="canvasLocation" x="-494" y="-20"/>
         </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="114" id="TrL-78-oR3" customClass="XSHouseSubCollectionviewBCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="XSHouseSubCollectionviewBCell" rowHeight="114" id="TrL-78-oR3" customClass="XSHouseSubCollectionviewBCell">
             <rect key="frame" x="0.0" y="0.0" width="334" height="114"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TrL-78-oR3" id="bjg-1i-81j">
@@ -443,7 +443,7 @@
             </connections>
             <point key="canvasLocation" x="-497" y="89"/>
         </tableViewCell>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="292" id="9Et-W1-O3K" customClass="XSHouseSubPictureSubmitCell">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="XSHouseSubPictureSubmitCell" rowHeight="292" id="9Et-W1-O3K" customClass="XSHouseSubPictureSubmitCell">
             <rect key="frame" x="0.0" y="0.0" width="417" height="293"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Et-W1-O3K" id="ajQ-L6-vv3">
@@ -481,7 +481,7 @@
                             <constraint firstItem="Vef-5Z-Jeb" firstAttribute="leading" secondItem="m7a-xB-Zko" secondAttribute="trailing" id="gRL-sL-MVP"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcH-Mp-XKk" customClass="HXPhotoView">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcH-Mp-XKk">
                         <rect key="frame" x="15" y="53" width="387" height="240"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -500,11 +500,13 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="photoView" destination="vcH-Mp-XKk" id="HTy-OH-xSW"/>
+                <outlet property="bkPhotoView" destination="vcH-Mp-XKk" id="9CV-3i-nvc"/>
+                <outlet property="title" destination="m7a-xB-Zko" id="hS8-s7-Tcw"/>
+                <outlet property="titleB" destination="Vef-5Z-Jeb" id="btq-Qp-ZqX"/>
             </connections>
             <point key="canvasLocation" x="-457.24637681159425" y="259.15178571428572"/>
         </tableViewCell>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="tUk-Tt-gVO" customClass="XSHouseSubProcessViewCell">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="XSHouseSubProcessViewCell" id="tUk-Tt-gVO" customClass="XSHouseSubProcessViewCell">
             <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tUk-Tt-gVO" id="6qd-uM-Z7a">

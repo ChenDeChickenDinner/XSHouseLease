@@ -9,10 +9,11 @@
 #import <Foundation/Foundation.h>
 
 
-
+@class XSHouseInfoCellModel;
 //value发生set变化
 typedef void (^XSValueUpdate)(void);
-
+//value发生编辑
+typedef void(^XSValuechangeStatus)(XSHouseInfoCellModel *model,id data,XSBHouseKeyValueEditStatus editStatus);
 
 @interface XSValue : NSObject
 @property (nonatomic,assign) BOOL isSelect;
@@ -36,7 +37,6 @@ typedef void (^XSValueUpdate)(void);
 @property (nonatomic,copy)   XSValueUpdate updateBlack;
 @property (nonatomic,assign) XSValueInputType keyInputType;
 @property (nonatomic,assign) XSValueTextInputType keyTextInputType;
-@property (nonatomic,copy)   XSValuechangeStatus valuechangeStatus;
 @end
 
 
@@ -47,6 +47,7 @@ typedef void (^XSValueUpdate)(void);
 @property (nonatomic,copy)   NSString *cellClass;
 @property (nonatomic,strong) NSNumber *cellHeight;
 @property (nonatomic,strong) NSArray<XSKeyValueModel *> *arrayValue;
+@property (nonatomic,copy)   XSValuechangeStatus valuechangeStatus;
 @end
 
 

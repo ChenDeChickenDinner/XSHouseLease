@@ -44,6 +44,12 @@ NSString *url = [NSString stringWithFormat:@"%@/estate/hots",XSBaseUrl];
 [self GET:url param:dict progress:nil callback:callback];
 }
 
+// 小区查询
+- (void)searchEstateWithDict:(NSDictionary *)dict callback:(HBCompletionBlock)callback{
+    NSString *url = [NSString stringWithFormat:@"%@/estate/estates",XSBaseUrl];
+    [self GET:url param:dict progress:nil callback:callback];
+}
+
 // 配套
 - (void)enumFacilitiesWithCallback:(HBCompletionBlock)callback{
     NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
@@ -70,39 +76,31 @@ NSString *url = [NSString stringWithFormat:@"%@/estate/hots",XSBaseUrl];
     [self GET:url param:dict progress:nil callback:callback];
 }
 
-// 租房上传提交
-- (void)renthouseSaveWithDict:(NSMutableDictionary *)dict callback:(HBCompletionBlock)callback{
+// 租房二手房上传提交
+- (void)renthouseSaveWithDict:(NSMutableDictionary *)dict houseType:(XSBHouseType)houseType callback:(HBCompletionBlock)callback{
     NSNumber *customer_id = [XSUserServer sharedInstance].userModel.ID;
     [dict safeSetObject:customer_id forKey:@"customerId"];
-    NSString *url = [NSString stringWithFormat:@"%@/renthouse/save2",XSBaseUrl];
+    NSString *url = [NSString stringWithFormat:@"%@/renthouse/save2",XSBaseUrl];;
+    if (houseType == XSBHouseType_old){
+       url = [NSString stringWithFormat:@"%@/secondhouse/save",XSBaseUrl];
+    }
     [self POST:url param:dict progress:nil callback:callback];
 
 }
 
 
-// 二手房上传提交
-- (void)secondhouseSaveWithDict:(NSMutableDictionary *)dict callback:(HBCompletionBlock)callback{
-    NSNumber *customer_id = [XSUserServer sharedInstance].userModel.ID;
-    [dict safeSetObject:customer_id forKey:@"customerId"];
-    NSString *url = [NSString stringWithFormat:@"%@/secondhouse/save",XSBaseUrl];
-    [self POST:url param:dict progress:nil callback:callback];
 
-}
-
-// 租房详情
-- (void)renthouseDetailsWithHouse_id:(NSString *)house_id callback:(HBCompletionBlock)callback{
+// 房详情
+- (void)houseDetailsWithHouseType:(XSBHouseType)houseType house_id:(NSNumber *)house_id callback:(HBCompletionBlock)callback{
     NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
-    NSString *url = [NSString stringWithFormat:@"%@/renthouse/details",XSBaseUrl];
-    if (house_id) {
-        url = [url stringByAppendingFormat:@"/%@",house_id];
-    }
-    [self GET:url param:dict progress:nil callback:callback];
-
-}
-// 二手房详情
-- (void)secondhouseDetailsWithHouse_id:(NSString *)house_id callback:(HBCompletionBlock)callback{
-    NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
-    NSString *url = [NSString stringWithFormat:@"%@/secondhouse/details",XSBaseUrl];
+    NSString *url = nil;
+    if (houseType == XSBHouseType_Rent) {
+          url = [NSString stringWithFormat:@"%@/renthouse/details",XSBaseUrl];
+      }else if (houseType == XSBHouseType_old){
+          url = [NSString stringWithFormat:@"%@/secondhouse/details",XSBaseUrl];
+      }else if (houseType == XSBHouseType_New){
+          url = [NSString stringWithFormat:@"%@/newhouse/details",XSBaseUrl];
+      }
     if (house_id) {
         url = [url stringByAppendingFormat:@"/%@",house_id];
     }
@@ -110,133 +108,74 @@ NSString *url = [NSString stringWithFormat:@"%@/estate/hots",XSBaseUrl];
 
 }
 
-// 新房详情
-- (void)newhouseDetailsWithHouse_id:(NSString *)house_id callback:(HBCompletionBlock)callback{
-    NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
-    NSString *url = [NSString stringWithFormat:@"%@/newhouse/details",XSBaseUrl];
-    if (house_id) {
-        url = [url stringByAppendingFormat:@"/%@",house_id];
-    }
-    [self GET:url param:dict progress:nil callback:callback];
+- (void)houseLisetWith:(XSBHouseType)houseType source:(XSBHouseInfoSource)source house_id:(NSString *)house_id KeyVales:(NSMutableDictionary *)keyVales per_page:(NSInteger)per_page page_index:(NSInteger)page_index  callback:(HBCompletionBlock)callback{
+    [keyVales safeSetObject:[XSUserServer sharedInstance].cityModel.code forKey:@"cityId"];
+    [keyVales safeSetObject:[XSUserServer sharedInstance].cityModel.name forKey:@"city"];
 
-}
-
-//我发布的租房
-- (void)myPublishHosueWithPer_page:(NSInteger)per_page page_index:(NSInteger)page_index  callback:(HBCompletionBlock)callback{
-    NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
      NSString *customer_id = [XSUserServer sharedInstance].userModel.ID.stringValue;
-     NSString *url = [NSString stringWithFormat:@"%@/renthouse/publish/page/%@?per_page=%ld&page_index=%ld",XSBaseUrl,customer_id,per_page,page_index];
-     [self GET:url param:dict progress:nil callback:callback];
-}
-//我发布的二手房
-- (void)myPublishSecondHouseWithPer_page:(NSInteger)per_page page_index:(NSInteger)page_index  callback:(HBCompletionBlock)callback{
-    NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
-     NSString *customer_id = [XSUserServer sharedInstance].userModel.ID.stringValue;
-     NSString *url = [NSString stringWithFormat:@"%@/secondhouse/publish/page/%@?per_page=%ld&page_index=%ld",XSBaseUrl,customer_id,per_page,page_index];
-     [self GET:url param:dict progress:nil callback:callback];
-}
-
-
-
-
-//我关注的租房
-- (void)watchRenthousListWithKeyVales:(NSDictionary *)keyVales per_page:(NSInteger)per_page page_index:(NSInteger)page_index  callback:(HBCompletionBlock)callback{
-    NSString *customer_id = [XSUserServer sharedInstance].userModel.ID.stringValue;
-    NSString *url = [NSString stringWithFormat:@"%@/renthouse/watch/page/%@?per_page=%ld&page_index=%ld",XSBaseUrl,customer_id,per_page,page_index];
-    [self POST:url param:keyVales progress:nil callback:callback];
-}
-//我关注的二手房
-- (void)watchSecondHouseListWithKeyVales:(NSDictionary *)keyVales per_page:(NSInteger)per_page page_index:(NSInteger)page_index  callback:(HBCompletionBlock)callback{
-    NSString *customer_id = [XSUserServer sharedInstance].userModel.ID.stringValue;
-    NSString *url = [NSString stringWithFormat:@"%@/secondhouse/watch/page/%@?per_page=%ld&page_index=%ld",XSBaseUrl,customer_id,per_page,page_index];
-    [self POST:url param:keyVales progress:nil callback:callback];
-}
-//我关注的新房
-- (void)watchNewHouseListWithKeyVales:(NSDictionary *)keyVales per_page:(NSInteger)per_page page_index:(NSInteger)page_index  callback:(HBCompletionBlock)callback{
-    NSString *customer_id = [XSUserServer sharedInstance].userModel.ID.stringValue;
-    NSString *url = [NSString stringWithFormat:@"%@/newhouse/watch/page/%@?per_page=%ld&page_index=%ld",XSBaseUrl,customer_id,per_page,page_index];
-    [self POST:url param:keyVales progress:nil callback:callback];
-}
-
-
-
-
-
-// 根据-城市-推荐列表(租房)
-- (void)searchRenthousListWithKeyVales:(NSDictionary *)keyVales per_page:(NSInteger)per_page page_index:(NSInteger)page_index  callback:(HBCompletionBlock)callback{
-    [keyVales setValue:@"上海" forKey:@"city"];
-//    [keyVales setValue:@"" forKey:@"cityId"];
-
-    NSString *url = [NSString stringWithFormat:@"%@/renthouse/page?per_page=%ld&page_index=%ld",XSBaseUrl,per_page,page_index];
-    [self POST:url param:keyVales progress:nil callback:callback];
-}
-//根据-房屋详情的-推荐列表(租房)
-- (void)likeRenthousListWithhouse_id:(NSNumber *)house_id per_page:(NSInteger)per_page page_index:(NSInteger)page_index  callback:(HBCompletionBlock)callback{
-    NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
-    NSString *url = [NSString stringWithFormat:@"%@/renthouse/like/page/%@?per_page=%ld&page_index=%ld",XSBaseUrl,house_id,per_page,page_index];
-    [self GET:url param:dict progress:nil callback:callback];
-}
-
-//根据-我关注的-推荐列表(租房)
-- (void)watchlikeRenthousListWithPer_page:(NSInteger)per_page page_index:(NSInteger)page_index  callback:(HBCompletionBlock)callback{
-    NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
-    NSString *customer_id = [XSUserServer sharedInstance].userModel.ID.stringValue;
-
-    NSString *url = [NSString stringWithFormat:@"%@/renthouse/watchlike/page/%@?per_page=%ld&page_index=%ld",XSBaseUrl,customer_id,per_page,page_index];
-    [self GET:url param:dict progress:nil callback:callback];
-}
-
-// 根据-城市-推荐列表(二手房)
-- (void)searchSecondhousListWithKeyVales:(NSDictionary *)keyVales per_page:(NSInteger)per_page page_index:(NSInteger)page_index  callback:(HBCompletionBlock)callback{
-    [keyVales setValue:@"上海" forKey:@"city"];
-//    [keyVales setValue:@"" forKey:@"cityId"];
-
-    NSString *url = [NSString stringWithFormat:@"%@/secondhouse/page?per_page=%ld&page_index=%ld",XSBaseUrl,per_page,page_index];
-    [self POST:url param:keyVales progress:nil callback:callback];
-}
-//根据-房屋详情的-推荐列表(二手房)
-- (void)likeSecondhousListWithhouse_id:(NSNumber *)house_id per_page:(NSInteger)per_page page_index:(NSInteger)page_index  callback:(HBCompletionBlock)callback{
-    NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
-    NSString *url = [NSString stringWithFormat:@"%@/secondhouse/like/page/%@?per_page=%ld&page_index=%ld",XSBaseUrl,house_id,per_page,page_index];
-    [self GET:url param:dict progress:nil callback:callback];
-}
-
-//根据-我关注的-推荐列表(二手房)
-- (void)watchlikeSecondhousListWithPer_page:(NSInteger)per_page page_index:(NSInteger)page_index  callback:(HBCompletionBlock)callback{
-    NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
-    NSString *customer_id = [XSUserServer sharedInstance].userModel.ID.stringValue;
-
-    NSString *url = [NSString stringWithFormat:@"%@/secondhouse/watchlike/page/%@?per_page=%ld&page_index=%ld",XSBaseUrl,customer_id,per_page,page_index];
-    [self GET:url param:dict progress:nil callback:callback];
-}
-
-
-// 根据-城市-推荐列表(新房)
-- (void)searchNewhousListWithKeyVales:(NSDictionary *)keyVales per_page:(NSInteger)per_page page_index:(NSInteger)page_index  callback:(HBCompletionBlock)callback{
-    [keyVales setValue:@"上海" forKey:@"city"];
-//    [keyVales setValue:@"" forKey:@"cityId"];
-
-    NSString *url = [NSString stringWithFormat:@"%@/newhouse/page?per_page=%ld&page_index=%ld",XSBaseUrl,per_page,page_index];
-    [self POST:url param:keyVales progress:nil callback:callback];
-}
-//根据-房屋详情的-推荐列表(新房)
-- (void)likeNewhousListWithhouse_id:(NSNumber *)house_id per_page:(NSInteger)per_page page_index:(NSInteger)page_index  callback:(HBCompletionBlock)callback{
-    NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
-    NSString *url = [NSString stringWithFormat:@"%@/newhouse/like/page/%@?per_page=%ld&page_index=%ld",XSBaseUrl,house_id,per_page,page_index];
-    [self GET:url param:dict progress:nil callback:callback];
-}
-
-//根据-我关注的-推荐列表(新房)
-- (void)watchlikeNewhousListWithPer_page:(NSInteger)per_page page_index:(NSInteger)page_index  callback:(HBCompletionBlock)callback{
-    NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
-    NSString *customer_id = [XSUserServer sharedInstance].userModel.ID.stringValue;
-
-    NSString *url = [NSString stringWithFormat:@"%@/newhouse/watchlike/page/%@?per_page=%ld&page_index=%ld",XSBaseUrl,customer_id,per_page,page_index];
-    [self GET:url param:dict progress:nil callback:callback];
-}
-
+    NSString *url = nil;
+    if (source == XSBHouseInfoSource_keyPush) {
+        if (houseType == XSBHouseType_Rent) {
+            url = [NSString stringWithFormat:@"%@/renthouse/page?per_page=%ld&page_index=%ld",XSBaseUrl,per_page,page_index];
+         }else if (houseType == XSBHouseType_old){
+            url = [NSString stringWithFormat:@"%@/secondhouse/page?per_page=%ld&page_index=%ld",XSBaseUrl,per_page,page_index];
+         }else if (houseType == XSBHouseType_New){
+            url = [NSString stringWithFormat:@"%@/newhouse/page?per_page=%ld&page_index=%ld",XSBaseUrl,per_page,page_index];
+         }
+    }else if (source == XSBHouseInfoSource_WatchPush){
+        if (houseType == XSBHouseType_Rent) {
+             url = [NSString stringWithFormat:@"%@/renthouse/watchlike/page/%@?per_page=%ld&page_index=%ld",XSBaseUrl,customer_id,per_page,page_index];
+         }else if (houseType == XSBHouseType_old){
+             url = [NSString stringWithFormat:@"%@/secondhouse/watchlike/page/%@?per_page=%ld&page_index=%ld",XSBaseUrl,customer_id,per_page,page_index];
+         }else if (houseType == XSBHouseType_New){
+             url = [NSString stringWithFormat:@"%@/newhouse/watchlike/page/%@?per_page=%ld&page_index=%ld",XSBaseUrl,customer_id,per_page,page_index];
+         }
+    }else if (source == XSBHouseInfoSource_HouseIdPush){
+        if (houseType == XSBHouseType_Rent) {
+             url = [NSString stringWithFormat:@"%@/renthouse/like/page/%@?per_page=%ld&page_index=%ld",XSBaseUrl,house_id,per_page,page_index];
+         }else if (houseType == XSBHouseType_old){
+             url = [NSString stringWithFormat:@"%@/secondhouse/like/page/%@?per_page=%ld&page_index=%ld",XSBaseUrl,house_id,per_page,page_index];
+         }else if (houseType == XSBHouseType_New){
+             url = [NSString stringWithFormat:@"%@/newhouse/like/page/%@?per_page=%ld&page_index=%ld",XSBaseUrl,house_id,per_page,page_index];
+         }
+    }else if (source == XSBHouseInfoSource_MyPublish){
+        if (houseType == XSBHouseType_Rent) {
+             url = [NSString stringWithFormat:@"%@/renthouse/publish/page/%@?per_page=%ld&page_index=%ld",XSBaseUrl,customer_id,per_page,page_index];
+         }else if (houseType == XSBHouseType_old){
+             url = [NSString stringWithFormat:@"%@/secondhouse/publish/page/%@?per_page=%ld&page_index=%ld",XSBaseUrl,customer_id,per_page,page_index];
+         }
+    }else if (source == XSBHouseInfoSource_MyWatch){
+        if (houseType == XSBHouseType_Rent) {
+             url = [NSString stringWithFormat:@"%@/renthouse/watch/page/%@?per_page=%ld&page_index=%ld",XSBaseUrl,customer_id,per_page,page_index];
+         }else if (houseType == XSBHouseType_old){
+             url = [NSString stringWithFormat:@"%@/secondhouse/watch/page/%@?per_page=%ld&page_index=%ld",XSBaseUrl,customer_id,per_page,page_index];
+         }else if (houseType == XSBHouseType_New){
+             url = [NSString stringWithFormat:@"%@/newhouse/watch/page/%@?per_page=%ld&page_index=%ld",XSBaseUrl,customer_id,per_page,page_index];
+         }
+    }
+ 
     
-
+    if (houseType == XSBHouseType_Rent) {
+            if (source == XSBHouseInfoSource_keyPush||source == XSBHouseInfoSource_MyWatch){
+               [self POST:url param:keyVales progress:nil callback:callback];
+            }else{
+               [self GET:url param:keyVales progress:nil callback:callback];
+            }
+     }else if (houseType == XSBHouseType_old){
+         if (source == XSBHouseInfoSource_keyPush){
+             [self POST:url param:keyVales progress:nil callback:callback];
+         }else{
+             [self GET:url param:keyVales progress:nil callback:callback];
+         }
+     }else if (houseType == XSBHouseType_New){
+        if (source == XSBHouseInfoSource_keyPush){
+            [self POST:url param:keyVales progress:nil callback:callback];
+        }else{
+            [self GET:url param:keyVales progress:nil callback:callback];
+        }
+     }
+    
+}
 
 
 
@@ -257,7 +196,7 @@ NSString *url = [NSString stringWithFormat:@"%@/estate/hots",XSBaseUrl];
 
 }
 // 关注取消关注房子
-- (void)rentWatchHouseWithHouse_id:(NSString *)house_id houseType:(XSBHouseType)houseType watch:(BOOL)watch callback:(HBCompletionBlock)callback{
+- (void)rentWatchHouseWithHouse_id:(NSNumber *)house_id houseType:(XSBHouseType)houseType watch:(BOOL)watch callback:(HBCompletionBlock)callback{
     
     NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
     NSNumber *customer_id = [XSUserServer sharedInstance].userModel.ID;

@@ -5,114 +5,77 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
-            uuid = "EA0E109C-A22C-4CEC-9F98-06E2CD16EB2E"
+            uuid = "CE573D04-2A31-4EBE-A84C-4C3F0D2ED859"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "XSHouseLease/6&#x9879;&#x76ee;&#x7ed3;&#x6784;/&#x623f;&#x5c4b;/1&#x623f;&#x5c4b;&#x4fe1;&#x606f;&#x4e0a;&#x4f20;/3Controller/XSHouseSubmitFirstViewController.m"
+            scope = "1"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0F405C72-7142-4193-B793-4AA9F66CF25D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XSHouseLease/Project/9MVC/House/1Submit/XSHouseSubMitServer.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "-loadAllImage"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "-setUpdataBlacokWithArray:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B28FC869-524F-4A70-80C5-E00EBDD3EFD9"
+            uuid = "F071E4D8-0827-4E9A-9DDB-0C361A7741E4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "XSHouseLease/4Network/XSNetworkInterface.m"
+            filePath = "XSHouseLease/Project/9MVC/House/1Submit/XSHouseSubMitServer.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "-loadImageWithURL:imageUrl:param:progress:callback:"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "-setUpdataBlacokWithArray:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F1BEFB45-0F6F-40E7-A571-126D1F0E5736"
-            shouldBeEnabled = "No"
+            uuid = "455F8B69-F3AF-4192-BB2A-EA164567397D"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "XSHouseLease/6&#x9879;&#x76ee;&#x7ed3;&#x6784;/&#x623f;&#x5c4b;/1&#x623f;&#x5c4b;&#x4fe1;&#x606f;&#x4e0a;&#x4f20;/3Controller/XSHouseSubmitBaseViewController.m"
+            filePath = "XSHouseLease/Project/9MVC/House/1Submit/XSHouseSubTableViewCell.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "-keyValueUpdatekWitOldhDict:array:"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
+            landmarkName = "-textViewDidEndEditing:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B6C92CCD-3832-438C-8F35-003FA5A1D562"
+            uuid = "1CFD4A8A-F3CB-4658-8AED-E3407305C26E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/HXPhotoPicker/&#x7167;&#x7247;&#x9009;&#x62e9;&#x5668;/HXPhotoPicker/HXPhotoView.m"
+            filePath = "XSHouseLease/Project/9MVC/House/1Submit/XSHouseSubMitModel.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "404"
-            endingLineNumber = "404"
-            landmarkName = "-photoPreviewSelectLaterDidEditClick:beforeModel:afterModel:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "07B5FC4B-4424-4F3B-B554-7228A078BAB0"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "XSHouseLease/5&#x9879;&#x76ee;&#x7ec4;&#x4ef6;/&#x56fe;&#x7247;&#x4e0a;&#x4f20;&#x63a7;&#x4ef6;/XSPhotoPickerView.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "-collectionView:cellForItemAtIndexPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "ECBB6E9A-88CB-4D10-A849-F57765D35592"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "XSHouseLease/5&#x9879;&#x76ee;&#x7ec4;&#x4ef6;/&#x56fe;&#x7247;&#x4e0a;&#x4f20;&#x63a7;&#x4ef6;/XSPhotoPickerView.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "-collectionView:cellForItemAtIndexPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B50BD309-2298-4F92-8A68-5A20DE5012E5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "XSHouseLease/5&#x9879;&#x76ee;&#x7ec4;&#x4ef6;/&#x56fe;&#x7247;&#x4e0a;&#x4f20;&#x63a7;&#x4ef6;/XSPhotoPickerView.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "-collectionView:numberOfItemsInSection:"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "-setValueStr:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

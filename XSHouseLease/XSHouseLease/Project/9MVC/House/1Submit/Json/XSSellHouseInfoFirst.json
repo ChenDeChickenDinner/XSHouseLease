@@ -32,7 +32,7 @@
     "title":"小区名称",
     "sequence":1,
     "cellHeight":53,
-    "cellClass":"XSHouseSubTextFieldTableViewCell",
+    "cellClass":"XSHouseSubListChooseTableViewCell",
     "arrayValue": [
                     {
                         "name":"小区名称",
@@ -56,34 +56,6 @@
                   ]
 
     },
-    {
-     "title":"具体地址",
-     "sequence":2,
-     "cellHeight":53,
-     "cellClass":"XSHouseSubTextFieldTableViewCell",
-     "arrayValue": [
-                     {
-                         "name":"具体地址",
-                         "key":"address",
-                         "moreSelect":false,
-                         "sequence":2,
-                         "keyInputType":0,
-                         "keyTextInputType":0,
-                         "values":[
-                                     {
-                                     "placeholder":"请输入街道地址",
-                                     "frontDescribe":null,
-                                     "value":null,
-                                     "valueStr":null,
-                                     "hindDescribe":null,
-                                     "isSelect":false,
-                                     "sendType":1
-                                    }
-                                ]
-                     }
-                   ]
-
-     },
     {
      "title":"期望售价",
      "sequence":2,
@@ -167,5 +139,11 @@
                       }
                     ]
 
+      },
+     {
+      "title":"流程提示",
+      "sequence":2,
+      "cellHeight":160,
+      "cellClass":"XSHouseSubProcessViewCell"
       }
 ]

@@ -10,36 +10,61 @@
 
 
 
-@class XSHouseInfoShowModel;
+@class XSHouseInfoModel;
+
+//更改房屋状态
+typedef void(^clickEditStatus)(NSNumber *status,NSNumber *houseID);
+typedef void(^XSHouseInfoClickBlack)(XSHouseInfoModel *model,id data,XSBHouseKeyValueEditStatus editStatus);
 
 
-typedef void (^XSHouseInfoClickBlack)(XSHouseInfoShowModel *model,XShouseOperation operation);
+@interface XSHouseEsModel : NSObject
+@property (nonatomic, strong) NSNumber *ID;
+@property (nonatomic, strong) NSNumber *cityId;
+@property (nonatomic, copy) NSString *region;
+@property (nonatomic, strong) NSNumber *regionId;
+@property (nonatomic, strong) NSNumber *townId;
+@property (nonatomic, copy) NSString *address;
+@property (nonatomic, strong) NSNumber *latitude;
+@property (nonatomic, strong) NSNumber *longitude;
+@property (nonatomic, strong) NSNumber *estateId;
+@property (nonatomic, strong) NSNumber *hot;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *pid;
+@end
 
 
-@interface XSHouseInfoShowModel : NSObject
-
-@property(nonatomic,assign) XSBHouseInfoSource source;
+@interface XSHouseInfoModel : NSObject
 @property(nonatomic,assign) XSBHouseType houseType;
-// 状态更变
+@property(nonatomic,assign) XSBHouseInfoSource source;
 @property(nonatomic,copy  ) clickEditStatus clickEditStatu;
-
-
 @property(nonatomic,copy  ) XSHouseInfoClickBlack clickBlack;
 @property(nonatomic,copy  ) NSString *cellClass;
-@property(nonatomic,copy  ) XSValuechangeStatus valuechangeStatus;
+@property (nonatomic,strong) NSNumber *cellHeight;
+@end
+@interface XSHouseInfoShowModel : XSHouseInfoModel
 
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *titleDetail;
 @property (nonatomic, assign) BOOL watch;
-@property (nonatomic, strong) NSNumber *house_id;
-@property (nonatomic, strong) NSNumber *customerId;
+@property (nonatomic, copy) NSString *icon;//用户头像
+@property (nonatomic, strong)NSNumber *customerId;
+@property (nonatomic, copy) NSString *customerName;
 @property (nonatomic, copy) NSString *callPhone;
 @property (nonatomic, copy) NSString *callName;
+
 @property (nonatomic, copy) NSString *city;
-@property (nonatomic, strong) NSNumber *cityId;//城市
-@property (nonatomic, copy) NSString *region;// 区
-@property (nonatomic, copy) NSString *town;// 镇
+@property (nonatomic, strong) NSNumber *cityId;
+@property (nonatomic, copy) NSString *region;
+@property (nonatomic, strong) NSNumber *regionId;
+@property (nonatomic, copy) NSString *town;
+@property (nonatomic, strong) NSNumber *townId;
+@property (nonatomic, copy) NSString *estate;
+@property (nonatomic, strong) NSNumber *estateId;
+@property (nonatomic, strong) XSHouseEsModel *es;
+
+
+@property (nonatomic, strong) NSNumber *house_id;
 @property (nonatomic, strong) NSNumber *area;//面积
-@property (nonatomic, copy) NSString *estate;//小区名字
 @property (nonatomic, copy) NSString *address;//详细地址
 @property (nonatomic, strong) NSNumber *rentPrice;//租金
 @property (nonatomic, strong) NSNumber *longitude;//经度
@@ -63,7 +88,7 @@ typedef void (^XSHouseInfoClickBlack)(XSHouseInfoShowModel *model,XShouseOperati
 @property (nonatomic, strong) NSNumber *elevator;//是否有电梯
 @property (nonatomic, strong) NSNumber *waterElectricity;//水电类型
 @property (nonatomic, copy) NSString *waterElectricityName;//水电类型
-@property (nonatomic, strong) NSNumber *dealStatus;// 0未出租1是已出租 ,
+@property (nonatomic, strong) NSNumber *dealStatus;// 0未出租1是已出租 , (2 在售 3售罄 1待售)
 @property (nonatomic, copy) NSString *dealStatusName;// 名字0未出租1是已出租
 @property (nonatomic, strong) NSNumber *rentTimeType;//租期类型
 @property (nonatomic, copy) NSString *rentTimeTypeName;//租期类型年租
@@ -82,6 +107,47 @@ typedef void (^XSHouseInfoClickBlack)(XSHouseInfoShowModel *model,XShouseOperati
 //1待审核 能编辑 2审核失败 能编辑 3已取消 能编辑 可重新发布1 4下架 能编辑 5暂停 能编辑 可发布6 6发布 不能编辑  可取消3 可暂停5
 @property (nonatomic, strong) NSNumber *status;
 
+
+
+
+
+
+
+
+
+@property (nonatomic, strong) NSNumber *push;//
+@property (nonatomic, strong) NSNumber *unitPrice;//单价
+@property (nonatomic, strong) NSNumber *totalPrice;// 总价
+@property (nonatomic, strong) NSNumber *createYears;//建成年代
+@property (nonatomic, strong) NSNumber *form;//户型结构
+@property (nonatomic, strong) NSNumber *realityArea;//房屋实际面积
+@property (nonatomic, strong) NSNumber *elevatorDoor;// 梯户比例
+
+@property (nonatomic, copy) NSString *formName;//户型结构
+@property (nonatomic, copy) NSString *modelImg;//户型图
+@property (nonatomic, copy) NSString *hangoutDate;//挂牌时间
+@property (nonatomic, copy) NSString *modelIntroduced;//户型介绍
+@property (nonatomic, copy) NSString *elevatorName;//
+@property (nonatomic, strong) NSNumber *buildingType;//1塔楼2板楼3板塔结合
+@property (nonatomic, copy) NSString *buildingTypeName;// 1塔楼2板楼3板塔结合
+@property (nonatomic, strong) NSNumber *pledge;//1有抵押 0是无
+@property (nonatomic, copy) NSString *pledgeName;//1有抵押 0是无
+@property (nonatomic, strong) NSNumber *floorLocaltion;//楼层所在的位置
+@property (nonatomic, copy) NSString *floorLocaltionName;//楼层所在的位置
+@property (nonatomic, strong) NSNumber *ownership;//1商品房2公房3经适房4其他
+@property (nonatomic, copy) NSString *ownershipName;//1商品房2公房3经适房4其他
+@property (nonatomic, strong) NSNumber *supplyHeating;//1自供暖2集体供暖
+@property (nonatomic, copy) NSString *supplyHeatingName;//1自供暖2集体供暖
+@property (nonatomic, strong) NSNumber *purpose;//1普通住宅2商业类3别墅4四合院5车位6其他
+@property (nonatomic, copy) NSString *purposeName;//1普通住宅2商业类3别墅4四合院5车位6其他
+@property (nonatomic, strong) NSNumber *fiveYears;//是否满五年
+@property (nonatomic, copy) NSString *fiveYearsName;//是否满五年
+
+@property (nonatomic, strong) NSNumber *minArea;//建筑面积
+@property (nonatomic, strong) NSNumber *maxArea;//建筑面积
+@property (nonatomic, strong) NSNumber *referTotalPrice;
+@property (nonatomic, strong) NSNumber *referUnitPrice;
+-(NSArray *)houseInfoBArray;
 @end
 
 

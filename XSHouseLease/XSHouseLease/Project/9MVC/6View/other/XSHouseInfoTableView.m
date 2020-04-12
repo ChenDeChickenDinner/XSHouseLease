@@ -101,9 +101,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    XSHouseInfoShowModel *model = [self.array safeObjectAtIndex:indexPath.row];
-    if (model.clickBlack) {
-        model.clickBlack(model, XShouseOperation_click);
-    }
+//    XSHouseInfoShowModel *model = [self.array safeObjectAtIndex:indexPath.row];
+//    if (model.clickBlack) {
+//        model.clickBlack(model, XShouseOperation_click);
+//    }
 }
 @end

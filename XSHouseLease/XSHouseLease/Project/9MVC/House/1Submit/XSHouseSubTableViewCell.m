@@ -7,6 +7,7 @@
 //
 
 #import "XSHouseSubTableViewCell.h"
+#import "XSSearchEstateController.h"
 
 #define lableWidth 2
 static NSString *CollectionCellIdentifier = @"CollectionCellIdentifierA";
@@ -47,8 +48,9 @@ static NSString *CollectionCellIdentifierB = @"CollectionCellIdentifierB";
 #pragma mark - 选择器
 @implementation XSHouseSubListChooseTableViewCell
 - (void)refreshData{
-    XSKeyValueModel *model =  self.dataModel.arrayValue.firstObject;
     self.title.text = self.dataModel.title;
+    
+    XSKeyValueModel *model =  self.dataModel.arrayValue.firstObject;
     XSValue *valueData = model.values.firstObject;
     if (valueData.valueStr == nil) {
         self.value.text = valueData.placeholder;
@@ -60,31 +62,47 @@ static NSString *CollectionCellIdentifierB = @"CollectionCellIdentifierB";
 
 }
 - (IBAction)listChoose:(UIButton *)sender {
+    XSKeyValueModel *model =  self.dataModel.arrayValue.firstObject;
+    XSValue *valueData = model.values.firstObject;
     WEAK_SELF;
-    BRAddressPickerView *addressPickerView = [[BRAddressPickerView alloc]init];
-    addressPickerView.pickerMode = BRAddressPickerModeArea;
-    addressPickerView.title = @"请选择地区";
-//    addressPickerView.selectValues = @[@"浙江省", @"杭州市", @"西湖区"];
-    addressPickerView.dataSourceArr = [XSPublicServer sharedInstance].cityArray;
-//    addressPickerView.selectIndexs = @[@10, @0, @4];
-    addressPickerView.isAutoSelect = YES;
-    addressPickerView.resultBlock = ^(BRProvinceModel *province, BRCityModel *city, BRAreaModel *area) {
-        STRONG_SELF;
-        
-        NSString *valueStr = [NSString stringWithFormat:@"%@%@%@", province.name, city.name, area.name];
-        NSLog(@"选择的值：%@", valueStr);
-        self.value.text = valueStr;
-        self.value.textColor = [UIColor hb_colorWithHexString:@"#444444" alpha:1];
 
-          XSKeyValueModel *model = [self.dataModel.arrayValue safeObjectAtIndex:0];
-          XSValue *valueData = model.values.firstObject;
-          valueData.valueStr = valueStr;
-       
-//        [[XSHouseSubMitServer sharedInstance] LocationParameterUpdateWithProvince:province city:city area:area];
+    if ([valueData.key isEqualToString:@"city"]) {
+        BRAddressPickerView *addressPickerView = [[BRAddressPickerView alloc]init];
+        addressPickerView.pickerMode = BRAddressPickerModeArea;
+        addressPickerView.pickerMode = BRAddressPickerModeProvince;
+        addressPickerView.title = @"请选择地区";
+        addressPickerView.dataSourceArr = [XSPublicServer sharedInstance].cityArray;
+        addressPickerView.isAutoSelect = YES;
+        addressPickerView.resultBlock = ^(BRProvinceModel *province, BRCityModel *city, BRAreaModel *area) {
+            STRONG_SELF;
+            NSString *valueStr = [NSString stringWithFormat:@"%@%@%@", province.name, city.name, area.name];
+            NSLog(@"选择的值：%@", valueStr);
+            valueData.value = [NSNumber numberWithInt:province.code.intValue];
+            valueData.valueStr = province.name;
+            self.value.text = valueStr;
+            self.value.textColor = [UIColor hb_colorWithHexString:@"#444444" alpha:1];
+        };
 
-    };
+        [addressPickerView show];
+    }else if ([valueData.key isEqualToString:@"estate"]){
+       NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+        [dict safeSetObject:@"上海" forKey:@"city"];
+        XSSearchEstateController *vc = [[XSSearchEstateController alloc]init];
+        vc.dict = dict;
+        vc.searchBlock = ^(XSHouseEsModel * _Nonnull model) {
+            STRONG_SELF;
+            valueData.value = model.ID;
+            valueData.valueStr = model.name;
+            self.value.text = model.name;
+            self.value.textColor = [UIColor hb_colorWithHexString:@"#444444" alpha:1];
+           self.dataModel.valuechangeStatus(self.dataModel, model, XSBHouseKeyValueEsSend);
+        };
+        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
+        nav.modalPresentationStyle = UIModalPresentationFullScreen;
+//        [[NSObject getTopViewController].navigationController pushViewController:vc animated:YES];
+        [[NSObject getTopViewController] presentViewController:nav animated:YES completion:nil];
+    }
 
-    [addressPickerView show];
 }
 @end
 
@@ -205,9 +223,9 @@ static NSString *CollectionCellIdentifierB = @"CollectionCellIdentifierB";
     if (valueData.valueStr == nil) {
         textView.text = nil;
     }
-    if (model.valuechangeStatus) {
-        model.valuechangeStatus(model.key, XSBHouseKeyValueEditBegin);
-    }
+//    if (model.valuechangeStatus) {
+//        model.valuechangeStatus(model.key, XSBHouseKeyValueEditBegin);
+//    }
     return YES;
 }
 - (void)textViewDidEndEditing:(UITextView *)textView{
@@ -370,7 +388,7 @@ static NSString *CollectionCellIdentifierB = @"CollectionCellIdentifierB";
 
 - (void)awakeFromNib{
     [super awakeFromNib];
-    
+     self.photoView = [[HXPhotoView alloc]initWithManager:self.manager];
      self.photoView.collectionView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
      self.photoView.delegate = self; //
      self.photoView.outerCamera = YES; // 是否把相机功能放在外面 默认NO
@@ -380,25 +398,52 @@ static NSString *CollectionCellIdentifierB = @"CollectionCellIdentifierB";
      self.photoView.showAddCell = YES; // 是否显示添加的cell 默认 YES
      //    photoView.addImageName = nil; // 添加按钮的图片
      //    photoView.deleteImageName = nil; // 删除按钮图片
+    [self.bkPhotoView addSubview:self.photoView];
 
      self.photoView.previewShowDeleteButton = YES; // 预览大图时是否显示删除按钮
      self.photoView.previewStyle = HXPhotoViewPreViewShowStyleDefault; //预览大图时的风格样式
      self.photoView.adaptiveDarkness = YES;// 底部选择视图是否自适应暗黑风格
      self.photoView.updateFrameBlock = ^(CGRect frame) {
-         
          NSLog(@"frame:%@",NSStringFromCGRect(frame));
      };
-      self.photoView.changeCompleteBlock = ^(NSArray<HXPhotoModel *> *allList, NSArray<HXPhotoModel *> *photos, NSArray<HXPhotoModel *> *videos, BOOL isOriginal) {
+}
+- (void)layoutSubviews{
+    [super layoutSubviews];
+    self.photoView.frame = self.bkPhotoView.bounds;
+    
+}
+- (void)refreshData{
+    WEAK_SELF;
+    self.photoView.changeCompleteBlock = ^(NSArray<HXPhotoModel *> *allList, NSArray<HXPhotoModel *> *photos, NSArray<HXPhotoModel *> *videos, BOOL isOriginal) {
+        STRONG_SELF;
+        self.dataModel.valuechangeStatus(self.dataModel, nil, XSBHouseKeyValueImagesChange);
+        for (HXPhotoModel *photoModel in photos) {
+            [photoModel requestImageURLStartRequestICloud:nil progressHandler:nil success:^(NSURL * _Nullable imageURL, HXPhotoModel * _Nullable model, NSDictionary * _Nullable info) {
+                if ([self.dataModel.title isEqualToString:@"户型图上传"]) {
+                    self.dataModel.valuechangeStatus(self.dataModel, imageURL, XSBHouseKeyValueImagesSend);
+                }else{
+                    self.dataModel.valuechangeStatus(self.dataModel, imageURL, XSBHouseKeyValueImagesDoorSend);
+                }
+            } failed:^(NSDictionary * _Nullable info, HXPhotoModel * _Nullable model) {
+                
+            }];
+        }
+     };
 
-          for (HXPhotoModel *photoModel in photos) {
-              
-              [photoModel requestImageURLStartRequestICloud:nil progressHandler:nil success:^(NSURL * _Nullable imageURL, HXPhotoModel * _Nullable model, NSDictionary * _Nullable info) {
-                  
-              } failed:^(NSDictionary * _Nullable info, HXPhotoModel * _Nullable model) {
-                  
-              }];
-          }
-       };
+    if ([self.dataModel.title isEqualToString:@"户型图上传"]) {
+        self.title.text = @"户型图上传";
+        self.titleB.text = nil;
+
+        self.manager.configuration.maxNum = 1;
+        self.manager.configuration.photoMaxNum = 1;
+    }else{
+        self.title.text = @"房源图片上传";
+         self.titleB.text = @"（最多上传5张照片）";
+
+        self.manager.configuration.maxNum = 5;
+        self.manager.configuration.photoMaxNum = 5;
+    }
+    self.manager.configuration.videoMaxNum = 0;
 }
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     [picker dismissViewControllerAnimated:YES completion:nil];

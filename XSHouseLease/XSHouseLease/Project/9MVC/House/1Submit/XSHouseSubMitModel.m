@@ -14,20 +14,26 @@
 - (void)setValue:(NSNumber *)value{
     _value = value;
     [self infoLog];
-    if (self.updateBlack)self.updateBlack();
+      if (self.updateBlack) {
+        self.updateBlack();
+    }
 }
 - (void)setValueStr:(NSString *)valueStr{
     _valueStr = valueStr;
     [self infoLog];
-    if (self.updateBlack)self.updateBlack();
+      if (self.updateBlack) {
+        self.updateBlack();
+    }
 }
 - (void)setIsSelect:(BOOL)isSelect{
     _isSelect = isSelect;
     [self infoLog];
-    if (self.updateBlack)self.updateBlack();
+    if (self.updateBlack) {
+        self.updateBlack();
+    }
 }
 - (void)infoLog{
-  NSLog(@"name = %@,key = %@,value = %@,valueStr = %@,sendStr = %@",self.keyStr,self.key,self.value,self.valueStr,self.sendType == XSValueSendType_Int?self.value:self.valueStr);
+//  NSLog(@"name = %@,key = %@,value = %@,valueStr = %@,sendStr = %@",self.keyStr,self.key,self.value,self.valueStr,self.sendType == XSValueSendType_Int?self.value:self.valueStr);
 }
 @end
 
