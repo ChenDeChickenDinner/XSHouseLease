@@ -133,7 +133,7 @@
 @end
 
 #pragma mark -房屋所有人信息
-@interface XSHouseMasterInfoCell : XSHouseInfoCell
+@interface XSHouseMasterInfoCell : uiv
 @property (weak, nonatomic) IBOutlet UIView *houseUserInfoView;
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UIImageView *image;

@@ -49,8 +49,11 @@ typedef void(^XSValuechangeStatus)(XSHouseInfoCellModel *model,id data,XSBHouseK
 @property (nonatomic,strong) NSArray<XSKeyValueModel *> *arrayValue;
 @property (nonatomic,copy)   XSValuechangeStatus valuechangeStatus;
 @end
-
-
+//键值展示
+@interface XSKeyValue : XSHouseInfoCellModel
+@property(nonatomic,copy) NSString *key;
+@property(nonatomic,copy) NSString *value;
+@end
 
 
 //接口拉取的

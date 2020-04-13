@@ -50,6 +50,7 @@
 #pragma mark -
 @interface XSHouseSubTextViewCell : XSHouseSubTableViewCell<UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *title;
+@property (weak, nonatomic) IBOutlet UIView *titleView;
 @property (weak, nonatomic) IBOutlet UITextView *textView ;
 @end
 #pragma mark -

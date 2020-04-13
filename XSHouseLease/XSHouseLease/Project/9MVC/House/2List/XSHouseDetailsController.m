@@ -11,6 +11,7 @@
 #import "XSHouseInfoShowModel.h"
 
 @interface XSHouseDetailsController ()<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet XSHouseMasterInfoCell *callView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(nonatomic,strong) NSMutableArray *array;
 @property(strong, nonatomic) XSHouseInfoShowModel *dataModel;
@@ -66,6 +67,12 @@
 // 组装数据
 -(void)assemblyCellDataArrayWithData:(XSHouseInfoShowModel *)dataModel{
     self.dataModel = dataModel;
+
+    self.callView.model = dataModel;
+    if ([dataModel.house_id isEqual:[XSUserServer sharedInstance].userModel.ID]) {
+//        [self.callView removeFromSuperview];
+    }
+    
     WEAK_SELF;
     self.dataModel.clickBlack = ^(XSHouseInfoModel *model, id data, XSBHouseKeyValueEditStatus editStatus) {
         STRONG_SELF;
@@ -84,14 +91,7 @@
     NSString *path = [[NSBundle mainBundle]pathForResource:file ofType:@"json"];
     NSArray *dataArray = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableLeaves error:&error];
     NSMutableArray *modelArray = [XSHouseInfoShowModel mj_objectArrayWithKeyValuesArray:dataArray];
-    
-//    for (XSHouseInfoShowModel *cellModel in modelArray) {
-//        cellModel.clickBlack = ^(XSHouseInfoModel *model, id data, XSBHouseKeyValueEditStatus editStatus) {
-//            if (editStatus == XSBHouseKeyValueInfoBMore) {
-//                NSLog(@"更多房源信息");
-//            }
-//        };
-//    }
+
     [self.array addObjectsFromArray:modelArray];
     [self.tableView reloadData];
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -298,7 +298,7 @@
                         <rect key="frame" x="0.0" y="40" width="341" height="129"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i7K-nF-DY3">
-                                <rect key="frame" x="15" y="0.0" width="311" height="129"/>
+                                <rect key="frame" x="12" y="0.0" width="314" height="129"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
@@ -309,7 +309,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="i7K-nF-DY3" firstAttribute="top" secondItem="yMt-k3-9Ml" secondAttribute="top" id="BqV-LM-4TR"/>
-                            <constraint firstItem="i7K-nF-DY3" firstAttribute="leading" secondItem="yMt-k3-9Ml" secondAttribute="leading" constant="15" id="aor-fr-Hod"/>
+                            <constraint firstItem="i7K-nF-DY3" firstAttribute="leading" secondItem="yMt-k3-9Ml" secondAttribute="leading" constant="12" id="aor-fr-Hod"/>
                             <constraint firstAttribute="trailing" secondItem="i7K-nF-DY3" secondAttribute="trailing" constant="15" id="c4K-Xa-UDd"/>
                             <constraint firstAttribute="bottom" secondItem="i7K-nF-DY3" secondAttribute="bottom" id="wOe-Zj-zEg"/>
                         </constraints>
@@ -329,6 +329,7 @@
             <connections>
                 <outlet property="textView" destination="i7K-nF-DY3" id="XrI-Xt-WSw"/>
                 <outlet property="title" destination="0CP-na-Iaa" id="HIE-Pn-M02"/>
+                <outlet property="titleView" destination="0me-v7-8rD" id="46s-gV-rcy"/>
             </connections>
             <point key="canvasLocation" x="63" y="-69"/>
         </tableViewCell>

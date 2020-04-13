@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XSHouseIntroduceController">
             <connections>
+                <outlet property="callView" destination="VqB-vs-iFj" id="QWF-15-JVF"/>
                 <outlet property="tableView" destination="ZI7-1E-Q9m" id="YK6-Wc-F0k"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -19,24 +20,44 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZI7-1E-Q9m">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ZI7-1E-Q9m">
+                    <rect key="frame" x="0.0" y="135" width="414" height="727"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Cwx-ED-jrS"/>
                         <outlet property="delegate" destination="-1" id="h9b-pb-G2K"/>
                     </connections>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VqB-vs-iFj" customClass="XSHouseMasterInfoCell">
+                    <rect key="frame" x="0.0" y="44" width="414" height="76"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="76" id="i0s-q6-ubJ"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PPa-mk-QqG">
+                    <rect key="frame" x="0.0" y="120" width="414" height="15"/>
+                    <color key="backgroundColor" red="0.92026855630000004" green="0.92026855630000004" blue="0.92026855630000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="uAx-xv-v25"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="ZI7-1E-Q9m" secondAttribute="trailing" id="5QP-O5-QmU"/>
-                <constraint firstItem="ZI7-1E-Q9m" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="Nv4-MR-BNm"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="ZI7-1E-Q9m" secondAttribute="bottom" id="Pez-Rf-BKZ"/>
-                <constraint firstItem="ZI7-1E-Q9m" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="ULO-Rj-53H"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="PPa-mk-QqG" secondAttribute="trailing" id="33u-EE-X74"/>
+                <constraint firstItem="ZI7-1E-Q9m" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="6D9-MI-ktq"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="VqB-vs-iFj" secondAttribute="trailing" id="6Qj-wf-ymG"/>
+                <constraint firstItem="PPa-mk-QqG" firstAttribute="top" secondItem="VqB-vs-iFj" secondAttribute="bottom" id="BoN-R2-W9l"/>
+                <constraint firstItem="VqB-vs-iFj" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="C89-DM-ocM"/>
+                <constraint firstItem="VqB-vs-iFj" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="EET-Qw-KBN"/>
+                <constraint firstItem="ZI7-1E-Q9m" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="VeK-cz-lOb"/>
+                <constraint firstItem="PPa-mk-QqG" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="YqD-Ob-oVp"/>
+                <constraint firstItem="ZI7-1E-Q9m" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="g3V-GT-r6z"/>
+                <constraint firstItem="ZI7-1E-Q9m" firstAttribute="top" secondItem="PPa-mk-QqG" secondAttribute="bottom" id="hdK-ko-SaP"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
-            <point key="canvasLocation" x="132" y="110"/>
+            <point key="canvasLocation" x="131.8840579710145" y="109.82142857142857"/>
         </view>
     </objects>
 </document>

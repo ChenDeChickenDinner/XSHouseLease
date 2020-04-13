@@ -580,12 +580,10 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 @implementation XSHouseMasterInfoCell
 - (void)awakeFromNib{
     [super awakeFromNib];
-    
      self.callIm.layer.masksToBounds = YES;
      self.callIm.layer.cornerRadius = 5;
      self.cellPhone.layer.masksToBounds = YES;
      self.cellPhone.layer.cornerRadius = 5;
-     
      self.cellPhone.layer.borderWidth = 1;
      self.cellPhone.layer.borderColor = [UIColor hb_colorWithHexString:@"#E82B2B" alpha:1].CGColor;
 }

@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XSHouseDetailsController">
             <connections>
+                <outlet property="callView" destination="o3s-Eu-mDs" id="dyI-Sw-Ffx"/>
                 <outlet property="tableView" destination="wCi-iM-NMF" id="Tfh-PL-Duu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,19 +21,30 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wCi-iM-NMF">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="781"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o3s-Eu-mDs" customClass="XSHouseMasterInfoCell">
+                    <rect key="frame" x="0.0" y="786" width="414" height="76"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="76" id="U01-ni-2lk"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="wCi-iM-NMF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="AIh-6G-IC6"/>
                 <constraint firstAttribute="trailing" secondItem="wCi-iM-NMF" secondAttribute="trailing" id="KMj-qP-FJm"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="wCi-iM-NMF" secondAttribute="bottom" priority="800" id="SEj-5b-Eup"/>
+                <constraint firstItem="o3s-Eu-mDs" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="PtH-Jk-l2S"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="wCi-iM-NMF" secondAttribute="bottom" priority="800" id="R3H-Fp-dIu"/>
                 <constraint firstItem="wCi-iM-NMF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="f9T-mX-ysG"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="o3s-Eu-mDs" secondAttribute="trailing" id="iTx-bZ-m5O"/>
+                <constraint firstItem="o3s-Eu-mDs" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="nMH-M2-a4s"/>
+                <constraint firstItem="o3s-Eu-mDs" firstAttribute="top" secondItem="wCi-iM-NMF" secondAttribute="bottom" constant="5" id="wwu-Mx-pO2"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
-            <point key="canvasLocation" x="132" y="124"/>
+            <point key="canvasLocation" x="131.8840579710145" y="123.88392857142857"/>
         </view>
     </objects>
 </document>

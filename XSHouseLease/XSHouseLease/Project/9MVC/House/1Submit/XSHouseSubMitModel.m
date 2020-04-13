@@ -69,7 +69,8 @@
 @end
 
 
-
+@implementation XSKeyValue
+@end
 
 @implementation XSHouseEnumDataEnumRes
 @end
