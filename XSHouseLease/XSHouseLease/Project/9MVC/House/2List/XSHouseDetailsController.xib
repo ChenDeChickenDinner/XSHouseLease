@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XSHouseDetailsController">
             <connections>
-                <outlet property="callView" destination="o3s-Eu-mDs" id="dyI-Sw-Ffx"/>
+                <outlet property="callView" destination="o3s-Eu-mDs" id="yIi-g9-EFg"/>
                 <outlet property="tableView" destination="wCi-iM-NMF" id="Tfh-PL-Duu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,7 +24,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="781"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o3s-Eu-mDs" customClass="XSHouseMasterInfoCell">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o3s-Eu-mDs" customClass="XSHouseMasterInfoView">
                     <rect key="frame" x="0.0" y="786" width="414" height="76"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>

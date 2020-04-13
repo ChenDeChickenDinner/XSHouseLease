@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "XSHouseInfoShowModel.h"
+#import "XSHouseIntroduceController.h"
 
 #pragma mark - 枚举多选显示
 @interface XSCollectionViewCell :  UICollectionViewCell
@@ -52,6 +53,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UIView *titleView;
 @property (weak, nonatomic) IBOutlet UITextView *textView ;
+@property (strong, nonatomic)XSHouseMoreInfoCellMdeol *keyValueModel;
 @end
 #pragma mark -
 @interface XSHouseSubCollectionviewACell : XSHouseSubTableViewCell<UICollectionViewDelegate,UICollectionViewDataSource>

@@ -77,8 +77,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *rarealabe;
 @end
 #pragma mark -其它信息B
-@interface XSHouseInfoBCollectionCell : UICollectionViewCell
-@property (strong, nonatomic) XSHouseInfoBModel  *model;
+@interface XSHouseKeyVlaueCollectionCell : UICollectionViewCell
+@property (strong, nonatomic) XSHouseKeyVlaueModel  *model;
 @property (weak, nonatomic)  UILabel *titleLable;
 @property (weak, nonatomic)  UILabel *contentLable;
 @end
@@ -86,7 +86,7 @@
 @property (strong, nonatomic) UIView *lineView;
 @property (weak, nonatomic) IBOutlet UIView *bkView;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView ;
-@property (strong, nonatomic) NSArray<XSHouseInfoBModel *> *array;
+@property (strong, nonatomic) NSArray<XSHouseKeyVlaueModel *> *array;
 @property (strong, nonatomic) UICollectionViewFlowLayout *layout;
 @end
 
@@ -132,12 +132,4 @@
 @property (strong, nonatomic)XSMyPublishHosueController *listvc;
 @end
 
-#pragma mark -房屋所有人信息
-@interface XSHouseMasterInfoCell : uiv
-@property (weak, nonatomic) IBOutlet UIView *houseUserInfoView;
-@property (weak, nonatomic) IBOutlet UILabel *name;
-@property (weak, nonatomic) IBOutlet UIImageView *image;
-@property (weak, nonatomic) IBOutlet UIButton *cellPhone;
-@property (weak, nonatomic) IBOutlet UIButton *callIm;
-@end
 

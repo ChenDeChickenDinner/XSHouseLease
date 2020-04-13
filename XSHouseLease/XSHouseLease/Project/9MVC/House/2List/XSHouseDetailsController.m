@@ -8,10 +8,11 @@
 
 #import "XSHouseDetailsController.h"
 #import "XSHouseInfoShowModel.h"
-#import "XSHouseInfoShowModel.h"
+#import "XSHouseInfoShowCell.h"
+#import "XSHouseMasterInfoView.h"
 
 @interface XSHouseDetailsController ()<UITableViewDelegate,UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet XSHouseMasterInfoCell *callView;
+@property (weak, nonatomic) IBOutlet XSHouseMasterInfoView *callView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(nonatomic,strong) NSMutableArray *array;
 @property(strong, nonatomic) XSHouseInfoShowModel *dataModel;
@@ -82,6 +83,7 @@
                XSHouseIntroduceController *vc = [[XSHouseIntroduceController alloc]init];
                vc.dataModel = self.dataModel;
                vc.houseType = self.houseType;
+               vc.infoType = XSBHouseMorenInfo_FYXQ;
                [self.navigationController pushViewController:vc animated:YES];
            }
     };

@@ -45,8 +45,8 @@ typedef void (^clickBlack)(XSHouseModuleModel *model);
 @property (copy, nonatomic) NSString *address;
 @end
 
-#pragma mark - 房屋其它信息(详情)
-@interface XSHouseInfoBModel : NSObject
+#pragma mark - KeyVlaue
+@interface XSHouseKeyVlaueModel : NSObject
 @property (nonatomic, copy) NSString *key;
 @property (nonatomic, copy) NSString *keyName;
 @property (nonatomic, copy) NSString *value;
@@ -81,8 +81,8 @@ typedef void (^clickBlack)(XSHouseModuleModel *model);
 @property (strong, nonatomic) NSMutableArray<NSString *> *bunnerUrlArray;
 
 @property (strong, nonatomic) NSMutableArray<XSHouseFacilitiesModel *> *facilitiesArray;
-@property (strong, nonatomic) NSMutableArray<XSHouseInfoBModel *> *rentHouseInfoBArray;
-@property (strong, nonatomic) NSMutableArray<XSHouseInfoBModel *> *secondHouseInfoBArray;
+@property (strong, nonatomic) NSMutableArray<XSHouseKeyVlaueModel *> *rentHouseInfoBArray;
+@property (strong, nonatomic) NSMutableArray<XSHouseKeyVlaueModel *> *secondHouseInfoBArray;
 
 @property (strong, nonatomic) NSMutableArray<XSHouseModuleModel *> *renthouseConditionArray;
 @property (strong, nonatomic) NSMutableArray<XSHouseModuleModel *> *newhouseConditionArray;

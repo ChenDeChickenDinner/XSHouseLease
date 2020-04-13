@@ -10,13 +10,21 @@
 #import "XSHouseSubMitModel.h"
 
 
+//键值展示
 
-
+@interface XSHouseMoreInfoCellMdeol : NSObject
+@property(nonatomic,copy) NSString *title;
+@property(nonatomic,copy) NSString *value;
+@property(nonatomic,copy) NSString *cellClass;
+@property(nonatomic,strong) NSNumber *cellHeight;
+@property(strong, nonatomic)UICollectionViewFlowLayout *layout;
+@property (strong, nonatomic) NSMutableArray *array;
+@end
 
 @interface XSHouseIntroduceController : UIViewController
 @property (strong, nonatomic) XSHouseInfoShowModel *dataModel;
 @property(nonatomic,assign) XSBHouseType houseType;
-
+@property(nonatomic,assign) XSBHouseMorenInfoType infoType;
 @end
 
 

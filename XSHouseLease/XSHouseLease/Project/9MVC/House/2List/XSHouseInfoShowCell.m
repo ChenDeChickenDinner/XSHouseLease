@@ -335,7 +335,7 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
      self.collectionView.scrollEnabled = NO;
      self.collectionView.showsHorizontalScrollIndicator = NO;
      self.collectionView.bounces = NO;
-     [self.collectionView registerClass:[XSHouseInfoBCollectionCell class] forCellWithReuseIdentifier:XSHouseDetailsBusinessInfoCellStr];
+     [self.collectionView registerClass:[XSHouseKeyVlaueCollectionCell class] forCellWithReuseIdentifier:XSHouseDetailsBusinessInfoCellStr];
     
 }
 
@@ -350,14 +350,14 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
     return self.array.count;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    XSHouseInfoBModel *dataModel = [self.array safeObjectAtIndex:indexPath.row];
-    XSHouseInfoBCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:XSHouseDetailsBusinessInfoCellStr forIndexPath:indexPath];
+    XSHouseKeyVlaueModel *dataModel = [self.array safeObjectAtIndex:indexPath.row];
+    XSHouseKeyVlaueCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:XSHouseDetailsBusinessInfoCellStr forIndexPath:indexPath];
     cell.model = dataModel;
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    XSHouseInfoBModel *dataModel = [self.array safeObjectAtIndex:indexPath.row];
+    XSHouseKeyVlaueModel *dataModel = [self.array safeObjectAtIndex:indexPath.row];
     if ([dataModel.key isEqualToString:@"other"]) {
         if (self.model.clickBlack) {
             self.model.clickBlack(self.model, nil, XSBHouseKeyValueInfoBMore);
@@ -577,35 +577,9 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 
 @end
 
-@implementation XSHouseMasterInfoCell
-- (void)awakeFromNib{
-    [super awakeFromNib];
-     self.callIm.layer.masksToBounds = YES;
-     self.callIm.layer.cornerRadius = 5;
-     self.cellPhone.layer.masksToBounds = YES;
-     self.cellPhone.layer.cornerRadius = 5;
-     self.cellPhone.layer.borderWidth = 1;
-     self.cellPhone.layer.borderColor = [UIColor hb_colorWithHexString:@"#E82B2B" alpha:1].CGColor;
-}
-- (void)updateWithModel:(XSHouseInfoShowModel *)model{
-    self.model = model;
-    [self.image sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"userIcon"]];
-    self.name.text = model.callName;
-}
-- (IBAction)callPhone:(id)sender {
-    NSString *telString = [NSString stringWithFormat:@"telprompt://%@",self.model.callPhone];
-    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:telString]]) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:telString] options:@{} completionHandler:nil];
-    }
-    
-}
-- (IBAction)callMassage:(id)sender {
-    [ProgressHUD showSuccess:@"努力开发中"];
-}
-@end
 
 
-@implementation XSHouseInfoBCollectionCell
+@implementation XSHouseKeyVlaueCollectionCell
 - (instancetype)initWithFrame:(CGRect)frame{
     
     if (self = [super initWithFrame:frame]) {
@@ -642,7 +616,7 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
     self.titleLable.frame = CGRectMake(0, 0, 45, self.height);
     self.contentLable.frame = CGRectMake(45, 0, self.width - 45, self.height);
 }
-- (void)setModel:(XSHouseInfoBModel *)model{
+- (void)setModel:(XSHouseKeyVlaueModel *)model{
     _model = model;
     self.titleLable.text = model.keyName;
     self.contentLable.text = model.value?model.value:nil;

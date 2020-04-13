@@ -84,6 +84,13 @@ typedef NS_ENUM(NSInteger,XSValueSendType) {
     XSValueSendType_Str,
 };
 
+typedef NS_ENUM(NSInteger,XSBHouseMorenInfoType) {
+    XSBHouseMorenInfo_FYXQ = 0,
+    XSBHouseMorenInfo_FYIX,
+    XSBHouseMorenInfo_LDIX ,
+    XSBHouseMorenInfo_LPIX,
+
+};
 
 
 

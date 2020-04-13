@@ -34,6 +34,8 @@
 		55198EFD243C5248006A9D67 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198E71243C5248006A9D67 /* AppDelegate.m */; };
 		55198EFE243C5248006A9D67 /* XSTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198E72243C5248006A9D67 /* XSTabBarViewController.m */; };
 		55198EFF243C5248006A9D67 /* XSNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198E73243C5248006A9D67 /* XSNavViewController.m */; };
+		5595D243244436AA00F13111 /* XSHouseMasterInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5595D242244436AA00F13111 /* XSHouseMasterInfoView.xib */; };
+		5595D246244436E700F13111 /* XSHouseMasterInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5595D245244436E700F13111 /* XSHouseMasterInfoView.m */; };
 		55BAE6D424400D39001C7B22 /* XSHouseSubTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE6C224400D39001C7B22 /* XSHouseSubTableViewCell.m */; };
 		55BAE6D724400D39001C7B22 /* XSPhotoPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE6C824400D39001C7B22 /* XSPhotoPickerView.m */; };
 		55BAE6D824400D39001C7B22 /* XSPhotoPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BAE6C924400D39001C7B22 /* XSPhotoPickerView.xib */; };
@@ -153,6 +155,9 @@
 		55198E73243C5248006A9D67 /* XSNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSNavViewController.m; sourceTree = "<group>"; };
 		55198E74243C5248006A9D67 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		55198E75243C5248006A9D67 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		5595D242244436AA00F13111 /* XSHouseMasterInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSHouseMasterInfoView.xib; sourceTree = "<group>"; };
+		5595D244244436E700F13111 /* XSHouseMasterInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSHouseMasterInfoView.h; sourceTree = "<group>"; };
+		5595D245244436E700F13111 /* XSHouseMasterInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSHouseMasterInfoView.m; sourceTree = "<group>"; };
 		55BAE6C224400D39001C7B22 /* XSHouseSubTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubTableViewCell.m; sourceTree = "<group>"; };
 		55BAE6C624400D39001C7B22 /* XSPhotoPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSPhotoPickerView.h; sourceTree = "<group>"; };
 		55BAE6C824400D39001C7B22 /* XSPhotoPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSPhotoPickerView.m; sourceTree = "<group>"; };
@@ -827,6 +832,9 @@
 				55BF0008243D6324007843C2 /* XSHouseIntroduceController.h */,
 				55BF000B243D6324007843C2 /* XSHouseIntroduceController.m */,
 				55BF0009243D6324007843C2 /* XSHouseIntroduceController.xib */,
+				5595D244244436E700F13111 /* XSHouseMasterInfoView.h */,
+				5595D245244436E700F13111 /* XSHouseMasterInfoView.m */,
+				5595D242244436AA00F13111 /* XSHouseMasterInfoView.xib */,
 			);
 			path = 2List;
 			sourceTree = "<group>";
@@ -929,6 +937,7 @@
 			files = (
 				55198D03243C4B2E006A9D67 /* LaunchScreen.storyboard in Resources */,
 				55BAE6F624404423001C7B22 /* XSHouseSubmitFirstViewController.xib in Resources */,
+				5595D243244436AA00F13111 /* XSHouseMasterInfoView.xib in Resources */,
 				55BAE6FA24404423001C7B22 /* XSRentHouseInfoFirst.json in Resources */,
 				55BF008D243D6325007843C2 /* XSHouseDetailsController.xib in Resources */,
 				55BAE6DC24400D39001C7B22 /* XSHouseSubTableViewCell.xib in Resources */,
@@ -1046,6 +1055,7 @@
 				55BF009E243D6325007843C2 /* XSHouseBunnerModel.m in Sources */,
 				55BF0080243D6325007843C2 /* MyInfoViewController.m in Sources */,
 				55BF0085243D6325007843C2 /* XSMyPublishHosueController.m in Sources */,
+				5595D246244436E700F13111 /* XSHouseMasterInfoView.m in Sources */,
 				55BF0063243D6325007843C2 /* XSRegionSearchView.m in Sources */,
 				55BF00A2243D6325007843C2 /* XSBaseTableViewCell.m in Sources */,
 				55BAE6D724400D39001C7B22 /* XSPhotoPickerView.m in Sources */,

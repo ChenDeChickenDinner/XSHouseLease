@@ -35,9 +35,9 @@
     NSMutableDictionary *modeDict = [self mj_keyValues];
     NSMutableArray *infoArray = [NSMutableArray array];
     NSArray *sourceArray = self.houseType==XSBHouseType_Rent?[XSPublicServer sharedInstance].rentHouseInfoBArray:[XSPublicServer sharedInstance].secondHouseInfoBArray;
-    for (XSHouseInfoBModel *infoJsonModel in sourceArray) {
+    for (XSHouseKeyVlaueModel *infoJsonModel in sourceArray) {
         id value = [modeDict safeObjectForKey:infoJsonModel.key];
-         XSHouseInfoBModel *infoModel = [[XSHouseInfoBModel alloc]init];
+         XSHouseKeyVlaueModel *infoModel = [[XSHouseKeyVlaueModel alloc]init];
           infoModel.key = infoJsonModel.key ;
          infoModel.keyName = infoJsonModel.keyName ;
         if ([infoJsonModel.key isEqualToString:@"floor"]) {//楼层

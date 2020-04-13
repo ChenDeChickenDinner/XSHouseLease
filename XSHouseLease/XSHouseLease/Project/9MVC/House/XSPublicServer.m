@@ -56,21 +56,21 @@ DEF_SINGLETON(XSPublicServer)
       }
       return _secondhouseConditionArray;
 }
-- (NSMutableArray<XSHouseInfoBModel *> *)rentHouseInfoBArray{
+- (NSMutableArray<XSHouseKeyVlaueModel *> *)rentHouseInfoBArray{
     if (!_rentHouseInfoBArray) {
         NSError *error;
          NSString *path = [[NSBundle mainBundle]pathForResource:@"XSRentHouseInfoB" ofType:@"json"];
         NSArray *dataArray = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableLeaves error:&error];
-        _rentHouseInfoBArray =[XSHouseInfoBModel mj_objectArrayWithKeyValuesArray:dataArray];
+        _rentHouseInfoBArray =[XSHouseKeyVlaueModel mj_objectArrayWithKeyValuesArray:dataArray];
     }
     return _rentHouseInfoBArray;
 }
-- (NSMutableArray<XSHouseInfoBModel *> *)secondHouseInfoBArray{
+- (NSMutableArray<XSHouseKeyVlaueModel *> *)secondHouseInfoBArray{
     if (!_secondHouseInfoBArray) {
         NSError *error;
          NSString *path = [[NSBundle mainBundle]pathForResource:@"XSSecondHouseInfoB" ofType:@"json"];
         NSArray *dataArray = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableLeaves error:&error];
-        _secondHouseInfoBArray =[XSHouseInfoBModel mj_objectArrayWithKeyValuesArray:dataArray];
+        _secondHouseInfoBArray =[XSHouseKeyVlaueModel mj_objectArrayWithKeyValuesArray:dataArray];
     }
     return _secondHouseInfoBArray;
 }
@@ -182,7 +182,7 @@ DEF_SINGLETON(XSPublicServer)
 }
 @end
 
-@implementation XSHouseInfoBModel
+@implementation XSHouseKeyVlaueModel
 
 @end
 @implementation XSHouseModuleModel
