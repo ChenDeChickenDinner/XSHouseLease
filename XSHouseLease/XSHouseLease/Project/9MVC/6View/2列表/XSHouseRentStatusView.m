@@ -49,8 +49,8 @@
     for (UIView *view in self.viewArray) {
         [view removeFromSuperview];
     }
-    [self.viewArray removeAllObjects];
-
+    self.viewArray = nil;
+    
     [self resetModelArray];
     
     [self addStatusSubView];
@@ -120,12 +120,17 @@
         btn.backgroundColor = [UIColor whiteColor];
         btn.titleLabel.font = [UIFont systemFontOfSize:13];
         [btn setTitle:model.title forState:UIControlStateNormal];
+        [btn setTitleColor:model.titleColor forState:UIControlStateNormal];
         btn.layer.masksToBounds = YES;
         btn.layer.cornerRadius = 5;
         btn.layer.borderWidth = 1;
         btn.layer.borderColor = model.titleColor.CGColor;
         [btn addTarget:self action:@selector(clickEditStatus:) forControlEvents:UIControlEventTouchUpInside];
-        btn.frame = CGRectMake(self.width - (btnWidth * i) - 15 , 0, btnWidth, self.height);
+        if (i > 1) {
+            btn.frame = CGRectMake(self.width - (btnWidth * i + 5 * i) - 15 , 0, btnWidth, self.height);
+        }else{
+            btn.frame = CGRectMake(self.width - (btnWidth * i) - 15 , 0, btnWidth, self.height);
+        }
         [self addSubview:btn];
     }
 }

@@ -48,10 +48,10 @@
 //    }];
 
     
-      NSString *path = [[NSBundle mainBundle] pathForResource:@"XSHouseInfo" ofType:@"json"];
+      NSString *path = [[NSBundle mainBundle] pathForResource:@"XSRentHouseInfoB" ofType:@"json"];
       // 将文件数据化
       NSData *data = [[NSData alloc] initWithContentsOfFile:path];
-      [YBModelFile createFileWithName:@"XSNewHouseInfo" data:data];
+      [YBModelFile createFileWithName:@"XHouseInfo" data:data];
 }
 @end
 

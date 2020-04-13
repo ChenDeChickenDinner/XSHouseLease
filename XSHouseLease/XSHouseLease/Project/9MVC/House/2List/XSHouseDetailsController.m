@@ -77,15 +77,18 @@
     WEAK_SELF;
     self.dataModel.clickBlack = ^(XSHouseInfoModel *model, id data, XSBHouseKeyValueEditStatus editStatus) {
         STRONG_SELF;
-           if (editStatus == XSBHouseKeyValueInfoBMore) {
-               NSLog(@"更多房源信息");
-           }else if (editStatus == XSBHouseKeyValueIntroduce){
-               XSHouseIntroduceController *vc = [[XSHouseIntroduceController alloc]init];
-               vc.dataModel = self.dataModel;
-               vc.houseType = self.houseType;
-               vc.infoType = XSBHouseMorenInfo_FYXQ;
-               [self.navigationController pushViewController:vc animated:YES];
-           }
+        if (editStatus== XSBHouseKeyValueIntroduce ||
+            editStatus == XSBHouseKeyValueInfoSMore ||
+            editStatus == XSBHouseKeyValueInfoNMore ||
+            editStatus == XSBHouseKeyValueInfoLDIX) {
+            XSHouseIntroduceController *vc = [[XSHouseIntroduceController alloc]init];
+            vc.dataModel = self.dataModel;
+            vc.houseType = self.houseType;
+            vc.infoType = editStatus;
+            [self.navigationController pushViewController:vc animated:YES];
+        }else{
+            NSLog(@"editStatus = %ld",editStatus);
+        }
     };
     [self.array removeAllObjects];
     NSError *error;

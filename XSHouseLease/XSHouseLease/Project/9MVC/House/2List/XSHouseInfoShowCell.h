@@ -83,11 +83,13 @@
 @property (weak, nonatomic)  UILabel *contentLable;
 @end
 @interface XSHouseDetailsBusinessInfoCell : XSHouseInfoCell<UICollectionViewDelegate,UICollectionViewDataSource>
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleH;
+@property (weak, nonatomic) IBOutlet UILabel *titleLable;
 @property (strong, nonatomic) UIView *lineView;
 @property (weak, nonatomic) IBOutlet UIView *bkView;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView ;
-@property (strong, nonatomic) NSArray<XSHouseKeyVlaueModel *> *array;
-@property (strong, nonatomic) UICollectionViewFlowLayout *layout;
+@property (strong, nonatomic) XSHouseKeyValueModuleModel *keyValueModuleModel;
+//@property (strong, nonatomic) NSArray<XSHouseKeyVlaueModel *> *array;
 @end
 
 

@@ -111,7 +111,7 @@
     },
     "secondHouseBaseInfo":
     {
-    "title":null,
+    "title":"基础属性",
     "array":
             [
                 {
@@ -146,7 +146,7 @@
     },
     "secondHouseTradingInfo":
     {
-    "title":null,
+    "title":"交易属性",
     "array":
             [
                 {
@@ -181,7 +181,7 @@
     },
     "newHouseBaseInfo":
     {
-    "title":null,
+    "title":"基础属性",
     "array":
             [
                 {
@@ -232,7 +232,7 @@
     },
     "newHouseTradingInfo":
     {
-    "title":null,
+    "title":"销售信息",
     "array":
             [
                 {
@@ -259,7 +259,7 @@
     },
     "newHouseEstateInfo":
     {
-    "title":null,
+    "title":"小区概况",
     "array":
             [
                 {
@@ -314,7 +314,7 @@
      },
     "newHouseDataLicenceInfo":
     {
-    "title":null,
+    "title":"预售许可证",
     "array":
             [
                 {

@@ -135,12 +135,14 @@
         self.rentPricelabe.text = [NSString stringWithFormat:@"%@元/每月",NewModel.rentPrice];
         self.unitPriceLable.text =  nil;
     }
-
-
-    
- 
-    
     self.statusEditView.status = NewModel.status;
+    if (NewModel.source == XSBHouseInfoSource_MyPublish) {
+        self.statusEditViewHeight.constant = 23.0;
+        self.statusEditView.hidden = NO;
+    }else{
+        self.statusEditViewHeight.constant = 0;
+        self.statusEditView.hidden = YES;
+    }
 }
 
 
@@ -249,6 +251,7 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
     [self.bkView addSubview:lable];
     [self.bkView addSubview:cycleScrollView];
     [self.bkView bringSubviewToFront:self.lable];
+    [self.bkView bringSubviewToFront:self.tipLabel];
 
 }
 - (void)layoutSubviews{
@@ -326,7 +329,7 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 
 - (void)awakeFromNib{
     [super awakeFromNib];
-    self.collectionView.collectionViewLayout = self.layout;
+    self.titleLable.text = nil;
      self.collectionView.backgroundColor = [UIColor clearColor];
      self.collectionView.delegate = self;
      self.collectionView.dataSource = self;
@@ -341,39 +344,56 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 
 - (void)updateWithModel:(XSHouseInfoShowModel *)dataModel{
     self.model = dataModel;
-    self.array = [dataModel houseInfoBArray];
-    [self.collectionView reloadData];
+    XSBHouseKeyValueDataSource type  = rentHouseInfo;
+    if (dataModel.houseType==XSBHouseType_Rent) {
+        type  = rentHouseInfo;
+    }else if (dataModel.houseType==XSBHouseType_old){
+        type  = secondHouseInfo;
+    }else if (dataModel.houseType==XSBHouseType_New){
+        type  = newHouseInfo;
+    }
 
+      UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
+      layout.itemSize = CGSizeMake((KScreenWidth - 30)/2, 19);
+      layout.minimumInteritemSpacing = 0;
+      layout.minimumLineSpacing = 8;
+    self.collectionView.collectionViewLayout = layout;
+    self.keyValueModuleModel = [dataModel houseInfoBArrayWithSourceType:type];
 }
-
+- (void)setKeyValueModuleModel:(XSHouseKeyValueModuleModel *)keyValueModuleModel{
+    _keyValueModuleModel = keyValueModuleModel;
+    if (keyValueModuleModel.title == nil) {
+        self.titleLable.text = nil;
+        self.titleH.constant = 0.1;
+    }else{
+        self.titleH.constant = 21;
+        self.titleLable.text = keyValueModuleModel.title;
+    }
+    if (keyValueModuleModel.layout) {
+        self.collectionView.collectionViewLayout = keyValueModuleModel.layout;
+    }
+    [self.collectionView reloadData];
+}
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.array.count;
+    return self.keyValueModuleModel.array.count;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    XSHouseKeyVlaueModel *dataModel = [self.array safeObjectAtIndex:indexPath.row];
+    XSHouseKeyVlaueModel *dataModel = [self.keyValueModuleModel.array safeObjectAtIndex:indexPath.row];
     XSHouseKeyVlaueCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:XSHouseDetailsBusinessInfoCellStr forIndexPath:indexPath];
     cell.model = dataModel;
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    XSHouseKeyVlaueModel *dataModel = [self.array safeObjectAtIndex:indexPath.row];
+    XSHouseKeyVlaueModel *dataModel = [self.keyValueModuleModel.array safeObjectAtIndex:indexPath.row];
     if ([dataModel.key isEqualToString:@"other"]) {
         if (self.model.clickBlack) {
-            self.model.clickBlack(self.model, nil, XSBHouseKeyValueInfoBMore);
+            self.model.clickBlack(self.model, nil, XSBHouseKeyValueInfoSMore);
         }
     }
 }
 
-- (UICollectionViewFlowLayout *)layout{
-    if (!_layout) {
-        _layout =  [[UICollectionViewFlowLayout alloc]init];
-        _layout.itemSize = CGSizeMake((KScreenWidth - 30)/2, 19);
-        _layout.minimumInteritemSpacing = 0;
-        _layout.minimumLineSpacing = 8;
-    }
-    return _layout;
-}
+
 
 
 @end
@@ -613,8 +633,9 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 }
 - (void)layoutSubviews{
     [super layoutSubviews];
-    self.titleLable.frame = CGRectMake(0, 0, 45, self.height);
-    self.contentLable.frame = CGRectMake(45, 0, self.width - 45, self.height);
+    CGFloat width = self.titleLable.mj_textWidth + 5;
+    self.titleLable.frame = CGRectMake(0, 0, width, self.height);
+    self.contentLable.frame = CGRectMake(CGRectGetMaxX(self.titleLable.frame), 0, self.width - width, self.height);
 }
 - (void)setModel:(XSHouseKeyVlaueModel *)model{
     _model = model;

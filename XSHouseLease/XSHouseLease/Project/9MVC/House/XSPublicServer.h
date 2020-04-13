@@ -52,6 +52,13 @@ typedef void (^clickBlack)(XSHouseModuleModel *model);
 @property (nonatomic, copy) NSString *value;
 @end
 
+@interface XSHouseKeyValueModuleModel : NSObject
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSArray<XSHouseKeyVlaueModel *> *array;
+@property (strong, nonatomic) UICollectionViewFlowLayout *layout;
+
+@end
+
 #pragma mark - 配套
 @interface XSHouseFacilitiesModel : NSObject
 @property (nonatomic, strong) NSNumber *ID;
@@ -81,8 +88,7 @@ typedef void (^clickBlack)(XSHouseModuleModel *model);
 @property (strong, nonatomic) NSMutableArray<NSString *> *bunnerUrlArray;
 
 @property (strong, nonatomic) NSMutableArray<XSHouseFacilitiesModel *> *facilitiesArray;
-@property (strong, nonatomic) NSMutableArray<XSHouseKeyVlaueModel *> *rentHouseInfoBArray;
-@property (strong, nonatomic) NSMutableArray<XSHouseKeyVlaueModel *> *secondHouseInfoBArray;
+
 
 @property (strong, nonatomic) NSMutableArray<XSHouseModuleModel *> *renthouseConditionArray;
 @property (strong, nonatomic) NSMutableArray<XSHouseModuleModel *> *newhouseConditionArray;
@@ -93,5 +99,6 @@ typedef void (^clickBlack)(XSHouseModuleModel *model);
 - (void)hotsSearchWithCallback:(HBCompletionBlock)callback;
 - (void)enumFacilitiesWithCallback:(HBCompletionBlock)callback;
 - (void)renthouseConditionWithCallback:(HBCompletionBlock)callback;
++ (XSHouseKeyValueModuleModel *)houseInfoArrayForSourceType:(XSBHouseKeyValueDataSource)source;
 @end
 

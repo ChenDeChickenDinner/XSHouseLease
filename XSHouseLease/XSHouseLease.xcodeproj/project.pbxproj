@@ -95,7 +95,6 @@
 		6C0BC26E2442B085001A1914 /* XSSearchEstateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C0BC26D2442B085001A1914 /* XSSearchEstateController.m */; };
 		6C9FF7AC24309BFE0020509C /* fangdinghui.cer in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FF7AB24309BFE0020509C /* fangdinghui.cer */; };
 		6CA7C57E244324BF00472B03 /* XSRentHouseInfoB.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CA7C57C244324BE00472B03 /* XSRentHouseInfoB.json */; };
-		6CA7C57F244324BF00472B03 /* XSSecondHouseInfoB.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CA7C57D244324BE00472B03 /* XSSecondHouseInfoB.json */; };
 		6CA7C58224432FD600472B03 /* XSSecondHouseDetailsInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CA7C58024432FD500472B03 /* XSSecondHouseDetailsInfo.json */; };
 		6CA7C58324432FD600472B03 /* XSRentHouseDetailsInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CA7C58124432FD500472B03 /* XSRentHouseDetailsInfo.json */; };
 		6CABF1462441B5F600BDF20F /* XSHouseInfoShowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CABF1442441B5F600BDF20F /* XSHouseInfoShowCell.xib */; };
@@ -261,7 +260,6 @@
 		6C6BC185241FD0FC00B62001 /* XSPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSPrefixHeader.pch; sourceTree = "<group>"; };
 		6C9FF7AB24309BFE0020509C /* fangdinghui.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = fangdinghui.cer; sourceTree = "<group>"; };
 		6CA7C57C244324BE00472B03 /* XSRentHouseInfoB.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSRentHouseInfoB.json; sourceTree = "<group>"; };
-		6CA7C57D244324BE00472B03 /* XSSecondHouseInfoB.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSSecondHouseInfoB.json; sourceTree = "<group>"; };
 		6CA7C58024432FD500472B03 /* XSSecondHouseDetailsInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSSecondHouseDetailsInfo.json; sourceTree = "<group>"; };
 		6CA7C58124432FD500472B03 /* XSRentHouseDetailsInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSRentHouseDetailsInfo.json; sourceTree = "<group>"; };
 		6CABF1432441B5F600BDF20F /* XSHouseInfoShowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseInfoShowCell.h; sourceTree = "<group>"; };
@@ -803,7 +801,6 @@
 				6CA7C58124432FD500472B03 /* XSRentHouseDetailsInfo.json */,
 				6CA7C58024432FD500472B03 /* XSSecondHouseDetailsInfo.json */,
 				6CA7C57C244324BE00472B03 /* XSRentHouseInfoB.json */,
-				6CA7C57D244324BE00472B03 /* XSSecondHouseInfoB.json */,
 				55BF00AF243DB7AC007843C2 /* XSPublicServer.h */,
 				55BF00B0243DB7AC007843C2 /* XSPublicServer.m */,
 				55BAE6E124404423001C7B22 /* 1Submit */,
@@ -957,7 +954,6 @@
 				6C9FF7AC24309BFE0020509C /* fangdinghui.cer in Resources */,
 				55BAE6FD24404423001C7B22 /* XSSellHouseInfoSecond.json in Resources */,
 				55BAE6F924404423001C7B22 /* XSRentHouseInfoSecond.json in Resources */,
-				6CA7C57F244324BF00472B03 /* XSSecondHouseInfoB.json in Resources */,
 				55BF007F243D6325007843C2 /* MyInfoViewController.xib in Resources */,
 				55BAE6FE24404423001C7B22 /* XSSellHouseInfoThird.json in Resources */,
 				55BF0069243D6325007843C2 /* XSSearchConditionalView.xib in Resources */,

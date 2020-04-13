@@ -31,29 +31,24 @@
     return @{@"house_id":@"id"};
 }
 
--(NSArray *)houseInfoBArray{
+-(XSHouseKeyValueModuleModel *)houseInfoBArrayWithSourceType:(XSBHouseKeyValueDataSource)type{
     NSMutableDictionary *modeDict = [self mj_keyValues];
-    NSMutableArray *infoArray = [NSMutableArray array];
-    NSArray *sourceArray = self.houseType==XSBHouseType_Rent?[XSPublicServer sharedInstance].rentHouseInfoBArray:[XSPublicServer sharedInstance].secondHouseInfoBArray;
-    for (XSHouseKeyVlaueModel *infoJsonModel in sourceArray) {
-        id value = [modeDict safeObjectForKey:infoJsonModel.key];
-         XSHouseKeyVlaueModel *infoModel = [[XSHouseKeyVlaueModel alloc]init];
-          infoModel.key = infoJsonModel.key ;
-         infoModel.keyName = infoJsonModel.keyName ;
-        if ([infoJsonModel.key isEqualToString:@"floor"]) {//楼层
-            infoModel.value = [NSString stringWithFormat:@"%@层(共%@层)",self.floor,self.totalFloor];
-          }else if ([infoJsonModel.key isEqualToString:@"elevator"]){//电梯
-              infoModel.value = self.elevator.intValue?@"有":@"无";
-          }else if ([infoJsonModel.key isEqualToString:@"createYears"]){//年代
-              infoModel.value = [NSString stringWithFormat:@"%@年建成",self.createYears];
-          }else if ([infoJsonModel.key isEqualToString:@"other"]){//其他
-              infoModel.value = [NSString stringWithFormat:@"产权年限 梯户比 >"];
+    XSHouseKeyValueModuleModel *model = [XSPublicServer houseInfoArrayForSourceType:type];
+    for (XSHouseKeyVlaueModel *KeyVlaueModel in model.array) {
+        id value = [modeDict safeObjectForKey:KeyVlaueModel.key];
+          if ([KeyVlaueModel.key isEqualToString:@"floor"]) {//楼层
+            KeyVlaueModel.value = [NSString stringWithFormat:@"%@层(共%@层)",self.floor,self.totalFloor];
+          }else if ([KeyVlaueModel.key isEqualToString:@"elevator"]){//电梯
+              KeyVlaueModel.value = self.elevator.intValue?@"有":@"无";
+          }else if ([KeyVlaueModel.key isEqualToString:@"createYears"]){//年代
+              KeyVlaueModel.value = [NSString stringWithFormat:@"%@年建成",self.createYears];
+          }else if ([KeyVlaueModel.key isEqualToString:@"other"]){//其他
+              KeyVlaueModel.value = [NSString stringWithFormat:@"产权年限 梯户比 >"];
           }else{
-              infoModel.value = [NSString stringWithFormat:@"%@",value?value:@""];
+              KeyVlaueModel.value = [NSString stringWithFormat:@"%@",value?value:@""];
           }
-         [infoArray addObject:infoModel];
      }
-    return infoArray;
+    return model;
 }
 @end
 

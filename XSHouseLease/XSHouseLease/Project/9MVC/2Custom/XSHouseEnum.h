@@ -61,11 +61,26 @@ typedef NS_ENUM(NSInteger,XSBHouseKeyValueEditStatus) {
     XSBHouseKeyValueImagesSend , // 图片传送
     XSBHouseKeyValueImagesDoorSend , // 图片传送
     XSBHouseKeyValueEsSend , // 小区传送
-    XSBHouseKeyValueInfoBMore , // 房源信息
     XSBHouseKeyValueIntroduce , // 房源详情
+    XSBHouseKeyValueInfoSMore , // 二手房房源信息
+    XSBHouseKeyValueInfoNMore , // 新房房源信息
+    XSBHouseKeyValueInfoLDIX , // 新房楼栋信息
+    XSBHouseKeyValueInfoLPIX , // 新房楼栋信息
 
 };
+// value信息
+typedef NS_ENUM(NSInteger,XSBHouseKeyValueDataSource) {
+    rentHouseInfo = 0,
+    secondHouseInfo, // 无状态
+    newHouseInfo , // 无状态
+    secondHouseBaseInfo , // 基础属性
+    secondHouseTradingInfo , // 交易属性
+    newHouseBaseInfo , // 基础属性
+    newHouseTradingInfo , // 销售信息
+    newHouseEstateInfo , // 小区概况
+    newHouseDataLicenceInfo , // 预售许可证
 
+};
 typedef NS_ENUM(NSInteger,XSValueInputType) {
     XSValueInputType_textField = 0,
     XSValueInputType_listSelect,
@@ -82,14 +97,6 @@ typedef NS_ENUM(NSInteger,XSValueTextInputType) {
 typedef NS_ENUM(NSInteger,XSValueSendType) {
     XSValueSendType_Int = 0,
     XSValueSendType_Str,
-};
-
-typedef NS_ENUM(NSInteger,XSBHouseMorenInfoType) {
-    XSBHouseMorenInfo_FYXQ = 0,
-    XSBHouseMorenInfo_FYIX,
-    XSBHouseMorenInfo_LDIX ,
-    XSBHouseMorenInfo_LPIX,
-
 };
 
 

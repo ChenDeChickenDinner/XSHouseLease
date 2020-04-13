@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "XSPublicServer.h"
 
 
 
@@ -147,7 +148,8 @@ typedef void(^XSHouseInfoClickBlack)(XSHouseInfoModel *model,id data,XSBHouseKey
 @property (nonatomic, strong) NSNumber *maxArea;//建筑面积
 @property (nonatomic, strong) NSNumber *referTotalPrice;
 @property (nonatomic, strong) NSNumber *referUnitPrice;
--(NSArray *)houseInfoBArray;
+
+-(XSHouseKeyValueModuleModel *)houseInfoBArrayWithSourceType:(XSBHouseKeyValueDataSource)type;
 @end
 
 

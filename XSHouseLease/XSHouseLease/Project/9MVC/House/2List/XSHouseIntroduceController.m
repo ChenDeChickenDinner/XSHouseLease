@@ -11,6 +11,9 @@
 #import "XSPhotoPickerView.h"
 #import "XSHouseSubSuccessViewController.h"
 #import "XSHouseMasterInfoView.h"
+#import "XSHouseInfoShowCell.h"
+
+
 
 @interface XSHouseIntroduceController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -23,7 +26,7 @@
 - (NSMutableArray<XSHouseMoreInfoCellMdeol *> *)array{
     if (!_array) {
         _array = [NSMutableArray array];
-        if (self.infoType == XSBHouseMorenInfo_FYXQ) {
+        if (self.infoType == XSBHouseKeyValueIntroduce) {
             XSHouseMoreInfoCellMdeol *model1 = [[XSHouseMoreInfoCellMdeol alloc]init];
             model1.title = @"核心卖点";
             model1.value = self.dataModel.coreIntroduced;
@@ -52,16 +55,29 @@
             if (self.houseType == XSBHouseType_old)[_array addObject:model11];
             [_array addObject:model2];
             [_array addObject:model3];
-        }else if (self.infoType == XSBHouseMorenInfo_FYIX){
+        }else if (self.infoType == XSBHouseKeyValueInfoSMore){
+            UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
+            layout.itemSize = CGSizeMake(KScreenWidth -30, 19);
+            layout.minimumInteritemSpacing = 0;
+            layout.minimumLineSpacing = 8;
+                    
             XSHouseMoreInfoCellMdeol *model1 = [[XSHouseMoreInfoCellMdeol alloc]init];
             model1.title = @"基础属性";
-            model1.cellClass = @"XSHouseSubTextViewCell";
-            model1.cellHeight = [NSNumber numberWithInt:90];
+            model1.cellClass = @"XSHouseDetailsBusinessInfoCell";
+            model1.cellHeight = [NSNumber numberWithInt:244];
+            model1.keyValueModuleModel = [self.dataModel houseInfoBArrayWithSourceType:secondHouseBaseInfo];
+            model1.keyValueModuleModel.layout =layout;
             
-            XSHouseMoreInfoCellMdeol *model11 = [[XSHouseMoreInfoCellMdeol alloc]init];
-            model11.title = @"交易属性";
-            model11.cellClass = @"XSHouseSubTextViewCell";
-            model11.cellHeight = [NSNumber numberWithInt:90];
+            
+            XSHouseMoreInfoCellMdeol *model2 = [[XSHouseMoreInfoCellMdeol alloc]init];
+            model2.title = @"交易属性";
+            model2.cellClass = @"XSHouseDetailsBusinessInfoCell";
+            model2.cellHeight = [NSNumber numberWithInt:244];
+            model2.keyValueModuleModel = [self.dataModel houseInfoBArrayWithSourceType:secondHouseTradingInfo];
+            model2.keyValueModuleModel.layout =layout;
+
+            [_array addObject:model1];
+            [_array addObject:model2];
         }
     }
     return _array;
@@ -69,8 +85,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if (self.infoType == XSBHouseMorenInfo_FYXQ) {
+    if (self.infoType == XSBHouseKeyValueIntroduce) {
         self.title = @"房源详情";
+    }else if (self.infoType == XSBHouseKeyValueInfoSMore){
+        self.title = @"房源信息";
+
     }
     self.callView.model = self.dataModel;;
     if ([self.dataModel.house_id isEqual:[XSUserServer sharedInstance].userModel.ID]) {
@@ -102,7 +121,13 @@
           cell.keyValueModel = dataModel;
           return cell;
     }else{
-        
+        XSHouseDetailsBusinessInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:dataModel.cellClass];
+        if (!cell) {
+               NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"XSHouseInfoShowCell" owner:self options:nil];
+               cell = [array safeObjectAtIndex:[XSHouseInfoCell indexForClassName:dataModel.cellClass]];
+         }
+        cell.keyValueModuleModel = dataModel.keyValueModuleModel;
+        return cell;
     }
     return nil;
 }
