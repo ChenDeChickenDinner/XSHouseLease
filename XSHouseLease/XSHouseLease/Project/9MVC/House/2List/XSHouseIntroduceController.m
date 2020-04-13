@@ -52,6 +52,16 @@
             if (self.houseType == XSBHouseType_old)[_array addObject:model11];
             [_array addObject:model2];
             [_array addObject:model3];
+        }else if (self.infoType == XSBHouseMorenInfo_FYIX){
+            XSHouseMoreInfoCellMdeol *model1 = [[XSHouseMoreInfoCellMdeol alloc]init];
+            model1.title = @"基础属性";
+            model1.cellClass = @"XSHouseSubTextViewCell";
+            model1.cellHeight = [NSNumber numberWithInt:90];
+            
+            XSHouseMoreInfoCellMdeol *model11 = [[XSHouseMoreInfoCellMdeol alloc]init];
+            model11.title = @"交易属性";
+            model11.cellClass = @"XSHouseSubTextViewCell";
+            model11.cellHeight = [NSNumber numberWithInt:90];
         }
     }
     return _array;
