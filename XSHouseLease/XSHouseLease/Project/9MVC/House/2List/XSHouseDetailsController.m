@@ -59,15 +59,16 @@
             [self.tableView.mj_header endRefreshing];
             if (error == nil) {
                 if (responseModel.code.integerValue == SuccessCode) {
-                    if (self.houseType == XSBHouseType_New) {
-                        XSHouseDetailsDataModel *model = [XSHouseDetailsDataModel mj_objectWithKeyValues:responseModel.data];
-                        NSLog(@"111");
-                    }else{
-                        XSHouseInfoShowModel *model = [XSHouseInfoShowModel mj_objectWithKeyValues:responseModel.data];
-                           model.houseType = self.houseType;
-                           model.source = self.source;
-                           [self assemblyCellDataArrayWithData:model];
-                    }
+//                    if (self.houseType == XSBHouseType_New) {
+//                        XSHouseDetailsDataModel *model = [XSHouseDetailsDataModel mj_objectWithKeyValues:responseModel.data];
+//                        NSLog(@"111");
+//                    }else{
+//
+//                    }
+                    XSHouseInfoShowModel *model = [XSHouseInfoShowModel mj_objectWithKeyValues:responseModel.data];
+                    model.houseType = self.houseType;
+                    model.source = self.source;
+                    [self assemblyCellDataArrayWithData:model];
    
                 }
             }
@@ -101,7 +102,15 @@
     };
     [self.array removeAllObjects];
     NSError *error;
-    NSString *file  = self.houseType==XSBHouseType_Rent?@"XSRentHouseDetailsInfo":@"XSSecondHouseDetailsInfo";
+    NSString *file  = nil;
+    if (self.houseType==XSBHouseType_old) {
+        file  = @"XSSecondHouseDetailsInfo";
+    }else if (self.houseType==XSBHouseType_New){
+        file  = @"XSNewHouseDetailsInfo";
+    }else{
+        file  = @"XSRentHouseDetailsInfo";
+    }
+
     NSString *path = [[NSBundle mainBundle]pathForResource:file ofType:@"json"];
     NSArray *dataArray = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableLeaves error:&error];
     NSMutableArray *modelArray = [XSHouseInfoShowModel mj_objectArrayWithKeyValuesArray:dataArray];

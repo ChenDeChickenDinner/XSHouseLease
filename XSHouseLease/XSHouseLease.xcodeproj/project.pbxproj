@@ -36,6 +36,7 @@
 		55198EFF243C5248006A9D67 /* XSNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55198E73243C5248006A9D67 /* XSNavViewController.m */; };
 		5595D243244436AA00F13111 /* XSHouseMasterInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5595D242244436AA00F13111 /* XSHouseMasterInfoView.xib */; };
 		5595D246244436E700F13111 /* XSHouseMasterInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5595D245244436E700F13111 /* XSHouseMasterInfoView.m */; };
+		5595D2482445B87D00F13111 /* XSNewHouseDetailsInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 5595D2472445B87D00F13111 /* XSNewHouseDetailsInfo.json */; };
 		55BAE6D424400D39001C7B22 /* XSHouseSubTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE6C224400D39001C7B22 /* XSHouseSubTableViewCell.m */; };
 		55BAE6D724400D39001C7B22 /* XSPhotoPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE6C824400D39001C7B22 /* XSPhotoPickerView.m */; };
 		55BAE6D824400D39001C7B22 /* XSPhotoPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BAE6C924400D39001C7B22 /* XSPhotoPickerView.xib */; };
@@ -157,6 +158,7 @@
 		5595D242244436AA00F13111 /* XSHouseMasterInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSHouseMasterInfoView.xib; sourceTree = "<group>"; };
 		5595D244244436E700F13111 /* XSHouseMasterInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSHouseMasterInfoView.h; sourceTree = "<group>"; };
 		5595D245244436E700F13111 /* XSHouseMasterInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSHouseMasterInfoView.m; sourceTree = "<group>"; };
+		5595D2472445B87D00F13111 /* XSNewHouseDetailsInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XSNewHouseDetailsInfo.json; sourceTree = "<group>"; };
 		55BAE6C224400D39001C7B22 /* XSHouseSubTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubTableViewCell.m; sourceTree = "<group>"; };
 		55BAE6C624400D39001C7B22 /* XSPhotoPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSPhotoPickerView.h; sourceTree = "<group>"; };
 		55BAE6C824400D39001C7B22 /* XSPhotoPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSPhotoPickerView.m; sourceTree = "<group>"; };
@@ -800,6 +802,7 @@
 			children = (
 				6CA7C58124432FD500472B03 /* XSRentHouseDetailsInfo.json */,
 				6CA7C58024432FD500472B03 /* XSSecondHouseDetailsInfo.json */,
+				5595D2472445B87D00F13111 /* XSNewHouseDetailsInfo.json */,
 				6CA7C57C244324BE00472B03 /* XSRentHouseInfoB.json */,
 				55BF00AF243DB7AC007843C2 /* XSPublicServer.h */,
 				55BF00B0243DB7AC007843C2 /* XSPublicServer.m */,
@@ -814,10 +817,10 @@
 		55BFFFF4243D6324007843C2 /* 2List */ = {
 			isa = PBXGroup;
 			children = (
-				55BAE6FF24405643001C7B22 /* XSHouseInfoShowModel.h */,
-				55BAE70024405644001C7B22 /* XSHouseInfoShowModel.m */,
 				6C0BC26924420611001A1914 /* XSHouseDetailsModel.h */,
 				6C0BC26A24420611001A1914 /* XSHouseDetailsModel.m */,
+				55BAE6FF24405643001C7B22 /* XSHouseInfoShowModel.h */,
+				55BAE70024405644001C7B22 /* XSHouseInfoShowModel.m */,
 				6CABF1432441B5F600BDF20F /* XSHouseInfoShowCell.h */,
 				6CABF1452441B5F600BDF20F /* XSHouseInfoShowCell.m */,
 				6CABF1442441B5F600BDF20F /* XSHouseInfoShowCell.xib */,
@@ -938,6 +941,7 @@
 				55BAE6FA24404423001C7B22 /* XSRentHouseInfoFirst.json in Resources */,
 				55BF008D243D6325007843C2 /* XSHouseDetailsController.xib in Resources */,
 				55BAE6DC24400D39001C7B22 /* XSHouseSubTableViewCell.xib in Resources */,
+				5595D2482445B87D00F13111 /* XSNewHouseDetailsInfo.json in Resources */,
 				55BF006A243D6325007843C2 /* XSLocationSearchview.xib in Resources */,
 				6CA7C57E244324BF00472B03 /* XSRentHouseInfoB.json in Resources */,
 				55BF0087243D6325007843C2 /* XSHouseModuleViewController.xib in Resources */,

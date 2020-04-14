@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "XSPublicServer.h"
+#import "XSHouseDetailsModel.h"
 
 
 
@@ -44,10 +45,16 @@ typedef void(^XSHouseInfoClickBlack)(XSHouseInfoModel *model,id data,XSBHouseKey
 @end
 @interface XSHouseInfoShowModel : XSHouseInfoModel
 
+@property (nonatomic, assign) BOOL watch;
+//1待审核 能编辑 2审核失败 能编辑 3已取消 能编辑 可重新发布1 4下架 能编辑 5暂停 能编辑 可发布6 6发布 不能编辑  可取消3 可暂停5
+@property (nonatomic, strong) NSNumber *status;
+@property (nonatomic, copy) NSString *statusName;
+@property (nonatomic, strong) NSNumber *watchNum;//关注人数
+
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *titleDetail;
-@property (nonatomic, assign) BOOL watch;
-@property (nonatomic, copy) NSString *icon;//用户头像
+@property (nonatomic, copy) NSString *icon;
+@property (nonatomic, strong) NSNumber *house_id;
 @property (nonatomic, strong)NSNumber *customerId;
 @property (nonatomic, copy) NSString *customerName;
 @property (nonatomic, copy) NSString *callPhone;
@@ -64,7 +71,6 @@ typedef void(^XSHouseInfoClickBlack)(XSHouseInfoModel *model,id data,XSBHouseKey
 @property (nonatomic, strong) XSHouseEsModel *es;
 
 
-@property (nonatomic, strong) NSNumber *house_id;
 @property (nonatomic, strong) NSNumber *area;//面积
 @property (nonatomic, copy) NSString *address;//详细地址
 @property (nonatomic, strong) NSNumber *rentPrice;//租金
@@ -101,12 +107,8 @@ typedef void(^XSHouseInfoClickBlack)(XSHouseInfoModel *model,id data,XSBHouseKey
 @property (nonatomic, copy) NSString *coreIntroduced;//这是卖点
 @property (nonatomic, copy) NSString *transportation;//这是交通出行
 @property (nonatomic, copy) NSString *estateIntroduced;//这是小区介绍
-@property (nonatomic, copy) NSString *statusName;
-@property (nonatomic, strong) NSNumber *watchNum;//关注人数
 @property (nonatomic, copy) NSString *createDate;//创建时间
 @property (nonatomic, copy) NSString *updateDate;//更新日期
-//1待审核 能编辑 2审核失败 能编辑 3已取消 能编辑 可重新发布1 4下架 能编辑 5暂停 能编辑 可发布6 6发布 不能编辑  可取消3 可暂停5
-@property (nonatomic, strong) NSNumber *status;
 
 
 
@@ -116,6 +118,7 @@ typedef void(^XSHouseInfoClickBlack)(XSHouseInfoModel *model,id data,XSBHouseKey
 
 
 
+//二手
 @property (nonatomic, strong) NSNumber *push;//
 @property (nonatomic, strong) NSNumber *unitPrice;//单价
 @property (nonatomic, strong) NSNumber *totalPrice;// 总价
@@ -144,10 +147,25 @@ typedef void(^XSHouseInfoClickBlack)(XSHouseInfoModel *model,id data,XSBHouseKey
 @property (nonatomic, strong) NSNumber *fiveYears;//是否满五年
 @property (nonatomic, copy) NSString *fiveYearsName;//是否满五年
 
+
+//新房
 @property (nonatomic, strong) NSNumber *minArea;//建筑面积
 @property (nonatomic, strong) NSNumber *maxArea;//建筑面积
 @property (nonatomic, strong) NSNumber *referTotalPrice;
 @property (nonatomic, strong) NSNumber *referUnitPrice;
+@property (nonatomic, copy) NSString *billingDate;//开盘日期
+@property (nonatomic, strong) NSNumber *formNum;//户型数量
+@property (nonatomic, strong) NSNumber *imgNum;//更多相册的数量
+
+
+@property (nonatomic, copy) NSArray<XSHouseDetailsDataImgsModel *> *imgs;//相册
+@property (nonatomic, copy) NSArray<XSHouseDetailsDataFormsModel *> *forms;//户型列表
+@property (nonatomic, copy) NSArray<XSHouseDetailsDataDynamicsModel *> *dynamics;//动态信息
+@property (nonatomic, strong) XSHouseDetailsDataBasicModel *basic;//基本信息
+@property (nonatomic, strong) XSHouseDetailsDataSellBasicModel *sellBasic;//基本销售信息
+@property (nonatomic, strong) XSHouseDetailsDataEstateBasicModel *estateBasic;//小区概况
+@property (nonatomic, strong) XSHouseDetailsDataLicenceBasicModel *licenceBasic;//预售许可证
+@property (nonatomic, strong) XSHouseDetailsDataBuildingCellBasicModel *buildingCellBasic;//楼栋信息
 
 -(XSHouseKeyValueModuleModel *)houseInfoBArrayWithSourceType:(XSBHouseKeyValueDataSource)type;
 @end

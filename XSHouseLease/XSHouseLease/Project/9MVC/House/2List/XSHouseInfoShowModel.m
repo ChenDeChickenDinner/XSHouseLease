@@ -30,7 +30,9 @@
 + (NSDictionary *)mj_replacedKeyFromPropertyName{
     return @{@"house_id":@"id"};
 }
-
++ (NSDictionary *)mj_objectClassInArray {
+    return @{@"forms":@"XSHouseDetailsDataFormsModel", @"dynamics":@"XSHouseDetailsDataDynamicsModel", @"imgs":@"XSHouseDetailsDataImgsModel"};
+}
 -(XSHouseKeyValueModuleModel *)houseInfoBArrayWithSourceType:(XSBHouseKeyValueDataSource)type{
     NSMutableDictionary *modeDict = [self mj_keyValues];
     XSHouseKeyValueModuleModel *model = [XSPublicServer houseInfoArrayForSourceType:type];
