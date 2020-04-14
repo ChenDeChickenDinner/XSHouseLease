@@ -64,7 +64,6 @@
 @interface XSHouseDetailsBasicInfoCell : XSHouseInfoCell
 @property (weak, nonatomic) IBOutlet UILabel *titleLable;
 @property (weak, nonatomic) IBOutlet UILabel *featurePointsLablea;
-
 @property (weak, nonatomic) IBOutlet UILabel *featurePointsLableb;
 @property (weak, nonatomic) IBOutlet UILabel *featurePointsLablec;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *featurePointsLableaW;
@@ -74,7 +73,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *rentPricelabeBow;
 
 @property (weak, nonatomic) IBOutlet UILabel *formTypelabe;
+@property (weak, nonatomic) IBOutlet UILabel *formTypelabeBow;
+
 @property (weak, nonatomic) IBOutlet UILabel *rarealabe;
+@property (weak, nonatomic) IBOutlet UILabel *rarealabeBow;
+
 @end
 #pragma mark -其它信息B
 @interface XSHouseKeyVlaueCollectionCell : UICollectionViewCell
@@ -134,4 +137,39 @@
 @property (strong, nonatomic)XSMyPublishHosueController *listvc;
 @end
 
+#pragma mark - 户型
+@interface XSHouseDoorCell : XSHouseInfoCell
 
+@property (weak, nonatomic) IBOutlet UIButton *btn1;
+@property (weak, nonatomic) IBOutlet UIButton *btn2;
+@property (weak, nonatomic) IBOutlet UIButton *btn3;
+@property (weak, nonatomic) IBOutlet UIButton *btn4;
+@property (strong, nonatomic)  UIButton *selbtn;
+@property (weak, nonatomic) UIView  *line;
+@property (weak, nonatomic) IBOutlet UIView *bkView;
+
+@end
+#pragma mark -楼盘
+@interface XSHouseBuildingCell : XSHouseInfoCell
+@property (weak, nonatomic) IBOutlet UILabel *titleLable;
+@property (weak, nonatomic) IBOutlet UILabel *lableA;
+@property (weak, nonatomic) IBOutlet UILabel *lableAT;
+@property (weak, nonatomic) IBOutlet UILabel *lableB;
+@property (weak, nonatomic) IBOutlet UILabel *lableBT;
+
+@end
+#pragma mark -楼栋
+@interface XSHouseStoriedCell : XSHouseInfoCell<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UIImageView *titleImageView;
+@property (weak, nonatomic) IBOutlet UITableView *listTableView;
+@property(nonatomic,strong) NSArray *array;
+
+@end
+
+
+@interface XSHouseStoriedBuildingCell : XSHouseInfoCell
+@property (weak, nonatomic) IBOutlet UILabel *lableA;
+@property (weak, nonatomic) IBOutlet UILabel *lableB;
+@property (weak, nonatomic) IBOutlet UILabel *lableC;
+@property(nonatomic,strong)  XSHouseDetailsDataBuildingCellBasicInfosModel *cellModel;
+@end

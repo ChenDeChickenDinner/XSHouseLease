@@ -9,7 +9,23 @@
     },
     {
         "cellClass":"XSHouseDetailsBusinessInfoCell",
-        "cellHeight":205
+        "cellHeight":100
+    },
+    {
+        "cellClass":"XSHouseDoorCell",
+        "cellHeight":320
+    },
+    {
+        "cellClass":"XSHouseBuildingCell",
+        "cellHeight":190
+    },
+    {
+        "cellClass":"XSHouseDetailsAddressInfoCell",
+        "cellHeight":242
+    },
+    {
+        "cellClass":"XSHouseStoriedCell",
+        "cellHeight":352
     },
     {
         "cellClass":"XSHouseRecommendedCell",

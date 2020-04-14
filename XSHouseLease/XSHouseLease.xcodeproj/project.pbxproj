@@ -321,8 +321,8 @@
 		55198D83243C5247006A9D67 /* 4Notwork */ = {
 			isa = PBXGroup;
 			children = (
-				55198D85243C5247006A9D67 /* XSOperationParam.h */,
 				55198D87243C5247006A9D67 /* XSOperationParam.m */,
+				55198D85243C5247006A9D67 /* XSOperationParam.h */,
 				55198D84243C5247006A9D67 /* XSNetworkInterface.h */,
 				55198D86243C5247006A9D67 /* XSNetworkInterface.m */,
 			);

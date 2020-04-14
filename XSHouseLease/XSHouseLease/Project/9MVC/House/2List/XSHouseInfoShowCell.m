@@ -37,7 +37,17 @@
         return 6;
     }else if ([class isEqual:[XSHouseRecommendedCell class]]){
         return 7;
+    }else if ([class isEqual:[XSHouseDoorCell class]]){
+        return 8;
+    }else if ([class isEqual:[XSHouseBuildingCell class]]){
+        return 9;
+    }else if ([class isEqual:[XSHouseStoriedCell class]]){
+        return 10;
+    }else if ([class isEqual:[XSHouseStoriedBuildingCell class]]){
+        return 11;
     }
+    
+    
     return 0;
 }
 @end
@@ -278,6 +288,7 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
     [super awakeFromNib];
     self.titleLable.text = nil;
     self.rentPricelabe.text = nil;
+    self.rentPricelabe.adjustsFontSizeToFitWidth = YES;
     self.formTypelabe.text = nil;
     self.rarealabe.text = nil;
     self.featurePointsLablea.text = nil;
@@ -288,18 +299,36 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 
 - (void)updateWithModel:(XSHouseInfoShowModel *)dataModel{
     self.model = dataModel;
-    self.titleLable.text = [NSString stringWithFormat:@"%@ %@ %@",dataModel.rentWayName,dataModel.estate,dataModel.formType];
-    if (dataModel.houseType == XSBHouseType_Rent) {
+
+    if (dataModel.houseType == XSBHouseType_New) {
+           self.titleLable.text = dataModel.titleDetail;
+           self.rentPricelabeBow.text = @"均价";
+           self.formTypelabeBow.text = @"总价";
+           self.rarealabeBow.text = @"建面";
+           self.rentPricelabe.text = [NSString stringWithFormat:@"%@元/每平",dataModel.referUnitPrice];
+           self.formTypelabe.text = [NSString stringWithFormat:@"%@万/每套",dataModel.referTotalPrice];
+           self.rarealabe.text = [NSString stringWithFormat:@"%@-%@㎡",dataModel.minArea,dataModel.maxArea];
+    }else if (dataModel.houseType == XSBHouseType_old) {
+        self.titleLable.text = dataModel.titleDetail;
+         self.rentPricelabeBow.text = @"售价";
+        self.formTypelabeBow.text = @"房型";
+        self.rarealabeBow.text = @"建筑面积";
+
+         self.rentPricelabe.text = [NSString stringWithFormat:@"%@万",dataModel.totalPrice];
+        self.formTypelabe.text = dataModel.formType;
+        self.rarealabe.text = [NSString stringWithFormat:@"%@㎡",dataModel.area];
+    } else{
         self.titleLable.text = dataModel.title;
         self.rentPricelabeBow.text = @"租金";
+        self.formTypelabeBow.text = @"房型";
+           self.rarealabeBow.text = @"建筑面积";
         self.rentPricelabe.text = [NSString stringWithFormat:@"%@元/每月",dataModel.rentPrice];
-    }else{
-        self.titleLable.text = dataModel.titleDetail;
-        self.rentPricelabeBow.text = @"售价";
-        self.rentPricelabe.text = [NSString stringWithFormat:@"%@万",dataModel.totalPrice];
+        self.formTypelabe.text = dataModel.formType;
+        self.rarealabe.text = [NSString stringWithFormat:@"%@㎡",dataModel.area];
     }
-    self.formTypelabe.text = dataModel.formType;
-      self.rarealabe.text = [NSString stringWithFormat:@"%@㎡",dataModel.area];
+    
+    
+
     
     NSString *stra = [dataModel.featurePointNames safeObjectAtIndex:0];;
     NSString *strb = [dataModel.featurePointNames safeObjectAtIndex:1];;
@@ -344,17 +373,22 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 
 - (void)updateWithModel:(XSHouseInfoShowModel *)dataModel{
     self.model = dataModel;
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
     XSBHouseKeyValueDataSource type  = rentHouseInfo;
     if (dataModel.houseType==XSBHouseType_Rent) {
         type  = rentHouseInfo;
+        layout.itemSize = CGSizeMake((KScreenWidth - 30)/2, 19);
+
     }else if (dataModel.houseType==XSBHouseType_old){
         type  = secondHouseInfo;
+        layout.itemSize = CGSizeMake((KScreenWidth - 30)/2, 19);
+
     }else if (dataModel.houseType==XSBHouseType_New){
         type  = newHouseInfo;
+        layout.itemSize = CGSizeMake((KScreenWidth - 30), 19);
+
     }
 
-      UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
-      layout.itemSize = CGSizeMake((KScreenWidth - 30)/2, 19);
       layout.minimumInteritemSpacing = 0;
       layout.minimumLineSpacing = 8;
     self.collectionView.collectionViewLayout = layout;
@@ -692,3 +726,131 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 @end
 
 
+@implementation XSHouseDoorCell
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    UIView *view = [[UIView alloc]init];
+    view.backgroundColor = [UIColor hb_colorWithHexString:@"#E82B2B" alpha:1];
+    self.line  = view;
+    [self.bkView addSubview:view];
+    self.btn1.selected = YES;
+    self.selbtn = self.btn1;
+
+    [self.btn1 setTitleColor:XSColor(26, 26, 26) forState:UIControlStateNormal];
+    [self.btn1 setTitleColor:XSColor(232, 43, 43) forState:UIControlStateSelected];
+
+    [self.btn2 setTitleColor:XSColor(26, 26, 26) forState:UIControlStateNormal];
+    [self.btn2 setTitleColor:XSColor(232, 43, 43) forState:UIControlStateSelected];
+    [self.btn3 setTitleColor:XSColor(26, 26, 26) forState:UIControlStateNormal];
+    [self.btn3 setTitleColor:XSColor(232, 43, 43) forState:UIControlStateSelected];
+    [self.btn4 setTitleColor:XSColor(26, 26, 26) forState:UIControlStateNormal];
+    [self.btn4 setTitleColor:XSColor(232, 43, 43) forState:UIControlStateSelected];
+}
+- (void)layoutSubviews{
+    [super layoutSubviews];
+    [self lineFrame];
+}
+- (void)updateWithModel:(XSHouseInfoShowModel *)model{
+    self.model = model;
+
+}
+
+- (IBAction)click:(UIButton *)sender {
+    self.btn1.selected = NO;
+    self.btn2.selected = NO;
+    self.btn3.selected = NO;
+    self.btn4.selected = NO;
+    sender.selected = YES;
+    self.selbtn = sender;
+    [self lineFrame];
+
+}
+
+- (void)lineFrame{
+    [UIView animateWithDuration:0.2 animations:^{
+        self.line.frame = CGRectMake(self.selbtn.x, self.bkView.height - 1, self.selbtn.width, 1);
+    }];
+
+}
+@end
+@implementation XSHouseBuildingCell
+- (void)awakeFromNib{
+    [super awakeFromNib];
+    self.titleLable.text = @"楼盘动态";
+    self.lableA.text = @"";
+    self.lableAT.text = @"";
+    self.lableB.text = @"";
+    self.lableBT.text = @"";
+
+}
+- (void)updateWithModel:(XSHouseInfoShowModel *)model{
+    self.model = model;
+    
+    XSHouseDetailsDataDynamicsModel *dyModel1 = model.dynamics.firstObject;
+    XSHouseDetailsDataDynamicsModel *dyModel2 = [model.dynamics safeObjectAtIndex:1];
+    self.titleLable.text = [NSString stringWithFormat:@"楼盘动态(%ld)",model.dynamics.count];
+    self.lableA.text = dyModel1.content;
+    self.lableAT.text = dyModel1.publicDate;
+    self.lableB.text = dyModel2.content;
+    self.lableBT.text = dyModel2.publicDate;
+}
+- (IBAction)more:(id)sender {
+    
+}
+@end
+@implementation XSHouseStoriedBuildingCell
+- (void)awakeFromNib{
+    [super awakeFromNib];
+    self.lableA.text = @"";
+    self.lableB.text = @"";
+    self.lableC.text = @"";
+
+}
+- (void)setCellModel:(XSHouseDetailsDataBuildingCellBasicInfosModel *)cellModel{
+    _cellModel = cellModel;
+    self.lableA.text = [NSString stringWithFormat:@"%@号楼",cellModel.cellNum];
+    self.lableB.text = [NSString stringWithFormat:@"%@个单元",cellModel.cell];
+    self.lableC.text = [NSString stringWithFormat:@"%@户",cellModel.households];
+
+}
+@end
+@implementation XSHouseStoriedCell
+- (void)awakeFromNib{
+    [super awakeFromNib];
+    self.listTableView.delegate = self;
+    self.listTableView.dataSource = self;
+    self.listTableView.scrollEnabled = NO;
+    self.listTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
+}
+- (void)updateWithModel:(XSHouseInfoShowModel *)model{
+    self.model = model;
+    XSHouseDetailsDataBuildingCellBasicModel *buildingCellBasic = model.buildingCellBasic;
+    [self.titleImageView sd_setImageWithURL:[NSURL URLWithString:buildingCellBasic.contentImg]];
+    self.array = buildingCellBasic.infos.copy;
+    [self.listTableView reloadData];
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.array.count;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 20;
+}
+- (UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    XSHouseDetailsDataBuildingCellBasicInfosModel *model = [self.array safeObjectAtIndex:indexPath.row];
+    
+    static NSString *ID = @"XSHouseStoriedBuildingCell";
+    XSHouseStoriedBuildingCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (cell == nil) {
+           NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"XSHouseInfoShowCell" owner:self options:nil];
+           cell = [array safeObjectAtIndex:[XSHouseInfoCell indexForClassName:@"XSHouseStoriedBuildingCell"]];
+    }
+    cell.cellModel = model;
+    return cell;
+}
+
+
+- (IBAction)more:(id)sender {
+}
+@end

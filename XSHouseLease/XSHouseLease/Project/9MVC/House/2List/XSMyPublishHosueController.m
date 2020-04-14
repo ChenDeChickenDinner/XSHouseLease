@@ -145,11 +145,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
         XSHouseInfoShowModel *model = [self.array safeObjectAtIndex:indexPath.row];
-    if (self.houseType == XSBHouseType_New) {
-        
-    }else{
-
-    }
     XSHouseDetailsController *vc = [[XSHouseDetailsController alloc]init];
     vc.houseType = self.houseType;
     vc.source = self.source;

@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *callIm;
 @property(nonatomic,strong)XSHouseInfoShowModel *model;
 @property (nonatomic, strong) XSHouseMasterInfoView *customView;
+@property (weak, nonatomic) IBOutlet UILabel *namedescribe;
 
 @end
 

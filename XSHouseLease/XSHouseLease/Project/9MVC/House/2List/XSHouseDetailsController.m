@@ -59,12 +59,6 @@
             [self.tableView.mj_header endRefreshing];
             if (error == nil) {
                 if (responseModel.code.integerValue == SuccessCode) {
-//                    if (self.houseType == XSBHouseType_New) {
-//                        XSHouseDetailsDataModel *model = [XSHouseDetailsDataModel mj_objectWithKeyValues:responseModel.data];
-//                        NSLog(@"111");
-//                    }else{
-//
-//                    }
                     XSHouseInfoShowModel *model = [XSHouseInfoShowModel mj_objectWithKeyValues:responseModel.data];
                     model.houseType = self.houseType;
                     model.source = self.source;
@@ -82,7 +76,7 @@
 
     self.callView.model = dataModel;
     if ([dataModel.house_id isEqual:[XSUserServer sharedInstance].userModel.ID]) {
-//        [self.callView removeFromSuperview];
+        [self.callView removeFromSuperview];
     }
     
     WEAK_SELF;

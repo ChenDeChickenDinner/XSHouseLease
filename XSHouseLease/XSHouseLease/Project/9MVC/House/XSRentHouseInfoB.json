@@ -96,15 +96,15 @@
     "array":
             [
                 {
-                     "key":"unitPrice",
+                     "key":"purposeName",
                      "keyName":"用途："
                  },
                  {
-                     "key":"hangoutDate",
+                     "key":"formNum",
                      "keyName":"户型："
                  },
                  {
-                     "key":"orientationName",
+                     "key":"billingDate",
                      "keyName":"开盘："
                  },
             ]
