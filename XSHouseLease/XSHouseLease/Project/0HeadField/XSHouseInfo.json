@@ -1,33 +1,235 @@
- "dealStatus" : 0,
- "totalFloor" : 1,
- "status" : 6,
- "estate" : "大宅",
- "totalPrice" : 1,
- "orientationName" : "朝西",
- "floorLocaltionName" : "低楼层",
- "title" : " 大宅 1室1厅",
- "formType" : "1室1厅",
- "updateDate" : "2020-04-08 23:01:47.0",
- "firstImg" : "https:\/\/test.fangdinghui.cn:1112\/9\/924d90e1-45c9-4366-917a-cb2fd2ca2b81.jpg",
- "watchNum" : 0,
- "floorLocaltion" : 1,
- "customerId" : 15,
- "city" : "上海市",
- "latitude" : 31.239999999999998,
- "dealStatusName" : "未租",
- "push" : 0,
- "id" : 1,
- "cityId" : 1,
- "orientation" : 3,
- "longitude" : 121.33,
- "distance" : 0,
- "unitPrice" : 1,
- "area" : 1,
- "statusName" : "发布",
- "realityArea" : 1,
- "formTypeOffice" : 1,
- "featurePointNames" : [
-   "近地铁"
- ],
- "formTypeRoom" : 1,
- "floor" : 1
+ {
+   "dealStatus" : 2,
+   "region" : "黄浦区",
+   "featurePoints" : [
+     12,
+     13,
+     14
+   ],
+   "purposeName" : "普通住宅",
+   "maxArea" : 90,
+   "id" : 8,
+   "townId" : 54,
+   "watch" : false,
+   "basic" : {
+     "icon" : "",
+     "region" : "黄浦区",
+     "dealStatus" : 2,
+     "buildingType" : 1,
+     "id" : 8,
+     "townId" : 54,
+     "maxArea" : 90,
+     "customerId" : 1,
+     "address" : "上南路657",
+     "ownership" : 1,
+     "registration" : 70,
+     "minArea" : 40,
+     "customerName" : "小明",
+     "estate" : "海上城市",
+     "longitude" : 121.56999999999999,
+     "estateId" : 121,
+     "finishName" : "精装修",
+     "city" : "上海市",
+     "billingDate" : "2020-04-01",
+     "cityId" : 1,
+     "referUnitPrice" : 40000,
+     "town" : "外滩街道",
+     "developers" : "中建",
+     "push" : 0,
+     "estateAlias" : "海上城市",
+     "finish" : 1,
+     "ownershipName" : "商品房",
+     "buildingTypeName" : "塔楼",
+     "purpose" : 1,
+     "regionId" : 2,
+     "referTotalPrice" : 300,
+     "dealStatusName" : "在售",
+     "purposeName" : "普通住宅",
+     "latitude" : 31.120000000000001
+   },
+   "estateBasic" : {
+     "id" : 1,
+     "structureArea" : 500,
+     "greeningRatio" : 10,
+     "totalArea" : 45,
+     "propertyCompany" : "家园",
+     "planBuilding" : 46,
+     "supplyHeating" : 1,
+     "supplyElectricityName" : "民用",
+     "propertyPrice" : 432,
+     "newHouseId" : 8,
+     "supplyWater" : 1,
+     "supplyElectricity" : 1,
+     "supplyWaterName" : "民用",
+     "planHouse" : 456,
+     "supplyHeatingName" : "自供暖",
+     "plotRatio" : 10,
+     "parkingRatio" : "1:3"
+   },
+   "formNum" : 9,
+   "buildingCellBasic" : {
+     "dealStatus" : 2,
+     "id" : 8,
+     "contentImg" : "https:\/\/test.fangdinghui.cn:1112\/newhouse\/3e414fb374b1ccaa9e0a655ce51624b11.png",
+     "infos" : [
+       {
+         "floors" : 20,
+         "cellNum" : 1,
+         "id" : 71,
+         "buildingCellId" : 8,
+         "households" : 50,
+         "cell" : 1,
+         "buildingType" : 1,
+         "buildingTypeName" : "塔楼",
+         "completionDate" : "2020-04-09",
+         "openingDate" : "2020-04-09"
+       },
+     ],
+     "dealStatusName" : "在售",
+     "newHouseId" : 8
+   },
+   "callPhone" : "18238370744",
+   "customerId" : 1,
+   "icon" : "",
+   "sellBasic" : {
+     "dealStatus" : 1,
+     "id" : 3,
+     "buildingCellNum" : 10,
+     "dealStatusName" : "待售",
+     "formNum" : 9,
+     "newHouseId" : 8,
+     "sellAddress" : "浦东",
+     "uptoDate" : "2020-04-01 15:09:05.0",
+     "recentlyDeliverDate" : "2020-04-01 15:09:07.0"
+   },
+   "contentImg" : [
+     "https:\/\/test.fangdinghui.cn:1112\/newhouse\/3e414fb374b1ccaa9e0a655ce51624b1.png",
+     "https:\/\/test.fangdinghui.cn:1112\/newhouse\/ff98b6a7046990a67dd80f4c5170c02f.jpg",
+     "https:\/\/test.fangdinghui.cn:1112\/newhouse\/d1953bd472f92f2a07d9fc859e469202.jpg",
+     "https:\/\/test.fangdinghui.cn:1112\/newhouse\/73ad4c83c20553554328e7ff4dc4a181.jpg",
+     "https:\/\/test.fangdinghui.cn:1112\/newhouse\/3e414fb374b1ccaa9e0a655ce51624b1.png",
+     "https:\/\/test.fangdinghui.cn:1112\/newhouse\/3e414fb374b1ccaa9e0a655ce51624b1.png"
+   ],
+   "minArea" : 40,
+   "imgs" : [
+     {
+       "forms" : [
+
+       ],
+       "id" : 8,
+       "imgType" : 1,
+       "contentImg" : [
+         "https:\/\/test.fangdinghui.cn:1112\/newhouse\/3e414fb374b1ccaa9e0a655ce51624b1.png"
+       ],
+       "name" : "封面图",
+       "newHouseId" : 8
+     },
+     {
+       "forms" : [
+         {
+           "id" : 11,
+           "formTypeOffice" : 2,
+           "orientation" : 1,
+           "featurePoints" : null,
+           "formImg" : "https:\/\/test.fangdinghui.cn:1112\/newhouse\/6c495cef9fbd981be3fdc46a3e826a9f.jpg",
+           "contentImg" : "",
+           "area" : 85,
+           "newHouseImgId" : 10,
+           "formType" : "2室",
+           "purpose" : 1,
+           "formTypeRoom" : 2,
+           "orientationName" : "朝东",
+           "totalPrice" : 200,
+           "dealStatus" : 2,
+           "featurePointNames" : null,
+           "dealStatusName" : "在售"
+         },
+       ],
+       "id" : 10,
+       "imgType" : 2,
+       "contentImg" : [
+
+       ],
+       "name" : "户型图",
+       "newHouseId" : 8
+     },
+     {
+       "forms" : [
+
+       ],
+       "id" : 72,
+       "imgType" : 3,
+       "contentImg" : [
+         "https:\/\/test.fangdinghui.cn:1112\/newhouse\/ff98b6a7046990a67dd80f4c5170c02f.jpg",
+         "https:\/\/test.fangdinghui.cn:1112\/newhouse\/d1953bd472f92f2a07d9fc859e469202.jpg",
+         "https:\/\/test.fangdinghui.cn:1112\/newhouse\/73ad4c83c20553554328e7ff4dc4a181.jpg",
+         "https:\/\/test.fangdinghui.cn:1112\/newhouse\/3e414fb374b1ccaa9e0a655ce51624b1.png",
+         "https:\/\/test.fangdinghui.cn:1112\/newhouse\/3e414fb374b1ccaa9e0a655ce51624b1.png"
+       ],
+       "name" : "效果图",
+       "newHouseId" : 8
+     }
+   ],
+   "titleDetail" : "海上城市",
+   "dynamics" : [
+     {
+       "contentTypeName" : "销控信息",
+       "id" : 49,
+       "content" : "车位折扣优惠。高层车位优惠可高至18万，洋房车位优惠可高至8万，此优惠针对高层12#、14#、15#房源，洋房全部房源。优惠起止时间为2020年3月16日到2020年4月15日",
+       "publicDate" : "2020-04-09",
+       "contentType" : 1,
+       "newHouseId" : 8
+     },
+   ],
+   "distance" : 0,
+   "firstImg" : "https:\/\/test.fangdinghui.cn:1112\/newhouse\/3e414fb374b1ccaa9e0a655ce51624b1.png",
+   "licenceBasic" : {
+     "licence" : "浦东新区房管（2019）预字0000250号",
+     "id" : 8,
+     "licenceDate" : "2020-04-09",
+     "binding" : "1-9号楼",
+     "newHouseId" : 8
+   },
+   "estate" : "海上城市",
+   "longitude" : 121.56999999999999,
+   "estateId" : 121,
+   "forms" : [
+     {
+       "id" : 11,
+       "formTypeOffice" : 2,
+       "orientation" : 1,
+       "featurePoints" : null,
+       "formImg" : "https:\/\/test.fangdinghui.cn:1112\/newhouse\/6c495cef9fbd981be3fdc46a3e826a9f.jpg",
+       "contentImg" : "",
+       "area" : 85,
+       "newHouseImgId" : 10,
+       "formType" : "2室",
+       "purpose" : 1,
+       "formTypeRoom" : 2,
+       "orientationName" : "朝东",
+       "totalPrice" : 200,
+       "dealStatus" : 2,
+       "featurePointNames" : null,
+       "dealStatusName" : "在售"
+     },
+   ],
+   "city" : "上海市",
+   "billingDate" : "",
+   "cityId" : 1,
+   "referUnitPrice" : 40000,
+   "town" : "外滩街道",
+   "push" : 0,
+   "callName" : "小明",
+   "purpose" : 1,
+   "imgNum" : 9,
+   "title" : "海上城市",
+   "regionId" : 2,
+   "referTotalPrice" : 300,
+   "dealStatusName" : "在售",
+   "featurePointNames" : [
+     "公交直达",
+     "小户型",
+     "现房"
+   ],
+   "latitude" : 31.120000000000001
+ }

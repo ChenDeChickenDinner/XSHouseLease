@@ -148,12 +148,13 @@
     if (self.houseType == XSBHouseType_New) {
         
     }else{
-        XSHouseDetailsController *vc = [[XSHouseDetailsController alloc]init];
-        vc.houseType = self.houseType;
-        vc.source = self.source;
-        vc.houseid = model.house_id;
-        [[NSObject getTopViewController].navigationController pushViewController:vc animated:YES];
+
     }
+    XSHouseDetailsController *vc = [[XSHouseDetailsController alloc]init];
+    vc.houseType = self.houseType;
+    vc.source = self.source;
+    vc.houseid = model.house_id;
+    [[NSObject getTopViewController].navigationController pushViewController:vc animated:YES];
   
 }
 

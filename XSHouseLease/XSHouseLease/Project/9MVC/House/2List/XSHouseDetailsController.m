@@ -16,6 +16,10 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(nonatomic,strong) NSMutableArray *array;
 @property(strong, nonatomic) XSHouseInfoShowModel *dataModel;
+
+@property(strong, nonatomic) XSHouseDetailsDataModel *NewDetailsModel;
+
+
 @end
 
 @implementation XSHouseDetailsController
@@ -55,10 +59,16 @@
             [self.tableView.mj_header endRefreshing];
             if (error == nil) {
                 if (responseModel.code.integerValue == SuccessCode) {
-                    XSHouseInfoShowModel *model = [XSHouseInfoShowModel mj_objectWithKeyValues:responseModel.data];
-                    model.houseType = self.houseType;
-                    model.source = self.source;
-                    [self assemblyCellDataArrayWithData:model];
+                    if (self.houseType == XSBHouseType_New) {
+                        XSHouseDetailsDataModel *model = [XSHouseDetailsDataModel mj_objectWithKeyValues:responseModel.data];
+                        NSLog(@"111");
+                    }else{
+                        XSHouseInfoShowModel *model = [XSHouseInfoShowModel mj_objectWithKeyValues:responseModel.data];
+                           model.houseType = self.houseType;
+                           model.source = self.source;
+                           [self assemblyCellDataArrayWithData:model];
+                    }
+   
                 }
             }
     }];
@@ -87,7 +97,6 @@
             vc.infoType = editStatus;
             [self.navigationController pushViewController:vc animated:YES];
         }else{
-            NSLog(@"editStatus = %ld",editStatus);
         }
     };
     [self.array removeAllObjects];
