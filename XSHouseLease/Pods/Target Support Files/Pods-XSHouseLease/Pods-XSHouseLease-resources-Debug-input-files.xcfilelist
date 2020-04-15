@@ -1,4 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-XSHouseLease/Pods-XSHouseLease-resources.sh
+${PODS_ROOT}/AMap2DMap/MAMapKit.framework/AMap.bundle
 ${PODS_ROOT}/BRPickerView/BRPickerView/Base/BRPickerView.bundle
 ${PODS_ROOT}/HXPhotoPicker/照片选择器/HXPhotoPicker/Resource/HXPhotoPicker.bundle
 ${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle
+${PODS_ROOT}/ProgressHUD/ProgressHUD/ProgressHUD/ProgressHUD.bundle

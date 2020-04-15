@@ -33,11 +33,17 @@
 + (NSDictionary *)mj_objectClassInArray {
     return @{@"forms":@"XSHouseDetailsDataFormsModel", @"dynamics":@"XSHouseDetailsDataDynamicsModel", @"imgs":@"XSHouseDetailsDataImgsModel"};
 }
--(XSHouseKeyValueModuleModel *)houseInfoBArrayWithSourceType:(XSBHouseKeyValueDataSource)type{
+-(XSHouseKeyValueModuleModel *)houseInfoBArrayWithSourceType:(XSBHouseKeyValueDataSource)type sourceDict:(NSMutableDictionary *)sourceDict{
     NSMutableDictionary *modeDict = [self mj_keyValues];
     XSHouseKeyValueModuleModel *model = [XSPublicServer houseInfoArrayForSourceType:type];
     for (XSHouseKeyVlaueModel *KeyVlaueModel in model.array) {
-        id value = [modeDict safeObjectForKey:KeyVlaueModel.key];
+        id value =nil;
+            if (sourceDict) {
+                value = [sourceDict safeObjectForKey:KeyVlaueModel.key];
+            }else{
+                value = [modeDict safeObjectForKey:KeyVlaueModel.key];
+            }
+        
           if ([KeyVlaueModel.key isEqualToString:@"floor"]) {//楼层
             KeyVlaueModel.value = [NSString stringWithFormat:@"%@层(共%@层)",self.floor,self.totalFloor];
           }else if ([KeyVlaueModel.key isEqualToString:@"elevator"]){//电梯

@@ -330,5 +330,36 @@
                   "keyName":"绑定楼栋："
                 },
             ]
+    },
+    "newHouseLdxiInfo":
+    {
+    "title":"楼栋信息",
+    "array":
+            [
+                {
+                 "key":"openingDate",
+                 "keyName":"开盘："
+                },
+                {
+                  "key":"completionDate",
+                  "keyName":"交房："
+                },
+                {
+                  "key":"buildingTypeName",
+                  "keyName":"结构："
+                },
+                {
+                 "key":"cell",
+                 "keyName":"单元："
+                },
+                {
+                  "key":"floors",
+                  "keyName":"层数："
+                },
+                {
+                  "key":"households",
+                  "keyName":"户数："
+                },
+            ]
     }
 }

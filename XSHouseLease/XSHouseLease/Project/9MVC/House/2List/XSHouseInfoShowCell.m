@@ -392,7 +392,7 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
       layout.minimumInteritemSpacing = 0;
       layout.minimumLineSpacing = 8;
     self.collectionView.collectionViewLayout = layout;
-    self.keyValueModuleModel = [dataModel houseInfoBArrayWithSourceType:type];
+    self.keyValueModuleModel = [dataModel houseInfoBArrayWithSourceType:type sourceDict:nil];
 }
 - (void)setKeyValueModuleModel:(XSHouseKeyValueModuleModel *)keyValueModuleModel{
     _keyValueModuleModel = keyValueModuleModel;
@@ -773,6 +773,11 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
     }];
 
 }
+- (IBAction)more:(id)sender {
+    if (self.model.clickBlack) {
+         self.model.clickBlack(self.model, nil, XSBHouseKeyValueInfoDoorInfo);
+     }
+}
 @end
 @implementation XSHouseBuildingCell
 - (void)awakeFromNib{
@@ -796,7 +801,9 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
     self.lableBT.text = dyModel2.publicDate;
 }
 - (IBAction)more:(id)sender {
-    
+    if (self.model.clickBlack) {
+         self.model.clickBlack(self.model, nil, XSBHouseKeyValueInfoLPIX);
+     }
 }
 @end
 @implementation XSHouseStoriedBuildingCell
@@ -852,5 +859,8 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 
 
 - (IBAction)more:(id)sender {
+    if (self.model.clickBlack) {
+        self.model.clickBlack(self.model, nil, XSBHouseKeyValueInfoLDIX);
+    }
 }
 @end

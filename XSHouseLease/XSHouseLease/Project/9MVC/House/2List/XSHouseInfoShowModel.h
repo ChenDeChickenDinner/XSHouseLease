@@ -167,7 +167,7 @@ typedef void(^XSHouseInfoClickBlack)(XSHouseInfoModel *model,id data,XSBHouseKey
 @property (nonatomic, strong) XSHouseDetailsDataLicenceBasicModel *licenceBasic;//预售许可证
 @property (nonatomic, strong) XSHouseDetailsDataBuildingCellBasicModel *buildingCellBasic;//楼栋信息
 
--(XSHouseKeyValueModuleModel *)houseInfoBArrayWithSourceType:(XSBHouseKeyValueDataSource)type;
+-(XSHouseKeyValueModuleModel *)houseInfoBArrayWithSourceType:(XSBHouseKeyValueDataSource)type sourceDict:(NSMutableDictionary *)sourceDict;
 @end
 
 

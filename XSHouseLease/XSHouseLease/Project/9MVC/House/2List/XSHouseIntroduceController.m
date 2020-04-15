@@ -65,7 +65,7 @@
             model1.title = @"基础属性";
             model1.cellClass = @"XSHouseDetailsBusinessInfoCell";
             model1.cellHeight = [NSNumber numberWithInt:244];
-            model1.keyValueModuleModel = [self.dataModel houseInfoBArrayWithSourceType:secondHouseBaseInfo];
+            model1.keyValueModuleModel = [self.dataModel houseInfoBArrayWithSourceType:secondHouseBaseInfo sourceDict:nil];
             model1.keyValueModuleModel.layout =layout;
             
             
@@ -73,11 +73,24 @@
             model2.title = @"交易属性";
             model2.cellClass = @"XSHouseDetailsBusinessInfoCell";
             model2.cellHeight = [NSNumber numberWithInt:244];
-            model2.keyValueModuleModel = [self.dataModel houseInfoBArrayWithSourceType:secondHouseTradingInfo];
+            model2.keyValueModuleModel = [self.dataModel houseInfoBArrayWithSourceType:secondHouseTradingInfo sourceDict:nil];
             model2.keyValueModuleModel.layout =layout;
 
             [_array addObject:model1];
             [_array addObject:model2];
+        }else if (self.infoType == XSBHouseKeyValueInfoLDIX){
+            UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
+           layout.itemSize = CGSizeMake((KScreenWidth -30)/2, 19);
+           layout.minimumInteritemSpacing = 0;
+           layout.minimumLineSpacing = 8;
+            for (XSHouseDetailsDataBuildingCellBasicInfosModel *infoModel in self.dataModel.buildingCellBasic.infos) {
+                  XSHouseMoreInfoCellMdeol *model1 = [[XSHouseMoreInfoCellMdeol alloc]init];
+                  model1.title = infoModel.cellNum?infoModel.cellNum.stringValue:nil;
+                  model1.cellClass = @"XSHouseDetailsBusinessInfoCell";
+                  model1.cellHeight = [NSNumber numberWithInt:130];
+                  model1.keyValueModuleModel = [self.dataModel houseInfoBArrayWithSourceType:newHouseLdxiInfo sourceDict:[infoModel mj_keyValues]];
+                  model1.keyValueModuleModel.layout =layout;
+            }
         }
     }
     return _array;
@@ -88,6 +101,18 @@
     if (self.infoType == XSBHouseKeyValueIntroduce) {
         self.title = @"房源详情";
     }else if (self.infoType == XSBHouseKeyValueInfoSMore){
+        self.title = @"房源信息";
+
+    }else if (self.infoType == XSBHouseKeyValueInfoNMore){
+        self.title = @"房源信息";
+
+    }else if (self.infoType == XSBHouseKeyValueInfoDoorInfo){
+        self.title = @"房源信息";
+
+    }else if (self.infoType == XSBHouseKeyValueInfoNMore){
+        self.title = @"房源信息";
+
+    }else if (self.infoType == XSBHouseKeyValueInfoDoorInfo){
         self.title = @"房源信息";
 
     }

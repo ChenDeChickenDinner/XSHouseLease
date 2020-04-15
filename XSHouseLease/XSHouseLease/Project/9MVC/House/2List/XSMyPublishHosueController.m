@@ -144,7 +144,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-        XSHouseInfoShowModel *model = [self.array safeObjectAtIndex:indexPath.row];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    XSHouseInfoShowModel *model = [self.array safeObjectAtIndex:indexPath.row];
     XSHouseDetailsController *vc = [[XSHouseDetailsController alloc]init];
     vc.houseType = self.houseType;
     vc.source = self.source;

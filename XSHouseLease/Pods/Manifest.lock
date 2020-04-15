@@ -38,6 +38,7 @@ PODS:
   - HXPhotoPicker (2.4.1):
     - YYWebImage
   - IQKeyboardManager (6.5.5)
+  - JXCategoryView (1.5.5)
   - MBProgressHUD (1.2.0)
   - MJExtension (3.2.1)
   - MJRefresh (3.3.1)
@@ -67,6 +68,7 @@ DEPENDENCIES:
   - DZNEmptyDataSet
   - HXPhotoPicker
   - IQKeyboardManager
+  - JXCategoryView
   - MBProgressHUD (~> 1.2.0)
   - MJExtension
   - MJRefresh
@@ -77,7 +79,7 @@ DEPENDENCIES:
   - YBModelFile
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AESCrypt
     - AFNetworking
     - AMap2DMap
@@ -99,6 +101,8 @@ SPEC REPOS:
     - YYCache
     - YYImage
     - YYWebImage
+  trunk:
+    - JXCategoryView
 
 SPEC CHECKSUMS:
   AESCrypt: 1d89bf8b0789cf274ab2205ea461adbe9321d5f8
@@ -111,6 +115,7 @@ SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   HXPhotoPicker: 7bdf73fae127d71adb7f1e9c1aa9eef17e061244
   IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
+  JXCategoryView: 0293fcb356f10a5c2e679dac0a1a5f1899ee0c87
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJExtension: 635f2c663dcb1bf76fa4b715b2570a5710aec545
   MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
@@ -123,6 +128,6 @@ SPEC CHECKSUMS:
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 99e2221ec105a6b2188ca279c176b8800952af77
+PODFILE CHECKSUM: ded74516bd14dc199870a2cea6e00fede80290b7
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.9.1

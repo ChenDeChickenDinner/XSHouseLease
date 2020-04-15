@@ -64,8 +64,9 @@ typedef NS_ENUM(NSInteger,XSBHouseKeyValueEditStatus) {
     XSBHouseKeyValueIntroduce , // 房源详情
     XSBHouseKeyValueInfoSMore , // 二手房房源信息
     XSBHouseKeyValueInfoNMore , // 新房房源信息
+    XSBHouseKeyValueInfoDoorInfo , // 新房户型
     XSBHouseKeyValueInfoLDIX , // 新房楼栋信息
-    XSBHouseKeyValueInfoLPIX , // 新房楼栋信息
+    XSBHouseKeyValueInfoLPIX , // 新房楼盘动态
 
 };
 // value信息
@@ -79,6 +80,7 @@ typedef NS_ENUM(NSInteger,XSBHouseKeyValueDataSource) {
     newHouseTradingInfo , // 销售信息
     newHouseEstateInfo , // 小区概况
     newHouseDataLicenceInfo , // 预售许可证
+    newHouseLdxiInfo , // 楼栋信息
 
 };
 typedef NS_ENUM(NSInteger,XSValueInputType) {

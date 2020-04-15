@@ -10,6 +10,7 @@
 #import "XSHouseInfoShowModel.h"
 #import "XSHouseInfoShowCell.h"
 #import "XSHouseMasterInfoView.h"
+#import "XSLPDTViewController.h"
 
 @interface XSHouseDetailsController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet XSHouseMasterInfoView *callView;
@@ -91,7 +92,15 @@
             vc.houseType = self.houseType;
             vc.infoType = editStatus;
             [self.navigationController pushViewController:vc animated:YES];
-        }else{
+        }else if(editStatus== XSBHouseKeyValueInfoDoorInfo){
+            NSLog(@"XSBHouseKeyValueInfoDoorInfo");
+
+        }else if(editStatus== XSBHouseKeyValueInfoLPIX){
+            NSLog(@"XSBHouseKeyValueInfoLPIX");
+            XSLPDTViewController *vc =  [[XSLPDTViewController alloc]init];
+            vc.dynamics = self.dataModel.dynamics;
+            [self.navigationController pushViewController:vc animated:YES];
+
         }
     };
     [self.array removeAllObjects];

@@ -28,5 +28,5 @@ pod 'AMapSearch'
 pod 'AMapLocation'
 pod 'ProgressHUD'
 pod 'DZNEmptyDataSet'
-
+pod 'JXCategoryView'
 end
