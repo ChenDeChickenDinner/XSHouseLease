@@ -41,6 +41,11 @@
 		5595D24F2446A52800F13111 /* XSLPDTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5595D24E2446A52800F13111 /* XSLPDTViewController.m */; };
 		5595D2532446AB0D00F13111 /* XSLPDTTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5595D2512446AB0D00F13111 /* XSLPDTTableViewCell.m */; };
 		5595D2542446AB0D00F13111 /* XSLPDTTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5595D2522446AB0D00F13111 /* XSLPDTTableViewCell.xib */; };
+		5595D2572446E91100F13111 /* XSDoorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5595D2562446E91100F13111 /* XSDoorViewController.m */; };
+		5595D25B2446E9EE00F13111 /* XSDoorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5595D2592446E9ED00F13111 /* XSDoorTableViewCell.m */; };
+		5595D25C2446E9EE00F13111 /* XSDoorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5595D25A2446E9ED00F13111 /* XSDoorTableViewCell.xib */; };
+		5595D2602446FEF900F13111 /* XSDoorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5595D25E2446FEF900F13111 /* XSDoorCollectionViewCell.m */; };
+		5595D2612446FEF900F13111 /* XSDoorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5595D25F2446FEF900F13111 /* XSDoorCollectionViewCell.xib */; };
 		55BAE6D424400D39001C7B22 /* XSHouseSubTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE6C224400D39001C7B22 /* XSHouseSubTableViewCell.m */; };
 		55BAE6D724400D39001C7B22 /* XSPhotoPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE6C824400D39001C7B22 /* XSPhotoPickerView.m */; };
 		55BAE6D824400D39001C7B22 /* XSPhotoPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BAE6C924400D39001C7B22 /* XSPhotoPickerView.xib */; };
@@ -170,6 +175,14 @@
 		5595D2502446AB0D00F13111 /* XSLPDTTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSLPDTTableViewCell.h; sourceTree = "<group>"; };
 		5595D2512446AB0D00F13111 /* XSLPDTTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSLPDTTableViewCell.m; sourceTree = "<group>"; };
 		5595D2522446AB0D00F13111 /* XSLPDTTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSLPDTTableViewCell.xib; sourceTree = "<group>"; };
+		5595D2552446E91100F13111 /* XSDoorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSDoorViewController.h; sourceTree = "<group>"; };
+		5595D2562446E91100F13111 /* XSDoorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSDoorViewController.m; sourceTree = "<group>"; };
+		5595D2582446E9ED00F13111 /* XSDoorTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSDoorTableViewCell.h; sourceTree = "<group>"; };
+		5595D2592446E9ED00F13111 /* XSDoorTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSDoorTableViewCell.m; sourceTree = "<group>"; };
+		5595D25A2446E9ED00F13111 /* XSDoorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSDoorTableViewCell.xib; sourceTree = "<group>"; };
+		5595D25D2446FEF900F13111 /* XSDoorCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSDoorCollectionViewCell.h; sourceTree = "<group>"; };
+		5595D25E2446FEF900F13111 /* XSDoorCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSDoorCollectionViewCell.m; sourceTree = "<group>"; };
+		5595D25F2446FEF900F13111 /* XSDoorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSDoorCollectionViewCell.xib; sourceTree = "<group>"; };
 		55BAE6C224400D39001C7B22 /* XSHouseSubTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubTableViewCell.m; sourceTree = "<group>"; };
 		55BAE6C624400D39001C7B22 /* XSPhotoPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSPhotoPickerView.h; sourceTree = "<group>"; };
 		55BAE6C824400D39001C7B22 /* XSPhotoPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSPhotoPickerView.m; sourceTree = "<group>"; };
@@ -557,6 +570,14 @@
 				5595D2502446AB0D00F13111 /* XSLPDTTableViewCell.h */,
 				5595D2512446AB0D00F13111 /* XSLPDTTableViewCell.m */,
 				5595D2522446AB0D00F13111 /* XSLPDTTableViewCell.xib */,
+				5595D2552446E91100F13111 /* XSDoorViewController.h */,
+				5595D2562446E91100F13111 /* XSDoorViewController.m */,
+				5595D2582446E9ED00F13111 /* XSDoorTableViewCell.h */,
+				5595D2592446E9ED00F13111 /* XSDoorTableViewCell.m */,
+				5595D25A2446E9ED00F13111 /* XSDoorTableViewCell.xib */,
+				5595D25D2446FEF900F13111 /* XSDoorCollectionViewCell.h */,
+				5595D25E2446FEF900F13111 /* XSDoorCollectionViewCell.m */,
+				5595D25F2446FEF900F13111 /* XSDoorCollectionViewCell.xib */,
 			);
 			path = LPDT;
 			sourceTree = "<group>";
@@ -974,7 +995,9 @@
 				5595D2542446AB0D00F13111 /* XSLPDTTableViewCell.xib in Resources */,
 				6CABF1462441B5F600BDF20F /* XSHouseInfoShowCell.xib in Resources */,
 				55198D81243C4B2F006A9D67 /* Info.plist in Resources */,
+				5595D25C2446E9EE00F13111 /* XSDoorTableViewCell.xib in Resources */,
 				55BF007E243D6325007843C2 /* XSLoginViewController.xib in Resources */,
+				5595D2612446FEF900F13111 /* XSDoorCollectionViewCell.xib in Resources */,
 				55BF0083243D6325007843C2 /* HomePageViewController.xib in Resources */,
 				55198D02243C4B2E006A9D67 /* Assets.xcassets in Resources */,
 				55BAE6FB24404423001C7B22 /* XSRentHouseInfoThird.json in Resources */,
@@ -1092,6 +1115,7 @@
 				55BF009F243D6325007843C2 /* XSBaseViewController.m in Sources */,
 				55BF007B243D6325007843C2 /* XShouseSubNetworkInterface.m in Sources */,
 				55BF0062243D6325007843C2 /* XSLocationSearchview.m in Sources */,
+				5595D2602446FEF900F13111 /* XSDoorCollectionViewCell.m in Sources */,
 				55198E8A243C5248006A9D67 /* XSNetworkInterface.m in Sources */,
 				55BF0065243D6325007843C2 /* XSCollectionView.m in Sources */,
 				55198EF2243C5248006A9D67 /* NSObject+swizzle.m in Sources */,
@@ -1104,8 +1128,10 @@
 				55BF0091243D6325007843C2 /* MessageViewController.m in Sources */,
 				55198EED243C5248006A9D67 /* NSArray+Category.m in Sources */,
 				55198EFC243C5248006A9D67 /* SceneDelegate.m in Sources */,
+				5595D25B2446E9EE00F13111 /* XSDoorTableViewCell.m in Sources */,
 				55BF0094243D6325007843C2 /* XSUserServer.m in Sources */,
 				55198EF1243C5248006A9D67 /* NSObject+safe.m in Sources */,
+				5595D2572446E91100F13111 /* XSDoorViewController.m in Sources */,
 				55198EEC243C5248006A9D67 /* PrintBeautifulLog.m in Sources */,
 				55198EF6243C5248006A9D67 /* NSMutableString+safe.m in Sources */,
 				6C0BC26B24420611001A1914 /* XSHouseDetailsModel.m in Sources */,

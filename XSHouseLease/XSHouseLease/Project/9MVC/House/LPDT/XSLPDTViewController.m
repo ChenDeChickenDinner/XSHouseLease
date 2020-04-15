@@ -19,7 +19,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"楼盘动态列表";
     UITableView *listTableView = [[UITableView alloc]init];
     listTableView.delegate = self;
     listTableView.dataSource = self;
@@ -89,6 +88,8 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"楼盘动态列表";
+
 }
 
 @end

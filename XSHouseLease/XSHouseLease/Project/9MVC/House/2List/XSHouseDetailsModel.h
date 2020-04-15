@@ -25,6 +25,9 @@
 @property (nonatomic, copy) NSString *contentImg;//内容照片
 @property (nonatomic, strong) NSNumber *NewHouseImgId;// 相册名称
 
+@property (nonatomic, copy) NSString *orientationName;//内容照片
+@property (nonatomic, copy) NSArray<NSString *> *featurePointNames;//特色
+
 @property (nonatomic, strong) NSNumber *orientation;//房子的朝向2朝南1朝东3朝西4朝北
 @property (nonatomic, strong) NSNumber *purpose;//1普通住宅2商业类3别墅4四合院5车位6其他
 @property (nonatomic, strong) NSNumber *dealStatus;//1待售 2 在售 3售罄

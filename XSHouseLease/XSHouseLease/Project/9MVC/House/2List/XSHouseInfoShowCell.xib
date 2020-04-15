@@ -1237,6 +1237,7 @@
                 <outlet property="btn2" destination="XbR-jW-ImJ" id="hyd-CC-bb5"/>
                 <outlet property="btn3" destination="BMU-Ed-bem" id="lmW-kA-lQp"/>
                 <outlet property="btn4" destination="Abh-Tw-Y8c" id="X7h-qW-qZJ"/>
+                <outlet property="conBkView" destination="aXm-0P-yoI" id="lVA-dV-oJz"/>
             </connections>
             <point key="canvasLocation" x="-55" y="599"/>
         </tableViewCell>

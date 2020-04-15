@@ -100,13 +100,25 @@
                      "keyName":"用途："
                  },
                  {
+                     "key":"",
+                     "keyName":""
+                 },
+                 {
                      "key":"formNum",
                      "keyName":"户型："
                  },
                  {
-                     "key":"billingDate",
-                     "keyName":"开盘："
-                 },
+                      "key":"newOther",
+                      "keyName":"详情 》"
+                  },
+                  {
+                      "key":"billingDate",
+                      "keyName":"开盘："
+                  },
+                  {
+                      "key":"",
+                      "keyName":""
+                  }
             ]
     },
     "secondHouseBaseInfo":
@@ -186,47 +198,47 @@
             [
                 {
                 "key":"estateAlias",
-                "keyName":"楼盘别名："
+                "keyName":"楼盘别名:"
                 },
                 {
                    "key":"unitPrice",
-                   "keyName":"楼盘特色："
+                   "keyName":"楼盘特色:"
                 },
                 {
                    "key":"referUnitPrice",
-                   "keyName":"参考均价："
+                   "keyName":"参考均价:"
                 },
                 {
                    "key":"referTotalPrice",
-                   "keyName":"参考总价："
+                   "keyName":"参考总价:"
                 },
                 {
                    "key":"unitPrice",
-                   "keyName":"物业类型："
+                   "keyName":"物业类型:"
                 },
                 {
                    "key":"buildingTypeName",
-                   "keyName":"建筑类型："
+                   "keyName":"建筑类型:"
                 },
                 {
                    "key":"finishName",
-                   "keyName":"装修标准："
+                   "keyName":"装修标准:"
                 },
                 {
                    "key":"registration",
-                   "keyName":"产权年限："
+                   "keyName":"产权年限:"
                 },
                 {
                    "key":"developers",
-                   "keyName":"开发商："
+                   "keyName":"开发商:"
                 },
                 {
                    "key":"region",
-                   "keyName":"所在区域："
+                   "keyName":"所在区域:"
                 },
                 {
                    "key":"address",
-                   "keyName":"楼盘地址："
+                   "keyName":"楼盘地址:"
                 },
             ]
     },
@@ -237,23 +249,23 @@
             [
                 {
                   "key":"dealStatusName",
-                  "keyName":"售卖状态："
+                  "keyName":"售卖状态:"
                 },
                 {
                   "key":"sellAddress",
-                  "keyName":"售楼地址："
+                  "keyName":"售楼地址:"
                 },
                 {
                   "key":"buildingCellNum",
-                  "keyName":"售卖楼栋："
+                  "keyName":"售卖楼栋:"
                 },
                 {
                   "key":"formNum",
-                  "keyName":"售卖户型："
+                  "keyName":"售卖户型:"
                 },
                 {
                   "key":"uptoDate",
-                  "keyName":"最新开盘："
+                  "keyName":"最新开盘:"
                 },
             ]
     },
@@ -264,51 +276,51 @@
             [
                 {
                   "key":"totalArea",
-                  "keyName":"占地面积："
+                  "keyName":"占地面积:"
                 },
                 {
                   "key":"structureArea",
-                  "keyName":"建筑面积："
+                  "keyName":"建筑面积:"
                 },
                 {
                   "key":"plotRatio",
-                  "keyName":"容积率："
+                  "keyName":"容积率:"
                 },
                 {
                   "key":"greeningRatio",
-                  "keyName":"绿化率："
+                  "keyName":"绿化率:"
                 },
                 {
                   "key":"parkingRatio",
-                  "keyName":"车位配比："
+                  "keyName":"车位配比:"
                 },
                 {
                   "key":"planBuilding",
-                  "keyName":"规划楼栋："
+                  "keyName":"规划楼栋:"
                 },
                 {
                   "key":"planHouse",
-                  "keyName":"规划户数："
+                  "keyName":"规划户数:"
                 },
                 {
                   "key":"propertyCompany",
-                  "keyName":"物业公司："
+                  "keyName":"物业公司:"
                 },
                 {
                   "key":"propertyPrice",
-                  "keyName":"物业费用："
+                  "keyName":"物业费用:"
                 },
                 {
                   "key":"supplyHeatingName",
-                  "keyName":"供暖方式："
+                  "keyName":"供暖方式:"
                 },
                 {
                    "key":"supplyWaterName",
-                   "keyName":"供水："
+                   "keyName":"供水:"
                  },
                  {
                    "key":"supplyElectricityName",
-                   "keyName":"供电："
+                   "keyName":"供电:"
                  },
             ]
      },
@@ -319,15 +331,15 @@
             [
                 {
                  "key":"licence",
-                 "keyName":"预售证："
+                 "keyName":"预售证:"
                 },
                 {
                   "key":"licenceDate",
-                  "keyName":"发证时间："
+                  "keyName":"发证时间:"
                 },
                 {
                   "key":"binding",
-                  "keyName":"绑定楼栋："
+                  "keyName":"绑定楼栋:"
                 },
             ]
     },

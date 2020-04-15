@@ -17,6 +17,7 @@
 #import "XSHouseIntroduceController.h"
 #import "XSMapViewController.h"
 #import "XSPublicServer.h"
+#import "XSDoorViewController.h"
 
 
 
@@ -147,7 +148,9 @@
 @property (strong, nonatomic)  UIButton *selbtn;
 @property (weak, nonatomic) UIView  *line;
 @property (weak, nonatomic) IBOutlet UIView *bkView;
-
+@property (weak, nonatomic) IBOutlet UIView *conBkView;
+@property (strong, nonatomic) XSDoorViewController *door;
+@property (strong, nonatomic) UIView *conView;
 @end
 #pragma mark -楼盘
 @interface XSHouseBuildingCell : XSHouseInfoCell

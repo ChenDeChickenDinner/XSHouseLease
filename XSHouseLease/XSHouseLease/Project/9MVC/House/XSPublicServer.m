@@ -81,7 +81,11 @@ DEF_SINGLETON(XSPublicServer)
         key = @"newHouseEstateInfo";
     }else if (source == newHouseDataLicenceInfo){
         key = @"newHouseDataLicenceInfo";
+    }else if (source == newHouseLdxiInfo){
+        key = @"newHouseLdxiInfo";
     }
+    
+    
     XSHouseKeyValueModuleModel *model = [XSHouseKeyValueModuleModel mj_objectWithKeyValues:[dict objectForKey:key]];
     return model;
 }

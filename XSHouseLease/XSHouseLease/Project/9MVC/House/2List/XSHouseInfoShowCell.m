@@ -385,7 +385,7 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 
     }else if (dataModel.houseType==XSBHouseType_New){
         type  = newHouseInfo;
-        layout.itemSize = CGSizeMake((KScreenWidth - 30), 19);
+        layout.itemSize = CGSizeMake((KScreenWidth - 30)/2, 19);
 
     }
 
@@ -424,7 +424,12 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
         if (self.model.clickBlack) {
             self.model.clickBlack(self.model, nil, XSBHouseKeyValueInfoSMore);
         }
+    }else  if ([dataModel.key isEqualToString:@"newOther"]) {
+       if (self.model.clickBlack) {
+           self.model.clickBlack(self.model, nil, XSBHouseKeyValueInfoNMore);
+       }
     }
+    
 }
 
 
@@ -667,7 +672,7 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 }
 - (void)layoutSubviews{
     [super layoutSubviews];
-    CGFloat width = self.titleLable.mj_textWidth + 5;
+    CGFloat width = self.titleLable.mj_textWidth + 10;
     self.titleLable.frame = CGRectMake(0, 0, width, self.height);
     self.contentLable.frame = CGRectMake(CGRectGetMaxX(self.titleLable.frame), 0, self.width - width, self.height);
 }
@@ -746,14 +751,22 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
     [self.btn3 setTitleColor:XSColor(232, 43, 43) forState:UIControlStateSelected];
     [self.btn4 setTitleColor:XSColor(26, 26, 26) forState:UIControlStateNormal];
     [self.btn4 setTitleColor:XSColor(232, 43, 43) forState:UIControlStateSelected];
+    
+    self.door = [[XSDoorViewController alloc]init];
+    self.door.simple = YES;
+//    self.conView = self.door.view;
+    [self.conBkView addSubview:self.door.view];
+
 }
 - (void)layoutSubviews{
     [super layoutSubviews];
     [self lineFrame];
+    self.door.view.frame = self.conBkView.bounds;
 }
 - (void)updateWithModel:(XSHouseInfoShowModel *)model{
     self.model = model;
-
+    self.door.forms = model.forms;
+    [self.door loadData];
 }
 
 - (IBAction)click:(UIButton *)sender {

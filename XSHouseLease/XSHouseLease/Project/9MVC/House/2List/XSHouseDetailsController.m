@@ -11,6 +11,7 @@
 #import "XSHouseInfoShowCell.h"
 #import "XSHouseMasterInfoView.h"
 #import "XSLPDTViewController.h"
+#import "XSDoorViewController.h"
 
 @interface XSHouseDetailsController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet XSHouseMasterInfoView *callView;
@@ -92,9 +93,14 @@
             vc.houseType = self.houseType;
             vc.infoType = editStatus;
             [self.navigationController pushViewController:vc animated:YES];
+        }else if(editStatus== XSBHouseKeyValueInfoNMore){
+            NSLog(@"XSBHouseKeyValueInfoNMore");
+
         }else if(editStatus== XSBHouseKeyValueInfoDoorInfo){
             NSLog(@"XSBHouseKeyValueInfoDoorInfo");
-
+            XSDoorViewController *vc =  [[XSDoorViewController alloc]init];
+            vc.forms = self.dataModel.forms;
+            [self.navigationController pushViewController:vc animated:YES];
         }else if(editStatus== XSBHouseKeyValueInfoLPIX){
             NSLog(@"XSBHouseKeyValueInfoLPIX");
             XSLPDTViewController *vc =  [[XSLPDTViewController alloc]init];
@@ -102,6 +108,8 @@
             [self.navigationController pushViewController:vc animated:YES];
 
         }
+        
+        
     };
     [self.array removeAllObjects];
     NSError *error;
@@ -145,6 +153,8 @@
 
 }
 
+
+  
 - (void)watch{
     WEAK_SELF;
     [XSUserServer needLoginSuccess:^{
