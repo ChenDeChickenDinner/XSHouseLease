@@ -7,6 +7,7 @@
 //
 
 #import "XSHouseInfoShowCell.h"
+#import "JHCollectionViewFlowLayout.h"
 
 
 
@@ -751,22 +752,47 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
     [self.btn3 setTitleColor:XSColor(232, 43, 43) forState:UIControlStateSelected];
     [self.btn4 setTitleColor:XSColor(26, 26, 26) forState:UIControlStateNormal];
     [self.btn4 setTitleColor:XSColor(232, 43, 43) forState:UIControlStateSelected];
+    JHCollectionViewFlowLayout *layout = [[JHCollectionViewFlowLayout alloc]init];
+    layout.size = CGSizeMake(205, 200);
+    layout.row = 1;
+    layout.column = 3;
+    layout.rowSpacing = 0;
+    layout.columnSpacing = 10;
+    layout.pageWidth = self.width;
+
     
-    self.door = [[XSDoorViewController alloc]init];
-    self.door.simple = YES;
-//    self.conView = self.door.view;
-    [self.conBkView addSubview:self.door.view];
+    self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:layout];
+    self.collectionView.backgroundColor = [UIColor clearColor];
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
+    self.collectionView.scrollsToTop = NO;
+    self.collectionView.pagingEnabled = NO;
+    self.collectionView.scrollEnabled = NO;
+    self.collectionView.showsHorizontalScrollIndicator = NO;
+    self.collectionView.bounces = NO;
+    [self.collectionView registerClass:[XSDoorCollectionViewCell class] forCellWithReuseIdentifier:XSHouseDetailsBusinessInfoCellStr];
+    [self.collectionView registerNib: [UINib nibWithNibName:NSStringFromClass([XSDoorCollectionViewCell class]) bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"XSDoorCollectionViewCell"];
+    
+    [self.conBkView addSubview:self.collectionView];
 
 }
 - (void)layoutSubviews{
     [super layoutSubviews];
     [self lineFrame];
-    self.door.view.frame = self.conBkView.bounds;
+    self.collectionView.frame = self.conBkView.bounds;
 }
 - (void)updateWithModel:(XSHouseInfoShowModel *)model{
     self.model = model;
-    self.door.forms = model.forms;
-    [self.door loadData];
+    [self.collectionView reloadData];
+}
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.model.forms.count;
+}
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    XSHouseDetailsDataFormsModel *dataModel = [self.model.forms safeObjectAtIndex:indexPath.row];
+    XSDoorCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"XSDoorCollectionViewCell" forIndexPath:indexPath];
+    cell.dataModel = dataModel;
+    return cell;
 }
 
 - (IBAction)click:(UIButton *)sender {

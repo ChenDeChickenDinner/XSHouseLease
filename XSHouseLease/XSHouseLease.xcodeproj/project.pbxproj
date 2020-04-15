@@ -46,6 +46,7 @@
 		5595D25C2446E9EE00F13111 /* XSDoorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5595D25A2446E9ED00F13111 /* XSDoorTableViewCell.xib */; };
 		5595D2602446FEF900F13111 /* XSDoorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5595D25E2446FEF900F13111 /* XSDoorCollectionViewCell.m */; };
 		5595D2612446FEF900F13111 /* XSDoorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5595D25F2446FEF900F13111 /* XSDoorCollectionViewCell.xib */; };
+		5595D26424470CE500F13111 /* JHCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 5595D26224470CE400F13111 /* JHCollectionViewFlowLayout.m */; };
 		55BAE6D424400D39001C7B22 /* XSHouseSubTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE6C224400D39001C7B22 /* XSHouseSubTableViewCell.m */; };
 		55BAE6D724400D39001C7B22 /* XSPhotoPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE6C824400D39001C7B22 /* XSPhotoPickerView.m */; };
 		55BAE6D824400D39001C7B22 /* XSPhotoPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BAE6C924400D39001C7B22 /* XSPhotoPickerView.xib */; };
@@ -183,6 +184,8 @@
 		5595D25D2446FEF900F13111 /* XSDoorCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSDoorCollectionViewCell.h; sourceTree = "<group>"; };
 		5595D25E2446FEF900F13111 /* XSDoorCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSDoorCollectionViewCell.m; sourceTree = "<group>"; };
 		5595D25F2446FEF900F13111 /* XSDoorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSDoorCollectionViewCell.xib; sourceTree = "<group>"; };
+		5595D26224470CE400F13111 /* JHCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		5595D26324470CE500F13111 /* JHCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		55BAE6C224400D39001C7B22 /* XSHouseSubTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseSubTableViewCell.m; sourceTree = "<group>"; };
 		55BAE6C624400D39001C7B22 /* XSPhotoPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSPhotoPickerView.h; sourceTree = "<group>"; };
 		55BAE6C824400D39001C7B22 /* XSPhotoPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSPhotoPickerView.m; sourceTree = "<group>"; };
@@ -563,6 +566,8 @@
 		5595D24924469C9D00F13111 /* LPDT */ = {
 			isa = PBXGroup;
 			children = (
+				5595D26324470CE500F13111 /* JHCollectionViewFlowLayout.h */,
+				5595D26224470CE400F13111 /* JHCollectionViewFlowLayout.m */,
 				5595D24A24469CD600F13111 /* XSPageViewController.h */,
 				5595D24B24469CD600F13111 /* XSPageViewController.m */,
 				5595D24D2446A52800F13111 /* XSLPDTViewController.h */,
@@ -1069,6 +1074,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55BF007C243D6325007843C2 /* XSUserInfoInterface.m in Sources */,
+				5595D26424470CE500F13111 /* JHCollectionViewFlowLayout.m in Sources */,
 				55BF00BC243EAF5A007843C2 /* XSLogInVcModel.m in Sources */,
 				55198EFD243C5248006A9D67 /* AppDelegate.m in Sources */,
 				55BF008E243D6325007843C2 /* XSHouseDetailsController.m in Sources */,

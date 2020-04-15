@@ -18,6 +18,7 @@
 #import "XSMapViewController.h"
 #import "XSPublicServer.h"
 #import "XSDoorViewController.h"
+#import "XSDoorCollectionViewCell.h"
 
 
 
@@ -139,7 +140,7 @@
 @end
 
 #pragma mark - 户型
-@interface XSHouseDoorCell : XSHouseInfoCell
+@interface XSHouseDoorCell : XSHouseInfoCell<UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UIButton *btn1;
 @property (weak, nonatomic) IBOutlet UIButton *btn2;
@@ -151,6 +152,8 @@
 @property (weak, nonatomic) IBOutlet UIView *conBkView;
 @property (strong, nonatomic) XSDoorViewController *door;
 @property (strong, nonatomic) UIView *conView;
+@property (strong, nonatomic) UICollectionView *collectionView ;
+
 @end
 #pragma mark -楼盘
 @interface XSHouseBuildingCell : XSHouseInfoCell
