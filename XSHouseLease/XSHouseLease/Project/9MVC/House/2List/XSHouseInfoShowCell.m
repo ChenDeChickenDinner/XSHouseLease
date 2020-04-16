@@ -231,6 +231,19 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 - (void)awakeFromNib {
     [super awakeFromNib];
     
+    WEAK_SELF;
+    SDCycleScrollView *cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:self.bounds delegate:self placeholderImage:nil];
+    cycleScrollView.imageURLStringsGroup = nil;
+    cycleScrollView.showPageControl = YES;
+    cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
+    cycleScrollView.pageControlStyle = SDCycleScrollViewPageContolStyleNone;
+     __weak typeof(SDCycleScrollView *) weakCycleScrollView = cycleScrollView;
+    cycleScrollView.itemDidScrollOperationBlock = ^(NSInteger currentIndex) {
+        STRONG_SELF;
+        NSInteger Index =  currentIndex + 1;
+        self.tipLabel.text = [NSString stringWithFormat:@"%ld/%ld",Index,weakCycleScrollView.imageURLStringsGroup.count];
+    };
+    
     UILabel *lable = [[UILabel alloc]init];
     lable.backgroundColor = [UIColor hb_colorWithHexString:@"#E82B2B" alpha:1];
     lable.text = @"图片";
@@ -245,24 +258,13 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
     self.tipLabel.layer.cornerRadius = 8;
     self.tipLabel.text = nil;
     self.tipLabel.backgroundColor = [UIColor hb_colorWithHexString:@"#FFFFFF" alpha:0.32];
-    WEAK_SELF;
-    SDCycleScrollView *cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:self.bounds delegate:self placeholderImage:nil];
-    cycleScrollView.imageURLStringsGroup = nil;
-    cycleScrollView.showPageControl = YES;
-    cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
-    cycleScrollView.pageControlStyle = SDCycleScrollViewPageContolStyleNone;
-     __weak typeof(SDCycleScrollView *) weakCycleScrollView = cycleScrollView;
-    cycleScrollView.itemDidScrollOperationBlock = ^(NSInteger currentIndex) {
-        STRONG_SELF;
-        NSInteger Index =  currentIndex + 1;
-        self.tipLabel.text = [NSString stringWithFormat:@"%ld/%ld",Index,weakCycleScrollView.imageURLStringsGroup.count];
-    };
     
     self.cycleScrollView = cycleScrollView;
     [self.bkView addSubview:lable];
     [self.bkView addSubview:cycleScrollView];
     [self.bkView bringSubviewToFront:self.lable];
     [self.bkView bringSubviewToFront:self.tipLabel];
+    [self.bkView bringSubviewToFront:self.doorBkView];
 
 }
 - (void)layoutSubviews{
@@ -276,8 +278,27 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 }
 - (void)updateWithModel:(XSHouseInfoShowModel *)model{
     self.model = model;
+    if (model.houseType == XSBHouseType_old) {
+        self.doorBkView.hidden = YES;
+        self.tipLabel.hidden = NO;
+
+    }else if (model.houseType == XSBHouseType_New){
+        self.doorBkView.hidden = NO;
+        self.tipLabel.hidden = YES;
+
+    }else{
+        self.doorBkView.hidden = YES;
+        self.tipLabel.hidden = NO;
+
+    }
+    self.doorLable.text = [NSString stringWithFormat:@"+%ld",model.forms.count];
     self.cycleScrollView.imageURLStringsGroup = model.contentImg;
     self.tipLabel.text = [NSString stringWithFormat:@"1/%ld",self.cycleScrollView.imageURLStringsGroup.count];
+}
+- (IBAction)doorMore:(id)sender {
+    if (self.model.clickBlack) {
+        self.model.clickBlack(self.model, nil, XSBHouseKeyValueInfoDoorImageInfo);
+    }
 }
 
 @end
@@ -766,8 +787,8 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     self.collectionView.scrollsToTop = NO;
-    self.collectionView.pagingEnabled = NO;
-    self.collectionView.scrollEnabled = NO;
+//    self.collectionView.pagingEnabled = NO;
+//    self.collectionView.scrollEnabled = NO;
     self.collectionView.showsHorizontalScrollIndicator = NO;
     self.collectionView.bounces = NO;
     [self.collectionView registerClass:[XSDoorCollectionViewCell class] forCellWithReuseIdentifier:XSHouseDetailsBusinessInfoCellStr];
@@ -803,7 +824,9 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
     sender.selected = YES;
     self.selbtn = sender;
     [self lineFrame];
-
+    if (self.model.clickBlack) {
+         self.model.clickBlack(self.model, [NSNumber numberWithInteger:sender.tag], XSBHouseKeyValueInfoSC);
+     }
 }
 
 - (void)lineFrame{

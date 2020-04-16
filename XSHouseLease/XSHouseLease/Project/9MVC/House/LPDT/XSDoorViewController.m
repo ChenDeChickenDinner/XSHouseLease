@@ -57,6 +57,7 @@
      }
 
     [self.collectionView reloadData];
+    [self.listTableView reloadData];
 
 }
 - (void)viewWillLayoutSubviews{

@@ -65,8 +65,10 @@ typedef NS_ENUM(NSInteger,XSBHouseKeyValueEditStatus) {
     XSBHouseKeyValueInfoSMore , // 二手房房源信息
     XSBHouseKeyValueInfoNMore , // 新房房源信息
     XSBHouseKeyValueInfoDoorInfo , // 新房户型
+    XSBHouseKeyValueInfoDoorImageInfo , // 新房户型
     XSBHouseKeyValueInfoLDIX , // 新房楼栋信息
     XSBHouseKeyValueInfoLPIX , // 新房楼盘动态
+    XSBHouseKeyValueInfoSC , // 滚动
 
 };
 // value信息

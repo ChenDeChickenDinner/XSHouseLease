@@ -12,6 +12,7 @@
 #import "XSHouseMasterInfoView.h"
 #import "XSLPDTViewController.h"
 #import "XSDoorViewController.h"
+#import "XSImagesViewController.h"
 
 @interface XSHouseDetailsController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet XSHouseMasterInfoView *callView;
@@ -38,7 +39,8 @@
     self.tableView.estimatedRowHeight = 100;
     self.tableView.backgroundColor = XSColor(246, 246, 246);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-
+    self.tableView.estimatedSectionFooterHeight = 0;
+    self.tableView.estimatedSectionHeaderHeight = 0;
     WEAK_SELF;
     self.tableView.mj_header  = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         STRONG_SELF;
@@ -107,6 +109,16 @@
             vc.dynamics = self.dataModel.dynamics;
             [self.navigationController pushViewController:vc animated:YES];
 
+        }else if(editStatus== XSBHouseKeyValueInfoDoorImageInfo){
+            NSLog(@"XSBHouseKeyValueInfoDoorImageInfo");
+            XSImagesViewController *vc = [[XSImagesViewController alloc]init];
+            vc.imgs = self.dataModel.imgs;
+            [self.navigationController pushViewController:vc animated:YES];
+   
+        }else if (editStatus== XSBHouseKeyValueInfoSC){
+            NSNumber *tag = (NSNumber *)data;
+            NSIndexPath *path= [NSIndexPath indexPathForRow:tag.integerValue inSection:0];
+            [self.tableView scrollToRowAtIndexPath:path atScrollPosition:UITableViewScrollPositionTop animated:NO];
         }
         
         

@@ -12,7 +12,8 @@
 @implementation XSListContentViewController
 - (void)viewDidLoad{
     [super viewDidLoad];
-    
+    self.view.backgroundColor = [UIColor whiteColor];
+
 }
 - (UIView *)listView {
     return self.view;
@@ -39,25 +40,26 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.view.backgroundColor = [UIColor whiteColor];
+    
     self.titles = [self getTitlese];
     self.listVc = [self getListVc];
     
     
-    self.categoryView = [[JXCategoryTitleView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 50)];
+    self.categoryView = [[JXCategoryTitleView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 35)];
     self.categoryView.delegate = self;
     self.categoryView.titles = self.titles;
     self.categoryView.titleColorGradientEnabled = YES;
     [self.view addSubview:self.categoryView];
     
-    JXCategoryIndicatorLineView *lineView = [[JXCategoryIndicatorLineView alloc] init];
-    lineView.indicatorColor = [UIColor redColor];
-    lineView.indicatorWidth = JXCategoryViewAutomaticDimension;
-    self.categoryView.indicators = @[lineView];
-    
+//    JXCategoryIndicatorLineView *lineView = [[JXCategoryIndicatorLineView alloc] init];
+//    lineView.indicatorColor = [UIColor redColor];
+//    lineView.indicatorWidth = JXCategoryViewAutomaticDimension;
+//    self.categoryView.indicators = @[lineView];
+//
     self.listContainerView = [[JXCategoryListContainerView alloc] initWithType:JXCategoryListContainerType_ScrollView delegate:self];
-
-    
+    self.listContainerView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.listContainerView];
     //关联到categoryView
     self.categoryView.listContainer = self.listContainerView;
