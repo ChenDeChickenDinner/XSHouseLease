@@ -112,7 +112,7 @@
         }else if(editStatus== XSBHouseKeyValueInfoDoorImageInfo){
             NSLog(@"XSBHouseKeyValueInfoDoorImageInfo");
             XSImagesViewController *vc = [[XSImagesViewController alloc]init];
-            vc.imgs = self.dataModel.imgs;
+            vc.dataSource = self.dataModel.imgs;
             [self.navigationController pushViewController:vc animated:YES];
    
         }else if (editStatus== XSBHouseKeyValueInfoSC){

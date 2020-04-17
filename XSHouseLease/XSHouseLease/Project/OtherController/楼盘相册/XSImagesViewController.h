@@ -1,17 +1,16 @@
 //
-//  XSImagesViewController.h
-//  XSHouseLease
+//  VerticalListViewController.h
+//  JXCategoryView
 //
-//  Created by xs on 2020/4/16.
-//  Copyright © 2020 fang. All rights reserved.
+//  Created by jiaxin on 2018/8/22.
+//  Copyright © 2018年 jiaxin. All rights reserved.
 //
 
-#import "XSPageViewController.h"
+#import <UIKit/UIKit.h>
+#import "XSVertiaciListView.h"
 
-NS_ASSUME_NONNULL_BEGIN
+
 
 @interface XSImagesViewController : UIViewController
-@property (nonatomic, copy) NSArray<XSHouseDetailsDataImgsModel *> *imgs;
+@property (nonatomic, copy) NSArray<XSHouseDetailsDataImgsModel *> *dataSource;
 @end
-
-NS_ASSUME_NONNULL_END
