@@ -74,12 +74,6 @@
 		5585018024497F5F001A09B1 /* XSLocationSearchview.m in Sources */ = {isa = PBXBuildFile; fileRef = 5585013524497F5F001A09B1 /* XSLocationSearchview.m */; };
 		5585018124497F5F001A09B1 /* XSHouseMasterInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5585013624497F5F001A09B1 /* XSHouseMasterInfoView.m */; };
 		5585018224497F5F001A09B1 /* XSRegionSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5585013724497F5F001A09B1 /* XSRegionSearchView.m */; };
-		5585018324497F5F001A09B1 /* XSHouseSubCollectionviewBCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5585013924497F5F001A09B1 /* XSHouseSubCollectionviewBCell.xib */; };
-		5585018424497F5F001A09B1 /* XSHouseSubListChooseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5585013A24497F5F001A09B1 /* XSHouseSubListChooseTableViewCell.xib */; };
-		5585018524497F5F001A09B1 /* XSHouseSubCollectionviewACell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5585013B24497F5F001A09B1 /* XSHouseSubCollectionviewACell.xib */; };
-		5585018624497F5F001A09B1 /* XSHouseSubTextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5585013C24497F5F001A09B1 /* XSHouseSubTextViewCell.xib */; };
-		5585018724497F5F001A09B1 /* XSHouseSubTextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5585013D24497F5F001A09B1 /* XSHouseSubTextFieldTableViewCell.xib */; };
-		5585018824497F5F001A09B1 /* XSHouseSubFootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5585013E24497F5F001A09B1 /* XSHouseSubFootView.xib */; };
 		5585018924497F5F001A09B1 /* XSCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5585014324497F5F001A09B1 /* XSCollectionView.m */; };
 		5585018A24497F5F001A09B1 /* XSHouseMasterInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5585014524497F5F001A09B1 /* XSHouseMasterInfoView.xib */; };
 		5585018B24497F5F001A09B1 /* XSRoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5585014824497F5F001A09B1 /* XSRoundedView.m */; };
@@ -201,12 +195,6 @@
 		5585013524497F5F001A09B1 /* XSLocationSearchview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSLocationSearchview.m; sourceTree = "<group>"; };
 		5585013624497F5F001A09B1 /* XSHouseMasterInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSHouseMasterInfoView.m; sourceTree = "<group>"; };
 		5585013724497F5F001A09B1 /* XSRegionSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSRegionSearchView.m; sourceTree = "<group>"; };
-		5585013924497F5F001A09B1 /* XSHouseSubCollectionviewBCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubCollectionviewBCell.xib; sourceTree = "<group>"; };
-		5585013A24497F5F001A09B1 /* XSHouseSubListChooseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubListChooseTableViewCell.xib; sourceTree = "<group>"; };
-		5585013B24497F5F001A09B1 /* XSHouseSubCollectionviewACell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubCollectionviewACell.xib; sourceTree = "<group>"; };
-		5585013C24497F5F001A09B1 /* XSHouseSubTextViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubTextViewCell.xib; sourceTree = "<group>"; };
-		5585013D24497F5F001A09B1 /* XSHouseSubTextFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubTextFieldTableViewCell.xib; sourceTree = "<group>"; };
-		5585013E24497F5F001A09B1 /* XSHouseSubFootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSHouseSubFootView.xib; sourceTree = "<group>"; };
 		5585013F24497F5F001A09B1 /* XSHouseRentStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHouseRentStatusView.h; sourceTree = "<group>"; };
 		5585014024497F5F001A09B1 /* XSPhotoPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSPhotoPickerView.h; sourceTree = "<group>"; };
 		5585014124497F5F001A09B1 /* XSRoundedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSRoundedView.h; sourceTree = "<group>"; };
@@ -554,7 +542,6 @@
 		5585013224497F5F001A09B1 /* subView */ = {
 			isa = PBXGroup;
 			children = (
-				5585013824497F5F001A09B1 /* 1上传 */,
 				5585013424497F5F001A09B1 /* XSCollectionView.h */,
 				5585014324497F5F001A09B1 /* XSCollectionView.m */,
 				5585014424497F5F001A09B1 /* XSHouseInfoTableView.h */,
@@ -577,19 +564,6 @@
 				5585014B24497F5F001A09B1 /* XSSearchConditionalView.xib */,
 			);
 			path = subView;
-			sourceTree = "<group>";
-		};
-		5585013824497F5F001A09B1 /* 1上传 */ = {
-			isa = PBXGroup;
-			children = (
-				5585013924497F5F001A09B1 /* XSHouseSubCollectionviewBCell.xib */,
-				5585013A24497F5F001A09B1 /* XSHouseSubListChooseTableViewCell.xib */,
-				5585013B24497F5F001A09B1 /* XSHouseSubCollectionviewACell.xib */,
-				5585013C24497F5F001A09B1 /* XSHouseSubTextViewCell.xib */,
-				5585013D24497F5F001A09B1 /* XSHouseSubTextFieldTableViewCell.xib */,
-				5585013E24497F5F001A09B1 /* XSHouseSubFootView.xib */,
-			);
-			path = "1上传";
 			sourceTree = "<group>";
 		};
 		5585FED3244972C4001A09B1 /* XSHouseLease */ = {
@@ -915,14 +889,12 @@
 				5585016124497F5F001A09B1 /* XSLPDTTableViewCell.xib in Resources */,
 				5585018F24497F5F001A09B1 /* XSPhotoPickerView.xib in Resources */,
 				5585FFB3244972C4001A09B1 /* fangdinghui.cer in Resources */,
-				5585018824497F5F001A09B1 /* XSHouseSubFootView.xib in Resources */,
 				5585FFB1244972C4001A09B1 /* MyInfoViewController.xib in Resources */,
 				5585FFC8244972C4001A09B1 /* Assets.xcassets in Resources */,
 				55850021244972C5001A09B1 /* Info.plist in Resources */,
 				5585FFCB244972C4001A09B1 /* Main.storyboard in Resources */,
 				5585017224497F5F001A09B1 /* XSHouseSearch.json in Resources */,
 				5585017D24497F5F001A09B1 /* XSHouseInfoShowCell.xib in Resources */,
-				5585018724497F5F001A09B1 /* XSHouseSubTextFieldTableViewCell.xib in Resources */,
 				5585019124497F5F001A09B1 /* XSHouseSubTableViewCell.xib in Resources */,
 				5585FFCA244972C4001A09B1 /* LaunchScreen.storyboard in Resources */,
 				5585015124497F5F001A09B1 /* XSHouseIntroduceController.xib in Resources */,
@@ -930,18 +902,14 @@
 				5585016F24497F5F001A09B1 /* XSSellHouseInfoFirst.json in Resources */,
 				5585016B24497F5F001A09B1 /* XSRentHouseDetailsInfo.json in Resources */,
 				5585015C24497F5F001A09B1 /* XSDoorCollectionViewCell.xib in Resources */,
-				5585018424497F5F001A09B1 /* XSHouseSubListChooseTableViewCell.xib in Resources */,
 				5585017524497F5F001A09B1 /* XSRentHouseInfoThird.json in Resources */,
 				5585015424497F5F001A09B1 /* XSHouseSubSuccessViewController.xib in Resources */,
-				5585018524497F5F001A09B1 /* XSHouseSubCollectionviewACell.xib in Resources */,
 				5585001F244972C5001A09B1 /* XSLoginViewController.xib in Resources */,
 				5585FFAF244972C4001A09B1 /* HomePageViewController.xib in Resources */,
 				5585015B24497F5F001A09B1 /* XSDoorTableViewCell.xib in Resources */,
-				5585018624497F5F001A09B1 /* XSHouseSubTextViewCell.xib in Resources */,
 				5585015724497F5F001A09B1 /* XSImagesTableViewCell.xib in Resources */,
 				5585017124497F5F001A09B1 /* XSSellHouseInfoThird.json in Resources */,
 				5585016D24497F5F001A09B1 /* XSHouseInfo.json in Resources */,
-				5585018324497F5F001A09B1 /* XSHouseSubCollectionviewBCell.xib in Resources */,
 				5585019024497F5F001A09B1 /* XSLocationSearchview.xib in Resources */,
 				5585016E24497F5F001A09B1 /* XSRentHouseInfoB.json in Resources */,
 				5585016A24497F5F001A09B1 /* XSNewHouseDetailsInfo.json in Resources */,
