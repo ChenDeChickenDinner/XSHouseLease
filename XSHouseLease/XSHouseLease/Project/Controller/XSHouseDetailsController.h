@@ -7,6 +7,8 @@
 //
 
 #import "XSBaseViewController.h"
+#import "XSHouseEnum.h"
+
 @interface XSHouseDetailsController : XSBaseViewController
 //展示类型租/新/二
 @property(nonatomic,assign) XSBHouseType houseType;

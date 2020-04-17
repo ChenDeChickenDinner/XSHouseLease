@@ -10,6 +10,14 @@
 #define XSHouseEnum_h
 
 
+//登录业务
+typedef void(^logSuccess)(void);
+typedef void(^logCancel)(void);
+
+//搜索完成回调
+typedef void(^searchBlack)(NSString *searhKey);
+
+
 typedef NS_ENUM(NSInteger,XSBHouseType) {
     XSBHouseType_New = 2, // 新房
     XSBHouseType_old = 1 , // 二手房

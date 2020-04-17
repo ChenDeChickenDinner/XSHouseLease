@@ -35,7 +35,6 @@
 
 #import "XSHouseEnum.h"
 
-#import "XSHouseBlock.h"
 
 #import "XSPublicServer.h"
 #import "XSHouseSubMitServer.h"

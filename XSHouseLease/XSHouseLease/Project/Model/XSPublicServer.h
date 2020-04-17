@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "XSBaseServer.h"
+#import "XSHouseEnum.h"
+
 @class XSHouseModuleModel;
 typedef void (^clickBlack)(XSHouseModuleModel *model);
 

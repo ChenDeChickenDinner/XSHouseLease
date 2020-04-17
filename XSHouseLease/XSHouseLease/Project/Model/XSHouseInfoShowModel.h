@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "XSPublicServer.h"
 #import "XSHouseDetailsModel.h"
+#import "XSHouseEnum.h"
 
 
 
