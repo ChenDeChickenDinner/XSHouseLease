@@ -20,6 +20,7 @@
 
 @interface XSHouseSubMitServer : XSBaseServer
 @property(nonatomic,assign) XSBHouseType houseType;
+@property(nonatomic,assign) XSHouseSource resource;
 @property (strong, nonatomic) NSMutableArray<XSHouseInfoCellModel *> *firstArray;
 @property (strong, nonatomic) NSMutableArray<XSHouseInfoCellModel *> *secondArray;
 @property (strong, nonatomic) NSMutableArray<XSHouseInfoCellModel *> *thirdArray;
@@ -27,7 +28,6 @@
 @property (strong, nonatomic)  NSMutableArray *imageUrlServerArray;
 @property (strong, nonatomic)  NSMutableArray *imageDoorUrlArray;
 @property (strong, nonatomic)  NSMutableArray *imageDoorUrlServerArray;
-
 @property (strong, nonatomic) NSMutableDictionary *subRentParameterDict;
 
 - (void)resetData;

@@ -114,6 +114,8 @@
 		5585FFC9244972C4001A09B1 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5585FF13244972C4001A09B1 /* MessageViewController.m */; };
 		5585FFCA244972C4001A09B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5585FF15244972C4001A09B1 /* LaunchScreen.storyboard */; };
 		5585FFCB244972C4001A09B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5585FF17244972C4001A09B1 /* Main.storyboard */; };
+		6CBA187B244C617800F9B887 /* XSResourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBA1879244C617800F9B887 /* XSResourceViewController.m */; };
+		6CBA187C244C617800F9B887 /* XSResourceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CBA187A244C617800F9B887 /* XSResourceViewController.xib */; };
 		9AC3A3F8DF5C36DD201ED436 /* libPods-XSHouseLease.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2818EC9B5CB7624F84048215 /* libPods-XSHouseLease.a */; };
 /* End PBXBuildFile section */
 
@@ -302,6 +304,9 @@
 		5585FFAE244972C4001A09B1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66F014AFFCE6A143AA113285 /* Pods-XSHouseLease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XSHouseLease.debug.xcconfig"; path = "Target Support Files/Pods-XSHouseLease/Pods-XSHouseLease.debug.xcconfig"; sourceTree = "<group>"; };
 		6C6BC146241FA75300B62001 /* 房鼎汇.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "房鼎汇.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CBA1878244C617800F9B887 /* XSResourceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSResourceViewController.h; sourceTree = "<group>"; };
+		6CBA1879244C617800F9B887 /* XSResourceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSResourceViewController.m; sourceTree = "<group>"; };
+		6CBA187A244C617800F9B887 /* XSResourceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSResourceViewController.xib; sourceTree = "<group>"; };
 		854FDABF6045260FA4A570E3 /* Pods-XSHouseLease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XSHouseLease.release.xcconfig"; path = "Target Support Files/Pods-XSHouseLease/Pods-XSHouseLease.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -351,6 +356,9 @@
 				558500DC24497F5F001A09B1 /* 基本信息 */,
 				558500FB24497F5F001A09B1 /* 楼盘动态 */,
 				558500D924497F5F001A09B1 /* 搜索小区 */,
+				6CBA1878244C617800F9B887 /* XSResourceViewController.h */,
+				6CBA1879244C617800F9B887 /* XSResourceViewController.m */,
+				6CBA187A244C617800F9B887 /* XSResourceViewController.xib */,
 			);
 			path = OtherController;
 			sourceTree = "<group>";
@@ -493,8 +501,8 @@
 		5585011A24497F5F001A09B1 /* 租房上传 */ = {
 			isa = PBXGroup;
 			children = (
-				5585011B24497F5F001A09B1 /* XSRentHouseInfoSecond.json */,
 				5585011C24497F5F001A09B1 /* XSRentHouseInfoFirst.json */,
+				5585011B24497F5F001A09B1 /* XSRentHouseInfoSecond.json */,
 				5585011D24497F5F001A09B1 /* XSRentHouseInfoThird.json */,
 			);
 			path = "租房上传";
@@ -602,9 +610,9 @@
 		5585FED4244972C4001A09B1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				5585FED5244972C4001A09B1 /* HomePageViewController.xib */,
-				5585FED6244972C4001A09B1 /* HomePageViewController.m */,
 				5585FED7244972C4001A09B1 /* HomePageViewController.h */,
+				5585FED6244972C4001A09B1 /* HomePageViewController.m */,
+				5585FED5244972C4001A09B1 /* HomePageViewController.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -622,16 +630,16 @@
 		5585FEDD244972C4001A09B1 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
-				5585FEDE244972C4001A09B1 /* XSNetworkInterface.h */,
-				5585FEDF244972C4001A09B1 /* XShouseSubNetworkInterface.m */,
-				5585FEE0244972C4001A09B1 /* XSOperationParam.h */,
 				5585FEE1244972C4001A09B1 /* XSHouseBunnerModel.h */,
-				5585FEE2244972C4001A09B1 /* XSUserInfoInterface.m */,
-				5585FEE3244972C4001A09B1 /* XShouseSubNetworkInterface.h */,
-				5585FEE4244972C4001A09B1 /* XSNetworkInterface.m */,
-				5585FEE5244972C4001A09B1 /* XSUserInfoInterface.h */,
-				5585FEE6244972C4001A09B1 /* XSOperationParam.m */,
 				5585FEE7244972C4001A09B1 /* XSHouseBunnerModel.m */,
+				5585FEE3244972C4001A09B1 /* XShouseSubNetworkInterface.h */,
+				5585FEDF244972C4001A09B1 /* XShouseSubNetworkInterface.m */,
+				5585FEDE244972C4001A09B1 /* XSNetworkInterface.h */,
+				5585FEE4244972C4001A09B1 /* XSNetworkInterface.m */,
+				5585FEE0244972C4001A09B1 /* XSOperationParam.h */,
+				5585FEE6244972C4001A09B1 /* XSOperationParam.m */,
+				5585FEE5244972C4001A09B1 /* XSUserInfoInterface.h */,
+				5585FEE2244972C4001A09B1 /* XSUserInfoInterface.m */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -758,12 +766,12 @@
 		5585FF8C244972C4001A09B1 /* BaseClass */ = {
 			isa = PBXGroup;
 			children = (
-				5585FF8D244972C4001A09B1 /* XSBaseViewController.m */,
-				5585FF8E244972C4001A09B1 /* XSBaseTableViewCell.h */,
-				5585FF8F244972C4001A09B1 /* XSBaseNavViewController.m */,
-				5585FF90244972C4001A09B1 /* XSBaseTableViewCell.m */,
 				5585FF91244972C4001A09B1 /* XSBaseNavViewController.h */,
+				5585FF8F244972C4001A09B1 /* XSBaseNavViewController.m */,
+				5585FF8E244972C4001A09B1 /* XSBaseTableViewCell.h */,
+				5585FF90244972C4001A09B1 /* XSBaseTableViewCell.m */,
 				5585FF92244972C4001A09B1 /* XSBaseViewController.h */,
+				5585FF8D244972C4001A09B1 /* XSBaseViewController.m */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -914,6 +922,7 @@
 				5585015C24497F5F001A09B1 /* XSDoorCollectionViewCell.xib in Resources */,
 				5585017524497F5F001A09B1 /* XSRentHouseInfoThird.json in Resources */,
 				5585015424497F5F001A09B1 /* XSHouseSubSuccessViewController.xib in Resources */,
+				6CBA187C244C617800F9B887 /* XSResourceViewController.xib in Resources */,
 				5585001F244972C5001A09B1 /* XSLoginViewController.xib in Resources */,
 				5585FFAF244972C4001A09B1 /* HomePageViewController.xib in Resources */,
 				5585015B24497F5F001A09B1 /* XSDoorTableViewCell.xib in Resources */,
@@ -1023,6 +1032,7 @@
 				5585017E24497F5F001A09B1 /* XSHouseInfoShowCell.m in Sources */,
 				5585FFB0244972C4001A09B1 /* HomePageViewController.m in Sources */,
 				5585001B244972C5001A09B1 /* XSLogInVcModel.m in Sources */,
+				6CBA187B244C617800F9B887 /* XSResourceViewController.m in Sources */,
 				55850018244972C5001A09B1 /* AppDelegate.m in Sources */,
 				5585018D24497F5F001A09B1 /* XSHouseRentStatusView.m in Sources */,
 				5585015D24497F5F001A09B1 /* XSDoorTableViewCell.m in Sources */,

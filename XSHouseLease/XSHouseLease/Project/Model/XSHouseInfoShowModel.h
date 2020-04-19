@@ -71,7 +71,7 @@ typedef void(^XSHouseInfoClickBlack)(XSHouseInfoModel *model,id data,XSBHouseKey
 @property (nonatomic, strong) NSNumber *estateId;
 @property (nonatomic, strong) XSHouseEsModel *es;
 
-
+@property (nonatomic, strong) NSNumber *resource;//渠道标识
 @property (nonatomic, strong) NSNumber *area;//面积
 @property (nonatomic, copy) NSString *address;//详细地址
 @property (nonatomic, strong) NSNumber *rentPrice;//租金

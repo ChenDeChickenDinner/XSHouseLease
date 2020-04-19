@@ -37,7 +37,7 @@ typedef NS_ENUM(NSInteger,XSUserLogIStatus) {
 @property (nonatomic, assign) BOOL waitingMessage;
 
 @property (nonatomic, assign) XSUserLogIStatus logIStatus;
-- (BOOL)validateContactNumber:(NSString *)mobileNum;
++ (BOOL)validateContactNumber:(NSString *)mobileNum;
 @end
 
 NS_ASSUME_NONNULL_END

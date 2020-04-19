@@ -57,7 +57,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 //租房搜索条件-key
 - (void)renthouseConditionWithCallback:(HBCompletionBlock)callback;
-
+// 保存中介公司信息
+- (void)saveagencyWithDict:(NSMutableDictionary *)dict callback:(HBCompletionBlock)callback;
 @end
 
 NS_ASSUME_NONNULL_END

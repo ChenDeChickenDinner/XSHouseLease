@@ -17,6 +17,7 @@ typedef void(^XSValuechangeStatus)(XSHouseInfoCellModel *model,id data,XSBHouseK
 
 @interface XSValue : NSObject
 @property (nonatomic,assign) BOOL isSelect;
+@property (nonatomic,assign) BOOL NotEdit;
 @property (nonatomic,copy) NSString *key;
 @property (nonatomic,copy) NSString *keyStr;
 @property (nonatomic,copy) NSNumber *value;

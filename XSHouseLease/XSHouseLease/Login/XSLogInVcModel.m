@@ -53,7 +53,7 @@
  @param mobileNum 手机号
  @return YES 通过 NO 不通过
  */
-- (BOOL)validateContactNumber:(NSString *)mobileNum{
++ (BOOL)validateContactNumber:(NSString *)mobileNum{
     /**
      * 手机号码:
      * 13[0-9], 14[5,7], 15[0, 1, 2, 3, 5, 6, 7, 8, 9], 16[6], 17[5, 6, 7, 8], 18[0-9], 170[0-9], 19[89]

@@ -41,6 +41,7 @@
     if (self.submitStepsType == XSHouseSubmitStepsType_First) {
         self.subMitServer = [[XSHouseSubMitServer alloc]init];
         self.subMitServer.houseType = self.houseType;
+        self.subMitServer.resource = self.resource;
 
         [self.array addObjectsFromArray:self.subMitServer.firstArray];
         [self.nextBtn setTitle:@"下一步" forState:UIControlStateNormal];
@@ -75,8 +76,12 @@
                 [self.subMitServer.imageDoorUrlArray addObject:imageURL];
             }else if (editStatus == XSBHouseKeyValueEsSend){
                 XSHouseEsModel *es = (XSHouseEsModel *)data;
-                [self.subMitServer subRentParameterDictUpdateWithKey:es.cityId.stringValue value:es.cityId];
                 [self.subMitServer subRentParameterDictUpdateWithKey:@"es" value:[es mj_keyValues]];
+            }else if (editStatus == XSBHouseKeyValueCity){
+                NSDictionary *dict = (NSDictionary *)data;
+                for (NSString *key in dict.allKeys) {
+                    [self.subMitServer subRentParameterDictUpdateWithKey:key value:[dict objectForKey:key]];
+                }
             }
             [self.myTableView reloadData];
 
@@ -155,6 +160,7 @@
           cell = [array safeObjectAtIndex:[XSHouseSubTableViewCell indexForClassName:dataModel.cellClass]];
       }
     cell.dataModel =dataModel;
+    cell.subDict = self.subMitServer.subRentParameterDict;
     [cell refreshData];
     return cell;
 }

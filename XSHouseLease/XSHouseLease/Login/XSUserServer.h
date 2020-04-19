@@ -51,6 +51,8 @@ UIKIT_EXTERN NSString *const NotificationLoginStatusChangedLogout;
 
 //
 @property (nonatomic, copy) NSString *city;
+// 中介认证
+@property (nonatomic, assign) BOOL agency;
 
 @end
 

@@ -69,7 +69,6 @@ static NSString *CollectionCellIdentifierB = @"CollectionCellIdentifierB";
     if ([valueData.key isEqualToString:@"city"]) {
         BRAddressPickerView *addressPickerView = [[BRAddressPickerView alloc]init];
         addressPickerView.pickerMode = BRAddressPickerModeArea;
-        addressPickerView.pickerMode = BRAddressPickerModeProvince;
         addressPickerView.title = @"请选择地区";
         addressPickerView.dataSourceArr = [XSPublicServer sharedInstance].cityArray;
         addressPickerView.isAutoSelect = YES;
@@ -78,15 +77,28 @@ static NSString *CollectionCellIdentifierB = @"CollectionCellIdentifierB";
             NSString *valueStr = [NSString stringWithFormat:@"%@%@%@", province.name, city.name, area.name];
             NSLog(@"选择的值：%@", valueStr);
             valueData.value = [NSNumber numberWithInt:province.code.intValue];
-            valueData.valueStr = province.name;
+            valueData.valueStr = valueStr;
+            NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+            [dict setValue:province.name forKey:@"city"];
+            [dict setValue:province.code forKey:@"cityId"];
+            [dict setValue:city.name forKey:@"region"];
+            [dict setValue:city.code forKey:@"regionId"];
+            [dict setValue:area.name forKey:@"town"];
+            [dict setValue:area.code forKey:@"townId"];
+            self.dataModel.valuechangeStatus(self.dataModel, dict, XSBHouseKeyValueCity);
             self.value.text = valueStr;
             self.value.textColor = [UIColor hb_colorWithHexString:@"#444444" alpha:1];
         };
 
         [addressPickerView show];
     }else if ([valueData.key isEqualToString:@"estate"]){
+        id city =  [self.subDict objectForKey:@"city"];
+        if (city == nil) {
+            [ProgressHUD showError:@"请选择城市" Interaction:YES];
+            return;
+        }
        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-        [dict safeSetObject:@"上海" forKey:@"city"];
+        [dict safeSetObject:city forKey:@"city"];
         XSSearchEstateController *vc = [[XSSearchEstateController alloc]init];
         vc.dict = dict;
         vc.searchBlock = ^(XSHouseEsModel * _Nonnull model) {
@@ -124,6 +136,14 @@ static NSString *CollectionCellIdentifierB = @"CollectionCellIdentifierB";
        self.frontDescribeLableSceend.text = valueData.frontDescribe;
        self.hindDescribeLablethSceend.text = valueData.hindDescribe;
     
+}
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    XSKeyValueModel *mode = [self.dataModel.arrayValue safeObjectAtIndex:0];
+    XSValue *valueData = mode.values.firstObject;
+    if (valueData.NotEdit) {
+        return NO;
+    }
+    return YES;
 }
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     if (textField.text.length > 0) {

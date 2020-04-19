@@ -9,19 +9,47 @@
 #import "HomePageViewController.h"
 #import "XSLocationSearchview.h"
 #import "XSHouseSubmitFirstViewController.h"
+#import "XSResourceViewController.h"
 
 @interface HomePageViewController ()<UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *titleView;
 @property (weak, nonatomic) XSLocationSearchview *searchView;
+@property (weak, nonatomic) IBOutlet UIImageView *source0;
+@property (weak, nonatomic) IBOutlet UIImageView *source1;
 
+@property (weak, nonatomic) IBOutlet UIImageView *tisImage1;
+@property (weak, nonatomic) IBOutlet UIImageView *tisImage2;
+@property (weak, nonatomic) IBOutlet UIImageView *tisImage3;
+@property (weak, nonatomic) IBOutlet UIImageView *tisImage4;
+
+@property (nonatomic,assign) XSHouseSource resource;
 @end
 
 @implementation HomePageViewController
+- (IBAction)source:(UIButton *)sender {
+
+    if (sender.tag == XSHouseSource_0) {
+        self.source0.image = [UIImage imageNamed:@"source0S"];
+        self.source1.image = [UIImage imageNamed:@"source1N"];
+        self.tisImage1.image = [UIImage imageNamed:@"source0image"];
+        self.tisImage2.image = [UIImage imageNamed:@"source0image"];
+        self.tisImage3.image = [UIImage imageNamed:@"source0image"];
+        self.tisImage4.image = [UIImage imageNamed:@"source0image"];
+    }else{
+        self.source0.image = [UIImage imageNamed:@"source0"];
+        self.source1.image = [UIImage imageNamed:@"source1"];
+        self.tisImage1.image = [UIImage imageNamed:@"source1image"];
+        self.tisImage2.image = [UIImage imageNamed:@"source1image"];
+        self.tisImage3.image = [UIImage imageNamed:@"source1image"];
+        self.tisImage4.image = [UIImage imageNamed:@"source1image"];
+    }
+    self.resource = (XSHouseSource)sender.tag;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.delegate = self;
-    
+    self.resource = XSHouseSource_0;
     XSLocationSearchview *searchView = [XSLocationSearchview locationSearchview];
     searchView.searchBlack = ^(NSString * _Nonnull searhKey) {
         NSLog(@"ss-%@",searhKey);
@@ -40,22 +68,47 @@
     [super viewWillLayoutSubviews];
     self.searchView.frame = self.titleView.bounds;
 }
+- (void)agencyChicken:(void(^)(void))success{
+    XSResourceViewController *vc = [[XSResourceViewController alloc]init];
+     [self.navigationController pushViewController:vc animated:YES];
+     return;
+    
+    if (self.resource == XSHouseSource_1) {
+        if (![XSUserServer sharedInstance].userModel.agency) {
+            XSResourceViewController *vc = [[XSResourceViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+            return;
+        }
+    }
+    if (success) {
+        success();
+    }
+}
 - (IBAction)jumpClick:(UIButton *)sender {
-   
+
+
     [XSUserServer needLoginSuccess:^{
        switch (sender.tag) {
            case 0:
            {
-               XSHouseSubmitFirstViewController *vc = [[XSHouseSubmitFirstViewController alloc]init];
-               vc.houseType = XSBHouseType_Rent;
-               [self.navigationController pushViewController:vc animated:YES];
+               [self agencyChicken:^{
+                   XSHouseSubmitFirstViewController *vc = [[XSHouseSubmitFirstViewController alloc]init];
+                   vc.houseType = XSBHouseType_Rent;
+                   vc.resource = self.resource;
+                   [self.navigationController pushViewController:vc animated:YES];
+               }];
+
            }
                break;
            case 1:
            {
-               XSHouseSubmitFirstViewController *vc = [[XSHouseSubmitFirstViewController alloc]init];
-               vc.houseType = XSBHouseType_old;
-               [self.navigationController pushViewController:vc animated:YES];
+               [self agencyChicken:^{
+                  XSHouseSubmitFirstViewController *vc = [[XSHouseSubmitFirstViewController alloc]init];
+                  vc.houseType = XSBHouseType_old;
+                  vc.resource = self.resource;
+                  [self.navigationController pushViewController:vc animated:YES];
+                }];
+
            }
            break;
 

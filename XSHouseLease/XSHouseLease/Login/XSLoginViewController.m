@@ -111,7 +111,7 @@ typedef void (^sendMessageSuccessful)(BOOL successful);
 - (IBAction)sendMessage:(id)sender {
     [self.view endEditing:YES];
     if (self.logInModel.phone) {
-        if (![self.logInModel validateContactNumber:self.logInModel.phone]) {
+        if (![XSLogInVcModel validateContactNumber:self.logInModel.phone]) {
             [self alertWithMessage:@"请输入正确的号码"];
             return;
         }

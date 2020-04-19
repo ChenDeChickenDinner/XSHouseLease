@@ -224,6 +224,12 @@ NSString *url = [NSString stringWithFormat:@"%@/estate/hots",XSBaseUrl];
     [self GET:url param:dict progress:nil callback:callback];
 
 }
+// 保存中介公司信息
+- (void)saveagencyWithDict:(NSMutableDictionary *)dict callback:(HBCompletionBlock)callback{
+    NSNumber *customer_id = [XSUserServer sharedInstance].userModel.ID;
+    [dict safeSetObject:customer_id forKey:@"customerId"];
+    NSString *url = [NSString stringWithFormat:@"%@/customer/saveagency",XSBaseUrl];;
+    [self POST:url param:dict progress:nil callback:callback];
 
-
+}
 @end

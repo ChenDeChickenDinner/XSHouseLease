@@ -172,20 +172,37 @@ DEF_SINGLETON(XSHouseSubMitDynamicServer)
 - (void)subRentParameterDictUpdateWithKey:(NSString *)key value:(id)value{
     [self.subRentParameterDict safeSetObject:value forKey:key];
 }
-
+- (void)setResource:(XSHouseSource)resource{
+    _resource = resource;
+    for (XSHouseInfoCellModel *cellModel in self.firstArray) {
+        
+        for (XSKeyValueModel *oldvalueModel in cellModel.arrayValue) {
+            
+            for (XSValue *oldValue in oldvalueModel.values) {
+                if ([oldValue.key isEqualToString:@"resource"]) {
+                    oldValue.valueStr = self.resource == XSHouseSource_0?@"个人房源":@"中介房源";
+                }
+            }
+            
+        }
+        
+    }
+    [self.subRentParameterDict safeSetObject:[NSNumber numberWithInteger:resource] forKey:@"resource"];
+}
 #pragma mark - 再次编辑信息
 - (void)setRenhousetInfoModel:(XSHouseInfoShowModel *)renhousetInfoModel{
     [self resetData];
     if (renhousetInfoModel) {
-//        _renhousetInfoModel = renhousetInfoModel;
+        _renhousetInfoModel = renhousetInfoModel;
         [self.subRentParameterDict safeSetObject:renhousetInfoModel.house_id forKey:@"id"];
         [self.subRentParameterDict safeSetObject:renhousetInfoModel.city forKey:@"city"];
         [self.subRentParameterDict safeSetObject:renhousetInfoModel.cityId forKey:@"cityId"];
         [self.subRentParameterDict safeSetObject:renhousetInfoModel.region forKey:@"region"];
-    //    [self.subRentParameterDict safeSetObject:renhousetInfoModel.regionId forKey:@"regionId"];
+        [self.subRentParameterDict safeSetObject:renhousetInfoModel.regionId forKey:@"regionId"];
         [self.subRentParameterDict safeSetObject:renhousetInfoModel.town forKey:@"town"];
-    //    [self.subRentParameterDict safeSetObject:renhousetInfoModel.townId forKey:@"townId"];
-        
+        [self.subRentParameterDict safeSetObject:renhousetInfoModel.townId forKey:@"townId"];
+        [self.subRentParameterDict safeSetObject:renhousetInfoModel.resource forKey:@"resource"];
+
         [self valueUpdatekWitOldhDict:[renhousetInfoModel mj_keyValues]];
     }
 

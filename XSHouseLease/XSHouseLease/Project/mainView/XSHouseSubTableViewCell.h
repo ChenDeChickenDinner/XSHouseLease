@@ -21,6 +21,8 @@
 #pragma mark -
 @interface XSHouseSubTableViewCell : UITableViewCell
 @property(nonatomic,strong) XSHouseInfoCellModel *dataModel;
+@property(nonatomic,strong) NSDictionary *subDict;
+
 - (void)refreshData;
 + (NSInteger)indexForClassName:(NSString *)className;
 @end

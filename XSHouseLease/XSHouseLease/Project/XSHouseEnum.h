@@ -16,7 +16,10 @@ typedef void(^logCancel)(void);
 
 //搜索完成回调
 typedef void(^searchBlack)(NSString *searhKey);
-
+typedef NS_ENUM(NSInteger,XSHouseSource) {
+    XSHouseSource_0 = 1, // 个人
+    XSHouseSource_1 = 2 , // 中介
+};
 
 typedef NS_ENUM(NSInteger,XSBHouseType) {
     XSBHouseType_New = 2, // 新房
@@ -65,6 +68,7 @@ typedef NS_ENUM(NSInteger, XShouseOperation) {
 typedef NS_ENUM(NSInteger,XSBHouseKeyValueEditStatus) {
     XSBHouseKeyValueEdit = 0, // 无状态
     XSBHouseKeyValueEditBegin , // 开始编辑
+    XSBHouseKeyValueCity , // 地址选择
     XSBHouseKeyValueImagesChange , // 图片重新选择
     XSBHouseKeyValueImagesSend , // 图片传送
     XSBHouseKeyValueImagesDoorSend , // 图片传送

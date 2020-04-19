@@ -1,6 +1,35 @@
 
 [
     {
+    "title":"房源类型",
+    "sequence":0,
+    "cellHeight":53,
+    "cellClass":"XSHouseSubTextFieldTableViewCell",
+    "arrayValue": [
+                    {
+                        "name":"房源类型",
+                        "key":"resource",
+                        "moreSelect":false,
+                        "sequence":0,
+                        "keyInputType":0,
+                        "keyTextInputType":0,
+                        "values":[
+                                    {
+                                    "placeholder":null,
+                                    "frontDescribe":null,
+                                    "value":null,
+                                    "valueStr":null,
+                                    "hindDescribe":null,
+                                    "isSelect":false,
+                                    "NotEdit":true,
+                                    "sendType":1
+                                   }
+                               ]
+                    }
+                  ]
+
+    },
+    {
     "title":"城市",
     "sequence":0,
     "cellHeight":53,
@@ -56,6 +85,34 @@
                   ]
 
     },
+    {
+      "title":"楼栋门牌",
+      "sequence":2,
+      "cellHeight":53,
+      "cellClass":"XSHouseSubTextFieldTableViewCell",
+      "arrayValue": [
+                      {
+                          "name":"楼栋门牌",
+                          "key":"cellAddress",
+                          "moreSelect":false,
+                          "sequence":2,
+                          "keyInputType":0,
+                          "keyTextInputType":0,
+                          "values":[
+                                      {
+                                      "placeholder":"请输入",
+                                      "frontDescribe":null,
+                                      "value":null,
+                                      "valueStr":null,
+                                      "hindDescribe":null,
+                                      "isSelect":false,
+                                      "sendType":1
+                                     }
+                                 ]
+                      }
+                    ]
+
+      },
     {
      "title":"期望月租金",
      "sequence":2,

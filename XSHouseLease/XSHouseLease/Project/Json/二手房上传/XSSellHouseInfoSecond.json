@@ -1,6 +1,34 @@
 
 [
     {
+      "title":"房产证编号",
+      "sequence":2,
+      "cellHeight":53,
+      "cellClass":"XSHouseSubTextFieldTableViewCell",
+      "arrayValue": [
+                      {
+                          "name":"房产证编号",
+                          "key":"houseCode",
+                          "moreSelect":false,
+                          "sequence":2,
+                          "keyInputType":0,
+                          "keyTextInputType":0,
+                          "values":[
+                                      {
+                                      "placeholder":"请输入",
+                                      "frontDescribe":null,
+                                      "value":null,
+                                      "valueStr":null,
+                                      "hindDescribe":null,
+                                      "isSelect":false,
+                                      "sendType":1
+                                     }
+                                 ]
+                      }
+                    ]
+
+      },
+    {
     "title":"房型",
     "sequence":1,
     "cellHeight":53,
