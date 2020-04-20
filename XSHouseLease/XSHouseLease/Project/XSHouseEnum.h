@@ -17,8 +17,9 @@ typedef void(^logCancel)(void);
 //搜索完成回调
 typedef void(^searchBlack)(NSString *searhKey);
 typedef NS_ENUM(NSInteger,XSHouseSource) {
-    XSHouseSource_0 = 1, // 个人
-    XSHouseSource_1 = 2 , // 中介
+    XSHouseSource_0 = 0, // 全部
+    XSHouseSource_1 = 1, // 个人
+    XSHouseSource_2 = 2 , // 中介
 };
 
 typedef NS_ENUM(NSInteger,XSBHouseType) {

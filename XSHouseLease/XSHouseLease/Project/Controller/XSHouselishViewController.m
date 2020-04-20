@@ -1,24 +1,23 @@
 //
-//  XSMyPublishHosueController.m
+//  XSHouselishViewController.m
 //  XSHouseLease
 //
 //  Created by heartbeats on 2020/3/28.
 //  Copyright © 2020 fang. All rights reserved.
 //
 
-#import "XSMyPublishHosueController.h"
+#import "XSHouselishViewController.h"
 #import "XSHouseInfoTableView.h"
 #import "XSHouseInfoShowModel.h"
 #import "XSHouseDetailsController.h"
 #import "XSHouseSubmitFirstViewController.h"
 #define number 20
-@interface XSMyPublishHosueController ()<UITableViewDelegate,UITableViewDataSource>
+@interface XSHouselishViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
 @property(nonatomic,strong) NSMutableArray *array;
-
 @end
 
-@implementation XSMyPublishHosueController
+@implementation XSHouselishViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -58,17 +57,20 @@
     self.tableView.mj_header.automaticallyChangeAlpha = YES;
     self.tableView.mj_footer.automaticallyChangeAlpha = YES;
 
+    
     WEAK_SELF;
-    self.tableView.mj_header  = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        STRONG_SELF;
-        [self loadData];
-    }];
-    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-    }];
+    if (!self.alittle) {
+        self.tableView.mj_header  = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            STRONG_SELF;
+            [self loadData];
+        }];
+    //    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+    //    }];
+
+    }
 
     [self.view addSubview:self.tableView];
-    [self.tableView reloadData];
-    [self loadData];
+    [self.tableView.mj_header beginRefreshing];
 
 }
 - (void)viewWillLayoutSubviews{
@@ -77,6 +79,7 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self loadData];
 }
 #pragma mark -数据请求
 - (void)loadData{
@@ -86,8 +89,10 @@
         self.tableView.scrollEnabled = NO;
     }
     WEAK_SELF;
-    [self.subInfoInterface houseLisetWith:self.houseType source:self.source house_id:self.house_id?self.house_id.stringValue:@"" KeyVales:[NSMutableDictionary dictionary] per_page:number page_index:0 callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+    [self.subInfoInterface houseLisetWith:self.houseType source:self.source resource:self.resource house_id:self.house_id?self.house_id.stringValue:@"" KeyVales:[NSMutableDictionary dictionary] per_page:number page_index:0 callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
         STRONG_SELF;
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
         [self dataProcessingWithResponseModel:responseModel error:error];
     }];
 
@@ -95,8 +100,7 @@
 }
 #pragma mark -数据处理
 - (void)dataProcessingWithResponseModel:(XSNetworkResponse *)responseModel error:(NSError *)error{
-    [self.tableView.mj_header endRefreshing];
-    [self.tableView.mj_footer endRefreshing];
+
     if (error == nil) {
         [self.array removeAllObjects];
         if (responseModel.code.intValue == SuccessCode) {
@@ -113,6 +117,7 @@
             [self.tableView reloadData];
         }
     }
+    self.tableView.ly_emptyView = self.emptyView;
 }
 #pragma mark -房屋操作预埋Block
 - (void)houseInfoClickSettingWithModelArray:(NSArray *)array{
@@ -182,7 +187,7 @@
     }
     WEAK_SELF;
     [ProgressHUD show];
-    [self.subInfoInterface houseDetailsWithHouseType:self.houseType  house_id:houseid?houseid.stringValue:nil  callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+    [self.subInfoInterface houseDetailsWithHouseType:self.houseType  house_id:houseid callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
         STRONG_SELF;
          [ProgressHUD dismiss];
           if (error == nil) {
@@ -195,5 +200,54 @@
          }
     }];
     
+}
+@end
+
+@interface XSHouseResourceListViewController ()
+
+@end
+
+@implementation XSHouseResourceListViewController
+- ( NSArray<NSString *>*)getTitlese{
+    return @[@"全部房源",@"个人房源",@"中介房源"];
+}
+- (NSArray<id<JXCategoryListContentViewDelegate>>*)getListVc{
+    NSMutableArray *vcArray = [NSMutableArray array];
+    for (int i = 0; i < [self getTitlese].count; i++) {
+        XSHouselishViewController *vc  = [[XSHouselishViewController alloc]init];
+        vc.houseType  = self.houseType;
+        vc.source  = self.source;
+        if (i == 0) {
+            vc.resource  = XSHouseSource_0;
+        }else if (i == 1){
+            vc.resource  = XSHouseSource_1;
+        }else{
+            vc.resource  = XSHouseSource_2;
+        }
+        [vcArray addObject:vc];
+    }
+    return vcArray;
+}
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    if (self.title == nil) {
+        if (self.source == XSBHouseInfoSource_MyPublish){
+            if (self.houseType == XSBHouseType_Rent) {
+                self.title = @"我发布的租房";
+            }else if (self.houseType == XSBHouseType_old){
+                self.title = @"我发布的二手房";
+            }
+        }else if (self.source == XSBHouseInfoSource_MyWatch){
+            if (self.houseType == XSBHouseType_Rent) {
+                self.title = @"我关注的租房";
+            }else if (self.houseType == XSBHouseType_old){
+                self.title = @"我关注的二手房";
+            }else if (self.houseType == XSBHouseType_New){
+                self.title = @"我关注的新房";
+            }
+        }else{
+            self.title = @"猜你喜欢";
+        }
+    }
 }
 @end

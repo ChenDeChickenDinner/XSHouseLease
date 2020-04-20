@@ -58,6 +58,10 @@ DEF_SINGLETON(XSUserServer)
 }
 
 + (void)needLoginSuccess:(logSuccess)successBlack cancel:(logCancel)cancelBlack{
+    if (successBlack) {
+            successBlack();
+        }
+    return;
     if (![XSUserServer sharedInstance].isLogin) {
          XSLoginViewController *login = [[XSLoginViewController alloc]init];
         login.successBlack = successBlack;

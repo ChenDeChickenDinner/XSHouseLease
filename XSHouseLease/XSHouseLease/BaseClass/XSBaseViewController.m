@@ -62,7 +62,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    
+    LYEmptyView *emptyView = [LYEmptyView emptyActionViewWithImageStr:@"noData"
+                                                             titleStr:@"暂无数据"
+                                                            detailStr:@"请稍后再试!"
+                                                          btnTitleStr:nil
+                                                        btnClickBlock:nil];
+    emptyView.subViewMargin = 20.f;
+    emptyView.titleLabTextColor = XSColor(90, 180, 160);
+    emptyView.detailLabFont = [UIFont systemFontOfSize:17];
+    emptyView.actionBtnBackGroundColor = XSColor(90, 180, 160);
+    self.emptyView = emptyView;
     
 }
 

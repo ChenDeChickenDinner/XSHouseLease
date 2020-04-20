@@ -131,6 +131,7 @@
         }else{
             btn.frame = CGRectMake(self.width - (btnWidth * i) - 15 , 0, btnWidth, self.height);
         }
+        [self.viewArray addObject:btn];
         [self addSubview:btn];
     }
 }

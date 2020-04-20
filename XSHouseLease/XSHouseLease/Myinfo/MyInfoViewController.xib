@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyInfoViewController">
             <connections>
                 <outlet property="phoneLable" destination="03D-qG-jZt" id="Y90-xn-Z7Z"/>
+                <outlet property="publishRentNum" destination="qWT-ZN-ZhH" id="mhG-sW-NVl"/>
+                <outlet property="publishSecondNum" destination="T4b-Nc-oSz" id="i9g-lE-aPX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="watchNewNum" destination="k4N-9u-lmF" id="VWX-MR-1RD"/>
+                <outlet property="watchRentNum" destination="3VX-f2-jNU" id="bqm-tw-v1G"/>
+                <outlet property="watchSecondNum" destination="ilR-LO-S3H" id="f0o-bs-1ag"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -179,7 +184,7 @@
                                                                 <constraint firstAttribute="width" constant="1" id="ycA-Cz-HMd"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lig-kn-zPk">
+                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lig-kn-zPk">
                                                             <rect key="frame" x="0.0" y="0.0" width="115" height="40"/>
                                                             <connections>
                                                                 <action selector="jumpToSomePlace:" destination="-1" eventType="touchUpInside" id="d2v-Du-PYh"/>
@@ -242,7 +247,7 @@
                                                                 <constraint firstAttribute="width" constant="1" id="gyf-pW-XDR"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6Q-br-Smy">
+                                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6Q-br-Smy">
                                                             <rect key="frame" x="0.0" y="0.0" width="115" height="40"/>
                                                             <connections>
                                                                 <action selector="jumpToSomePlace:" destination="-1" eventType="touchUpInside" id="ydJ-LQ-9kN"/>
@@ -302,7 +307,7 @@
                                                                 <constraint firstAttribute="width" constant="1" id="gjC-Se-h9v"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2a6-zV-eqZ">
+                                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2a6-zV-eqZ">
                                                             <rect key="frame" x="0.0" y="0.0" width="115" height="40"/>
                                                             <connections>
                                                                 <action selector="jumpToSomePlace:" destination="-1" eventType="touchUpInside" id="NPh-Lt-Ldz"/>
@@ -414,7 +419,7 @@
                                                                 <constraint firstAttribute="width" constant="1" id="SXP-6l-7gM"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7U-lb-4V4">
+                                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7U-lb-4V4">
                                                             <rect key="frame" x="0.0" y="0.0" width="115" height="40"/>
                                                             <connections>
                                                                 <action selector="jumpToSomePlace:" destination="-1" eventType="touchUpInside" id="sJO-uV-bE4"/>
@@ -448,7 +453,7 @@
                                                     <rect key="frame" x="115" y="0.0" width="115" height="40"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rentHouse" translatesAutoresizingMaskIntoConstraints="NO" id="hR3-bh-3gG">
-                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="40"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="30.000000000000014" height="40.000000000000014"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="30" id="dpu-IS-9Tm"/>
                                                             </constraints>
@@ -477,7 +482,7 @@
                                                                 <constraint firstAttribute="width" constant="1" id="foK-ds-5mA"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQv-5c-F0c">
+                                                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQv-5c-F0c">
                                                             <rect key="frame" x="0.0" y="0.0" width="115" height="40"/>
                                                             <connections>
                                                                 <action selector="jumpToSomePlace:" destination="-1" eventType="touchUpInside" id="O6s-Uy-Eib"/>
@@ -537,7 +542,7 @@
                                                                 <constraint firstAttribute="width" constant="1" id="zkH-eX-uAk"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lm6-7J-WPt">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lm6-7J-WPt">
                                                             <rect key="frame" x="0.0" y="0.0" width="115" height="40"/>
                                                         </button>
                                                     </subviews>

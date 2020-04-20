@@ -40,7 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)renthouseSaveWithDict:(NSMutableDictionary *)dict houseType:(XSBHouseType)houseType callback:(HBCompletionBlock)callback;
 
 
-- (void)houseLisetWith:(XSBHouseType)houseType source:(XSBHouseInfoSource)source house_id:(NSString *)house_id KeyVales:(NSMutableDictionary *)keyVales per_page:(NSInteger)per_page page_index:(NSInteger)page_index  callback:(HBCompletionBlock)callback;
+- (void)houseLisetWith:(XSBHouseType)houseType source:(XSBHouseInfoSource)source resource:(XSHouseSource)resource house_id:(NSString *)house_id KeyVales:(NSMutableDictionary *)keyVales per_page:(NSInteger)per_page page_index:(NSInteger)page_index  callback:(HBCompletionBlock)callback;
 
 // 房详情
 - (void)houseDetailsWithHouseType:(XSBHouseType)houseType house_id:(NSNumber *)house_id callback:(HBCompletionBlock)callback;
@@ -59,6 +59,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)renthouseConditionWithCallback:(HBCompletionBlock)callback;
 // 保存中介公司信息
 - (void)saveagencyWithDict:(NSMutableDictionary *)dict callback:(HBCompletionBlock)callback;
+// 信息统计
+- (void)statisticsWithCallback:(HBCompletionBlock)callback;
 @end
 
 NS_ASSUME_NONNULL_END

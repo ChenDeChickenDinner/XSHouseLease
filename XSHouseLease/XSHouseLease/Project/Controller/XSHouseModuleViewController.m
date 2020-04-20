@@ -10,15 +10,15 @@
 #import "XSCollectionView.h"
 #import "XSHouseInfoTableView.h"
 #import "XSHouseInfoShowModel.h"
-#import "XSMyPublishHosueController.h"
+#import "XSHouselishViewController.h"
 #import "XSHouseDetailsController.h"
-#import "XSMyPublishHosueController.h"
+#import "XSHouselishViewController.h"
 
 @class XSItemCollectionViewCell;
 @interface XSHouseModuleViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic,strong)XSRegionSearchView *searcView;
 @property (strong, nonatomic) UIView *lineView;
-@property (strong, nonatomic) XSMyPublishHosueController *listVc;
+@property (strong, nonatomic) XSHouselishViewController *listVc;
 
 @property (strong, nonatomic) NSMutableArray<XSHouseModuleModel *> *array;
 @property (strong, nonatomic) UICollectionViewFlowLayout *layout;
@@ -56,7 +56,7 @@
      lineView.backgroundColor = XSColor(246, 243, 245);
      self.lineView = lineView;
  
-    XSMyPublishHosueController *listVc = [[XSMyPublishHosueController alloc]init];
+    XSHouselishViewController *listVc = [[XSHouselishViewController alloc]init];
     listVc.houseType = self.houseType;
     listVc.source = self.source;
     self.listVc = listVc;
@@ -98,7 +98,7 @@
     XSHouseModuleModel *dataModel = [self.array safeObjectAtIndex:indexPath.row];
     NSMutableDictionary *dict =  [NSMutableDictionary dictionary];
     [dict setValue:dataModel.value forKey:dataModel.key];
-    XSMyPublishHosueController *vc = [[XSMyPublishHosueController alloc]init];
+    XSHouselishViewController *vc = [[XSHouselishViewController alloc]init];
     vc.title = dataModel.name;
     vc.source = self.source;
     vc.houseType = self.houseType;

@@ -8,13 +8,19 @@
 
 #import "XSBaseViewController.h"
 
-NS_ASSUME_NONNULL_BEGIN
 
+@interface XSMyHouseStatistical:NSObject
+@property(nonatomic,strong)NSNumber *publishRentNum;
+@property(nonatomic,strong)NSNumber *publishSecondNum;
+@property(nonatomic,strong)NSNumber *watchNewNum;
+@property(nonatomic,strong)NSNumber *watchRentNum;
+@property(nonatomic,strong)NSNumber *watchSecondNum;
+@end
 @interface MyInfoViewController : XSBaseViewController
 
 @end
 
-NS_ASSUME_NONNULL_END
+
 /*
  URL
  1，规则

@@ -107,10 +107,20 @@
          self.dealStatusLable.text = NewModel.statusName;
          self.dealStatusLable.textColor = [UIColor whiteColor];
          self.dealStatusLable.backgroundColor = [UIColor hb_colorWithHexString:XSHouseStatusTextColor(NewModel.status, NewModel.dealStatus, NewModel.source) alpha:1];
-     }else{
+     }else if(NewModel.source == XSBHouseInfoSource_MyWatch){
          self.dealStatusLable.text = NewModel.dealStatusName;
          self.dealStatusLable.textColor = [UIColor whiteColor];
          self.dealStatusLable.backgroundColor = [UIColor hb_colorWithHexString:XSHouseStatusTextColor(NewModel.status, NewModel.dealStatus, NewModel.source) alpha:1];
+     }else{
+         if (NewModel.resource == XSHouseSource_1) {
+             self.dealStatusLable.text = @"面中介费";
+         }else if (NewModel.resource == XSHouseSource_2){
+             self.dealStatusLable.text = @"佣金优惠";
+         }else{
+             self.dealStatusLable.text = NewModel.dealStatusName;
+         }
+         self.dealStatusLable.textColor = [UIColor whiteColor];
+         self.dealStatusLable.backgroundColor = [UIColor redColor];
      }
     
     self.watchNumLable.text = [NSString stringWithFormat:@"%@人已关注",NewModel.watchNum];
@@ -146,7 +156,6 @@
         self.rentPricelabe.text = [NSString stringWithFormat:@"%@元/每月",NewModel.rentPrice];
         self.unitPriceLable.text =  nil;
     }
-    self.statusEditView.status = NewModel.status;
     if (NewModel.source == XSBHouseInfoSource_MyPublish) {
         self.statusEditViewHeight.constant = 23.0;
         self.statusEditView.hidden = NO;
@@ -154,6 +163,7 @@
         self.statusEditViewHeight.constant = 0;
         self.statusEditView.hidden = YES;
     }
+    self.statusEditView.status = NewModel.status;
 }
 
 
@@ -630,7 +640,7 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    XSMyPublishHosueController *listvc = [[XSMyPublishHosueController alloc]init];
+    XSHouselishViewController *listvc = [[XSHouselishViewController alloc]init];
     listvc.view.frame = self.bkView.bounds;
     self.listvc = listvc;
     [self.bkView addSubview:listvc.view];
@@ -649,7 +659,7 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
     [self.listvc loadData];
 }
 - (IBAction)more:(id)sender {
-    XSMyPublishHosueController *listvc = [[XSMyPublishHosueController alloc]init];
+    XSHouselishViewController *listvc = [[XSHouselishViewController alloc]init];
     listvc.houseType = self.model.houseType;
     listvc.source = XSBHouseInfoSource_HouseIdPush;
     listvc.house_id = self.model.house_id;

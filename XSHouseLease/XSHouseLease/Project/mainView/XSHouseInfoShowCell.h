@@ -13,7 +13,7 @@
 #import "XSHouseInfoTableView.h"
 #import "XSHouseInfoShowModel.h"
 #import "XSHouseDetailsController.h"
-#import "XSMyPublishHosueController.h"
+#import "XSHouselishViewController.h"
 #import "XSHouseIntroduceController.h"
 #import "XSMapViewController.h"
 #import "XSPublicServer.h"
@@ -138,7 +138,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *listHeight;
 @property (weak, nonatomic) IBOutlet UIView *bkView;
 @property (nonatomic,strong) XSHouseInfoTableView *tableView;
-@property (strong, nonatomic)XSMyPublishHosueController *listvc;
+@property (strong, nonatomic)XSHouselishViewController *listvc;
 @end
 
 #pragma mark - 户型
