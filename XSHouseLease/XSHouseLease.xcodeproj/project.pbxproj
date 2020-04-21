@@ -620,9 +620,9 @@
 		5585FED8244972C4001A09B1 /* Myinfo */ = {
 			isa = PBXGroup;
 			children = (
-				5585FED9244972C4001A09B1 /* MyInfoViewController.xib */,
-				5585FEDA244972C4001A09B1 /* MyInfoViewController.m */,
 				5585FEDB244972C4001A09B1 /* MyInfoViewController.h */,
+				5585FEDA244972C4001A09B1 /* MyInfoViewController.m */,
+				5585FED9244972C4001A09B1 /* MyInfoViewController.xib */,
 			);
 			path = Myinfo;
 			sourceTree = "<group>";
