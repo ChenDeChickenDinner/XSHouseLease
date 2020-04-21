@@ -11,6 +11,7 @@
 #import "XSPhotoPickerView.h"
 #import "XSHouseSubSuccessViewController.h"
 #import "AFNetworking.h"
+#import <WebKit/WKWebView.h>
 
 @interface XSHouseSubmitFirstViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
@@ -19,12 +20,19 @@
 @property (strong, nonatomic) NSMutableArray<XSHouseInfoCellModel *> *array;
 @property (assign, nonatomic) BOOL updataimage;
 @property (assign, nonatomic) BOOL updataDoorimage;
+@property (weak, nonatomic) IBOutlet UIView *agreementView;
+@property (weak, nonatomic) IBOutlet UIButton *agreedBtn;
 
 @end
 
 @implementation XSHouseSubmitFirstViewController
+- (IBAction)agreementLook:(id)sender {
 
+}
 
+- (IBAction)agreementClick:(UIButton *)sender {
+    sender.selected = !sender.selected;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.myTableView.delegate = self;
@@ -46,9 +54,11 @@
         [self.array addObjectsFromArray:self.subMitServer.firstArray];
         [self.nextBtn setTitle:@"下一步" forState:UIControlStateNormal];
     }else if (self.submitStepsType == XSHouseSubmitStepsType_Second){
+        [self.agreementView removeFromSuperview];
         [self.array addObjectsFromArray:self.subMitServer.secondArray];
         [self.nextBtn setTitle:@"下一步" forState:UIControlStateNormal];
     }else if (self.submitStepsType == XSHouseSubmitStepsType_Third){
+        [self.agreementView removeFromSuperview];
         [self.array addObjectsFromArray:self.subMitServer.thirdArray];
         [self.nextBtn setTitle:@"完成" forState:UIControlStateNormal];
     }
@@ -171,6 +181,10 @@
     next.subMitServer = self.subMitServer;
     next.houseType = self.houseType;
     if (self.submitStepsType == XSHouseSubmitStepsType_First) {
+        if (!self.agreedBtn.selected) {
+            [ProgressHUD showError:@"请阅读并同意《房源发布协议》" Interaction:YES];
+            return;
+        }
         next.submitStepsType = XSHouseSubmitStepsType_Second;
         [self.navigationController pushViewController:next animated:YES];
     }else if (self.submitStepsType == XSHouseSubmitStepsType_Second){

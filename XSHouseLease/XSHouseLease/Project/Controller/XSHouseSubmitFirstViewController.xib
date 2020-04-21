@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XSHouseSubmitFirstViewController">
             <connections>
+                <outlet property="agreedBtn" destination="fNk-nC-gT9" id="8Ag-Kf-Idt"/>
+                <outlet property="agreementView" destination="En9-ig-DeX" id="SN9-55-qAT"/>
                 <outlet property="myTableView" destination="s1W-te-ZZ5" id="OFK-zs-25I"/>
                 <outlet property="nextBtn" destination="MOs-MJ-Zod" id="Emf-1f-GTZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -41,9 +43,62 @@
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s1W-te-ZZ5">
-                    <rect key="frame" x="0.0" y="79" width="414" height="735"/>
+                    <rect key="frame" x="0.0" y="79" width="414" height="700"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="En9-ig-DeX" userLabel="1111">
+                    <rect key="frame" x="15" y="784" width="229" height="20"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNk-nC-gT9">
+                            <rect key="frame" x="0.0" y="3.5" width="13" height="13"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="13" id="JW9-Lu-del"/>
+                                <constraint firstAttribute="width" constant="13" id="b6r-fW-Ptt"/>
+                            </constraints>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" backgroundImage="agreement">
+                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <state key="selected" backgroundImage="agreement_sele"/>
+                            <connections>
+                                <action selector="agreementClick:" destination="-1" eventType="touchUpInside" id="fVL-GQ-E9H"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已阅读并同意" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOG-o7-avy">
+                            <rect key="frame" x="15" y="0.0" width="74" height="20"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" red="0.36862745099999999" green="0.36862745099999999" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8d-Hw-3h6">
+                            <rect key="frame" x="89" y="0.0" width="140" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="140" id="AHV-WB-v0S"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="《房鼎汇平台服务协议》">
+                                <color key="titleColor" red="0.90980392160000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="agreementLook:" destination="-1" eventType="touchUpInside" id="Aya-9M-ceu"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="SOG-o7-avy" firstAttribute="leading" secondItem="fNk-nC-gT9" secondAttribute="trailing" constant="2" id="3L3-hX-JAd"/>
+                        <constraint firstItem="SOG-o7-avy" firstAttribute="top" secondItem="En9-ig-DeX" secondAttribute="top" id="4fq-u7-3pT"/>
+                        <constraint firstItem="w8d-Hw-3h6" firstAttribute="leading" secondItem="SOG-o7-avy" secondAttribute="trailing" id="8Uc-j4-WMF"/>
+                        <constraint firstAttribute="height" constant="20" id="ARQ-MD-bcZ"/>
+                        <constraint firstItem="w8d-Hw-3h6" firstAttribute="top" secondItem="En9-ig-DeX" secondAttribute="top" id="Bfi-Hg-MnH"/>
+                        <constraint firstAttribute="bottom" secondItem="SOG-o7-avy" secondAttribute="bottom" id="HtU-lj-ImQ"/>
+                        <constraint firstAttribute="trailing" secondItem="w8d-Hw-3h6" secondAttribute="trailing" id="LPW-Lz-R6A"/>
+                        <constraint firstAttribute="bottom" secondItem="w8d-Hw-3h6" secondAttribute="bottom" id="fqp-PM-GAg"/>
+                        <constraint firstItem="fNk-nC-gT9" firstAttribute="leading" secondItem="En9-ig-DeX" secondAttribute="leading" id="pvb-mM-Xmu"/>
+                        <constraint firstItem="fNk-nC-gT9" firstAttribute="centerY" secondItem="En9-ig-DeX" secondAttribute="centerY" id="zo4-54-ri8"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="s6I-gQ-UqS"/>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOs-MJ-Zod" customClass="XSRoundedBtn1View">
                     <rect key="frame" x="15" y="814" width="384" height="38"/>
                     <color key="backgroundColor" red="0.90980392160000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -64,16 +119,23 @@
                 <constraint firstItem="s1W-te-ZZ5" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="4z5-sA-Rrm"/>
                 <constraint firstItem="s1W-te-ZZ5" firstAttribute="top" secondItem="tkj-UH-Y0s" secondAttribute="bottom" id="51S-n8-X2H"/>
                 <constraint firstItem="MOs-MJ-Zod" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="15" id="8af-PC-Fvg"/>
+                <constraint firstItem="En9-ig-DeX" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="15" id="EPO-Mo-Lk3"/>
                 <constraint firstItem="tkj-UH-Y0s" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="HjA-ap-WVg"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="MOs-MJ-Zod" secondAttribute="trailing" constant="15" id="I7r-C9-lax"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="s1W-te-ZZ5" secondAttribute="bottom" constant="48" id="IMT-PW-uaL"/>
+                <constraint firstItem="MOs-MJ-Zod" firstAttribute="top" secondItem="s1W-te-ZZ5" secondAttribute="bottom" priority="800" constant="5" id="JAE-Nn-M2f"/>
                 <constraint firstItem="tkj-UH-Y0s" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="MQq-wx-pLX"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="MOs-MJ-Zod" secondAttribute="bottom" constant="10" id="ROz-SJ-PkQ"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="tkj-UH-Y0s" secondAttribute="trailing" id="aDp-Mt-xZm"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="s1W-te-ZZ5" secondAttribute="trailing" id="gFm-SK-L5K"/>
+                <constraint firstItem="MOs-MJ-Zod" firstAttribute="top" secondItem="En9-ig-DeX" secondAttribute="bottom" constant="10" id="nR1-dO-CGQ"/>
+                <constraint firstItem="En9-ig-DeX" firstAttribute="top" secondItem="s1W-te-ZZ5" secondAttribute="bottom" constant="5" id="tuN-SU-DWr"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="133" y="88"/>
         </view>
     </objects>
+    <resources>
+        <image name="agreement" width="13" height="13"/>
+        <image name="agreement_sele" width="13" height="13"/>
+    </resources>
 </document>
