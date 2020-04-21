@@ -9,11 +9,11 @@
     },
     {
         "cellClass":"XSHouseDetailsBusinessInfoCell",
-        "cellHeight":100
+        "cellHeight":115
     },
     {
         "cellClass":"XSHouseDoorCell",
-        "cellHeight":320
+        "cellHeight":300
     },
     {
         "cellClass":"XSHouseBuildingCell",

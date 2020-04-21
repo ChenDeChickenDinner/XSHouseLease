@@ -49,6 +49,8 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *statusEditViewHeight;
 @property (weak, nonatomic) IBOutlet UILabel *watchNumLable;
 @property (weak, nonatomic) IBOutlet XSHouseRentStatusView *statusEditView;
+@property (weak, nonatomic) IBOutlet UILabel *lxLable;
+
 @end
 
 
@@ -93,6 +95,7 @@
 @property (weak, nonatomic)  UILabel *contentLable;
 @end
 @interface XSHouseDetailsBusinessInfoCell : XSHouseInfoCell<UICollectionViewDelegate,UICollectionViewDataSource>
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titH;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleH;
 @property (weak, nonatomic) IBOutlet UILabel *titleLable;
 @property (strong, nonatomic) UIView *lineView;

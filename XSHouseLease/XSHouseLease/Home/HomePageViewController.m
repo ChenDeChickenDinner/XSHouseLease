@@ -69,9 +69,6 @@
     self.searchView.frame = self.titleView.bounds;
 }
 - (void)agencyChicken:(void(^)(void))success{
-    XSResourceViewController *vc = [[XSResourceViewController alloc]init];
-     [self.navigationController pushViewController:vc animated:YES];
-     return;
     
     if (self.resource == XSHouseSource_2) {
         if (![XSUserServer sharedInstance].userModel.agency) {

@@ -36,7 +36,7 @@ static const NSUInteger VerticalListPinSectionIndex = 0;    //悬浮固定sectio
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     self.collectionView = [[VerticalListCollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
-    self.collectionView.backgroundColor = [UIColor colorWithRed:0.94 green:0.94 blue:0.94 alpha:1];
+    self.collectionView.backgroundColor = [UIColor whiteColor];
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     
@@ -62,7 +62,7 @@ static const NSUInteger VerticalListPinSectionIndex = 0;    //悬浮固定sectio
 
 
     self.pinCategoryView = [[JXCategoryTitleView alloc] init];
-    self.pinCategoryView.backgroundColor = [UIColor colorWithRed:0.94 green:0.94 blue:0.94 alpha:1];
+    self.pinCategoryView.backgroundColor = [UIColor whiteColor];
     self.pinCategoryView.frame = CGRectMake(0, 0, self.view.width, VerticalListCategoryViewHeight);
     self.pinCategoryView.titles = self.headerTitles;
     self.pinCategoryView.delegate = self;

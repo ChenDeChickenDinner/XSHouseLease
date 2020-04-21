@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -99,15 +99,25 @@
                         <constraint firstItem="0PI-51-lIY" firstAttribute="top" secondItem="QfK-fq-cOJ" secondAttribute="top" id="stB-tI-6uq"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SlE-Ob-mJU">
+                    <rect key="frame" x="0.0" y="85.5" width="367" height="0.5"/>
+                    <color key="backgroundColor" red="0.74901960779999999" green="0.74901960779999999" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="NIQ-ng-sUZ"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="QfK-fq-cOJ" firstAttribute="leading" secondItem="7Wz-UT-m5V" secondAttribute="leading" constant="15" id="1TB-jg-6wL"/>
+                <constraint firstAttribute="bottom" secondItem="SlE-Ob-mJU" secondAttribute="bottom" id="5cd-e6-gsa"/>
                 <constraint firstItem="QfK-fq-cOJ" firstAttribute="centerY" secondItem="7Wz-UT-m5V" secondAttribute="centerY" id="7N8-Pb-tmi"/>
                 <constraint firstAttribute="trailing" secondItem="QfK-fq-cOJ" secondAttribute="trailing" constant="15" id="Buy-pE-CT1"/>
                 <constraint firstItem="Bbm-zv-Ttr" firstAttribute="top" secondItem="7Wz-UT-m5V" secondAttribute="top" id="DYi-2S-DNG"/>
+                <constraint firstAttribute="trailing" secondItem="SlE-Ob-mJU" secondAttribute="trailing" id="UYA-in-ZqJ"/>
                 <constraint firstAttribute="trailing" secondItem="Bbm-zv-Ttr" secondAttribute="trailing" id="i6t-KH-i4p"/>
                 <constraint firstItem="Bbm-zv-Ttr" firstAttribute="leading" secondItem="7Wz-UT-m5V" secondAttribute="leading" id="oXJ-KV-Dcr"/>
+                <constraint firstItem="SlE-Ob-mJU" firstAttribute="leading" secondItem="7Wz-UT-m5V" secondAttribute="leading" id="t91-1Q-Xrz"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="IcL-xB-aXX"/>

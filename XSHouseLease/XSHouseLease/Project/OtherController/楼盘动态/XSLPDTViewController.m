@@ -20,11 +20,11 @@
     [super viewDidLoad];
     
     UITableView *listTableView = [[UITableView alloc]init];
+    listTableView.backgroundColor = [UIColor clearColor];
     listTableView.delegate = self;
     listTableView.dataSource = self;
     listTableView.rowHeight = UITableViewAutomaticDimension;
     listTableView.estimatedRowHeight = 100;
-    listTableView.backgroundColor = XSColor(246, 246, 246);
     listTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.listTableView = listTableView;
     [self.view addSubview:listTableView];

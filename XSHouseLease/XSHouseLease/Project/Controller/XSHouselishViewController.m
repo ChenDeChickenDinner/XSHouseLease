@@ -44,7 +44,7 @@
     }
 
     
-    self.tableView = [[UITableView alloc]init];
+    self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds];
     self.tableView.backgroundColor = [UIColor whiteColor];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -54,24 +54,18 @@
     self.tableView.estimatedSectionFooterHeight = 0;
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.view addSubview:self.tableView];
 
-
-    
     WEAK_SELF;
     if (!self.alittle) {
         self.tableView.mj_header  = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
             STRONG_SELF;
             [self loadData];
         }];
-    //    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-    //    }];
-
     }else{
         self.tableView.scrollEnabled = NO;
     }
     self.tableView.mj_header.automaticallyChangeAlpha = YES;
-    self.tableView.mj_footer.automaticallyChangeAlpha = YES;
-    [self.view addSubview:self.tableView];
     [self.tableView.mj_header beginRefreshing];
 
 }
@@ -81,7 +75,7 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self loadData];
+//    [self loadData];
 }
 #pragma mark -数据请求
 - (void)loadData{
@@ -89,7 +83,6 @@
     [self.subInfoInterface houseLisetWith:self.houseType source:self.source resource:self.resource house_id:self.house_id?self.house_id.stringValue:@"" KeyVales:[NSMutableDictionary dictionary] per_page:number page_index:0 callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
         STRONG_SELF;
         [self.tableView.mj_header endRefreshing];
-        [self.tableView.mj_footer endRefreshing];
         [self dataProcessingWithResponseModel:responseModel error:error];
     }];
 
