@@ -26,4 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)alertWithMessage:(NSString *)str;
 @end
 
+@interface XSBKView : UIView
+
+@end
 NS_ASSUME_NONNULL_END

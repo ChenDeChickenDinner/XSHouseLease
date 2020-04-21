@@ -38,7 +38,8 @@
             [
                 {
                     "key":"unitPrice",
-                    "keyName":"单价："
+                    "keyName":"单价：",
+                    "hindDescribe":"/平",
                 },
                 {
                     "key":"hangoutDate",
@@ -105,7 +106,8 @@
                  },
                  {
                      "key":"formNum",
-                     "keyName":"户型："
+                     "keyName":"户型：",
+                     "hindDescribe":"种",
                  },
                  {
                       "key":"newOther",
@@ -128,31 +130,30 @@
             [
                 {
                     "key":"unitPrice",
-                    "keyName":"单价："
+                    "keyName":"单价：",
+                    "hindDescribe":"/平",
                 },
                 {
                     "key":"area",
-                    "keyName":"建筑面积："
+                    "keyName":"建筑面积：",
+                    "hindDescribe":"㎡",
                 },
                 {
                     "key":"realityArea",
-                    "keyName":"室内面积："
+                    "keyName":"室内面积：",
+                    "hindDescribe":"㎡",
                 },
                 {
                     "key":"formName",
                     "keyName":"户型结构："
                 },
                 {
-                    "key":"elevatorName",
+                    "key":"elevatorDoor",
                     "keyName":"梯户比例："
                 },
                 {
                     "key":"supplyHeatingName",
                     "keyName":"供暖方式："
-                },
-                {
-                    "key":"finishName",
-                    "keyName":"产权年限："
                 }
             ]
     },
@@ -162,33 +163,21 @@
     "array":
             [
                 {
-                    "key":"unitPrice",
+                    "key":"hangoutDate",
                     "keyName":"上次交易："
                 },
                 {
-                    "key":"hangoutDate",
-                    "keyName":"房屋年限："
-                },
-                {
-                    "key":"orientationName",
+                    "key":"purposeName",
                     "keyName":"房屋用途："
                 },
                 {
-                    "key":"floor",
+                    "key":"ownershipName",
                     "keyName":"交易权属："
-                },
-                {
-                    "key":"buildingTypeName",
-                    "keyName":"产权所属："
                 },
                 {
                     "key":"pledgeName",
                     "keyName":"抵押信息："
                 },
-                {
-                    "key":"finishName",
-                    "keyName":"房本备件："
-                }
             ]
     },
     "newHouseBaseInfo":
@@ -197,23 +186,25 @@
     "array":
             [
                 {
-                "key":"estateAlias",
+                "key":"estate",
                 "keyName":"楼盘别名:"
                 },
                 {
-                   "key":"unitPrice",
+                   "key":"estateAlias",
                    "keyName":"楼盘特色:"
                 },
                 {
                    "key":"referUnitPrice",
-                   "keyName":"参考均价:"
+                   "keyName":"参考均价:",
+                   "hindDescribe":"/平",
                 },
                 {
                    "key":"referTotalPrice",
-                   "keyName":"参考总价:"
+                   "keyName":"参考总价:",
+                   "hindDescribe":"/套",
                 },
                 {
-                   "key":"unitPrice",
+                   "key":"purposeName",
                    "keyName":"物业类型:"
                 },
                 {
@@ -226,7 +217,8 @@
                 },
                 {
                    "key":"registration",
-                   "keyName":"产权年限:"
+                   "keyName":"产权年限:",
+                   "hindDescribe":"年",
                 },
                 {
                    "key":"developers",
@@ -257,11 +249,13 @@
                 },
                 {
                   "key":"buildingCellNum",
-                  "keyName":"售卖楼栋:"
+                  "keyName":"售卖楼栋:",
+                  "hindDescribe":"栋",
                 },
                 {
                   "key":"formNum",
-                  "keyName":"售卖户型:"
+                  "keyName":"售卖户型:",
+                  "hindDescribe":"种户型",
                 },
                 {
                   "key":"uptoDate",
@@ -276,11 +270,13 @@
             [
                 {
                   "key":"totalArea",
-                  "keyName":"占地面积:"
+                  "keyName":"占地面积:",
+                  "hindDescribe":"㎡",
                 },
                 {
                   "key":"structureArea",
-                  "keyName":"建筑面积:"
+                  "keyName":"建筑面积:",
+                  "hindDescribe":"㎡",
                 },
                 {
                   "key":"plotRatio",
@@ -288,7 +284,8 @@
                 },
                 {
                   "key":"greeningRatio",
-                  "keyName":"绿化率:"
+                  "keyName":"绿化率:",
+                  "hindDescribe":"%",
                 },
                 {
                   "key":"parkingRatio",
@@ -296,11 +293,13 @@
                 },
                 {
                   "key":"planBuilding",
-                  "keyName":"规划楼栋:"
+                  "keyName":"规划楼栋:",
+                  "hindDescribe":"栋",
                 },
                 {
                   "key":"planHouse",
-                  "keyName":"规划户数:"
+                  "keyName":"规划户数:",
+                  "hindDescribe":"户",
                 },
                 {
                   "key":"propertyCompany",
@@ -308,7 +307,8 @@
                 },
                 {
                   "key":"propertyPrice",
-                  "keyName":"物业费用:"
+                  "keyName":"物业费用:",
+                  "hindDescribe":"元/㎡/月",
                 },
                 {
                   "key":"supplyHeatingName",
@@ -362,15 +362,18 @@
                 },
                 {
                  "key":"cell",
-                 "keyName":"单元："
+                 "keyName":"单元：",
+                 "hindDescribe":"个单元",
                 },
                 {
                   "key":"floors",
-                  "keyName":"层数："
+                  "keyName":"层数：",
+                  "hindDescribe":"层",
                 },
                 {
                   "key":"households",
-                  "keyName":"户数："
+                  "keyName":"户数：",
+                  "hindDescribe":"户",
                 },
             ]
     }

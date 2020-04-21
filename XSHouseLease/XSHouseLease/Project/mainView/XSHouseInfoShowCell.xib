@@ -274,6 +274,13 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y18-h2-RoO">
+                                <rect key="frame" x="313" y="105" width="60" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Obz-5Q-Lrf"/>
+                                    <constraint firstAttribute="height" constant="50" id="jIR-Fm-ydh"/>
+                                </constraints>
+                            </imageView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sE9-5q-hPE">
                                 <rect key="frame" x="313" y="160" width="60" height="50"/>
                                 <subviews>
@@ -318,7 +325,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="220" id="Bi6-2H-uY0"/>
+                            <constraint firstItem="y18-h2-RoO" firstAttribute="trailing" secondItem="sE9-5q-hPE" secondAttribute="trailing" id="MQD-ve-kN7"/>
                             <constraint firstAttribute="bottom" secondItem="tk4-EI-kFa" secondAttribute="bottom" constant="10" id="P5F-xJ-yxK"/>
+                            <constraint firstItem="sE9-5q-hPE" firstAttribute="top" secondItem="y18-h2-RoO" secondAttribute="bottom" constant="5" id="m0X-cf-yV7"/>
                             <constraint firstAttribute="bottom" secondItem="sE9-5q-hPE" secondAttribute="bottom" constant="10" id="mhE-ZD-fQu"/>
                             <constraint firstAttribute="trailing" secondItem="tk4-EI-kFa" secondAttribute="trailing" constant="15" id="qva-dr-dnW"/>
                             <constraint firstAttribute="trailing" secondItem="sE9-5q-hPE" secondAttribute="trailing" constant="15" id="xyo-GM-ifo"/>
@@ -336,9 +345,10 @@
                 <outlet property="bkView" destination="lAb-Qa-tIH" id="zkG-6k-IGo"/>
                 <outlet property="doorBkView" destination="sE9-5q-hPE" id="ghW-7R-gAl"/>
                 <outlet property="doorLable" destination="OoB-SV-vE4" id="1Og-b7-W7d"/>
+                <outlet property="modelImg" destination="y18-h2-RoO" id="xId-iE-Wsz"/>
                 <outlet property="tipLabel" destination="tk4-EI-kFa" id="pbz-De-r6s"/>
             </connections>
-            <point key="canvasLocation" x="-641" y="-163"/>
+            <point key="canvasLocation" x="-697" y="-348"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="XSHouseDetailsBasicInfoCell" rowHeight="119" id="7aw-rI-Elq" customClass="XSHouseDetailsBasicInfoCell">
             <rect key="frame" x="0.0" y="0.0" width="325" height="115"/>
@@ -678,7 +688,7 @@
                 <outlet property="titleH" destination="j2Q-3s-iDq" id="hTu-TP-cyc"/>
                 <outlet property="titleLable" destination="ShY-El-4pT" id="igr-39-37N"/>
             </connections>
-            <point key="canvasLocation" x="-29" y="382"/>
+            <point key="canvasLocation" x="-1554" y="368"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="XSHouseDetailsAddressInfoCell" rowHeight="179" id="ZMH-4t-Tc2" customClass="XSHouseDetailsAddressInfoCell">
             <rect key="frame" x="0.0" y="0.0" width="388" height="242"/>

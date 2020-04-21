@@ -54,8 +54,7 @@
     self.tableView.estimatedSectionFooterHeight = 0;
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.mj_header.automaticallyChangeAlpha = YES;
-    self.tableView.mj_footer.automaticallyChangeAlpha = YES;
+
 
     
     WEAK_SELF;
@@ -67,8 +66,11 @@
     //    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
     //    }];
 
+    }else{
+        self.tableView.scrollEnabled = NO;
     }
-
+    self.tableView.mj_header.automaticallyChangeAlpha = YES;
+    self.tableView.mj_footer.automaticallyChangeAlpha = YES;
     [self.view addSubview:self.tableView];
     [self.tableView.mj_header beginRefreshing];
 
@@ -83,11 +85,6 @@
 }
 #pragma mark -数据请求
 - (void)loadData{
-    if (self.alittle) {
-        self.tableView.mj_header  = nil;
-        self.tableView.mj_footer  = nil;
-        self.tableView.scrollEnabled = NO;
-    }
     WEAK_SELF;
     [self.subInfoInterface houseLisetWith:self.houseType source:self.source resource:self.resource house_id:self.house_id?self.house_id.stringValue:@"" KeyVales:[NSMutableDictionary dictionary] per_page:number page_index:0 callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
         STRONG_SELF;

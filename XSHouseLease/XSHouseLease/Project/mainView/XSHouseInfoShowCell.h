@@ -55,13 +55,16 @@
 
 
 #pragma mark -房屋图片
-@interface XSHouseDetailsImagesCell : XSHouseInfoCell<SDCycleScrollViewDelegate>
+@interface XSHouseDetailsImagesCell : XSHouseInfoCell<SDCycleScrollViewDelegate,JXCategoryViewDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *modelImg;
 @property (weak, nonatomic) IBOutlet UIView *bkView;
 @property (weak, nonatomic) IBOutlet UILabel *tipLabel;
 @property(nonatomic,strong) SDCycleScrollView *cycleScrollView;
 @property (weak, nonatomic) IBOutlet UIView *doorBkView;
 @property (weak, nonatomic) IBOutlet UILabel *doorLable;
 @property(nonatomic,strong) UILabel *lable;
+@property (nonatomic, strong) JXCategoryTitleView *myCategoryView;
+
 @end
 
 #pragma mark -基本信息A

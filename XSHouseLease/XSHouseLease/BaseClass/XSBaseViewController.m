@@ -95,3 +95,23 @@
 //    [ProgressHUD showSuccess:str];
 }
 @end
+@implementation XSBKView
+
+- (void)awakeFromNib{
+    [super awakeFromNib];
+    self.layer.shadowColor = [UIColor hb_colorWithHexString:@"#929292" alpha:1].CGColor;
+     self.layer.shadowOffset = CGSizeMake(3, 0);
+     self.layer.shadowOpacity = 0.8;
+     self.layer.shadowRadius = 1.5;
+//     self.layer.cornerRadius = 5.0;
+    
+//    UIView *bkView = [[UIView alloc]initWithFrame:self.bounds];
+//    bkView.backgroundColor = [UIColor hb_colorWithHexString:@"#EBEBEB" alpha:1];
+////    bkView.layer.cornerRadius = 8;
+//    bkView.layer.masksToBounds = YES;
+//    bkView.layer.borderColor = [UIColor hb_colorWithHexString:@"#929292" alpha:1].CGColor;
+//
+//    [self addSubview:bkView];
+}
+
+@end

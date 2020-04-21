@@ -41,11 +41,11 @@
             STRONG_SELF;
             if (responseModel.code.integerValue == SuccessCode) {
               self.dataModel =  [XSMyHouseStatistical mj_objectWithKeyValues:responseModel.data];
-                self.publishRentNum.text = [NSString stringWithFormat:@"出租(%@)",self.dataModel.publishRentNum];
-                self.publishSecondNum.text = [NSString stringWithFormat:@"出售(%@)",self.dataModel.publishSecondNum];
-                self.watchNewNum.text = [NSString stringWithFormat:@"新房(%@)",self.dataModel.watchNewNum];
-                self.watchRentNum.text = [NSString stringWithFormat:@"租房(%@)",self.dataModel.watchRentNum];
-                self.watchSecondNum.text = [NSString stringWithFormat:@"二手房(%@)",self.dataModel.watchSecondNum];
+                self.publishRentNum.text = [NSString stringWithFormat:@"(%@)",self.dataModel.publishRentNum];
+                self.publishSecondNum.text = [NSString stringWithFormat:@"(%@)",self.dataModel.publishSecondNum];
+                self.watchNewNum.text = [NSString stringWithFormat:@"(%@)",self.dataModel.watchNewNum];
+                self.watchRentNum.text = [NSString stringWithFormat:@"(%@)",self.dataModel.watchRentNum];
+                self.watchSecondNum.text = [NSString stringWithFormat:@"(%@)",self.dataModel.watchSecondNum];
             }
         }
     }];

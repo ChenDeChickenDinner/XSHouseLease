@@ -113,7 +113,7 @@
          self.dealStatusLable.backgroundColor = [UIColor hb_colorWithHexString:XSHouseStatusTextColor(NewModel.status, NewModel.dealStatus, NewModel.source) alpha:1];
      }else{
          if (NewModel.resource == XSHouseSource_1) {
-             self.dealStatusLable.text = @"面中介费";
+             self.dealStatusLable.text = @"免中介费";
          }else if (NewModel.resource == XSHouseSource_2){
              self.dealStatusLable.text = @"佣金优惠";
          }else{
@@ -142,7 +142,7 @@
         self.titleLable.text =  [NSString stringWithFormat:@"%@",NewModel.title];;
         // 1.信息描述
         NSString *area = [NSString stringWithFormat:@"%@ m2",NewModel.area];
-        self.infoLable.text = [NSString stringWithFormat:@"%@/%@/x楼层 共%@层",area,NewModel.orientationName,NewModel.totalFloor];
+        self.infoLable.text = [NSString stringWithFormat:@"%@/%@/%@ 共%@层",area,NewModel.orientationName,NewModel.floorLocaltionName,NewModel.totalFloor];
         // 1.价格描述
         self.rentPricelabe.text = [NSString stringWithFormat:@"%@万",NewModel.totalPrice];
         self.unitPriceLable.text =  [NSString stringWithFormat:@"%@元/平",NewModel.unitPrice];
@@ -263,6 +263,28 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
     lable.layer.masksToBounds = YES;
     lable.layer.cornerRadius = 8;
     self.lable = lable;
+    self.myCategoryView = [[JXCategoryTitleView alloc] init];
+    self.myCategoryView.delegate = self;
+    self.myCategoryView.backgroundColor = [UIColor hb_colorWithHexString:@"#FFFFFF" alpha:0.32];
+    self.myCategoryView.frame = CGRectMake(0, 0, 90, 20);
+    self.myCategoryView.layer.cornerRadius = 10;
+    self.myCategoryView.layer.masksToBounds = YES;
+    self.myCategoryView.layer.borderColor = [UIColor hb_colorWithHexString:@"#FFFFFF" alpha:0.32].CGColor;
+    self.myCategoryView.layer.borderWidth = 0.5;
+    self.myCategoryView.titles = @[@"图片",@"户型"];
+    self.myCategoryView.cellSpacing = 0;
+    self.myCategoryView.cellWidth = 90/2;
+    self.myCategoryView.titleColor = [UIColor whiteColor];
+    self.myCategoryView.titleSelectedColor = [UIColor whiteColor];
+    self.myCategoryView.titleLabelMaskEnabled = YES;
+    self.myCategoryView.titleFont = [UIFont systemFontOfSize:12];
+    JXCategoryIndicatorBackgroundView *backgroundView = [[JXCategoryIndicatorBackgroundView alloc] init];
+    backgroundView.indicatorHeight = 20;
+    backgroundView.indicatorWidthIncrement = 0;
+    backgroundView.indicatorColor = [UIColor hb_colorWithHexString:@"#E82B2B" alpha:1];
+    self.myCategoryView.indicators = @[backgroundView];
+    [self.myCategoryView removeFromSuperview];
+
     
     self.tipLabel.layer.masksToBounds = YES;
     self.tipLabel.layer.cornerRadius = 8;
@@ -270,11 +292,14 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
     self.tipLabel.backgroundColor = [UIColor hb_colorWithHexString:@"#FFFFFF" alpha:0.32];
     
     self.cycleScrollView = cycleScrollView;
-    [self.bkView addSubview:lable];
     [self.bkView addSubview:cycleScrollView];
+//    [self.bkView addSubview:lable];
+    [self.bkView addSubview:self.myCategoryView];
+
     [self.bkView bringSubviewToFront:self.lable];
     [self.bkView bringSubviewToFront:self.tipLabel];
     [self.bkView bringSubviewToFront:self.doorBkView];
+    [self.bkView bringSubviewToFront:self.modelImg];
 
 }
 - (void)layoutSubviews{
@@ -284,26 +309,47 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
     self.lable.height = 18;
     self.lable.y = self.bkView.height - 28;
     self.lable.centerX = self.bkView.centerX;
-    
+    self.myCategoryView.y = self.bkView.height - 30;
+    self.myCategoryView.centerX = self.bkView.centerX;
+}
+- (void)categoryView:(JXCategoryBaseView *)categoryView didSelectedItemAtIndex:(NSInteger)index{
+    if (index == 1) {
+        [self.cycleScrollView makeScrollViewScrollToIndex:self.cycleScrollView.imageURLStringsGroup.count-1];
+    }else{
+        [self.cycleScrollView makeScrollViewScrollToIndex:index];
+    }
 }
 - (void)updateWithModel:(XSHouseInfoShowModel *)model{
     self.model = model;
     if (model.houseType == XSBHouseType_old) {
-        self.doorBkView.hidden = YES;
+        self.myCategoryView.hidden = NO;
         self.tipLabel.hidden = NO;
-
+        self.doorBkView.hidden = YES;
     }else if (model.houseType == XSBHouseType_New){
         self.doorBkView.hidden = NO;
-        self.tipLabel.hidden = YES;
-
+        self.myCategoryView.hidden = YES;
     }else{
-        self.doorBkView.hidden = YES;
         self.tipLabel.hidden = NO;
-
+        self.doorBkView.hidden = YES;
+        self.myCategoryView.hidden = YES;
     }
-    self.doorLable.text = [NSString stringWithFormat:@"+%ld",model.forms.count];
-    self.cycleScrollView.imageURLStringsGroup = model.contentImg;
-    self.tipLabel.text = [NSString stringWithFormat:@"1/%ld",self.cycleScrollView.imageURLStringsGroup.count];
+    XSHouseDetailsDataFormsModel *formodel = model.forms.firstObject;
+    if (formodel.formImg) {
+        [self.modelImg sd_setImageWithURL:[NSURL URLWithString:formodel.formImg] placeholderImage:nil];
+        self.modelImg.hidden = NO;
+    }else{
+        self.modelImg.hidden = YES;
+    }
+    NSMutableArray *imags = [NSMutableArray arrayWithArray:model.contentImg];
+    if (model.modelImg) {
+        [imags addObject:model.modelImg];
+        self.myCategoryView.hidden = NO;
+    }else{
+        self.myCategoryView.hidden = YES;
+    }
+    self.cycleScrollView.imageURLStringsGroup = imags;
+    self.doorLable.text = [NSString stringWithFormat:@"+%lu",(unsigned long)model.forms.count];
+    self.tipLabel.text = [NSString stringWithFormat:@"1/%lu",(unsigned long)self.cycleScrollView.imageURLStringsGroup.count];
 }
 - (IBAction)doorMore:(id)sender {
     if (self.model.clickBlack) {
@@ -641,6 +687,7 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 - (void)awakeFromNib {
     [super awakeFromNib];
     XSHouselishViewController *listvc = [[XSHouselishViewController alloc]init];
+    listvc.alittle = YES;
     listvc.view.frame = self.bkView.bounds;
     self.listvc = listvc;
     [self.bkView addSubview:listvc.view];
@@ -652,7 +699,6 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 }
 - (void)updateWithModel:(XSHouseInfoShowModel *)model{
     self.model = model;
-    self.listvc.alittle = YES;
     self.listvc.houseType = model.houseType;
     self.listvc.source = XSBHouseInfoSource_HouseIdPush;
     self.listvc.house_id = model.house_id;
