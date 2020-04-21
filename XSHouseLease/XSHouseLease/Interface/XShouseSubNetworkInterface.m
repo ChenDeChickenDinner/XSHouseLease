@@ -109,10 +109,14 @@ NSString *url = [NSString stringWithFormat:@"%@/estate/hots",XSBaseUrl];
 }
 
 - (void)houseLisetWith:(XSBHouseType)houseType source:(XSBHouseInfoSource)source resource:(XSHouseSource)resource house_id:(NSString *)house_id KeyVales:(NSMutableDictionary *)keyVales per_page:(NSInteger)per_page page_index:(NSInteger)page_index  callback:(HBCompletionBlock)callback{
-    [keyVales safeSetObject:[XSUserServer sharedInstance].cityModel.code forKey:@"cityId"];
-    [keyVales safeSetObject:[XSUserServer sharedInstance].cityModel.name forKey:@"city"];
+    
+    NSMutableDictionary * dict = [NSMutableDictionary dictionary];
+    for (NSString *key in keyVales.allKeys) {
+        [dict safeSetObject:[keyVales safeObjectForKey:key] forKey:key];
+    }
+    
     if (resource > 0) {
-        [keyVales safeSetObject:@(resource) forKey:@"resource"];
+        [dict safeSetObject:@(resource) forKey:@"resource"];
     }
 
      NSString *customer_id = [XSUserServer sharedInstance].userModel.ID.stringValue;
@@ -160,21 +164,21 @@ NSString *url = [NSString stringWithFormat:@"%@/estate/hots",XSBaseUrl];
     
     if (houseType == XSBHouseType_Rent) {
             if (source == XSBHouseInfoSource_keyPush){
-               [self POST:url param:keyVales progress:nil callback:callback];
+               [self POST:url param:dict progress:nil callback:callback];
             }else{
-               [self GET:url param:keyVales progress:nil callback:callback];
+               [self GET:url param:dict progress:nil callback:callback];
             }
      }else if (houseType == XSBHouseType_old){
          if (source == XSBHouseInfoSource_keyPush){
-             [self POST:url param:keyVales progress:nil callback:callback];
+             [self POST:url param:dict progress:nil callback:callback];
          }else{
-             [self GET:url param:keyVales progress:nil callback:callback];
+             [self GET:url param:dict progress:nil callback:callback];
          }
      }else if (houseType == XSBHouseType_New){
         if (source == XSBHouseInfoSource_keyPush){
-            [self POST:url param:keyVales progress:nil callback:callback];
+            [self POST:url param:dict progress:nil callback:callback];
         }else{
-            [self GET:url param:keyVales progress:nil callback:callback];
+            [self GET:url param:dict progress:nil callback:callback];
         }
      }
     

@@ -57,16 +57,17 @@
     [self.view addSubview:self.tableView];
 
     WEAK_SELF;
-    if (!self.alittle) {
+    if (!self.alittle && self.searchDict == nil) {
         self.tableView.mj_header  = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
             STRONG_SELF;
             [self loadData];
         }];
-    }else{
+    }
+    if (self.alittle) {
         self.tableView.scrollEnabled = NO;
     }
     self.tableView.mj_header.automaticallyChangeAlpha = YES;
-    [self.tableView.mj_header beginRefreshing];
+    [self loadData];
 
 }
 - (void)viewWillLayoutSubviews{
@@ -80,7 +81,7 @@
 #pragma mark -数据请求
 - (void)loadData{
     WEAK_SELF;
-    [self.subInfoInterface houseLisetWith:self.houseType source:self.source resource:self.resource house_id:self.house_id?self.house_id.stringValue:@"" KeyVales:[NSMutableDictionary dictionary] per_page:number page_index:0 callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+    [self.subInfoInterface houseLisetWith:self.houseType source:self.source resource:self.resource house_id:self.house_id?self.house_id.stringValue:@"" KeyVales:self.searchDict per_page:number page_index:0 callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
         STRONG_SELF;
         [self.tableView.mj_header endRefreshing];
         [self dataProcessingWithResponseModel:responseModel error:error];
