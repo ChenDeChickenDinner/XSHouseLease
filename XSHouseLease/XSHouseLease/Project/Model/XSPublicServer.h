@@ -52,6 +52,8 @@ typedef void (^clickBlack)(XSHouseModuleModel *model);
 @property (nonatomic, copy) NSString *key;
 @property (nonatomic, copy) NSString *keyName;
 @property (nonatomic, copy) NSString *value;
+@property (nonatomic, copy) NSString *hindDescribe;
+
 @end
 
 @interface XSHouseKeyValueModuleModel : NSObject

@@ -1,5 +1,5 @@
 //
-//  XSMyPublishHosueController.h
+//  XSHouselishViewController.h
 //  XSHouseLease
 //
 //  Created by heartbeats on 2020/3/28.
@@ -7,12 +7,12 @@
 //
 
 #import "XSBaseViewController.h"
+#import "XSPageViewController.h"
 
-@interface XSMyPublishHosueController : XSBaseViewController
-//展示类型租/新/二
+@interface XSHouselishViewController : XSListContentViewController
 @property(nonatomic,assign) XSBHouseType houseType;
-//展示渠道来源 搜索/发布/关注/推送/猜你喜欢
 @property(nonatomic,assign) XSBHouseInfoSource source;
+@property(nonatomic,assign) XSHouseSource resource;
 
 @property(nonatomic,assign) BOOL alittle;
 @property(nonatomic,strong) NSNumber *house_id;
@@ -20,4 +20,11 @@
 - (void)loadData;
 @end
 
+
+
+@interface XSHouseResourceListViewController : XSPageViewController
+@property(nonatomic,assign) XSBHouseType houseType;
+@property(nonatomic,assign) XSBHouseInfoSource source;
+@property(nonatomic,assign) XSHouseSource resource;
+@end
 

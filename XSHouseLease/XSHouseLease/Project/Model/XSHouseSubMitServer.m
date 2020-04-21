@@ -180,7 +180,13 @@ DEF_SINGLETON(XSHouseSubMitDynamicServer)
             
             for (XSValue *oldValue in oldvalueModel.values) {
                 if ([oldValue.key isEqualToString:@"resource"]) {
-                    oldValue.valueStr = self.resource == XSHouseSource_0?@"个人房源":@"中介房源";
+                    if (self.resource == XSHouseSource_1) {
+                        oldValue.valueStr = @"个人房源";
+                    }else if (self.resource == XSHouseSource_2){
+                        oldValue.valueStr = @"中介房源";
+                    }else{
+                        oldValue.valueStr = @"全部房源";
+                    }
                 }
             }
             
@@ -201,7 +207,7 @@ DEF_SINGLETON(XSHouseSubMitDynamicServer)
         [self.subRentParameterDict safeSetObject:renhousetInfoModel.regionId forKey:@"regionId"];
         [self.subRentParameterDict safeSetObject:renhousetInfoModel.town forKey:@"town"];
         [self.subRentParameterDict safeSetObject:renhousetInfoModel.townId forKey:@"townId"];
-        [self.subRentParameterDict safeSetObject:renhousetInfoModel.resource forKey:@"resource"];
+        [self.subRentParameterDict safeSetObject:@(renhousetInfoModel.resource) forKey:@"resource"];
 
         [self valueUpdatekWitOldhDict:[renhousetInfoModel mj_keyValues]];
     }

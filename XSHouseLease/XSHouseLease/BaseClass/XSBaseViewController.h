@@ -12,6 +12,7 @@
 #import "XSUserInfoInterface.h"
 #import "XShouseSubNetworkInterface.h"
 #import "XSRegionSearchView.h"
+#import "LYEmptyViewHeader.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -20,9 +21,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) AFHTTPSessionManager *operationManager;
 @property (nonatomic,strong) XSUserInfoInterface *userInfoInterface;
 @property (nonatomic,strong) XShouseSubNetworkInterface *subInfoInterface;
-
+@property (nonatomic,strong) LYEmptyView *emptyView;
 - (void)refreshUIData;
 - (void)alertWithMessage:(NSString *)str;
 @end
 
+@interface XSBKView : UIView
+
+@end
 NS_ASSUME_NONNULL_END

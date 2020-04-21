@@ -24,9 +24,6 @@
 @end
 
 @interface VerticalListCell : UICollectionViewCell
-
-@property (nonatomic, strong) UILabel *titleLabel;
-
 @property (nonatomic, strong) UIImageView *itemImageView;
 
 @end

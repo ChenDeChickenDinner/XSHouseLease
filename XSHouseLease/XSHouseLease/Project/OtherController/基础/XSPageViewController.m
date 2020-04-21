@@ -51,12 +51,17 @@
     self.categoryView.delegate = self;
     self.categoryView.titles = self.titles;
     self.categoryView.titleColorGradientEnabled = YES;
+    self.categoryView.titleColor = [UIColor hx_colorWithHexStr:@"#929292"];
+//    self.categoryView.titleSelectedColor = [UIColor hx_colorWithHexStr:@"#444444"];
+    self.categoryView.titleSelectedColor = [UIColor hx_colorWithHexStr:@"#E82B2B"];
+
     [self.view addSubview:self.categoryView];
     
-//    JXCategoryIndicatorLineView *lineView = [[JXCategoryIndicatorLineView alloc] init];
-//    lineView.indicatorColor = [UIColor redColor];
-//    lineView.indicatorWidth = JXCategoryViewAutomaticDimension;
-//    self.categoryView.indicators = @[lineView];
+    JXCategoryIndicatorLineView *lineView = [[JXCategoryIndicatorLineView alloc] init];
+    lineView.indicatorColor = [UIColor redColor];
+    lineView.indicatorWidth = JXCategoryViewAutomaticDimension;
+    lineView.indicatorHeight = 1;
+    self.categoryView.indicators = @[lineView];
 //
     self.listContainerView = [[JXCategoryListContainerView alloc] initWithType:JXCategoryListContainerType_ScrollView delegate:self];
     self.listContainerView.backgroundColor = [UIColor clearColor];

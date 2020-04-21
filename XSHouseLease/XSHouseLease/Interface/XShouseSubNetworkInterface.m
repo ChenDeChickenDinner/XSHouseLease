@@ -108,9 +108,16 @@ NSString *url = [NSString stringWithFormat:@"%@/estate/hots",XSBaseUrl];
 
 }
 
-- (void)houseLisetWith:(XSBHouseType)houseType source:(XSBHouseInfoSource)source house_id:(NSString *)house_id KeyVales:(NSMutableDictionary *)keyVales per_page:(NSInteger)per_page page_index:(NSInteger)page_index  callback:(HBCompletionBlock)callback{
-    [keyVales safeSetObject:[XSUserServer sharedInstance].cityModel.code forKey:@"cityId"];
-    [keyVales safeSetObject:[XSUserServer sharedInstance].cityModel.name forKey:@"city"];
+- (void)houseLisetWith:(XSBHouseType)houseType source:(XSBHouseInfoSource)source resource:(XSHouseSource)resource house_id:(NSString *)house_id KeyVales:(NSMutableDictionary *)keyVales per_page:(NSInteger)per_page page_index:(NSInteger)page_index  callback:(HBCompletionBlock)callback{
+    
+    NSMutableDictionary * dict = [NSMutableDictionary dictionary];
+    for (NSString *key in keyVales.allKeys) {
+        [dict safeSetObject:[keyVales safeObjectForKey:key] forKey:key];
+    }
+    
+    if (resource > 0) {
+        [dict safeSetObject:@(resource) forKey:@"resource"];
+    }
 
      NSString *customer_id = [XSUserServer sharedInstance].userModel.ID.stringValue;
     NSString *url = nil;
@@ -156,22 +163,22 @@ NSString *url = [NSString stringWithFormat:@"%@/estate/hots",XSBaseUrl];
  
     
     if (houseType == XSBHouseType_Rent) {
-            if (source == XSBHouseInfoSource_keyPush||source == XSBHouseInfoSource_MyWatch){
-               [self POST:url param:keyVales progress:nil callback:callback];
+            if (source == XSBHouseInfoSource_keyPush){
+               [self POST:url param:dict progress:nil callback:callback];
             }else{
-               [self GET:url param:keyVales progress:nil callback:callback];
+               [self GET:url param:dict progress:nil callback:callback];
             }
      }else if (houseType == XSBHouseType_old){
          if (source == XSBHouseInfoSource_keyPush){
-             [self POST:url param:keyVales progress:nil callback:callback];
+             [self POST:url param:dict progress:nil callback:callback];
          }else{
-             [self GET:url param:keyVales progress:nil callback:callback];
+             [self GET:url param:dict progress:nil callback:callback];
          }
      }else if (houseType == XSBHouseType_New){
         if (source == XSBHouseInfoSource_keyPush){
-            [self POST:url param:keyVales progress:nil callback:callback];
+            [self POST:url param:dict progress:nil callback:callback];
         }else{
-            [self GET:url param:keyVales progress:nil callback:callback];
+            [self GET:url param:dict progress:nil callback:callback];
         }
      }
     
@@ -230,6 +237,17 @@ NSString *url = [NSString stringWithFormat:@"%@/estate/hots",XSBaseUrl];
     [dict safeSetObject:customer_id forKey:@"customerId"];
     NSString *url = [NSString stringWithFormat:@"%@/customer/saveagency",XSBaseUrl];;
     [self POST:url param:dict progress:nil callback:callback];
+
+}
+// 信息统计
+- (void)statisticsWithCallback:(HBCompletionBlock)callback{
+    NSNumber *customer_id = [XSUserServer sharedInstance].userModel.ID;
+    NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
+    NSString *url = [NSString stringWithFormat:@"%@/customer/statistics",XSBaseUrl];
+    if (customer_id) {
+        url = [url stringByAppendingFormat:@"/%@",customer_id];
+    }
+    [self GET:url param:dict progress:nil callback:callback];
 
 }
 @end

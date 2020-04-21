@@ -13,7 +13,7 @@
 #import "XSHouseInfoTableView.h"
 #import "XSHouseInfoShowModel.h"
 #import "XSHouseDetailsController.h"
-#import "XSMyPublishHosueController.h"
+#import "XSHouselishViewController.h"
 #import "XSHouseIntroduceController.h"
 #import "XSMapViewController.h"
 #import "XSPublicServer.h"
@@ -49,19 +49,24 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *statusEditViewHeight;
 @property (weak, nonatomic) IBOutlet UILabel *watchNumLable;
 @property (weak, nonatomic) IBOutlet XSHouseRentStatusView *statusEditView;
+@property (weak, nonatomic) IBOutlet UILabel *lxLable;
+
 @end
 
 
 
 
 #pragma mark -房屋图片
-@interface XSHouseDetailsImagesCell : XSHouseInfoCell<SDCycleScrollViewDelegate>
+@interface XSHouseDetailsImagesCell : XSHouseInfoCell<SDCycleScrollViewDelegate,JXCategoryViewDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *modelImg;
 @property (weak, nonatomic) IBOutlet UIView *bkView;
 @property (weak, nonatomic) IBOutlet UILabel *tipLabel;
 @property(nonatomic,strong) SDCycleScrollView *cycleScrollView;
 @property (weak, nonatomic) IBOutlet UIView *doorBkView;
 @property (weak, nonatomic) IBOutlet UILabel *doorLable;
 @property(nonatomic,strong) UILabel *lable;
+@property (nonatomic, strong) JXCategoryTitleView *myCategoryView;
+
 @end
 
 #pragma mark -基本信息A
@@ -90,6 +95,7 @@
 @property (weak, nonatomic)  UILabel *contentLable;
 @end
 @interface XSHouseDetailsBusinessInfoCell : XSHouseInfoCell<UICollectionViewDelegate,UICollectionViewDataSource>
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titH;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleH;
 @property (weak, nonatomic) IBOutlet UILabel *titleLable;
 @property (strong, nonatomic) UIView *lineView;
@@ -138,7 +144,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *listHeight;
 @property (weak, nonatomic) IBOutlet UIView *bkView;
 @property (nonatomic,strong) XSHouseInfoTableView *tableView;
-@property (strong, nonatomic)XSMyPublishHosueController *listvc;
+@property (strong, nonatomic)XSHouselishViewController *listvc;
 @end
 
 #pragma mark - 户型

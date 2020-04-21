@@ -28,14 +28,14 @@
 @implementation HomePageViewController
 - (IBAction)source:(UIButton *)sender {
 
-    if (sender.tag == XSHouseSource_0) {
+    if (sender.tag == XSHouseSource_1) {
         self.source0.image = [UIImage imageNamed:@"source0S"];
         self.source1.image = [UIImage imageNamed:@"source1N"];
         self.tisImage1.image = [UIImage imageNamed:@"source0image"];
         self.tisImage2.image = [UIImage imageNamed:@"source0image"];
         self.tisImage3.image = [UIImage imageNamed:@"source0image"];
         self.tisImage4.image = [UIImage imageNamed:@"source0image"];
-    }else{
+    }else if(sender.tag == XSHouseSource_2){
         self.source0.image = [UIImage imageNamed:@"source0"];
         self.source1.image = [UIImage imageNamed:@"source1"];
         self.tisImage1.image = [UIImage imageNamed:@"source1image"];
@@ -49,7 +49,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.delegate = self;
-    self.resource = XSHouseSource_0;
+    self.resource = XSHouseSource_1;
     XSLocationSearchview *searchView = [XSLocationSearchview locationSearchview];
     searchView.searchBlack = ^(NSString * _Nonnull searhKey) {
         NSLog(@"ss-%@",searhKey);
@@ -69,11 +69,8 @@
     self.searchView.frame = self.titleView.bounds;
 }
 - (void)agencyChicken:(void(^)(void))success{
-    XSResourceViewController *vc = [[XSResourceViewController alloc]init];
-     [self.navigationController pushViewController:vc animated:YES];
-     return;
     
-    if (self.resource == XSHouseSource_1) {
+    if (self.resource == XSHouseSource_2) {
         if (![XSUserServer sharedInstance].userModel.agency) {
             XSResourceViewController *vc = [[XSResourceViewController alloc]init];
             [self.navigationController pushViewController:vc animated:YES];

@@ -24,11 +24,11 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.contentView.backgroundColor = [UIColor whiteColor];
-        self.contentView.layer.cornerRadius = 10;
+//        self.contentView.layer.cornerRadius = 10;
 
-        _titleLabel = [[UILabel alloc] init];
-        self.titleLabel.textAlignment = NSTextAlignmentCenter;
-        [self.contentView addSubview:self.titleLabel];
+//        _titleLabel = [[UILabel alloc] init];
+//        self.titleLabel.textAlignment = NSTextAlignmentCenter;
+//        [self.contentView addSubview:self.titleLabel];
 
         _itemImageView = [[UIImageView alloc] init];
         [self.contentView addSubview:self.itemImageView];
@@ -38,11 +38,11 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
+    self.itemImageView.frame = self.contentView.bounds;
+//    self.itemImageView.bounds = CGRectMake(0, 0, 50, 50);
+//    self.itemImageView.center = CGPointMake(self.bounds.size.width/2, 30);
 
-    self.itemImageView.bounds = CGRectMake(0, 0, 50, 50);
-    self.itemImageView.center = CGPointMake(self.bounds.size.width/2, 30);
-
-    self.titleLabel.frame = CGRectMake(0, CGRectGetMaxY(self.itemImageView.frame) + 5, self.bounds.size.width, 30);
+//    self.titleLabel.frame = CGRectMake(0, CGRectGetMaxY(self.itemImageView.frame) + 5, self.bounds.size.width, 30);
 }
 
 @end
@@ -52,7 +52,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor colorWithRed:0.94 green:0.94 blue:0.94 alpha:1];
+        self.backgroundColor = [UIColor whiteColor];
 
         _titleLabel = [[UILabel alloc] init];
         self.titleLabel.textColor = [UIColor lightGrayColor];
@@ -76,7 +76,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor colorWithRed:0.94 green:0.94 blue:0.94 alpha:1];
+        self.backgroundColor = [UIColor whiteColor];
     }
     return self;
 }

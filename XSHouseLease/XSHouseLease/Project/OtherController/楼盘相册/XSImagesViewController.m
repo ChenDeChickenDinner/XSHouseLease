@@ -11,7 +11,7 @@
 #import "XSVertiaciListView.h"
 
 
-static const CGFloat VerticalListCategoryViewHeight = 60;   //悬浮categoryView的高度
+static const CGFloat VerticalListCategoryViewHeight = 45;   //悬浮categoryView的高度
 static const NSUInteger VerticalListPinSectionIndex = 0;    //悬浮固定section的index
 
 @interface XSImagesViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, JXCategoryViewDelegate>
@@ -36,7 +36,7 @@ static const NSUInteger VerticalListPinSectionIndex = 0;    //悬浮固定sectio
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     self.collectionView = [[VerticalListCollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
-    self.collectionView.backgroundColor = [UIColor colorWithRed:0.94 green:0.94 blue:0.94 alpha:1];
+    self.collectionView.backgroundColor = [UIColor whiteColor];
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     
@@ -61,16 +61,18 @@ static const NSUInteger VerticalListPinSectionIndex = 0;    //悬浮固定sectio
 
 
 
-    _pinCategoryView = [[JXCategoryTitleView alloc] init];
-    self.pinCategoryView.backgroundColor = [UIColor colorWithRed:0.94 green:0.94 blue:0.94 alpha:1];
-    self.pinCategoryView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, VerticalListCategoryViewHeight);
+    self.pinCategoryView = [[JXCategoryTitleView alloc] init];
+    self.pinCategoryView.backgroundColor = [UIColor whiteColor];
+    self.pinCategoryView.frame = CGRectMake(0, 0, self.view.width, VerticalListCategoryViewHeight);
     self.pinCategoryView.titles = self.headerTitles;
     self.pinCategoryView.delegate = self;
+    self.pinCategoryView.titleColor = [UIColor hx_colorWithHexStr:@"#929292"];
+    self.pinCategoryView.titleSelectedColor = [UIColor hx_colorWithHexStr:@"#444444"];
 
-    JXCategoryIndicatorLineView *lineView = [[JXCategoryIndicatorLineView alloc] init];
-    lineView.verticalMargin = 15;
-    self.pinCategoryView.indicators = @[lineView];
-    
+//    JXCategoryIndicatorLineView *lineView = [[JXCategoryIndicatorLineView alloc] init];
+//    lineView.verticalMargin = 15;
+//    self.pinCategoryView.indicators = @[lineView];
+//
     
     [self.collectionView reloadData];
 
@@ -130,7 +132,6 @@ static const NSUInteger VerticalListPinSectionIndex = 0;    //悬浮固定sectio
     XSHouseDetailsDataImgsModel *sectionModel = self.dataSource[indexPath.section];
     NSString *cellModel = sectionModel.contentImg[indexPath.row];
     [cell.itemImageView sd_setImageWithURL:[NSURL URLWithString:cellModel]];
-    cell.titleLabel.text = sectionModel.name;
     return cell;
 }
 
@@ -201,7 +202,7 @@ static const NSUInteger VerticalListPinSectionIndex = 0;    //悬浮固定sectio
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(100, 100);
+    return CGSizeMake(80, 50);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
@@ -209,12 +210,15 @@ static const NSUInteger VerticalListPinSectionIndex = 0;    //悬浮固定sectio
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    return (self.view.bounds.size.width - 100*3)/4;
+//    return (self.view.bounds.size.width - 100*3)/4;
+    return 10;
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     CGFloat margin = (self.view.bounds.size.width - 100*3)/4;
-    return UIEdgeInsetsMake(0, margin, 0, margin);
+//    return UIEdgeInsetsMake(0, margin, 0, margin);
+    return UIEdgeInsetsMake(0, 10, 0, 10);
+
 }
 
 

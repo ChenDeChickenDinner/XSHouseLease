@@ -10,28 +10,34 @@
 #import "XSCollectionView.h"
 #import "XSHouseInfoTableView.h"
 #import "XSHouseInfoShowModel.h"
-#import "XSMyPublishHosueController.h"
+#import "XSHouselishViewController.h"
 #import "XSHouseDetailsController.h"
-#import "XSMyPublishHosueController.h"
+#import "XSHouselishViewController.h"
 
 @class XSItemCollectionViewCell;
 @interface XSHouseModuleViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic,strong)XSRegionSearchView *searcView;
+
+@property (nonatomic,strong) UIScrollView *scrollView;
+
 @property (strong, nonatomic) UIView *lineView;
-@property (strong, nonatomic) XSMyPublishHosueController *listVc;
+@property (strong, nonatomic) XSHouselishViewController *listVc;
 
 @property (strong, nonatomic) NSMutableArray<XSHouseModuleModel *> *array;
 @property (strong, nonatomic) UICollectionViewFlowLayout *layout;
 @property (nonatomic,strong) UICollectionView *collectionView;
 
-
+@property (nonatomic,strong) NSMutableDictionary *searchDict;
 @end
 
 @implementation XSHouseModuleViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict safeSetObject:[XSUserServer sharedInstance].cityModel.code forKey:@"cityId"];
+    [dict safeSetObject:[XSUserServer sharedInstance].cityModel.name forKey:@"city"];
+    self.searchDict = dict;
     
     XSRegionSearchView *searcView = [[XSRegionSearchView alloc]init];
     searcView.searchBlack = ^(NSString *searhKey) {
@@ -40,6 +46,9 @@
     self.searcView = searcView;
     self.navigationItem.titleView = searcView;
 
+    UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:self.view.bounds];
+    self.scrollView = scrollView;
+    
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
     layout.itemSize = CGSizeMake(KScreenWidth/4, 105);
     layout.minimumInteritemSpacing = 0;
@@ -56,15 +65,21 @@
      lineView.backgroundColor = XSColor(246, 243, 245);
      self.lineView = lineView;
  
-    XSMyPublishHosueController *listVc = [[XSMyPublishHosueController alloc]init];
+    XSHouselishViewController *listVc = [[XSHouselishViewController alloc]init];
     listVc.houseType = self.houseType;
     listVc.source = self.source;
+    listVc.searchDict = self.searchDict;
     self.listVc = listVc;
 
     
-    [self.view addSubview:collectionView];
-    [self.view addSubview:lineView];
-    [self.view addSubview:listVc.view];
+
+    
+    [self.view addSubview:scrollView];
+
+    [self.scrollView addSubview:collectionView];
+    [self.scrollView addSubview:lineView];
+    [self.scrollView addSubview:listVc.view];
+    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"message"] style:UIBarButtonItemStyleDone target:self action:@selector(callMessage)];
     
     if (self.houseType == XSBHouseType_New) {
@@ -98,7 +113,7 @@
     XSHouseModuleModel *dataModel = [self.array safeObjectAtIndex:indexPath.row];
     NSMutableDictionary *dict =  [NSMutableDictionary dictionary];
     [dict setValue:dataModel.value forKey:dataModel.key];
-    XSMyPublishHosueController *vc = [[XSMyPublishHosueController alloc]init];
+    XSHouselishViewController *vc = [[XSHouselishViewController alloc]init];
     vc.title = dataModel.name;
     vc.source = self.source;
     vc.houseType = self.houseType;

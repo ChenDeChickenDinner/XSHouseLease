@@ -45,11 +45,18 @@ typedef void(^XSHouseInfoClickBlack)(XSHouseInfoModel *model,id data,XSBHouseKey
 @property (nonatomic,strong) NSNumber *cellHeight;
 @end
 @interface XSHouseInfoShowModel : XSHouseInfoModel
+@property(nonatomic,assign) XSHouseSource resource;
+@property (nonatomic, copy) NSString *resourceName;
 
-@property (nonatomic, assign) BOOL watch;
+@property (nonatomic, strong) NSNumber *dealStatus;// 0未出租1是已出租 , (2 在售 3售罄 1待售)
+@property (nonatomic, copy) NSString *dealStatusName;// 名字0未出租1是已出租
+
+//发布
 //1待审核 能编辑 2审核失败 能编辑 3已取消 能编辑 可重新发布1 4下架 能编辑 5暂停 能编辑 可发布6 6发布 不能编辑  可取消3 可暂停5
 @property (nonatomic, strong) NSNumber *status;
 @property (nonatomic, copy) NSString *statusName;
+
+@property (nonatomic, assign) BOOL watch;
 @property (nonatomic, strong) NSNumber *watchNum;//关注人数
 
 @property (nonatomic, copy) NSString *title;
@@ -71,7 +78,6 @@ typedef void(^XSHouseInfoClickBlack)(XSHouseInfoModel *model,id data,XSBHouseKey
 @property (nonatomic, strong) NSNumber *estateId;
 @property (nonatomic, strong) XSHouseEsModel *es;
 
-@property (nonatomic, strong) NSNumber *resource;//渠道标识
 @property (nonatomic, strong) NSNumber *area;//面积
 @property (nonatomic, copy) NSString *address;//详细地址
 @property (nonatomic, strong) NSNumber *rentPrice;//租金
@@ -96,8 +102,7 @@ typedef void(^XSHouseInfoClickBlack)(XSHouseInfoModel *model,id data,XSBHouseKey
 @property (nonatomic, strong) NSNumber *elevator;//是否有电梯
 @property (nonatomic, strong) NSNumber *waterElectricity;//水电类型
 @property (nonatomic, copy) NSString *waterElectricityName;//水电类型
-@property (nonatomic, strong) NSNumber *dealStatus;// 0未出租1是已出租 , (2 在售 3售罄 1待售)
-@property (nonatomic, copy) NSString *dealStatusName;// 名字0未出租1是已出租
+
 @property (nonatomic, strong) NSNumber *rentTimeType;//租期类型
 @property (nonatomic, copy) NSString *rentTimeTypeName;//租期类型年租
 @property (nonatomic, strong) NSNumber *finish;//装修类型

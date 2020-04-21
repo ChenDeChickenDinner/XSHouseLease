@@ -43,7 +43,7 @@
             }else{
                 value = [modeDict safeObjectForKey:KeyVlaueModel.key];
             }
-        
+     
           if ([KeyVlaueModel.key isEqualToString:@"floor"]) {//楼层
             KeyVlaueModel.value = [NSString stringWithFormat:@"%@层(共%@层)",self.floor,self.totalFloor];
           }else if ([KeyVlaueModel.key isEqualToString:@"elevator"]){//电梯
@@ -52,8 +52,10 @@
               KeyVlaueModel.value = [NSString stringWithFormat:@"%@年建成",self.createYears];
           }else if ([KeyVlaueModel.key isEqualToString:@"other"]){//其他
               KeyVlaueModel.value = [NSString stringWithFormat:@"产权年限 梯户比 >"];
+          }else if ([KeyVlaueModel.key isEqualToString:@"elevatorDoor"]){//其他
+              KeyVlaueModel.value = [NSString stringWithFormat:@"1梯%@户",self.elevatorDoor];
           }else{
-              KeyVlaueModel.value = [NSString stringWithFormat:@"%@",value?value:@""];
+              KeyVlaueModel.value = [NSString stringWithFormat:@"%@%@",value?value:@"",KeyVlaueModel.hindDescribe?KeyVlaueModel.hindDescribe:@""];
           }
      }
     return model;

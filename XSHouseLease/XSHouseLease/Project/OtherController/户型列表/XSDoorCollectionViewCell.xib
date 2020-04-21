@@ -17,14 +17,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="301" height="238"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dyu-aK-d3x">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dyu-aK-d3x">
                         <rect key="frame" x="0.0" y="0.0" width="301" height="135"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="135" id="2zs-AI-XGd"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hBh-dT-Zt7">
-                        <rect key="frame" x="0.0" y="140" width="301" height="90"/>
+                        <rect key="frame" x="0.0" y="135" width="301" height="103"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bA-Ab-sdk">
                                 <rect key="frame" x="0.0" y="0.0" width="39.5" height="21"/>
@@ -66,9 +66,9 @@
             <constraints>
                 <constraint firstItem="hBh-dT-Zt7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1A5-ce-AeT"/>
                 <constraint firstAttribute="trailing" secondItem="hBh-dT-Zt7" secondAttribute="trailing" id="Fzr-on-OlD"/>
-                <constraint firstItem="hBh-dT-Zt7" firstAttribute="top" secondItem="dyu-aK-d3x" secondAttribute="bottom" constant="5" id="Gry-tt-YHT"/>
+                <constraint firstItem="hBh-dT-Zt7" firstAttribute="top" secondItem="dyu-aK-d3x" secondAttribute="bottom" id="Gry-tt-YHT"/>
                 <constraint firstItem="dyu-aK-d3x" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="WBU-th-nBL"/>
-                <constraint firstAttribute="bottom" secondItem="hBh-dT-Zt7" secondAttribute="bottom" constant="8" id="WiB-2J-9FN"/>
+                <constraint firstAttribute="bottom" secondItem="hBh-dT-Zt7" secondAttribute="bottom" id="WiB-2J-9FN"/>
                 <constraint firstAttribute="trailing" secondItem="dyu-aK-d3x" secondAttribute="trailing" id="lif-ve-uYk"/>
                 <constraint firstItem="dyu-aK-d3x" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="xiz-ab-jZ5"/>
             </constraints>

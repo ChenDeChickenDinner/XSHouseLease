@@ -62,7 +62,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    
+    LYEmptyView *emptyView = [LYEmptyView emptyActionViewWithImageStr:@"noData"
+                                                             titleStr:@"暂无数据"
+                                                            detailStr:@"请稍后再试!"
+                                                          btnTitleStr:nil
+                                                        btnClickBlock:nil];
+    emptyView.subViewMargin = 20.f;
+    emptyView.titleLabTextColor = XSColor(90, 180, 160);
+    emptyView.detailLabFont = [UIFont systemFontOfSize:17];
+    emptyView.actionBtnBackGroundColor = XSColor(90, 180, 160);
+    self.emptyView = emptyView;
     
 }
 
@@ -85,4 +94,24 @@
 //    [ProgressHUD showSuccess:@"努力开发中"];
 //    [ProgressHUD showSuccess:str];
 }
+@end
+@implementation XSBKView
+
+- (void)awakeFromNib{
+    [super awakeFromNib];
+    self.layer.shadowColor = [UIColor hb_colorWithHexString:@"#929292" alpha:1].CGColor;
+     self.layer.shadowOffset = CGSizeMake(3, 0);
+     self.layer.shadowOpacity = 0.8;
+     self.layer.shadowRadius = 1.5;
+//     self.layer.cornerRadius = 5.0;
+    
+//    UIView *bkView = [[UIView alloc]initWithFrame:self.bounds];
+//    bkView.backgroundColor = [UIColor hb_colorWithHexString:@"#EBEBEB" alpha:1];
+////    bkView.layer.cornerRadius = 8;
+//    bkView.layer.masksToBounds = YES;
+//    bkView.layer.borderColor = [UIColor hb_colorWithHexString:@"#929292" alpha:1].CGColor;
+//
+//    [self addSubview:bkView];
+}
+
 @end

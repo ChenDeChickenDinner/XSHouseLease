@@ -144,8 +144,10 @@
     
     if (self.infoType == XSBHouseKeyValueIntroduce) {
         self.title = @"房源详情";
+        self.tableView.scrollEnabled = NO;
     }else if (self.infoType == XSBHouseKeyValueInfoSMore){
         self.title = @"房源信息";
+        self.tableView.scrollEnabled = NO;
     }else if (self.infoType == XSBHouseKeyValueInfoNMore){
         self.title = @"楼盘基础信息";
     }else if (self.infoType == XSBHouseKeyValueInfoLDIX){
@@ -153,7 +155,6 @@
         UIImageView *imageView = [[UIImageView alloc]init];
         imageView.frame = CGRectMake(0, 0, KScreenWidth, 281);
         [imageView sd_setImageWithURL:[NSURL URLWithString:self.dataModel.buildingCellBasic.contentImg]];
-
         self.tableView.tableHeaderView = imageView;
     }
     self.callView.model = self.dataModel;;

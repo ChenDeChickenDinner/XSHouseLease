@@ -9,7 +9,7 @@
     },
     {
         "cellClass":"XSHouseDetailsBusinessInfoCell",
-        "cellHeight":104
+        "cellHeight":120
     },
     {
         "cellClass":"XSHouseDetailsAddressInfoCell",
@@ -21,7 +21,7 @@
     },
     {
         "cellClass":"XSHouseDetailsIntroduceInfoCell",
-        "cellHeight":107
+        "cellHeight":127
     },
     {
         "cellClass":"XSHouseRecommendedCell",

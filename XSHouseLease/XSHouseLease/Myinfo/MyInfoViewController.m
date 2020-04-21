@@ -8,12 +8,18 @@
 
 #import "MyInfoViewController.h"
 #import "XSLoginViewController.h"
-#import "XSMyPublishHosueController.h"
+#import "XSHouselishViewController.h"
 #import "XSHouseModuleViewController.h"
 
 @interface MyInfoViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *phoneLable;
+@property (strong, nonatomic) XSMyHouseStatistical *dataModel;
 
+@property(nonatomic,weak)IBOutlet UILabel *publishRentNum;
+@property(nonatomic,weak)IBOutlet UILabel *publishSecondNum;
+@property(nonatomic,weak)IBOutlet UILabel *watchNewNum;
+@property(nonatomic,weak)IBOutlet UILabel *watchRentNum;
+@property(nonatomic,weak)IBOutlet UILabel *watchSecondNum;
 @end
 
 @implementation MyInfoViewController
@@ -24,10 +30,31 @@
     [self observeNotification:NotificationLoginStatusChangedLogin];
     [self observeNotification:NotificationLoginStatusChangedLogout];
 
+
+    [self loadData];
+}
+- (void)loadData{
+    
+    WEAK_SELF;
+    [self.subInfoInterface statisticsWithCallback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+        if (error == nil) {
+            STRONG_SELF;
+            if (responseModel.code.integerValue == SuccessCode) {
+              self.dataModel =  [XSMyHouseStatistical mj_objectWithKeyValues:responseModel.data];
+                self.publishRentNum.text = [NSString stringWithFormat:@"(%@)",self.dataModel.publishRentNum];
+                self.publishSecondNum.text = [NSString stringWithFormat:@"(%@)",self.dataModel.publishSecondNum];
+                self.watchNewNum.text = [NSString stringWithFormat:@"(%@)",self.dataModel.watchNewNum];
+                self.watchRentNum.text = [NSString stringWithFormat:@"(%@)",self.dataModel.watchRentNum];
+                self.watchSecondNum.text = [NSString stringWithFormat:@"(%@)",self.dataModel.watchSecondNum];
+            }
+        }
+    }];
+    
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
+    [self loadData];
+
     [self refreshUIData];
     
 }
@@ -37,14 +64,17 @@
     }else{
         [XSUserServer needLoginSuccess:^{
             NSLog(@"tag = %ld -------",sender.tag);
-            XSMyPublishHosueController *vc = [[XSMyPublishHosueController alloc]init];
+            XSHouseResourceListViewController *vc = [[XSHouseResourceListViewController alloc]init];
 
             if (sender.tag == 1) {
                 vc.houseType = XSBHouseType_old;
                 vc.source = XSBHouseInfoSource_MyWatch;
             }else if (sender.tag == 2){
+                XSHouselishViewController *vc = [[XSHouselishViewController alloc]init];
                 vc.houseType = XSBHouseType_New;
                 vc.source = XSBHouseInfoSource_MyWatch;
+                [self.navigationController pushViewController:vc animated:YES];
+                return ;
             }else if (sender.tag == 3){
                 vc.houseType = XSBHouseType_Rent;
                 vc.source = XSBHouseInfoSource_MyWatch;
@@ -98,3 +128,10 @@
 
 
 @end
+
+@implementation XSMyHouseStatistical
+
+
+
+@end
+

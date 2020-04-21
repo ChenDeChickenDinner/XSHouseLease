@@ -29,4 +29,5 @@ pod 'AMapLocation'
 pod 'ProgressHUD'
 pod 'DZNEmptyDataSet'
 pod 'JXCategoryView'
+pod 'LYEmptyView'
 end
