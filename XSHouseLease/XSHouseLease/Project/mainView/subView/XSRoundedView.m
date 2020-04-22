@@ -57,7 +57,16 @@
 
 @implementation XSRoundedBtnView
 
-
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        self.layer.masksToBounds = [self masksToBounds];;
+        self.layer.cornerRadius = [self cornerRadius];
+        self.layer.borderWidth = [self borderWidth];
+        self.layer.borderColor = [self borderColor];
+    }
+    return self;
+}
 - (void)awakeFromNib{
     [super awakeFromNib];
     

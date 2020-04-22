@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy) searchBlack searchBlack;
 @property (nonatomic, strong) NSArray *imagePathsGroup;
 @property (strong, nonatomic) NSMutableArray<XSHousehots *> *hotsSearchArray;
-+ (instancetype)locationSearchview;
++ (instancetype)locationSearchviewWithFrame:(CGRect)frame;
 @end
 
 NS_ASSUME_NONNULL_END

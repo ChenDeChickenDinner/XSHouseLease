@@ -15,6 +15,8 @@
 @interface XSHouselishViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
 @property(nonatomic,strong) NSMutableArray *array;
+
+@property(nonatomic,strong) XSRoundedBtn1View *more;
 @end
 
 @implementation XSHouselishViewController
@@ -55,15 +57,22 @@
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.tableView];
+    XSRoundedBtn1View *more = [[XSRoundedBtn1View alloc]init];
+    [more addTarget:self action:@selector(moreClick) forControlEvents:UIControlEventTouchUpInside];
+    more.frame = CGRectMake(0, 0, self.view.width, 38);
+    [more setTitle:@"更多房源推荐" forState:UIControlStateNormal];
+    more.backgroundColor =[UIColor hx_colorWithHexStr:@"#E82B2B"];
+    [more setTitleColor:[UIColor hx_colorWithHexStr:@"#F9EAEA"] forState:UIControlStateNormal];
+    self.more = more;
 
     WEAK_SELF;
-    if (!self.alittle && self.searchDict == nil) {
+    if (self.nubmer <= 0 && self.searchDict == nil) {
         self.tableView.mj_header  = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
             STRONG_SELF;
             [self loadData];
         }];
     }
-    if (self.alittle) {
+    if (self.nubmer > 0) {
         self.tableView.scrollEnabled = NO;
     }
     self.tableView.mj_header.automaticallyChangeAlpha = YES;
@@ -77,6 +86,15 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
 //    [self loadData];
+}
+
+- (void)moreClick{
+    XSHouselishViewController *listvc = [[XSHouselishViewController alloc]init];
+    listvc.houseType = self.houseType;
+    listvc.source = self.source;
+    listvc.house_id = self.house_id;
+    listvc.searchDict = self.searchDict;
+    [[NSObject getTopViewController].navigationController pushViewController:listvc animated:YES];
 }
 #pragma mark -数据请求
 - (void)loadData{
@@ -97,14 +115,18 @@
         if (responseModel.code.intValue == SuccessCode) {
             NSMutableArray *array = [XSHouseInfoShowModel mj_objectArrayWithKeyValuesArray:responseModel.data];
             [self houseInfoClickSettingWithModelArray:array];
-            if (self.alittle && array.count >=3) {
-                [self.array addObject:array[0]];
-                [self.array addObject:array[1]];
-                [self.array addObject:array[2]];
+            if (self.nubmer> 0 && array.count >= self.nubmer) {
+                for (int i = 0; i < self.nubmer; i++) {
+                    [self.array addObject:array[self.nubmer]];                }
             }else{
                 [self.array addObjectsFromArray:array];
             }
-       
+            if (self.nubmer > 0) {
+                self.tableView.tableFooterView = self.more;
+            }
+            if (self.callBackHeight) {
+                self.callBackHeight(145 * self.array.count + (self.nubmer>0?50:0));
+            }
             [self.tableView reloadData];
         }
     }

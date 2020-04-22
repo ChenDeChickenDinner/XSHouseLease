@@ -34,16 +34,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7E5FAF0F-A772-44E9-B56C-D6755B63396C"
+            uuid = "614FE36D-1E47-4FD5-A7C6-90F5A8C3E5CE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "XSHouseLease/Login/XSUserServer.m"
+            filePath = "XSHouseLease/Find/FindHouseViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "+automaticLogin"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "-listVc"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

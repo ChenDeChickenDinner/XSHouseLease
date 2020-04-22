@@ -34,7 +34,7 @@
 }
 - (IBAction)agreementLook:(id)sender {
     XSWKWebViewController *vc = [[XSWKWebViewController alloc]init];
-    vc.title = @"房鼎汇平台服务协议";
+    vc.title = @"房源发布协议";
     vc.url = @"https://test.fangdinghui.cn:1113/pages/agreement/agreement";
     [self.navigationController pushViewController:vc animated:YES];
 }

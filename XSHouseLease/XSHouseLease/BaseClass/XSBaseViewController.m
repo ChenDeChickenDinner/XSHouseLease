@@ -7,7 +7,11 @@
 //
 
 #import "XSBaseViewController.h"
-#define BASEURL @"https://test.fangdinghui.cn/api/v1.0/"
+//#define BASEURL @"https://test.fangdinghui.cn/api/v1.0/"
+#define BASEURL @"https://test.fangdinghui.cn:1113/api/v1.0/"
+
+
+
 @interface XSBaseViewController ()
 @end
 
@@ -38,7 +42,7 @@
 }
 - (AFHTTPSessionManager *)operationManager{
     if (_operationManager == nil) {
-        _operationManager = [[AFHTTPSessionManager alloc]initWithBaseURL:[NSURL URLWithString:@"https://test.fangdinghui.cn"]];
+        _operationManager = [[AFHTTPSessionManager alloc]initWithBaseURL:[NSURL URLWithString:@"https://test.fangdinghui.cn:1113"]];
         [_operationManager setSecurityPolicy:[self customSecurityPolicy]];
         _operationManager.requestSerializer.stringEncoding = NSUTF8StringEncoding;
         _operationManager.requestSerializer = [AFJSONRequestSerializer serializer];

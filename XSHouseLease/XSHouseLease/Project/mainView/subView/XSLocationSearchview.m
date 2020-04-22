@@ -19,8 +19,9 @@
 
 @end
 @implementation XSLocationSearchview
-+ (instancetype)locationSearchview{
++ (instancetype)locationSearchviewWithFrame:(CGRect)frame{
     XSLocationSearchview *view  = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil].lastObject;
+    view.frame = frame;
     return view;
 }
 - (NSMutableArray *)hotsViewArray{

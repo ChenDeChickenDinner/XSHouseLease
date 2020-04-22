@@ -8,15 +8,19 @@
 
 #import "XSBaseViewController.h"
 #import "XSPageViewController.h"
+typedef void(^callBackHeight)(CGFloat height);
 
 @interface XSHouselishViewController : XSListContentViewController
 @property(nonatomic,assign) XSBHouseType houseType;
 @property(nonatomic,assign) XSBHouseInfoSource source;
 @property(nonatomic,assign) XSHouseSource resource;
 
-@property(nonatomic,assign) BOOL alittle;
+@property(nonatomic,assign) NSInteger nubmer;
 @property(nonatomic,strong) NSNumber *house_id;
 @property(nonatomic,strong) NSMutableDictionary *searchDict;
+
+@property(nonatomic,copy) callBackHeight callBackHeight;
+
 - (void)loadData;
 @end
 

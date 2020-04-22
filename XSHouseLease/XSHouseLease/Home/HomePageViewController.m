@@ -50,7 +50,7 @@
     [super viewDidLoad];
     self.navigationController.delegate = self;
     self.resource = XSHouseSource_1;
-    XSLocationSearchview *searchView = [XSLocationSearchview locationSearchview];
+    XSLocationSearchview *searchView = [XSLocationSearchview locationSearchviewWithFrame:CGRectMake(0, 0, KScreenWidth, 220)];
     searchView.searchBlack = ^(NSString * _Nonnull searhKey) {
         NSLog(@"ss-%@",searhKey);
     };
@@ -66,7 +66,7 @@
 }
 - (void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
-    self.searchView.frame = self.titleView.bounds;
+//    self.searchView.frame = CGRectMake(0, 0, KScreenWidth, 220);
 }
 - (void)agencyChicken:(void(^)(void))success{
     

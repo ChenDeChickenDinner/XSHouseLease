@@ -10,7 +10,7 @@
 #import "AFNetworking.h"
 #import "XSOperationParam.h"
 
-#define XSBaseUrl @"https://test.fangdinghui.cn/api/v1.0"
+#define XSBaseUrl @"https://test.fangdinghui.cn:1113/api/v1.0"
 #define XSImgaeBaseUrl @"https://test.fangdinghui.cn:1112"
 
 #define SuccessCode 200

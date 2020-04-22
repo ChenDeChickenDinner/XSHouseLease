@@ -702,7 +702,7 @@ NSString * XSHouseStatusBkColor(NSNumber *status, NSNumber *dealStatus, XSBHouse
 - (void)awakeFromNib {
     [super awakeFromNib];
     XSHouselishViewController *listvc = [[XSHouselishViewController alloc]init];
-    listvc.alittle = YES;
+    listvc.nubmer = 3;
     listvc.view.frame = self.bkView.bounds;
     self.listvc = listvc;
     [self.bkView addSubview:listvc.view];

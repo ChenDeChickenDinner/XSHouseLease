@@ -27,6 +27,7 @@
 @property(nonatomic,strong) JXCategoryTitleView *categoryView;
 @property(nonatomic,strong) JXCategoryListContainerView *listContainerView;
 @property(nonatomic,strong) NSMutableArray<id<JXCategoryListContentViewDelegate>> *listVc;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *loveViewHeight;
 
 @end
 
@@ -49,7 +50,7 @@
     [super viewDidLoad];
     self.navigationController.delegate = self;
     self.resource = XSHouseSource_1;
-    XSLocationSearchview *searchView = [XSLocationSearchview locationSearchview];
+    XSLocationSearchview *searchView = [XSLocationSearchview locationSearchviewWithFrame:CGRectMake(0, 0, KScreenWidth, 220)];
     searchView.searchBlack = ^(NSString * _Nonnull searhKey) {
         NSLog(@"ss-%@",searhKey);
     };
@@ -88,7 +89,7 @@
     self.array = array;
 
     
-    self.categoryView = [[JXCategoryTitleView alloc] initWithFrame:CGRectMake(0, 0, 140, 25)];
+    self.categoryView = [[JXCategoryTitleView alloc] initWithFrame:CGRectMake(0, 0, 150, 25)];
     self.categoryView.delegate = self;
     self.categoryView.titles = [self getTitlese];
     self.categoryView.titleFont = [UIFont systemFontOfSize:12];
@@ -111,11 +112,17 @@
 }
 - (NSMutableArray<id<JXCategoryListContentViewDelegate>>*)listVc{
     if (!_listVc) {
+        WEAK_SELF;
         _listVc = [NSMutableArray array];
         for (int i = 0; i < [self getTitlese].count; i++) {
             XSHouselishViewController *vc  = [[XSHouselishViewController alloc]init];
+            vc.nubmer = 5;
             vc.source  = XSBHouseInfoSource_keyPush;
             vc.resource  = XSHouseSource_0;
+            vc.callBackHeight = ^(CGFloat height) {
+                STRONG_SELF;
+//                self.loveViewHeight.constant = height;
+            };
             if (i == 0) {
                 vc.houseType  = XSBHouseType_old;
             }else if (i == 1){
@@ -151,7 +158,7 @@
 }
 - (void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
-    self.searchView.frame = self.imageView.bounds;
+    self.searchView.frame = CGRectMake(0, 0, KScreenWidth, 220);
     self.collectionView.frame = self.searchCdView.bounds;
     self.categoryView.frame = self.changeTypeView.bounds;
     self.listContainerView.frame = self.loveView.bounds;
