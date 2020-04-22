@@ -90,6 +90,7 @@
 		558501B9244D8BDF001A09B1 /* UIView+LYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 558501B1244D8BDF001A09B1 /* UIView+LYExtension.m */; };
 		558501BA244D8BDF001A09B1 /* LYEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 558501B4244D8BDF001A09B1 /* LYEmptyView.m */; };
 		558501BD244FCC15001A09B1 /* XSWKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 558501BC244FCC15001A09B1 /* XSWKWebViewController.m */; };
+		558501BF2450306C001A09B1 /* FindHouseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 558501BE2450306C001A09B1 /* FindHouseViewController.xib */; };
 		5585FFAF244972C4001A09B1 /* HomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5585FED5244972C4001A09B1 /* HomePageViewController.xib */; };
 		5585FFB0244972C4001A09B1 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5585FED6244972C4001A09B1 /* HomePageViewController.m */; };
 		5585FFB1244972C4001A09B1 /* MyInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5585FED9244972C4001A09B1 /* MyInfoViewController.xib */; };
@@ -235,6 +236,7 @@
 		558501B6244D8BDF001A09B1 /* UIView+Empty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Empty.h"; sourceTree = "<group>"; };
 		558501BB244FCC15001A09B1 /* XSWKWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSWKWebViewController.h; sourceTree = "<group>"; };
 		558501BC244FCC15001A09B1 /* XSWKWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSWKWebViewController.m; sourceTree = "<group>"; };
+		558501BE2450306C001A09B1 /* FindHouseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindHouseViewController.xib; sourceTree = "<group>"; };
 		5585FED5244972C4001A09B1 /* HomePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageViewController.xib; sourceTree = "<group>"; };
 		5585FED6244972C4001A09B1 /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
 		5585FED7244972C4001A09B1 /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
@@ -812,6 +814,7 @@
 			children = (
 				5585FF95244972C4001A09B1 /* FindHouseViewController.h */,
 				5585FF96244972C4001A09B1 /* FindHouseViewController.m */,
+				558501BE2450306C001A09B1 /* FindHouseViewController.xib */,
 			);
 			path = Find;
 			sourceTree = "<group>";
@@ -819,17 +822,17 @@
 		5585FF97244972C4001A09B1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				558501AD244D8BDF001A09B1 /* LYEmptyView */,
 				5585FF98244972C4001A09B1 /* AppDelegate.h */,
-				5585FF99244972C4001A09B1 /* XSTabBarViewController.h */,
-				5585FF9A244972C4001A09B1 /* ViewController.m */,
-				5585FF9B244972C4001A09B1 /* SceneDelegate.m */,
-				5585FF9C244972C4001A09B1 /* XSNavViewController.h */,
 				5585FF9D244972C4001A09B1 /* AppDelegate.m */,
-				5585FF9E244972C4001A09B1 /* XSTabBarViewController.m */,
-				5585FF9F244972C4001A09B1 /* XSNavViewController.m */,
-				5585FFA0244972C4001A09B1 /* ViewController.h */,
+				558501AD244D8BDF001A09B1 /* LYEmptyView */,
 				5585FFA1244972C4001A09B1 /* SceneDelegate.h */,
+				5585FF9B244972C4001A09B1 /* SceneDelegate.m */,
+				5585FFA0244972C4001A09B1 /* ViewController.h */,
+				5585FF9A244972C4001A09B1 /* ViewController.m */,
+				5585FF9C244972C4001A09B1 /* XSNavViewController.h */,
+				5585FF9F244972C4001A09B1 /* XSNavViewController.m */,
+				5585FF99244972C4001A09B1 /* XSTabBarViewController.h */,
+				5585FF9E244972C4001A09B1 /* XSTabBarViewController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -943,6 +946,7 @@
 				5585FFC8244972C4001A09B1 /* Assets.xcassets in Resources */,
 				55850021244972C5001A09B1 /* Info.plist in Resources */,
 				5585FFCB244972C4001A09B1 /* Main.storyboard in Resources */,
+				558501BF2450306C001A09B1 /* FindHouseViewController.xib in Resources */,
 				5585017224497F5F001A09B1 /* XSHouseSearch.json in Resources */,
 				5585017D24497F5F001A09B1 /* XSHouseInfoShowCell.xib in Resources */,
 				5585019124497F5F001A09B1 /* XSHouseSubTableViewCell.xib in Resources */,

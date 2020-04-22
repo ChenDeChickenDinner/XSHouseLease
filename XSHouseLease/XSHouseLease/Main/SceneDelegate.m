@@ -15,6 +15,9 @@
     } else {
         self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     }
+     if (@available(iOS 11.0, *)){
+          [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+      }
      self.window.rootViewController = [[XSTabBarViewController alloc]init];
      [self.window makeKeyAndVisible];
     

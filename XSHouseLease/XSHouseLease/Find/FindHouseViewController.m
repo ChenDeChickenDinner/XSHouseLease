@@ -14,6 +14,11 @@
 @interface FindHouseViewController ()<UINavigationControllerDelegate>
 @property (weak, nonatomic) XSLocationSearchview *searchView;
 @property (weak, nonatomic) XSCollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UIView *imageView;
+@property (weak, nonatomic) IBOutlet UIView *resourceView;
+@property (weak, nonatomic) IBOutlet UIView *searchCdView;
+@property (weak, nonatomic) IBOutlet UIView *mustlookView;
+@property (weak, nonatomic) IBOutlet UIView *loveView;
 
 @end
 
@@ -22,6 +27,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.delegate = self;
+    
+    XSLocationSearchview *searchView = [XSLocationSearchview locationSearchview];
+    searchView.searchBlack = ^(NSString * _Nonnull searhKey) {
+        NSLog(@"ss-%@",searhKey);
+    };
+    [self.view addSubview:searchView];
+    self.searchView = searchView;
+    
+    
     XSCollectionView *collectionView = [[XSCollectionView alloc]init];
     [self.view addSubview:collectionView];
     self.collectionView = collectionView;
@@ -51,12 +65,7 @@
         };
     }
     self.collectionView.array = array;
-    XSLocationSearchview *searchView = [XSLocationSearchview locationSearchview];
-    searchView.searchBlack = ^(NSString * _Nonnull searhKey) {
-        NSLog(@"ss-%@",searhKey);
-    };
-    [self.view addSubview:searchView];
-    self.searchView = searchView;
+
     
 
 }
