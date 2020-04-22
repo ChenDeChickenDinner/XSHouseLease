@@ -11,7 +11,7 @@
 #import "XSPhotoPickerView.h"
 #import "XSHouseSubSuccessViewController.h"
 #import "AFNetworking.h"
-#import <WebKit/WKWebView.h>
+#import "XSWKWebViewController.h"
 
 @interface XSHouseSubmitFirstViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
@@ -26,8 +26,17 @@
 @end
 
 @implementation XSHouseSubmitFirstViewController
+- (XSHouseSubMitServer *)subMitServer{
+    if (!_subMitServer) {
+        _subMitServer = [[XSHouseSubMitServer alloc]init];
+    }
+    return _subMitServer;
+}
 - (IBAction)agreementLook:(id)sender {
-
+    XSWKWebViewController *vc = [[XSWKWebViewController alloc]init];
+    vc.title = @"房鼎汇平台服务协议";
+    vc.url = @"https://test.fangdinghui.cn:1113/pages/agreement/agreement";
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)agreementClick:(UIButton *)sender {
@@ -40,17 +49,13 @@
     self.myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.array = [NSMutableArray array];
 
-    if (self.houseType == XSBHouseType_Rent) {
+    if (self.subMitServer.houseType == XSBHouseType_Rent) {
       self.title = @"我要出租";
     }else{
       self.title = @"免费发布房源";
     }
 
     if (self.submitStepsType == XSHouseSubmitStepsType_First) {
-        self.subMitServer = [[XSHouseSubMitServer alloc]init];
-        self.subMitServer.houseType = self.houseType;
-        self.subMitServer.resource = self.resource;
-
         [self.array addObjectsFromArray:self.subMitServer.firstArray];
         [self.nextBtn setTitle:@"下一步" forState:UIControlStateNormal];
     }else if (self.submitStepsType == XSHouseSubmitStepsType_Second){
@@ -179,7 +184,6 @@
 - (IBAction)nextStepClick:(UIButton *)sender {
     XSHouseSubmitFirstViewController *next = [[XSHouseSubmitFirstViewController alloc]init];
     next.subMitServer = self.subMitServer;
-    next.houseType = self.houseType;
     if (self.submitStepsType == XSHouseSubmitStepsType_First) {
         if (!self.agreedBtn.selected) {
             [ProgressHUD showError:@"请阅读并同意《房源发布协议》" Interaction:YES];
@@ -201,7 +205,7 @@
 //    return;
     WEAK_SELF;
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [self.subInfoInterface renthouseSaveWithDict:self.subMitServer.subRentParameterDict houseType:self.houseType callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+    [self.subInfoInterface renthouseSaveWithDict:self.subMitServer.subRentParameterDict houseType:self.subMitServer.houseType callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
         STRONG_SELF;
         [MBProgressHUD  hideHUDForView:self.view animated:YES];
         if (error == nil) {

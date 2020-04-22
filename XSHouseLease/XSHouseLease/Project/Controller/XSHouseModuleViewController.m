@@ -17,7 +17,7 @@
 @class XSItemCollectionViewCell;
 @interface XSHouseModuleViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic,strong)XSRegionSearchView *searcView;
-
+@property (nonatomic,strong) SDCycleScrollView *cycleScrollView;
 @property (nonatomic,strong) UIScrollView *scrollView;
 
 @property (strong, nonatomic) UIView *lineView;
@@ -45,9 +45,27 @@
     };
     self.searcView = searcView;
     self.navigationItem.titleView = searcView;
-
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"message"] style:UIBarButtonItemStyleDone target:self action:@selector(callMessage)];
+    
+    if (self.houseType == XSBHouseType_New) {
+        self.array =  [XSPublicServer sharedInstance].newhouseConditionArray;
+    }else if (self.houseType == XSBHouseType_Rent){
+        self.array =  [XSPublicServer sharedInstance].renthouseConditionArray;
+    }
+    
     UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:self.view.bounds];
+    scrollView.bounces = NO;
+    scrollView.contentSize = CGSizeMake(self.view.width, self.view.height);
     self.scrollView = scrollView;
+    
+    SDCycleScrollView *cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectZero delegate:self placeholderImage:nil];
+    cycleScrollView.imageURLStringsGroup = nil;
+    cycleScrollView.showPageControl = YES;
+    cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
+    cycleScrollView.pageControlStyle = SDCycleScrollViewPageContolStyleNone;
+    self.cycleScrollView = cycleScrollView;
+
+
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
     layout.itemSize = CGSizeMake(KScreenWidth/4, 105);
@@ -74,30 +92,61 @@
     
 
     
-    [self.view addSubview:scrollView];
 
-    [self.scrollView addSubview:collectionView];
-    [self.scrollView addSubview:lineView];
-    [self.scrollView addSubview:listVc.view];
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"message"] style:UIBarButtonItemStyleDone target:self action:@selector(callMessage)];
-    
-    if (self.houseType == XSBHouseType_New) {
-        self.array =  [XSPublicServer sharedInstance].newhouseConditionArray;
-    }else if (self.houseType == XSBHouseType_Rent){
-        self.array =  [XSPublicServer sharedInstance].renthouseConditionArray;
+    [self.view addSubview:lineView];
+    [self.view addSubview:listVc.view];
+
+    if (self.houseType == XSBHouseType_old) {
+        [self.view addSubview:self.cycleScrollView];
+        [self imageURLStringsGroup];
+    }else{
+        [self.view addSubview:self.collectionView];
     }
+    
+//    [self.view addSubview:scrollView];
+
+//    [self.scrollView addSubview:lineView];
+//    [self.scrollView addSubview:listVc.view];
+//
+//    if (self.houseType == XSBHouseType_old) {
+//        [self.scrollView addSubview:self.cycleScrollView];
+//        [self imageURLStringsGroup];
+//    }else{
+//        [self.scrollView addSubview:self.collectionView];
+//    }
+//
     [self.collectionView reloadData];
 }
 - (void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
+    self.scrollView.frame = self.view.bounds;
     self.searcView.frame = CGRectMake(0, 0, SCREEN_SIZE.width - 110, 35);
+    
+    self.cycleScrollView.frame = CGRectMake(0, 0, self.view.width, 168);
     self.collectionView.frame = CGRectMake(0, 0, self.view.width, self.houseType==XSBHouseType_Rent?210:105);
-    self.lineView.frame = CGRectMake(0, CGRectGetMaxY(self.collectionView.frame), self.view.width, 65);
+    if (self.houseType == XSBHouseType_old) {
+     self.lineView.frame = CGRectMake(0, CGRectGetMaxY(self.cycleScrollView.frame), self.view.width, 55);
+    }else{
+      self.lineView.frame = CGRectMake(0, CGRectGetMaxY(self.collectionView.frame), self.view.width, 55);
+    }
     self.listVc.view.frame = CGRectMake(0, CGRectGetMaxY(self.lineView.frame), self.view.width, self.view.height- CGRectGetMaxY(self.lineView.frame));
  
 }
-
+- (void)imageURLStringsGroup{
+    [self.subInfoInterface secondhousebunnerListWithDict:self.searchDict callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+        if (error == nil) {
+            [self.array removeAllObjects];
+            if (responseModel.code.intValue == SuccessCode) {
+                NSMutableArray *array = [XSHouseInfoShowModel mj_objectArrayWithKeyValuesArray:responseModel.data];
+                NSMutableArray *imags = [NSMutableArray array];
+                for (XSHouseInfoShowModel *model in array) {
+                    [imags addObject:model.firstImg];
+                }
+                self.cycleScrollView.imageURLStringsGroup = imags;
+            }
+        }
+    }];
+}
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.array.count;
 }

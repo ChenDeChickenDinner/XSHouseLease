@@ -57,6 +57,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 //租房搜索条件-key
 - (void)renthouseConditionWithCallback:(HBCompletionBlock)callback;
+//二手房搜索
+- (void)secondhousebunnerListWithDict:(NSMutableDictionary *)keyVales callback:(HBCompletionBlock)callback;
 // 保存中介公司信息
 - (void)saveagencyWithDict:(NSMutableDictionary *)dict callback:(HBCompletionBlock)callback;
 // 信息统计

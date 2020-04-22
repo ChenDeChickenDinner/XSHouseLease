@@ -56,7 +56,15 @@ static NSString *CollectionCellIdentifierB = @"CollectionCellIdentifierB";
         self.value.text = valueData.placeholder;
         self.value.textColor = [UIColor hb_colorWithHexString:@"#BFBFBF" alpha:1];
     }else{
-        self.value.text = valueData.valueStr;
+        if ([valueData.key isEqualToString:@"city"]) {
+            id city =  [self.subDict objectForKey:@"city"];
+            id region =  [self.subDict objectForKey:@"region"];
+            id town =  [self.subDict objectForKey:@"town"];
+            NSString *valueStr = [NSString stringWithFormat:@"%@%@%@", city,region,town];
+            self.value.text = valueStr;
+        }else{
+            self.value.text = valueData.valueStr;
+        }
         self.value.textColor = [UIColor hb_colorWithHexString:@"#444444" alpha:1];
     }
 
@@ -189,7 +197,16 @@ static NSString *CollectionCellIdentifierB = @"CollectionCellIdentifierB";
         
         XSKeyValueModel *model = [self.dataModel.arrayValue safeObjectAtIndex:0];
         XSValue *valueData = model.values.firstObject;
-        self.textFieldFirst.text =valueData.sendType == XSValueSendType_Int?valueData.value.stringValue:valueData.valueStr;;
+        if([valueData.key isEqualToString:@"resource"]){
+            self.textFieldFirst.text = valueData.valueStr;;
+        }else{
+            if (valueData.sendType == XSValueSendType_Int) {
+                 self.textFieldFirst.text = valueData.value?valueData.value.stringValue:nil;
+             }else{
+                 self.textFieldFirst.text = valueData.valueStr;;
+             }
+        }
+ 
         self.textFieldFirst.placeholder = valueData.placeholder;
         self.frontDescribeLableFirst.text = valueData.frontDescribe;
         self.hindDescribeLablethFirst.text = valueData.hindDescribe;

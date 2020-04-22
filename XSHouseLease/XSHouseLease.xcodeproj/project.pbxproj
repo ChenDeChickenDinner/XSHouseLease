@@ -89,6 +89,7 @@
 		558501B8244D8BDF001A09B1 /* UIView+Empty.m in Sources */ = {isa = PBXBuildFile; fileRef = 558501B0244D8BDF001A09B1 /* UIView+Empty.m */; };
 		558501B9244D8BDF001A09B1 /* UIView+LYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 558501B1244D8BDF001A09B1 /* UIView+LYExtension.m */; };
 		558501BA244D8BDF001A09B1 /* LYEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 558501B4244D8BDF001A09B1 /* LYEmptyView.m */; };
+		558501BD244FCC15001A09B1 /* XSWKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 558501BC244FCC15001A09B1 /* XSWKWebViewController.m */; };
 		5585FFAF244972C4001A09B1 /* HomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5585FED5244972C4001A09B1 /* HomePageViewController.xib */; };
 		5585FFB0244972C4001A09B1 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5585FED6244972C4001A09B1 /* HomePageViewController.m */; };
 		5585FFB1244972C4001A09B1 /* MyInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5585FED9244972C4001A09B1 /* MyInfoViewController.xib */; };
@@ -233,6 +234,8 @@
 		558501B4244D8BDF001A09B1 /* LYEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYEmptyView.m; sourceTree = "<group>"; };
 		558501B5244D8BDF001A09B1 /* UIView+LYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LYExtension.h"; sourceTree = "<group>"; };
 		558501B6244D8BDF001A09B1 /* UIView+Empty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Empty.h"; sourceTree = "<group>"; };
+		558501BB244FCC15001A09B1 /* XSWKWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSWKWebViewController.h; sourceTree = "<group>"; };
+		558501BC244FCC15001A09B1 /* XSWKWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSWKWebViewController.m; sourceTree = "<group>"; };
 		5585FED5244972C4001A09B1 /* HomePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageViewController.xib; sourceTree = "<group>"; };
 		5585FED6244972C4001A09B1 /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
 		5585FED7244972C4001A09B1 /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
@@ -316,7 +319,7 @@
 		5585FFAD244972C4001A09B1 /* XSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSLoginViewController.h; sourceTree = "<group>"; };
 		5585FFAE244972C4001A09B1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66F014AFFCE6A143AA113285 /* Pods-XSHouseLease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XSHouseLease.debug.xcconfig"; path = "Target Support Files/Pods-XSHouseLease/Pods-XSHouseLease.debug.xcconfig"; sourceTree = "<group>"; };
-		6C6BC146241FA75300B62001 /* 房鼎汇.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "房鼎汇.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C6BC146241FA75300B62001 /* XXX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XXX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CBA1878244C617800F9B887 /* XSResourceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSResourceViewController.h; sourceTree = "<group>"; };
 		6CBA1879244C617800F9B887 /* XSResourceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSResourceViewController.m; sourceTree = "<group>"; };
 		6CBA187A244C617800F9B887 /* XSResourceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSResourceViewController.xib; sourceTree = "<group>"; };
@@ -466,6 +469,8 @@
 				5585010824497F5F001A09B1 /* XSHouseDetailsController.h */,
 				5585010324497F5F001A09B1 /* XSHouseDetailsController.m */,
 				5585010224497F5F001A09B1 /* XSHouseDetailsController.xib */,
+				558501BB244FCC15001A09B1 /* XSWKWebViewController.h */,
+				558501BC244FCC15001A09B1 /* XSWKWebViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -861,7 +866,7 @@
 		6C6BC147241FA75300B62001 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6C6BC146241FA75300B62001 /* 房鼎汇.app */,
+				6C6BC146241FA75300B62001 /* XXX.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -893,7 +898,7 @@
 			);
 			name = XSHouseLease;
 			productName = XSHouseLease;
-			productReference = 6C6BC146241FA75300B62001 /* 房鼎汇.app */;
+			productReference = 6C6BC146241FA75300B62001 /* XXX.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1045,6 +1050,7 @@
 				558501A2244998C7001A09B1 /* XSImagesViewController.m in Sources */,
 				5585018224497F5F001A09B1 /* XSRegionSearchView.m in Sources */,
 				558501BA244D8BDF001A09B1 /* LYEmptyView.m in Sources */,
+				558501BD244FCC15001A09B1 /* XSWKWebViewController.m in Sources */,
 				5585001C244972C5001A09B1 /* XSLoginViewController.m in Sources */,
 				5585FFC0244972C4001A09B1 /* NSNumber+safe.m in Sources */,
 				55850016244972C5001A09B1 /* ViewController.m in Sources */,
@@ -1245,7 +1251,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = fangdinghui;
-				PRODUCT_NAME = "房鼎汇";
+				PRODUCT_NAME = XXX;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
@@ -1267,7 +1273,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = fangdinghui;
-				PRODUCT_NAME = "房鼎汇";
+				PRODUCT_NAME = XXX;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};

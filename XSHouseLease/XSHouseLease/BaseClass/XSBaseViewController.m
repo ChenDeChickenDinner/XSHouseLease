@@ -64,7 +64,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     LYEmptyView *emptyView = [LYEmptyView emptyActionViewWithImageStr:@"noData"
                                                              titleStr:@"暂无数据"
-                                                            detailStr:@"请稍后再试!"
+                                                            detailStr:@""
                                                           btnTitleStr:nil
                                                         btnClickBlock:nil];
     emptyView.subViewMargin = 20.f;

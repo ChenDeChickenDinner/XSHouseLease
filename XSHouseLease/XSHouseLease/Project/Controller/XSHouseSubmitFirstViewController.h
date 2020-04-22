@@ -20,8 +20,6 @@ typedef NS_ENUM(NSInteger,XSHouseSubmitStepsType) {
 };
 
 @interface XSHouseSubmitFirstViewController : XSBaseViewController
-@property(nonatomic,assign) XSBHouseType houseType;
-@property(nonatomic,assign) XSHouseSource resource;
 @property (strong, nonatomic) XSHouseSubMitServer *subMitServer;
 
 @end

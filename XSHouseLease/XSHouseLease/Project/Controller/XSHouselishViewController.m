@@ -185,6 +185,7 @@
               if (responseModel.code.integerValue == SuccessCode) {
                   XSHouseInfoShowModel *model = [XSHouseInfoShowModel mj_objectWithKeyValues:responseModel.data];
                   XSHouseSubmitFirstViewController *vc = [[XSHouseSubmitFirstViewController alloc]init];
+                  vc.subMitServer.houseType = self.houseType;
                   vc.subMitServer.renhousetInfoModel = model;
                   [self.navigationController pushViewController:vc animated:YES];
               }

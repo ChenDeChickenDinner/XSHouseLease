@@ -90,8 +90,8 @@
            {
                [self agencyChicken:^{
                    XSHouseSubmitFirstViewController *vc = [[XSHouseSubmitFirstViewController alloc]init];
-                   vc.houseType = XSBHouseType_Rent;
-                   vc.resource = self.resource;
+                   vc.subMitServer.houseType = XSBHouseType_Rent;
+                   vc.subMitServer.resource = self.resource;
                    [self.navigationController pushViewController:vc animated:YES];
                }];
 
@@ -101,8 +101,8 @@
            {
                [self agencyChicken:^{
                   XSHouseSubmitFirstViewController *vc = [[XSHouseSubmitFirstViewController alloc]init];
-                  vc.houseType = XSBHouseType_old;
-                  vc.resource = self.resource;
+                  vc.subMitServer.houseType = XSBHouseType_old;
+                  vc.subMitServer.resource = self.resource;
                   [self.navigationController pushViewController:vc animated:YES];
                 }];
 

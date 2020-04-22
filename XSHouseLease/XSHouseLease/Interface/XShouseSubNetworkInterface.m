@@ -36,7 +36,16 @@ NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
 NSString *url = [NSString stringWithFormat:@"%@/bunner/list",XSBaseUrl];
 [self GET:url param:dict progress:nil callback:callback];
 }
-
+//二手房轮播图
+- (void)secondhousebunnerListWithDict:(NSMutableDictionary *)keyVales callback:(HBCompletionBlock)callback{
+    NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
+    for (NSString *key in keyVales.allKeys) {
+        [dict safeSetObject:[keyVales safeObjectForKey:key] forKey:key];
+    }
+    
+    NSString *url = [NSString stringWithFormat:@"%@/secondhouse/bunner",XSBaseUrl];
+    [self POST:url param:dict progress:nil callback:callback];
+}
 // 热搜
 - (void)hotsSearchWithCallback:(HBCompletionBlock)callback{
 NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
