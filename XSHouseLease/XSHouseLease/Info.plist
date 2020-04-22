@@ -58,7 +58,7 @@
 			</array>
 		</dict>
 	</dict>
-	<key>UILaunchStoryboardName</key>
+	<key>UILaunchImageFile</key>
 	<string>LaunchImage</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>

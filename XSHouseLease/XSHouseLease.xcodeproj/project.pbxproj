@@ -117,7 +117,6 @@
 		5585FFC7244972C4001A09B1 /* NSDate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5585FF0F244972C4001A09B1 /* NSDate+Category.m */; };
 		5585FFC8244972C4001A09B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5585FF11244972C4001A09B1 /* Assets.xcassets */; };
 		5585FFC9244972C4001A09B1 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5585FF13244972C4001A09B1 /* MessageViewController.m */; };
-		5585FFCA244972C4001A09B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5585FF15244972C4001A09B1 /* LaunchScreen.storyboard */; };
 		5585FFCB244972C4001A09B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5585FF17244972C4001A09B1 /* Main.storyboard */; };
 		6CBA187B244C617800F9B887 /* XSResourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBA1879244C617800F9B887 /* XSResourceViewController.m */; };
 		6CBA187C244C617800F9B887 /* XSResourceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CBA187A244C617800F9B887 /* XSResourceViewController.xib */; };
@@ -287,7 +286,6 @@
 		5585FF11244972C4001A09B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5585FF13244972C4001A09B1 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		5585FF14244972C4001A09B1 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
-		5585FF16244972C4001A09B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5585FF17244972C4001A09B1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5585FF8D244972C4001A09B1 /* XSBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBaseViewController.m; sourceTree = "<group>"; };
 		5585FF8E244972C4001A09B1 /* XSBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBaseTableViewCell.h; sourceTree = "<group>"; };
@@ -624,7 +622,6 @@
 				5585FF11244972C4001A09B1 /* Assets.xcassets */,
 				5585FEDC244972C4001A09B1 /* fangdinghui.cer */,
 				5585FFAE244972C4001A09B1 /* Info.plist */,
-				5585FF15244972C4001A09B1 /* LaunchScreen.storyboard */,
 				5585FF93244972C4001A09B1 /* main.m */,
 				5585FF17244972C4001A09B1 /* Main.storyboard */,
 				5585FF97244972C4001A09B1 /* Main */,
@@ -949,7 +946,6 @@
 				5585017224497F5F001A09B1 /* XSHouseSearch.json in Resources */,
 				5585017D24497F5F001A09B1 /* XSHouseInfoShowCell.xib in Resources */,
 				5585019124497F5F001A09B1 /* XSHouseSubTableViewCell.xib in Resources */,
-				5585FFCA244972C4001A09B1 /* LaunchScreen.storyboard in Resources */,
 				5585015124497F5F001A09B1 /* XSHouseIntroduceController.xib in Resources */,
 				5585017024497F5F001A09B1 /* XSSellHouseInfoSecond.json in Resources */,
 				5585016F24497F5F001A09B1 /* XSSellHouseInfoFirst.json in Resources */,
@@ -1109,17 +1105,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		5585FF15244972C4001A09B1 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5585FF16244972C4001A09B1 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		6C6BC15D241FA75400B62001 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1241,6 +1226,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J4S5RYZMWH;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
@@ -1263,6 +1249,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J4S5RYZMWH;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
