@@ -114,7 +114,7 @@
             STRONG_SELF;
             [MBProgressHUD  hideHUDForView:self.view animated:YES];
             [NSThread sleepForTimeInterval:0.25];
-            [ProgressHUD showError:@"认证申请已提交" Interaction:YES];
+            [ProgressHUD showSuccess:@"认证申请已提交" Interaction:YES];
             [XSUserServer sharedInstance].userModel.agency = YES;
             NSDictionary *dict =  [[XSUserServer sharedInstance].userModel mj_keyValues];
             [[NSUserDefaults standardUserDefaults] setObject:dict forKey:@"userInfo"];

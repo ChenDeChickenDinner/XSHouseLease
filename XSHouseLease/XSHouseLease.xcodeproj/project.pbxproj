@@ -319,7 +319,7 @@
 		5585FFAD244972C4001A09B1 /* XSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSLoginViewController.h; sourceTree = "<group>"; };
 		5585FFAE244972C4001A09B1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66F014AFFCE6A143AA113285 /* Pods-XSHouseLease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XSHouseLease.debug.xcconfig"; path = "Target Support Files/Pods-XSHouseLease/Pods-XSHouseLease.debug.xcconfig"; sourceTree = "<group>"; };
-		6C6BC146241FA75300B62001 /* XXX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XXX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C6BC146241FA75300B62001 /* 房鼎汇.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "房鼎汇.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CBA1878244C617800F9B887 /* XSResourceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSResourceViewController.h; sourceTree = "<group>"; };
 		6CBA1879244C617800F9B887 /* XSResourceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSResourceViewController.m; sourceTree = "<group>"; };
 		6CBA187A244C617800F9B887 /* XSResourceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSResourceViewController.xib; sourceTree = "<group>"; };
@@ -866,7 +866,7 @@
 		6C6BC147241FA75300B62001 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6C6BC146241FA75300B62001 /* XXX.app */,
+				6C6BC146241FA75300B62001 /* 房鼎汇.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -898,7 +898,7 @@
 			);
 			name = XSHouseLease;
 			productName = XSHouseLease;
-			productReference = 6C6BC146241FA75300B62001 /* XXX.app */;
+			productReference = 6C6BC146241FA75300B62001 /* 房鼎汇.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1241,7 +1241,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = fangdinghui;
-				PRODUCT_NAME = XXX;
+				PRODUCT_NAME = "房鼎汇";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
@@ -1264,7 +1264,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = fangdinghui;
-				PRODUCT_NAME = XXX;
+				PRODUCT_NAME = "房鼎汇";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};

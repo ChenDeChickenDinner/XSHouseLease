@@ -17,6 +17,7 @@
                 <outlet property="mustlookView" destination="SG8-rk-dbs" id="Pma-EU-sSP"/>
                 <outlet property="resourceView" destination="CQZ-8z-CKL" id="XZs-Xg-2Lx"/>
                 <outlet property="searchCdView" destination="EOv-JG-WrL" id="2mH-Un-lrJ"/>
+                <outlet property="searchView" destination="ISn-Tf-4Eh" id="e6S-9y-ZHg"/>
                 <outlet property="source0" destination="E8W-T0-tNg" id="lgN-hu-wxU"/>
                 <outlet property="source1" destination="zZ7-Jf-CLd" id="wbq-5L-xh4"/>
                 <outlet property="view" destination="iN0-l3-epB" id="fvh-xq-ohj"/>
@@ -35,9 +36,176 @@
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kei-x5-gVA">
                                     <rect key="frame" x="0.0" y="0.0" width="474" height="220"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISn-Tf-4Eh" userLabel="头部信息" customClass="XSLocationSearchview">
+                                            <rect key="frame" x="0.0" y="0.0" width="474" height="220"/>
+                                            <subviews>
+                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homePageIcon" translatesAutoresizingMaskIntoConstraints="NO" id="yev-W4-cuI">
+                                                    <rect key="frame" x="0.0" y="0.0" width="474" height="220"/>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Jf-OR-YMD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="474" height="220"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZBc-WL-D3i" userLabel="搜索框">
+                                                    <rect key="frame" x="15" y="20" width="444" height="45"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0z7-zp-yhP" userLabel="切换方式">
+                                                            <rect key="frame" x="1" y="1" width="70" height="43"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sfW-Cx-c8h">
+                                                                    <rect key="frame" x="70" y="15" width="0.0" height="13"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" id="J9s-11-Az1"/>
+                                                                        <constraint firstAttribute="height" constant="13" id="Nj4-8a-9cC"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上海" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="31" translatesAutoresizingMaskIntoConstraints="NO" id="dOD-5b-aov">
+                                                                    <rect key="frame" x="10" y="12" width="31" height="19"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="31" id="dCl-8a-OcF"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                    <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="house_dowm" translatesAutoresizingMaskIntoConstraints="NO" id="nBJ-LA-7ws">
+                                                                    <rect key="frame" x="48" y="18.5" width="10" height="6"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="6" id="Jf2-gb-YYN"/>
+                                                                        <constraint firstAttribute="width" constant="10" id="dsH-xE-H7o"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdD-JY-1nG">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="43"/>
+                                                                    <connections>
+                                                                        <action selector="cityChoose:" destination="ISn-Tf-4Eh" eventType="touchUpInside" id="SQX-o3-tfd"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="sfW-Cx-c8h" secondAttribute="trailing" id="03j-tF-y1D"/>
+                                                                <constraint firstAttribute="bottom" secondItem="dOD-5b-aov" secondAttribute="bottom" constant="12" id="0tT-O0-NhC"/>
+                                                                <constraint firstItem="bdD-JY-1nG" firstAttribute="leading" secondItem="0z7-zp-yhP" secondAttribute="leading" id="9FC-r5-22o"/>
+                                                                <constraint firstItem="dOD-5b-aov" firstAttribute="leading" secondItem="0z7-zp-yhP" secondAttribute="leading" constant="10" id="RNi-FL-Fzs"/>
+                                                                <constraint firstItem="bdD-JY-1nG" firstAttribute="top" secondItem="0z7-zp-yhP" secondAttribute="top" id="dEw-L2-R7r"/>
+                                                                <constraint firstItem="dOD-5b-aov" firstAttribute="top" secondItem="0z7-zp-yhP" secondAttribute="top" constant="12" id="jz8-Sd-da9"/>
+                                                                <constraint firstAttribute="trailing" secondItem="nBJ-LA-7ws" secondAttribute="trailing" constant="12" id="lUT-oc-rCE"/>
+                                                                <constraint firstItem="nBJ-LA-7ws" firstAttribute="centerY" secondItem="0z7-zp-yhP" secondAttribute="centerY" id="ojN-Xt-ofP"/>
+                                                                <constraint firstItem="sfW-Cx-c8h" firstAttribute="leading" secondItem="bdD-JY-1nG" secondAttribute="trailing" id="p7G-3S-260"/>
+                                                                <constraint firstItem="sfW-Cx-c8h" firstAttribute="centerY" secondItem="0z7-zp-yhP" secondAttribute="centerY" id="qNo-pV-RfA"/>
+                                                                <constraint firstAttribute="bottom" secondItem="bdD-JY-1nG" secondAttribute="bottom" id="qyx-YS-8YV"/>
+                                                                <constraint firstAttribute="width" constant="70" id="tcc-aT-WWk"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="你想住在哪？" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IxP-QZ-NUK">
+                                                            <rect key="frame" x="81" y="12" width="288" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hv7-2i-SWK">
+                                                            <rect key="frame" x="419" y="14" width="17" height="17"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="17" id="7zI-vb-DRl"/>
+                                                                <constraint firstAttribute="width" constant="17" id="XiS-cz-fq5"/>
+                                                            </constraints>
+                                                            <state key="normal" backgroundImage="house_search"/>
+                                                            <connections>
+                                                                <action selector="search:" destination="ISn-Tf-4Eh" eventType="touchUpInside" id="S5x-te-Xn7"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="Hv7-2i-SWK" firstAttribute="centerY" secondItem="ZBc-WL-D3i" secondAttribute="centerY" id="4ek-9D-X8f"/>
+                                                        <constraint firstItem="Hv7-2i-SWK" firstAttribute="leading" secondItem="IxP-QZ-NUK" secondAttribute="trailing" constant="50" id="5AZ-Eu-Lq1"/>
+                                                        <constraint firstItem="0z7-zp-yhP" firstAttribute="top" secondItem="ZBc-WL-D3i" secondAttribute="top" constant="1" id="7Po-Qp-oWg"/>
+                                                        <constraint firstItem="0z7-zp-yhP" firstAttribute="leading" secondItem="ZBc-WL-D3i" secondAttribute="leading" constant="1" id="GJn-Tm-to7"/>
+                                                        <constraint firstItem="IxP-QZ-NUK" firstAttribute="leading" secondItem="0z7-zp-yhP" secondAttribute="trailing" constant="10" id="NN6-UA-CiG"/>
+                                                        <constraint firstItem="IxP-QZ-NUK" firstAttribute="top" secondItem="ZBc-WL-D3i" secondAttribute="top" constant="12" id="OkV-mA-hia"/>
+                                                        <constraint firstAttribute="bottom" secondItem="0z7-zp-yhP" secondAttribute="bottom" constant="1" id="aWQ-bf-Tfa"/>
+                                                        <constraint firstAttribute="height" constant="45" id="dr3-9t-TaR"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Hv7-2i-SWK" secondAttribute="trailing" constant="8" id="kO1-HQ-joh"/>
+                                                        <constraint firstAttribute="bottom" secondItem="IxP-QZ-NUK" secondAttribute="bottom" constant="12" id="nZz-Nk-t8O"/>
+                                                        <constraint firstItem="IxP-QZ-NUK" firstAttribute="centerY" secondItem="ZBc-WL-D3i" secondAttribute="centerY" id="zha-HV-5xv"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="91O-WM-maX" userLabel="热搜">
+                                                    <rect key="frame" x="15" y="68" width="444" height="25"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_fire" translatesAutoresizingMaskIntoConstraints="NO" id="pkR-0J-dc5">
+                                                            <rect key="frame" x="0.0" y="0.0" width="15" height="25"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="15" id="7yf-rI-dRK"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="热搜：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BiM-10-BVc">
+                                                            <rect key="frame" x="20" y="0.0" width="31" height="25"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="31" id="moG-53-wHV"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PW1-J5-syJ">
+                                                            <rect key="frame" x="51" y="0.0" width="393" height="25"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </view>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="BiM-10-BVc" firstAttribute="top" secondItem="91O-WM-maX" secondAttribute="top" id="7Aj-aS-875"/>
+                                                        <constraint firstAttribute="height" constant="25" id="Asy-Ws-Weq"/>
+                                                        <constraint firstItem="PW1-J5-syJ" firstAttribute="top" secondItem="91O-WM-maX" secondAttribute="top" id="HEL-uM-ijS"/>
+                                                        <constraint firstItem="BiM-10-BVc" firstAttribute="leading" secondItem="pkR-0J-dc5" secondAttribute="trailing" constant="5" id="Jfa-Fb-5xW"/>
+                                                        <constraint firstAttribute="bottom" secondItem="pkR-0J-dc5" secondAttribute="bottom" id="LzL-cQ-B8u"/>
+                                                        <constraint firstItem="PW1-J5-syJ" firstAttribute="leading" secondItem="BiM-10-BVc" secondAttribute="trailing" id="VJa-se-MbP"/>
+                                                        <constraint firstItem="pkR-0J-dc5" firstAttribute="leading" secondItem="91O-WM-maX" secondAttribute="leading" id="chN-yz-P7m"/>
+                                                        <constraint firstAttribute="trailing" secondItem="PW1-J5-syJ" secondAttribute="trailing" id="j7Y-m0-kIv"/>
+                                                        <constraint firstAttribute="bottom" secondItem="PW1-J5-syJ" secondAttribute="bottom" id="jTr-ea-6og"/>
+                                                        <constraint firstItem="pkR-0J-dc5" firstAttribute="top" secondItem="91O-WM-maX" secondAttribute="top" id="pYb-GD-Fyg"/>
+                                                        <constraint firstAttribute="bottom" secondItem="BiM-10-BVc" secondAttribute="bottom" id="z2m-Hw-H5E"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="yev-W4-cuI" secondAttribute="trailing" id="28H-SS-WCg"/>
+                                                <constraint firstAttribute="bottom" secondItem="6Jf-OR-YMD" secondAttribute="bottom" id="4dd-hL-i0E"/>
+                                                <constraint firstAttribute="height" constant="220" id="6hd-Fo-Yeg"/>
+                                                <constraint firstAttribute="bottom" secondItem="yev-W4-cuI" secondAttribute="bottom" id="Awg-UW-owd"/>
+                                                <constraint firstItem="91O-WM-maX" firstAttribute="trailing" secondItem="ZBc-WL-D3i" secondAttribute="trailing" id="L1j-Mq-4hy"/>
+                                                <constraint firstAttribute="trailing" secondItem="6Jf-OR-YMD" secondAttribute="trailing" id="NSV-bE-BR0"/>
+                                                <constraint firstItem="yev-W4-cuI" firstAttribute="top" secondItem="ISn-Tf-4Eh" secondAttribute="top" id="Sva-Vg-Nom"/>
+                                                <constraint firstItem="6Jf-OR-YMD" firstAttribute="leading" secondItem="ISn-Tf-4Eh" secondAttribute="leading" id="eVU-si-YWl"/>
+                                                <constraint firstItem="6Jf-OR-YMD" firstAttribute="top" secondItem="ISn-Tf-4Eh" secondAttribute="top" id="iV1-FB-q5J"/>
+                                                <constraint firstItem="ZBc-WL-D3i" firstAttribute="top" secondItem="ISn-Tf-4Eh" secondAttribute="top" constant="20" id="j0k-tW-HyL"/>
+                                                <constraint firstAttribute="trailing" secondItem="ZBc-WL-D3i" secondAttribute="trailing" constant="15" id="jlu-3g-jvi"/>
+                                                <constraint firstItem="ZBc-WL-D3i" firstAttribute="leading" secondItem="ISn-Tf-4Eh" secondAttribute="leading" constant="15" id="llf-MH-wXR"/>
+                                                <constraint firstItem="91O-WM-maX" firstAttribute="leading" secondItem="ZBc-WL-D3i" secondAttribute="leading" id="ron-9h-bxU"/>
+                                                <constraint firstItem="91O-WM-maX" firstAttribute="top" secondItem="ZBc-WL-D3i" secondAttribute="bottom" constant="3" id="sPZ-fi-iv0"/>
+                                                <constraint firstItem="yev-W4-cuI" firstAttribute="leading" secondItem="ISn-Tf-4Eh" secondAttribute="leading" id="tLf-7F-IT1"/>
+                                            </constraints>
+                                            <connections>
+                                                <outlet property="bkView" destination="6Jf-OR-YMD" id="taj-yH-8IE"/>
+                                                <outlet property="cityLable" destination="dOD-5b-aov" id="wl0-PN-5fb"/>
+                                                <outlet property="hotSearchStrView" destination="PW1-J5-syJ" id="Nrf-o9-ePU"/>
+                                                <outlet property="hotSearchView" destination="91O-WM-maX" id="IQC-WH-tFg"/>
+                                                <outlet property="searchTextFiled" destination="IxP-QZ-NUK" id="a53-My-tqJ"/>
+                                                <outlet property="searchView" destination="ZBc-WL-D3i" id="Kl7-An-hdV"/>
+                                            </connections>
+                                        </view>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
+                                        <constraint firstItem="ISn-Tf-4Eh" firstAttribute="leading" secondItem="kei-x5-gVA" secondAttribute="leading" id="Hsc-oe-2EU"/>
                                         <constraint firstAttribute="height" constant="220" id="I5G-qf-dVE"/>
+                                        <constraint firstItem="ISn-Tf-4Eh" firstAttribute="top" secondItem="kei-x5-gVA" secondAttribute="top" id="WD3-Lc-9Iv"/>
+                                        <constraint firstAttribute="bottom" secondItem="ISn-Tf-4Eh" secondAttribute="bottom" id="YJv-w7-uwz"/>
+                                        <constraint firstAttribute="trailing" secondItem="ISn-Tf-4Eh" secondAttribute="trailing" id="yJg-fe-Rem"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQZ-8z-CKL">
@@ -347,7 +515,12 @@
         </view>
     </objects>
     <resources>
+        <image name="homePageIcon" width="375" height="221"/>
+        <image name="home_fire" width="14.5" height="14.5"/>
+        <image name="home_vertical" width="0.5" height="12.5"/>
         <image name="houseSource" width="8" height="13.5"/>
+        <image name="house_dowm" width="10.5" height="6"/>
+        <image name="house_search" width="17" height="17"/>
         <image name="source0S" width="191.5" height="74.5"/>
         <image name="source1N" width="191.5" height="74.5"/>
     </resources>

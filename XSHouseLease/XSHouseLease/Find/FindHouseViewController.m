@@ -12,7 +12,7 @@
 #import "XSHouseModuleViewController.h"
 
 @interface FindHouseViewController ()<UINavigationControllerDelegate,JXCategoryViewDelegate,JXCategoryListContainerViewDelegate>
-@property (weak, nonatomic) XSLocationSearchview *searchView;
+@property (weak, nonatomic) IBOutlet XSLocationSearchview *searchView;
 @property (weak, nonatomic) XSCollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UIView *imageView;
 @property (weak, nonatomic) IBOutlet UIView *resourceView;
@@ -50,12 +50,12 @@
     [super viewDidLoad];
     self.navigationController.delegate = self;
     self.resource = XSHouseSource_1;
-    XSLocationSearchview *searchView = [XSLocationSearchview locationSearchviewWithFrame:CGRectMake(0, 0, KScreenWidth, 220)];
-    searchView.searchBlack = ^(NSString * _Nonnull searhKey) {
-        NSLog(@"ss-%@",searhKey);
-    };
-    [self.imageView addSubview:searchView];
-    self.searchView = searchView;
+//    XSLocationSearchview *searchView = [XSLocationSearchview locationSearchviewWithFrame:CGRectMake(0, 0, KScreenWidth, 220)];
+//    searchView.searchBlack = ^(NSString * _Nonnull searhKey) {
+//        NSLog(@"ss-%@",searhKey);
+//    };
+//    [self.imageView addSubview:searchView];
+//    self.searchView = searchView;
     
     
     XSCollectionView *collectionView = [[XSCollectionView alloc]init];
