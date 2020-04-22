@@ -185,11 +185,18 @@
 @implementation XSItemCollectionViewCell
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
+        self.backgroundColor = [UIColor clearColor];
+        self.contentView.backgroundColor = [UIColor clearColor];
+        
         UIImageView *imageView = [[UIImageView alloc]init];
         [self.contentView addSubview:imageView];
         self.myImageView = imageView;
-        self.backgroundColor = [UIColor clearColor];
-        self.contentView.backgroundColor = [UIColor clearColor];
+        
+        UIImageView *tipImage = [[UIImageView alloc]init];
+        [self.contentView addSubview:tipImage];
+        self.tipImage = tipImage;
+        
+
         UILabel *label = [[UILabel alloc] init];
         label.backgroundColor = [UIColor clearColor];
         label.font = [UIFont systemFontOfSize:14];
@@ -203,6 +210,8 @@
 
 - (void)layoutSubviews{
     [super layoutSubviews];
+    self.tipImage.frame = CGRectMake(self.width - 52, 10, 52, 14);
+
     self.myImageView.frame = CGRectMake(0, 0, self.width, self.height - 10);
     self.titleLable.frame = CGRectMake(0, self.height - 18, self.width, 18);
 }
@@ -213,6 +222,9 @@
     }else{
         [self.myImageView sd_setImageWithURL:[NSURL URLWithString:model.icon]];
     }
+    
+    self.tipImage.image = [UIImage imageNamed:model.tipImageName];
+
     self.titleLable.text = model.name;
 }
 @end

@@ -80,6 +80,8 @@ typedef void (^clickBlack)(XSHouseModuleModel *model);
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *icon;
 @property (nonatomic, copy) NSString *iconName;
+@property (nonatomic, copy) NSString *tipImageName;
+
 @property (nonatomic, copy) clickBlack clickBlack;
 @end
 
