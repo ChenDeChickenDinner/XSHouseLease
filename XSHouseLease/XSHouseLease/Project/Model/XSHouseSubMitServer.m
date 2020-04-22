@@ -209,6 +209,11 @@ DEF_SINGLETON(XSHouseSubMitDynamicServer)
         [self.subRentParameterDict safeSetObject:renhousetInfoModel.town forKey:@"town"];
         [self.subRentParameterDict safeSetObject:renhousetInfoModel.townId forKey:@"townId"];
 
+        [self.subRentParameterDict safeSetObject:renhousetInfoModel.contentImg forKey:@"contentImg"];
+        [self.subRentParameterDict safeSetObject:renhousetInfoModel.firstImg forKey:@"firstImg"];
+        [self.subRentParameterDict safeSetObject:renhousetInfoModel.modelImg forKey:@"modelImg"];
+        [self.subRentParameterDict safeSetObject:[renhousetInfoModel.es mj_keyValues] forKey:@"es"];
+
         [self valueUpdatekWitOldhDict:[renhousetInfoModel mj_keyValues]];
     }
 
@@ -229,6 +234,12 @@ DEF_SINGLETON(XSHouseSubMitDynamicServer)
             
             for (XSValue *oldValue in oldvalueModel.values) {
                 id newValue = [dict objectForKey:oldValue.key];
+                
+                if ([oldValue.key isEqualToString:@"contentImg"]) {
+                    oldValue.imgs = newValue;
+                }else if ([oldValue.key isEqualToString:@"modelImg"]){
+                    oldValue.imgs = newValue?[NSArray arrayWithObject:newValue]:nil;
+                }
                   NSLog(@"key = %@,value = %@，valueClass= %@",oldValue.key,newValue,NSStringFromClass([newValue class]));
                 
                 if (oldValue.sendType == XSValueSendType_Int) {

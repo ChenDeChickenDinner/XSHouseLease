@@ -8,10 +8,7 @@
 
 #import "XSImagesTableViewCell.h"
 
-@interface XSCollectionViewImageCell:UICollectionViewCell
-@property(nonatomic,strong)UIImageView *imageView;
-@property(nonatomic,copy) NSString *imageUrl;
-@end
+
 @implementation XSCollectionViewImageCell
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {

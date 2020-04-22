@@ -1,11 +1,33 @@
 
 [
-    {
+ {
      "title":"图片上传",
      "sequence":2,
      "cellHeight":300,
-     "cellClass":"XSHouseSubPictureSubmitCell"
-     },
+     "cellClass":"XSHouseSubPictureSubmitCell",
+     "arrayValue": [
+                     {
+                         "name":"图片上传",
+                         "key":"contentImg",
+                         "moreSelect":false,
+                         "sequence":0,
+                         "keyInputType":3,
+                         "keyTextInputType":0,
+                         "values":[
+                                     {
+                                     "placeholder":null,
+                                     "frontDescribe":null,
+                                     "value":null,
+                                     "valueStr":null,
+                                     "hindDescribe":null,
+                                     "isSelect":false,
+                                     "sendType":1
+                                    }
+                                ]
+
+                     }
+                   ]
+  },
   {
    "title":"标题（30个字以内）",
    "sequence":0,

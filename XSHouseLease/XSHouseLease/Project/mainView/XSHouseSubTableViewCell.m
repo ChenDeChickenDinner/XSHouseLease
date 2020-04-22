@@ -8,6 +8,7 @@
 
 #import "XSHouseSubTableViewCell.h"
 #import "XSSearchEstateController.h"
+#import "XSImagesTableViewCell.h"
 
 #define lableWidth 2
 static NSString *CollectionCellIdentifier = @"CollectionCellIdentifierA";
@@ -426,6 +427,23 @@ static NSString *CollectionCellIdentifierB = @"CollectionCellIdentifierB";
 
 - (void)awakeFromNib{
     [super awakeFromNib];
+    
+    
+     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
+     layout.itemSize = CGSizeMake(105, 105);
+     layout.minimumInteritemSpacing = 10;
+     layout.minimumLineSpacing = 10;
+     self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:layout];
+     self.collectionView.backgroundColor = [UIColor clearColor];
+     self.collectionView.delegate = self;
+     self.collectionView.dataSource = self;
+     self.collectionView.scrollsToTop = NO;
+     self.collectionView.pagingEnabled = NO;
+     self.collectionView.scrollEnabled = NO;
+     self.collectionView.showsHorizontalScrollIndicator = NO;
+     self.collectionView.bounces = NO;
+     [self.collectionView registerClass:[XSCollectionViewImageCell class] forCellWithReuseIdentifier:@"XSCollectionViewImageCell"];
+    
      self.photoView = [[HXPhotoView alloc]initWithManager:self.manager];
      self.photoView.collectionView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
      self.photoView.delegate = self; //
@@ -436,21 +454,29 @@ static NSString *CollectionCellIdentifierB = @"CollectionCellIdentifierB";
      self.photoView.showAddCell = YES; // 是否显示添加的cell 默认 YES
      //    photoView.addImageName = nil; // 添加按钮的图片
      //    photoView.deleteImageName = nil; // 删除按钮图片
-    [self.bkPhotoView addSubview:self.photoView];
-
+ 
      self.photoView.previewShowDeleteButton = YES; // 预览大图时是否显示删除按钮
      self.photoView.previewStyle = HXPhotoViewPreViewShowStyleDefault; //预览大图时的风格样式
      self.photoView.adaptiveDarkness = YES;// 底部选择视图是否自适应暗黑风格
      self.photoView.updateFrameBlock = ^(CGRect frame) {
          NSLog(@"frame:%@",NSStringFromCGRect(frame));
      };
+     [self.bkPhotoView addSubview:self.photoView];
+     [self.bkPhotoView addSubview:self.collectionView];
+
 }
 - (void)layoutSubviews{
     [super layoutSubviews];
     self.photoView.frame = self.bkPhotoView.bounds;
-    
+    self.collectionView.frame = self.bkPhotoView.bounds;
+
 }
+
+
 - (void)refreshData{
+    XSKeyValueModel *model = [self.dataModel.arrayValue safeObjectAtIndex:0];
+    XSValue *valueData = model.values.firstObject;
+    
     WEAK_SELF;
     self.photoView.changeCompleteBlock = ^(NSArray<HXPhotoModel *> *allList, NSArray<HXPhotoModel *> *photos, NSArray<HXPhotoModel *> *videos, BOOL isOriginal) {
         STRONG_SELF;
@@ -476,13 +502,38 @@ static NSString *CollectionCellIdentifierB = @"CollectionCellIdentifierB";
         self.manager.configuration.photoMaxNum = 1;
     }else{
         self.title.text = @"房源图片上传";
-         self.titleB.text = @"（最多上传5张照片）";
+        self.titleB.text = @"（最多上传5张照片）";
 
         self.manager.configuration.maxNum = 5;
         self.manager.configuration.photoMaxNum = 5;
     }
+ 
     self.manager.configuration.videoMaxNum = 0;
+    
+    id house_id =  [self.subDict objectForKey:@"id"];
+    if (house_id && valueData.imgs.count > 0) {
+        self.collectionView.hidden = NO;
+    }else{
+        self.collectionView.hidden = YES;
+    }
+    self.photoView.hidden = !self.collectionView.hidden;
+
 }
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    XSKeyValueModel *model = [self.dataModel.arrayValue safeObjectAtIndex:0];
+    XSValue *valueData = model.values.firstObject;
+    return valueData.imgs.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    XSKeyValueModel *model = [self.dataModel.arrayValue safeObjectAtIndex:0];
+    XSValue *valueData = model.values.firstObject;
+    NSString *iamgeStr = [valueData.imgs safeObjectAtIndex:indexPath.row];
+    XSCollectionViewImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"XSCollectionViewImageCell" forIndexPath:indexPath];
+    cell.imageUrl = iamgeStr;
+    return cell;
+}
+
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     [picker dismissViewControllerAnimated:YES completion:nil];
     

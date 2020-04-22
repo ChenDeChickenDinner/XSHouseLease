@@ -27,6 +27,7 @@ typedef void(^XSValuechangeStatus)(XSHouseInfoCellModel *model,id data,XSBHouseK
 @property (nonatomic,copy) NSString *placeholder;
 @property (nonatomic,copy)   XSValueUpdate updateBlack;
 @property (nonatomic,assign) XSValueSendType sendType;
+@property (nonatomic, copy) NSArray<NSString *> *imgs;//内容照片
 @end
 
 @interface XSKeyValueModel : NSObject

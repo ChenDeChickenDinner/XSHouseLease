@@ -18,32 +18,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D40810AD-3146-4583-BD3C-7C6659D71EFD"
+            uuid = "A63B17AC-6E86-4277-A0F7-FA4CBDBAA4CF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "XSHouseLease/Project/mainView/XSHouseSubTableViewCell.m"
+            filePath = "XSHouseLease/Project/Controller/XSHouseSubmitFirstViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "209"
-            endingLineNumber = "209"
-            landmarkName = "-refreshData"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
+            landmarkName = "-submitRenthouseSave"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1287B920-1284-478A-BC6B-20F4888FBC08"
+            uuid = "A2C92F5E-9EBF-41CE-863A-355F4E6BF0C2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "XSHouseLease/Project/Model/XSHouseSubMitServer.m"
+            filePath = "XSHouseLease/Project/Controller/XSHouseSubmitFirstViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "254"
-            endingLineNumber = "254"
-            landmarkName = "-valueUpdatekWitOldhDict:array:"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
+            landmarkName = "-submitRenthouseSave"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+@interface XSCollectionViewImageCell:UICollectionViewCell
+@property(nonatomic,strong)UIImageView *imageView;
+@property(nonatomic,copy) NSString *imageUrl;
+@end
 @interface XSImagesTableViewCell : UITableViewCell
 @property (nonatomic, strong) XSHouseDetailsDataImgsModel *dataModel;
 
