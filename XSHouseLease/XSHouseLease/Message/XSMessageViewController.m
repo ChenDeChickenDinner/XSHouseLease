@@ -1,22 +1,22 @@
 //
-//  MessageViewController.m
+//  XSMessageViewController.m
 //  XSHouseLease
 //
 //  Created by heartbeats on 2020/3/16.
 //  Copyright © 2020 fang. All rights reserved.
 //
 
-#import "MessageViewController.h"
-#import "YBModelFile.h"
+#import "XSMessageViewController.h"
+//#import "YBModelFile.h"
 
 
-@interface MessageViewController ()
+@interface XSMessageViewController ()
 @property(nonatomic,strong) NSThread *myThread;
 
 @property(nonatomic,strong) MAMapView *mapView;
 @end
 
-@implementation MessageViewController
+@implementation XSMessageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -48,10 +48,10 @@
 //    }];
 
     
-      NSString *path = [[NSBundle mainBundle] pathForResource:@"XSRentHouseInfoB" ofType:@"json"];
-      // 将文件数据化
-      NSData *data = [[NSData alloc] initWithContentsOfFile:path];
-      [YBModelFile createFileWithName:@"XHouseInfo" data:data];
+//      NSString *path = [[NSBundle mainBundle] pathForResource:@"XSRentHouseInfoB" ofType:@"json"];
+//      // 将文件数据化
+//      NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+//      [YBModelFile createFileWithName:@"XHouseInfo" data:data];
 }
 @end
 

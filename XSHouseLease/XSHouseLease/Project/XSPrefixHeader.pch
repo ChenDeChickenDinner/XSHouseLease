@@ -14,7 +14,7 @@
 #import "HBCategory.h"
 
 #import "MBProgressHUD.h"
-#import "YBModelFile.h"
+//#import "YBModelFile.h"
 #import "XSUserServer.h"
 #import "NSData+Base64.h"
 #import "NSString+Base64.h"

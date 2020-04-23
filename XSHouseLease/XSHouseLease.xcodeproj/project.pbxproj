@@ -117,10 +117,11 @@
 		5585FFC6244972C4001A09B1 /* NSMutableString+safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 5585FF0D244972C4001A09B1 /* NSMutableString+safe.m */; };
 		5585FFC7244972C4001A09B1 /* NSDate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5585FF0F244972C4001A09B1 /* NSDate+Category.m */; };
 		5585FFC8244972C4001A09B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5585FF11244972C4001A09B1 /* Assets.xcassets */; };
-		5585FFC9244972C4001A09B1 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5585FF13244972C4001A09B1 /* MessageViewController.m */; };
 		5585FFCB244972C4001A09B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5585FF17244972C4001A09B1 /* Main.storyboard */; };
 		6CBA187B244C617800F9B887 /* XSResourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBA1879244C617800F9B887 /* XSResourceViewController.m */; };
 		6CBA187C244C617800F9B887 /* XSResourceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CBA187A244C617800F9B887 /* XSResourceViewController.xib */; };
+		6CBA187F2450764600F9B887 /* XSMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBA187E2450764600F9B887 /* XSMessageViewController.m */; };
+		6CBA188224508F9100F9B887 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CBA188024508F9100F9B887 /* LaunchScreen.storyboard */; };
 		9AC3A3F8DF5C36DD201ED436 /* libPods-XSHouseLease.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2818EC9B5CB7624F84048215 /* libPods-XSHouseLease.a */; };
 /* End PBXBuildFile section */
 
@@ -286,8 +287,6 @@
 		5585FF0F244972C4001A09B1 /* NSDate+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Category.m"; sourceTree = "<group>"; };
 		5585FF10244972C4001A09B1 /* NSDate+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Category.h"; sourceTree = "<group>"; };
 		5585FF11244972C4001A09B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5585FF13244972C4001A09B1 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
-		5585FF14244972C4001A09B1 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		5585FF17244972C4001A09B1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5585FF8D244972C4001A09B1 /* XSBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBaseViewController.m; sourceTree = "<group>"; };
 		5585FF8E244972C4001A09B1 /* XSBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBaseTableViewCell.h; sourceTree = "<group>"; };
@@ -323,6 +322,9 @@
 		6CBA1878244C617800F9B887 /* XSResourceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSResourceViewController.h; sourceTree = "<group>"; };
 		6CBA1879244C617800F9B887 /* XSResourceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSResourceViewController.m; sourceTree = "<group>"; };
 		6CBA187A244C617800F9B887 /* XSResourceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSResourceViewController.xib; sourceTree = "<group>"; };
+		6CBA187D2450764600F9B887 /* XSMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMessageViewController.h; sourceTree = "<group>"; };
+		6CBA187E2450764600F9B887 /* XSMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSMessageViewController.m; sourceTree = "<group>"; };
+		6CBA188124508F9100F9B887 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		854FDABF6045260FA4A570E3 /* Pods-XSHouseLease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XSHouseLease.release.xcconfig"; path = "Target Support Files/Pods-XSHouseLease/Pods-XSHouseLease.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -621,6 +623,7 @@
 		5585FED3244972C4001A09B1 /* XSHouseLease */ = {
 			isa = PBXGroup;
 			children = (
+				6CBA188024508F9100F9B887 /* LaunchScreen.storyboard */,
 				5585FF11244972C4001A09B1 /* Assets.xcassets */,
 				5585FEDC244972C4001A09B1 /* fangdinghui.cer */,
 				5585FFAE244972C4001A09B1 /* Info.plist */,
@@ -790,8 +793,8 @@
 		5585FF12244972C4001A09B1 /* Message */ = {
 			isa = PBXGroup;
 			children = (
-				5585FF13244972C4001A09B1 /* MessageViewController.m */,
-				5585FF14244972C4001A09B1 /* MessageViewController.h */,
+				6CBA187D2450764600F9B887 /* XSMessageViewController.h */,
+				6CBA187E2450764600F9B887 /* XSMessageViewController.m */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -969,6 +972,7 @@
 				5585016A24497F5F001A09B1 /* XSNewHouseDetailsInfo.json in Resources */,
 				5585016824497F5F001A09B1 /* XSHouseModuleViewController.xib in Resources */,
 				5585018E24497F5F001A09B1 /* XSSearchConditionalView.xib in Resources */,
+				6CBA188224508F9100F9B887 /* LaunchScreen.storyboard in Resources */,
 				5585016C24497F5F001A09B1 /* XSSecondHouseDetailsInfo.json in Resources */,
 				5585017424497F5F001A09B1 /* XSRentHouseInfoFirst.json in Resources */,
 				5585017324497F5F001A09B1 /* XSRentHouseInfoSecond.json in Resources */,
@@ -1041,7 +1045,6 @@
 				5585015024497F5F001A09B1 /* XSSearchEstateController.m in Sources */,
 				5585FFB4244972C4001A09B1 /* XShouseSubNetworkInterface.m in Sources */,
 				5585016224497F5F001A09B1 /* XSLPDTViewController.m in Sources */,
-				5585FFC9244972C4001A09B1 /* MessageViewController.m in Sources */,
 				5585FFB2244972C4001A09B1 /* MyInfoViewController.m in Sources */,
 				5585001D244972C5001A09B1 /* XSUserLogInModel.m in Sources */,
 				5585FFBB244972C4001A09B1 /* NSMutableDictionary+safe.m in Sources */,
@@ -1066,6 +1069,7 @@
 				5585016724497F5F001A09B1 /* XSHouseModuleViewController.m in Sources */,
 				5585016024497F5F001A09B1 /* XSLPDTTableViewCell.m in Sources */,
 				5585017F24497F5F001A09B1 /* XSHouseInfoTableView.m in Sources */,
+				6CBA187F2450764600F9B887 /* XSMessageViewController.m in Sources */,
 				5585001A244972C5001A09B1 /* XSNavViewController.m in Sources */,
 				5585017E24497F5F001A09B1 /* XSHouseInfoShowCell.m in Sources */,
 				5585FFB0244972C4001A09B1 /* HomePageViewController.m in Sources */,
@@ -1108,6 +1112,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6CBA188024508F9100F9B887 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6CBA188124508F9100F9B887 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		6C6BC15D241FA75400B62001 /* Debug */ = {
@@ -1167,6 +1182,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -1221,6 +1237,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};

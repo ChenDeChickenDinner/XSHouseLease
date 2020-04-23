@@ -63,6 +63,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)saveagencyWithDict:(NSMutableDictionary *)dict callback:(HBCompletionBlock)callback;
 // 信息统计
 - (void)statisticsWithCallback:(HBCompletionBlock)callback;
+- (void)authenticationWithCallback:(HBCompletionBlock)callback;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -248,6 +248,16 @@ NSString *url = [NSString stringWithFormat:@"%@/estate/hots",XSBaseUrl];
     [self POST:url param:dict progress:nil callback:callback];
 
 }
+- (void)authenticationWithCallback:(HBCompletionBlock)callback{
+    NSNumber *customer_id = [XSUserServer sharedInstance].userModel.ID;
+    NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
+    NSString *url = [NSString stringWithFormat:@"%@/customer/authentication",XSBaseUrl];
+    if (customer_id) {
+        url = [url stringByAppendingFormat:@"/%@",customer_id];
+    }
+    [self GET:url param:dict progress:nil callback:callback];
+
+}
 // 信息统计
 - (void)statisticsWithCallback:(HBCompletionBlock)callback{
     NSNumber *customer_id = [XSUserServer sharedInstance].userModel.ID;

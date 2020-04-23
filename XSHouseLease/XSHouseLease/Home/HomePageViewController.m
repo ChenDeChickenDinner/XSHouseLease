@@ -69,6 +69,20 @@
     [super viewWillLayoutSubviews];
 //    self.searchView.frame = CGRectMake(0, 0, KScreenWidth, 220);
 }
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    if ([XSUserServer sharedInstance].isLogin ) {
+        [self.subInfoInterface authenticationWithCallback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+            if (error == nil && responseModel.code.intValue == SuccessCode) {
+                [XSUserServer sharedInstance].userModel.agency = YES;
+            }
+        }];
+    }
+
+    
+}
 - (void)agencyChicken:(void(^)(void))success{
     
     if (self.resource == XSHouseSource_2) {
@@ -142,6 +156,7 @@
 -(void)city_tree{
     WEAK_SELF;
 
+    
     [[XSPublicServer sharedInstance] cityTreeWithCallback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
         
     }];

@@ -61,7 +61,7 @@
     [more addTarget:self action:@selector(moreClick) forControlEvents:UIControlEventTouchUpInside];
     more.frame = CGRectMake(0, 0, self.view.width, 38);
     [more setTitle:@"更多房源推荐" forState:UIControlStateNormal];
-    more.backgroundColor =[UIColor hx_colorWithHexStr:@"#E82B2B"];
+    more.backgroundColor = [UIColor hx_colorWithHexStr:@"#E82B2B" alpha:0.3];
     [more setTitleColor:[UIColor hx_colorWithHexStr:@"#F9EAEA"] forState:UIControlStateNormal];
     self.more = more;
 

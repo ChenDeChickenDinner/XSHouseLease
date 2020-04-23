@@ -11,7 +11,7 @@
 #import "HomePageViewController.h"
 #import "FindHouseViewController.h"
 #import "MyInfoViewController.h"
-#import "MessageViewController.h"
+#import "XSMessageViewController.h"
 #import <Foundation/Foundation.h>
 #import "XSNavViewController.h"
 
@@ -27,7 +27,7 @@
     
     HomePageViewController *HomePage =  [[HomePageViewController alloc]init];
     FindHouseViewController *find =  [[FindHouseViewController alloc]init];
-    MessageViewController *message =  [[MessageViewController alloc]init];
+    XSMessageViewController *message =  [[XSMessageViewController alloc]init];
     MyInfoViewController *myinfo =  [[MyInfoViewController alloc]init];
     [self addChildVc:HomePage title:@"首页" image:@"pageN" selectedImage:@"pageS"];
     [self addChildVc:find title:@"查找" image:@"findN" selectedImage:@"findS"];

@@ -251,7 +251,7 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LqN-ZO-KAZ">
-                    <rect key="frame" x="110" y="404" width="155" height="13"/>
+                    <rect key="frame" x="97.5" y="404" width="180" height="13"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWl-cK-ypP">
                             <rect key="frame" x="0.0" y="0.0" width="13" height="13"/>
@@ -277,9 +277,9 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RRC-vi-8Ul">
-                            <rect key="frame" x="40" y="0.0" width="115" height="13"/>
+                            <rect key="frame" x="40" y="0.0" width="140" height="13"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="《XXXX平台服务协议》">
+                            <state key="normal" title="《房鼎汇平台服务协议》">
                                 <color key="titleColor" red="0.90980392160000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                         </button>
@@ -293,7 +293,7 @@
                         <constraint firstItem="RRC-vi-8Ul" firstAttribute="top" secondItem="LqN-ZO-KAZ" secondAttribute="top" id="M0S-t5-oMW"/>
                         <constraint firstAttribute="bottom" secondItem="aWl-cK-ypP" secondAttribute="bottom" id="PAQ-3n-KTf"/>
                         <constraint firstItem="aWl-cK-ypP" firstAttribute="leading" secondItem="LqN-ZO-KAZ" secondAttribute="leading" id="aGe-sA-1uO"/>
-                        <constraint firstAttribute="width" constant="155" id="dA4-vM-wiO"/>
+                        <constraint firstAttribute="width" constant="180" id="dA4-vM-wiO"/>
                         <constraint firstItem="18x-Mv-xkG" firstAttribute="top" secondItem="LqN-ZO-KAZ" secondAttribute="top" id="is8-cF-J1c"/>
                         <constraint firstItem="aWl-cK-ypP" firstAttribute="top" secondItem="LqN-ZO-KAZ" secondAttribute="top" id="qAM-kw-4zs"/>
                         <constraint firstItem="RRC-vi-8Ul" firstAttribute="leading" secondItem="18x-Mv-xkG" secondAttribute="trailing" id="tMl-Ta-VS6"/>

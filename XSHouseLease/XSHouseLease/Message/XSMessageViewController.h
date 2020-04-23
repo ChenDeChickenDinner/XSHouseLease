@@ -1,5 +1,5 @@
 //
-//  MessageViewController.h
+//  XSMessageViewController.h
 //  XSHouseLease
 //
 //  Created by heartbeats on 2020/3/16.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MessageViewController : XSBaseViewController
+@interface XSMessageViewController : XSBaseViewController
 
 @end
 

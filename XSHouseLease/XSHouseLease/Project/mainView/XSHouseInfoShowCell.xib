@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1060,18 +1060,18 @@
             </connections>
             <point key="canvasLocation" x="650" y="472"/>
         </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="XSHouseRecommendedCell" rowHeight="527" id="TRT-mW-3lh" customClass="XSHouseRecommendedCell">
-            <rect key="frame" x="0.0" y="0.0" width="402" height="527"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="XSHouseRecommendedCell" rowHeight="451" id="TRT-mW-3lh" customClass="XSHouseRecommendedCell">
+            <rect key="frame" x="0.0" y="0.0" width="408" height="451"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TRT-mW-3lh" id="5AF-oc-oKp">
-                <rect key="frame" x="0.0" y="0.0" width="402" height="527"/>
+                <rect key="frame" x="0.0" y="0.0" width="408" height="451"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1xR-Ce-E1Q">
-                        <rect key="frame" x="0.0" y="0.0" width="402" height="527"/>
+                        <rect key="frame" x="0.0" y="0.0" width="408" height="451"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9mH-4l-tCG">
-                                <rect key="frame" x="15" y="0.0" width="372" height="35"/>
+                                <rect key="frame" x="15" y="0.0" width="378" height="35"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="猜你喜欢" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zuy-Pa-nof">
                                         <rect key="frame" x="0.0" y="15.5" width="65.5" height="19.5"/>
@@ -1088,38 +1088,21 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C9Z-Cb-1k6">
-                                <rect key="frame" x="0.0" y="45" width="402" height="384"/>
+                                <rect key="frame" x="0.0" y="45" width="408" height="384"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="384" id="WPc-yN-QTd"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VxJ-gf-UJE" customClass="XSRoundedBtn1View">
-                                <rect key="frame" x="15" y="453" width="372" height="38"/>
-                                <color key="backgroundColor" red="0.97647058819999999" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="mYr-Vr-WLg"/>
-                                </constraints>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="更多推荐房源">
-                                    <color key="titleColor" red="0.90980392160000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="more:" destination="TRT-mW-3lh" eventType="touchUpInside" id="faj-xa-heA"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="VxJ-gf-UJE" firstAttribute="top" secondItem="C9Z-Cb-1k6" secondAttribute="bottom" constant="24" id="61C-pt-yrv"/>
-                            <constraint firstItem="VxJ-gf-UJE" firstAttribute="leading" secondItem="9mH-4l-tCG" secondAttribute="leading" id="8pl-Mc-cS0"/>
                             <constraint firstAttribute="trailing" secondItem="9mH-4l-tCG" secondAttribute="trailing" constant="15" id="QbJ-Kr-dpW"/>
                             <constraint firstItem="9mH-4l-tCG" firstAttribute="leading" secondItem="1xR-Ce-E1Q" secondAttribute="leading" constant="15" id="S3w-c8-UdO"/>
                             <constraint firstItem="C9Z-Cb-1k6" firstAttribute="top" secondItem="9mH-4l-tCG" secondAttribute="bottom" constant="10" id="cT4-xt-RB1"/>
                             <constraint firstAttribute="trailing" secondItem="C9Z-Cb-1k6" secondAttribute="trailing" id="hlX-md-dac"/>
-                            <constraint firstAttribute="bottom" secondItem="VxJ-gf-UJE" secondAttribute="bottom" constant="36" id="izf-Bb-UH6"/>
-                            <constraint firstItem="VxJ-gf-UJE" firstAttribute="trailing" secondItem="9mH-4l-tCG" secondAttribute="trailing" id="leJ-zb-79t"/>
                             <constraint firstItem="9mH-4l-tCG" firstAttribute="top" secondItem="1xR-Ce-E1Q" secondAttribute="top" id="nt5-fK-JxC"/>
+                            <constraint firstAttribute="bottom" secondItem="C9Z-Cb-1k6" secondAttribute="bottom" constant="22" id="p5H-IB-0zK"/>
                             <constraint firstItem="C9Z-Cb-1k6" firstAttribute="leading" secondItem="1xR-Ce-E1Q" secondAttribute="leading" id="uNN-q6-t6X"/>
                         </constraints>
                     </view>
@@ -1136,7 +1119,7 @@
                 <outlet property="bkView" destination="C9Z-Cb-1k6" id="6TF-2E-o8K"/>
                 <outlet property="listHeight" destination="WPc-yN-QTd" id="uQd-jd-Hxo"/>
             </connections>
-            <point key="canvasLocation" x="1470" y="300"/>
+            <point key="canvasLocation" x="1473.913043478261" y="274.21875"/>
         </tableViewCell>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" rowHeight="453" id="I9h-XM-zZ1" customClass="XSHouseDoorCell">
             <rect key="frame" x="0.0" y="0.0" width="442" height="320"/>
