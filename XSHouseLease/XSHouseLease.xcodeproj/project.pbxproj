@@ -13,7 +13,6 @@
 		55850014244972C5001A09B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5585FF93244972C4001A09B1 /* main.m */; };
 		55850015244972C5001A09B1 /* FindHouseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5585FF96244972C4001A09B1 /* FindHouseViewController.m */; };
 		55850016244972C5001A09B1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5585FF9A244972C4001A09B1 /* ViewController.m */; };
-		55850017244972C5001A09B1 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5585FF9B244972C4001A09B1 /* SceneDelegate.m */; };
 		55850018244972C5001A09B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5585FF9D244972C4001A09B1 /* AppDelegate.m */; };
 		55850019244972C5001A09B1 /* XSTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5585FF9E244972C4001A09B1 /* XSTabBarViewController.m */; };
 		5585001A244972C5001A09B1 /* XSNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5585FF9F244972C4001A09B1 /* XSNavViewController.m */; };
@@ -300,13 +299,11 @@
 		5585FF98244972C4001A09B1 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5585FF99244972C4001A09B1 /* XSTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSTabBarViewController.h; sourceTree = "<group>"; };
 		5585FF9A244972C4001A09B1 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		5585FF9B244972C4001A09B1 /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		5585FF9C244972C4001A09B1 /* XSNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSNavViewController.h; sourceTree = "<group>"; };
 		5585FF9D244972C4001A09B1 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5585FF9E244972C4001A09B1 /* XSTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSTabBarViewController.m; sourceTree = "<group>"; };
 		5585FF9F244972C4001A09B1 /* XSNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSNavViewController.m; sourceTree = "<group>"; };
 		5585FFA0244972C4001A09B1 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5585FFA1244972C4001A09B1 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		5585FFA3244972C4001A09B1 /* XSUserLogInModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSUserLogInModel.h; sourceTree = "<group>"; };
 		5585FFA4244972C4001A09B1 /* XSLogInVcModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSLogInVcModel.m; sourceTree = "<group>"; };
 		5585FFA6244972C4001A09B1 /* XSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSLoginViewController.m; sourceTree = "<group>"; };
@@ -828,8 +825,6 @@
 				5585FF98244972C4001A09B1 /* AppDelegate.h */,
 				5585FF9D244972C4001A09B1 /* AppDelegate.m */,
 				558501AD244D8BDF001A09B1 /* LYEmptyView */,
-				5585FFA1244972C4001A09B1 /* SceneDelegate.h */,
-				5585FF9B244972C4001A09B1 /* SceneDelegate.m */,
 				5585FFA0244972C4001A09B1 /* ViewController.h */,
 				5585FF9A244972C4001A09B1 /* ViewController.m */,
 				5585FF9C244972C4001A09B1 /* XSNavViewController.h */,
@@ -1061,7 +1056,6 @@
 				5585FFC2244972C4001A09B1 /* NSObject+swizzle.m in Sources */,
 				558501A4244998C7001A09B1 /* XSVertiaciListView.m in Sources */,
 				55850013244972C5001A09B1 /* XSBaseTableViewCell.m in Sources */,
-				55850017244972C5001A09B1 /* SceneDelegate.m in Sources */,
 				5585FFBA244972C4001A09B1 /* UIView+HBExtension.m in Sources */,
 				5585017624497F5F001A09B1 /* XSHouseSubMitModel.m in Sources */,
 				5585017724497F5F001A09B1 /* XSHouseSubMitServer.m in Sources */,
