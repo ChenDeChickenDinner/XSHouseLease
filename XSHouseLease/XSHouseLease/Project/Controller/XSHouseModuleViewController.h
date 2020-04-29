@@ -14,7 +14,6 @@
 @property (strong, nonatomic) XSHouseModuleModel  *model;
 @property (weak, nonatomic)  UIImageView *myImageView;
 @property (weak, nonatomic)  UIImageView *tipImage;
-
 @property (weak, nonatomic)  UILabel *titleLable;
 @end
 

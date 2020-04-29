@@ -217,6 +217,24 @@
 }
 @end
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @interface XSHouseResourceListViewController ()
 
 @end

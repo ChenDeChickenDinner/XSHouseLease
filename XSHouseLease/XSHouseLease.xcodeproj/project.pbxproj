@@ -374,6 +374,8 @@
 				6CBA1878244C617800F9B887 /* XSResourceViewController.h */,
 				6CBA1879244C617800F9B887 /* XSResourceViewController.m */,
 				6CBA187A244C617800F9B887 /* XSResourceViewController.xib */,
+				558501BB244FCC15001A09B1 /* XSWKWebViewController.h */,
+				558501BC244FCC15001A09B1 /* XSWKWebViewController.m */,
 			);
 			path = OtherController;
 			sourceTree = "<group>";
@@ -457,19 +459,17 @@
 		5585010124497F5F001A09B1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5585010924497F5F001A09B1 /* XSHouseSubmitFirstViewController.h */,
-				5585010424497F5F001A09B1 /* XSHouseSubmitFirstViewController.m */,
-				5585010724497F5F001A09B1 /* XSHouseSubmitFirstViewController.xib */,
-				5585010524497F5F001A09B1 /* XSHouseModuleViewController.h */,
-				5585010A24497F5F001A09B1 /* XSHouseModuleViewController.m */,
-				5585010B24497F5F001A09B1 /* XSHouseModuleViewController.xib */,
-				558501A8244D7AE9001A09B1 /* XSHouselishViewController.h */,
-				558501A7244D7AE8001A09B1 /* XSHouselishViewController.m */,
 				5585010824497F5F001A09B1 /* XSHouseDetailsController.h */,
 				5585010324497F5F001A09B1 /* XSHouseDetailsController.m */,
 				5585010224497F5F001A09B1 /* XSHouseDetailsController.xib */,
-				558501BB244FCC15001A09B1 /* XSWKWebViewController.h */,
-				558501BC244FCC15001A09B1 /* XSWKWebViewController.m */,
+				558501A8244D7AE9001A09B1 /* XSHouselishViewController.h */,
+				558501A7244D7AE8001A09B1 /* XSHouselishViewController.m */,
+				5585010524497F5F001A09B1 /* XSHouseModuleViewController.h */,
+				5585010A24497F5F001A09B1 /* XSHouseModuleViewController.m */,
+				5585010B24497F5F001A09B1 /* XSHouseModuleViewController.xib */,
+				5585010924497F5F001A09B1 /* XSHouseSubmitFirstViewController.h */,
+				5585010424497F5F001A09B1 /* XSHouseSubmitFirstViewController.m */,
+				5585010724497F5F001A09B1 /* XSHouseSubmitFirstViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -665,14 +665,14 @@
 			children = (
 				5585FEE1244972C4001A09B1 /* XSHouseBunnerModel.h */,
 				5585FEE7244972C4001A09B1 /* XSHouseBunnerModel.m */,
-				5585FEE3244972C4001A09B1 /* XShouseSubNetworkInterface.h */,
-				5585FEDF244972C4001A09B1 /* XShouseSubNetworkInterface.m */,
 				5585FEDE244972C4001A09B1 /* XSNetworkInterface.h */,
 				5585FEE4244972C4001A09B1 /* XSNetworkInterface.m */,
 				5585FEE0244972C4001A09B1 /* XSOperationParam.h */,
 				5585FEE6244972C4001A09B1 /* XSOperationParam.m */,
 				5585FEE5244972C4001A09B1 /* XSUserInfoInterface.h */,
 				5585FEE2244972C4001A09B1 /* XSUserInfoInterface.m */,
+				5585FEE3244972C4001A09B1 /* XShouseSubNetworkInterface.h */,
+				5585FEDF244972C4001A09B1 /* XShouseSubNetworkInterface.m */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
