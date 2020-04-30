@@ -10,6 +10,7 @@
 #import "XSLocationSearchview.h"
 #import "XSHouseSubmitFirstViewController.h"
 #import "XSResourceViewController.h"
+#import "XSHouselishViewController.h"
 
 @interface HomePageViewController ()<UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *titleView;
@@ -126,12 +127,15 @@
 
            case 2:
            {
-                
+                XSHouselishViewController *vc = [[XSHouselishViewController alloc]init];
+                [self.navigationController pushViewController:vc animated:YES];
             }
            break;
            case 3:
            {
-            
+            XSHouselishViewController *vc = [[XSHouselishViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+
            }
            break;
 

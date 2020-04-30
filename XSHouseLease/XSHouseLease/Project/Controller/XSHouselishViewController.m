@@ -11,19 +11,114 @@
 #import "XSHouseInfoShowModel.h"
 #import "XSHouseDetailsController.h"
 #import "XSHouseSubmitFirstViewController.h"
-#define number 20
-@interface XSHouselishViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property (nonatomic,strong) UITableView *tableView;
-@property(nonatomic,strong) NSMutableArray *array;
+#import "XSCollectionView.h"
 
-@property(nonatomic,strong) XSRoundedBtn1View *more;
+#define number 20
+@interface XSHouselishViewController ()
+<UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate>
+@property (nonatomic,strong) XSRegionSearchView *searcView;
+@property (nonatomic,strong) SDCycleScrollView  *cycleScrollView;
+@property (nonatomic,strong) XSCollectionView   *collectionView;
+@property (nonatomic,strong) XSRoundedBtn1View  *moreView;
+
+@property(nonatomic,strong) UITableView *tableView;
+
+
+@property(nonatomic,strong) NSMutableArray *array;
+@property(nonatomic,strong) NSMutableArray<XSHouseModuleModel *> *headerArray;
 @end
 
 @implementation XSHouselishViewController
+- (NSMutableArray *)array{
+    if (!_array) {
+        _array = [NSMutableArray array];
+    }
+    return _array;
+}
+
+- (NSMutableArray<XSHouseModuleModel *> *)headerArray{
+    if (!_headerArray) {
+        _headerArray = [NSMutableArray array];
+    }
+    return _headerArray;
+}
+- (XSRegionSearchView *)searcView{
+    if (!_searcView) {
+        WEAK_SELF;
+        _searcView = [[XSRegionSearchView alloc]init];
+        _searcView.searchBlack = ^(NSString *searhKey) {
+            STRONG_SELF;
+            [self loadData];
+        };
+    }
+    return _searcView;
+}
+
+- (UITableView *)tableView{
+    if (!_tableView) {
+        WEAK_SELF;
+        _tableView = [[UITableView alloc]initWithFrame:self.view.bounds];
+        _tableView.backgroundColor = [UIColor whiteColor];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.rowHeight = UITableViewAutomaticDimension;
+        _tableView.estimatedRowHeight = 100;
+        _tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        if (self.source == XSBHouseInfoSource_MyPublish || self.source == XSBHouseInfoSource_MyWatch) {
+            _tableView.mj_header  = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+                STRONG_SELF;
+                [self loadData];
+            }];
+            _tableView.mj_header.automaticallyChangeAlpha = YES;
+        }
+    }
+    return _tableView;
+}
+
+- (SDCycleScrollView *)cycleScrollView{
+    if (!_cycleScrollView) {
+        _cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, self.view.width, 168) delegate:self placeholderImage:nil];
+        _cycleScrollView.imageURLStringsGroup = nil;
+        _cycleScrollView.showPageControl = YES;
+        _cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
+        _cycleScrollView.pageControlStyle = SDCycleScrollViewPageContolStyleNone;
+    }
+    return _cycleScrollView;
+}
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
+    
+}
+- (XSCollectionView *)collectionView{
+    if (!_collectionView) {
+        _collectionView = [[XSCollectionView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, self.houseType==XSBHouseType_Rent?210:105)];
+    }
+    return _collectionView;
+}
+- (XSRoundedBtn1View *)moreView{
+    if (!_moreView) {
+        _moreView = [[XSRoundedBtn1View alloc]initWithFrame:CGRectMake(0, 0, self.view.width, 38)];
+        _moreView.backgroundColor = [UIColor hx_colorWithHexStr:@"#E82B2B" alpha:0.3];
+        [_moreView setTitle:@"更多房源推荐" forState:UIControlStateNormal];
+        [_moreView setTitleColor:[UIColor hx_colorWithHexStr:@"#F9EAEA"] forState:UIControlStateNormal];
+        [_moreView addTarget:self action:@selector(moreClick) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _moreView;
+}
+- (void)moreClick{
+    XSHouselishViewController *listvc = [[XSHouselishViewController alloc]init];
+    listvc.houseType = self.houseType;
+    listvc.source = self.source;
+    listvc.house_id = self.house_id;
+    listvc.searchDict = self.searchDict;
+    [[NSObject getTopViewController].navigationController pushViewController:listvc animated:YES];
+}
+
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.array = [NSMutableArray array];
 
     if (self.title == nil) {
         if (self.source == XSBHouseInfoSource_MyPublish){
@@ -44,106 +139,101 @@
             self.title = @"猜你喜欢";
         }
     }
+    if (self.searchDict) {
+        self.navigationItem.titleView = self.searcView;
+    }
 
-    
-    self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds];
-    self.tableView.backgroundColor = [UIColor whiteColor];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
-    self.tableView.estimatedRowHeight = 100;
-    self.tableView.estimatedSectionHeaderHeight = 0;
-    self.tableView.estimatedSectionFooterHeight = 0;
-    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.tableView];
-    XSRoundedBtn1View *more = [[XSRoundedBtn1View alloc]init];
-    [more addTarget:self action:@selector(moreClick) forControlEvents:UIControlEventTouchUpInside];
-    more.frame = CGRectMake(0, 0, self.view.width, 38);
-    [more setTitle:@"更多房源推荐" forState:UIControlStateNormal];
-    more.backgroundColor = [UIColor hx_colorWithHexStr:@"#E82B2B" alpha:0.3];
-    [more setTitleColor:[UIColor hx_colorWithHexStr:@"#F9EAEA"] forState:UIControlStateNormal];
-    self.more = more;
 
-    WEAK_SELF;
-    if (self.nubmer <= 0 && self.searchDict == nil) {
-        self.tableView.mj_header  = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-            STRONG_SELF;
-            [self loadData];
-        }];
+    if (self.module) {
+        if (self.houseType == XSBHouseType_New) {
+            self.tableView.tableHeaderView = self.collectionView;
+            self.headerArray = [XSPublicServer sharedInstance].newhouseConditionArray;
+
+         }else if (self.houseType == XSBHouseType_Rent){
+             self.tableView.tableHeaderView = self.collectionView;
+             self.headerArray = [XSPublicServer sharedInstance].renthouseConditionArray;
+
+         }else if (self.houseType == XSBHouseType_old){
+             self.tableView.tableHeaderView = self.cycleScrollView;
+             [self oldimageURLStringsGroup:^(NSArray *array) {
+                 self.cycleScrollView.imageURLStringsGroup = array;
+             }];
+         }
     }
-    if (self.nubmer > 0) {
-        self.tableView.scrollEnabled = NO;
-    }
-    self.tableView.mj_header.automaticallyChangeAlpha = YES;
+    [self.tableView reloadData];
+    
     [self loadData];
 
 }
+- (void)oldimageURLStringsGroup:(void(^)(NSArray *array))black{
+    [self.subInfoInterface secondhousebunnerListWithDict:self.searchDict callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+        if (error == nil) {
+            if (responseModel.code.intValue == SuccessCode) {
+                NSMutableArray *array = [XSHouseInfoShowModel mj_objectArrayWithKeyValuesArray:responseModel.data];
+                NSMutableArray *imags = [NSMutableArray array];
+                for (XSHouseInfoShowModel *model in array) {
+                    [imags addObject:model.firstImg];
+                }
+                if (black) {
+                    black(imags);
+                }
+            }
+        }
+    }];
+}
 - (void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
-    self.tableView.frame = self.view.bounds;
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-//    [self loadData];
 }
 
-- (void)moreClick{
-    XSHouselishViewController *listvc = [[XSHouselishViewController alloc]init];
-    listvc.houseType = self.houseType;
-    listvc.source = self.source;
-    listvc.house_id = self.house_id;
-    listvc.searchDict = self.searchDict;
-    [[NSObject getTopViewController].navigationController pushViewController:listvc animated:YES];
-}
+
 #pragma mark -数据请求
 - (void)loadData{
     WEAK_SELF;
     [self.subInfoInterface houseLisetWith:self.houseType source:self.source resource:self.resource house_id:self.house_id?self.house_id.stringValue:@"" KeyVales:self.searchDict per_page:number page_index:0 callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
         STRONG_SELF;
         [self.tableView.mj_header endRefreshing];
-        [self dataProcessingWithResponseModel:responseModel error:error];
+          if (error == nil) {
+            [self.array removeAllObjects];
+            if (responseModel.code.intValue == SuccessCode) {
+                NSMutableArray *array = [XSHouseInfoShowModel mj_objectArrayWithKeyValuesArray:responseModel.data];
+                
+                for (XSHouseInfoShowModel *model in array) {
+                     model.source = self.source;
+                     model.houseType = self.houseType;
+                     model.clickEditStatu = ^(NSNumber * _Nonnull status, NSNumber * _Nonnull houseID) {
+                         STRONG_SELF;
+                         [self editHouseStatusWith:status houseId:houseID];
+                     };
+                 }
+                
+                
+                if (self.nubmer> 0 && array.count >= self.nubmer) {
+                    for (int i = 0; i < self.nubmer; i++) {
+                        [self.array addObject:array[self.nubmer]];
+                        
+                    }
+                }else{
+                    [self.array addObjectsFromArray:array];
+                }
+                if (self.nubmer > 0) {
+                    self.tableView.tableFooterView = self.moreView;
+                }
+                if (self.callBackHeight) {
+                    self.callBackHeight(145 * self.array.count + (self.nubmer>0?50:0));
+                }
+                [self.tableView reloadData];
+            }
+        }
+        self.tableView.ly_emptyView = self.emptyView;
     }];
 
 
 }
-#pragma mark -数据处理
-- (void)dataProcessingWithResponseModel:(XSNetworkResponse *)responseModel error:(NSError *)error{
 
-    if (error == nil) {
-        [self.array removeAllObjects];
-        if (responseModel.code.intValue == SuccessCode) {
-            NSMutableArray *array = [XSHouseInfoShowModel mj_objectArrayWithKeyValuesArray:responseModel.data];
-            [self houseInfoClickSettingWithModelArray:array];
-            if (self.nubmer> 0 && array.count >= self.nubmer) {
-                for (int i = 0; i < self.nubmer; i++) {
-                    [self.array addObject:array[self.nubmer]];                }
-            }else{
-                [self.array addObjectsFromArray:array];
-            }
-            if (self.nubmer > 0) {
-                self.tableView.tableFooterView = self.more;
-            }
-            if (self.callBackHeight) {
-                self.callBackHeight(145 * self.array.count + (self.nubmer>0?50:0));
-            }
-            [self.tableView reloadData];
-        }
-    }
-    self.tableView.ly_emptyView = self.emptyView;
-}
-#pragma mark -房屋操作预埋Block
-- (void)houseInfoClickSettingWithModelArray:(NSArray *)array{
-    WEAK_SELF;
-    for (XSHouseInfoShowModel *model in array) {
-        model.source = self.source;
-        model.houseType = self.houseType;
-        model.clickEditStatu = ^(NSNumber * _Nonnull status, NSNumber * _Nonnull houseID) {
-            STRONG_SELF;
-            [self editHouseStatusWith:status houseId:houseID];
-        };
-    }
-}
 #pragma mark -UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.array.count;

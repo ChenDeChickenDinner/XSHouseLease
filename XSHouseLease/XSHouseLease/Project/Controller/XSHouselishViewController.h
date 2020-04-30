@@ -18,6 +18,7 @@ typedef void(^callBackHeight)(CGFloat height);
 @property(nonatomic,assign) NSInteger nubmer;
 @property(nonatomic,strong) NSNumber *house_id;
 @property(nonatomic,strong) NSMutableDictionary *searchDict;
+@property(nonatomic,assign) BOOL module;
 
 @property(nonatomic,copy) callBackHeight callBackHeight;
 

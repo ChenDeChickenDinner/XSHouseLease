@@ -459,6 +459,7 @@
 		5585010124497F5F001A09B1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				55E1EA1B245968E600AAF09D /* CollectionView */,
 				5585010824497F5F001A09B1 /* XSHouseDetailsController.h */,
 				5585010324497F5F001A09B1 /* XSHouseDetailsController.m */,
 				5585010224497F5F001A09B1 /* XSHouseDetailsController.xib */,
@@ -849,6 +850,13 @@
 				5585FFAC244972C4001A09B1 /* XSUserServer.m */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		55E1EA1B245968E600AAF09D /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		6C6BC13D241FA75300B62001 = {
