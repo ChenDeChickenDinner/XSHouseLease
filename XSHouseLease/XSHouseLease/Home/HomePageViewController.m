@@ -128,6 +128,10 @@
            case 2:
            {
                 XSHouselishViewController *vc = [[XSHouselishViewController alloc]init];
+               vc.houseType = XSBHouseType_old;
+               vc.source = XSBHouseInfoSource_keyPush;
+               vc.resource = XSHouseSource_0;
+
                 [self.navigationController pushViewController:vc animated:YES];
             }
            break;

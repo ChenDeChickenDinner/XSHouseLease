@@ -117,6 +117,14 @@
 		5585FFC7244972C4001A09B1 /* NSDate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5585FF0F244972C4001A09B1 /* NSDate+Category.m */; };
 		5585FFC8244972C4001A09B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5585FF11244972C4001A09B1 /* Assets.xcassets */; };
 		5585FFCB244972C4001A09B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5585FF17244972C4001A09B1 /* Main.storyboard */; };
+		6C966B7F245E7CBC00B6ABE7 /* ZHFilterTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C966B74245E7CBB00B6ABE7 /* ZHFilterTitleTableViewCell.m */; };
+		6C966B80245E7CBC00B6ABE7 /* ZHFilterItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C966B76245E7CBB00B6ABE7 /* ZHFilterItemTableViewCell.m */; };
+		6C966B81245E7CBC00B6ABE7 /* ZHFilterItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C966B78245E7CBB00B6ABE7 /* ZHFilterItemTableViewCell.xib */; };
+		6C966B82245E7CBC00B6ABE7 /* ZHFilterMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C966B7B245E7CBB00B6ABE7 /* ZHFilterMenuView.m */; };
+		6C966B83245E7CBC00B6ABE7 /* ZHFilterItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C966B7D245E7CBB00B6ABE7 /* ZHFilterItemModel.m */; };
+		6C966B84245E7CBC00B6ABE7 /* ZHFilterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C966B7E245E7CBB00B6ABE7 /* ZHFilterModel.m */; };
+		6C966B87245E7ECF00B6ABE7 /* FilterDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C966B86245E7ECF00B6ABE7 /* FilterDataUtil.m */; };
+		6C966B89245E84AB00B6ABE7 /* FilterData.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 6C966B88245E84AB00B6ABE7 /* FilterData.geojson */; };
 		6CBA187B244C617800F9B887 /* XSResourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBA1879244C617800F9B887 /* XSResourceViewController.m */; };
 		6CBA187C244C617800F9B887 /* XSResourceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CBA187A244C617800F9B887 /* XSResourceViewController.xib */; };
 		6CBA187F2450764600F9B887 /* XSMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBA187E2450764600F9B887 /* XSMessageViewController.m */; };
@@ -316,6 +324,20 @@
 		5585FFAE244972C4001A09B1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66F014AFFCE6A143AA113285 /* Pods-XSHouseLease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XSHouseLease.debug.xcconfig"; path = "Target Support Files/Pods-XSHouseLease/Pods-XSHouseLease.debug.xcconfig"; sourceTree = "<group>"; };
 		6C6BC146241FA75300B62001 /* 房鼎汇.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "房鼎汇.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C966B74245E7CBB00B6ABE7 /* ZHFilterTitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFilterTitleTableViewCell.m; sourceTree = "<group>"; };
+		6C966B75245E7CBB00B6ABE7 /* ZHFilterMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFilterMenuView.h; sourceTree = "<group>"; };
+		6C966B76245E7CBB00B6ABE7 /* ZHFilterItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFilterItemTableViewCell.m; sourceTree = "<group>"; };
+		6C966B77245E7CBB00B6ABE7 /* ZHFilterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFilterModel.h; sourceTree = "<group>"; };
+		6C966B78245E7CBB00B6ABE7 /* ZHFilterItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHFilterItemTableViewCell.xib; sourceTree = "<group>"; };
+		6C966B79245E7CBB00B6ABE7 /* ZHFilterItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFilterItemModel.h; sourceTree = "<group>"; };
+		6C966B7A245E7CBB00B6ABE7 /* ZHFilterTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFilterTitleTableViewCell.h; sourceTree = "<group>"; };
+		6C966B7B245E7CBB00B6ABE7 /* ZHFilterMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFilterMenuView.m; sourceTree = "<group>"; };
+		6C966B7C245E7CBB00B6ABE7 /* ZHFilterItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFilterItemTableViewCell.h; sourceTree = "<group>"; };
+		6C966B7D245E7CBB00B6ABE7 /* ZHFilterItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFilterItemModel.m; sourceTree = "<group>"; };
+		6C966B7E245E7CBB00B6ABE7 /* ZHFilterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFilterModel.m; sourceTree = "<group>"; };
+		6C966B85245E7ECF00B6ABE7 /* FilterDataUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterDataUtil.h; sourceTree = "<group>"; };
+		6C966B86245E7ECF00B6ABE7 /* FilterDataUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterDataUtil.m; sourceTree = "<group>"; };
+		6C966B88245E84AB00B6ABE7 /* FilterData.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FilterData.geojson; sourceTree = "<group>"; };
 		6CBA1878244C617800F9B887 /* XSResourceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSResourceViewController.h; sourceTree = "<group>"; };
 		6CBA1879244C617800F9B887 /* XSResourceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSResourceViewController.m; sourceTree = "<group>"; };
 		6CBA187A244C617800F9B887 /* XSResourceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSResourceViewController.xib; sourceTree = "<group>"; };
@@ -681,6 +703,7 @@
 		5585FEE8244972C4001A09B1 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				6C966B73245E7CBB00B6ABE7 /* ZHFilterMenuView */,
 				5585FEE9244972C4001A09B1 /* NSDictionary */,
 				5585FEEC244972C4001A09B1 /* NSView */,
 				5585FEEF244972C4001A09B1 /* HBCategory.h */,
@@ -877,6 +900,27 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		6C966B73245E7CBB00B6ABE7 /* ZHFilterMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				6C966B88245E84AB00B6ABE7 /* FilterData.geojson */,
+				6C966B85245E7ECF00B6ABE7 /* FilterDataUtil.h */,
+				6C966B86245E7ECF00B6ABE7 /* FilterDataUtil.m */,
+				6C966B79245E7CBB00B6ABE7 /* ZHFilterItemModel.h */,
+				6C966B7D245E7CBB00B6ABE7 /* ZHFilterItemModel.m */,
+				6C966B7C245E7CBB00B6ABE7 /* ZHFilterItemTableViewCell.h */,
+				6C966B76245E7CBB00B6ABE7 /* ZHFilterItemTableViewCell.m */,
+				6C966B78245E7CBB00B6ABE7 /* ZHFilterItemTableViewCell.xib */,
+				6C966B75245E7CBB00B6ABE7 /* ZHFilterMenuView.h */,
+				6C966B7B245E7CBB00B6ABE7 /* ZHFilterMenuView.m */,
+				6C966B77245E7CBB00B6ABE7 /* ZHFilterModel.h */,
+				6C966B7E245E7CBB00B6ABE7 /* ZHFilterModel.m */,
+				6C966B7A245E7CBB00B6ABE7 /* ZHFilterTitleTableViewCell.h */,
+				6C966B74245E7CBB00B6ABE7 /* ZHFilterTitleTableViewCell.m */,
+			);
+			path = ZHFilterMenuView;
+			sourceTree = "<group>";
+		};
 		EF6076CEBC0671227C5E3C1D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -944,6 +988,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C966B81245E7CBC00B6ABE7 /* ZHFilterItemTableViewCell.xib in Resources */,
 				5585016324497F5F001A09B1 /* XSHouseDetailsController.xib in Resources */,
 				5585016124497F5F001A09B1 /* XSLPDTTableViewCell.xib in Resources */,
 				5585018F24497F5F001A09B1 /* XSPhotoPickerView.xib in Resources */,
@@ -981,6 +1026,7 @@
 				5585017324497F5F001A09B1 /* XSRentHouseInfoSecond.json in Resources */,
 				5585016624497F5F001A09B1 /* XSHouseSubmitFirstViewController.xib in Resources */,
 				5585018A24497F5F001A09B1 /* XSHouseMasterInfoView.xib in Resources */,
+				6C966B89245E84AB00B6ABE7 /* FilterData.geojson in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1054,9 +1100,11 @@
 				558501B8244D8BDF001A09B1 /* UIView+Empty.m in Sources */,
 				5585015A24497F5F001A09B1 /* JHCollectionViewFlowLayout.m in Sources */,
 				558501A2244998C7001A09B1 /* XSImagesViewController.m in Sources */,
+				6C966B82245E7CBC00B6ABE7 /* ZHFilterMenuView.m in Sources */,
 				5585018224497F5F001A09B1 /* XSRegionSearchView.m in Sources */,
 				558501BA244D8BDF001A09B1 /* LYEmptyView.m in Sources */,
 				558501BD244FCC15001A09B1 /* XSWKWebViewController.m in Sources */,
+				6C966B83245E7CBC00B6ABE7 /* ZHFilterItemModel.m in Sources */,
 				5585001C244972C5001A09B1 /* XSLoginViewController.m in Sources */,
 				5585FFC0244972C4001A09B1 /* NSNumber+safe.m in Sources */,
 				55850016244972C5001A09B1 /* ViewController.m in Sources */,
@@ -1072,7 +1120,9 @@
 				5585016024497F5F001A09B1 /* XSLPDTTableViewCell.m in Sources */,
 				5585017F24497F5F001A09B1 /* XSHouseInfoTableView.m in Sources */,
 				6CBA187F2450764600F9B887 /* XSMessageViewController.m in Sources */,
+				6C966B84245E7CBC00B6ABE7 /* ZHFilterModel.m in Sources */,
 				5585001A244972C5001A09B1 /* XSNavViewController.m in Sources */,
+				6C966B7F245E7CBC00B6ABE7 /* ZHFilterTitleTableViewCell.m in Sources */,
 				5585017E24497F5F001A09B1 /* XSHouseInfoShowCell.m in Sources */,
 				5585FFB0244972C4001A09B1 /* HomePageViewController.m in Sources */,
 				5585001B244972C5001A09B1 /* XSLogInVcModel.m in Sources */,
@@ -1089,7 +1139,9 @@
 				5585FFB7244972C4001A09B1 /* XSOperationParam.m in Sources */,
 				5585015F24497F5F001A09B1 /* XSDoorViewController.m in Sources */,
 				5585017824497F5F001A09B1 /* XSPublicServer.m in Sources */,
+				6C966B80245E7CBC00B6ABE7 /* ZHFilterItemTableViewCell.m in Sources */,
 				5585015224497F5F001A09B1 /* XSHouseIntroduceController.m in Sources */,
+				6C966B87245E7ECF00B6ABE7 /* FilterDataUtil.m in Sources */,
 				5585FFBE244972C4001A09B1 /* NSArray+safe.m in Sources */,
 				5585016424497F5F001A09B1 /* XSHouseDetailsController.m in Sources */,
 				5585FFC4244972C4001A09B1 /* NSObject+PerformBlock.m in Sources */,

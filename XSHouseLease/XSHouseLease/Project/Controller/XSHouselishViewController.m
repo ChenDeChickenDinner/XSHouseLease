@@ -12,14 +12,23 @@
 #import "XSHouseDetailsController.h"
 #import "XSHouseSubmitFirstViewController.h"
 #import "XSCollectionView.h"
-
+#import "ZHFilterMenuView.h"
+#import "FilterDataUtil.h"
+#define KMenuViewHeight      45
+#define KHeadImageViewHeight 250
+#define KStatusBarHeight [UIApplication sharedApplication].statusBarFrame.size.height
+#define KNavBarHeight self.navigationController.navigationBar.frame.size.height
+#define KNavbarAndStatusHieght (KStatusBarHeight+KNavBarHeight)
 #define number 20
 @interface XSHouselishViewController ()
-<UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate>
+<UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate,ZHFilterMenuViewDelegate,
+ZHFilterMenuViewDetaSource,UIScrollViewDelegate>
 @property (nonatomic,strong) XSRegionSearchView *searcView;
 @property (nonatomic,strong) SDCycleScrollView  *cycleScrollView;
 @property (nonatomic,strong) XSCollectionView   *collectionView;
 @property (nonatomic,strong) XSRoundedBtn1View  *moreView;
+@property (nonatomic, strong) ZHFilterMenuView *menuView;
+@property (nonatomic, strong) NSMutableArray *dataArr;
 
 @property(nonatomic,strong) UITableView *tableView;
 
@@ -46,6 +55,7 @@
     if (!_searcView) {
         WEAK_SELF;
         _searcView = [[XSRegionSearchView alloc]init];
+        _searcView.frame = CGRectMake(0, 0, SCREEN_SIZE.width - 110, 35);
         _searcView.searchBlack = ^(NSString *searhKey) {
             STRONG_SELF;
             [self loadData];
@@ -113,13 +123,88 @@
     listvc.searchDict = self.searchDict;
     [[NSObject getTopViewController].navigationController pushViewController:listvc animated:YES];
 }
+- (ZHFilterMenuView *)menuView{
+    if (!_menuView) {
+        _menuView = [[ZHFilterMenuView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), KMenuViewHeight) maxHeight:CGRectGetHeight(self.view.frame) - KMenuViewHeight];
+        _menuView.zh_delegate = self;
+        _menuView.zh_dataSource = self;
+        _menuView.titleColor = [UIColor hx_colorWithHexStr:@"#444444"];
+        _menuView.titleSelectedColor = [UIColor hx_colorWithHexStr:@"#E82B2B"];
 
+        _menuView.itemBGColor = [UIColor hx_colorWithHexStr:@"#EFEFEF"];
+//        _menuView.itemBGSelectedColor = [UIColor hx_colorWithHexStr:@"#E82B2B"];
+
+        //下拉列表展示在window上，以应对列表视图展示的问题
+        _menuView.showInWindow = YES;
+        //移动后的menuView坐标转换在window上的minY值，showInWindow为YES时有效
+        _menuView.inWindowMinY = KNavbarAndStatusHieght;
+        _menuView.titleArr = @[@"区域",@"价格",@"户型",@"更多",@"排序"];
+        _menuView.imageNameArr = @[@"x_arrow",@"x_arrow",@"x_arrow",@"x_arrow",@"x_arrow"];
+    }
+    return _menuView;
+}
+//下拉菜单展示时禁止点击状态栏回到顶部，避免滑动后下拉框未消失的情况（贝壳找房是存在这样的问题）
+- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView{
+    return !self.menuView.isOpen;
+}
+
+/** 确定回调 */
+- (void)menuView:(ZHFilterMenuView *)menuView didSelectConfirmAtSelectedModelArr:(NSArray *)selectedModelArr{
+    NSArray *dictArr = [ZHFilterItemModel mj_keyValuesArrayWithObjectArray:selectedModelArr];
+    NSLog(@"结果回调：%@",dictArr.mj_JSONString);
+}
+
+/** 警告回调(用于错误提示) */
+- (void)menuView:(ZHFilterMenuView *)menuView wangType:(ZHFilterMenuViewWangType)wangType{
+    if (wangType == ZHFilterMenuViewWangTypeInput) {
+        NSLog(@"请输入正确的价格区间！");
+    }
+}
+
+/** 点击菜单回调 */
+- (void)menuView:(ZHFilterMenuView *)menuView selectMenuAtTabIndex:(NSInteger)tabIndex{
+    if (self.tableView.contentOffset.y < KHeadImageViewHeight) {
+        //设置等待时间，等区头悬停后再允许下拉框展示
+        menuView.waitTime = 0.2f;
+        [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:(UITableViewScrollPositionTop)];
+    } else {
+        menuView.waitTime = 0.f;
+    }
+}
+
+/** 返回每个 tabIndex 下的确定类型 */
+- (ZHFilterMenuConfirmType)menuView:(ZHFilterMenuView *)menuView confirmTypeInTabIndex:(NSInteger)tabIndex{
+    if (tabIndex == 4) {
+        return ZHFilterMenuConfirmTypeSpeedConfirm;
+    }
+    return ZHFilterMenuConfirmTypeBottomConfirm;
+}
+
+/** 返回每个 tabIndex 下的下拉展示类型 */
+- (ZHFilterMenuDownType)menuView:(ZHFilterMenuView *)menuView downTypeInTabIndex:(NSInteger)tabIndex{
+    if (tabIndex == 0) {
+        return ZHFilterMenuDownTypeTwoLists;
+    } else if (tabIndex == 1) {
+        return ZHFilterMenuDownTypeItemInput;
+    } else if (tabIndex == 2) {
+        return ZHFilterMenuDownTypeOnlyItem;
+    } else if (tabIndex == 3) {
+        return ZHFilterMenuDownTypeOnlyItem;
+    } else if (tabIndex == 4) {
+        return ZHFilterMenuDownTypeOnlyList;
+    }
+    return ZHFilterMenuDownTypeOnlyList;
+}
 
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    self.houseType = XSBHouseType_Rent;
+    
+    self.module = YES;
+    self.searchDict = [NSMutableDictionary dictionary];
+    
     if (self.title == nil) {
         if (self.source == XSBHouseInfoSource_MyPublish){
             if (self.houseType == XSBHouseType_Rent) {
@@ -148,6 +233,7 @@
     if (self.module) {
         if (self.houseType == XSBHouseType_New) {
             self.tableView.tableHeaderView = self.collectionView;
+            
             self.headerArray = [XSPublicServer sharedInstance].newhouseConditionArray;
 
          }else if (self.houseType == XSBHouseType_Rent){
@@ -161,11 +247,35 @@
              }];
          }
     }
+    self.collectionView.array = self.headerArray ;
+    [self.collectionView.collectionView reloadData];
+    
+    
+    FilterDataUtil *dataUtil = [[FilterDataUtil alloc] init];
+    self.menuView.filterDataArr = [dataUtil getTabDataByType:FilterTypeIsNewHouse];
+    [self.menuView beginShowMenuView];
+    
     [self.tableView reloadData];
     
     [self loadData];
 
 }
+- (void)viewWillLayoutSubviews{
+    [super viewWillLayoutSubviews];
+    self.tableView.frame = self.view.bounds;
+    self.menuView.maxHeight = CGRectGetHeight(self.view.frame) - KMenuViewHeight;
+}
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.menuView removeMenuList];
+}
+
+
+
 - (void)oldimageURLStringsGroup:(void(^)(NSArray *array))black{
     [self.subInfoInterface secondhousebunnerListWithDict:self.searchDict callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
         if (error == nil) {
@@ -181,12 +291,6 @@
             }
         }
     }];
-}
-- (void)viewWillLayoutSubviews{
-    [super viewWillLayoutSubviews];
-}
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
 }
 
 
@@ -214,7 +318,6 @@
                 if (self.nubmer> 0 && array.count >= self.nubmer) {
                     for (int i = 0; i < self.nubmer; i++) {
                         [self.array addObject:array[self.nubmer]];
-                        
                     }
                 }else{
                     [self.array addObjectsFromArray:array];
@@ -233,7 +336,18 @@
 
 
 }
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return self.menuView;
+}
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return KMenuViewHeight;
+}
 #pragma mark -UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.array.count;
