@@ -14,8 +14,171 @@
 @end
 
 @implementation FilterDataUtil
+- (NSMutableArray *)getTabDataByType:(XSBHouseType)type mainCity:(BRProvinceModel *)main2City
+{
+    NSMutableArray *dataArr = [NSMutableArray array];
+    
 
-- (NSMutableArray *)getTabDataByType:(FilterType)type
+    NSMutableArray<ZHFilterItemModel *> *cityArray = [NSMutableArray array];
+    ZHFilterItemModel *model = [[ZHFilterItemModel alloc]init];
+    model.name = @"不限";
+    
+   NSMutableArray<BRProvinceModel *> *provinceArray = [XSPublicServer sharedInstance].cityArray;
+    BRProvinceModel *mainCity = nil;
+    for (BRProvinceModel *model in provinceArray) {
+        if ( [[XSUserServer sharedInstance].cityModel.code isEqualToString:model.code]){
+            mainCity = model;
+            break;
+        }
+    }
+
+    [cityArray addObject:model];
+    for (BRCityModel *city in mainCity.citylist) {
+        ZHFilterItemModel *model = [[ZHFilterItemModel alloc]init];
+        model.name = city.name;
+        model.code = city.code;
+        NSMutableArray<ZHFilterItemModel *> *areaArray = [NSMutableArray array];
+        for (BRAreaModel *area in city.arealist) {
+            ZHFilterItemModel *model = [[ZHFilterItemModel alloc]init];
+            model.name = area.name;
+            model.code = area.code;
+            [areaArray addObject:model];
+        }
+        model.itemArr = areaArray;
+        [cityArray addObject:model];
+    }
+    
+    NSMutableArray<ZHFilterItemModel *> *locationArray = [NSMutableArray array];
+    [locationArray addObject:model];
+    ZHFilterItemModel *model1 = [[ZHFilterItemModel alloc]initWithName:@"1km" code:@"1000" key:@""];
+    ZHFilterItemModel *model2 = [[ZHFilterItemModel alloc]initWithName:@"2km" code:@"2000" key:@""];
+    ZHFilterItemModel *model3 = [[ZHFilterItemModel alloc]initWithName:@"3km" code:@"3000" key:@""];
+    [locationArray addObject:model1];
+    [locationArray addObject:model2];
+    [locationArray addObject:model3];
+    NSMutableArray<ZHFilterItemModel *> *totalPriceArray = nil;
+    if (type == XSBHouseType_New) {
+        totalPriceArray = [NSMutableArray array];
+        ZHFilterItemModel *totalmodel1 = [[ZHFilterItemModel alloc]initWithName:@"30万以下" code:@"1000" key:@""];
+        ZHFilterItemModel *totalmodel2 = [[ZHFilterItemModel alloc]initWithName:@"30-60万" code:@"2000" key:@""];
+        ZHFilterItemModel *totalmodel3 = [[ZHFilterItemModel alloc]initWithName:@"60-100万" code:@"3000" key:@""];
+        ZHFilterItemModel *totalmodel4 = [[ZHFilterItemModel alloc]initWithName:@"100-200万" code:@"3000" key:@""];
+        ZHFilterItemModel *totalmodel5 = [[ZHFilterItemModel alloc]initWithName:@"200-400万" code:@"3000" key:@""];
+        ZHFilterItemModel *totalmodel6 = [[ZHFilterItemModel alloc]initWithName:@"400-600万" code:@"3000" key:@""];
+        ZHFilterItemModel *totalmodel7 = [[ZHFilterItemModel alloc]initWithName:@"600-1000万" code:@"3000" key:@""];
+        ZHFilterItemModel *totalmodel8 = [[ZHFilterItemModel alloc]initWithName:@"1000万以上" code:@"3000" key:@""];
+        [totalPriceArray addObject:totalmodel1];
+        [totalPriceArray addObject:totalmodel2];
+        [totalPriceArray addObject:totalmodel3];
+        [totalPriceArray addObject:totalmodel4];
+        [totalPriceArray addObject:totalmodel5];
+        [totalPriceArray addObject:totalmodel6];
+        [totalPriceArray addObject:totalmodel7];
+        [totalPriceArray addObject:totalmodel8];
+    }else if (type == XSBHouseType_old){
+        totalPriceArray = [NSMutableArray array];
+        ZHFilterItemModel *totalmodel1 = [[ZHFilterItemModel alloc]initWithName:@"200万以下" code:@"1000" key:@""];
+        ZHFilterItemModel *totalmodel2 = [[ZHFilterItemModel alloc]initWithName:@"200-300万" code:@"2000" key:@""];
+        ZHFilterItemModel *totalmodel3 = [[ZHFilterItemModel alloc]initWithName:@"300-400万" code:@"3000" key:@""];
+        ZHFilterItemModel *totalmodel4 = [[ZHFilterItemModel alloc]initWithName:@"400-500万" code:@"3000" key:@""];
+        ZHFilterItemModel *totalmodel5 = [[ZHFilterItemModel alloc]initWithName:@"500-800万" code:@"3000" key:@""];
+        ZHFilterItemModel *totalmodel6 = [[ZHFilterItemModel alloc]initWithName:@"800-1000万" code:@"3000" key:@""];
+        ZHFilterItemModel *totalmodel7 = [[ZHFilterItemModel alloc]initWithName:@"1000万以上" code:@"3000" key:@""];
+        [totalPriceArray addObject:totalmodel1];
+        [totalPriceArray addObject:totalmodel2];
+        [totalPriceArray addObject:totalmodel3];
+        [totalPriceArray addObject:totalmodel4];
+        [totalPriceArray addObject:totalmodel5];
+        [totalPriceArray addObject:totalmodel6];
+        [totalPriceArray addObject:totalmodel7];
+    }else if (type == XSBHouseType_Rent){
+        totalPriceArray = [NSMutableArray array];
+         ZHFilterItemModel *totalmodel1 = [[ZHFilterItemModel alloc]initWithName:@"1000以下" code:@"1000" key:@""];
+         ZHFilterItemModel *totalmodel2 = [[ZHFilterItemModel alloc]initWithName:@"1500-2000" code:@"2000" key:@""];
+         ZHFilterItemModel *totalmodel3 = [[ZHFilterItemModel alloc]initWithName:@"2000-2500" code:@"3000" key:@""];
+         ZHFilterItemModel *totalmodel4 = [[ZHFilterItemModel alloc]initWithName:@"2500-3000" code:@"3000" key:@""];
+         ZHFilterItemModel *totalmodel5 = [[ZHFilterItemModel alloc]initWithName:@"3500-5000" code:@"3000" key:@""];
+         ZHFilterItemModel *totalmodel6 = [[ZHFilterItemModel alloc]initWithName:@"5000-8000" code:@"3000" key:@""];
+         ZHFilterItemModel *totalmodel7 = [[ZHFilterItemModel alloc]initWithName:@"8000-10000" code:@"3000" key:@""];
+         ZHFilterItemModel *totalmodel8 = [[ZHFilterItemModel alloc]initWithName:@"10000以上" code:@"10000" key:@""];
+         [totalPriceArray addObject:totalmodel1];
+         [totalPriceArray addObject:totalmodel2];
+         [totalPriceArray addObject:totalmodel3];
+         [totalPriceArray addObject:totalmodel4];
+         [totalPriceArray addObject:totalmodel5];
+         [totalPriceArray addObject:totalmodel6];
+         [totalPriceArray addObject:totalmodel7];
+         [totalPriceArray addObject:totalmodel8];
+    }
+
+
+    NSMutableArray<ZHFilterItemModel *> *roomTypeArray = [NSMutableArray array];
+    [locationArray addObject:model];
+    ZHFilterItemModel *roomTypeModell = [[ZHFilterItemModel alloc]initWithName:@"一室" code:@"1000" key:@""];
+    ZHFilterItemModel *roomTypeModel2 = [[ZHFilterItemModel alloc]initWithName:@"二室" code:@"2000" key:@""];
+    ZHFilterItemModel *roomTypeModel3 = [[ZHFilterItemModel alloc]initWithName:@"三室" code:@"3000" key:@""];
+    ZHFilterItemModel *roomTypeModel4 = [[ZHFilterItemModel alloc]initWithName:@"四室" code:@"1000" key:@""];
+    ZHFilterItemModel *roomTypeModel5 = [[ZHFilterItemModel alloc]initWithName:@"五室" code:@"2000" key:@""];
+    ZHFilterItemModel *roomTypeModel6 = [[ZHFilterItemModel alloc]initWithName:@"五室以上" code:@"3000" key:@""];
+    [roomTypeArray addObject:roomTypeModell];
+    [roomTypeArray addObject:roomTypeModel2];
+    [roomTypeArray addObject:roomTypeModel3];
+    [roomTypeArray addObject:roomTypeModel4];
+    [roomTypeArray addObject:roomTypeModel5];
+    [roomTypeArray addObject:roomTypeModel6];
+    ZHFilterModel *areaModel = [ZHFilterModel createFilterModelWithHeadTitle:@"城区" modelArr:cityArray selectFirst:YES multiple:NO];
+    areaModel.selected = YES;
+    ZHFilterModel *locationModel = [ZHFilterModel createFilterModelWithHeadTitle:@"附近" modelArr:locationArray selectFirst:YES multiple:NO];
+
+    ZHFilterModel *totalPriceModel = [ZHFilterModel createFilterModelWithHeadTitle:@"价格区间(万)" modelArr:totalPriceArray selectFirst:NO multiple:NO];
+
+    ZHFilterModel *roomTypeModel = [ZHFilterModel createFilterModelWithHeadTitle:@"房型选择" modelArr:roomTypeArray selectFirst:NO multiple:NO];
+
+    
+    ZHFilterModel *sortModel = [ZHFilterModel createFilterModelWithHeadTitle:@"" modelArr:[self getDataByType:FilterDataType_XF_PX] selectFirst:YES multiple:NO];
+    NSMutableArray *moreArr = [NSMutableArray array];
+    NSArray<XSHouseInfoCellModel *> *dynamicArray = nil;
+    if (type == XSBHouseType_New) {
+        dynamicArray = [XSHouseSubMitDynamicServer sharedInstance].NewQueryArray;
+    }else if (type == XSBHouseType_old){
+        dynamicArray = [XSHouseSubMitDynamicServer sharedInstance].oldQueryArray;
+    }else if (type == XSBHouseType_Rent){
+        dynamicArray = [XSHouseSubMitDynamicServer sharedInstance].rentQueryArray;
+    }
+     for (XSHouseInfoCellModel *model in dynamicArray) {
+         XSKeyValueModel *aa = model.arrayValue.firstObject;
+         NSMutableArray<ZHFilterItemModel *> *itemArray = [NSMutableArray array];
+         for (XSValue *value in aa.values) {
+             ZHFilterItemModel *model = [[ZHFilterItemModel alloc]init];
+             model.key = value.key;
+             model.name = value.valueStr;
+             model.code = value.value.stringValue;
+             [itemArray addObject:model];
+         }
+         
+         ZHFilterModel *moreModel = [ZHFilterModel createFilterModelWithHeadTitle:model.title modelArr:itemArray selectFirst:NO multiple:aa.multiple];
+         [moreArr addObject:moreModel];
+     }
+    NSMutableArray *areaArr = [NSMutableArray array];
+    NSMutableArray *priceArr = [NSMutableArray array];
+    NSMutableArray *roomTypeArr = [NSMutableArray array];
+    NSMutableArray *sortArr = [NSMutableArray array];
+    
+    [areaArr addObject:areaModel];
+    [areaArr addObject:locationModel];
+    [priceArr addObject:totalPriceModel];
+    [roomTypeArr addObject:roomTypeModel];
+    [sortArr addObject:sortModel];
+
+    [dataArr addObject:areaArr];
+    [dataArr addObject:priceArr];
+    [dataArr addObject:roomTypeArr];
+    [dataArr addObject:moreArr];
+    [dataArr addObject:sortArr];
+    return dataArr;
+
+}
+- (NSMutableArray *)getTabDataByType2:(FilterType)type
 {
     NSMutableArray *dataArr = [NSMutableArray array];
     if (type == FilterTypeIsNewHouse) {
@@ -232,6 +395,14 @@
             [infoArr addObject:model];
         }
     }
+    for (ZHFilterItemModel *model1 in infoArr) {
+        for (ZHFilterItemModel *model in self.dictArr) {
+            if ([model.parentCode isEqualToString:model1.code]) {
+                [model1.itemArr addObject:model];
+            }
+        }
+    }
+    
     return infoArr;
 }
 

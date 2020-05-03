@@ -9,7 +9,28 @@
 #import "ZHFilterItemModel.h"
 
 @implementation ZHFilterItemModel
+-(instancetype)initWithName:(NSString *)name code:(NSString *)code key:(NSString *)key{
+    self = [super init];
+    if (self) {
+        self.name = name;
+        self.code = code;
+        self.key = key;
 
+    }
+    return self;
+}
+- (void)setModelItemSelectesNO
+{
+    for (ZHFilterItemModel *infoModel in self.itemArr) {
+        infoModel.selected = NO;
+    }
+}
+- (NSMutableArray<ZHFilterItemModel *> *)itemArr{
+    if (!_itemArr) {
+        _itemArr = [NSMutableArray array];
+    }
+    return _itemArr;
+}
 //归档
 - (void)encodeWithCoder:(NSCoder *)aCoder{
     unsigned int count;

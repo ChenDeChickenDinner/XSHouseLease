@@ -16,6 +16,10 @@
 @property (strong, nonatomic) NSArray<XSHouseInfoCellModel *> *rentSecondDynamicArray;
 @property (strong, nonatomic) NSArray<XSHouseInfoCellModel *> *sellSecondDynamicArray;
 
+@property (strong, nonatomic) NSArray<XSHouseInfoCellModel *> *rentQueryArray;
+@property (strong, nonatomic) NSArray<XSHouseInfoCellModel *> *NewQueryArray;
+@property (strong, nonatomic) NSArray<XSHouseInfoCellModel *> *oldQueryArray;
+
 @end
 
 @interface XSHouseSubMitServer : XSBaseServer

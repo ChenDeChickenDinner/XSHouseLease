@@ -24,7 +24,11 @@ DEF_SINGLETON(XSHouseSubMitDynamicServer)
     WEAK_SELF;
     [self.requestVc.subInfoInterface getRentEnumsWithCallback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
         if (error == nil && responseModel.code.integerValue == SuccessCode) {
+ 
             STRONG_SELF;
+            [self dealDataWitHresponseModel:responseModel black:^(NSArray *array) {
+                 
+             }];
             NSArray *enumData  =  [XSHouseEnumData mj_objectArrayWithKeyValuesArray:responseModel.data];
             NSLog(@"sub动态 = %@", [enumData mj_keyValues]);
             NSMutableArray *array = [NSMutableArray array];
@@ -55,8 +59,26 @@ DEF_SINGLETON(XSHouseSubMitDynamicServer)
              self.sellSecondDynamicArray = newArray;
          }
      }];
+    
+    [self.requestVc.subInfoInterface getQueryEnumsWithhouseType:XSBHouseType_New callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+        
+    }];
 }
-
+- (void)dealDataWitHresponseModel:(XSNetworkResponse *)responseModel black:(void(^)(NSArray *array))black{
+    NSArray *enumData  =  [XSHouseEnumData mj_objectArrayWithKeyValuesArray:responseModel.data];
+    NSLog(@"sub动态 = %@", [enumData mj_keyValues]);
+    NSMutableArray *array = [NSMutableArray array];
+    for (XSHouseEnumData *model in enumData) {
+        XSHouseInfoCellModel *cellModel =  [model combinationToCellModel];
+        [array addObject:cellModel];
+    }
+     NSArray *newArray = [array sortedArrayUsingComparator:^NSComparisonResult(XSHouseInfoCellModel *obj1, XSHouseInfoCellModel *obj2) {
+         return obj1.sequence.integerValue <  obj2.sequence.integerValue ?NSOrderedAscending:NSOrderedDescending;;
+    }];
+    if (black) {
+        black(newArray);
+    }
+}
 @end
 
 

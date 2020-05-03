@@ -54,8 +54,8 @@
 
 @interface ZHFilterMenuView ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *leftTableView;
-@property (nonatomic, strong) UITableView *mediumTableView;//后续拓展使用
 @property (nonatomic, strong) UITableView *rightTableView;
+@property (nonatomic, strong) UITableView *mediumTableView;//后续拓展使用
 @property (nonatomic, strong) UIView *backGroundView;
 @property (nonatomic, strong) UIView *lineView;
 @property (nonatomic, strong) ZHFilterBottomView *bottomView;
@@ -363,6 +363,8 @@
 - (void)removeMenuList
 {
     [self.rightTableView removeFromSuperview];
+    [self.mediumTableView removeFromSuperview];
+
     [self.backGroundView removeFromSuperview];
     [self.leftTableView removeFromSuperview];
     [self.bottomView removeFromSuperview];
@@ -392,6 +394,8 @@
     }
     [self.leftTableView reloadData];
     [self.rightTableView reloadData];
+    [self.mediumTableView reloadData];
+
     //通过归解档实现模型数组深拷贝
     self.filterDataArr = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:self.dataArr]];
 }
@@ -456,7 +460,8 @@
         BOOL haveData = filterModel.itemArr.count;
         CGFloat leftTabWidth = menuViewFrom.size.width;
         CGFloat rightTabWidth = 0.f;
-        
+        CGFloat mediumTabWidth = 0.f;
+
         if (downType == ZHFilterMenuDownTypeTwoLists) {
             if (haveData) {
                 if (self.twoListToOneList) {
@@ -464,18 +469,27 @@
                     rightTabWidth = menuViewFrom.size.width / 2;
                 } else {
                     leftTabWidth = menuViewFrom.size.width / 3;
-                    rightTabWidth = menuViewFrom.size.width / 3 * 2;
+//                    rightTabWidth = menuViewFrom.size.width / 3 * 2;
+                    rightTabWidth = menuViewFrom.size.width / 3 ;
+                    mediumTabWidth = menuViewFrom.size.width / 3 ;
+
                 }
             }
             
             self.leftTableView.frame = CGRectMake(menuViewFrom.origin.x, CGRectGetMaxY(menuViewFrom), leftTabWidth, 0);
             self.rightTableView.frame = CGRectMake(leftTabWidth, CGRectGetMaxY(menuViewFrom), rightTabWidth, 0);
+            self.mediumTableView.frame = CGRectMake(leftTabWidth* 2, CGRectGetMaxY(menuViewFrom), mediumTabWidth, 0);
+
             [superView addSubview:self.leftTableView];
             [superView addSubview:self.rightTableView];
+            [superView addSubview:self.mediumTableView];
+
         } else {
             self.leftTableView.frame = CGRectMake(menuViewFrom.origin.x, CGRectGetMaxY(menuViewFrom), leftTabWidth, 0);
             [superView addSubview:self.leftTableView];
             [self.rightTableView removeFromSuperview];
+            [self.mediumTableView removeFromSuperview];
+
         }
         CGFloat viewHeight = [self getListHeightWithDownType:downType confirmType:confirmType];
         CGFloat bottomHeight = 0.f;
@@ -495,6 +509,7 @@
             if (downType == ZHFilterMenuDownTypeTwoLists) {
                 self.leftTableView.frame = CGRectMake(menuViewFrom.origin.x, menuViewFrom.origin.y + menuViewFrom.size.height, leftTabWidth, viewHeight);
                 self.rightTableView.frame = CGRectMake(leftTabWidth, menuViewFrom.origin.y + menuViewFrom.size.height, rightTabWidth, viewHeight);
+                self.mediumTableView.frame = CGRectMake(leftTabWidth *2, menuViewFrom.origin.y + menuViewFrom.size.height, mediumTabWidth, viewHeight);
             } else {
                 self.leftTableView.frame = CGRectMake(menuViewFrom.origin.x, CGRectGetMaxY(menuViewFrom), leftTabWidth, viewHeight);
             }
@@ -506,17 +521,21 @@
         }];
         [self.leftTableView reloadData];
         [self.rightTableView reloadData];
+        [self.mediumTableView reloadData];
+
     } else {
         [UIView animateWithDuration:0.3 animations:^{
             self.backGroundView.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.f];
             self.leftTableView.frame = CGRectMake(self.leftTableView.frame.origin.x, self.leftTableView.frame.origin.y, self.leftTableView.frame.size.width, 0);
             self.rightTableView.frame = CGRectMake(self.rightTableView.frame.origin.x, self.rightTableView.frame.origin.y, self.rightTableView.frame.size.width, 0);
+              self.mediumTableView.frame = CGRectMake(self.mediumTableView.frame.origin.x, self.mediumTableView.frame.origin.y, self.mediumTableView.frame.size.width, 0);
             if (confirmType == ZHFilterMenuConfirmTypeBottomConfirm) {
                 self.bottomView.hidden = YES;
                 self.bottomView.frame = CGRectMake(menuViewFrom.origin.x, CGRectGetMaxY(self.leftTableView.frame), menuViewFrom.size.width, 0);
             }
         } completion:^(BOOL finished) {
             [self.rightTableView removeFromSuperview];
+            [self.mediumTableView removeFromSuperview];
             [self.backGroundView removeFromSuperview];
             [self.leftTableView removeFromSuperview];
             [self.bottomView removeFromSuperview];
@@ -621,7 +640,26 @@
     }
     return filterModel;
 }
+- (ZHFilterItemModel *)getSelectedFilter2Model
+{
+    NSArray *modelArr = [self getSelectedTabIndexFilterModelArr];
+    ZHFilterModel *selectedModel = nil;
+    ZHFilterItemModel *selectedItemModel = nil;
 
+    for (ZHFilterModel *model in modelArr) {
+        if (model.selected) {
+            selectedModel = model;
+            break;
+        }
+    }
+    for (ZHFilterItemModel *model in selectedModel.itemArr) {
+        if (model.selected) {
+            selectedItemModel = model;
+            break;
+        }
+    }
+    return selectedItemModel;
+}
 /** tabIndex 下的确定类型 */
 - (ZHFilterMenuConfirmType)getConfirmTypeBySelectedTabIndex:(NSInteger)tabIndex
 {
@@ -767,7 +805,9 @@
                 return [[self getSelectedTabIndexFilterModelArr] count];
             } else if (tableView == self.rightTableView) {
                 return [[self getSelectedFilterModel].itemArr count];
-            }
+            } else if (tableView == self.mediumTableView) {
+               return [[self getSelectedFilter2Model].itemArr count];
+           }
         } else if (downType == ZHFilterMenuDownTypeOnlyList){
             return [[self getSelectedFilterModel].itemArr count];
         }
@@ -790,9 +830,20 @@
             ZHFilterItemModel *itemModel = filterModel.itemArr[indexPath.row];
             cell.titleLabel.text = itemModel.name;
             cell.titleLabel.textColor = itemModel.selected?self.titleSelectedColor:self.titleColor;
-        }
+        } else if (tableView == self.mediumTableView || downType == ZHFilterMenuDownTypeOnlyList) {
+           ZHFilterItemModel *filterModel = [self getSelectedFilter2Model];
+//           ZHFilterItemModel *itemModel = filterModel.itemArr[indexPath.row];
+            
+            ZHFilterItemModel *itemMModel = filterModel.itemArr[indexPath.row];
+           cell.titleLabel.text = itemMModel.name;
+           cell.titleLabel.textColor = itemMModel.selected?self.titleSelectedColor:self.titleColor;
+       }
         if (tableView == self.rightTableView) {
             cell.backgroundColor = KItemBGColor;
+        }else if (tableView == self.mediumTableView){
+            cell.backgroundColor = KItemBGColor;
+        }else{
+            cell.backgroundColor = [UIColor whiteColor];
         }
         return cell;
     } else {
@@ -847,16 +898,32 @@
             
             [self.leftTableView reloadData];
             [self.rightTableView reloadData];
+            [self.mediumTableView reloadData];
+
         } else if (tableView == self.rightTableView) {
             ZHFilterModel *filterModel = [self getSelectedFilterModel];
             [filterModel setModelItemSelectesNO];
             ZHFilterItemModel *itemModel = filterModel.itemArr[indexPath.row];
             itemModel.selected = YES;
             [self.rightTableView reloadData];
+            [self.mediumTableView reloadData];
+
             if (confirmType == ZHFilterMenuConfirmTypeSpeedConfirm) {
                 [self confirmAction];
             }
-        }
+        } else if (tableView == self.mediumTableView) {
+           ZHFilterItemModel *filterModel = [self getSelectedFilter2Model];
+//           ZHFilterItemModel *itemModel = filterModel.itemArr[indexPath.section];
+            [filterModel setModelItemSelectesNO];
+
+            ZHFilterItemModel *itemMModel = filterModel.itemArr[indexPath.row];
+
+           itemMModel.selected = YES;
+            [self.mediumTableView reloadData];
+           if (confirmType == ZHFilterMenuConfirmTypeSpeedConfirm) {
+               [self confirmAction];
+           }
+       }
     } else if (downType == ZHFilterMenuDownTypeOnlyList) {
         NSArray *modelArr = [self getSelectedTabIndexFilterModelArr];
         ZHFilterModel *filterModel = [modelArr firstObject];
@@ -866,6 +933,8 @@
         }
         [self.leftTableView reloadData];
         [self.rightTableView reloadData];
+        [self.mediumTableView reloadData];
+
         if (confirmType == ZHFilterMenuConfirmTypeSpeedConfirm) {
             [self confirmAction];
         }
@@ -877,17 +946,22 @@
 {
     CGFloat leftTabWidth = self.frame.size.width;
     CGFloat rightTabWidth = 0.f;
+    CGFloat mediumTabWidth = 0.f;
+
     if (haveData) {
         if (self.twoListToOneList) {
             leftTabWidth = self.frame.size.width / 2;
             rightTabWidth = self.frame.size.width / 2;
         } else {
             leftTabWidth = self.frame.size.width / 3;
-            rightTabWidth = self.frame.size.width / 3 * 2;
+            rightTabWidth = self.frame.size.width / 3;
+            mediumTabWidth = self.frame.size.width / 3 ;
+
         }
     }
     self.leftTableView.frame = CGRectMake(self.leftTableView.frame.origin.x, self.leftTableView.frame.origin.y, leftTabWidth, self.leftTableView.frame.size.height);
     self.rightTableView.frame = CGRectMake(leftTabWidth, self.rightTableView.frame.origin.y, rightTabWidth, self.rightTableView.frame.size.height);
+    self.mediumTableView.frame = CGRectMake(mediumTabWidth *2, self.mediumTableView.frame.origin.y, mediumTabWidth, self.mediumTableView.frame.size.height);
 }
 
 
@@ -917,6 +991,7 @@
         _mediumTableView.dataSource = self;
         _mediumTableView.delegate = self;
         _mediumTableView.separatorColor = KLineColor;
+        _mediumTableView.backgroundColor = KItemBGColor;
         _mediumTableView.separatorInset = UIEdgeInsetsZero;
         _mediumTableView.tableFooterView = [[UIView alloc]init];
         _mediumTableView.showsVerticalScrollIndicator = NO;

@@ -84,6 +84,19 @@ NSString *url = [NSString stringWithFormat:@"%@/estate/hots",XSBaseUrl];
     NSString *url = [NSString stringWithFormat:@"%@/enum/save/secondenums",XSBaseUrl];
     [self GET:url param:dict progress:nil callback:callback];
 }
+//获取房屋筛选选择项
+- (void)getQueryEnumsWithhouseType:(XSBHouseType)houseType callback:(HBCompletionBlock)callback{
+    NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithCapacity:0];
+    NSString *url = [NSString stringWithFormat:@"%@/enum/save/secondenums",XSBaseUrl];
+    if (houseType == XSBHouseType_old){
+       url = [NSString stringWithFormat:@"%@/enum/query/secondenums",XSBaseUrl];
+    }else if (houseType == XSBHouseType_New){
+        url = [NSString stringWithFormat:@"%@/enum/query/newenums",XSBaseUrl];
+    }else if (houseType == XSBHouseType_Rent){
+        url = [NSString stringWithFormat:@"%@/enum/query/rentenums",XSBaseUrl];
+    }
+    [self GET:url param:dict progress:nil callback:callback];
+}
 
 // 租房二手房上传提交
 - (void)renthouseSaveWithDict:(NSMutableDictionary *)dict houseType:(XSBHouseType)houseType callback:(HBCompletionBlock)callback{

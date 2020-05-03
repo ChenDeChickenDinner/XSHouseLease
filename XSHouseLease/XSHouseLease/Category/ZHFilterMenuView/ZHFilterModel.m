@@ -70,6 +70,9 @@
     self.selectArr = [NSMutableArray array];
     for (ZHFilterItemModel *infoModel in self.itemArr) {
         infoModel.selected = NO;
+        for (ZHFilterItemModel *infosubModel in infoModel.itemArr) {
+            infosubModel.selected = NO;
+        }
     }
 }
 
@@ -78,6 +81,10 @@
     for (int i = 0; i < self.itemArr.count; i ++) {
         ZHFilterItemModel *infoModel = self.itemArr[i];
         infoModel.selected = !i;
+        for (int i = 0; i < infoModel.itemArr.count; i ++) {
+            ZHFilterItemModel *infoModel2 = infoModel.itemArr[i];
+            infoModel2.selected = !i;
+        }
     }
 }
 

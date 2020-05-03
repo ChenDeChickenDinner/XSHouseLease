@@ -64,6 +64,9 @@ NS_ASSUME_NONNULL_BEGIN
 // 信息统计
 - (void)statisticsWithCallback:(HBCompletionBlock)callback;
 - (void)authenticationWithCallback:(HBCompletionBlock)callback;
+
+//获取房屋筛选选择项
+- (void)getQueryEnumsWithhouseType:(XSBHouseType)houseType callback:(HBCompletionBlock)callback;
 @end
 
 NS_ASSUME_NONNULL_END
