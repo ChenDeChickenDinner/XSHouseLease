@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *parentCode;        //父类code
 @property (nonatomic, copy) NSString *minPrice;          //输入框最低值
 @property (nonatomic, copy) NSString *maxPrice;          //输入框最大值
+@property (nonatomic, assign) BOOL isinteger;            
 
 @property (nonatomic, strong) NSMutableArray<ZHFilterItemModel *> *itemArr;   //item数据（暂时无用，后续拓展多层级展示时可使用）
 - (void)setModelItemSelectesNO;

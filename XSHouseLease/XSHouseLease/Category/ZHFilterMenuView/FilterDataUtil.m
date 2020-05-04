@@ -125,6 +125,13 @@
     ZHFilterItemModel *roomTypeModel4 = [[ZHFilterItemModel alloc]initWithName:@"四室" code:@"4" key:@"formTypeRoom"];
     ZHFilterItemModel *roomTypeModel5 = [[ZHFilterItemModel alloc]initWithName:@"五室" code:@"5" key:@"formTypeRoom"];
     ZHFilterItemModel *roomTypeModel6 = [[ZHFilterItemModel alloc]initWithName:@"五室以上" code:@"6" key:@"formTypeRoom"];
+    roomTypeModell.isinteger = YES;
+    roomTypeModel2.isinteger = YES;
+    roomTypeModel3.isinteger = YES;
+    roomTypeModel4.isinteger = YES;
+    roomTypeModel5.isinteger = YES;
+    roomTypeModel6.isinteger = YES;
+
     [roomTypeArray addObject:roomTypeModell];
     [roomTypeArray addObject:roomTypeModel2];
     [roomTypeArray addObject:roomTypeModel3];
@@ -158,6 +165,7 @@
              model.key = value.key;
              model.name = value.valueStr;
              model.code = value.value.stringValue;
+             model.isinteger = YES;
              [itemArray addObject:model];
          }
          

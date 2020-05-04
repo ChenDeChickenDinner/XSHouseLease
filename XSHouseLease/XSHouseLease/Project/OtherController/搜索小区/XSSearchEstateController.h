@@ -13,7 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 typedef void(^searchBlock)(XSHouseEsModel *model);
 
 @interface XSSearchEstateController : XSBaseViewController
-@property (nonatomic,strong) NSMutableDictionary *dict;
+@property (nonatomic ,strong) BRProvinceModel *cityModel;
+
 @property (nonatomic,copy)   searchBlock searchBlock;
 @end
 

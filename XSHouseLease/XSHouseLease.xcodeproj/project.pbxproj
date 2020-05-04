@@ -405,8 +405,8 @@
 		558500D924497F5F001A09B1 /* 搜索小区 */ = {
 			isa = PBXGroup;
 			children = (
-				558500DA24497F5F001A09B1 /* XSSearchEstateController.m */,
 				558500DB24497F5F001A09B1 /* XSSearchEstateController.h */,
+				558500DA24497F5F001A09B1 /* XSSearchEstateController.m */,
 			);
 			path = "搜索小区";
 			sourceTree = "<group>";

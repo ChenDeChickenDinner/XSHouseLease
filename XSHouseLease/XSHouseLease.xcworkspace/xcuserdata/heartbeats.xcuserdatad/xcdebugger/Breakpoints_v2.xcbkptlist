@@ -18,16 +18,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C3B37FF5-64EF-47C5-A715-91680DEA0365"
+            uuid = "79D048E3-56DD-4743-B044-077E8EDA0DCB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "XSHouseLease/Category/ZHFilterMenuView/ZHFilterMenuView.m"
+            filePath = "XSHouseLease/Project/Controller/XSHouselishViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "780"
-            endingLineNumber = "780"
-            landmarkName = "-getSelectedModelArrAndUpdateSelectArr"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "-searcView"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

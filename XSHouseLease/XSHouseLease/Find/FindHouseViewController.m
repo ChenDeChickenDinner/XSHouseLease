@@ -10,6 +10,7 @@
 #import "XSLocationSearchview.h"
 #import "XSCollectionView.h"
 #import "XSHouseModuleViewController.h"
+#import "XSSearchEstateController.h"
 
 @interface FindHouseViewController ()<UINavigationControllerDelegate,JXCategoryViewDelegate,JXCategoryListContainerViewDelegate>
 @property (weak, nonatomic) IBOutlet XSLocationSearchview *searchView;

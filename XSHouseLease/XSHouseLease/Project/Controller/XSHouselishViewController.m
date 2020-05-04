@@ -14,6 +14,8 @@
 #import "XSCollectionView.h"
 #import "ZHFilterMenuView.h"
 #import "FilterDataUtil.h"
+#import "XSSearchEstateController.h"
+
 #define KMenuViewHeight      45
 #define KHeadImageViewHeight 250
 #define KStatusBarHeight [UIApplication sharedApplication].statusBarFrame.size.height
@@ -38,6 +40,37 @@ ZHFilterMenuViewDetaSource,UIScrollViewDelegate>
 @end
 
 @implementation XSHouselishViewController
+
+- (BRProvinceModel *)cityModel{
+    if (!_cityModel) {
+        _cityModel = [XSUserServer sharedInstance].cityModel;
+    }
+    return _cityModel;
+}
+- (void)setEsModel:(XSHouseEsModel *)esModel{
+    self.searchDict = nil;
+    _esModel  = esModel;
+    NSDictionary *dict = self.searchDict;
+    NSLog(@"self.searchDict:%@",dict);
+    [self loadData];
+}
+- (NSMutableDictionary *)searchDict{
+    if (_searchDict == nil) {
+        _searchDict = [NSMutableDictionary dictionary];
+        [_searchDict  safeSetObject:self.cityModel.name forKey:@"city"];
+        [_searchDict  safeSetObject:self.cityModel.code forKey:@"cityId"];
+
+//        [_searchDict  safeSetObject:self.esModel.cityId forKey:@"cityId"];
+        [_searchDict  safeSetObject:self.esModel.regionId forKey:@"regionId"];
+        [_searchDict  safeSetObject:self.esModel.townId forKey:@"townId"];
+//
+//        NSMutableDictionary *esDict =  [self.esModel mj_keyValues];
+//        for (NSString *key in esDict.allKeys) {
+//            [_searchDict  safeSetObject:[esDict safeObjectForKey:key] forKey:key];
+//        }
+    }
+    return _searchDict;
+}
 - (NSMutableArray *)array{
     if (!_array) {
         _array = [NSMutableArray array];
@@ -58,7 +91,24 @@ ZHFilterMenuViewDetaSource,UIScrollViewDelegate>
         _searcView.frame = CGRectMake(0, 0, SCREEN_SIZE.width - 110, 35);
         _searcView.searchBlack = ^(NSString *searhKey) {
             STRONG_SELF;
-            [self loadData];
+//            [self loadData];
+            for (UIViewController *vc in self.navigationController.childViewControllers) {
+                if ([vc isKindOfClass:[XSSearchEstateController class]]) {
+                    XSSearchEstateController *newvc = (XSSearchEstateController *)vc;
+                    newvc.cityModel = self.cityModel;
+                    newvc.searchBlock = ^(XSHouseEsModel * _Nonnull model) {
+                    self.esModel = model;
+                     };
+                    [self.navigationController popToViewController:vc animated:YES];
+                    return ;
+                }
+            }
+            XSSearchEstateController *vc = [[XSSearchEstateController alloc]init];
+            vc.cityModel = self.cityModel;
+            vc.searchBlock = ^(XSHouseEsModel * _Nonnull model) {
+            self.esModel = model;
+            };
+            [self.navigationController pushViewController:vc animated:YES];
         };
     }
     return _searcView;
@@ -157,26 +207,33 @@ ZHFilterMenuViewDetaSource,UIScrollViewDelegate>
 
     for (ZHFilterItemModel *model in selectedModelArr) {
         if (model.key && model.selected) {
-            if (model.itemArr.count > 0) {
-                NSMutableArray *array = [NSMutableArray array];
-                for (ZHFilterItemModel *submodel in model.itemArr) {
-                    if (submodel.selected) {
-                        [array addObject:submodel.code];
-                    }
-                }
-                [dict safeSetObject:array forKey:model.key];
-            }else{
-                [dict safeSetObject:model.code forKey:model.key];
-                if (model.parentKey) {
-                    [dict safeSetObject:model.parentCode forKey:model.parentKey];
-                }
-                if ([model.key isEqualToString:@"totalPrice"]||[model.key isEqualToString:@"rentPrice"]) {
-                    NSArray *aray = [model.code componentsSeparatedByString:@"-"];
-                    [dict safeSetObject:aray.firstObject forKey:@"minPrice"];
-                    [dict safeSetObject:aray.lastObject forKey:@"maxPrice"];
+            
+            [self dictManage:dict key:model.key value:model.code isinteger:model.isinteger];
 
-                }
+            if (model.parentKey) {
+                [dict safeSetObject:model.parentCode forKey:model.parentKey];
             }
+            if ([model.key isEqualToString:@"totalPrice"]||[model.key isEqualToString:@"rentPrice"]) {
+                NSArray *aray = [model.code componentsSeparatedByString:@"-"];
+                [dict safeSetObject:aray.firstObject forKey:@"minPrice"];
+                [dict safeSetObject:aray.lastObject forKey:@"maxPrice"];
+                [dict removeObjectForKey:@"totalPrice"];
+                [dict removeObjectForKey:@"rentPrice"];
+
+            }
+            
+//            if (model.itemArr.count > 0) {
+//                NSMutableArray *array = [NSMutableArray array];
+//                for (ZHFilterItemModel *submodel in model.itemArr) {
+//                    if (submodel.selected) {
+//                        [array addObject:submodel.code];
+//                    }
+//                }
+//                [dict safeSetObject:array forKey:model.key];
+//            }else{
+//                [dict safeSetObject:model.code forKey:model.key];
+//
+//            }
 
         }
     
@@ -185,9 +242,37 @@ ZHFilterMenuViewDetaSource,UIScrollViewDelegate>
             [dict safeSetObject:model.maxPrice forKey:@"maxPrice"];
         }
     }
-    NSLog(@"结果回调：%@",dict);
-}
+    if (dict.allKeys.count > 0) {
+        self.searchDict = nil;
+        for (NSString *key in dict.allKeys) {
+            [self.searchDict safeSetObject:[dict safeObjectForKey:key] forKey:key];
+        }
+        NSLog(@"结果回调：%@",self.searchDict);
 
+        [self loadData];
+    }
+
+}
+- (void)dictManage:(NSMutableDictionary *)dict key:(NSString *)key value:(NSString *)value isinteger:(BOOL)isinteger{
+    id oldValue = [dict safeObjectForKey:key];
+    if (oldValue) {
+        if ([oldValue isKindOfClass:[NSNumber class]]) {
+            NSMutableArray *array = [NSMutableArray array];
+            NSNumber *valye = (NSNumber *)oldValue;
+            [array addObject:valye];
+            [array addObject:@(value.intValue)];
+            [dict safeSetObject:array forKey:key];
+        }else if ([oldValue isKindOfClass:[NSArray class]]){
+            NSMutableArray *array = [NSMutableArray arrayWithArray:oldValue];
+           [array addObject:@(value.intValue)];
+           [dict safeSetObject:array forKey:key];
+        }else{
+            [dict safeSetObject:isinteger?@(value.intValue):value forKey:key];
+        }
+    }else{
+        [dict safeSetObject:isinteger?@(value.intValue):value forKey:key];
+    }
+}
 /** 警告回调(用于错误提示) */
 - (void)menuView:(ZHFilterMenuView *)menuView wangType:(ZHFilterMenuViewWangType)wangType{
     if (wangType == ZHFilterMenuViewWangTypeInput) {
@@ -197,7 +282,7 @@ ZHFilterMenuViewDetaSource,UIScrollViewDelegate>
 
 /** 点击菜单回调 */
 - (void)menuView:(ZHFilterMenuView *)menuView selectMenuAtTabIndex:(NSInteger)tabIndex{
-    if (self.tableView.contentOffset.y < KHeadImageViewHeight) {
+    if (self.tableView.contentOffset.y < KHeadImageViewHeight && self.array.count > 0) {
         //设置等待时间，等区头悬停后再允许下拉框展示
         menuView.waitTime = 0.2f;
         [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:(UITableViewScrollPositionTop)];
@@ -295,12 +380,7 @@ ZHFilterMenuViewDetaSource,UIScrollViewDelegate>
     [self loadData];
 
 }
-- (BRProvinceModel *)cityModel{
-    if (!_cityModel) {
-        _cityModel = [XSUserServer sharedInstance].cityModel;
-    }
-    return _cityModel;
-}
+
 - (void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
     self.tableView.frame = self.view.bounds;

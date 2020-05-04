@@ -71,6 +71,15 @@
     self.searchTextField.frame = CGRectMake(CGRectGetMaxX(self.searchBtn.frame) + 10, 0, self.width - self.searchBtn.width - 10, self.height);
 
 }
+-(void)beganEditing{
+    [self.searchTextField becomeFirstResponder];
+}
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    if (self.searchBlack && !self.search) {
+        self.searchBlack(textField.text);
+     }
+    return self.search;
+}
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     if (textField.text.length > 0) {
         if (self.searchBlack) {

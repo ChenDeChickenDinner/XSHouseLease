@@ -102,14 +102,19 @@ static NSString *CollectionCellIdentifierB = @"CollectionCellIdentifierB";
         [addressPickerView show];
     }else if ([valueData.key isEqualToString:@"estate"]){
         id city =  [self.subDict objectForKey:@"city"];
+        id cityid =  [self.subDict objectForKey:@"cityId"];
+
         if (city == nil) {
             [ProgressHUD showError:@"请选择城市" Interaction:YES];
             return;
         }
        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
         [dict safeSetObject:city forKey:@"city"];
+        BRProvinceModel *citymodel = [[BRProvinceModel alloc]init];
+        citymodel.name = city;
+        citymodel.code = cityid;
         XSSearchEstateController *vc = [[XSSearchEstateController alloc]init];
-        vc.dict = dict;
+        vc.cityModel = citymodel;
         vc.searchBlock = ^(XSHouseEsModel * _Nonnull model) {
             STRONG_SELF;
             valueData.value = model.ID;
@@ -118,10 +123,10 @@ static NSString *CollectionCellIdentifierB = @"CollectionCellIdentifierB";
             self.value.textColor = [UIColor hb_colorWithHexString:@"#444444" alpha:1];
            self.dataModel.valuechangeStatus(self.dataModel, model, XSBHouseKeyValueEsSend);
         };
-        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
-        nav.modalPresentationStyle = UIModalPresentationFullScreen;
-//        [[NSObject getTopViewController].navigationController pushViewController:vc animated:YES];
-        [[NSObject getTopViewController] presentViewController:nav animated:YES completion:nil];
+//        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
+//        nav.modalPresentationStyle = UIModalPresentationFullScreen;
+        [[NSObject getTopViewController].navigationController pushViewController:vc animated:YES];
+//        [[NSObject getTopViewController] presentViewController:nav animated:YES completion:nil];
     }
 
 }

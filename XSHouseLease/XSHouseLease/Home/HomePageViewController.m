@@ -11,6 +11,7 @@
 #import "XSHouseSubmitFirstViewController.h"
 #import "XSResourceViewController.h"
 #import "XSHouselishViewController.h"
+#import "XSSearchEstateController.h"
 
 @interface HomePageViewController ()<UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *titleView;

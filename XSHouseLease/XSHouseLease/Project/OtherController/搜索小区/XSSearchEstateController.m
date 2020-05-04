@@ -13,18 +13,36 @@
 @property (nonatomic,strong)XSRegionSearchView *searcView;
 @property (strong, nonatomic)  UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *array;
+@property (nonatomic,strong) NSMutableDictionary *dict;
+
 @end
 
 @implementation XSSearchEstateController
+- (void)setCityModel:(BRProvinceModel *)cityModel{
+    _cityModel = cityModel;
+    [self.dict safeSetObject:cityModel.name forKey:@"city"];
+    [self.dict safeSetObject:cityModel.code forKey:@"cityId"];
+}
+- (NSMutableDictionary *)dict{
+    if (!_dict) {
+        _dict = [NSMutableDictionary dictionary];
+        [_dict safeSetObject:_cityModel.name forKey:@"city"];
+        [_dict safeSetObject:_cityModel.code forKey:@"cityId"];
 
+    }
+    return _dict;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.array = [NSMutableArray array];
     WEAK_SELF;
     XSRegionSearchView *searcView = [[XSRegionSearchView alloc]init];
+    searcView.search = YES;
     searcView.searchBlack = ^(NSString *searhKey) {
         STRONG_SELF;
-        [self loadDataWithkeywords:searhKey];
+        if (searhKey.length > 0) {
+            [self loadDataWithkeywords:searhKey];
+        }
     };
     self.searcView = searcView;
     self.navigationItem.titleView = searcView;
@@ -47,7 +65,16 @@
     self.searcView.frame = CGRectMake(0, 0, SCREEN_SIZE.width - 90, 35);
     self.tableView.frame = self.view.bounds;
 }
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self.searcView beganEditing];
+
+}
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+}
 - (void)loadDataWithkeywords:(NSString *)keywords{
+    self.dict = nil;
     [self.dict safeSetObject:keywords forKey:@"keywords"];
     [self.subInfoInterface searchEstateWithDict:self.dict callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
         if (error == nil && responseModel.code.integerValue == SuccessCode) {
@@ -78,6 +105,12 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     XSHouseEsModel *dataModel = [self.array safeObjectAtIndex:indexPath.row];
+    if (self.searchBlock) {
+        self.searchBlock(dataModel);
+        [self.navigationController popViewControllerAnimated:YES];
+     }
+    
+    return;
     WEAK_SELF;
     [self dismissViewControllerAnimated:YES completion:^{
         STRONG_SELF;

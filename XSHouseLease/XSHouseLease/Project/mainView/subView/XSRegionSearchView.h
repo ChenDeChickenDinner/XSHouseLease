@@ -16,7 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 +(instancetype)searchView;
 
 @property(nonatomic,copy) searchBlack searchBlack;
-
+@property(nonatomic,assign) BOOL search;
+-(void)beganEditing;
 @end
 
 NS_ASSUME_NONNULL_END
