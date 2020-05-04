@@ -140,6 +140,8 @@ ZHFilterMenuViewDetaSource,UIScrollViewDelegate>
         _menuView.inWindowMinY = KNavbarAndStatusHieght;
         _menuView.titleArr = @[@"区域",@"价格",@"户型",@"更多",@"排序"];
         _menuView.imageNameArr = @[@"x_arrow",@"x_arrow",@"x_arrow",@"x_arrow",@"x_arrow"];
+//        _menuView.titleArr = @[@"区域"];
+//          _menuView.imageNameArr = @[@"x_arrow"];
     }
     return _menuView;
 }
@@ -150,8 +152,40 @@ ZHFilterMenuViewDetaSource,UIScrollViewDelegate>
 
 /** 确定回调 */
 - (void)menuView:(ZHFilterMenuView *)menuView didSelectConfirmAtSelectedModelArr:(NSArray *)selectedModelArr{
-    NSArray *dictArr = [ZHFilterItemModel mj_keyValuesArrayWithObjectArray:selectedModelArr];
-    NSLog(@"结果回调：%@",dictArr.mj_JSONString);
+//    NSArray *dictArr = [ZHFilterItemModel mj_keyValuesArrayWithObjectArray:selectedModelArr];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+
+    for (ZHFilterItemModel *model in selectedModelArr) {
+        if (model.key && model.selected) {
+            if (model.itemArr.count > 0) {
+                NSMutableArray *array = [NSMutableArray array];
+                for (ZHFilterItemModel *submodel in model.itemArr) {
+                    if (submodel.selected) {
+                        [array addObject:submodel.code];
+                    }
+                }
+                [dict safeSetObject:array forKey:model.key];
+            }else{
+                [dict safeSetObject:model.code forKey:model.key];
+                if (model.parentKey) {
+                    [dict safeSetObject:model.parentCode forKey:model.parentKey];
+                }
+                if ([model.key isEqualToString:@"totalPrice"]||[model.key isEqualToString:@"rentPrice"]) {
+                    NSArray *aray = [model.code componentsSeparatedByString:@"-"];
+                    [dict safeSetObject:aray.firstObject forKey:@"minPrice"];
+                    [dict safeSetObject:aray.lastObject forKey:@"maxPrice"];
+
+                }
+            }
+
+        }
+    
+        if (model.minPrice && model.maxPrice){
+            [dict safeSetObject:model.minPrice forKey:@"minPrice"];
+            [dict safeSetObject:model.maxPrice forKey:@"maxPrice"];
+        }
+    }
+    NSLog(@"结果回调：%@",dict);
 }
 
 /** 警告回调(用于错误提示) */
@@ -200,7 +234,7 @@ ZHFilterMenuViewDetaSource,UIScrollViewDelegate>
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.houseType = XSBHouseType_Rent;
+    self.houseType = XSBHouseType_old;
     
     self.module = YES;
     self.searchDict = [NSMutableDictionary dictionary];
@@ -252,13 +286,20 @@ ZHFilterMenuViewDetaSource,UIScrollViewDelegate>
     
     
     FilterDataUtil *dataUtil = [[FilterDataUtil alloc] init];
-    self.menuView.filterDataArr = [dataUtil getTabDataByType:FilterTypeIsNewHouse];
+    
+    self.menuView.filterDataArr = [dataUtil getTabDataByType:self.houseType mainCity:self.cityModel];
     [self.menuView beginShowMenuView];
     
     [self.tableView reloadData];
     
     [self loadData];
 
+}
+- (BRProvinceModel *)cityModel{
+    if (!_cityModel) {
+        _cityModel = [XSUserServer sharedInstance].cityModel;
+    }
+    return _cityModel;
 }
 - (void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];

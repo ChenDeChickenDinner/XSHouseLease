@@ -352,6 +352,7 @@
 /** 隐藏 */
 - (void)hideMenuList
 {
+    
     NSArray *selectedModelArr = [self getSelectedModelArrAndUpdateSelectArr];
     [self animateMenuViewWithShow:NO];
     if (self.zh_delegate && [self.zh_delegate respondsToSelector:@selector(menuView:didHideAtSelectedModelArr:)]) {

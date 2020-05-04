@@ -21,6 +21,7 @@ typedef void(^callBackHeight)(CGFloat height);
 @property(nonatomic,assign) BOOL module;
 
 @property(nonatomic,copy) callBackHeight callBackHeight;
+@property (nonatomic ,strong) BRProvinceModel *cityModel;
 
 - (void)loadData;
 @end

@@ -26,7 +26,7 @@
    NSMutableArray<BRProvinceModel *> *provinceArray = [XSPublicServer sharedInstance].cityArray;
     BRProvinceModel *mainCity = nil;
     for (BRProvinceModel *model in provinceArray) {
-        if ( [[XSUserServer sharedInstance].cityModel.code isEqualToString:model.code]){
+        if ( [main2City.code isEqualToString:model.code]){
             mainCity = model;
             break;
         }
@@ -35,13 +35,19 @@
     [cityArray addObject:model];
     for (BRCityModel *city in mainCity.citylist) {
         ZHFilterItemModel *model = [[ZHFilterItemModel alloc]init];
-        model.name = city.name;
+        model.key = @"regionId";
         model.code = city.code;
+        model.name = city.name;
+
         NSMutableArray<ZHFilterItemModel *> *areaArray = [NSMutableArray array];
         for (BRAreaModel *area in city.arealist) {
             ZHFilterItemModel *model = [[ZHFilterItemModel alloc]init];
+            model.key = @"townId";
             model.name = area.name;
             model.code = area.code;
+            model.parentKey = @"regionId";
+            model.parentCode = city.code;
+            model.parentName = city.name;
             [areaArray addObject:model];
         }
         model.itemArr = areaArray;
@@ -59,14 +65,14 @@
     NSMutableArray<ZHFilterItemModel *> *totalPriceArray = nil;
     if (type == XSBHouseType_New) {
         totalPriceArray = [NSMutableArray array];
-        ZHFilterItemModel *totalmodel1 = [[ZHFilterItemModel alloc]initWithName:@"30万以下" code:@"1000" key:@""];
-        ZHFilterItemModel *totalmodel2 = [[ZHFilterItemModel alloc]initWithName:@"30-60万" code:@"2000" key:@""];
-        ZHFilterItemModel *totalmodel3 = [[ZHFilterItemModel alloc]initWithName:@"60-100万" code:@"3000" key:@""];
-        ZHFilterItemModel *totalmodel4 = [[ZHFilterItemModel alloc]initWithName:@"100-200万" code:@"3000" key:@""];
-        ZHFilterItemModel *totalmodel5 = [[ZHFilterItemModel alloc]initWithName:@"200-400万" code:@"3000" key:@""];
-        ZHFilterItemModel *totalmodel6 = [[ZHFilterItemModel alloc]initWithName:@"400-600万" code:@"3000" key:@""];
-        ZHFilterItemModel *totalmodel7 = [[ZHFilterItemModel alloc]initWithName:@"600-1000万" code:@"3000" key:@""];
-        ZHFilterItemModel *totalmodel8 = [[ZHFilterItemModel alloc]initWithName:@"1000万以上" code:@"3000" key:@""];
+        ZHFilterItemModel *totalmodel1 = [[ZHFilterItemModel alloc]initWithName:@"30万以下" code:@"0-30" key:@"totalPrice"];
+        ZHFilterItemModel *totalmodel2 = [[ZHFilterItemModel alloc]initWithName:@"30-60万" code:@"30-60" key:@"totalPrice"];
+        ZHFilterItemModel *totalmodel3 = [[ZHFilterItemModel alloc]initWithName:@"60-100万" code:@"60-100" key:@"totalPrice"];
+        ZHFilterItemModel *totalmodel4 = [[ZHFilterItemModel alloc]initWithName:@"100-200万" code:@"100-200" key:@"totalPrice"];
+        ZHFilterItemModel *totalmodel5 = [[ZHFilterItemModel alloc]initWithName:@"200-400万" code:@"200-400" key:@"totalPrice"];
+        ZHFilterItemModel *totalmodel6 = [[ZHFilterItemModel alloc]initWithName:@"400-600万" code:@"400-600" key:@"totalPrice"];
+        ZHFilterItemModel *totalmodel7 = [[ZHFilterItemModel alloc]initWithName:@"600-1000万" code:@"600-1000" key:@"totalPrice"];
+        ZHFilterItemModel *totalmodel8 = [[ZHFilterItemModel alloc]initWithName:@"1000万以上" code:@"1000-10000" key:@"totalPrice"];
         [totalPriceArray addObject:totalmodel1];
         [totalPriceArray addObject:totalmodel2];
         [totalPriceArray addObject:totalmodel3];
@@ -77,13 +83,13 @@
         [totalPriceArray addObject:totalmodel8];
     }else if (type == XSBHouseType_old){
         totalPriceArray = [NSMutableArray array];
-        ZHFilterItemModel *totalmodel1 = [[ZHFilterItemModel alloc]initWithName:@"200万以下" code:@"1000" key:@""];
-        ZHFilterItemModel *totalmodel2 = [[ZHFilterItemModel alloc]initWithName:@"200-300万" code:@"2000" key:@""];
-        ZHFilterItemModel *totalmodel3 = [[ZHFilterItemModel alloc]initWithName:@"300-400万" code:@"3000" key:@""];
-        ZHFilterItemModel *totalmodel4 = [[ZHFilterItemModel alloc]initWithName:@"400-500万" code:@"3000" key:@""];
-        ZHFilterItemModel *totalmodel5 = [[ZHFilterItemModel alloc]initWithName:@"500-800万" code:@"3000" key:@""];
-        ZHFilterItemModel *totalmodel6 = [[ZHFilterItemModel alloc]initWithName:@"800-1000万" code:@"3000" key:@""];
-        ZHFilterItemModel *totalmodel7 = [[ZHFilterItemModel alloc]initWithName:@"1000万以上" code:@"3000" key:@""];
+        ZHFilterItemModel *totalmodel1 = [[ZHFilterItemModel alloc]initWithName:@"200万以下" code:@"0-200" key:@"totalPrice"];
+        ZHFilterItemModel *totalmodel2 = [[ZHFilterItemModel alloc]initWithName:@"200-300万" code:@"200-300" key:@"totalPrice"];
+        ZHFilterItemModel *totalmodel3 = [[ZHFilterItemModel alloc]initWithName:@"300-400万" code:@"300-400" key:@"totalPrice"];
+        ZHFilterItemModel *totalmodel4 = [[ZHFilterItemModel alloc]initWithName:@"400-500万" code:@"400-500" key:@"totalPrice"];
+        ZHFilterItemModel *totalmodel5 = [[ZHFilterItemModel alloc]initWithName:@"500-800万" code:@"500-800" key:@"totalPrice"];
+        ZHFilterItemModel *totalmodel6 = [[ZHFilterItemModel alloc]initWithName:@"800-1000万" code:@"800-1000" key:@"totalPrice"];
+        ZHFilterItemModel *totalmodel7 = [[ZHFilterItemModel alloc]initWithName:@"1000万以上" code:@"1000-10000" key:@"totalPrice"];
         [totalPriceArray addObject:totalmodel1];
         [totalPriceArray addObject:totalmodel2];
         [totalPriceArray addObject:totalmodel3];
@@ -93,14 +99,14 @@
         [totalPriceArray addObject:totalmodel7];
     }else if (type == XSBHouseType_Rent){
         totalPriceArray = [NSMutableArray array];
-         ZHFilterItemModel *totalmodel1 = [[ZHFilterItemModel alloc]initWithName:@"1000以下" code:@"1000" key:@""];
-         ZHFilterItemModel *totalmodel2 = [[ZHFilterItemModel alloc]initWithName:@"1500-2000" code:@"2000" key:@""];
-         ZHFilterItemModel *totalmodel3 = [[ZHFilterItemModel alloc]initWithName:@"2000-2500" code:@"3000" key:@""];
-         ZHFilterItemModel *totalmodel4 = [[ZHFilterItemModel alloc]initWithName:@"2500-3000" code:@"3000" key:@""];
-         ZHFilterItemModel *totalmodel5 = [[ZHFilterItemModel alloc]initWithName:@"3500-5000" code:@"3000" key:@""];
-         ZHFilterItemModel *totalmodel6 = [[ZHFilterItemModel alloc]initWithName:@"5000-8000" code:@"3000" key:@""];
-         ZHFilterItemModel *totalmodel7 = [[ZHFilterItemModel alloc]initWithName:@"8000-10000" code:@"3000" key:@""];
-         ZHFilterItemModel *totalmodel8 = [[ZHFilterItemModel alloc]initWithName:@"10000以上" code:@"10000" key:@""];
+         ZHFilterItemModel *totalmodel1 = [[ZHFilterItemModel alloc]initWithName:@"1000以下" code:@"0-1000" key:@"rentPrice"];
+         ZHFilterItemModel *totalmodel2 = [[ZHFilterItemModel alloc]initWithName:@"1500-2000" code:@"1500-2000" key:@"rentPrice"];
+         ZHFilterItemModel *totalmodel3 = [[ZHFilterItemModel alloc]initWithName:@"2000-2500" code:@"2000-2500" key:@"rentPrice"];
+         ZHFilterItemModel *totalmodel4 = [[ZHFilterItemModel alloc]initWithName:@"2500-3000" code:@"2500-3000" key:@"rentPrice"];
+         ZHFilterItemModel *totalmodel5 = [[ZHFilterItemModel alloc]initWithName:@"3500-5000" code:@"3500-5000" key:@"rentPrice"];
+         ZHFilterItemModel *totalmodel6 = [[ZHFilterItemModel alloc]initWithName:@"5000-8000" code:@"5000-8000" key:@"rentPrice"];
+         ZHFilterItemModel *totalmodel7 = [[ZHFilterItemModel alloc]initWithName:@"8000-10000" code:@"8000-10000" key:@"rentPrice"];
+         ZHFilterItemModel *totalmodel8 = [[ZHFilterItemModel alloc]initWithName:@"10000以上" code:@"10000-10000" key:@"rentPrice"];
          [totalPriceArray addObject:totalmodel1];
          [totalPriceArray addObject:totalmodel2];
          [totalPriceArray addObject:totalmodel3];
@@ -113,13 +119,12 @@
 
 
     NSMutableArray<ZHFilterItemModel *> *roomTypeArray = [NSMutableArray array];
-    [locationArray addObject:model];
-    ZHFilterItemModel *roomTypeModell = [[ZHFilterItemModel alloc]initWithName:@"一室" code:@"1000" key:@""];
-    ZHFilterItemModel *roomTypeModel2 = [[ZHFilterItemModel alloc]initWithName:@"二室" code:@"2000" key:@""];
-    ZHFilterItemModel *roomTypeModel3 = [[ZHFilterItemModel alloc]initWithName:@"三室" code:@"3000" key:@""];
-    ZHFilterItemModel *roomTypeModel4 = [[ZHFilterItemModel alloc]initWithName:@"四室" code:@"1000" key:@""];
-    ZHFilterItemModel *roomTypeModel5 = [[ZHFilterItemModel alloc]initWithName:@"五室" code:@"2000" key:@""];
-    ZHFilterItemModel *roomTypeModel6 = [[ZHFilterItemModel alloc]initWithName:@"五室以上" code:@"3000" key:@""];
+    ZHFilterItemModel *roomTypeModell = [[ZHFilterItemModel alloc]initWithName:@"一室" code:@"1" key:@"formTypeRoom"];
+    ZHFilterItemModel *roomTypeModel2 = [[ZHFilterItemModel alloc]initWithName:@"二室" code:@"2" key:@"formTypeRoom"];
+    ZHFilterItemModel *roomTypeModel3 = [[ZHFilterItemModel alloc]initWithName:@"三室" code:@"3" key:@"formTypeRoom"];
+    ZHFilterItemModel *roomTypeModel4 = [[ZHFilterItemModel alloc]initWithName:@"四室" code:@"4" key:@"formTypeRoom"];
+    ZHFilterItemModel *roomTypeModel5 = [[ZHFilterItemModel alloc]initWithName:@"五室" code:@"5" key:@"formTypeRoom"];
+    ZHFilterItemModel *roomTypeModel6 = [[ZHFilterItemModel alloc]initWithName:@"五室以上" code:@"6" key:@"formTypeRoom"];
     [roomTypeArray addObject:roomTypeModell];
     [roomTypeArray addObject:roomTypeModel2];
     [roomTypeArray addObject:roomTypeModel3];
@@ -129,8 +134,8 @@
     ZHFilterModel *areaModel = [ZHFilterModel createFilterModelWithHeadTitle:@"城区" modelArr:cityArray selectFirst:YES multiple:NO];
     areaModel.selected = YES;
     ZHFilterModel *locationModel = [ZHFilterModel createFilterModelWithHeadTitle:@"附近" modelArr:locationArray selectFirst:YES multiple:NO];
-
-    ZHFilterModel *totalPriceModel = [ZHFilterModel createFilterModelWithHeadTitle:@"价格区间(万)" modelArr:totalPriceArray selectFirst:NO multiple:NO];
+    NSString *str = type == XSBHouseType_Rent?@"价格区间(元)":@"价格区间(万)";
+    ZHFilterModel *totalPriceModel = [ZHFilterModel createFilterModelWithHeadTitle:str modelArr:totalPriceArray selectFirst:NO multiple:NO];
 
     ZHFilterModel *roomTypeModel = [ZHFilterModel createFilterModelWithHeadTitle:@"房型选择" modelArr:roomTypeArray selectFirst:NO multiple:NO];
 

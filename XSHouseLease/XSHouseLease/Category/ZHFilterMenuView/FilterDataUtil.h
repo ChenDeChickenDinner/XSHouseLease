@@ -58,7 +58,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface FilterDataUtil : NSObject
 
 /** 根据FilterType类型获取数据 */
-- (NSMutableArray *)getTabDataByType:(XSBHouseType)type;
+- (NSMutableArray *)getTabDataByType:(XSBHouseType)type mainCity:(BRProvinceModel *)main2City;
 
 @end
 

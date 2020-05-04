@@ -18,16 +18,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BFA866B1-0FC3-447D-A6E8-C979827C9CAC"
+            uuid = "C3B37FF5-64EF-47C5-A715-91680DEA0365"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XSHouseLease/Category/ZHFilterMenuView/ZHFilterMenuView.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "424"
-            endingLineNumber = "424"
-            landmarkName = "-confirmAction"
+            startingLineNumber = "780"
+            endingLineNumber = "780"
+            landmarkName = "-getSelectedModelArrAndUpdateSelectArr"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

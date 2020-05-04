@@ -26,10 +26,11 @@ typedef void(^XSHouseInfoClickBlack)(XSHouseInfoModel *model,id data,XSBHouseKey
 @property (nonatomic, copy) NSString *region;
 @property (nonatomic, strong) NSNumber *regionId;
 @property (nonatomic, strong) NSNumber *townId;
+@property (nonatomic, strong) NSNumber *estateId;
+
 @property (nonatomic, copy) NSString *address;
 @property (nonatomic, strong) NSNumber *latitude;
 @property (nonatomic, strong) NSNumber *longitude;
-@property (nonatomic, strong) NSNumber *estateId;
 @property (nonatomic, strong) NSNumber *hot;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *pid;

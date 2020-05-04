@@ -27,41 +27,54 @@ DEF_SINGLETON(XSHouseSubMitDynamicServer)
  
             STRONG_SELF;
             [self dealDataWitHresponseModel:responseModel black:^(NSArray *array) {
-                 
+                 self.rentSecondDynamicArray = array;
              }];
-            NSArray *enumData  =  [XSHouseEnumData mj_objectArrayWithKeyValuesArray:responseModel.data];
-            NSLog(@"sub动态 = %@", [enumData mj_keyValues]);
-            NSMutableArray *array = [NSMutableArray array];
-            for (XSHouseEnumData *model in enumData) {
-                XSHouseInfoCellModel *cellModel =  [model combinationToCellModel];
-                [array addObject:cellModel];
-            }
-             NSArray *newArray = [array sortedArrayUsingComparator:^NSComparisonResult(XSHouseInfoCellModel *obj1, XSHouseInfoCellModel *obj2) {
-                 return obj1.sequence.integerValue <  obj2.sequence.integerValue ?NSOrderedAscending:NSOrderedDescending;;
-            }];
-            self.rentSecondDynamicArray = newArray;
+//            NSArray *enumData  =  [XSHouseEnumData mj_objectArrayWithKeyValuesArray:responseModel.data];
+//            NSLog(@"sub动态 = %@", [enumData mj_keyValues]);
+//            NSMutableArray *array = [NSMutableArray array];
+//            for (XSHouseEnumData *model in enumData) {
+//                XSHouseInfoCellModel *cellModel =  [model combinationToCellModel];
+//                [array addObject:cellModel];
+//            }
+//             NSArray *newArray = [array sortedArrayUsingComparator:^NSComparisonResult(XSHouseInfoCellModel *obj1, XSHouseInfoCellModel *obj2) {
+//                 return obj1.sequence.integerValue <  obj2.sequence.integerValue ?NSOrderedAscending:NSOrderedDescending;;
+//            }];
+//            self.rentSecondDynamicArray = newArray;
         }
     }];
     
     [self.requestVc.subInfoInterface getSellEnumsWithCallback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
          if (error == nil && responseModel.code.integerValue == SuccessCode) {
              STRONG_SELF;
-             NSArray *enumData  =  [XSHouseEnumData mj_objectArrayWithKeyValuesArray:responseModel.data];
-             NSLog(@"sub动态 = %@", [enumData mj_keyValues]);
-             NSMutableArray *array = [NSMutableArray array];
-             for (XSHouseEnumData *model in enumData) {
-                 XSHouseInfoCellModel *cellModel =  [model combinationToCellModel];
-                 [array addObject:cellModel];
-             }
-              NSArray *newArray = [array sortedArrayUsingComparator:^NSComparisonResult(XSHouseInfoCellModel *obj1, XSHouseInfoCellModel *obj2) {
-                  return obj1.sequence.integerValue <  obj2.sequence.integerValue ?NSOrderedAscending:NSOrderedDescending;;
-             }];
-             self.sellSecondDynamicArray = newArray;
+             [self dealDataWitHresponseModel:responseModel black:^(NSArray *array) {
+                  self.sellSecondDynamicArray = array;
+              }];
          }
      }];
     
     [self.requestVc.subInfoInterface getQueryEnumsWithhouseType:XSBHouseType_New callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
-        
+        if (error == nil && responseModel.code.integerValue == SuccessCode) {
+                STRONG_SELF;
+                [self dealDataWitHresponseModel:responseModel black:^(NSArray *array) {
+                     self.NewQueryArray = array;
+                 }];
+           }
+    }];
+    [self.requestVc.subInfoInterface getQueryEnumsWithhouseType:XSBHouseType_old callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+        if (error == nil && responseModel.code.integerValue == SuccessCode) {
+                STRONG_SELF;
+                [self dealDataWitHresponseModel:responseModel black:^(NSArray *array) {
+                     self.oldQueryArray = array;
+                 }];
+           }
+    }];
+    [self.requestVc.subInfoInterface getQueryEnumsWithhouseType:XSBHouseType_Rent callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
+        if (error == nil && responseModel.code.integerValue == SuccessCode) {
+                STRONG_SELF;
+                [self dealDataWitHresponseModel:responseModel black:^(NSArray *array) {
+                     self.rentQueryArray = array;
+                 }];
+           }
     }];
 }
 - (void)dealDataWitHresponseModel:(XSNetworkResponse *)responseModel black:(void(^)(NSArray *array))black{
