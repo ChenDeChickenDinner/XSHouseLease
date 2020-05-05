@@ -133,9 +133,12 @@ NSString *url = [NSString stringWithFormat:@"%@/estate/hots",XSBaseUrl];
 - (void)houseLisetWith:(XSBHouseType)houseType source:(XSBHouseInfoSource)source resource:(XSHouseSource)resource house_id:(NSString *)house_id KeyVales:(NSMutableDictionary *)keyVales per_page:(NSInteger)per_page page_index:(NSInteger)page_index  callback:(HBCompletionBlock)callback{
     
     NSMutableDictionary * dict = [NSMutableDictionary dictionary];
-    for (NSString *key in keyVales.allKeys) {
-        [dict safeSetObject:[keyVales safeObjectForKey:key] forKey:key];
+    if (source == XSBHouseInfoSource_keyPush) {
+        for (NSString *key in keyVales.allKeys) {
+            [dict safeSetObject:[keyVales safeObjectForKey:key] forKey:key];
+        }
     }
+
     
     if (resource > 0) {
         [dict safeSetObject:@(resource) forKey:@"resource"];

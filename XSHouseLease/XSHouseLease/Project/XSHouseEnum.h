@@ -15,7 +15,6 @@ typedef void(^logSuccess)(void);
 typedef void(^logCancel)(void);
 
 //搜索完成回调
-typedef void(^searchBlack)(NSString *searhKey);
 typedef NS_ENUM(NSInteger,XSHouseSource) {
     XSHouseSource_0 = 0, // 全部
     XSHouseSource_1 = 1, // 个人
@@ -27,6 +26,7 @@ typedef NS_ENUM(NSInteger,XSBHouseType) {
     XSBHouseType_old = 1 , // 二手房
     XSBHouseType_Rent = 3  // 出租
 };
+typedef void(^searchBlack)(NSString *searhKey,XSBHouseType type);
 
 // 租房列表类型
 typedef NS_ENUM(NSInteger,XSBHouseInfoSource) {

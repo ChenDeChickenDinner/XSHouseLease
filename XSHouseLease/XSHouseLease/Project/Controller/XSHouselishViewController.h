@@ -21,8 +21,9 @@ typedef void(^callBackHeight)(CGFloat height);
 @property (nonatomic ,strong) XSHouseEsModel *esModel;
 
 
-@property(nonatomic,strong) NSMutableDictionary *searchDict;
 @property(nonatomic,assign) BOOL module;
+@property(nonatomic,assign) BOOL notHaveMenuView;
+
 
 @property(nonatomic,copy) callBackHeight callBackHeight;
 

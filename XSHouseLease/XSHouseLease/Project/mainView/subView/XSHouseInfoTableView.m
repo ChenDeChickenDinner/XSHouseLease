@@ -21,21 +21,18 @@
 
 @end
 
-@interface XSClickBtn : UIButton
-
-@end
 
 @implementation XSClickBtn
 
 - (void)layoutSubviews{
     [super layoutSubviews];
- 
-}
-- (void)awakeFromNib{
-    [super awakeFromNib];
  [self setTitleEdgeInsets:UIEdgeInsetsMake(0, -self.imageView.size.width, 0,self.imageView.size.width)];
 
  [self setImageEdgeInsets:UIEdgeInsetsMake(0,self.titleLabel.bounds.size.width, 0, -(self.titleLabel.bounds.size.width + 5))];
+}
+- (void)awakeFromNib{
+    [super awakeFromNib];
+
 }
 @end
 

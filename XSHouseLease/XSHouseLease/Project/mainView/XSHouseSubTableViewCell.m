@@ -115,7 +115,8 @@ static NSString *CollectionCellIdentifierB = @"CollectionCellIdentifierB";
         citymodel.code = cityid;
         XSSearchEstateController *vc = [[XSSearchEstateController alloc]init];
         vc.cityModel = citymodel;
-        vc.searchBlock = ^(XSHouseEsModel * _Nonnull model) {
+        vc.houseType = XSBHouseType_old;
+        vc.searchBlock = ^(XSHouseEsModel * _Nonnull model,XSBHouseType houseType) {
             STRONG_SELF;
             valueData.value = model.ID;
             valueData.valueStr = model.name;

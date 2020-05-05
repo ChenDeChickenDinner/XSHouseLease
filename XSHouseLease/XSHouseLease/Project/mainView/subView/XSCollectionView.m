@@ -41,11 +41,22 @@
       [collectionView registerClass:[XSItemCollectionViewCell class] forCellWithReuseIdentifier:XSItemCollectionViewCellStr];
       [self addSubview:collectionView];
       self.collectionView = collectionView;
+    
+    UIView *lineView = [[UIView alloc]initWithFrame:CGRectZero];
+    lineView.backgroundColor = [UIColor hx_colorWithHexStr:@"#CCCCCC"];
+    self.lineView = lineView;
+    [self addSubview:lineView];
+
 }
 
 - (void)layoutSubviews{
     [super layoutSubviews];
-    self.collectionView.frame = CGRectMake(0, 0, self.width, self.height - 20);
+
+    self.collectionView.frame = CGRectMake(0, 0, self.width, self.height - (self.line?30:0));
+    self.lineView.frame = CGRectMake(0, self.height -15, self.width, 15);
+    if (!self.line) {
+        [self.lineView removeFromSuperview];
+    }
     [self.collectionView reloadData];
 }
 //+ (CGFloat)collectionViewheightWithLayout:(UICollectionViewFlowLayout *)layout{

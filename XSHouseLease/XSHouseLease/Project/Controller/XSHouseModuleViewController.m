@@ -40,7 +40,7 @@
     self.searchDict = dict;
     
     XSRegionSearchView *searcView = [[XSRegionSearchView alloc]init];
-    searcView.searchBlack = ^(NSString *searhKey) {
+    searcView.searchBlack = ^(NSString *searhKey,XSBHouseType type) {
         
     };
     self.searcView = searcView;
@@ -86,7 +86,7 @@
     XSHouselishViewController *listVc = [[XSHouselishViewController alloc]init];
     listVc.houseType = self.houseType;
     listVc.source = self.source;
-    listVc.searchDict = self.searchDict;
+//    listVc.searchDict = self.searchDict;
     self.listVc = listVc;
 
     
@@ -166,7 +166,7 @@
     vc.title = dataModel.name;
     vc.source = self.source;
     vc.houseType = self.houseType;
-    vc.searchDict = dict;
+//    vc.searchDict = dict;
     [self .navigationController pushViewController:vc animated:YES];
 }
 

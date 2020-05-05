@@ -25,8 +25,13 @@
 @interface XSHouselishViewController ()
 <UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate,ZHFilterMenuViewDelegate,
 ZHFilterMenuViewDetaSource,UIScrollViewDelegate>
+@property(nonatomic,strong) NSMutableDictionary *searchDict;
+
 @property (nonatomic,strong) XSRegionSearchView *searcView;
 @property (nonatomic,strong) SDCycleScrollView  *cycleScrollView;
+@property (nonatomic,strong) UIView  *cycleScrollBkView;
+
+
 @property (nonatomic,strong) XSCollectionView   *collectionView;
 @property (nonatomic,strong) XSRoundedBtn1View  *moreView;
 @property (nonatomic, strong) ZHFilterMenuView *menuView;
@@ -52,22 +57,19 @@ ZHFilterMenuViewDetaSource,UIScrollViewDelegate>
     _esModel  = esModel;
     NSDictionary *dict = self.searchDict;
     NSLog(@"self.searchDict:%@",dict);
-    [self loadData];
+    if (self.isViewLoaded) {
+        [self loadData];
+
+    }
 }
 - (NSMutableDictionary *)searchDict{
     if (_searchDict == nil) {
         _searchDict = [NSMutableDictionary dictionary];
         [_searchDict  safeSetObject:self.cityModel.name forKey:@"city"];
-        [_searchDict  safeSetObject:self.cityModel.code forKey:@"cityId"];
-
-//        [_searchDict  safeSetObject:self.esModel.cityId forKey:@"cityId"];
+        [_searchDict  safeSetObject:@(self.cityModel.code.intValue) forKey:@"cityId"];
         [_searchDict  safeSetObject:self.esModel.regionId forKey:@"regionId"];
         [_searchDict  safeSetObject:self.esModel.townId forKey:@"townId"];
-//
-//        NSMutableDictionary *esDict =  [self.esModel mj_keyValues];
-//        for (NSString *key in esDict.allKeys) {
-//            [_searchDict  safeSetObject:[esDict safeObjectForKey:key] forKey:key];
-//        }
+
     }
     return _searchDict;
 }
@@ -87,17 +89,21 @@ ZHFilterMenuViewDetaSource,UIScrollViewDelegate>
 - (XSRegionSearchView *)searcView{
     if (!_searcView) {
         WEAK_SELF;
-        _searcView = [[XSRegionSearchView alloc]init];
+        _searcView = [[XSRegionSearchView alloc]initWithFrame:CGRectZero type:self.houseType];
         _searcView.frame = CGRectMake(0, 0, SCREEN_SIZE.width - 110, 35);
-        _searcView.searchBlack = ^(NSString *searhKey) {
+        _searcView.searchBlack = ^(NSString *searhKey,XSBHouseType type) {
             STRONG_SELF;
 //            [self loadData];
             for (UIViewController *vc in self.navigationController.childViewControllers) {
                 if ([vc isKindOfClass:[XSSearchEstateController class]]) {
                     XSSearchEstateController *newvc = (XSSearchEstateController *)vc;
                     newvc.cityModel = self.cityModel;
-                    newvc.searchBlock = ^(XSHouseEsModel * _Nonnull model) {
-                    self.esModel = model;
+                    newvc.houseType = self.houseType;
+                    newvc.searchBlock = ^(XSHouseEsModel * _Nonnull model,XSBHouseType houseType) {
+                        if (self.houseType <= 0) {
+                            self.houseType = houseType;
+                        }
+                        self.esModel = model;
                      };
                     [self.navigationController popToViewController:vc animated:YES];
                     return ;
@@ -105,7 +111,11 @@ ZHFilterMenuViewDetaSource,UIScrollViewDelegate>
             }
             XSSearchEstateController *vc = [[XSSearchEstateController alloc]init];
             vc.cityModel = self.cityModel;
-            vc.searchBlock = ^(XSHouseEsModel * _Nonnull model) {
+            vc.houseType = self.houseType;
+            vc.searchBlock = ^(XSHouseEsModel * _Nonnull model,XSBHouseType houseType) {
+            if (self.houseType <= 0) {
+             self.houseType = houseType;
+            }
             self.esModel = model;
             };
             [self.navigationController pushViewController:vc animated:YES];
@@ -124,6 +134,7 @@ ZHFilterMenuViewDetaSource,UIScrollViewDelegate>
         _tableView.rowHeight = UITableViewAutomaticDimension;
         _tableView.estimatedRowHeight = 100;
         _tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+        _tableView.bounces = self.nubmer>0?NO:YES;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         if (self.source == XSBHouseInfoSource_MyPublish || self.source == XSBHouseInfoSource_MyWatch) {
             _tableView.mj_header  = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -138,11 +149,15 @@ ZHFilterMenuViewDetaSource,UIScrollViewDelegate>
 
 - (SDCycleScrollView *)cycleScrollView{
     if (!_cycleScrollView) {
+        UIView *bk= [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, 168 + 15)];
+        bk.backgroundColor = [UIColor hx_colorWithHexStr:@"#CCCCCC"];
+        self.cycleScrollBkView = bk;
         _cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, self.view.width, 168) delegate:self placeholderImage:nil];
         _cycleScrollView.imageURLStringsGroup = nil;
         _cycleScrollView.showPageControl = YES;
         _cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
         _cycleScrollView.pageControlStyle = SDCycleScrollViewPageContolStyleNone;
+        [bk addSubview:_cycleScrollView];
     }
     return _cycleScrollView;
 }
@@ -151,13 +166,14 @@ ZHFilterMenuViewDetaSource,UIScrollViewDelegate>
 }
 - (XSCollectionView *)collectionView{
     if (!_collectionView) {
-        _collectionView = [[XSCollectionView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, self.houseType==XSBHouseType_Rent?210:105)];
+        _collectionView = [[XSCollectionView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, self.houseType==XSBHouseType_Rent?240:135)];
+        _collectionView.line = YES;
     }
     return _collectionView;
 }
 - (XSRoundedBtn1View *)moreView{
     if (!_moreView) {
-        _moreView = [[XSRoundedBtn1View alloc]initWithFrame:CGRectMake(0, 0, self.view.width, 38)];
+        _moreView = [[XSRoundedBtn1View alloc]initWithFrame:CGRectMake(15, 0, self.view.width -30, 38)];
         _moreView.backgroundColor = [UIColor hx_colorWithHexStr:@"#E82B2B" alpha:0.3];
         [_moreView setTitle:@"更多房源推荐" forState:UIControlStateNormal];
         [_moreView setTitleColor:[UIColor hx_colorWithHexStr:@"#F9EAEA"] forState:UIControlStateNormal];
@@ -169,8 +185,11 @@ ZHFilterMenuViewDetaSource,UIScrollViewDelegate>
     XSHouselishViewController *listvc = [[XSHouselishViewController alloc]init];
     listvc.houseType = self.houseType;
     listvc.source = self.source;
+    listvc.resource = self.resource;
     listvc.house_id = self.house_id;
-    listvc.searchDict = self.searchDict;
+    listvc.cityModel = self.cityModel;
+    listvc.esModel = self.esModel;
+    listvc.notHaveMenuView = YES;
     [[NSObject getTopViewController].navigationController pushViewController:listvc animated:YES];
 }
 - (ZHFilterMenuView *)menuView{
@@ -221,19 +240,7 @@ ZHFilterMenuViewDetaSource,UIScrollViewDelegate>
                 [dict removeObjectForKey:@"rentPrice"];
 
             }
-            
-//            if (model.itemArr.count > 0) {
-//                NSMutableArray *array = [NSMutableArray array];
-//                for (ZHFilterItemModel *submodel in model.itemArr) {
-//                    if (submodel.selected) {
-//                        [array addObject:submodel.code];
-//                    }
-//                }
-//                [dict safeSetObject:array forKey:model.key];
-//            }else{
-//                [dict safeSetObject:model.code forKey:model.key];
-//
-//            }
+
 
         }
     
@@ -319,10 +326,10 @@ ZHFilterMenuViewDetaSource,UIScrollViewDelegate>
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.houseType = XSBHouseType_old;
-    
-    self.module = YES;
-    self.searchDict = [NSMutableDictionary dictionary];
+//    self.houseType = XSBHouseType_old;
+//
+//    self.module = YES;
+//    self.searchDict = [NSMutableDictionary dictionary];
     
     if (self.title == nil) {
         if (self.source == XSBHouseInfoSource_MyPublish){
@@ -343,10 +350,11 @@ ZHFilterMenuViewDetaSource,UIScrollViewDelegate>
             self.title = @"猜你喜欢";
         }
     }
-    if (self.searchDict) {
+    if (self.source == XSBHouseInfoSource_keyPush && !self.notHaveMenuView) {
         self.navigationItem.titleView = self.searcView;
     }
-
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"message"] style:UIBarButtonItemStyleDone target:self action:@selector(callMessage)];
+    
     [self.view addSubview:self.tableView];
 
     if (self.module) {
@@ -360,7 +368,8 @@ ZHFilterMenuViewDetaSource,UIScrollViewDelegate>
              self.headerArray = [XSPublicServer sharedInstance].renthouseConditionArray;
 
          }else if (self.houseType == XSBHouseType_old){
-             self.tableView.tableHeaderView = self.cycleScrollView;
+             UIView *view = self.cycleScrollView;
+             self.tableView.tableHeaderView = self.cycleScrollBkView;
              [self oldimageURLStringsGroup:^(NSArray *array) {
                  self.cycleScrollView.imageURLStringsGroup = array;
              }];
@@ -384,6 +393,7 @@ ZHFilterMenuViewDetaSource,UIScrollViewDelegate>
 - (void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
     self.tableView.frame = self.view.bounds;
+    self.collectionView.frame = CGRectMake(0, 0, self.view.width, self.houseType==XSBHouseType_Rent?240:135);
     self.menuView.maxHeight = CGRectGetHeight(self.view.frame) - KMenuViewHeight;
 }
 - (void)viewWillAppear:(BOOL)animated{
@@ -395,7 +405,9 @@ ZHFilterMenuViewDetaSource,UIScrollViewDelegate>
     [self.menuView removeMenuList];
 }
 
-
+- (void)callMessage{
+    
+}
 
 - (void)oldimageURLStringsGroup:(void(^)(NSArray *array))black{
     [self.subInfoInterface secondhousebunnerListWithDict:self.searchDict callback:^(XSNetworkResponse * _Nullable responseModel, NSError * _Nullable error) {
@@ -440,12 +452,12 @@ ZHFilterMenuViewDetaSource,UIScrollViewDelegate>
                     for (int i = 0; i < self.nubmer; i++) {
                         [self.array addObject:array[self.nubmer]];
                     }
+                    self.tableView.tableFooterView = self.moreView;
+
                 }else{
                     [self.array addObjectsFromArray:array];
                 }
-                if (self.nubmer > 0) {
-                    self.tableView.tableFooterView = self.moreView;
-                }
+   
                 if (self.callBackHeight) {
                     self.callBackHeight(145 * self.array.count + (self.nubmer>0?50:0));
                 }
@@ -460,14 +472,20 @@ ZHFilterMenuViewDetaSource,UIScrollViewDelegate>
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    return self.menuView;
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    if (self.notHaveMenuView) {
+        return nil;
+    }else{
+        return self.menuView;
+    }
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return KMenuViewHeight;
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if (self.notHaveMenuView) {
+        return 0;
+     }else{
+         return KMenuViewHeight;
+     }
 }
 #pragma mark -UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -574,6 +592,7 @@ ZHFilterMenuViewDetaSource,UIScrollViewDelegate>
         XSHouselishViewController *vc  = [[XSHouselishViewController alloc]init];
         vc.houseType  = self.houseType;
         vc.source  = self.source;
+        vc.notHaveMenuView = YES;
         if (i == 0) {
             vc.resource  = XSHouseSource_0;
         }else if (i == 1){

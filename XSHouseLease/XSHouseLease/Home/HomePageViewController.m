@@ -12,6 +12,7 @@
 #import "XSResourceViewController.h"
 #import "XSHouselishViewController.h"
 #import "XSSearchEstateController.h"
+#import "XSBuyHouseViewController.h"
 
 @interface HomePageViewController ()<UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *titleView;
@@ -53,13 +54,22 @@
     [super viewDidLoad];
     self.navigationController.delegate = self;
     self.resource = XSHouseSource_1;
-//    XSLocationSearchview *searchView = [XSLocationSearchview locationSearchviewWithFrame:CGRectMake(0, 0, KScreenWidth, 220)];
-//    searchView.searchBlack = ^(NSString * _Nonnull searhKey) {
-//        NSLog(@"ss-%@",searhKey);
-//    };
-//    [self.titleView addSubview:searchView];
-//    self.searchView = searchView;
-
+    WEAK_SELF;
+    self.searchView.searchBlack = ^(NSString *searhKey,XSBHouseType type) {
+        STRONG_SELF;
+         XSSearchEstateController *vc = [[XSSearchEstateController alloc]init];
+          vc.cityModel = [XSUserServer sharedInstance].cityModel;
+          vc.searchBlock = ^(XSHouseEsModel * _Nonnull model,XSBHouseType houseType) {
+              XSHouselishViewController *list = [[XSHouselishViewController alloc]init];
+              list.houseType = houseType;
+              list.source = XSBHouseInfoSource_keyPush;
+              list.resource = self.resource;
+              list.esModel = model;
+              [self.navigationController pushViewController:list animated:YES];
+              
+          };
+          [self.navigationController pushViewController:vc animated:YES];
+    };
     [XSHouseSubMitDynamicServer sharedInstance];
     
     [XSUserServer automaticLogin];
@@ -128,19 +138,19 @@
 
            case 2:
            {
-                XSHouselishViewController *vc = [[XSHouselishViewController alloc]init];
-               vc.houseType = XSBHouseType_old;
-               vc.source = XSBHouseInfoSource_keyPush;
-               vc.resource = XSHouseSource_0;
-
-                [self.navigationController pushViewController:vc animated:YES];
+                XSHouselishViewController *list = [[XSHouselishViewController alloc]init];
+                list.houseType = XSBHouseType_Rent;
+                list.source = XSBHouseInfoSource_keyPush;
+                list.resource = self.resource;
+                list.module = YES;
+                [self.navigationController pushViewController:list animated:YES];
             }
            break;
            case 3:
            {
-            XSHouselishViewController *vc = [[XSHouselishViewController alloc]init];
-            [self.navigationController pushViewController:vc animated:YES];
-
+               XSBuyHouseViewController *vc = [[XSBuyHouseViewController alloc]init];
+               vc.resource = self.resource;
+               [self.navigationController pushViewController:vc animated:YES];
            }
            break;
 

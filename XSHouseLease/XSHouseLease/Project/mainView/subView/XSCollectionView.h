@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSMutableArray<XSHouseModuleModel *> *array;
 @property (strong, nonatomic) UICollectionViewFlowLayout *layout;
 @property (nonatomic,strong) UICollectionView *collectionView;
+@property (nonatomic,strong) UIView *lineView;
+@property (nonatomic,assign) BOOL line;
 @end
 
 NS_ASSUME_NONNULL_END

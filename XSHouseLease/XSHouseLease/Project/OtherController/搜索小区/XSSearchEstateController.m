@@ -36,10 +36,11 @@
     [super viewDidLoad];
     self.array = [NSMutableArray array];
     WEAK_SELF;
-    XSRegionSearchView *searcView = [[XSRegionSearchView alloc]init];
+    XSRegionSearchView *searcView =[[XSRegionSearchView alloc]initWithFrame:CGRectZero type:self.houseType];
     searcView.search = YES;
-    searcView.searchBlack = ^(NSString *searhKey) {
+    searcView.searchBlack = ^(NSString *searhKey,XSBHouseType type) {
         STRONG_SELF;
+        self.houseType = type;
         if (searhKey.length > 0) {
             [self loadDataWithkeywords:searhKey];
         }
@@ -105,9 +106,9 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     XSHouseEsModel *dataModel = [self.array safeObjectAtIndex:indexPath.row];
+    [self.navigationController popViewControllerAnimated:NO];
     if (self.searchBlock) {
-        self.searchBlock(dataModel);
-        [self.navigationController popViewControllerAnimated:YES];
+        self.searchBlock(dataModel,self.houseType);
      }
     
     return;
@@ -115,12 +116,15 @@
     [self dismissViewControllerAnimated:YES completion:^{
         STRONG_SELF;
         if (self.searchBlock) {
-            self.searchBlock(dataModel);
+            self.searchBlock(dataModel,self.houseType);
         }
     }];
 
 }
 - (void)diss{
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.searcView endEditing:YES];
+    [self.navigationController popViewControllerAnimated:YES];
+
+//    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

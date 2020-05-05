@@ -122,18 +122,22 @@
 }
 - (void)clickHost:(UIButton *)btn{
     XSHousehots *hots = [self.hotsSearchArray safeObjectAtIndex:btn.tag];
-     if(self.searchBlack)self.searchBlack(hots.name);
+     if(self.searchBlack)self.searchBlack(hots.name,XSBHouseType_old);
+}
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    if(self.searchBlack)self.searchBlack(textField.text,XSBHouseType_old);
+    return NO;
 }
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     if (textField.text.length > 0) {
-        if(self.searchBlack)self.searchBlack(textField.text);
+        if(self.searchBlack)self.searchBlack(textField.text,XSBHouseType_old);
     }
     
 }
 - (IBAction)search:(id)sender {
-    if (self.searchTextFiled.text.length > 0) {
-        if(self.searchBlack)self.searchBlack(self.searchTextFiled.text);
-    }
+//    if (self.searchTextFiled.text.length > 0) {
+//        if(self.searchBlack)self.searchBlack(self.searchTextFiled.text);
+//    }
 }
 
 @end

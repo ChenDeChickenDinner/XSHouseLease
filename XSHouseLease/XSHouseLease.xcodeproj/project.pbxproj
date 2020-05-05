@@ -125,6 +125,8 @@
 		6C966B84245E7CBC00B6ABE7 /* ZHFilterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C966B7E245E7CBB00B6ABE7 /* ZHFilterModel.m */; };
 		6C966B87245E7ECF00B6ABE7 /* FilterDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C966B86245E7ECF00B6ABE7 /* FilterDataUtil.m */; };
 		6C966B89245E84AB00B6ABE7 /* FilterData.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 6C966B88245E84AB00B6ABE7 /* FilterData.geojson */; };
+		6C966B8C245FFB4900B6ABE7 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C966B8A245FFB4800B6ABE7 /* KxMenu.m */; };
+		6C966B8F24600EAA00B6ABE7 /* XSBuyHouseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C966B8E24600EAA00B6ABE7 /* XSBuyHouseViewController.m */; };
 		6CBA187B244C617800F9B887 /* XSResourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBA1879244C617800F9B887 /* XSResourceViewController.m */; };
 		6CBA187C244C617800F9B887 /* XSResourceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CBA187A244C617800F9B887 /* XSResourceViewController.xib */; };
 		6CBA187F2450764600F9B887 /* XSMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBA187E2450764600F9B887 /* XSMessageViewController.m */; };
@@ -338,6 +340,10 @@
 		6C966B85245E7ECF00B6ABE7 /* FilterDataUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterDataUtil.h; sourceTree = "<group>"; };
 		6C966B86245E7ECF00B6ABE7 /* FilterDataUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterDataUtil.m; sourceTree = "<group>"; };
 		6C966B88245E84AB00B6ABE7 /* FilterData.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FilterData.geojson; sourceTree = "<group>"; };
+		6C966B8A245FFB4800B6ABE7 /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
+		6C966B8B245FFB4900B6ABE7 /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
+		6C966B8D24600EAA00B6ABE7 /* XSBuyHouseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSBuyHouseViewController.h; sourceTree = "<group>"; };
+		6C966B8E24600EAA00B6ABE7 /* XSBuyHouseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSBuyHouseViewController.m; sourceTree = "<group>"; };
 		6CBA1878244C617800F9B887 /* XSResourceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSResourceViewController.h; sourceTree = "<group>"; };
 		6CBA1879244C617800F9B887 /* XSResourceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSResourceViewController.m; sourceTree = "<group>"; };
 		6CBA187A244C617800F9B887 /* XSResourceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSResourceViewController.xib; sourceTree = "<group>"; };
@@ -703,6 +709,8 @@
 		5585FEE8244972C4001A09B1 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				6C966B8B245FFB4900B6ABE7 /* KxMenu.h */,
+				6C966B8A245FFB4800B6ABE7 /* KxMenu.m */,
 				6C966B73245E7CBB00B6ABE7 /* ZHFilterMenuView */,
 				5585FEE9244972C4001A09B1 /* NSDictionary */,
 				5585FEEC244972C4001A09B1 /* NSView */,
@@ -839,6 +847,8 @@
 				5585FF95244972C4001A09B1 /* FindHouseViewController.h */,
 				5585FF96244972C4001A09B1 /* FindHouseViewController.m */,
 				558501BE2450306C001A09B1 /* FindHouseViewController.xib */,
+				6C966B8D24600EAA00B6ABE7 /* XSBuyHouseViewController.h */,
+				6C966B8E24600EAA00B6ABE7 /* XSBuyHouseViewController.m */,
 			);
 			path = Find;
 			sourceTree = "<group>";
@@ -1119,6 +1129,7 @@
 				5585016724497F5F001A09B1 /* XSHouseModuleViewController.m in Sources */,
 				5585016024497F5F001A09B1 /* XSLPDTTableViewCell.m in Sources */,
 				5585017F24497F5F001A09B1 /* XSHouseInfoTableView.m in Sources */,
+				6C966B8F24600EAA00B6ABE7 /* XSBuyHouseViewController.m in Sources */,
 				6CBA187F2450764600F9B887 /* XSMessageViewController.m in Sources */,
 				6C966B84245E7CBC00B6ABE7 /* ZHFilterModel.m in Sources */,
 				5585001A244972C5001A09B1 /* XSNavViewController.m in Sources */,
@@ -1146,6 +1157,7 @@
 				5585016424497F5F001A09B1 /* XSHouseDetailsController.m in Sources */,
 				5585FFC4244972C4001A09B1 /* NSObject+PerformBlock.m in Sources */,
 				5585015524497F5F001A09B1 /* XSHouseSubSuccessViewController.m in Sources */,
+				6C966B8C245FFB4900B6ABE7 /* KxMenu.m in Sources */,
 				5585FFBC244972C4001A09B1 /* PrintBeautifulLog.m in Sources */,
 				5585FFC1244972C4001A09B1 /* NSObject+safe.m in Sources */,
 				5585018B24497F5F001A09B1 /* XSRoundedView.m in Sources */,

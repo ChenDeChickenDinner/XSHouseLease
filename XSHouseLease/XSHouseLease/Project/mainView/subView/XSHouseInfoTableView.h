@@ -14,5 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong) NSMutableArray *array;
 @property(nonatomic,assign) BOOL heardSearchView;
 @end
+@interface XSClickBtn : UIButton
+
+@end
 
 NS_ASSUME_NONNULL_END
